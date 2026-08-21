@@ -1,0 +1,4 @@
+{
+  "//": "Marks js/ as ES modules for Node so scripts/*.mjs can import the game modules directly. Browsers and Vercel ignore this file; it deliberately lives here rather than at the repo root so Vercel keeps treating the project as a zero-build static site.",
+  "type": "module"
+}

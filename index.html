@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Trivia Bank — crack the vault</title>
+<meta name="description" content="A trivia heist. Twelve locks, two safe havens, five tools in the kit. Bank your haul or push your luck.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Trivia Bank">
+<meta property="og:description" content="A trivia heist. Twelve locks, two safe havens, five tools in the kit. Bank your haul or push your luck.">
+<meta property="og:url" content="https://trivia.carlfung.dev/">
+<meta property="og:image" content="https://trivia.carlfung.dev/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css?v=1">
+<link rel="stylesheet" href="css/base.css?v=1">
+<link rel="stylesheet" href="css/game.css?v=1">
+<link rel="stylesheet" href="css/fx.css?v=1">
+</head>
+
+<body data-screen="boot">
+
+<!-- Ambient layers ------------------------------------------------------- -->
+<div class="vault-bg" aria-hidden="true">
+  <div class="vault-door">
+    <div class="vault-ring vault-ring--outer"></div>
+    <div class="vault-ring vault-ring--mid"></div>
+    <div class="vault-ring vault-ring--inner"></div>
+    <div class="vault-spokes">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="vault-hub"></div>
+  </div>
+  <div class="vault-spill"></div>
+</div>
+<canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" id="vignette" aria-hidden="true"></div>
+
+<!-- Live region for screen readers: every verdict is announced here ------- -->
+<p class="sr-only" role="status" aria-live="assertive" id="sr-status"></p>
+
+<main class="shell">
+
+  <!-- =================== BOOT =================== -->
+  <section class="screen screen--boot" data-screen="boot" aria-label="Loading">
+    <div class="boot-mark">
+      <span class="boot-dial"></span>
+      <p class="eyebrow">Opening the bank</p>
+    </div>
+    <p class="boot-error" id="boot-error" hidden></p>
+  </section>
+
+  <!-- =================== TITLE =================== -->
+  <section class="screen screen--title" data-screen="title" aria-label="Choose a heist" hidden>
+
+    <header class="masthead">
+      <p class="eyebrow eyebrow--brass">Est. from a 2023 spreadsheet <span class="rule"></span> <span id="bank-size">735</span> locks on file</p>
+      <h1 class="wordmark">
+        <span class="wordmark__line" style="--i:0">The</span>
+        <span class="wordmark__line" style="--i:1">Trivia</span>
+        <span class="wordmark__line wordmark__line--brass" style="--i:2">Bank</span>
+      </h1>
+      <p class="tagline">Answer well and the door opens. Answer badly and it doesn't.</p>
+    </header>
+
+    <div class="modes" id="modes" role="list"></div>
+
+    <details class="panel panel--setup">
+      <summary>
+        <span class="eyebrow">The kit &amp; the paperwork</span>
+        <span class="summary-hint" id="setup-summary">4 options &middot; all categories</span>
+      </summary>
+
+      <div class="panel__body">
+        <fieldset class="field">
+          <legend class="eyebrow">How you answer</legend>
+          <div class="segmented" id="answer-mode" role="radiogroup" aria-label="Answer mode">
+            <button type="button" role="radio" aria-checked="true"  data-value="choice">Four options</button>
+            <button type="button" role="radio" aria-checked="false" data-value="typed">Type it <span class="mult">&times;1.5</span></button>
+          </div>
+          <p class="field__note">Typing pays half again as much. There are no options to eliminate, so the Drill and the Wiretap stay in the bag.</p>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="eyebrow">Categories</legend>
+          <div class="chips" id="categories"></div>
+          <div class="field__actions">
+            <button type="button" class="link" id="cat-all">Select all</button>
+            <button type="button" class="link" id="cat-none">Clear</button>
+            <span class="field__count" id="pool-count"></span>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="eyebrow">Difficulty</legend>
+          <div class="chips" id="difficulties"></div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="eyebrow">Sound</legend>
+          <div class="segmented segmented--narrow" id="sound-toggle" role="radiogroup" aria-label="Sound">
+            <button type="button" role="radio" aria-checked="true"  data-value="on">On</button>
+            <button type="button" role="radio" aria-checked="false" data-value="off">Off</button>
+          </div>
+        </fieldset>
+      </div>
+    </details>
+
+    <section class="ledger" aria-label="Your record">
+      <h2 class="eyebrow">The ledger</h2>
+      <div class="ledger__grid" id="ledger"></div>
+      <div class="ledger__cats" id="ledger-cats"></div>
+    </section>
+
+    <footer class="colophon">
+      <p>Built by <a href="https://carlfung.dev">Carl Fung</a>. Question bank of <span id="bank-size-2">735</span>.
+         <button type="button" class="link" id="reset-stats">Wipe my record</button></p>
+    </footer>
+  </section>
+
+  <!-- =================== PLAY =================== -->
+  <section class="screen screen--play" data-screen="play" aria-label="Heist in progress" hidden>
+
+    <header class="hud">
+      <div class="hud__left">
+        <button type="button" class="icon-btn" id="quit" aria-label="Abandon the heist">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="hud__mode">
+          <span class="eyebrow" id="hud-mode">Vault Run</span>
+          <span class="hud__progress" id="hud-progress">Lock 1 of 12</span>
+        </div>
+      </div>
+
+      <div class="hud__board">
+        <span class="board__label eyebrow">Haul</span>
+        <div class="flap" id="credit-board" aria-label="Credits" role="img"></div>
+        <div class="hud__pot" id="hud-pot" hidden><span class="eyebrow">at risk</span> <b id="pot-value">0</b></div>
+      </div>
+
+      <div class="hud__right">
+        <div class="alarms" id="alarms" hidden aria-label="Alarms remaining"></div>
+        <div class="streak" id="streak" aria-label="Streak"></div>
+      </div>
+    </header>
+
+    <div class="ladder" id="ladder" aria-hidden="true"></div>
+
+    <div class="stage">
+
+      <div class="stage__meta">
+        <span class="sigil" id="q-sigil" aria-hidden="true">○</span>
+        <span class="q-cat" id="q-cat">Geography</span>
+        <span class="q-diff" id="q-diff" data-diff="easy">Petty</span>
+        <span class="q-haven" id="q-haven" hidden>Safe haven</span>
+      </div>
+
+      <div class="timer" id="timer">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="timer__track" cx="60" cy="60" r="54"/>
+          <circle class="timer__fill"  cx="60" cy="60" r="54" id="timer-fill"/>
+        </svg>
+        <span class="timer__value" id="timer-value">20</span>
+      </div>
+
+      <h2 class="question" id="question">&nbsp;</h2>
+
+      <div class="options" id="options" role="group" aria-label="Answers"></div>
+
+      <form class="typed" id="typed-form" hidden autocomplete="off">
+        <label class="sr-only" for="typed-input">Your answer</label>
+        <input class="typed__input" id="typed-input" type="text" placeholder="Type your answer" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+        <button type="submit" class="btn btn--primary">Lock it in</button>
+      </form>
+
+      <div class="verdict" id="verdict" hidden>
+        <p class="verdict__line" id="verdict-line"></p>
+        <p class="verdict__answer" id="verdict-answer"></p>
+        <button type="button" class="btn btn--primary" id="next-btn">Next lock</button>
+      </div>
+    </div>
+
+    <footer class="kit" id="kit" aria-label="Your kit"></footer>
+
+    <button type="button" class="bank-btn" id="bank-btn" hidden>
+      <span class="bank-btn__label">Bank it</span>
+      <span class="bank-btn__value" id="bank-btn-value">0</span>
+    </button>
+  </section>
+
+  <!-- =================== RESULTS =================== -->
+  <section class="screen screen--done" data-screen="done" aria-label="Result" hidden>
+    <div class="result">
+      <p class="eyebrow" id="result-eyebrow">The door held</p>
+      <h2 class="result__score" id="result-score">0</h2>
+      <p class="result__sub" id="result-sub">credits</p>
+
+      <div class="result__stats" id="result-stats"></div>
+
+      <div class="share" id="share" hidden>
+        <pre class="share__grid" id="share-grid"></pre>
+        <div class="share__actions">
+          <button type="button" class="btn" id="copy-share">Copy result</button>
+          <button type="button" class="btn" id="download-card">Save card</button>
+        </div>
+        <p class="share__note" id="share-note"></p>
+      </div>
+
+      <div class="unlocked" id="unlocked" hidden>
+        <p class="eyebrow">Unlocked</p>
+        <div class="unlocked__list" id="unlocked-list"></div>
+      </div>
+
+      <div class="result__actions">
+        <button type="button" class="btn btn--primary" id="again-btn">Run it again</button>
+        <button type="button" class="btn" id="home-btn">Back to the bank</button>
+      </div>
+
+      <details class="review">
+        <summary><span class="eyebrow">Review every lock</span></summary>
+        <ol class="review__list" id="review-list"></ol>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<canvas id="share-canvas" width="1200" height="630" hidden></canvas>
+
+<script type="module" src="js/main.js?v=1"></script>
+<noscript>
+  <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
+</noscript>
+</body>
+</html>

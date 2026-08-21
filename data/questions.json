@@ -1,0 +1,8313 @@
+{
+ "meta": {
+  "name": "Trivia Bank — Complete",
+  "version": "1.0.0",
+  "count": 735,
+  "schema": {
+   "id": "int",
+   "category": "str",
+   "difficulty": "easy|medium|hard",
+   "question": "str",
+   "answer": "canonical display answer",
+   "accept": "array of lowercase strings a grader should mark correct"
+  }
+ },
+ "categories": [
+  "Art & Architecture",
+  "Film & TV",
+  "Food & Drink",
+  "Geography",
+  "History",
+  "Language & Words",
+  "Literature",
+  "Music",
+  "Odds & Ends",
+  "Science & Nature",
+  "Sports & Games",
+  "Technology"
+ ],
+ "questions": [
+  {
+   "id": 1,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the largest country in the world by land area?",
+   "answer": "Russia",
+   "accept": [
+    "russia",
+    "russian federation"
+   ]
+  },
+  {
+   "id": 2,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Mount Everest sits on the border between which two countries?",
+   "answer": "Nepal and China",
+   "accept": [
+    "nepal and china",
+    "nepal, china",
+    "china and nepal",
+    "nepal and tibet"
+   ]
+  },
+  {
+   "id": 3,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Which strait separates Spain from Morocco?",
+   "answer": "The Strait of Gibraltar",
+   "accept": [
+    "gibraltar",
+    "strait of gibraltar"
+   ]
+  },
+  {
+   "id": 4,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which two countries share the longest international border?",
+   "answer": "Canada and the United States",
+   "accept": [
+    "canada and the united states",
+    "canada and usa",
+    "us and canada",
+    "canada, us"
+   ]
+  },
+  {
+   "id": 5,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the capital of Mongolia?",
+   "answer": "Ulaanbaatar",
+   "accept": [
+    "ulaanbaatar",
+    "ulan bator"
+   ]
+  },
+  {
+   "id": 6,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which country is completely surrounded by South Africa?",
+   "answer": "Lesotho",
+   "accept": [
+    "lesotho"
+   ]
+  },
+  {
+   "id": 7,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Lake Baikal, the world's deepest lake, lies in which country?",
+   "answer": "Russia",
+   "accept": [
+    "russia",
+    "siberia",
+    "russian federation"
+   ]
+  },
+  {
+   "id": 8,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Counting its overseas territories, which country spans the most time zones?",
+   "answer": "France",
+   "accept": [
+    "france"
+   ]
+  },
+  {
+   "id": 9,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the smallest country in South America by area?",
+   "answer": "Suriname",
+   "accept": [
+    "suriname"
+   ]
+  },
+  {
+   "id": 10,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "The Bosphorus strait runs through which major city?",
+   "answer": "Istanbul",
+   "accept": [
+    "istanbul",
+    "constantinople"
+   ]
+  },
+  {
+   "id": 11,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which gas makes up roughly 78% of Earth's atmosphere?",
+   "answer": "Nitrogen",
+   "accept": [
+    "nitrogen",
+    "n2"
+   ]
+  },
+  {
+   "id": 12,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the chemical symbol for gold?",
+   "answer": "Au",
+   "accept": [
+    "au"
+   ]
+  },
+  {
+   "id": 13,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "How many chambers does a human heart have?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 14,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which subatomic particle carries a negative charge?",
+   "answer": "The electron",
+   "accept": [
+    "electron",
+    "the electron"
+   ]
+  },
+  {
+   "id": 15,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the SI unit of electrical resistance?",
+   "answer": "The ohm",
+   "accept": [
+    "ohm",
+    "ohms",
+    "the ohm"
+   ]
+  },
+  {
+   "id": 16,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which planet has the shortest day in our solar system?",
+   "answer": "Jupiter",
+   "accept": [
+    "jupiter"
+   ]
+  },
+  {
+   "id": 17,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the most abundant metal in Earth's crust?",
+   "answer": "Aluminium",
+   "accept": [
+    "aluminium",
+    "aluminum",
+    "al"
+   ]
+  },
+  {
+   "id": 18,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the scientific study of fungi called?",
+   "answer": "Mycology",
+   "accept": [
+    "mycology"
+   ]
+  },
+  {
+   "id": 19,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which naturalist independently arrived at a theory of natural selection at the same time as Charles Darwin?",
+   "answer": "Alfred Russel Wallace",
+   "accept": [
+    "alfred russel wallace",
+    "wallace",
+    "alfred russell wallace"
+   ]
+  },
+  {
+   "id": 20,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the name for the boundary around a black hole beyond which nothing can escape?",
+   "answer": "The event horizon",
+   "accept": [
+    "event horizon",
+    "the event horizon"
+   ]
+  },
+  {
+   "id": 21,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "In what year did the Titanic sink?",
+   "answer": "1912",
+   "accept": [
+    "1912"
+   ]
+  },
+  {
+   "id": 22,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Who was the first female Prime Minister of the United Kingdom?",
+   "answer": "Margaret Thatcher",
+   "accept": [
+    "margaret thatcher",
+    "thatcher"
+   ]
+  },
+  {
+   "id": 23,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "What was the name of the first artificial satellite launched into orbit?",
+   "answer": "Sputnik 1",
+   "accept": [
+    "sputnik",
+    "sputnik 1",
+    "sputnik i"
+   ]
+  },
+  {
+   "id": 24,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which empire reached its height under Suleiman the Magnificent?",
+   "answer": "The Ottoman Empire",
+   "accept": [
+    "ottoman",
+    "ottoman empire",
+    "the ottoman empire"
+   ]
+  },
+  {
+   "id": 25,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "The Rosetta Stone was the key to deciphering which writing system?",
+   "answer": "Egyptian hieroglyphs",
+   "accept": [
+    "hieroglyphs",
+    "egyptian hieroglyphs",
+    "hieroglyphics",
+    "egyptian hieroglyphics"
+   ]
+  },
+  {
+   "id": 26,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which treaty formally ended the First World War between Germany and the Allies?",
+   "answer": "The Treaty of Versailles",
+   "accept": [
+    "versailles",
+    "treaty of versailles",
+    "the treaty of versailles"
+   ]
+  },
+  {
+   "id": 27,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "The Opium Wars were fought between Britain and which country?",
+   "answer": "China",
+   "accept": [
+    "china",
+    "qing china",
+    "qing dynasty"
+   ]
+  },
+  {
+   "id": 28,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "In which century did the Black Death sweep through Europe?",
+   "answer": "The 14th century",
+   "accept": [
+    "14th century",
+    "fourteenth century",
+    "1300s",
+    "14th"
+   ]
+  },
+  {
+   "id": 29,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Who led the early victories of the Haitian Revolution against French colonial rule?",
+   "answer": "Toussaint Louverture",
+   "accept": [
+    "toussaint louverture",
+    "toussaint l'ouverture",
+    "toussaint"
+   ]
+  },
+  {
+   "id": 30,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "The Meiji Restoration, which rapidly modernized the country, took place in which nation?",
+   "answer": "Japan",
+   "accept": [
+    "japan"
+   ]
+  },
+  {
+   "id": 31,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which author created the detective Hercule Poirot?",
+   "answer": "Agatha Christie",
+   "accept": [
+    "agatha christie",
+    "christie"
+   ]
+  },
+  {
+   "id": 32,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which Russian novelist wrote Crime and Punishment?",
+   "answer": "Fyodor Dostoevsky",
+   "accept": [
+    "dostoevsky",
+    "fyodor dostoevsky",
+    "dostoyevsky"
+   ]
+  },
+  {
+   "id": 33,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "In Nineteen Eighty-Four, what is the name of the Party's ever-watching figurehead?",
+   "answer": "Big Brother",
+   "accept": [
+    "big brother"
+   ]
+  },
+  {
+   "id": 34,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote One Hundred Years of Solitude?",
+   "answer": "Gabriel García Márquez",
+   "accept": [
+    "gabriel garcia marquez",
+    "garcia marquez",
+    "marquez"
+   ]
+  },
+  {
+   "id": 35,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "What was George Orwell's real name?",
+   "answer": "Eric Arthur Blair",
+   "accept": [
+    "eric blair",
+    "eric arthur blair"
+   ]
+  },
+  {
+   "id": 36,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which Japanese novelist wrote Norwegian Wood and Kafka on the Shore?",
+   "answer": "Haruki Murakami",
+   "accept": [
+    "haruki murakami",
+    "murakami"
+   ]
+  },
+  {
+   "id": 37,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which author wrote the Discworld fantasy series?",
+   "answer": "Terry Pratchett",
+   "accept": [
+    "terry pratchett",
+    "pratchett"
+   ]
+  },
+  {
+   "id": 38,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which Chinese classic novel follows the monk Xuanzang and the Monkey King on a pilgrimage west?",
+   "answer": "Journey to the West",
+   "accept": [
+    "journey to the west",
+    "xiyouji",
+    "xi you ji",
+    "monkey"
+   ]
+  },
+  {
+   "id": 39,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Nigerian author wrote Things Fall Apart?",
+   "answer": "Chinua Achebe",
+   "accept": [
+    "chinua achebe",
+    "achebe"
+   ]
+  },
+  {
+   "id": 40,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which epic poem opens with the narrator lost in a dark wood, midway through life's journey?",
+   "answer": "Dante's Divine Comedy (the Inferno)",
+   "accept": [
+    "divine comedy",
+    "the divine comedy",
+    "inferno",
+    "dante's inferno",
+    "la divina commedia"
+   ]
+  },
+  {
+   "id": 41,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Who directed the animated film Spirited Away?",
+   "answer": "Hayao Miyazaki",
+   "accept": [
+    "hayao miyazaki",
+    "miyazaki"
+   ]
+  },
+  {
+   "id": 42,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "In The Matrix, which colour pill does Neo swallow?",
+   "answer": "The red pill",
+   "accept": [
+    "red",
+    "red pill",
+    "the red pill"
+   ]
+  },
+  {
+   "id": 43,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "What is the name of the fictional nation ruled by T'Challa in Black Panther?",
+   "answer": "Wakanda",
+   "accept": [
+    "wakanda"
+   ]
+  },
+  {
+   "id": 44,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which TV series is set in the fictional town of Hawkins, Indiana?",
+   "answer": "Stranger Things",
+   "accept": [
+    "stranger things"
+   ]
+  },
+  {
+   "id": 45,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "In Breaking Bad, what alias does Walter White use?",
+   "answer": "Heisenberg",
+   "accept": [
+    "heisenberg"
+   ]
+  },
+  {
+   "id": 46,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which Hong Kong director made In the Mood for Love and Chungking Express?",
+   "answer": "Wong Kar-wai",
+   "accept": [
+    "wong kar-wai",
+    "wong kar wai",
+    "wkw"
+   ]
+  },
+  {
+   "id": 47,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which Stanley Kubrick film is set aboard the spacecraft Discovery One?",
+   "answer": "2001: A Space Odyssey",
+   "accept": [
+    "2001",
+    "2001 a space odyssey",
+    "2001: a space odyssey"
+   ]
+  },
+  {
+   "id": 48,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which South Korean director won Best Director for Parasite?",
+   "answer": "Bong Joon-ho",
+   "accept": [
+    "bong joon-ho",
+    "bong joon ho",
+    "bong"
+   ]
+  },
+  {
+   "id": 49,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which martial arts star's real name was Lee Jun-fan?",
+   "answer": "Bruce Lee",
+   "accept": [
+    "bruce lee",
+    "lee jun-fan"
+   ]
+  },
+  {
+   "id": 50,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which film won the very first Academy Award for Best Picture?",
+   "answer": "Wings (1927)",
+   "accept": [
+    "wings"
+   ]
+  },
+  {
+   "id": 51,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "How many keys does a standard full-size piano have?",
+   "answer": "88",
+   "accept": [
+    "88",
+    "eighty-eight",
+    "eighty eight"
+   ]
+  },
+  {
+   "id": 52,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "How many strings does a standard violin have?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 53,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which Beatles album cover shows the band on a zebra crossing?",
+   "answer": "Abbey Road",
+   "accept": [
+    "abbey road"
+   ]
+  },
+  {
+   "id": 54,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which band released The Dark Side of the Moon?",
+   "answer": "Pink Floyd",
+   "accept": [
+    "pink floyd"
+   ]
+  },
+  {
+   "id": 55,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "In musical notation, what does 'forte' instruct a performer to do?",
+   "answer": "Play loudly",
+   "accept": [
+    "loud",
+    "loudly",
+    "play loudly",
+    "play loud"
+   ]
+  },
+  {
+   "id": 56,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "How many semitones are there in an octave?",
+   "answer": "Twelve",
+   "accept": [
+    "twelve",
+    "12"
+   ]
+  },
+  {
+   "id": 57,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What is the name of the two-stringed Chinese bowed instrument often called the 'Chinese violin'?",
+   "answer": "The erhu",
+   "accept": [
+    "erhu",
+    "the erhu"
+   ]
+  },
+  {
+   "id": 58,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which composer died leaving his Requiem unfinished?",
+   "answer": "Wolfgang Amadeus Mozart",
+   "accept": [
+    "mozart",
+    "wolfgang amadeus mozart"
+   ]
+  },
+  {
+   "id": 59,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Chinese plucked zither, typically with 21 strings, is played flat on a stand?",
+   "answer": "The guzheng",
+   "accept": [
+    "guzheng",
+    "the guzheng",
+    "gu zheng"
+   ]
+  },
+  {
+   "id": 60,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the term for a piece of music performed without instrumental accompaniment?",
+   "answer": "A cappella",
+   "accept": [
+    "a cappella",
+    "acappella",
+    "a capella"
+   ]
+  },
+  {
+   "id": 61,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the main ingredient in hummus?",
+   "answer": "Chickpeas",
+   "accept": [
+    "chickpeas",
+    "chickpea",
+    "garbanzo beans",
+    "garbanzos"
+   ]
+  },
+  {
+   "id": 62,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What spirit forms the base of a mojito?",
+   "answer": "Rum",
+   "accept": [
+    "rum",
+    "white rum"
+   ]
+  },
+  {
+   "id": 63,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is tofu made from?",
+   "answer": "Soybeans",
+   "accept": [
+    "soybeans",
+    "soy beans",
+    "soya beans",
+    "soy"
+   ]
+  },
+  {
+   "id": 64,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "Which country produces more coffee than any other?",
+   "answer": "Brazil",
+   "accept": [
+    "brazil"
+   ]
+  },
+  {
+   "id": 65,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the Korean dish of fermented, seasoned cabbage called?",
+   "answer": "Kimchi",
+   "accept": [
+    "kimchi",
+    "kimchee"
+   ]
+  },
+  {
+   "id": 66,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Which spice, harvested from crocus stigmas, is the most expensive in the world by weight?",
+   "answer": "Saffron",
+   "accept": [
+    "saffron"
+   ]
+  },
+  {
+   "id": 67,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Dim sum is most closely associated with which region of China?",
+   "answer": "Guangdong (Cantonese southern China)",
+   "accept": [
+    "guangdong",
+    "canton",
+    "cantonese",
+    "southern china",
+    "hong kong"
+   ]
+  },
+  {
+   "id": 68,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "What type of dough is used to make profiteroles and éclairs?",
+   "answer": "Choux pastry",
+   "accept": [
+    "choux",
+    "choux pastry",
+    "pate a choux"
+   ]
+  },
+  {
+   "id": 69,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "What is the Japanese term for the savoury 'fifth taste'?",
+   "answer": "Umami",
+   "accept": [
+    "umami"
+   ]
+  },
+  {
+   "id": 70,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which tea is traditionally smoked over pinewood fires, giving it a distinctive smoky flavour?",
+   "answer": "Lapsang souchong",
+   "accept": [
+    "lapsang souchong",
+    "lapsang"
+   ]
+  },
+  {
+   "id": 71,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Who painted The Starry Night?",
+   "answer": "Vincent van Gogh",
+   "accept": [
+    "van gogh",
+    "vincent van gogh"
+   ]
+  },
+  {
+   "id": 72,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Which art movement is Salvador Dalí most associated with?",
+   "answer": "Surrealism",
+   "accept": [
+    "surrealism",
+    "surrealist"
+   ]
+  },
+  {
+   "id": 73,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Michelangelo's David is carved from what material?",
+   "answer": "Marble",
+   "accept": [
+    "marble"
+   ]
+  },
+  {
+   "id": 74,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which architect designed Barcelona's Sagrada Família?",
+   "answer": "Antoni Gaudí",
+   "accept": [
+    "gaudi",
+    "antoni gaudi",
+    "antonio gaudi"
+   ]
+  },
+  {
+   "id": 75,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Japanese artist created the woodblock print The Great Wave off Kanagawa?",
+   "answer": "Katsushika Hokusai",
+   "accept": [
+    "hokusai",
+    "katsushika hokusai"
+   ]
+  },
+  {
+   "id": 76,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "What is the term for painting applied directly onto wet plaster?",
+   "answer": "Fresco",
+   "accept": [
+    "fresco",
+    "buon fresco"
+   ]
+  },
+  {
+   "id": 77,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which contemporary artist is famous for polka dots and mirrored 'Infinity Rooms'?",
+   "answer": "Yayoi Kusama",
+   "accept": [
+    "yayoi kusama",
+    "kusama"
+   ]
+  },
+  {
+   "id": 78,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which architectural style is defined by pointed arches, ribbed vaults, and flying buttresses?",
+   "answer": "Gothic",
+   "accept": [
+    "gothic",
+    "gothic architecture"
+   ]
+  },
+  {
+   "id": 79,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which museum in Paris is home to the Venus de Milo?",
+   "answer": "The Louvre",
+   "accept": [
+    "louvre",
+    "the louvre",
+    "musee du louvre"
+   ]
+  },
+  {
+   "id": 80,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What term describes the shophouse-style walk-up tenement buildings characteristic of old Hong Kong?",
+   "answer": "Tong lau",
+   "accept": [
+    "tong lau",
+    "tonglau",
+    "tanglou"
+   ]
+  },
+  {
+   "id": 81,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How many players from one team are on the pitch in a football (soccer) match?",
+   "answer": "Eleven",
+   "accept": [
+    "eleven",
+    "11"
+   ]
+  },
+  {
+   "id": 82,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "In chess, which piece moves only diagonally?",
+   "answer": "The bishop",
+   "accept": [
+    "bishop",
+    "the bishop"
+   ]
+  },
+  {
+   "id": 83,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "In tennis, what word is used for a score of zero?",
+   "answer": "Love",
+   "accept": [
+    "love"
+   ]
+  },
+  {
+   "id": 84,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "Which country has won the most FIFA World Cups?",
+   "answer": "Brazil",
+   "accept": [
+    "brazil"
+   ]
+  },
+  {
+   "id": 85,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How many holes are played in a standard round of golf?",
+   "answer": "18",
+   "accept": [
+    "18",
+    "eighteen"
+   ]
+  },
+  {
+   "id": 86,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "Which Olympic event combines swimming, cycling, and running?",
+   "answer": "The triathlon",
+   "accept": [
+    "triathlon",
+    "the triathlon"
+   ]
+  },
+  {
+   "id": 87,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "In the board game Go, what are the playing pieces called?",
+   "answer": "Stones",
+   "accept": [
+    "stones",
+    "stone"
+   ]
+  },
+  {
+   "id": 88,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "How many tiles does each player hold on their rack in Scrabble?",
+   "answer": "Seven",
+   "accept": [
+    "seven",
+    "7"
+   ]
+  },
+  {
+   "id": 89,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "Which martial art, now an Olympic sport, originated in Korea and emphasizes kicking?",
+   "answer": "Taekwondo",
+   "accept": [
+    "taekwondo",
+    "tae kwon do"
+   ]
+  },
+  {
+   "id": 90,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "In cricket, what is the term for a bowler taking three wickets on three consecutive deliveries?",
+   "answer": "A hat-trick",
+   "accept": [
+    "hat-trick",
+    "hat trick",
+    "a hat-trick"
+   ]
+  },
+  {
+   "id": 91,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "What is the term for a word that reads the same forwards and backwards?",
+   "answer": "A palindrome",
+   "accept": [
+    "palindrome",
+    "a palindrome"
+   ]
+  },
+  {
+   "id": 92,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "What do you call a word that imitates the sound it describes, like 'buzz' or 'clang'?",
+   "answer": "Onomatopoeia",
+   "accept": [
+    "onomatopoeia",
+    "onomatopoeic"
+   ]
+  },
+  {
+   "id": 93,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "Which alphabet is used to write Russian?",
+   "answer": "Cyrillic",
+   "accept": [
+    "cyrillic"
+   ]
+  },
+  {
+   "id": 94,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "How many letters are in the Greek alphabet?",
+   "answer": "24",
+   "accept": [
+    "24",
+    "twenty-four",
+    "twenty four"
+   ]
+  },
+  {
+   "id": 95,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the study of the origin and history of words called?",
+   "answer": "Etymology",
+   "accept": [
+    "etymology"
+   ]
+  },
+  {
+   "id": 96,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "The abbreviation 'e.g.' stands for which Latin phrase?",
+   "answer": "Exempli gratia",
+   "accept": [
+    "exempli gratia"
+   ]
+  },
+  {
+   "id": 97,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "Which language has the most native speakers in the world?",
+   "answer": "Mandarin Chinese",
+   "accept": [
+    "mandarin",
+    "mandarin chinese",
+    "chinese"
+   ]
+  },
+  {
+   "id": 98,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "Esperanto was created in the 1880s as what kind of language?",
+   "answer": "A constructed international auxiliary language",
+   "accept": [
+    "constructed language",
+    "conlang",
+    "auxiliary language",
+    "international auxiliary language",
+    "artificial language"
+   ]
+  },
+  {
+   "id": 99,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "The Cantonese term 'dim sum' translates literally to roughly what phrase?",
+   "answer": "To touch the heart",
+   "accept": [
+    "touch the heart",
+    "to touch the heart",
+    "touch heart",
+    "dot heart"
+   ]
+  },
+  {
+   "id": 100,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the linguistic term for a word borrowed directly from another language, like 'kindergarten' or 'ballet'?",
+   "answer": "A loanword",
+   "accept": [
+    "loanword",
+    "a loanword",
+    "loan word",
+    "borrowing"
+   ]
+  },
+  {
+   "id": 101,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "What does 'CPU' stand for?",
+   "answer": "Central Processing Unit",
+   "accept": [
+    "central processing unit"
+   ]
+  },
+  {
+   "id": 102,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "What does 'RAM' stand for?",
+   "answer": "Random Access Memory",
+   "accept": [
+    "random access memory"
+   ]
+  },
+  {
+   "id": 103,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "In 'HTTPS', what does the S stand for?",
+   "answer": "Secure",
+   "accept": [
+    "secure"
+   ]
+  },
+  {
+   "id": 104,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Who is credited with inventing the World Wide Web?",
+   "answer": "Tim Berners-Lee",
+   "accept": [
+    "tim berners-lee",
+    "berners-lee",
+    "tim berners lee"
+   ]
+  },
+  {
+   "id": 105,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Which programming language was created by Guido van Rossum?",
+   "answer": "Python",
+   "accept": [
+    "python"
+   ]
+  },
+  {
+   "id": 106,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Which version control system was created by Linus Torvalds?",
+   "answer": "Git",
+   "accept": [
+    "git"
+   ]
+  },
+  {
+   "id": 107,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'SQL' stand for?",
+   "answer": "Structured Query Language",
+   "accept": [
+    "structured query language"
+   ]
+  },
+  {
+   "id": 108,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Which 19th-century mathematician is often called the first computer programmer for her notes on the Analytical Engine?",
+   "answer": "Ada Lovelace",
+   "accept": [
+    "ada lovelace",
+    "lovelace",
+    "ada byron"
+   ]
+  },
+  {
+   "id": 109,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What is the decimal number 8 written in binary?",
+   "answer": "1000",
+   "accept": [
+    "1000"
+   ]
+  },
+  {
+   "id": 110,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which console generation is the SNES part of, commonly described by its processor bit-width?",
+   "answer": "The 16-bit generation",
+   "accept": [
+    "16-bit",
+    "16 bit",
+    "sixteen-bit",
+    "fourth generation"
+   ]
+  },
+  {
+   "id": 111,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "Which planet is closest to the Sun?",
+   "answer": "Mercury",
+   "accept": [
+    "mercury"
+   ]
+  },
+  {
+   "id": 112,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many degrees are in a circle?",
+   "answer": "360",
+   "accept": [
+    "360",
+    "360 degrees"
+   ]
+  },
+  {
+   "id": 113,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "Which zodiac sign is represented by a pair of scales?",
+   "answer": "Libra",
+   "accept": [
+    "libra"
+   ]
+  },
+  {
+   "id": 114,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the currency of Switzerland?",
+   "answer": "The Swiss franc",
+   "accept": [
+    "swiss franc",
+    "franc",
+    "the swiss franc",
+    "chf"
+   ]
+  },
+  {
+   "id": 115,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the collective noun for a group of owls?",
+   "answer": "A parliament",
+   "accept": [
+    "parliament",
+    "a parliament"
+   ]
+  },
+  {
+   "id": 116,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many hearts does an octopus have?",
+   "answer": "Three",
+   "accept": [
+    "three",
+    "3"
+   ]
+  },
+  {
+   "id": 117,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the traditional gift associated with a 25th wedding anniversary?",
+   "answer": "Silver",
+   "accept": [
+    "silver"
+   ]
+  },
+  {
+   "id": 118,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many minutes are there in a full week?",
+   "answer": "10,080",
+   "accept": [
+    "10080",
+    "10,080"
+   ]
+  },
+  {
+   "id": 119,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the tallest uninterrupted waterfall in the world?",
+   "answer": "Angel Falls, Venezuela",
+   "accept": [
+    "angel falls",
+    "salto angel",
+    "kerepakupai meru"
+   ]
+  },
+  {
+   "id": 120,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "In Chinese numerology, which number is widely considered lucky because it sounds like the word for 'prosperity'?",
+   "answer": "Eight",
+   "accept": [
+    "eight",
+    "8"
+   ]
+  },
+  {
+   "id": 201,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the capital of Australia?",
+   "answer": "Canberra",
+   "accept": [
+    "canberra"
+   ]
+  },
+  {
+   "id": 202,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the largest ocean on Earth?",
+   "answer": "The Pacific Ocean",
+   "accept": [
+    "pacific",
+    "pacific ocean",
+    "the pacific"
+   ]
+  },
+  {
+   "id": 203,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the smallest country in the world?",
+   "answer": "Vatican City",
+   "accept": [
+    "vatican city",
+    "vatican",
+    "the vatican"
+   ]
+  },
+  {
+   "id": 204,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Which is the largest continent?",
+   "answer": "Asia",
+   "accept": [
+    "asia"
+   ]
+  },
+  {
+   "id": 205,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the capital of Canada?",
+   "answer": "Ottawa",
+   "accept": [
+    "ottawa"
+   ]
+  },
+  {
+   "id": 206,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Which country is known as the Land of the Rising Sun?",
+   "answer": "Japan",
+   "accept": [
+    "japan"
+   ]
+  },
+  {
+   "id": 207,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Which US state is the largest by area?",
+   "answer": "Alaska",
+   "accept": [
+    "alaska"
+   ]
+  },
+  {
+   "id": 208,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the tallest mountain in the world above sea level?",
+   "answer": "Mount Everest",
+   "accept": [
+    "everest",
+    "mount everest",
+    "mt everest",
+    "sagarmatha",
+    "chomolungma"
+   ]
+  },
+  {
+   "id": 209,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the longest river in the world?",
+   "answer": "The Nile",
+   "accept": [
+    "nile",
+    "the nile",
+    "amazon",
+    "the amazon"
+   ]
+  },
+  {
+   "id": 210,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the largest hot desert in the world?",
+   "answer": "The Sahara",
+   "accept": [
+    "sahara",
+    "the sahara",
+    "sahara desert"
+   ]
+  },
+  {
+   "id": 211,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the capital of Brazil?",
+   "answer": "Brasília",
+   "accept": [
+    "brasilia",
+    "brasília"
+   ]
+  },
+  {
+   "id": 212,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "How many member states are in the European Union?",
+   "answer": "27",
+   "accept": [
+    "27",
+    "twenty-seven",
+    "twenty seven"
+   ]
+  },
+  {
+   "id": 213,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "The Dead Sea borders which two countries?",
+   "answer": "Israel and Jordan",
+   "accept": [
+    "israel and jordan",
+    "jordan and israel",
+    "israel, jordan"
+   ]
+  },
+  {
+   "id": 214,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which African country famously resisted European colonisation and was never fully colonised?",
+   "answer": "Ethiopia",
+   "accept": [
+    "ethiopia",
+    "abyssinia"
+   ]
+  },
+  {
+   "id": 215,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "In which country would you find the Great Wall?",
+   "answer": "China",
+   "accept": [
+    "china"
+   ]
+  },
+  {
+   "id": 216,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the chemical formula for water?",
+   "answer": "H2O",
+   "accept": [
+    "h2o",
+    "h₂o"
+   ]
+  },
+  {
+   "id": 217,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "How many bones are in the adult human body?",
+   "answer": "206",
+   "accept": [
+    "206",
+    "two hundred and six"
+   ]
+  },
+  {
+   "id": 218,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the largest planet in our solar system?",
+   "answer": "Jupiter",
+   "accept": [
+    "jupiter"
+   ]
+  },
+  {
+   "id": 219,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which planet is known as the Red Planet?",
+   "answer": "Mars",
+   "accept": [
+    "mars"
+   ]
+  },
+  {
+   "id": 220,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the largest organ in the human body?",
+   "answer": "The skin",
+   "accept": [
+    "skin",
+    "the skin"
+   ]
+  },
+  {
+   "id": 221,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "How many planets are in our solar system?",
+   "answer": "Eight",
+   "accept": [
+    "eight",
+    "8"
+   ]
+  },
+  {
+   "id": 222,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "At what temperature does water boil at sea level, in Celsius?",
+   "answer": "100°C",
+   "accept": [
+    "100",
+    "100c",
+    "100 degrees",
+    "100 celsius"
+   ]
+  },
+  {
+   "id": 223,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the hardest naturally occurring substance on Earth?",
+   "answer": "Diamond",
+   "accept": [
+    "diamond",
+    "diamonds"
+   ]
+  },
+  {
+   "id": 224,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the closest star to Earth?",
+   "answer": "The Sun",
+   "accept": [
+    "the sun",
+    "sun",
+    "sol"
+   ]
+  },
+  {
+   "id": 225,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which organelle is often called the powerhouse of the cell?",
+   "answer": "The mitochondrion",
+   "accept": [
+    "mitochondria",
+    "mitochondrion",
+    "the mitochondria"
+   ]
+  },
+  {
+   "id": 226,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which scientist developed the theory of general relativity?",
+   "answer": "Albert Einstein",
+   "accept": [
+    "einstein",
+    "albert einstein"
+   ]
+  },
+  {
+   "id": 227,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the chemical symbol for silver?",
+   "answer": "Ag",
+   "accept": [
+    "ag"
+   ]
+  },
+  {
+   "id": 228,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which blood type is known as the universal donor?",
+   "answer": "O negative",
+   "accept": [
+    "o negative",
+    "o-",
+    "o neg",
+    "type o negative"
+   ]
+  },
+  {
+   "id": 229,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What does DNA stand for?",
+   "answer": "Deoxyribonucleic acid",
+   "accept": [
+    "deoxyribonucleic acid"
+   ]
+  },
+  {
+   "id": 230,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Roughly how fast does light travel in a vacuum?",
+   "answer": "About 300,000 km per second",
+   "accept": [
+    "300000 km/s",
+    "300,000 km/s",
+    "186000 miles per second",
+    "3x10^8 m/s",
+    "299792458 m/s"
+   ]
+  },
+  {
+   "id": 231,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Who was the first person to walk on the Moon?",
+   "answer": "Neil Armstrong",
+   "accept": [
+    "neil armstrong",
+    "armstrong"
+   ]
+  },
+  {
+   "id": 232,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "In which year did the Second World War end?",
+   "answer": "1945",
+   "accept": [
+    "1945"
+   ]
+  },
+  {
+   "id": 233,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Who was the first President of the United States?",
+   "answer": "George Washington",
+   "accept": [
+    "george washington",
+    "washington"
+   ]
+  },
+  {
+   "id": 234,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Which country gifted the Statue of Liberty to the United States?",
+   "answer": "France",
+   "accept": [
+    "france"
+   ]
+  },
+  {
+   "id": 235,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "In which year did the Berlin Wall fall?",
+   "answer": "1989",
+   "accept": [
+    "1989"
+   ]
+  },
+  {
+   "id": 236,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Which US president was assassinated in Dallas in 1963?",
+   "answer": "John F. Kennedy",
+   "accept": [
+    "jfk",
+    "john f kennedy",
+    "john f. kennedy",
+    "kennedy"
+   ]
+  },
+  {
+   "id": 237,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "In which year did the First World War begin?",
+   "answer": "1914",
+   "accept": [
+    "1914"
+   ]
+  },
+  {
+   "id": 238,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "What was the name of the ship that carried the Pilgrims to America in 1620?",
+   "answer": "The Mayflower",
+   "accept": [
+    "mayflower",
+    "the mayflower"
+   ]
+  },
+  {
+   "id": 239,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who was the principal author of the US Declaration of Independence?",
+   "answer": "Thomas Jefferson",
+   "accept": [
+    "thomas jefferson",
+    "jefferson"
+   ]
+  },
+  {
+   "id": 240,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which civilisation built Machu Picchu?",
+   "answer": "The Inca",
+   "accept": [
+    "inca",
+    "incas",
+    "the inca",
+    "incan"
+   ]
+  },
+  {
+   "id": 241,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who is credited with inventing the movable-type printing press in Europe?",
+   "answer": "Johannes Gutenberg",
+   "accept": [
+    "gutenberg",
+    "johannes gutenberg"
+   ]
+  },
+  {
+   "id": 242,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which Egyptian queen was famously involved with both Julius Caesar and Mark Antony?",
+   "answer": "Cleopatra",
+   "accept": [
+    "cleopatra",
+    "cleopatra vii"
+   ]
+  },
+  {
+   "id": 243,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who led the Soviet Union during the Second World War?",
+   "answer": "Joseph Stalin",
+   "accept": [
+    "stalin",
+    "joseph stalin",
+    "josef stalin"
+   ]
+  },
+  {
+   "id": 244,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Who wrote Romeo and Juliet?",
+   "answer": "William Shakespeare",
+   "accept": [
+    "shakespeare",
+    "william shakespeare"
+   ]
+  },
+  {
+   "id": 245,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Who wrote the Harry Potter series?",
+   "answer": "J.K. Rowling",
+   "accept": [
+    "jk rowling",
+    "j.k. rowling",
+    "rowling",
+    "joanne rowling"
+   ]
+  },
+  {
+   "id": 246,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Who wrote Pride and Prejudice?",
+   "answer": "Jane Austen",
+   "accept": [
+    "jane austen",
+    "austen"
+   ]
+  },
+  {
+   "id": 247,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Who created Sherlock Holmes?",
+   "answer": "Arthur Conan Doyle",
+   "accept": [
+    "arthur conan doyle",
+    "conan doyle",
+    "sir arthur conan doyle"
+   ]
+  },
+  {
+   "id": 248,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Who wrote The Lord of the Rings?",
+   "answer": "J.R.R. Tolkien",
+   "accept": [
+    "tolkien",
+    "jrr tolkien",
+    "j.r.r. tolkien"
+   ]
+  },
+  {
+   "id": 249,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote The Great Gatsby?",
+   "answer": "F. Scott Fitzgerald",
+   "accept": [
+    "f scott fitzgerald",
+    "f. scott fitzgerald",
+    "fitzgerald"
+   ]
+  },
+  {
+   "id": 250,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote To Kill a Mockingbird?",
+   "answer": "Harper Lee",
+   "accept": [
+    "harper lee",
+    "lee"
+   ]
+  },
+  {
+   "id": 251,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote Frankenstein?",
+   "answer": "Mary Shelley",
+   "accept": [
+    "mary shelley",
+    "shelley"
+   ]
+  },
+  {
+   "id": 252,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "What is the first book of the Bible?",
+   "answer": "Genesis",
+   "accept": [
+    "genesis"
+   ]
+  },
+  {
+   "id": 253,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote The Old Man and the Sea?",
+   "answer": "Ernest Hemingway",
+   "accept": [
+    "hemingway",
+    "ernest hemingway"
+   ]
+  },
+  {
+   "id": 254,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which Spanish author wrote Don Quixote?",
+   "answer": "Miguel de Cervantes",
+   "accept": [
+    "cervantes",
+    "miguel de cervantes"
+   ]
+  },
+  {
+   "id": 255,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Who played Jack Dawson in Titanic?",
+   "answer": "Leonardo DiCaprio",
+   "accept": [
+    "leonardo dicaprio",
+    "dicaprio",
+    "leo dicaprio"
+   ]
+  },
+  {
+   "id": 256,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which film franchise features the line 'May the Force be with you'?",
+   "answer": "Star Wars",
+   "accept": [
+    "star wars"
+   ]
+  },
+  {
+   "id": 257,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "What is the name of Harry Potter's pet owl?",
+   "answer": "Hedwig",
+   "accept": [
+    "hedwig"
+   ]
+  },
+  {
+   "id": 258,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which animated Disney film features a lion cub named Simba?",
+   "answer": "The Lion King",
+   "accept": [
+    "the lion king",
+    "lion king"
+   ]
+  },
+  {
+   "id": 259,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "What is the name of the coffee shop the friends hang out in on Friends?",
+   "answer": "Central Perk",
+   "accept": [
+    "central perk"
+   ]
+  },
+  {
+   "id": 260,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which studio produced Toy Story?",
+   "answer": "Pixar",
+   "accept": [
+    "pixar",
+    "pixar animation studios"
+   ]
+  },
+  {
+   "id": 261,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which actor played Iron Man in the Marvel Cinematic Universe?",
+   "answer": "Robert Downey Jr.",
+   "accept": [
+    "robert downey jr",
+    "robert downey jr.",
+    "rdj",
+    "robert downey"
+   ]
+  },
+  {
+   "id": 262,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Who directed Jaws?",
+   "answer": "Steven Spielberg",
+   "accept": [
+    "spielberg",
+    "steven spielberg"
+   ]
+  },
+  {
+   "id": 263,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Who directed Pulp Fiction?",
+   "answer": "Quentin Tarantino",
+   "accept": [
+    "tarantino",
+    "quentin tarantino"
+   ]
+  },
+  {
+   "id": 264,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which film pairs FBI trainee Clarice Starling with Dr. Hannibal Lecter?",
+   "answer": "The Silence of the Lambs",
+   "accept": [
+    "silence of the lambs",
+    "the silence of the lambs"
+   ]
+  },
+  {
+   "id": 265,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "What is the longest-running American animated sitcom?",
+   "answer": "The Simpsons",
+   "accept": [
+    "the simpsons",
+    "simpsons"
+   ]
+  },
+  {
+   "id": 266,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which 2009 James Cameron film is set on the moon Pandora?",
+   "answer": "Avatar",
+   "accept": [
+    "avatar"
+   ]
+  },
+  {
+   "id": 267,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "In The Wizard of Oz, what city is Dorothy trying to reach?",
+   "answer": "The Emerald City",
+   "accept": [
+    "emerald city",
+    "the emerald city"
+   ]
+  },
+  {
+   "id": 268,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which singer is known as the King of Rock and Roll?",
+   "answer": "Elvis Presley",
+   "accept": [
+    "elvis",
+    "elvis presley",
+    "presley"
+   ]
+  },
+  {
+   "id": 269,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "How many members were in The Beatles?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 270,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Who recorded the album Thriller?",
+   "answer": "Michael Jackson",
+   "accept": [
+    "michael jackson",
+    "mj"
+   ]
+  },
+  {
+   "id": 271,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which country did the band ABBA come from?",
+   "answer": "Sweden",
+   "accept": [
+    "sweden"
+   ]
+  },
+  {
+   "id": 272,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "How many strings does a standard guitar have?",
+   "answer": "Six",
+   "accept": [
+    "six",
+    "6"
+   ]
+  },
+  {
+   "id": 273,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which famous composer continued writing music after going deaf?",
+   "answer": "Ludwig van Beethoven",
+   "accept": [
+    "beethoven",
+    "ludwig van beethoven"
+   ]
+  },
+  {
+   "id": 274,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Italian composer wrote The Four Seasons?",
+   "answer": "Antonio Vivaldi",
+   "accept": [
+    "vivaldi",
+    "antonio vivaldi"
+   ]
+  },
+  {
+   "id": 275,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which instrument was Louis Armstrong famous for playing?",
+   "answer": "The trumpet",
+   "accept": [
+    "trumpet",
+    "the trumpet",
+    "cornet"
+   ]
+  },
+  {
+   "id": 276,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Who wrote and performed 'Like a Rolling Stone'?",
+   "answer": "Bob Dylan",
+   "accept": [
+    "bob dylan",
+    "dylan"
+   ]
+  },
+  {
+   "id": 277,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What is the national anthem of the United States?",
+   "answer": "The Star-Spangled Banner",
+   "accept": [
+    "star spangled banner",
+    "the star-spangled banner",
+    "star-spangled banner"
+   ]
+  },
+  {
+   "id": 278,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which British band released the song 'Bohemian Rhapsody'?",
+   "answer": "Queen",
+   "accept": [
+    "queen"
+   ]
+  },
+  {
+   "id": 279,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "Which fruit is used to make wine?",
+   "answer": "Grapes",
+   "accept": [
+    "grapes",
+    "grape"
+   ]
+  },
+  {
+   "id": 280,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the main ingredient in guacamole?",
+   "answer": "Avocado",
+   "accept": [
+    "avocado",
+    "avocados"
+   ]
+  },
+  {
+   "id": 281,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "Which country is pizza traditionally associated with?",
+   "answer": "Italy",
+   "accept": [
+    "italy"
+   ]
+  },
+  {
+   "id": 282,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What bean is chocolate made from?",
+   "answer": "The cacao bean",
+   "accept": [
+    "cacao",
+    "cocoa",
+    "cacao bean",
+    "cocoa bean"
+   ]
+  },
+  {
+   "id": 283,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What do bees produce?",
+   "answer": "Honey",
+   "accept": [
+    "honey"
+   ]
+  },
+  {
+   "id": 284,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the main ingredient in an omelette?",
+   "answer": "Eggs",
+   "accept": [
+    "eggs",
+    "egg"
+   ]
+  },
+  {
+   "id": 285,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "What scale is used to measure the heat of chili peppers?",
+   "answer": "The Scoville scale",
+   "accept": [
+    "scoville",
+    "the scoville scale",
+    "scoville scale"
+   ]
+  },
+  {
+   "id": 286,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Which nut is the main ingredient in marzipan?",
+   "answer": "Almond",
+   "accept": [
+    "almond",
+    "almonds"
+   ]
+  },
+  {
+   "id": 287,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Meat from a calf is known by what name?",
+   "answer": "Veal",
+   "accept": [
+    "veal"
+   ]
+  },
+  {
+   "id": 288,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Which country is the origin of sushi?",
+   "answer": "Japan",
+   "accept": [
+    "japan"
+   ]
+  },
+  {
+   "id": 289,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Who painted the Mona Lisa?",
+   "answer": "Leonardo da Vinci",
+   "accept": [
+    "leonardo da vinci",
+    "da vinci",
+    "leonardo"
+   ]
+  },
+  {
+   "id": 290,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Who painted the ceiling of the Sistine Chapel?",
+   "answer": "Michelangelo",
+   "accept": [
+    "michelangelo",
+    "michelangelo buonarroti"
+   ]
+  },
+  {
+   "id": 291,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "In traditional colour theory, what are the three primary colours?",
+   "answer": "Red, yellow, and blue",
+   "accept": [
+    "red yellow blue",
+    "red, yellow, blue",
+    "red yellow and blue"
+   ]
+  },
+  {
+   "id": 292,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which artist is famous for his Campbell's Soup Cans?",
+   "answer": "Andy Warhol",
+   "accept": [
+    "andy warhol",
+    "warhol"
+   ]
+  },
+  {
+   "id": 293,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Who sculpted The Thinker?",
+   "answer": "Auguste Rodin",
+   "accept": [
+    "rodin",
+    "auguste rodin"
+   ]
+  },
+  {
+   "id": 294,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Who painted Guernica?",
+   "answer": "Pablo Picasso",
+   "accept": [
+    "picasso",
+    "pablo picasso"
+   ]
+  },
+  {
+   "id": 295,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which artist painted The Persistence of Memory, with its melting clocks?",
+   "answer": "Salvador Dalí",
+   "accept": [
+    "dali",
+    "salvador dali",
+    "salvador dalí"
+   ]
+  },
+  {
+   "id": 296,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How many players from one team are on a basketball court at once?",
+   "answer": "Five",
+   "accept": [
+    "five",
+    "5"
+   ]
+  },
+  {
+   "id": 297,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How many rings are on the Olympic flag?",
+   "answer": "Five",
+   "accept": [
+    "five",
+    "5"
+   ]
+  },
+  {
+   "id": 298,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "Which sport is played at Wimbledon?",
+   "answer": "Tennis",
+   "accept": [
+    "tennis"
+   ]
+  },
+  {
+   "id": 299,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How often are the Summer Olympic Games held?",
+   "answer": "Every four years",
+   "accept": [
+    "every four years",
+    "four years",
+    "4 years"
+   ]
+  },
+  {
+   "id": 300,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "In which sport would you use a puck?",
+   "answer": "Ice hockey",
+   "accept": [
+    "ice hockey",
+    "hockey"
+   ]
+  },
+  {
+   "id": 301,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "Which sport is nicknamed 'the beautiful game'?",
+   "answer": "Football (soccer)",
+   "accept": [
+    "football",
+    "soccer",
+    "association football"
+   ]
+  },
+  {
+   "id": 302,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "Which boxer famously called himself 'The Greatest'?",
+   "answer": "Muhammad Ali",
+   "accept": [
+    "muhammad ali",
+    "ali",
+    "cassius clay"
+   ]
+  },
+  {
+   "id": 303,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "Which country hosted the first modern Olympic Games in 1896?",
+   "answer": "Greece",
+   "accept": [
+    "greece",
+    "athens"
+   ]
+  },
+  {
+   "id": 304,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "In ten-pin bowling, what is three strikes in a row called?",
+   "answer": "A turkey",
+   "accept": [
+    "turkey",
+    "a turkey"
+   ]
+  },
+  {
+   "id": 305,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "How many players are on a rugby union team?",
+   "answer": "15",
+   "accept": [
+    "15",
+    "fifteen"
+   ]
+  },
+  {
+   "id": 306,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "How many letters are in the English alphabet?",
+   "answer": "26",
+   "accept": [
+    "26",
+    "twenty-six",
+    "twenty six"
+   ]
+  },
+  {
+   "id": 307,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "What are the five vowels in English?",
+   "answer": "A, E, I, O, U",
+   "accept": [
+    "a e i o u",
+    "aeiou",
+    "a, e, i, o, u"
+   ]
+  },
+  {
+   "id": 308,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "Which language is spoken in Austria?",
+   "answer": "German",
+   "accept": [
+    "german"
+   ]
+  },
+  {
+   "id": 309,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What does 'RSVP' stand for?",
+   "answer": "Répondez s'il vous plaît",
+   "accept": [
+    "repondez s'il vous plait",
+    "répondez s'il vous plaît",
+    "please reply",
+    "please respond"
+   ]
+  },
+  {
+   "id": 310,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "In timekeeping, what does 'AM' stand for?",
+   "answer": "Ante meridiem",
+   "accept": [
+    "ante meridiem",
+    "ante meridian"
+   ]
+  },
+  {
+   "id": 311,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the Latin phrase, commonly abbreviated 'etc.', meaning 'and so on'?",
+   "answer": "Et cetera",
+   "accept": [
+    "et cetera",
+    "etcetera"
+   ]
+  },
+  {
+   "id": 312,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the plural of 'goose'?",
+   "answer": "Geese",
+   "accept": [
+    "geese"
+   ]
+  },
+  {
+   "id": 313,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "What does 'WWW' stand for?",
+   "answer": "World Wide Web",
+   "accept": [
+    "world wide web"
+   ]
+  },
+  {
+   "id": 314,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "What does 'AI' stand for?",
+   "answer": "Artificial Intelligence",
+   "accept": [
+    "artificial intelligence"
+   ]
+  },
+  {
+   "id": 315,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "Which company makes the PlayStation?",
+   "answer": "Sony",
+   "accept": [
+    "sony"
+   ]
+  },
+  {
+   "id": 316,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "Who co-founded Microsoft with Paul Allen?",
+   "answer": "Bill Gates",
+   "accept": [
+    "bill gates",
+    "gates",
+    "william gates"
+   ]
+  },
+  {
+   "id": 317,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Who co-founded Apple alongside Steve Jobs?",
+   "answer": "Steve Wozniak",
+   "accept": [
+    "steve wozniak",
+    "wozniak",
+    "woz"
+   ]
+  },
+  {
+   "id": 318,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'USB' stand for?",
+   "answer": "Universal Serial Bus",
+   "accept": [
+    "universal serial bus"
+   ]
+  },
+  {
+   "id": 319,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'PDF' stand for?",
+   "answer": "Portable Document Format",
+   "accept": [
+    "portable document format"
+   ]
+  },
+  {
+   "id": 320,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Which company created the Mario franchise?",
+   "answer": "Nintendo",
+   "accept": [
+    "nintendo"
+   ]
+  },
+  {
+   "id": 321,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many days are in a leap year?",
+   "answer": "366",
+   "accept": [
+    "366"
+   ]
+  },
+  {
+   "id": 322,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is a group of lions called?",
+   "answer": "A pride",
+   "accept": [
+    "pride",
+    "a pride"
+   ]
+  },
+  {
+   "id": 323,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many sides does a hexagon have?",
+   "answer": "Six",
+   "accept": [
+    "six",
+    "6"
+   ]
+  },
+  {
+   "id": 324,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the largest animal on Earth?",
+   "answer": "The blue whale",
+   "accept": [
+    "blue whale",
+    "the blue whale"
+   ]
+  },
+  {
+   "id": 325,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many colours are traditionally counted in a rainbow?",
+   "answer": "Seven",
+   "accept": [
+    "seven",
+    "7"
+   ]
+  },
+  {
+   "id": 326,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the fastest land animal?",
+   "answer": "The cheetah",
+   "accept": [
+    "cheetah",
+    "the cheetah"
+   ]
+  },
+  {
+   "id": 327,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many continents are there?",
+   "answer": "Seven",
+   "accept": [
+    "seven",
+    "7"
+   ]
+  },
+  {
+   "id": 328,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the tallest living animal?",
+   "answer": "The giraffe",
+   "accept": [
+    "giraffe",
+    "the giraffe"
+   ]
+  },
+  {
+   "id": 329,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many cards are in a standard deck, excluding jokers?",
+   "answer": "52",
+   "accept": [
+    "52",
+    "fifty-two",
+    "fifty two"
+   ]
+  },
+  {
+   "id": 330,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many sides does a stop sign have?",
+   "answer": "Eight",
+   "accept": [
+    "eight",
+    "8"
+   ]
+  },
+  {
+   "id": 331,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "Which animal is commonly called 'man's best friend'?",
+   "answer": "The dog",
+   "accept": [
+    "dog",
+    "the dog",
+    "dogs"
+   ]
+  },
+  {
+   "id": 332,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many squares are on a chessboard?",
+   "answer": "64",
+   "accept": [
+    "64",
+    "sixty-four",
+    "sixty four"
+   ]
+  },
+  {
+   "id": 333,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many minutes are in a day?",
+   "answer": "1,440",
+   "accept": [
+    "1440",
+    "1,440"
+   ]
+  },
+  {
+   "id": 334,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many seconds are in an hour?",
+   "answer": "3,600",
+   "accept": [
+    "3600",
+    "3,600"
+   ]
+  },
+  {
+   "id": 335,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many wheels does a standard tricycle have?",
+   "answer": "Three",
+   "accept": [
+    "three",
+    "3"
+   ]
+  },
+  {
+   "id": 336,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the most common blood type worldwide?",
+   "answer": "O positive",
+   "accept": [
+    "o positive",
+    "o+",
+    "o pos",
+    "type o positive"
+   ]
+  },
+  {
+   "id": 337,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which mammals lay eggs?",
+   "answer": "Monotremes — the platypus and echidna",
+   "accept": [
+    "platypus",
+    "monotremes",
+    "platypus and echidna",
+    "echidna"
+   ]
+  },
+  {
+   "id": 338,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is a group of crows called?",
+   "answer": "A murder",
+   "accept": [
+    "murder",
+    "a murder"
+   ]
+  },
+  {
+   "id": 339,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is a group of fish called?",
+   "answer": "A school (or shoal)",
+   "accept": [
+    "school",
+    "a school",
+    "shoal",
+    "a shoal"
+   ]
+  },
+  {
+   "id": 340,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many teeth does a typical adult human have?",
+   "answer": "32",
+   "accept": [
+    "32",
+    "thirty-two",
+    "thirty two"
+   ]
+  },
+  {
+   "id": 341,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which is the only continent with no permanent human residents?",
+   "answer": "Antarctica",
+   "accept": [
+    "antarctica"
+   ]
+  },
+  {
+   "id": 342,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many time zones does the world have in standard terms?",
+   "answer": "24",
+   "accept": [
+    "24",
+    "twenty-four",
+    "twenty four"
+   ]
+  },
+  {
+   "id": 343,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the study of the weather called?",
+   "answer": "Meteorology",
+   "accept": [
+    "meteorology"
+   ]
+  },
+  {
+   "id": 344,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many players start a game of chess with, in total, how many pieces each?",
+   "answer": "16 pieces each",
+   "accept": [
+    "16",
+    "sixteen",
+    "16 each"
+   ]
+  },
+  {
+   "id": 345,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the largest bird in the world?",
+   "answer": "The ostrich",
+   "accept": [
+    "ostrich",
+    "the ostrich"
+   ]
+  },
+  {
+   "id": 346,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which gemstone is traditionally associated with a 60th wedding anniversary?",
+   "answer": "Diamond",
+   "accept": [
+    "diamond",
+    "diamonds"
+   ]
+  },
+  {
+   "id": 347,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the only bird that can fly backwards?",
+   "answer": "The hummingbird",
+   "accept": [
+    "hummingbird",
+    "the hummingbird"
+   ]
+  },
+  {
+   "id": 348,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of ravens?",
+   "answer": "An unkindness",
+   "accept": [
+    "unkindness",
+    "an unkindness",
+    "conspiracy"
+   ]
+  },
+  {
+   "id": 349,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many bones does a newborn human baby have, roughly?",
+   "answer": "About 270",
+   "accept": [
+    "270",
+    "about 270",
+    "300",
+    "around 300"
+   ]
+  },
+  {
+   "id": 350,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the only letter that does not appear in the name of any US state?",
+   "answer": "Q",
+   "accept": [
+    "q"
+   ]
+  },
+  {
+   "id": 351,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which country has the longest coastline in the world?",
+   "answer": "Canada",
+   "accept": [
+    "canada"
+   ]
+  },
+  {
+   "id": 352,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the largest lake in the world by surface area?",
+   "answer": "The Caspian Sea",
+   "accept": [
+    "caspian sea",
+    "the caspian sea",
+    "caspian"
+   ]
+  },
+  {
+   "id": 353,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "The Suez Canal separates which two continents?",
+   "answer": "Africa and Asia",
+   "accept": [
+    "africa and asia",
+    "asia and africa",
+    "africa, asia"
+   ]
+  },
+  {
+   "id": 354,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the lowest exposed point on Earth's land surface?",
+   "answer": "The shore of the Dead Sea",
+   "accept": [
+    "dead sea",
+    "the dead sea",
+    "dead sea shore"
+   ]
+  },
+  {
+   "id": 355,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which country contains more islands than any other?",
+   "answer": "Sweden",
+   "accept": [
+    "sweden"
+   ]
+  },
+  {
+   "id": 356,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the capital of Kazakhstan?",
+   "answer": "Astana",
+   "accept": [
+    "astana",
+    "nur-sultan",
+    "nursultan"
+   ]
+  },
+  {
+   "id": 357,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the largest island in the world?",
+   "answer": "Greenland",
+   "accept": [
+    "greenland"
+   ]
+  },
+  {
+   "id": 358,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "Which sea separates Europe from North Africa?",
+   "answer": "The Mediterranean Sea",
+   "accept": [
+    "mediterranean",
+    "the mediterranean",
+    "mediterranean sea"
+   ]
+  },
+  {
+   "id": 359,
+   "category": "Geography",
+   "difficulty": "easy",
+   "question": "What is the world's largest coral reef system?",
+   "answer": "The Great Barrier Reef",
+   "accept": [
+    "great barrier reef",
+    "the great barrier reef"
+   ]
+  },
+  {
+   "id": 360,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which country sits on the Ring of Fire and has more active volcanoes than any other?",
+   "answer": "Indonesia",
+   "accept": [
+    "indonesia"
+   ]
+  },
+  {
+   "id": 361,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "The Panama Canal connects which two oceans?",
+   "answer": "The Atlantic and the Pacific",
+   "accept": [
+    "atlantic and pacific",
+    "pacific and atlantic",
+    "atlantic, pacific"
+   ]
+  },
+  {
+   "id": 362,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which country flies the only national flag that is not a rectangle?",
+   "answer": "Nepal",
+   "accept": [
+    "nepal"
+   ]
+  },
+  {
+   "id": 363,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which mountain range is traditionally taken as the boundary between Europe and Asia?",
+   "answer": "The Ural Mountains",
+   "accept": [
+    "urals",
+    "ural mountains",
+    "the urals"
+   ]
+  },
+  {
+   "id": 364,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the largest lake in Africa by surface area?",
+   "answer": "Lake Victoria",
+   "accept": [
+    "lake victoria",
+    "victoria"
+   ]
+  },
+  {
+   "id": 365,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which country has more UNESCO World Heritage Sites than any other?",
+   "answer": "Italy",
+   "accept": [
+    "italy"
+   ]
+  },
+  {
+   "id": 366,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which US state has the longest coastline?",
+   "answer": "Alaska",
+   "accept": [
+    "alaska"
+   ]
+  },
+  {
+   "id": 367,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "What is the capital of Switzerland?",
+   "answer": "Bern",
+   "accept": [
+    "bern",
+    "berne"
+   ]
+  },
+  {
+   "id": 368,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which South American capital sits at the highest elevation?",
+   "answer": "La Paz, Bolivia",
+   "accept": [
+    "la paz",
+    "la paz bolivia"
+   ]
+  },
+  {
+   "id": 369,
+   "category": "Geography",
+   "difficulty": "medium",
+   "question": "Which desert covers much of northern China and southern Mongolia?",
+   "answer": "The Gobi Desert",
+   "accept": [
+    "gobi",
+    "the gobi",
+    "gobi desert"
+   ]
+  },
+  {
+   "id": 370,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which river forms much of the border between the United States and Mexico?",
+   "answer": "The Rio Grande",
+   "accept": [
+    "rio grande",
+    "the rio grande",
+    "rio bravo"
+   ]
+  },
+  {
+   "id": 371,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the largest bone in the human body?",
+   "answer": "The femur",
+   "accept": [
+    "femur",
+    "the femur",
+    "thigh bone",
+    "thighbone"
+   ]
+  },
+  {
+   "id": 372,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the smallest bone in the human body?",
+   "answer": "The stapes, in the middle ear",
+   "accept": [
+    "stapes",
+    "the stapes",
+    "stirrup"
+   ]
+  },
+  {
+   "id": 373,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which organ produces insulin?",
+   "answer": "The pancreas",
+   "accept": [
+    "pancreas",
+    "the pancreas"
+   ]
+  },
+  {
+   "id": 374,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "How many stomach compartments does a cow have?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 375,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which human organ is capable of regenerating lost tissue?",
+   "answer": "The liver",
+   "accept": [
+    "liver",
+    "the liver"
+   ]
+  },
+  {
+   "id": 376,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "How many heart-like aortic arches does an earthworm have?",
+   "answer": "Five",
+   "accept": [
+    "five",
+    "5"
+   ]
+  },
+  {
+   "id": 377,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the largest cell in the human body?",
+   "answer": "The egg cell (ovum)",
+   "accept": [
+    "egg cell",
+    "ovum",
+    "the ovum",
+    "egg"
+   ]
+  },
+  {
+   "id": 378,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which animal has the largest brain of any creature on Earth?",
+   "answer": "The sperm whale",
+   "accept": [
+    "sperm whale",
+    "the sperm whale"
+   ]
+  },
+  {
+   "id": 379,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which bird reaches the highest speed of any animal, in a hunting dive?",
+   "answer": "The peregrine falcon",
+   "accept": [
+    "peregrine falcon",
+    "peregrine",
+    "the peregrine falcon"
+   ]
+  },
+  {
+   "id": 380,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the smallest bird species in the world?",
+   "answer": "The bee hummingbird",
+   "accept": [
+    "bee hummingbird",
+    "the bee hummingbird"
+   ]
+  },
+  {
+   "id": 381,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which element is the most abundant in the universe?",
+   "answer": "Hydrogen",
+   "accept": [
+    "hydrogen",
+    "h"
+   ]
+  },
+  {
+   "id": 382,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "What is the chemical symbol for potassium?",
+   "answer": "K",
+   "accept": [
+    "k"
+   ]
+  },
+  {
+   "id": 383,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which chemical element is named after the planet Uranus?",
+   "answer": "Uranium",
+   "accept": [
+    "uranium"
+   ]
+  },
+  {
+   "id": 384,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "Which gas do plants absorb from the air during photosynthesis?",
+   "answer": "Carbon dioxide",
+   "accept": [
+    "carbon dioxide",
+    "co2",
+    "co₂"
+   ]
+  },
+  {
+   "id": 385,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the pH of pure water?",
+   "answer": "7",
+   "accept": [
+    "7",
+    "seven",
+    "neutral"
+   ]
+  },
+  {
+   "id": 386,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "Which planet in our solar system has the greatest number of confirmed moons?",
+   "answer": "Saturn",
+   "accept": [
+    "saturn"
+   ]
+  },
+  {
+   "id": 387,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the term for an animal that is most active at dawn and dusk?",
+   "answer": "Crepuscular",
+   "accept": [
+    "crepuscular"
+   ]
+  },
+  {
+   "id": 388,
+   "category": "Science & Nature",
+   "difficulty": "easy",
+   "question": "What is the largest species of fish in the world?",
+   "answer": "The whale shark",
+   "accept": [
+    "whale shark",
+    "the whale shark"
+   ]
+  },
+  {
+   "id": 389,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "A deficiency of which vitamin causes scurvy?",
+   "answer": "Vitamin C",
+   "accept": [
+    "vitamin c",
+    "c",
+    "ascorbic acid"
+   ]
+  },
+  {
+   "id": 390,
+   "category": "Science & Nature",
+   "difficulty": "medium",
+   "question": "How many pairs of chromosomes does a human normally have?",
+   "answer": "23",
+   "accept": [
+    "23",
+    "twenty-three",
+    "twenty three"
+   ]
+  },
+  {
+   "id": 391,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the name for the process by which a solid turns directly into a gas without melting?",
+   "answer": "Sublimation",
+   "accept": [
+    "sublimation"
+   ]
+  },
+  {
+   "id": 392,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which type of rock forms from cooled magma or lava?",
+   "answer": "Igneous rock",
+   "accept": [
+    "igneous",
+    "igneous rock"
+   ]
+  },
+  {
+   "id": 393,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who was the last Tsar of Russia?",
+   "answer": "Nicholas II",
+   "accept": [
+    "nicholas ii",
+    "nicholas the second",
+    "tsar nicholas ii"
+   ]
+  },
+  {
+   "id": 394,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "The Treaty of Paris of 1783 ended which war?",
+   "answer": "The American Revolutionary War",
+   "accept": [
+    "american revolutionary war",
+    "american revolution",
+    "revolutionary war",
+    "war of independence"
+   ]
+  },
+  {
+   "id": 395,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who crowned himself Emperor of the French in 1804?",
+   "answer": "Napoleon Bonaparte",
+   "accept": [
+    "napoleon",
+    "napoleon bonaparte",
+    "napoleon i"
+   ]
+  },
+  {
+   "id": 396,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "In which year did the French Revolution begin?",
+   "answer": "1789",
+   "accept": [
+    "1789"
+   ]
+  },
+  {
+   "id": 397,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Genghis Khan founded which empire?",
+   "answer": "The Mongol Empire",
+   "accept": [
+    "mongol empire",
+    "the mongol empire",
+    "mongols",
+    "mongolia"
+   ]
+  },
+  {
+   "id": 398,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which of the Seven Wonders of the Ancient World stood in Alexandria?",
+   "answer": "The Lighthouse of Alexandria (Pharos)",
+   "accept": [
+    "lighthouse of alexandria",
+    "pharos",
+    "the pharos",
+    "lighthouse"
+   ]
+  },
+  {
+   "id": 399,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who is the longest-reigning monarch in British history?",
+   "answer": "Queen Elizabeth II",
+   "accept": [
+    "elizabeth ii",
+    "queen elizabeth ii",
+    "elizabeth the second"
+   ]
+  },
+  {
+   "id": 400,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "In which year did the Chernobyl nuclear disaster occur?",
+   "answer": "1986",
+   "accept": [
+    "1986"
+   ]
+  },
+  {
+   "id": 401,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which country was formerly known as Siam?",
+   "answer": "Thailand",
+   "accept": [
+    "thailand"
+   ]
+  },
+  {
+   "id": 402,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which peasant-born rebel leader founded China's Ming dynasty?",
+   "answer": "Zhu Yuanzhang",
+   "accept": [
+    "zhu yuanzhang",
+    "hongwu",
+    "hongwu emperor",
+    "chu yuan-chang"
+   ]
+  },
+  {
+   "id": 403,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "In which year was Hong Kong handed back to Chinese sovereignty?",
+   "answer": "1997",
+   "accept": [
+    "1997"
+   ]
+  },
+  {
+   "id": 404,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which document did King John of England seal at Runnymede in 1215?",
+   "answer": "Magna Carta",
+   "accept": [
+    "magna carta",
+    "the magna carta"
+   ]
+  },
+  {
+   "id": 405,
+   "category": "History",
+   "difficulty": "easy",
+   "question": "Which brothers achieved the first powered, controlled aeroplane flight in 1903?",
+   "answer": "The Wright brothers",
+   "accept": [
+    "wright brothers",
+    "the wright brothers",
+    "orville and wilbur wright"
+   ]
+  },
+  {
+   "id": 406,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which empire was ruled from the city of Tenochtitlan?",
+   "answer": "The Aztec Empire",
+   "accept": [
+    "aztec",
+    "aztecs",
+    "the aztec empire",
+    "mexica"
+   ]
+  },
+  {
+   "id": 407,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Who was the first woman to be awarded a Nobel Prize?",
+   "answer": "Marie Curie",
+   "accept": [
+    "marie curie",
+    "curie",
+    "maria sklodowska-curie"
+   ]
+  },
+  {
+   "id": 408,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "Which US state was purchased from Russia in 1867?",
+   "answer": "Alaska",
+   "accept": [
+    "alaska"
+   ]
+  },
+  {
+   "id": 409,
+   "category": "History",
+   "difficulty": "medium",
+   "question": "What was the code name for the Allied invasion of Normandy in 1944?",
+   "answer": "Operation Overlord",
+   "accept": [
+    "operation overlord",
+    "overlord",
+    "d-day"
+   ]
+  },
+  {
+   "id": 410,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Most of the surviving Great Wall of China was built under which dynasty?",
+   "answer": "The Ming dynasty",
+   "accept": [
+    "ming",
+    "ming dynasty",
+    "the ming dynasty"
+   ]
+  },
+  {
+   "id": 411,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote the novella The Metamorphosis?",
+   "answer": "Franz Kafka",
+   "accept": [
+    "kafka",
+    "franz kafka"
+   ]
+  },
+  {
+   "id": 412,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which novel opens with a narrator asking to be called Ishmael?",
+   "answer": "Moby-Dick",
+   "accept": [
+    "moby dick",
+    "moby-dick"
+   ]
+  },
+  {
+   "id": 413,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote Fahrenheit 451?",
+   "answer": "Ray Bradbury",
+   "accept": [
+    "ray bradbury",
+    "bradbury"
+   ]
+  },
+  {
+   "id": 414,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which hobbit is tasked with carrying the One Ring to Mount Doom?",
+   "answer": "Frodo Baggins",
+   "accept": [
+    "frodo",
+    "frodo baggins"
+   ]
+  },
+  {
+   "id": 415,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which American writer penned the poem 'The Raven'?",
+   "answer": "Edgar Allan Poe",
+   "accept": [
+    "edgar allan poe",
+    "poe",
+    "edgar allen poe"
+   ]
+  },
+  {
+   "id": 416,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote The Handmaid's Tale?",
+   "answer": "Margaret Atwood",
+   "accept": [
+    "margaret atwood",
+    "atwood"
+   ]
+  },
+  {
+   "id": 417,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "What is the name for a 14-line poem with a fixed rhyme scheme?",
+   "answer": "A sonnet",
+   "accept": [
+    "sonnet",
+    "a sonnet"
+   ]
+  },
+  {
+   "id": 418,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which Russian author wrote War and Peace?",
+   "answer": "Leo Tolstoy",
+   "accept": [
+    "tolstoy",
+    "leo tolstoy"
+   ]
+  },
+  {
+   "id": 419,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Chilean poet won the Nobel Prize in Literature in 1971?",
+   "answer": "Pablo Neruda",
+   "accept": [
+    "pablo neruda",
+    "neruda"
+   ]
+  },
+  {
+   "id": 420,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "What is the term for a story whose characters and events carry a hidden symbolic meaning, as in Animal Farm?",
+   "answer": "An allegory",
+   "accept": [
+    "allegory",
+    "an allegory",
+    "allegorical"
+   ]
+  },
+  {
+   "id": 421,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Who wrote The Little Prince?",
+   "answer": "Antoine de Saint-Exupéry",
+   "accept": [
+    "saint-exupery",
+    "antoine de saint-exupery",
+    "antoine de saint-exupéry"
+   ]
+  },
+  {
+   "id": 422,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "What is the name of Captain Ahab's whaling ship?",
+   "answer": "The Pequod",
+   "accept": [
+    "pequod",
+    "the pequod"
+   ]
+  },
+  {
+   "id": 423,
+   "category": "Literature",
+   "difficulty": "easy",
+   "question": "Which Japanese poetic form follows a 5-7-5 syllable pattern?",
+   "answer": "Haiku",
+   "accept": [
+    "haiku"
+   ]
+  },
+  {
+   "id": 424,
+   "category": "Literature",
+   "difficulty": "medium",
+   "question": "Which American author wrote Beloved?",
+   "answer": "Toni Morrison",
+   "accept": [
+    "toni morrison",
+    "morrison"
+   ]
+  },
+  {
+   "id": 425,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "What is the name of the isolated hotel in The Shining?",
+   "answer": "The Overlook Hotel",
+   "accept": [
+    "overlook",
+    "the overlook",
+    "overlook hotel"
+   ]
+  },
+  {
+   "id": 426,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which 1979 sci-fi horror film is set aboard the commercial towing ship Nostromo?",
+   "answer": "Alien",
+   "accept": [
+    "alien"
+   ]
+  },
+  {
+   "id": 427,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Who directed The Godfather?",
+   "answer": "Francis Ford Coppola",
+   "accept": [
+    "coppola",
+    "francis ford coppola"
+   ]
+  },
+  {
+   "id": 428,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "What is the name of Dorothy's dog in The Wizard of Oz?",
+   "answer": "Toto",
+   "accept": [
+    "toto"
+   ]
+  },
+  {
+   "id": 429,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "What make of car is the time machine in Back to the Future?",
+   "answer": "A DeLorean",
+   "accept": [
+    "delorean",
+    "a delorean",
+    "dmc delorean"
+   ]
+  },
+  {
+   "id": 430,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which Studio Ghibli film features a grinning, multi-legged Catbus?",
+   "answer": "My Neighbor Totoro",
+   "accept": [
+    "my neighbor totoro",
+    "my neighbour totoro",
+    "totoro"
+   ]
+  },
+  {
+   "id": 431,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which actor voices Woody in the Toy Story films?",
+   "answer": "Tom Hanks",
+   "accept": [
+    "tom hanks",
+    "hanks"
+   ]
+  },
+  {
+   "id": 432,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which sitcom is set at the Scranton branch of Dunder Mifflin?",
+   "answer": "The Office",
+   "accept": [
+    "the office",
+    "office"
+   ]
+  },
+  {
+   "id": 433,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "What is the name of the island where Jurassic Park is built?",
+   "answer": "Isla Nublar",
+   "accept": [
+    "isla nublar",
+    "nublar"
+   ]
+  },
+  {
+   "id": 434,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which actor appeared as James Bond in seven official films, more than anyone else?",
+   "answer": "Roger Moore",
+   "accept": [
+    "roger moore",
+    "moore"
+   ]
+  },
+  {
+   "id": 435,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "What is the name of the fictional European country in The Princess Diaries?",
+   "answer": "Genovia",
+   "accept": [
+    "genovia"
+   ]
+  },
+  {
+   "id": 436,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Which director made both Psycho and Vertigo?",
+   "answer": "Alfred Hitchcock",
+   "accept": [
+    "hitchcock",
+    "alfred hitchcock"
+   ]
+  },
+  {
+   "id": 437,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "In which fictional city does Batman operate?",
+   "answer": "Gotham City",
+   "accept": [
+    "gotham",
+    "gotham city"
+   ]
+  },
+  {
+   "id": 438,
+   "category": "Film & TV",
+   "difficulty": "easy",
+   "question": "Who is Homer Simpson's boss at the power plant?",
+   "answer": "Mr. Burns",
+   "accept": [
+    "mr burns",
+    "mr. burns",
+    "montgomery burns",
+    "charles montgomery burns"
+   ]
+  },
+  {
+   "id": 439,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which 1999 film features a character named Tyler Durden?",
+   "answer": "Fight Club",
+   "accept": [
+    "fight club"
+   ]
+  },
+  {
+   "id": 440,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "In WALL-E, what is the name of the sleek white robot WALL-E falls for?",
+   "answer": "EVE",
+   "accept": [
+    "eve"
+   ]
+  },
+  {
+   "id": 441,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which buddy-cop comedy franchise pairs Jackie Chan with Chris Tucker?",
+   "answer": "Rush Hour",
+   "accept": [
+    "rush hour"
+   ]
+  },
+  {
+   "id": 442,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "In The Truman Show, what is the name of the town Truman lives in?",
+   "answer": "Seahaven Island",
+   "accept": [
+    "seahaven",
+    "seahaven island"
+   ]
+  },
+  {
+   "id": 443,
+   "category": "Film & TV",
+   "difficulty": "medium",
+   "question": "Which animated series is set in the underwater city of Bikini Bottom?",
+   "answer": "SpongeBob SquarePants",
+   "accept": [
+    "spongebob",
+    "spongebob squarepants"
+   ]
+  },
+  {
+   "id": 444,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which 1994 Wong Kar-wai film tells two loosely linked love stories revolving around a Hong Kong fast-food counter?",
+   "answer": "Chungking Express",
+   "accept": [
+    "chungking express",
+    "chung hing sam lam"
+   ]
+  },
+  {
+   "id": 445,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which singer is known as the Queen of Soul?",
+   "answer": "Aretha Franklin",
+   "accept": [
+    "aretha franklin",
+    "aretha"
+   ]
+  },
+  {
+   "id": 446,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which pop star was born Stefani Germanotta?",
+   "answer": "Lady Gaga",
+   "accept": [
+    "lady gaga",
+    "gaga"
+   ]
+  },
+  {
+   "id": 447,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which percussion instrument has tuned wooden bars struck with mallets?",
+   "answer": "The xylophone",
+   "accept": [
+    "xylophone",
+    "the xylophone",
+    "marimba"
+   ]
+  },
+  {
+   "id": 448,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Who composed the waltz 'The Blue Danube'?",
+   "answer": "Johann Strauss II",
+   "accept": [
+    "johann strauss",
+    "strauss",
+    "johann strauss ii"
+   ]
+  },
+  {
+   "id": 449,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which rapper's real name is Marshall Mathers?",
+   "answer": "Eminem",
+   "accept": [
+    "eminem",
+    "slim shady"
+   ]
+  },
+  {
+   "id": 450,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "How many movements does a classical symphony traditionally have?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 451,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which musical genre originated in New Orleans in the early 20th century?",
+   "answer": "Jazz",
+   "accept": [
+    "jazz"
+   ]
+  },
+  {
+   "id": 452,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "In music production, what does 'BPM' stand for?",
+   "answer": "Beats per minute",
+   "accept": [
+    "beats per minute"
+   ]
+  },
+  {
+   "id": 453,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the name of the Japanese end-blown bamboo flute used in Zen music?",
+   "answer": "The shakuhachi",
+   "accept": [
+    "shakuhachi",
+    "the shakuhachi"
+   ]
+  },
+  {
+   "id": 454,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which string instrument has the lowest pitch in a standard orchestra?",
+   "answer": "The double bass",
+   "accept": [
+    "double bass",
+    "the double bass",
+    "contrabass",
+    "upright bass"
+   ]
+  },
+  {
+   "id": 455,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which French composer wrote the single-crescendo orchestral piece 'Boléro'?",
+   "answer": "Maurice Ravel",
+   "accept": [
+    "ravel",
+    "maurice ravel"
+   ]
+  },
+  {
+   "id": 456,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which artist recorded the album and title track 'Purple Rain'?",
+   "answer": "Prince",
+   "accept": [
+    "prince"
+   ]
+  },
+  {
+   "id": 457,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What is the musical term for gradually getting louder?",
+   "answer": "Crescendo",
+   "accept": [
+    "crescendo"
+   ]
+  },
+  {
+   "id": 458,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the name of the hollow wooden percussion block, often fish-shaped, used in Buddhist temple chanting?",
+   "answer": "The wooden fish (muk yu / muyu)",
+   "accept": [
+    "wooden fish",
+    "muk yu",
+    "mukyu",
+    "muyu",
+    "mokugyo"
+   ]
+  },
+  {
+   "id": 459,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which major key has no sharps or flats in its key signature?",
+   "answer": "C major",
+   "accept": [
+    "c major",
+    "c"
+   ]
+  },
+  {
+   "id": 460,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which 1969 music festival in upstate New York became a counterculture landmark?",
+   "answer": "Woodstock",
+   "accept": [
+    "woodstock"
+   ]
+  },
+  {
+   "id": 461,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the Japanese rice-based alcoholic drink called?",
+   "answer": "Sake",
+   "accept": [
+    "sake",
+    "saké",
+    "nihonshu"
+   ]
+  },
+  {
+   "id": 462,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "Which herb is the dominant flavour in classic pesto?",
+   "answer": "Basil",
+   "accept": [
+    "basil"
+   ]
+  },
+  {
+   "id": 463,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "What is the base vegetable of Spanish gazpacho?",
+   "answer": "Tomato",
+   "accept": [
+    "tomato",
+    "tomatoes"
+   ]
+  },
+  {
+   "id": 464,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "The croissant's crescent-shaped ancestor, the kipferl, comes from which country?",
+   "answer": "Austria",
+   "accept": [
+    "austria",
+    "vienna"
+   ]
+  },
+  {
+   "id": 465,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which Italian biscuit's name literally means 'twice-cooked'?",
+   "answer": "Biscotti",
+   "accept": [
+    "biscotti",
+    "biscotto"
+   ]
+  },
+  {
+   "id": 466,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Miso paste is made by fermenting which bean?",
+   "answer": "Soybeans",
+   "accept": [
+    "soybeans",
+    "soybean",
+    "soya beans",
+    "soy"
+   ]
+  },
+  {
+   "id": 467,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "Hong Kong-style milk tea is built on which type of tea?",
+   "answer": "Strong black tea (typically Ceylon)",
+   "accept": [
+    "black tea",
+    "ceylon",
+    "ceylon tea",
+    "black"
+   ]
+  },
+  {
+   "id": 468,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "What is the French term for cooking food sealed in a bag at a precise low temperature?",
+   "answer": "Sous vide",
+   "accept": [
+    "sous vide",
+    "sousvide"
+   ]
+  },
+  {
+   "id": 469,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which country drinks more tea per person than any other?",
+   "answer": "Turkey",
+   "accept": [
+    "turkey",
+    "türkiye"
+   ]
+  },
+  {
+   "id": 470,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "In Indian cooking, what is paneer?",
+   "answer": "A fresh, unaged cheese",
+   "accept": [
+    "cheese",
+    "fresh cheese",
+    "a cheese",
+    "curd cheese"
+   ]
+  },
+  {
+   "id": 471,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "What is the Vietnamese noodle soup traditionally eaten for breakfast called?",
+   "answer": "Phở",
+   "accept": [
+    "pho",
+    "phở"
+   ]
+  },
+  {
+   "id": 472,
+   "category": "Food & Drink",
+   "difficulty": "medium",
+   "question": "A roux is made by cooking together which two ingredients?",
+   "answer": "Fat and flour",
+   "accept": [
+    "fat and flour",
+    "butter and flour",
+    "flour and fat",
+    "flour and butter"
+   ]
+  },
+  {
+   "id": 473,
+   "category": "Food & Drink",
+   "difficulty": "easy",
+   "question": "Which spirit is distilled from the blue agave plant?",
+   "answer": "Tequila",
+   "accept": [
+    "tequila",
+    "mezcal"
+   ]
+  },
+  {
+   "id": 474,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which Cantonese dumpling's name translates roughly to 'shrimp dumpling' and is judged by the pleats in its wrapper?",
+   "answer": "Har gow",
+   "accept": [
+    "har gow",
+    "har gau",
+    "ha gao",
+    "xia jiao"
+   ]
+  },
+  {
+   "id": 475,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Which art movement takes its name from a Monet painting titled 'Impression, Sunrise'?",
+   "answer": "Impressionism",
+   "accept": [
+    "impressionism",
+    "impressionist"
+   ]
+  },
+  {
+   "id": 476,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "What is the art of forming a picture from small pieces of coloured tile or glass called?",
+   "answer": "Mosaic",
+   "accept": [
+    "mosaic"
+   ]
+  },
+  {
+   "id": 477,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Which engineer's firm designed and built the Eiffel Tower?",
+   "answer": "Gustave Eiffel",
+   "accept": [
+    "gustave eiffel",
+    "eiffel"
+   ]
+  },
+  {
+   "id": 478,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which painting technique builds an image from tiny distinct dots of pure colour?",
+   "answer": "Pointillism",
+   "accept": [
+    "pointillism",
+    "pointillist",
+    "divisionism"
+   ]
+  },
+  {
+   "id": 479,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Dutch painter created 'Girl with a Pearl Earring'?",
+   "answer": "Johannes Vermeer",
+   "accept": [
+    "vermeer",
+    "johannes vermeer",
+    "jan vermeer"
+   ]
+  },
+  {
+   "id": 480,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "What is the Japanese practice of repairing broken pottery with gold-dusted lacquer called?",
+   "answer": "Kintsugi",
+   "accept": [
+    "kintsugi",
+    "kintsukuroi"
+   ]
+  },
+  {
+   "id": 481,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which modernist architect is associated with the maxim 'less is more'?",
+   "answer": "Ludwig Mies van der Rohe",
+   "accept": [
+    "mies van der rohe",
+    "mies",
+    "ludwig mies van der rohe"
+   ]
+  },
+  {
+   "id": 482,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Italian city is generally regarded as the birthplace of the Renaissance?",
+   "answer": "Florence",
+   "accept": [
+    "florence",
+    "firenze"
+   ]
+  },
+  {
+   "id": 483,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which vast temple complex in Cambodia is the largest religious monument in the world?",
+   "answer": "Angkor Wat",
+   "accept": [
+    "angkor wat",
+    "angkor"
+   ]
+  },
+  {
+   "id": 484,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which artist created the mirrored 'Cloud Gate' sculpture in Chicago, nicknamed The Bean?",
+   "answer": "Anish Kapoor",
+   "accept": [
+    "anish kapoor",
+    "kapoor"
+   ]
+  },
+  {
+   "id": 485,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which design style, all zigzags and chrome, defined the Chrysler Building and 1920s–30s glamour?",
+   "answer": "Art Deco",
+   "accept": [
+    "art deco",
+    "deco"
+   ]
+  },
+  {
+   "id": 486,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the term for the raised platform stage of a traditional Chinese opera house?",
+   "answer": "The xitai",
+   "accept": [
+    "xitai",
+    "hei toi",
+    "opera stage"
+   ]
+  },
+  {
+   "id": 487,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "How many spaces are on a standard Monopoly board?",
+   "answer": "40",
+   "accept": [
+    "40",
+    "forty"
+   ]
+  },
+  {
+   "id": 488,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "What is the highest possible score with three darts?",
+   "answer": "180",
+   "accept": [
+    "180",
+    "one hundred and eighty"
+   ]
+  },
+  {
+   "id": 489,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "What is the internal diameter of a regulation basketball hoop, in inches?",
+   "answer": "18 inches",
+   "accept": [
+    "18",
+    "18 inches",
+    "eighteen"
+   ]
+  },
+  {
+   "id": 490,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "In which country did table tennis originate as an after-dinner parlour game?",
+   "answer": "England",
+   "accept": [
+    "england",
+    "britain",
+    "uk",
+    "united kingdom"
+   ]
+  },
+  {
+   "id": 491,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "In chess, what is it called when a player has no legal move but is not in check?",
+   "answer": "Stalemate",
+   "accept": [
+    "stalemate"
+   ]
+  },
+  {
+   "id": 492,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "How many players from one team are on court in indoor volleyball?",
+   "answer": "Six",
+   "accept": [
+    "six",
+    "6"
+   ]
+  },
+  {
+   "id": 493,
+   "category": "Sports & Games",
+   "difficulty": "easy",
+   "question": "Which trophy is awarded to the NHL champions?",
+   "answer": "The Stanley Cup",
+   "accept": [
+    "stanley cup",
+    "the stanley cup"
+   ]
+  },
+  {
+   "id": 494,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "The Ryder Cup is contested in which sport?",
+   "answer": "Golf",
+   "accept": [
+    "golf"
+   ]
+  },
+  {
+   "id": 495,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "Which Japanese martial art's name translates as 'the gentle way'?",
+   "answer": "Judo",
+   "accept": [
+    "judo"
+   ]
+  },
+  {
+   "id": 496,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "How many pieces does each player start with in draughts (checkers)?",
+   "answer": "12",
+   "accept": [
+    "12",
+    "twelve"
+   ]
+  },
+  {
+   "id": 497,
+   "category": "Sports & Games",
+   "difficulty": "medium",
+   "question": "What is a perfect score in a game of ten-pin bowling?",
+   "answer": "300",
+   "accept": [
+    "300",
+    "three hundred"
+   ]
+  },
+  {
+   "id": 498,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "Which sport uses the fielding positions 'silly point' and 'gully'?",
+   "answer": "Cricket",
+   "accept": [
+    "cricket"
+   ]
+  },
+  {
+   "id": 499,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the term for words spelled the same but with different meanings?",
+   "answer": "Homonyms",
+   "accept": [
+    "homonym",
+    "homonyms",
+    "homograph",
+    "homographs"
+   ]
+  },
+  {
+   "id": 500,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "What does the prefix 'bio-' mean?",
+   "answer": "Life",
+   "accept": [
+    "life"
+   ]
+  },
+  {
+   "id": 501,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "Hangul is the writing system of which language?",
+   "answer": "Korean",
+   "accept": [
+    "korean"
+   ]
+  },
+  {
+   "id": 502,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the literary term for deliberate exaggeration, as in 'I've told you a million times'?",
+   "answer": "Hyperbole",
+   "accept": [
+    "hyperbole"
+   ]
+  },
+  {
+   "id": 503,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What does the Latin phrase 'vice versa' mean?",
+   "answer": "The other way around",
+   "accept": [
+    "the other way around",
+    "other way round",
+    "conversely",
+    "the reverse"
+   ]
+  },
+  {
+   "id": 504,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "The English word 'tycoon' was borrowed from which language?",
+   "answer": "Japanese",
+   "accept": [
+    "japanese",
+    "taikun"
+   ]
+  },
+  {
+   "id": 505,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the term for an abbreviation formed from initials and pronounced as a word, like NASA?",
+   "answer": "An acronym",
+   "accept": [
+    "acronym",
+    "an acronym"
+   ]
+  },
+  {
+   "id": 506,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "Roughly how many Chinese characters are considered necessary for basic literacy?",
+   "answer": "About 3,000",
+   "accept": [
+    "3000",
+    "3,000",
+    "about 3000",
+    "around 3000",
+    "two to three thousand"
+   ]
+  },
+  {
+   "id": 507,
+   "category": "Language & Words",
+   "difficulty": "medium",
+   "question": "What is the name for a sentence that uses every letter of the alphabet?",
+   "answer": "A pangram",
+   "accept": [
+    "pangram",
+    "a pangram"
+   ]
+  },
+  {
+   "id": 508,
+   "category": "Language & Words",
+   "difficulty": "easy",
+   "question": "What is the word for a term with the opposite meaning of another?",
+   "answer": "An antonym",
+   "accept": [
+    "antonym",
+    "an antonym"
+   ]
+  },
+  {
+   "id": 509,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'ROM' stand for?",
+   "answer": "Read-Only Memory",
+   "accept": [
+    "read only memory",
+    "read-only memory"
+   ]
+  },
+  {
+   "id": 510,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which computer scientist popularised the term 'bug' after logging a moth found in a relay?",
+   "answer": "Grace Hopper",
+   "accept": [
+    "grace hopper",
+    "hopper"
+   ]
+  },
+  {
+   "id": 511,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'GIF' stand for?",
+   "answer": "Graphics Interchange Format",
+   "accept": [
+    "graphics interchange format"
+   ]
+  },
+  {
+   "id": 512,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "Which company released the first commercially available microprocessor, the 4004?",
+   "answer": "Intel",
+   "accept": [
+    "intel"
+   ]
+  },
+  {
+   "id": 513,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does 'URL' stand for?",
+   "answer": "Uniform Resource Locator",
+   "accept": [
+    "uniform resource locator",
+    "universal resource locator"
+   ]
+  },
+  {
+   "id": 514,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "What does the encryption standard 'AES' stand for?",
+   "answer": "Advanced Encryption Standard",
+   "accept": [
+    "advanced encryption standard"
+   ]
+  },
+  {
+   "id": 515,
+   "category": "Technology",
+   "difficulty": "medium",
+   "question": "The programming language R is designed chiefly for what field?",
+   "answer": "Statistics and data analysis",
+   "accept": [
+    "statistics",
+    "statistical computing",
+    "data analysis",
+    "stats"
+   ]
+  },
+  {
+   "id": 516,
+   "category": "Technology",
+   "difficulty": "easy",
+   "question": "What does it mean for software to be 'open source'?",
+   "answer": "Its source code is publicly available to view, modify, and share",
+   "accept": [
+    "source code is public",
+    "source code available",
+    "code is freely available",
+    "publicly available source code"
+   ]
+  },
+  {
+   "id": 517,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which network protocol automatically assigns IP addresses to devices joining a network?",
+   "answer": "DHCP",
+   "accept": [
+    "dhcp",
+    "dynamic host configuration protocol"
+   ]
+  },
+  {
+   "id": 518,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which 1977 console, built around cartridges, became the first hugely successful home game system?",
+   "answer": "The Atari 2600",
+   "accept": [
+    "atari 2600",
+    "atari vcs",
+    "the atari 2600",
+    "atari"
+   ]
+  },
+  {
+   "id": 519,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the collective noun for a group of kangaroos?",
+   "answer": "A mob",
+   "accept": [
+    "mob",
+    "a mob",
+    "troop"
+   ]
+  },
+  {
+   "id": 520,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is a group of geese called when flying in formation?",
+   "answer": "A skein",
+   "accept": [
+    "skein",
+    "a skein",
+    "wedge"
+   ]
+  },
+  {
+   "id": 521,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the fear of enclosed spaces called?",
+   "answer": "Claustrophobia",
+   "accept": [
+    "claustrophobia"
+   ]
+  },
+  {
+   "id": 522,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the fear of spiders called?",
+   "answer": "Arachnophobia",
+   "accept": [
+    "arachnophobia"
+   ]
+  },
+  {
+   "id": 523,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the vertical groove between the nose and the upper lip called?",
+   "answer": "The philtrum",
+   "accept": [
+    "philtrum",
+    "the philtrum"
+   ]
+  },
+  {
+   "id": 524,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "On a standard die, opposite faces always add up to what number?",
+   "answer": "Seven",
+   "accept": [
+    "seven",
+    "7"
+   ]
+  },
+  {
+   "id": 525,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the traditional gift for a 50th wedding anniversary?",
+   "answer": "Gold",
+   "accept": [
+    "gold"
+   ]
+  },
+  {
+   "id": 526,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many zeroes are in a billion, on the short scale?",
+   "answer": "Nine",
+   "accept": [
+    "nine",
+    "9"
+   ]
+  },
+  {
+   "id": 527,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which is the only US state that grows coffee commercially?",
+   "answer": "Hawaii",
+   "accept": [
+    "hawaii"
+   ]
+  },
+  {
+   "id": 528,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is a ten-sided polygon called?",
+   "answer": "A decagon",
+   "accept": [
+    "decagon",
+    "a decagon"
+   ]
+  },
+  {
+   "id": 529,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the term for an animal that eats both plants and other animals?",
+   "answer": "An omnivore",
+   "accept": [
+    "omnivore",
+    "an omnivore",
+    "omnivorous"
+   ]
+  },
+  {
+   "id": 530,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "At what temperature does water boil in Fahrenheit?",
+   "answer": "212°F",
+   "accept": [
+    "212",
+    "212f",
+    "212 degrees"
+   ]
+  },
+  {
+   "id": 531,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of hyenas?",
+   "answer": "A cackle",
+   "accept": [
+    "cackle",
+    "a cackle",
+    "clan"
+   ]
+  },
+  {
+   "id": 532,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "How many Great Lakes are there in North America?",
+   "answer": "Five",
+   "accept": [
+    "five",
+    "5"
+   ]
+  },
+  {
+   "id": 533,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What does a seismograph measure?",
+   "answer": "Earthquakes and ground motion",
+   "accept": [
+    "earthquakes",
+    "earthquake",
+    "seismic activity",
+    "ground motion",
+    "tremors"
+   ]
+  },
+  {
+   "id": 534,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the scientific study and exploration of caves called?",
+   "answer": "Speleology",
+   "accept": [
+    "speleology",
+    "spelunking"
+   ]
+  },
+  {
+   "id": 535,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which number is widely avoided in Chinese, Japanese, and Korean culture because it sounds like the word for 'death'?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 536,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the word for a rearrangement of the letters of one word to form another?",
+   "answer": "An anagram",
+   "accept": [
+    "anagram",
+    "an anagram"
+   ]
+  },
+  {
+   "id": 537,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which spice is the most widely traded in the world?",
+   "answer": "Black pepper",
+   "accept": [
+    "black pepper",
+    "pepper",
+    "peppercorn"
+   ]
+  },
+  {
+   "id": 538,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of porcupines?",
+   "answer": "A prickle",
+   "accept": [
+    "prickle",
+    "a prickle"
+   ]
+  },
+  {
+   "id": 539,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "Which planet is named after the Roman god of the sea?",
+   "answer": "Neptune",
+   "accept": [
+    "neptune"
+   ]
+  },
+  {
+   "id": 540,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What do we call a year containing 366 days?",
+   "answer": "A leap year",
+   "accept": [
+    "leap year",
+    "a leap year"
+   ]
+  },
+  {
+   "id": 541,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "Which two primary colours are mixed to make green?",
+   "answer": "Blue and yellow",
+   "accept": [
+    "blue and yellow",
+    "yellow and blue"
+   ]
+  },
+  {
+   "id": 542,
+   "category": "Odds & Ends",
+   "difficulty": "easy",
+   "question": "What is the name for the apparent line where the sky meets the land or sea?",
+   "answer": "The horizon",
+   "accept": [
+    "horizon",
+    "the horizon"
+   ]
+  },
+  {
+   "id": 543,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "How many strings does a standard ukulele have?",
+   "answer": "Four",
+   "accept": [
+    "four",
+    "4"
+   ]
+  },
+  {
+   "id": 544,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "What is the name for the shortest day of the year?",
+   "answer": "The winter solstice",
+   "accept": [
+    "winter solstice",
+    "the winter solstice",
+    "solstice"
+   ]
+  },
+  {
+   "id": 545,
+   "category": "Odds & Ends",
+   "difficulty": "medium",
+   "question": "Which metal is liquid at room temperature?",
+   "answer": "Mercury",
+   "accept": [
+    "mercury"
+   ]
+  },
+  {
+   "id": 546,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which country borders both the Caspian Sea and the Persian Gulf?",
+   "answer": "Iran",
+   "accept": [
+    "iran"
+   ]
+  },
+  {
+   "id": 547,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which country has three capital cities, splitting its legislative, executive, and judicial branches?",
+   "answer": "South Africa",
+   "accept": [
+    "south africa"
+   ]
+  },
+  {
+   "id": 548,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the deepest point in the Atlantic Ocean?",
+   "answer": "The Milwaukee Deep, in the Puerto Rico Trench",
+   "accept": [
+    "milwaukee deep",
+    "puerto rico trench",
+    "the milwaukee deep"
+   ]
+  },
+  {
+   "id": 549,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which country contains Alert, the northernmost permanently inhabited settlement on Earth?",
+   "answer": "Canada",
+   "accept": [
+    "canada"
+   ]
+  },
+  {
+   "id": 550,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the largest sand island in the world?",
+   "answer": "K'gari (Fraser Island), Australia",
+   "accept": [
+    "kgari",
+    "k'gari",
+    "fraser island"
+   ]
+  },
+  {
+   "id": 551,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "The Torres Strait separates Australia from which country?",
+   "answer": "Papua New Guinea",
+   "accept": [
+    "papua new guinea",
+    "png"
+   ]
+  },
+  {
+   "id": 552,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which is the only country whose English name begins with the letter Q?",
+   "answer": "Qatar",
+   "accept": [
+    "qatar"
+   ]
+  },
+  {
+   "id": 553,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which is the largest country in the world with no permanent rivers?",
+   "answer": "Saudi Arabia",
+   "accept": [
+    "saudi arabia",
+    "saudi"
+   ]
+  },
+  {
+   "id": 554,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the highest navigable lake in the world?",
+   "answer": "Lake Titicaca",
+   "accept": [
+    "titicaca",
+    "lake titicaca"
+   ]
+  },
+  {
+   "id": 555,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which strait separates Alaska from Russia?",
+   "answer": "The Bering Strait",
+   "accept": [
+    "bering strait",
+    "the bering strait",
+    "bering"
+   ]
+  },
+  {
+   "id": 556,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "What is the largest peninsula in the world?",
+   "answer": "The Arabian Peninsula",
+   "accept": [
+    "arabian peninsula",
+    "arabia",
+    "the arabian peninsula"
+   ]
+  },
+  {
+   "id": 557,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which two US states each border eight others, more than any elsewhere?",
+   "answer": "Tennessee and Missouri",
+   "accept": [
+    "tennessee and missouri",
+    "missouri and tennessee"
+   ]
+  },
+  {
+   "id": 558,
+   "category": "Geography",
+   "difficulty": "hard",
+   "question": "Which African country has the most pyramids?",
+   "answer": "Sudan",
+   "accept": [
+    "sudan"
+   ]
+  },
+  {
+   "id": 559,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the medical term for the study of the causes of disease?",
+   "answer": "Aetiology (etiology)",
+   "accept": [
+    "etiology",
+    "aetiology"
+   ]
+  },
+  {
+   "id": 560,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which particle mediates the electromagnetic force?",
+   "answer": "The photon",
+   "accept": [
+    "photon",
+    "the photon"
+   ]
+  },
+  {
+   "id": 561,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the second most abundant element in Earth's crust?",
+   "answer": "Silicon",
+   "accept": [
+    "silicon",
+    "si"
+   ]
+  },
+  {
+   "id": 562,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the SI unit of radioactivity?",
+   "answer": "The becquerel",
+   "accept": [
+    "becquerel",
+    "the becquerel",
+    "bq"
+   ]
+  },
+  {
+   "id": 563,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the term for the point in an orbit closest to the Sun?",
+   "answer": "Perihelion",
+   "accept": [
+    "perihelion"
+   ]
+  },
+  {
+   "id": 564,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which part of the brain governs balance and fine motor coordination?",
+   "answer": "The cerebellum",
+   "accept": [
+    "cerebellum",
+    "the cerebellum"
+   ]
+  },
+  {
+   "id": 565,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which gas law states that a gas's pressure and volume are inversely proportional at constant temperature?",
+   "answer": "Boyle's Law",
+   "accept": [
+    "boyle's law",
+    "boyles law",
+    "boyle"
+   ]
+  },
+  {
+   "id": 566,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which moon of Saturn has lakes and seas of liquid methane?",
+   "answer": "Titan",
+   "accept": [
+    "titan"
+   ]
+  },
+  {
+   "id": 567,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which type of ionising radiation can be blocked by a sheet of paper?",
+   "answer": "Alpha radiation",
+   "accept": [
+    "alpha",
+    "alpha radiation",
+    "alpha particles"
+   ]
+  },
+  {
+   "id": 568,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the SI unit of pressure?",
+   "answer": "The pascal",
+   "accept": [
+    "pascal",
+    "the pascal",
+    "pa"
+   ]
+  },
+  {
+   "id": 569,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the term for the process by which a cell engulfs a solid particle?",
+   "answer": "Phagocytosis",
+   "accept": [
+    "phagocytosis"
+   ]
+  },
+  {
+   "id": 570,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which mineral sits at 10, the top of the Mohs hardness scale?",
+   "answer": "Diamond",
+   "accept": [
+    "diamond"
+   ]
+  },
+  {
+   "id": 571,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "What is the term for an animal that generates its own body heat internally?",
+   "answer": "An endotherm",
+   "accept": [
+    "endotherm",
+    "endothermic",
+    "warm-blooded",
+    "homeotherm"
+   ]
+  },
+  {
+   "id": 572,
+   "category": "Science & Nature",
+   "difficulty": "hard",
+   "question": "Which blood vessel is the largest artery in the human body?",
+   "answer": "The aorta",
+   "accept": [
+    "aorta",
+    "the aorta"
+   ]
+  },
+  {
+   "id": 573,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which 1494 treaty divided newly discovered lands between Spain and Portugal?",
+   "answer": "The Treaty of Tordesillas",
+   "accept": [
+    "tordesillas",
+    "treaty of tordesillas",
+    "the treaty of tordesillas"
+   ]
+  },
+  {
+   "id": 574,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Who was the first Roman emperor to convert to Christianity?",
+   "answer": "Constantine the Great",
+   "accept": [
+    "constantine",
+    "constantine i",
+    "constantine the great"
+   ]
+  },
+  {
+   "id": 575,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which 1066 battle led to Norman rule over England?",
+   "answer": "The Battle of Hastings",
+   "accept": [
+    "hastings",
+    "battle of hastings",
+    "the battle of hastings"
+   ]
+  },
+  {
+   "id": 576,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "What is the term for the military government of Japan headed by a shogun?",
+   "answer": "The shogunate (bakufu)",
+   "accept": [
+    "shogunate",
+    "bakufu",
+    "the shogunate"
+   ]
+  },
+  {
+   "id": 577,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which 1884–85 conference formalised the European partition of Africa?",
+   "answer": "The Berlin Conference",
+   "accept": [
+    "berlin conference",
+    "the berlin conference",
+    "congo conference"
+   ]
+  },
+  {
+   "id": 578,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which Carthaginian general crossed the Alps with war elephants to invade Italy?",
+   "answer": "Hannibal",
+   "accept": [
+    "hannibal",
+    "hannibal barca"
+   ]
+  },
+  {
+   "id": 579,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which short-lived Chinese dynasty immediately preceded the Tang?",
+   "answer": "The Sui dynasty",
+   "accept": [
+    "sui",
+    "sui dynasty",
+    "the sui"
+   ]
+  },
+  {
+   "id": 580,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which 1815 congress redrew the map of Europe after Napoleon's defeat?",
+   "answer": "The Congress of Vienna",
+   "accept": [
+    "congress of vienna",
+    "vienna",
+    "the congress of vienna"
+   ]
+  },
+  {
+   "id": 581,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Who was independent India's first Prime Minister?",
+   "answer": "Jawaharlal Nehru",
+   "accept": [
+    "nehru",
+    "jawaharlal nehru"
+   ]
+  },
+  {
+   "id": 582,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "The Treaty of Nanking in 1842 ended which conflict?",
+   "answer": "The First Opium War",
+   "accept": [
+    "first opium war",
+    "opium war",
+    "the first opium war"
+   ]
+  },
+  {
+   "id": 583,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "What was the name of the spacecraft that carried the first human into orbit?",
+   "answer": "Vostok 1",
+   "accept": [
+    "vostok 1",
+    "vostok",
+    "vostok i"
+   ]
+  },
+  {
+   "id": 584,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Whose tomb did Howard Carter open in the Valley of the Kings in 1922?",
+   "answer": "Tutankhamun",
+   "accept": [
+    "tutankhamun",
+    "tutankhamen",
+    "king tut",
+    "tut"
+   ]
+  },
+  {
+   "id": 585,
+   "category": "History",
+   "difficulty": "hard",
+   "question": "Which empire formally dissolved when its sultanate was abolished in 1922?",
+   "answer": "The Ottoman Empire",
+   "accept": [
+    "ottoman",
+    "ottoman empire",
+    "the ottoman empire"
+   ]
+  },
+  {
+   "id": 586,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which 11th-century Japanese noblewoman wrote The Tale of Genji, often called the world's first novel?",
+   "answer": "Murasaki Shikibu",
+   "accept": [
+    "murasaki shikibu",
+    "murasaki",
+    "lady murasaki"
+   ]
+  },
+  {
+   "id": 587,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Irish author wrote Ulysses?",
+   "answer": "James Joyce",
+   "accept": [
+    "james joyce",
+    "joyce"
+   ]
+  },
+  {
+   "id": 588,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "What is the term for a poem written in mourning for the dead?",
+   "answer": "An elegy",
+   "accept": [
+    "elegy",
+    "an elegy"
+   ]
+  },
+  {
+   "id": 589,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which novel centres on a student named Raskolnikov?",
+   "answer": "Crime and Punishment",
+   "accept": [
+    "crime and punishment"
+   ]
+  },
+  {
+   "id": 590,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Who wrote The Canterbury Tales?",
+   "answer": "Geoffrey Chaucer",
+   "accept": [
+    "chaucer",
+    "geoffrey chaucer"
+   ]
+  },
+  {
+   "id": 591,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Nigerian playwright became the first African to win the Nobel Prize in Literature?",
+   "answer": "Wole Soyinka",
+   "accept": [
+    "wole soyinka",
+    "soyinka"
+   ]
+  },
+  {
+   "id": 592,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Who narrates The Great Gatsby?",
+   "answer": "Nick Carraway",
+   "accept": [
+    "nick carraway",
+    "carraway",
+    "nick"
+   ]
+  },
+  {
+   "id": 593,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Kafka novel follows a man named Josef K. prosecuted for an unnamed crime?",
+   "answer": "The Trial",
+   "accept": [
+    "the trial",
+    "der prozess"
+   ]
+  },
+  {
+   "id": 594,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Who wrote the 1952 novel Invisible Man?",
+   "answer": "Ralph Ellison",
+   "accept": [
+    "ralph ellison",
+    "ellison"
+   ]
+  },
+  {
+   "id": 595,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "What interlocking three-line verse form did Dante use for the Divine Comedy?",
+   "answer": "Terza rima",
+   "accept": [
+    "terza rima"
+   ]
+  },
+  {
+   "id": 596,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Which Tolstoy novel centres on a love affair between a married woman and Count Vronsky?",
+   "answer": "Anna Karenina",
+   "accept": [
+    "anna karenina"
+   ]
+  },
+  {
+   "id": 597,
+   "category": "Literature",
+   "difficulty": "hard",
+   "question": "Who wrote One Flew Over the Cuckoo's Nest?",
+   "answer": "Ken Kesey",
+   "accept": [
+    "ken kesey",
+    "kesey"
+   ]
+  },
+  {
+   "id": 598,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which film was the first to sweep all five major Academy Awards?",
+   "answer": "It Happened One Night (1934)",
+   "accept": [
+    "it happened one night"
+   ]
+  },
+  {
+   "id": 599,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which 1954 Japanese epic follows villagers who hire masterless warriors to defend their harvest?",
+   "answer": "Seven Samurai",
+   "accept": [
+    "seven samurai",
+    "shichinin no samurai"
+   ]
+  },
+  {
+   "id": 600,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which 1999 film popularised the 'bullet time' visual effect?",
+   "answer": "The Matrix",
+   "accept": [
+    "the matrix",
+    "matrix"
+   ]
+  },
+  {
+   "id": 601,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "What is the name of the newspaper Charles Foster Kane builds his empire on in Citizen Kane?",
+   "answer": "The New York Inquirer",
+   "accept": [
+    "the inquirer",
+    "new york inquirer",
+    "the new york inquirer",
+    "inquirer"
+   ]
+  },
+  {
+   "id": 602,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which performer holds the record for most competitive acting Oscars?",
+   "answer": "Katharine Hepburn, with four",
+   "accept": [
+    "katharine hepburn",
+    "katherine hepburn",
+    "hepburn"
+   ]
+  },
+  {
+   "id": 603,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which Hong Kong crime thriller was remade in the US as The Departed?",
+   "answer": "Infernal Affairs",
+   "accept": [
+    "infernal affairs",
+    "mou gaan dou"
+   ]
+  },
+  {
+   "id": 604,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which Brazilian film depicts life in a Rio favela across two decades, co-directed by Fernando Meirelles?",
+   "answer": "City of God",
+   "accept": [
+    "city of god",
+    "cidade de deus"
+   ]
+  },
+  {
+   "id": 605,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "In which Kubrick film is a criminal subjected to the Ludovico Technique?",
+   "answer": "A Clockwork Orange",
+   "accept": [
+    "a clockwork orange",
+    "clockwork orange"
+   ]
+  },
+  {
+   "id": 606,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "What is the name of the sentient computer aboard the Discovery One in 2001: A Space Odyssey?",
+   "answer": "HAL 9000",
+   "accept": [
+    "hal",
+    "hal 9000"
+   ]
+  },
+  {
+   "id": 607,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which HBO drama examines Baltimore through a different institution each season?",
+   "answer": "The Wire",
+   "accept": [
+    "the wire",
+    "wire"
+   ]
+  },
+  {
+   "id": 608,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Who co-created Twin Peaks with Mark Frost?",
+   "answer": "David Lynch",
+   "accept": [
+    "david lynch",
+    "lynch"
+   ]
+  },
+  {
+   "id": 609,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which 1927 German film is the earliest surviving feature-length science fiction movie?",
+   "answer": "Metropolis",
+   "accept": [
+    "metropolis"
+   ]
+  },
+  {
+   "id": 610,
+   "category": "Film & TV",
+   "difficulty": "hard",
+   "question": "Which director's Hong Kong films include Hard Boiled and The Killer, before he moved to Hollywood?",
+   "answer": "John Woo",
+   "accept": [
+    "john woo",
+    "woo"
+   ]
+  },
+  {
+   "id": 611,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Italian tempo marking means 'very fast'?",
+   "answer": "Presto",
+   "accept": [
+    "presto"
+   ]
+  },
+  {
+   "id": 612,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which composer's ballet The Rite of Spring caused a riot at its 1913 premiere?",
+   "answer": "Igor Stravinsky",
+   "accept": [
+    "stravinsky",
+    "igor stravinsky"
+   ]
+  },
+  {
+   "id": 613,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the interval from C up to G called?",
+   "answer": "A perfect fifth",
+   "accept": [
+    "perfect fifth",
+    "a perfect fifth",
+    "fifth"
+   ]
+  },
+  {
+   "id": 614,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which saxophonist recorded the 1965 spiritual jazz suite A Love Supreme?",
+   "answer": "John Coltrane",
+   "accept": [
+    "john coltrane",
+    "coltrane"
+   ]
+  },
+  {
+   "id": 615,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the term for three notes played in the time normally taken by two?",
+   "answer": "A triplet",
+   "accept": [
+    "triplet",
+    "a triplet"
+   ]
+  },
+  {
+   "id": 616,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Indian string instrument did Ravi Shankar bring to Western audiences?",
+   "answer": "The sitar",
+   "accept": [
+    "sitar",
+    "the sitar"
+   ]
+  },
+  {
+   "id": 617,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the lowest female singing voice type?",
+   "answer": "Contralto",
+   "accept": [
+    "contralto",
+    "alto"
+   ]
+  },
+  {
+   "id": 618,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which French composer wrote the opera Carmen?",
+   "answer": "Georges Bizet",
+   "accept": [
+    "bizet",
+    "georges bizet"
+   ]
+  },
+  {
+   "id": 619,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Who composed the score for the musical West Side Story?",
+   "answer": "Leonard Bernstein",
+   "accept": [
+    "leonard bernstein",
+    "bernstein"
+   ]
+  },
+  {
+   "id": 620,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the term for combining two or more independent melodic lines simultaneously?",
+   "answer": "Counterpoint",
+   "accept": [
+    "counterpoint",
+    "polyphony"
+   ]
+  },
+  {
+   "id": 621,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Korean musical storytelling tradition features a single singer accompanied by a drummer?",
+   "answer": "Pansori",
+   "accept": [
+    "pansori",
+    "p'ansori"
+   ]
+  },
+  {
+   "id": 622,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "How many notes are in a pentatonic scale?",
+   "answer": "Five",
+   "accept": [
+    "five",
+    "5"
+   ]
+  },
+  {
+   "id": 623,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "What is the pungent, sticky fermented soybean dish eaten at Japanese breakfasts?",
+   "answer": "Nattō",
+   "accept": [
+    "natto",
+    "nattō"
+   ]
+  },
+  {
+   "id": 624,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which genus of mould gives blue cheese its veining?",
+   "answer": "Penicillium",
+   "accept": [
+    "penicillium",
+    "penicillium roqueforti"
+   ]
+  },
+  {
+   "id": 625,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which part of the crocus flower is harvested to make saffron?",
+   "answer": "The stigma",
+   "accept": [
+    "stigma",
+    "the stigma",
+    "stigmas",
+    "threads"
+   ]
+  },
+  {
+   "id": 626,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "What is the Cantonese term for the seared, smoky flavour a hot wok imparts to stir-fried food?",
+   "answer": "Wok hei",
+   "accept": [
+    "wok hei",
+    "wok hay",
+    "breath of the wok"
+   ]
+  },
+  {
+   "id": 627,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which acid gives yoghurt its characteristic tang?",
+   "answer": "Lactic acid",
+   "accept": [
+    "lactic acid",
+    "lactic"
+   ]
+  },
+  {
+   "id": 628,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which ancient grain is traditionally used to make Ethiopian injera?",
+   "answer": "Teff",
+   "accept": [
+    "teff"
+   ]
+  },
+  {
+   "id": 629,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which Sicilian fortified wine is traditionally used in tiramisu and zabaglione?",
+   "answer": "Marsala",
+   "accept": [
+    "marsala"
+   ]
+  },
+  {
+   "id": 630,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "What is the Japanese name for the sheets of dried seaweed wrapped around maki rolls?",
+   "answer": "Nori",
+   "accept": [
+    "nori"
+   ]
+  },
+  {
+   "id": 631,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which South American country is the origin of ceviche?",
+   "answer": "Peru",
+   "accept": [
+    "peru"
+   ]
+  },
+  {
+   "id": 632,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "What is the fermented Korean red chilli paste called?",
+   "answer": "Gochujang",
+   "accept": [
+    "gochujang"
+   ]
+  },
+  {
+   "id": 633,
+   "category": "Food & Drink",
+   "difficulty": "hard",
+   "question": "Which two ingredients form the base of traditional Turkish delight?",
+   "answer": "Starch and sugar",
+   "accept": [
+    "starch and sugar",
+    "sugar and starch",
+    "cornstarch and sugar"
+   ]
+  },
+  {
+   "id": 634,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Netherlandish painter created the surreal triptych The Garden of Earthly Delights?",
+   "answer": "Hieronymus Bosch",
+   "accept": [
+    "bosch",
+    "hieronymus bosch"
+   ]
+  },
+  {
+   "id": 635,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the term for an artwork made of three hinged panels?",
+   "answer": "A triptych",
+   "accept": [
+    "triptych",
+    "a triptych"
+   ]
+  },
+  {
+   "id": 636,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Russian artist founded Suprematism with works like Black Square?",
+   "answer": "Kazimir Malevich",
+   "accept": [
+    "malevich",
+    "kazimir malevich"
+   ]
+  },
+  {
+   "id": 637,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the Italian term for the soft, smoky blending of edges that Leonardo perfected?",
+   "answer": "Sfumato",
+   "accept": [
+    "sfumato"
+   ]
+  },
+  {
+   "id": 638,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Danish architect designed the Sydney Opera House?",
+   "answer": "Jørn Utzon",
+   "accept": [
+    "jorn utzon",
+    "utzon",
+    "jørn utzon"
+   ]
+  },
+  {
+   "id": 639,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which American sculptor invented the mobile as an art form?",
+   "answer": "Alexander Calder",
+   "accept": [
+    "calder",
+    "alexander calder"
+   ]
+  },
+  {
+   "id": 640,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the term for the study and interpretation of symbolic imagery in art?",
+   "answer": "Iconography",
+   "accept": [
+    "iconography",
+    "iconology"
+   ]
+  },
+  {
+   "id": 641,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Mexican muralist painted Man at the Crossroads, destroyed at Rockefeller Center?",
+   "answer": "Diego Rivera",
+   "accept": [
+    "diego rivera",
+    "rivera"
+   ]
+  },
+  {
+   "id": 642,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which architect designed the spiralling Solomon R. Guggenheim Museum in New York?",
+   "answer": "Frank Lloyd Wright",
+   "accept": [
+    "frank lloyd wright",
+    "wright"
+   ]
+  },
+  {
+   "id": 643,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the Renaissance technique of representing depth using a single vanishing point called?",
+   "answer": "Linear perspective",
+   "accept": [
+    "linear perspective",
+    "one-point perspective",
+    "perspective"
+   ]
+  },
+  {
+   "id": 644,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "What is the Chinese brush-and-ink painting tradition, emphasising tonal washes over colour, called?",
+   "answer": "Shuimohua — ink wash painting",
+   "accept": [
+    "shuimohua",
+    "ink wash",
+    "ink wash painting",
+    "shui mo hua",
+    "literati painting"
+   ]
+  },
+  {
+   "id": 645,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "What are the three weapons used in Olympic fencing?",
+   "answer": "Foil, épée, and sabre",
+   "accept": [
+    "foil epee sabre",
+    "foil, epee, sabre",
+    "foil épée sabre",
+    "foil epee saber"
+   ]
+  },
+  {
+   "id": 646,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "Which country has won more Olympic gold medals than any other?",
+   "answer": "The United States",
+   "accept": [
+    "united states",
+    "usa",
+    "us",
+    "america"
+   ]
+  },
+  {
+   "id": 647,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "What is the official length of a marathon in kilometres?",
+   "answer": "42.195 km",
+   "accept": [
+    "42.195",
+    "42.195 km",
+    "42195 metres",
+    "26.2 miles"
+   ]
+  },
+  {
+   "id": 648,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "In cricket, what is a batter dismissed without scoring said to have made?",
+   "answer": "A duck",
+   "accept": [
+    "duck",
+    "a duck"
+   ]
+  },
+  {
+   "id": 649,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "How many players from each team are in the water in a game of water polo?",
+   "answer": "Seven",
+   "accept": [
+    "seven",
+    "7"
+   ]
+  },
+  {
+   "id": 650,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "Which horse race is nicknamed 'the Run for the Roses'?",
+   "answer": "The Kentucky Derby",
+   "accept": [
+    "kentucky derby",
+    "the kentucky derby"
+   ]
+  },
+  {
+   "id": 651,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "What is the raised clay ring in which a sumo bout takes place called?",
+   "answer": "The dohyō",
+   "accept": [
+    "dohyo",
+    "dohyō",
+    "the dohyo"
+   ]
+  },
+  {
+   "id": 652,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "What is the maximum possible break in a single frame of snooker?",
+   "answer": "147",
+   "accept": [
+    "147",
+    "one four seven"
+   ]
+  },
+  {
+   "id": 653,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "How many minutes long is a period in professional ice hockey?",
+   "answer": "20 minutes",
+   "accept": [
+    "20",
+    "twenty",
+    "20 minutes"
+   ]
+  },
+  {
+   "id": 654,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "Which chess opening begins with the moves 1.e4 c5?",
+   "answer": "The Sicilian Defence",
+   "accept": [
+    "sicilian",
+    "sicilian defence",
+    "sicilian defense",
+    "the sicilian"
+   ]
+  },
+  {
+   "id": 655,
+   "category": "Sports & Games",
+   "difficulty": "hard",
+   "question": "In Go, what is the term for a position that would repeat the board state, and is therefore forbidden?",
+   "answer": "Ko",
+   "accept": [
+    "ko",
+    "ko rule"
+   ]
+  },
+  {
+   "id": 656,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the term for words that sound alike but differ in spelling and meaning?",
+   "answer": "Homophones",
+   "accept": [
+    "homophone",
+    "homophones"
+   ]
+  },
+  {
+   "id": 657,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "Finnish and Hungarian both belong to which language family?",
+   "answer": "Uralic (Finno-Ugric)",
+   "accept": [
+    "uralic",
+    "finno-ugric",
+    "finno ugric"
+   ]
+  },
+  {
+   "id": 658,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the linguistic term for the smallest unit that carries meaning?",
+   "answer": "A morpheme",
+   "accept": [
+    "morpheme",
+    "a morpheme"
+   ]
+  },
+  {
+   "id": 659,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "Which language combines three scripts: kanji, hiragana, and katakana?",
+   "answer": "Japanese",
+   "accept": [
+    "japanese"
+   ]
+  },
+  {
+   "id": 660,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the term for a phrase whose meaning cannot be deduced from its individual words?",
+   "answer": "An idiom",
+   "accept": [
+    "idiom",
+    "an idiom",
+    "idiomatic expression"
+   ]
+  },
+  {
+   "id": 661,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the branch of linguistics concerned with sentence structure?",
+   "answer": "Syntax",
+   "accept": [
+    "syntax"
+   ]
+  },
+  {
+   "id": 662,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "How many tones does Cantonese conventionally have?",
+   "answer": "Six (nine if checked tones are counted separately)",
+   "accept": [
+    "six",
+    "6",
+    "nine",
+    "9"
+   ]
+  },
+  {
+   "id": 663,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the term for a word that can mean its own opposite, such as 'cleave' or 'sanction'?",
+   "answer": "A contronym (auto-antonym)",
+   "accept": [
+    "contronym",
+    "contranym",
+    "auto-antonym",
+    "autoantonym",
+    "janus word"
+   ]
+  },
+  {
+   "id": 664,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the study of how language changes over time called?",
+   "answer": "Historical linguistics",
+   "accept": [
+    "historical linguistics",
+    "philology",
+    "diachronic linguistics"
+   ]
+  },
+  {
+   "id": 665,
+   "category": "Language & Words",
+   "difficulty": "hard",
+   "question": "What is the term for a name that has become the generic word for a product, like 'thermos'?",
+   "answer": "A genericised trademark (proprietary eponym)",
+   "accept": [
+    "genericized trademark",
+    "genericised trademark",
+    "generic trademark",
+    "proprietary eponym",
+    "eponym"
+   ]
+  },
+  {
+   "id": 666,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What does 'TCP' stand for?",
+   "answer": "Transmission Control Protocol",
+   "accept": [
+    "transmission control protocol"
+   ]
+  },
+  {
+   "id": 667,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which sorting algorithm partitions an array around a chosen pivot?",
+   "answer": "Quicksort",
+   "accept": [
+    "quicksort",
+    "quick sort"
+   ]
+  },
+  {
+   "id": 668,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "In which year was the first iPhone released?",
+   "answer": "2007",
+   "accept": [
+    "2007"
+   ]
+  },
+  {
+   "id": 669,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What does 'API' stand for?",
+   "answer": "Application Programming Interface",
+   "accept": [
+    "application programming interface"
+   ]
+  },
+  {
+   "id": 670,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "At which research laboratory was the Unix operating system created?",
+   "answer": "Bell Labs",
+   "accept": [
+    "bell labs",
+    "bell laboratories",
+    "at&t bell labs"
+   ]
+  },
+  {
+   "id": 671,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which data structure operates on a last-in, first-out basis?",
+   "answer": "A stack",
+   "accept": [
+    "stack",
+    "a stack",
+    "lifo"
+   ]
+  },
+  {
+   "id": 672,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What does the Domain Name System translate domain names into?",
+   "answer": "IP addresses",
+   "accept": [
+    "ip addresses",
+    "ip address",
+    "ip"
+   ]
+  },
+  {
+   "id": 673,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which programming paradigm avoids mutable state and side effects?",
+   "answer": "Functional programming",
+   "accept": [
+    "functional",
+    "functional programming"
+   ]
+  },
+  {
+   "id": 674,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What is the smallest unit of digital information?",
+   "answer": "A bit",
+   "accept": [
+    "bit",
+    "a bit",
+    "binary digit"
+   ]
+  },
+  {
+   "id": 675,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "What does 'RAID' stand for in data storage?",
+   "answer": "Redundant Array of Independent Disks",
+   "accept": [
+    "redundant array of independent disks",
+    "redundant array of inexpensive disks"
+   ]
+  },
+  {
+   "id": 676,
+   "category": "Technology",
+   "difficulty": "hard",
+   "question": "Which 1970s language, created at Bell Labs by Dennis Ritchie, underpins most modern systems programming?",
+   "answer": "C",
+   "accept": [
+    "c",
+    "c language"
+   ]
+  },
+  {
+   "id": 677,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of rhinoceroses?",
+   "answer": "A crash",
+   "accept": [
+    "crash",
+    "a crash"
+   ]
+  },
+  {
+   "id": 678,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the term for fear of the number thirteen?",
+   "answer": "Triskaidekaphobia",
+   "accept": [
+    "triskaidekaphobia"
+   ]
+  },
+  {
+   "id": 679,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many bones are in the human hand and wrist?",
+   "answer": "27",
+   "accept": [
+    "27",
+    "twenty-seven",
+    "twenty seven"
+   ]
+  },
+  {
+   "id": 680,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many faces does a dodecahedron have?",
+   "answer": "12",
+   "accept": [
+    "12",
+    "twelve"
+   ]
+  },
+  {
+   "id": 681,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many time zones does Russia span?",
+   "answer": "11",
+   "accept": [
+    "11",
+    "eleven"
+   ]
+  },
+  {
+   "id": 682,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is a group of otters floating together on water called?",
+   "answer": "A raft",
+   "accept": [
+    "raft",
+    "a raft",
+    "romp"
+   ]
+  },
+  {
+   "id": 683,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the pseudoscientific study of handwriting called?",
+   "answer": "Graphology",
+   "accept": [
+    "graphology"
+   ]
+  },
+  {
+   "id": 684,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "Which gas dominates the atmosphere of Venus?",
+   "answer": "Carbon dioxide",
+   "accept": [
+    "carbon dioxide",
+    "co2"
+   ]
+  },
+  {
+   "id": 685,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the fear of open or crowded spaces called?",
+   "answer": "Agoraphobia",
+   "accept": [
+    "agoraphobia"
+   ]
+  },
+  {
+   "id": 686,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many faces does an icosahedron have?",
+   "answer": "20",
+   "accept": [
+    "20",
+    "twenty"
+   ]
+  },
+  {
+   "id": 687,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of ferrets?",
+   "answer": "A business",
+   "accept": [
+    "business",
+    "a business"
+   ]
+  },
+  {
+   "id": 688,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the SI base unit of luminous intensity?",
+   "answer": "The candela",
+   "accept": [
+    "candela",
+    "the candela",
+    "cd"
+   ]
+  },
+  {
+   "id": 689,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the study of family lineage and descent called?",
+   "answer": "Genealogy",
+   "accept": [
+    "genealogy"
+   ]
+  },
+  {
+   "id": 690,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What Latin phrase does the abbreviation 'et al.' stand for?",
+   "answer": "Et alii",
+   "accept": [
+    "et alii",
+    "et alia",
+    "and others"
+   ]
+  },
+  {
+   "id": 691,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "How many syllables does a traditional Japanese tanka contain?",
+   "answer": "31",
+   "accept": [
+    "31",
+    "thirty-one",
+    "thirty one"
+   ]
+  },
+  {
+   "id": 692,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the collective noun for a group of pandas?",
+   "answer": "An embarrassment",
+   "accept": [
+    "embarrassment",
+    "an embarrassment"
+   ]
+  },
+  {
+   "id": 693,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the study and collection of coins and currency called?",
+   "answer": "Numismatics",
+   "accept": [
+    "numismatics"
+   ]
+  },
+  {
+   "id": 694,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the term for a design that reads as a word from more than one orientation?",
+   "answer": "An ambigram",
+   "accept": [
+    "ambigram",
+    "an ambigram"
+   ]
+  },
+  {
+   "id": 695,
+   "category": "Odds & Ends",
+   "difficulty": "hard",
+   "question": "What is the term for a 100th anniversary?",
+   "answer": "A centenary (centennial)",
+   "accept": [
+    "centenary",
+    "centennial",
+    "a centenary"
+   ]
+  },
+  {
+   "id": 696,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Polish-born Romantic composer wrote almost exclusively for solo piano?",
+   "answer": "Frédéric Chopin",
+   "accept": [
+    "chopin",
+    "frederic chopin",
+    "frédéric chopin"
+   ]
+  },
+  {
+   "id": 697,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Chopin's Waltz in D-flat major, Op. 64 No. 1, is popularly known by what nickname?",
+   "answer": "The Minute Waltz",
+   "accept": [
+    "minute waltz",
+    "the minute waltz"
+   ]
+  },
+  {
+   "id": 698,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Chopin prelude is nicknamed the 'Raindrop' for its repeated A-flat note?",
+   "answer": "Prelude Op. 28 No. 15",
+   "accept": [
+    "raindrop",
+    "raindrop prelude",
+    "prelude no 15",
+    "op 28 no 15"
+   ]
+  },
+  {
+   "id": 699,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Chopin's 'Revolutionary' Étude is traditionally linked to which event?",
+   "answer": "The Russian capture of Warsaw during the November Uprising",
+   "accept": [
+    "fall of warsaw",
+    "russian capture of warsaw",
+    "november uprising",
+    "warsaw uprising"
+   ]
+  },
+  {
+   "id": 700,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Chopin's body is buried in Paris, but his heart was returned to which city?",
+   "answer": "Warsaw",
+   "accept": [
+    "warsaw",
+    "warszawa"
+   ]
+  },
+  {
+   "id": 701,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which two Polish folk dance forms did Chopin elevate into concert works?",
+   "answer": "The mazurka and the polonaise",
+   "accept": [
+    "mazurka and polonaise",
+    "polonaise and mazurka",
+    "mazurkas and polonaises"
+   ]
+  },
+  {
+   "id": 702,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "In which city did Chopin spend most of his adult career?",
+   "answer": "Paris",
+   "accept": [
+    "paris"
+   ]
+  },
+  {
+   "id": 703,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Beethoven symphony is known as the 'Eroica'?",
+   "answer": "Symphony No. 3",
+   "accept": [
+    "3",
+    "third",
+    "no 3",
+    "symphony no 3",
+    "number 3"
+   ]
+  },
+  {
+   "id": 704,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Which Beethoven symphony opens with the famous short-short-short-long motif?",
+   "answer": "Symphony No. 5",
+   "accept": [
+    "5",
+    "fifth",
+    "no 5",
+    "symphony no 5",
+    "number 5"
+   ]
+  },
+  {
+   "id": 705,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "Beethoven's Piano Sonata No. 14 is universally known by what nickname?",
+   "answer": "The Moonlight Sonata",
+   "accept": [
+    "moonlight sonata",
+    "moonlight",
+    "the moonlight sonata"
+   ]
+  },
+  {
+   "id": 706,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What short musical form is Beethoven's 'Für Elise'?",
+   "answer": "A bagatelle",
+   "accept": [
+    "bagatelle",
+    "a bagatelle"
+   ]
+  },
+  {
+   "id": 707,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the name of Beethoven's only opera?",
+   "answer": "Fidelio",
+   "accept": [
+    "fidelio"
+   ]
+  },
+  {
+   "id": 708,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Beethoven symphony is nicknamed the 'Pastoral'?",
+   "answer": "Symphony No. 6",
+   "accept": [
+    "6",
+    "sixth",
+    "no 6",
+    "symphony no 6",
+    "number 6"
+   ]
+  },
+  {
+   "id": 709,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Beethoven set 'Ode to Joy' in his Ninth Symphony using a poem by which writer?",
+   "answer": "Friedrich Schiller",
+   "accept": [
+    "schiller",
+    "friedrich schiller"
+   ]
+  },
+  {
+   "id": 710,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What does the title of Mozart's serenade 'Eine kleine Nachtmusik' mean in English?",
+   "answer": "A Little Night Music",
+   "accept": [
+    "a little night music",
+    "a little serenade",
+    "little night music"
+   ]
+  },
+  {
+   "id": 711,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Mozart's final symphony, No. 41, carries which nickname?",
+   "answer": "Jupiter",
+   "accept": [
+    "jupiter",
+    "the jupiter symphony"
+   ]
+  },
+  {
+   "id": 712,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Mozart opera ends with its seducer protagonist dragged down to hell by a statue?",
+   "answer": "Don Giovanni",
+   "accept": [
+    "don giovanni"
+   ]
+  },
+  {
+   "id": 713,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "In which Austrian city was Mozart born?",
+   "answer": "Salzburg",
+   "accept": [
+    "salzburg"
+   ]
+  },
+  {
+   "id": 714,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Bach collection contains preludes and fugues in all 24 major and minor keys?",
+   "answer": "The Well-Tempered Clavier",
+   "accept": [
+    "well-tempered clavier",
+    "the well tempered clavier",
+    "das wohltemperierte klavier"
+   ]
+  },
+  {
+   "id": 715,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Bach keyboard work is a set of 30 variations named after a harpsichordist?",
+   "answer": "The Goldberg Variations",
+   "accept": [
+    "goldberg variations",
+    "the goldberg variations"
+   ]
+  },
+  {
+   "id": 716,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Bach's Toccata and Fugue in D minor is written for which instrument?",
+   "answer": "The organ",
+   "accept": [
+    "organ",
+    "the organ",
+    "pipe organ"
+   ]
+  },
+  {
+   "id": 717,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Vivaldi's The Four Seasons is a set of concertos for which instrument?",
+   "answer": "The violin",
+   "accept": [
+    "violin",
+    "the violin"
+   ]
+  },
+  {
+   "id": 718,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which composer wrote 'Ride of the Valkyries'?",
+   "answer": "Richard Wagner",
+   "accept": [
+    "wagner",
+    "richard wagner"
+   ]
+  },
+  {
+   "id": 719,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "What is the collective name of Wagner's four-opera cycle?",
+   "answer": "Der Ring des Nibelungen (The Ring Cycle)",
+   "accept": [
+    "the ring cycle",
+    "der ring des nibelungen",
+    "ring cycle",
+    "the ring"
+   ]
+  },
+  {
+   "id": 720,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "The 'Hallelujah' chorus comes from which Handel oratorio?",
+   "answer": "Messiah",
+   "accept": [
+    "messiah",
+    "the messiah"
+   ]
+  },
+  {
+   "id": 721,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Handel composed his Water Music suites for a river party hosted by which monarch?",
+   "answer": "King George I",
+   "accept": [
+    "george i",
+    "king george i",
+    "george the first"
+   ]
+  },
+  {
+   "id": 722,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Czech composer wrote the 'New World' Symphony?",
+   "answer": "Antonín Dvořák",
+   "accept": [
+    "dvorak",
+    "antonin dvorak",
+    "antonín dvořák"
+   ]
+  },
+  {
+   "id": 723,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Finnish composer wrote the patriotic tone poem Finlandia?",
+   "answer": "Jean Sibelius",
+   "accept": [
+    "sibelius",
+    "jean sibelius"
+   ]
+  },
+  {
+   "id": 724,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "'In the Hall of the Mountain King' comes from which Norwegian composer's Peer Gynt suite?",
+   "answer": "Edvard Grieg",
+   "accept": [
+    "grieg",
+    "edvard grieg"
+   ]
+  },
+  {
+   "id": 725,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which composer wrote the 1812 Overture, complete with cannon fire?",
+   "answer": "Pyotr Ilyich Tchaikovsky",
+   "accept": [
+    "tchaikovsky",
+    "pyotr tchaikovsky",
+    "peter tchaikovsky"
+   ]
+  },
+  {
+   "id": 726,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Name Tchaikovsky's three great ballets.",
+   "answer": "Swan Lake, The Sleeping Beauty, and The Nutcracker",
+   "accept": [
+    "swan lake sleeping beauty nutcracker",
+    "swan lake, sleeping beauty, the nutcracker",
+    "swan lake the sleeping beauty the nutcracker"
+   ]
+  },
+  {
+   "id": 727,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which composer's tone poem 'Also sprach Zarathustra' opens 2001: A Space Odyssey?",
+   "answer": "Richard Strauss",
+   "accept": [
+    "richard strauss",
+    "strauss",
+    "r strauss"
+   ]
+  },
+  {
+   "id": 728,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Debussy's 'Clair de Lune' is the third movement of which piano suite?",
+   "answer": "Suite bergamasque",
+   "accept": [
+    "suite bergamasque",
+    "bergamasque"
+   ]
+  },
+  {
+   "id": 729,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which French composer wrote The Carnival of the Animals?",
+   "answer": "Camille Saint-Saëns",
+   "accept": [
+    "saint-saens",
+    "camille saint-saens",
+    "saint saens",
+    "saint-saëns"
+   ]
+  },
+  {
+   "id": 730,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Russian composer wrote Peter and the Wolf, assigning each character an instrument?",
+   "answer": "Sergei Prokofiev",
+   "accept": [
+    "prokofiev",
+    "sergei prokofiev"
+   ]
+  },
+  {
+   "id": 731,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which English composer wrote the orchestral suite The Planets?",
+   "answer": "Gustav Holst",
+   "accept": [
+    "holst",
+    "gustav holst"
+   ]
+  },
+  {
+   "id": 732,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "The aria 'Summertime' comes from which Gershwin opera?",
+   "answer": "Porgy and Bess",
+   "accept": [
+    "porgy and bess"
+   ]
+  },
+  {
+   "id": 733,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Russian composer wrote the piano suite Pictures at an Exhibition?",
+   "answer": "Modest Mussorgsky",
+   "accept": [
+    "mussorgsky",
+    "modest mussorgsky",
+    "moussorgsky"
+   ]
+  },
+  {
+   "id": 734,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "'O Fortuna' opens which 20th-century cantata by Carl Orff?",
+   "answer": "Carmina Burana",
+   "accept": [
+    "carmina burana"
+   ]
+  },
+  {
+   "id": 735,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which English composer wrote the Enigma Variations?",
+   "answer": "Edward Elgar",
+   "accept": [
+    "elgar",
+    "edward elgar"
+   ]
+  },
+  {
+   "id": 736,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which American composer wrote the Adagio for Strings used in the film Platoon?",
+   "answer": "Samuel Barber",
+   "accept": [
+    "samuel barber",
+    "barber"
+   ]
+  },
+  {
+   "id": 737,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Baroque composer wrote the Canon in D, a wedding staple?",
+   "answer": "Johann Pachelbel",
+   "accept": [
+    "pachelbel",
+    "johann pachelbel"
+   ]
+  },
+  {
+   "id": 738,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Italian composer wrote the opera Aida, set in ancient Egypt?",
+   "answer": "Giuseppe Verdi",
+   "accept": [
+    "verdi",
+    "giuseppe verdi"
+   ]
+  },
+  {
+   "id": 739,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Puccini opera is set in Nagasaki and centres on Cio-Cio-San?",
+   "answer": "Madama Butterfly",
+   "accept": [
+    "madama butterfly",
+    "madame butterfly"
+   ]
+  },
+  {
+   "id": 740,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "The aria 'Nessun dorma' comes from which Puccini opera?",
+   "answer": "Turandot",
+   "accept": [
+    "turandot"
+   ]
+  },
+  {
+   "id": 741,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Rossini overture became the theme for The Lone Ranger?",
+   "answer": "William Tell",
+   "accept": [
+    "william tell",
+    "guillaume tell",
+    "william tell overture"
+   ]
+  },
+  {
+   "id": 742,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which Rossini comic opera features the barber Figaro singing 'Largo al factotum'?",
+   "answer": "The Barber of Seville",
+   "accept": [
+    "barber of seville",
+    "the barber of seville",
+    "il barbiere di siviglia"
+   ]
+  },
+  {
+   "id": 743,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Hungarian virtuoso composed the Hungarian Rhapsody No. 2?",
+   "answer": "Franz Liszt",
+   "accept": [
+    "liszt",
+    "franz liszt"
+   ]
+  },
+  {
+   "id": 744,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which numbered Schubert symphony is known as the 'Unfinished'?",
+   "answer": "Symphony No. 8",
+   "accept": [
+    "8",
+    "eighth",
+    "no 8",
+    "symphony no 8"
+   ]
+  },
+  {
+   "id": 745,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Mahler's Symphony No. 8 is nicknamed the Symphony of a what?",
+   "answer": "A Thousand",
+   "accept": [
+    "a thousand",
+    "thousand",
+    "symphony of a thousand"
+   ]
+  },
+  {
+   "id": 746,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Shostakovich's Symphony No. 7, written during a WWII siege, is nicknamed after which city?",
+   "answer": "Leningrad",
+   "accept": [
+    "leningrad",
+    "st petersburg"
+   ]
+  },
+  {
+   "id": 747,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Rachmaninoff piano concerto, his second, became a concert-hall staple after his recovery from depression?",
+   "answer": "Piano Concerto No. 2",
+   "accept": [
+    "2",
+    "second",
+    "no 2",
+    "piano concerto no 2"
+   ]
+  },
+  {
+   "id": 748,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Niccolò Paganini was a legendary virtuoso on which instrument?",
+   "answer": "The violin",
+   "accept": [
+    "violin",
+    "the violin"
+   ]
+  },
+  {
+   "id": 749,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which Aaron Copland ballet score incorporates the Shaker tune 'Simple Gifts'?",
+   "answer": "Appalachian Spring",
+   "accept": [
+    "appalachian spring"
+   ]
+  },
+  {
+   "id": 750,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "'The Moldau' (Vltava) belongs to which Smetana cycle of symphonic poems?",
+   "answer": "Má vlast (My Homeland)",
+   "accept": [
+    "ma vlast",
+    "má vlast",
+    "my homeland",
+    "my country"
+   ]
+  },
+  {
+   "id": 751,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "Which eccentric French composer wrote the spare, hypnotic Gymnopédies?",
+   "answer": "Erik Satie",
+   "accept": [
+    "satie",
+    "erik satie"
+   ]
+  },
+  {
+   "id": 752,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "The Baroque period in music is conventionally dated from roughly 1600 to which year?",
+   "answer": "1750, the year of Bach's death",
+   "accept": [
+    "1750"
+   ]
+  },
+  {
+   "id": 753,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "Which stylistic period followed the Classical era in Western music?",
+   "answer": "The Romantic period",
+   "accept": [
+    "romantic",
+    "the romantic period",
+    "romanticism"
+   ]
+  },
+  {
+   "id": 754,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What distinguishes a concerto from a symphony?",
+   "answer": "A concerto features a solo instrument set against the orchestra",
+   "accept": [
+    "solo instrument with orchestra",
+    "soloist and orchestra",
+    "features a soloist",
+    "solo instrument"
+   ]
+  },
+  {
+   "id": 755,
+   "category": "Music",
+   "difficulty": "easy",
+   "question": "What is the orchestral piece that opens an opera called?",
+   "answer": "The overture",
+   "accept": [
+    "overture",
+    "the overture",
+    "prelude"
+   ]
+  },
+  {
+   "id": 756,
+   "category": "Music",
+   "difficulty": "medium",
+   "question": "What is the written text of an opera called?",
+   "answer": "The libretto",
+   "accept": [
+    "libretto",
+    "the libretto"
+   ]
+  },
+  {
+   "id": 757,
+   "category": "Music",
+   "difficulty": "hard",
+   "question": "The 'Polovtsian Dances' come from which composer's opera Prince Igor?",
+   "answer": "Alexander Borodin",
+   "accept": [
+    "borodin",
+    "alexander borodin"
+   ]
+  },
+  {
+   "id": 758,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Austrian painter created the gold-leaf masterpiece 'The Kiss'?",
+   "answer": "Gustav Klimt",
+   "accept": [
+    "klimt",
+    "gustav klimt"
+   ]
+  },
+  {
+   "id": 759,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which French sculptor carved the marble 'The Kiss', originally part of a larger commission?",
+   "answer": "Auguste Rodin",
+   "accept": [
+    "rodin",
+    "auguste rodin"
+   ]
+  },
+  {
+   "id": 760,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Which subject did Claude Monet paint roughly 250 times, drawn from his own garden pond?",
+   "answer": "Water lilies",
+   "accept": [
+    "water lilies",
+    "waterlilies",
+    "nympheas",
+    "nymphéas",
+    "lily pond"
+   ]
+  },
+  {
+   "id": 761,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "In which French village did Monet create his famous garden and lily pond?",
+   "answer": "Giverny",
+   "accept": [
+    "giverny"
+   ]
+  },
+  {
+   "id": 762,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Monet painted more than thirty canvases of which cathedral façade at different times of day?",
+   "answer": "Rouen Cathedral",
+   "accept": [
+    "rouen",
+    "rouen cathedral"
+   ]
+  },
+  {
+   "id": 763,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Besides cathedrals and lilies, Monet made a celebrated series depicting which stacked farm subject?",
+   "answer": "Haystacks (grainstacks)",
+   "accept": [
+    "haystacks",
+    "grainstacks",
+    "wheatstacks",
+    "haystack"
+   ]
+  },
+  {
+   "id": 764,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Italian Renaissance painter created 'The Birth of Venus'?",
+   "answer": "Sandro Botticelli",
+   "accept": [
+    "botticelli",
+    "sandro botticelli"
+   ]
+  },
+  {
+   "id": 765,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Dutch master painted 'The Night Watch'?",
+   "answer": "Rembrandt van Rijn",
+   "accept": [
+    "rembrandt",
+    "rembrandt van rijn"
+   ]
+  },
+  {
+   "id": 766,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Who painted 'American Gothic', showing a farmer with a pitchfork beside a woman?",
+   "answer": "Grant Wood",
+   "accept": [
+    "grant wood",
+    "wood"
+   ]
+  },
+  {
+   "id": 767,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which American painter created 'Nighthawks', showing late-night customers in a diner?",
+   "answer": "Edward Hopper",
+   "accept": [
+    "edward hopper",
+    "hopper"
+   ]
+  },
+  {
+   "id": 768,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Belgian surrealist painted 'The Son of Man', a bowler-hatted man with a floating green apple?",
+   "answer": "René Magritte",
+   "accept": [
+    "magritte",
+    "rene magritte",
+    "rené magritte"
+   ]
+  },
+  {
+   "id": 769,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Magritte's painting of a pipe labelled 'this is not a pipe' bears what actual title?",
+   "answer": "The Treachery of Images",
+   "accept": [
+    "the treachery of images",
+    "treachery of images",
+    "la trahison des images"
+   ]
+  },
+  {
+   "id": 770,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Spanish court painter created 'Las Meninas'?",
+   "answer": "Diego Velázquez",
+   "accept": [
+    "velazquez",
+    "diego velazquez",
+    "velázquez"
+   ]
+  },
+  {
+   "id": 771,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Who painted 'The Third of May 1808', depicting the execution of Spanish resisters?",
+   "answer": "Francisco Goya",
+   "accept": [
+    "goya",
+    "francisco goya"
+   ]
+  },
+  {
+   "id": 772,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "'Saturn Devouring His Son' belongs to which grim late series by Goya?",
+   "answer": "The Black Paintings",
+   "accept": [
+    "black paintings",
+    "the black paintings",
+    "pinturas negras"
+   ]
+  },
+  {
+   "id": 773,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "The painting popularly called 'Whistler's Mother' is formally titled 'Arrangement in Grey and Black No. 1'. Who painted it?",
+   "answer": "James McNeill Whistler",
+   "accept": [
+    "whistler",
+    "james mcneill whistler",
+    "james whistler"
+   ]
+  },
+  {
+   "id": 774,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Who painted 'Christina's World', showing a woman in a field looking toward a farmhouse?",
+   "answer": "Andrew Wyeth",
+   "accept": [
+    "andrew wyeth",
+    "wyeth"
+   ]
+  },
+  {
+   "id": 775,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which English landscape painter created 'The Hay Wain'?",
+   "answer": "John Constable",
+   "accept": [
+    "constable",
+    "john constable"
+   ]
+  },
+  {
+   "id": 776,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which English Romantic painted 'The Fighting Temeraire', showing a warship towed to be scrapped?",
+   "answer": "J.M.W. Turner",
+   "accept": [
+    "turner",
+    "jmw turner",
+    "j.m.w. turner",
+    "william turner"
+   ]
+  },
+  {
+   "id": 777,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which German Romantic painted 'Wanderer above the Sea of Fog'?",
+   "answer": "Caspar David Friedrich",
+   "accept": [
+    "caspar david friedrich",
+    "friedrich"
+   ]
+  },
+  {
+   "id": 778,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Who painted 'The Raft of the Medusa', based on a real shipwreck scandal?",
+   "answer": "Théodore Géricault",
+   "accept": [
+    "gericault",
+    "theodore gericault",
+    "géricault"
+   ]
+  },
+  {
+   "id": 779,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Neoclassical painter created 'Napoleon Crossing the Alps'?",
+   "answer": "Jacques-Louis David",
+   "accept": [
+    "david",
+    "jacques-louis david",
+    "jacques louis david"
+   ]
+  },
+  {
+   "id": 780,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Impressionist painted 'Bal du moulin de la Galette', a sunlit Parisian dance scene?",
+   "answer": "Pierre-Auguste Renoir",
+   "accept": [
+    "renoir",
+    "auguste renoir",
+    "pierre-auguste renoir"
+   ]
+  },
+  {
+   "id": 781,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Post-Impressionist painted the series 'The Card Players'?",
+   "answer": "Paul Cézanne",
+   "accept": [
+    "cezanne",
+    "paul cezanne",
+    "cézanne"
+   ]
+  },
+  {
+   "id": 782,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Cézanne painted which Provençal mountain more than sixty times?",
+   "answer": "Mont Sainte-Victoire",
+   "accept": [
+    "mont sainte-victoire",
+    "mont sainte victoire",
+    "sainte-victoire"
+   ]
+  },
+  {
+   "id": 783,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which artist built 'A Sunday Afternoon on the Island of La Grande Jatte' entirely from tiny dots?",
+   "answer": "Georges Seurat",
+   "accept": [
+    "seurat",
+    "georges seurat"
+   ]
+  },
+  {
+   "id": 784,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Post-Impressionist abandoned France to paint in Tahiti and the Marquesas?",
+   "answer": "Paul Gauguin",
+   "accept": [
+    "gauguin",
+    "paul gauguin"
+   ]
+  },
+  {
+   "id": 785,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Van Gogh painted a celebrated series of still lifes featuring which flower?",
+   "answer": "Sunflowers",
+   "accept": [
+    "sunflowers",
+    "sunflower"
+   ]
+  },
+  {
+   "id": 786,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Van Gogh painting shows a yellow-lit café under a star-filled sky in Arles?",
+   "answer": "Café Terrace at Night",
+   "accept": [
+    "cafe terrace at night",
+    "café terrace at night",
+    "cafe terrace"
+   ]
+  },
+  {
+   "id": 787,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Klimt's 'Portrait of Adele Bloch-Bauer I' is popularly known by what name?",
+   "answer": "The Woman in Gold",
+   "accept": [
+    "woman in gold",
+    "the woman in gold",
+    "the lady in gold"
+   ]
+  },
+  {
+   "id": 788,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which period of Picasso's career immediately followed his Blue Period?",
+   "answer": "The Rose Period",
+   "accept": [
+    "rose period",
+    "the rose period",
+    "pink period"
+   ]
+  },
+  {
+   "id": 789,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which 1907 Picasso painting of five figures is seen as the opening of Cubism?",
+   "answer": "Les Demoiselles d'Avignon",
+   "accept": [
+    "les demoiselles d'avignon",
+    "demoiselles d'avignon",
+    "les demoiselles davignon"
+   ]
+  },
+  {
+   "id": 790,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Duchamp painting scandalised the 1913 Armory Show by fragmenting a figure in motion?",
+   "answer": "Nude Descending a Staircase, No. 2",
+   "accept": [
+    "nude descending a staircase",
+    "nude descending a staircase no 2"
+   ]
+  },
+  {
+   "id": 791,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Dutch artist is known for grid compositions in black lines with red, yellow, and blue blocks?",
+   "answer": "Piet Mondrian",
+   "accept": [
+    "mondrian",
+    "piet mondrian"
+   ]
+  },
+  {
+   "id": 792,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which American artist pioneered drip painting, working on canvases laid on the floor?",
+   "answer": "Jackson Pollock",
+   "accept": [
+    "jackson pollock",
+    "pollock"
+   ]
+  },
+  {
+   "id": 793,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which painter is most identified with large canvases of soft-edged, stacked rectangles of colour?",
+   "answer": "Mark Rothko",
+   "accept": [
+    "rothko",
+    "mark rothko"
+   ]
+  },
+  {
+   "id": 794,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Dalí painting shows the crucifixion viewed from above, without nails or blood?",
+   "answer": "Christ of Saint John of the Cross",
+   "accept": [
+    "christ of saint john of the cross",
+    "christ of st john of the cross"
+   ]
+  },
+  {
+   "id": 795,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Frida Kahlo painting shows two versions of herself seated side by side, hearts exposed?",
+   "answer": "The Two Fridas",
+   "accept": [
+    "the two fridas",
+    "two fridas",
+    "las dos fridas"
+   ]
+  },
+  {
+   "id": 796,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Michelangelo sculpture shows Mary cradling the body of Christ?",
+   "answer": "The Pietà",
+   "accept": [
+    "pieta",
+    "the pieta",
+    "pietà"
+   ]
+  },
+  {
+   "id": 797,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which ancient Greek sculptor created the original 'Discobolus', the discus thrower?",
+   "answer": "Myron",
+   "accept": [
+    "myron"
+   ]
+  },
+  {
+   "id": 798,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Venetian Renaissance painter created 'Bacchus and Ariadne'?",
+   "answer": "Titian",
+   "accept": [
+    "titian",
+    "tiziano"
+   ]
+  },
+  {
+   "id": 799,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Flemish painter created 'The Arnolfini Portrait', with its convex mirror?",
+   "answer": "Jan van Eyck",
+   "accept": [
+    "jan van eyck",
+    "van eyck"
+   ]
+  },
+  {
+   "id": 800,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Flemish painter depicted 'The Tower of Babel' as a vast spiralling ruin?",
+   "answer": "Pieter Bruegel the Elder",
+   "accept": [
+    "bruegel",
+    "pieter bruegel",
+    "brueghel",
+    "pieter bruegel the elder"
+   ]
+  },
+  {
+   "id": 801,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which painting hides a distorted skull that resolves only when viewed from the side?",
+   "answer": "The Ambassadors, by Hans Holbein the Younger",
+   "accept": [
+    "the ambassadors",
+    "ambassadors",
+    "holbein"
+   ]
+  },
+  {
+   "id": 802,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which contemporary artist created the giant mirror-polished 'Balloon Dog' sculptures?",
+   "answer": "Jeff Koons",
+   "accept": [
+    "jeff koons",
+    "koons"
+   ]
+  },
+  {
+   "id": 803,
+   "category": "Art & Architecture",
+   "difficulty": "easy",
+   "question": "Which anonymous street artist created 'Girl with Balloon'?",
+   "answer": "Banksy",
+   "accept": [
+    "banksy"
+   ]
+  },
+  {
+   "id": 804,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Pre-Raphaelite painted 'Ophelia', showing her drowning among flowers?",
+   "answer": "John Everett Millais",
+   "accept": [
+    "millais",
+    "john everett millais"
+   ]
+  },
+  {
+   "id": 805,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which ukiyo-e artist created the print series 'The Fifty-three Stations of the Tōkaidō'?",
+   "answer": "Utagawa Hiroshige",
+   "accept": [
+    "hiroshige",
+    "utagawa hiroshige",
+    "ando hiroshige"
+   ]
+  },
+  {
+   "id": 806,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Romanian sculptor created the sleek bronze 'Bird in Space'?",
+   "answer": "Constantin Brâncuși",
+   "accept": [
+    "brancusi",
+    "constantin brancusi",
+    "brâncuși"
+   ]
+  },
+  {
+   "id": 807,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which artist duo installed 'The Gates', 7,500 saffron fabric panels through Central Park?",
+   "answer": "Christo and Jeanne-Claude",
+   "accept": [
+    "christo and jeanne-claude",
+    "christo",
+    "christo and jeanne claude"
+   ]
+  },
+  {
+   "id": 808,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which painter created 'A Bar at the Folies-Bergère', with its puzzling mirror reflection?",
+   "answer": "Édouard Manet",
+   "accept": [
+    "manet",
+    "edouard manet",
+    "édouard manet"
+   ]
+  },
+  {
+   "id": 809,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Rococo painter created 'The Swing', showing a woman kicking off her slipper?",
+   "answer": "Jean-Honoré Fragonard",
+   "accept": [
+    "fragonard",
+    "jean-honore fragonard",
+    "jean honore fragonard"
+   ]
+  },
+  {
+   "id": 810,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which ornate, playful 18th-century style is characterised by pastel colours and asymmetric curves?",
+   "answer": "Rococo",
+   "accept": [
+    "rococo"
+   ]
+  },
+  {
+   "id": 811,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which sculptor cast a celebrated bronze 'David' decades before Michelangelo carved his?",
+   "answer": "Donatello",
+   "accept": [
+    "donatello"
+   ]
+  },
+  {
+   "id": 812,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Who created the Florence Baptistery doors that Michelangelo called the Gates of Paradise?",
+   "answer": "Lorenzo Ghiberti",
+   "accept": [
+    "ghiberti",
+    "lorenzo ghiberti"
+   ]
+  },
+  {
+   "id": 813,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Amsterdam museum houses 'The Night Watch'?",
+   "answer": "The Rijksmuseum",
+   "accept": [
+    "rijksmuseum",
+    "the rijksmuseum"
+   ]
+  },
+  {
+   "id": 814,
+   "category": "Art & Architecture",
+   "difficulty": "medium",
+   "question": "Which Florence gallery houses 'The Birth of Venus'?",
+   "answer": "The Uffizi Gallery",
+   "accept": [
+    "uffizi",
+    "the uffizi",
+    "uffizi gallery"
+   ]
+  },
+  {
+   "id": 815,
+   "category": "Art & Architecture",
+   "difficulty": "hard",
+   "question": "Which Madrid museum houses Picasso's 'Guernica'?",
+   "answer": "The Museo Reina Sofía",
+   "accept": [
+    "reina sofia",
+    "museo reina sofia",
+    "the reina sofia"
+   ]
+  }
+ ]
+}

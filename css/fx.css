@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Atmosphere and motion.
+   --------------------------------------------------------------------------
+   Every keyframe here is authored in CSS rather than driven from JS. That is
+   a deliberate house rule: no SSR flash on entrances, no rAF stalls when the
+   page is being driven by an automation harness, and prefers-reduced-motion
+   disarms the whole system by collapsing the duration tokens in tokens.css.
+
+   Anything that must NOT run under reduced motion (shake, particles, the
+   heartbeat) is additionally guarded at the bottom of this file.
+   ========================================================================== */
+
+/* ---- Ambient background: the vault door --------------------------------- */
+
+.vault-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% -10%, hsl(222 40% 12%) 0%, transparent 60%),
+    radial-gradient(80% 60% at 50% 110%, color-mix(in srgb, var(--brass) 8%, transparent) 0%, transparent 55%),
+    var(--ink-000);
+}
+
+.vault-door {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(150vh, 150vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  /* Heat opens the door: as the streak climbs or the clock bites, the rings
+     spread apart and brighten. Driven by one custom property from JS. */
+  opacity: calc(0.16 + var(--heat) * 0.34);
+  scale: calc(1 + var(--heat) * 0.06);
+  transition: opacity var(--dur-slow) var(--ease), scale var(--dur-slow) var(--ease);
+}
+
+.vault-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, transparent);
+}
+.vault-ring--outer { inset: 4%;  border-width: 2px; }
+.vault-ring--mid   { inset: 17%; border-color: color-mix(in srgb, var(--brass) 20%, transparent); }
+.vault-ring--inner { inset: 30%; border-style: dashed; border-color: color-mix(in srgb, var(--brass) 16%, transparent); }
+
+.vault-spokes { position: absolute; inset: 0; animation: spin 190s linear infinite; }
+.vault-spokes span {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 1px; height: 46%;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--brass) 26%, transparent));
+  transform-origin: 0 0;
+}
+.vault-spokes span:nth-child(1) { transform: rotate(0deg); }
+.vault-spokes span:nth-child(2) { transform: rotate(45deg); }
+.vault-spokes span:nth-child(3) { transform: rotate(90deg); }
+.vault-spokes span:nth-child(4) { transform: rotate(135deg); }
+.vault-spokes span:nth-child(5) { transform: rotate(180deg); }
+.vault-spokes span:nth-child(6) { transform: rotate(225deg); }
+.vault-spokes span:nth-child(7) { transform: rotate(270deg); }
+.vault-spokes span:nth-child(8) { transform: rotate(315deg); }
+
+.vault-hub {
+  position: absolute;
+  inset: 44%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, transparent);
+  background: radial-gradient(circle, color-mix(in srgb, var(--brass) 12%, transparent), transparent 70%);
+}
+
+/* Light spilling from a door that is coming open. */
+.vault-spill {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%,
+              color-mix(in srgb, var(--brass-glow) 22%, transparent) 0%,
+              transparent 42%);
+  opacity: calc(var(--heat) * 0.5);
+  transition: opacity var(--dur-slow) var(--ease);
+}
+
+/* ---- Grain & vignette ---------------------------------------------------- */
+
+.grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 700ms steps(4) infinite;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+/* Flashed red on a miss, green on a hit. Always paired with a mark change on
+   the option itself, so it is reinforcement rather than the only signal. */
+.vignette[data-flash="wrong"] {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, transparent 42%, color-mix(in srgb, var(--alarm) 42%, transparent) 100%);
+  animation: flash-out 620ms var(--ease) forwards;
+}
+.vignette[data-flash="correct"] {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 50%, transparent 52%, color-mix(in srgb, var(--jade) 26%, transparent) 100%);
+  animation: flash-out 520ms var(--ease) forwards;
+}
+
+.fx-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ---- Keyframes ----------------------------------------------------------- */
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+
+/* The overshoot curve earns its exception here: a struck thing. */
+@keyframes stamp {
+  0%   { transform: scale(0.94); }
+  60%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flap {
+  0%   { transform: rotateX(0deg);   filter: brightness(1); }
+  45%  { transform: rotateX(-82deg); filter: brightness(0.45); }
+  100% { transform: rotateX(0deg);   filter: brightness(1); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%      { transform: scale(1.055); }
+  28%      { transform: scale(1); }
+  42%      { transform: scale(1.03); }
+}
+
+@keyframes flash-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes grain {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, 1%); }
+  50%  { transform: translate(1%, -2%); }
+  75%  { transform: translate(2%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Screen shake. Applied to the shell, not the body, so the fixed background
+   stays put and only the content is struck. */
+@keyframes shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  15%  { transform: translate(calc(var(--shake) * -1px), calc(var(--shake) * 0.4px)) rotate(-0.35deg); }
+  30%  { transform: translate(calc(var(--shake) * 0.8px), calc(var(--shake) * -0.5px)) rotate(0.3deg); }
+  45%  { transform: translate(calc(var(--shake) * -0.6px), calc(var(--shake) * 0.3px)) rotate(-0.2deg); }
+  60%  { transform: translate(calc(var(--shake) * 0.45px), calc(var(--shake) * 0.25px)) rotate(0.15deg); }
+  80%  { transform: translate(calc(var(--shake) * -0.25px), 0) rotate(-0.06deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.shell[data-shake="true"] {
+  animation: shake var(--shake-ms, 420ms) var(--ease);
+}
+
+/* Hit-pause: the whole stage holds for a beat on impact. The single highest
+   ROI piece of juice in the game — it is what makes a correct answer feel
+   struck rather than merely registered. */
+.stage[data-freeze="true"] { animation: none !important; filter: brightness(1.25) saturate(1.15); }
+
+/* Drill burn-away. */
+@keyframes burn {
+  0%   { opacity: 1; filter: none; }
+  35%  { opacity: 1; filter: brightness(2.2) saturate(0); }
+  100% { opacity: 0.22; filter: saturate(0); }
+}
+.option[data-burning="true"] { animation: burn 480ms var(--ease) forwards; }
+
+/* ---- Reduced motion ------------------------------------------------------
+   The duration tokens already collapse to 1ms. These rules kill the things
+   that are objectionable regardless of duration: continuous loops, shake,
+   and anything that moves without the user asking. */
+@media (prefers-reduced-motion: reduce) {
+  .vault-spokes,
+  .grain,
+  .timer[data-state="critical"],
+  .tool[data-armed="true"],
+  .ladder__rung[data-state="now"] {
+    animation: none !important;
+  }
+  .shell[data-shake="true"] { animation: none !important; }
+  .fx-canvas { display: none; }
+  .vault-door { opacity: 0.18; scale: 1; }
+  .vault-spill { opacity: 0; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
