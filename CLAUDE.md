@@ -94,10 +94,14 @@ giveaway rounds that this one does not have.
 
 ## Known gaps
 
-- **Never tested on a real phone.** The 640px media query is written (1-column options,
-  hidden mode label, kit padding clearing the fixed Bank button) but the Chrome
-  automation could not resize the window below ~1034px, so the mobile layout is
-  unverified on a real narrow viewport. Check this before promoting the link anywhere.
+- **Never tested on a real phone.** The layout IS verified at 390px and 360px via
+  `docs/mobile-preview.html`, which renders the game in narrow iframes — media queries
+  key off the iframe width, so this exercises the real breakpoints (the Chrome
+  automation cannot resize the window below ~1034px). Confirmed: single-column options,
+  kit padding clearing the fixed Bank button, mode label hidden, no horizontal overflow.
+  What that does NOT cover is real touch targets, iOS Safari's dynamic viewport and
+  address-bar behaviour, or the Web Audio unlock gesture on iOS. Try it on an actual
+  handset before promoting the link.
 - Semantic distractor quality has a ceiling — see README. `options[]` is the fix.
 - Blitz and Survival scores run ~100× higher than Vault Run's. Intentional (separate
   per-mode leaderboards) but it looks odd if they are ever shown side by side.
