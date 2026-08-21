@@ -116,3 +116,9 @@ browser kept running the cached one, silently. Revalidation costs a 304; a silen
 build costs a debugging session.
 
 Images, fonts and icons stay immutable — they are replaced by filename, never edited.
+
+**`vercel.json` takes no comments.** A `"//"` key inside a `headers` entry is a hard
+build error (`headers[1] should NOT have additional property //`) — and it fails the
+deployment silently from the CLI's point of view, leaving the domain on the previous
+build. Reproduce locally with `vercel pull --yes && vercel build` before pushing config
+changes; `vercel ls` showing "● Error" is the only other signal.
