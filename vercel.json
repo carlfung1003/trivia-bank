@@ -10,7 +10,15 @@
       ]
     },
     {
-      "source": "/(.*)\\.(css|js|svg|png|woff2)",
+      "//": "JS and CSS must revalidate. index.html versions its entry points (js/main.js?v=1) but an ES module's OWN imports carry no query string, so ./distractors.js is fetched unversioned — marking it immutable pins a returning visitor to stale modules for a year, with a fresh main.js importing year-old dependencies. This bit seventh-floor and it bit this project too: production served an updated distractors.js while the browser kept running the cached one. Revalidation is cheap (ETag -> 304); a silent mixed build is not.",
+      "source": "/(.*)\\.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "//": "Genuinely immutable: content-addressed by filename, never edited in place.",
+      "source": "/(.*)\\.(svg|png|jpg|webp|woff2|ico)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

@@ -101,3 +101,18 @@ giveaway rounds that this one does not have.
 - Semantic distractor quality has a ceiling — see README. `options[]` is the fix.
 - Blitz and Survival scores run ~100× higher than Vault Run's. Intentional (separate
   per-mode leaderboards) but it looks odd if they are ever shown side by side.
+
+## Caching (do not "optimise" this back)
+
+`vercel.json` deliberately serves `.js` and `.css` with
+`max-age=0, must-revalidate`, NOT `immutable`.
+
+`index.html` versions its entry points (`js/main.js?v=1`), but an ES module's own
+imports carry no query string — `main.js` fetches `./distractors.js` unversioned. Marking
+JS immutable therefore pins a returning visitor to stale modules for a year, with a fresh
+entry point importing year-old dependencies. This is the `seventh-floor` gotcha and it hit
+this project in production: the server was serving an updated `distractors.js` while the
+browser kept running the cached one, silently. Revalidation costs a 304; a silent mixed
+build costs a debugging session.
+
+Images, fonts and icons stay immutable — they are replaced by filename, never edited.
