@@ -115,9 +115,17 @@ const ASK_STOPWORDS = new Set([
 
 const NUMBER_WORDS = new Set(["two", "three", "four", "five", "six", "2", "3", "4", "5", "6", "both", "pair"]);
 
+/* Words that look plural but are not. "series" -> "sery" is the kind of
+   mangling that quietly splits a pool in half. */
+const INVARIANT_PLURALS = new Set([
+  "series", "species", "news", "means", "physics", "mathematics",
+  "economics", "politics", "athletics", "gas", "lens", "bus", "canvas",
+]);
+
 /** Crude singulariser — good enough to merge "countries"/"country". */
 function singular(w) {
   if (w.length <= 3) return w;
+  if (INVARIANT_PLURALS.has(w)) return w;
   if (w.endsWith("ies")) return w.slice(0, -3) + "y";
   if (w.endsWith("ses") || w.endsWith("xes") || w.endsWith("zes") || w.endsWith("ches") || w.endsWith("shes")) {
     return w.slice(0, -2);
@@ -158,15 +166,40 @@ export function askClass(question) {
   }
 
   /* "What is the capital of...", "Which element is..." */
-  const m = q.match(/\b(?:what|which|whose)\s+((?:[a-z]+\s+){0,3}?[a-z]+)/);
-  if (m) {
-    const words = m[1].split(/\s+/).filter((w) => w && !ASK_STOPWORDS.has(w));
-    if (words.length) return singular(words[0]);
-  }
+  const cands = headCandidates(q);
+  if (cands.length) return cands[0];
 
   const where = /\bwhere\b/.test(q);
   if (where) return "where";
   return "other";
+}
+
+/**
+ * Candidate head nouns following the interrogative, in order.
+ *
+ * Taking the FIRST non-stopword is wrong surprisingly often, because the
+ * interrogative is usually followed by modifiers rather than the head noun:
+ *
+ *   "Which Stanley Kubrick film is set aboard Discovery One?"  -> "stanley"
+ *   "Which subatomic particle carries a negative charge?"      -> "subatomic"
+ *   "Which TV series is set in Hawkins, Indiana?"              -> "tv"
+ *
+ * All three should key on film / particle / series so they pool with their
+ * real peers. Rather than ship a hand-written list of modifiers, the caller
+ * resolves the ambiguity against the corpus itself — see resolveAsk().
+ */
+export function headCandidates(question) {
+  const q = String(question ?? "").toLowerCase().replace(/[“”"'’]/g, "");
+  /* Three tokens, not four. Reaching further routinely runs past the noun
+     phrase into the verb — "which Beatles album cover SHOWS the band" — and
+     a common verb will out-score the real head noun on frequency alone. */
+  const m = q.match(/\b(?:what|which|whose)\s+((?:[a-z-]+\s+){0,2}[a-z-]+)/);
+  if (!m) return [];
+  return m[1]
+    .split(/\s+/)
+    .filter((w) => w && !ASK_STOPWORDS.has(w) && !NUMBER_WORDS.has(w))
+    .slice(0, 3)
+    .map(singular);
 }
 
 /* ---- Numeric synthesis ---------------------------------------------------
@@ -300,6 +333,51 @@ function hasConjunction(s) {
   return /\b(and|&|\+)\b/i.test(String(s));
 }
 
+/**
+ * Resolve each question's ask class against the whole corpus.
+ *
+ * A question offers several candidate head nouns ("stanley", "kubrick",
+ * "film"). The right one is whichever the bank uses most as an ask class,
+ * because head nouns recur across questions and modifiers do not: "film"
+ * appears dozens of times, "stanley" once. Picking the most frequent
+ * candidate therefore lands on the head noun without any hand-written list
+ * of modifiers, and it re-tunes automatically when the bank is swapped.
+ */
+function resolveAsk(questions) {
+  const freq = new Map();
+  const candidates = new Map();
+
+  for (const q of questions) {
+    const fixed = askClass(q.question);
+    const cands = headCandidates(q.question);
+    candidates.set(q.id, { fixed, cands });
+    /* Only free-form head nouns compete; year/count/who:* are unambiguous. */
+    if (!cands.length) continue;
+    for (const c of cands) freq.set(c, (freq.get(c) || 0) + 1);
+  }
+
+  const resolved = new Map();
+  for (const q of questions) {
+    const { fixed, cands } = candidates.get(q.id);
+    if (!cands.length || !cands.includes(fixed)) {
+      resolved.set(q.id, fixed);
+      continue;
+    }
+    /* Bias toward the earliest candidate: a later token only displaces it if
+       it is clearly more common, not merely more common. Ties and near-ties
+       keep the leftmost, which is where the head noun usually is once the
+       obvious modifiers have been out-voted. */
+    let best = cands[0];
+    let bestN = freq.get(best) || 0;
+    for (const c of cands.slice(1)) {
+      const n = freq.get(c) || 0;
+      if (n > bestN * 1.5) { best = c; bestN = n; }
+    }
+    resolved.set(q.id, best);
+  }
+  return resolved;
+}
+
 export function buildIndex(questions) {
   const byAsk = new Map();       /* ask class            -> entries */
   const byAskCat = new Map();    /* ask class + category -> entries */
@@ -308,9 +386,11 @@ export function buildIndex(questions) {
   const byCat = new Map();
   const all = [];
 
+  const askById = resolveAsk(questions);
+
   for (const q of questions) {
     const type = detectType(q.answer, q.category);
-    const ask = askClass(q.question);
+    const ask = askById.get(q.id) ?? askClass(q.question);
     const entry = {
       id: q.id, answer: q.answer, type, ask,
       category: q.category, difficulty: q.difficulty,
@@ -357,7 +437,7 @@ export function buildIndex(questions) {
     if (peers >= 3) choiceViable.add(e.id);
   }
 
-  return { byAsk, byAskCat, byType, byTypeCat, byCat, all, choiceViable };
+  return { byAsk, byAskCat, byType, byTypeCat, byCat, all, choiceViable, askById };
 }
 
 /** True when a question can fairly be asked as multiple choice. */
@@ -456,7 +536,8 @@ function plausible(entry, target, level) {
 
 export function makeDistractors(question, index, rng, n) {
   const type = detectType(question.answer, question.category);
-  const ask = askClass(question.question);
+  /* Corpus-resolved class, not a fresh parse — see resolveAsk(). */
+  const ask = index.askById?.get(question.id) ?? askClass(question.question);
   const questionNorm = normalise(question.question);
   const target = { words: wordCount(question.answer), conj: hasConjunction(question.answer) };
   const chosen = [];
@@ -527,7 +608,7 @@ export function buildOptions(question, index, seed) {
       options,
       correctIndex: options.indexOf(question.answer),
       type: detectType(question.answer, question.category),
-      ask: askClass(question.question),
+      ask: index.askById?.get(question.id) ?? askClass(question.question),
       authored: true,
     };
   }
@@ -539,7 +620,7 @@ export function buildOptions(question, index, seed) {
     options,
     correctIndex,
     type: detectType(question.answer, question.category),
-    ask: askClass(question.question),
+    ask: index.askById?.get(question.id) ?? askClass(question.question),
     authored: false,
   };
 }
