@@ -153,7 +153,10 @@ export function askClass(question) {
 
   /* "Who wrote/painted/directed/composed..." — the verb keeps novelists apart
      from painters apart from directors, all of which are bare person names. */
-  const who = q.match(/\bwho\s+(?:is|was|are|were)?\s*(?:the\s+)?([a-z]+)/);
+  /* Hyphens are part of the verb: without them "who co-founded Microsoft"
+     keys on "co", which pools with nothing and drops the question through to
+     the loose tiers. */
+  const who = q.match(/\bwho\s+(?:is|was|are|were)?\s*(?:the\s+)?([a-z][a-z-]*)/);
   if (/\bwho\b/.test(q)) {
     const verb = who && !ASK_STOPWORDS.has(who[1]) ? who[1] : "";
     return verb ? `who:${singular(verb)}` : "who";
@@ -380,6 +383,7 @@ function resolveAsk(questions) {
 
 export function buildIndex(questions) {
   const byAsk = new Map();       /* ask class            -> entries */
+  const byAskRoot = new Map();   /* ask class root       -> entries */
   const byAskCat = new Map();    /* ask class + category -> entries */
   const byType = new Map();
   const byTypeCat = new Map();
@@ -408,6 +412,13 @@ export function buildIndex(questions) {
       map.get(key).push(entry);
     };
     push(byAsk, ask);
+    /* Root of the class: "who:painted" -> "who", "country+multi" -> "country".
+       A mid-tier that keeps person questions with person answers even when the
+       exact verb has no peers. It is what stops "who co-founded Microsoft"
+       borrowing acronym expansions: "Universal Serial Bus" is three
+       capitalised words, so detectType() calls it a PERSON, and the
+       type-based tiers happily hand it over. The `who` root does not. */
+    push(byAskRoot, ask.split(/[:+]/)[0]);
     push(byAskCat, `${ask}::${q.category}`);
     push(byType, type);
     push(byTypeCat, `${type}::${q.category}`);
@@ -437,7 +448,7 @@ export function buildIndex(questions) {
     if (peers >= 3) choiceViable.add(e.id);
   }
 
-  return { byAsk, byAskCat, byType, byTypeCat, byCat, all, choiceViable, askById };
+  return { byAsk, byAskRoot, byAskCat, byType, byTypeCat, byCat, all, choiceViable, askById };
 }
 
 /** True when a question can fairly be asked as multiple choice. */
@@ -538,6 +549,7 @@ export function makeDistractors(question, index, rng, n) {
   const type = detectType(question.answer, question.category);
   /* Corpus-resolved class, not a fresh parse — see resolveAsk(). */
   const ask = index.askById?.get(question.id) ?? askClass(question.question);
+  const askRoot = ask.split(/[:+]/)[0];
   const questionNorm = normalise(question.question);
   const target = { words: wordCount(question.answer), conj: hasConjunction(question.answer) };
   const chosen = [];
@@ -559,8 +571,10 @@ export function makeDistractors(question, index, rng, n) {
   const tiers = [
     { pool: index.byAskCat.get(`${ask}::${question.category}`),   fit: FIT.STRICT },
     { pool: index.byAsk.get(ask),                                 fit: FIT.STRICT },
+    { pool: index.byAskRoot.get(askRoot),                         fit: FIT.STRICT },
     { pool: index.byTypeCat.get(`${type}::${question.category}`), fit: FIT.STRICT },
     { pool: index.byAsk.get(ask),                                 fit: FIT.LOOSE  },
+    { pool: index.byAskRoot.get(askRoot),                         fit: FIT.LOOSE  },
     { pool: index.byTypeCat.get(`${type}::${question.category}`), fit: FIT.LOOSE  },
     { pool: index.byType.get(type),                               fit: FIT.LOOSE  },
     { pool: index.byCat.get(question.category),                   fit: FIT.LOOSE  },
