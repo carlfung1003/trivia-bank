@@ -287,6 +287,13 @@ chip. Baked-in colour would need a separate sheet per state.
 
 The grid order in the prompt maps 1:1 onto `CATEGORY_SIGIL_INDEX` in
 `js/config.js`, so keep the twelve subjects in that order if you regenerate.
+
+**Four categories added since have no sprite slot** — Signs & Symbols, Landmarks &
+Wonders, Horror & Hauntings and Numbers & Puzzles fall back to mono glyphs, which is
+the documented behaviour rather than a gap. To give them icons, regenerate at **4 by 4**
+with these four appended in order: a crescent moon and star, a classical arch, a
+skull, and an abacus. Then extend `CATEGORY_SIGIL_INDEX` to 15 and change
+`mask-size` in `css/material.css` from `400% 300%` to `400% 400%`.
 The mono glyphs stay in `CATEGORY_SIGILS` as the accessible text and as the
 fallback wherever `mask-image` is unsupported.
 

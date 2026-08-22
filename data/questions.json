@@ -2,7 +2,7 @@
   "meta": {
     "name": "Trivia Bank — Complete",
     "version": "1.0.0",
-    "count": 735,
+    "count": 904,
     "schema": {
       "id": "int",
       "category": "str",
@@ -24,7 +24,11 @@
     "Odds & Ends",
     "Science & Nature",
     "Sports & Games",
-    "Technology"
+    "Technology",
+    "Signs & Symbols",
+    "Landmarks & Wonders",
+    "Horror & Hauntings",
+    "Numbers & Puzzles"
   ],
   "questions": [
     {
@@ -9210,6 +9214,2010 @@
         "the reina sofia"
       ],
       "hint": "It returned from New York in 1981, after Franco's death."
+    },
+    {
+      "id": 816,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the ram?",
+      "answer": "Aries",
+      "accept": [
+        "aries"
+      ],
+      "hint": "First in the zodiac, and it shares its ruling planet with the red one."
+    },
+    {
+      "id": 817,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the bull?",
+      "answer": "Taurus",
+      "accept": [
+        "taurus"
+      ],
+      "hint": "An earth sign ruled by Venus, and stubborn about it."
+    },
+    {
+      "id": 818,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the twins?",
+      "answer": "Gemini",
+      "accept": [
+        "gemini"
+      ],
+      "hint": "Named for Castor and Pollux, and ruled by Mercury."
+    },
+    {
+      "id": 819,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the crab?",
+      "answer": "Cancer",
+      "accept": [
+        "cancer"
+      ],
+      "hint": "The only sign ruled by the Moon."
+    },
+    {
+      "id": 820,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the lion?",
+      "answer": "Leo",
+      "accept": [
+        "leo"
+      ],
+      "hint": "The only sign ruled by the Sun."
+    },
+    {
+      "id": 821,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the maiden?",
+      "answer": "Virgo",
+      "accept": [
+        "virgo"
+      ],
+      "hint": "An earth sign associated with harvest and with fussiness."
+    },
+    {
+      "id": 822,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by the scorpion?",
+      "answer": "Scorpio",
+      "accept": [
+        "scorpio"
+      ],
+      "hint": "A water sign, and modern astrology gives it Pluto."
+    },
+    {
+      "id": 823,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which zodiac sign is represented by the archer?",
+      "answer": "Sagittarius",
+      "accept": [
+        "sagittarius"
+      ],
+      "hint": "Half horse, half man, and ruled by Jupiter."
+    },
+    {
+      "id": 824,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which zodiac sign is represented by the sea-goat?",
+      "answer": "Capricorn",
+      "accept": [
+        "capricorn"
+      ],
+      "hint": "Ruled by Saturn, and it covers Christmas and New Year."
+    },
+    {
+      "id": 825,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which zodiac sign is represented by the water bearer?",
+      "answer": "Aquarius",
+      "accept": [
+        "aquarius"
+      ],
+      "hint": "Despite the water in the name, it is an air sign."
+    },
+    {
+      "id": 826,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which zodiac sign is represented by two fish?",
+      "answer": "Pisces",
+      "accept": [
+        "pisces"
+      ],
+      "hint": "Last in the zodiac, and the two swim in opposite directions."
+    },
+    {
+      "id": 827,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "How many signs are there in the Western zodiac?",
+      "answer": "Twelve",
+      "accept": [
+        "twelve",
+        "12"
+      ],
+      "hint": "One for roughly each month, and the same count as the Chinese cycle."
+    },
+    {
+      "id": 828,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Aries, Leo and Sagittarius all belong to which element?",
+      "answer": "Fire",
+      "accept": [
+        "fire"
+      ],
+      "hint": "The element associated with drive and temper."
+    },
+    {
+      "id": 829,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Cancer, Scorpio and Pisces all belong to which element?",
+      "answer": "Water",
+      "accept": [
+        "water"
+      ],
+      "hint": "The element associated with emotion and intuition."
+    },
+    {
+      "id": 830,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Taurus, Virgo and Capricorn all belong to which element?",
+      "answer": "Earth",
+      "accept": [
+        "earth"
+      ],
+      "hint": "The practical, grounded element."
+    },
+    {
+      "id": 831,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Gemini, Libra and Aquarius all belong to which element?",
+      "answer": "Air",
+      "accept": [
+        "air"
+      ],
+      "hint": "The element associated with intellect and communication."
+    },
+    {
+      "id": 832,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "In astrology, what is the sign rising on the eastern horizon at your birth called?",
+      "answer": "The ascendant",
+      "accept": [
+        "ascendant",
+        "rising sign",
+        "the rising sign"
+      ],
+      "hint": "Said to govern the impression you make before you speak."
+    },
+    {
+      "id": 833,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which planet is said to govern communication, and is blamed when it appears to move backwards?",
+      "answer": "Mercury",
+      "accept": [
+        "mercury"
+      ],
+      "hint": "The closest planet to the Sun, and the fastest."
+    },
+    {
+      "id": 834,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "What is the term for a planet's apparent backward motion across the sky?",
+      "answer": "Retrograde",
+      "accept": [
+        "retrograde",
+        "retrograde motion"
+      ],
+      "hint": "An optical effect of two orbits passing, not the planet reversing."
+    },
+    {
+      "id": 835,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "What is the astrological chart of the sky at the exact moment of your birth called?",
+      "answer": "A natal chart",
+      "accept": [
+        "natal chart",
+        "birth chart",
+        "a birth chart"
+      ],
+      "hint": "It cannot be cast without your exact time of birth."
+    },
+    {
+      "id": 836,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "How many animals are in the Chinese zodiac cycle?",
+      "answer": "Twelve",
+      "accept": [
+        "twelve",
+        "12"
+      ],
+      "hint": "The same count as the Western zodiac, but one per year rather than per month."
+    },
+    {
+      "id": 837,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which animal comes first in the Chinese zodiac?",
+      "answer": "The rat",
+      "accept": [
+        "rat",
+        "the rat"
+      ],
+      "hint": "In the legend it rode across the river on the ox's back and jumped off first."
+    },
+    {
+      "id": 838,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which familiar household animal is famously absent from the Chinese zodiac?",
+      "answer": "The cat",
+      "accept": [
+        "cat",
+        "the cat"
+      ],
+      "hint": "The legend blames the rat for not waking it in time."
+    },
+    {
+      "id": 839,
+      "category": "Signs & Symbols",
+      "difficulty": "hard",
+      "question": "The Chinese zodiac pairs its animals with how many elements?",
+      "answer": "Five",
+      "accept": [
+        "five",
+        "5"
+      ],
+      "hint": "Wood, fire, earth, metal and water, giving a sixty-year cycle."
+    },
+    {
+      "id": 840,
+      "category": "Signs & Symbols",
+      "difficulty": "hard",
+      "question": "Which thirteenth constellation does the Sun pass through, though it is left out of the zodiac?",
+      "answer": "Ophiuchus",
+      "accept": [
+        "ophiuchus"
+      ],
+      "hint": "The serpent bearer, sitting between Scorpio and Sagittarius."
+    },
+    {
+      "id": 841,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "How many deadly sins are there in Christian tradition?",
+      "answer": "Seven",
+      "accept": [
+        "seven",
+        "7"
+      ],
+      "hint": "The same number as the virtues that oppose them."
+    },
+    {
+      "id": 842,
+      "category": "Signs & Symbols",
+      "difficulty": "medium",
+      "question": "Which deadly sin is defined as excessive pride in oneself?",
+      "answer": "Pride",
+      "accept": [
+        "pride",
+        "vanity"
+      ],
+      "hint": "Traditionally considered the root of the other six."
+    },
+    {
+      "id": 843,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Which deadly sin corresponds to extreme laziness?",
+      "answer": "Sloth",
+      "accept": [
+        "sloth"
+      ],
+      "hint": "It shares its name with a slow-moving Central American mammal."
+    },
+    {
+      "id": 844,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Breaking a mirror is said to bring how many years of bad luck?",
+      "answer": "Seven",
+      "accept": [
+        "seven",
+        "7"
+      ],
+      "hint": "The Romans believed life renewed itself on that cycle."
+    },
+    {
+      "id": 845,
+      "category": "Signs & Symbols",
+      "difficulty": "hard",
+      "question": "What is the fear of Friday the 13th called?",
+      "answer": "Paraskevidekatriaphobia",
+      "accept": [
+        "paraskevidekatriaphobia",
+        "friggatriskaidekaphobia"
+      ],
+      "hint": "It builds on the Greek for Friday and the general fear of the number."
+    },
+    {
+      "id": 846,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "A baker's dozen is how many?",
+      "answer": "Thirteen",
+      "accept": [
+        "thirteen",
+        "13"
+      ],
+      "hint": "One more than a dozen, added so bakers avoided penalties for short weight."
+    },
+    {
+      "id": 847,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "How many cards are in each suit of a standard deck?",
+      "answer": "Thirteen",
+      "accept": [
+        "thirteen",
+        "13"
+      ],
+      "hint": "Ace through king, and four suits make fifty-two."
+    },
+    {
+      "id": 848,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "How many stripes are on the flag of the United States?",
+      "answer": "Thirteen",
+      "accept": [
+        "thirteen",
+        "13"
+      ],
+      "hint": "One for each of the original colonies."
+    },
+    {
+      "id": 849,
+      "category": "Signs & Symbols",
+      "difficulty": "easy",
+      "question": "Throwing which seasoning over your left shoulder is said to ward off bad luck?",
+      "answer": "Salt",
+      "accept": [
+        "salt"
+      ],
+      "hint": "It was once valuable enough that spilling it was a genuine loss."
+    },
+    {
+      "id": 850,
+      "category": "Signs & Symbols",
+      "difficulty": "hard",
+      "question": "In Buddhist tradition, how many beads are on a full mala?",
+      "answer": "108",
+      "accept": [
+        "108",
+        "one hundred and eight"
+      ],
+      "hint": "The same number of times temple bells are rung at Japanese New Year."
+    },
+    {
+      "id": 851,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "Machu Picchu sits in the mountains of which country?",
+      "answer": "Peru",
+      "accept": [
+        "peru"
+      ],
+      "hint": "The Andes, and the nearest city is Cusco."
+    },
+    {
+      "id": 852,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "In which city does the Eiffel Tower stand?",
+      "answer": "Paris",
+      "accept": [
+        "paris"
+      ],
+      "hint": "Built for the 1889 World's Fair and meant to be temporary."
+    },
+    {
+      "id": 853,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "Christ the Redeemer overlooks which city?",
+      "answer": "Rio de Janeiro",
+      "accept": [
+        "rio",
+        "rio de janeiro",
+        "rio de janeiro brazil"
+      ],
+      "hint": "It stands on Corcovado mountain, arms open over the bay."
+    },
+    {
+      "id": 854,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Catacombs, holding the remains of six million people, run beneath which capital?",
+      "answer": "Paris",
+      "accept": [
+        "paris"
+      ],
+      "hint": "Former limestone quarries, filled when the city's cemeteries overflowed."
+    },
+    {
+      "id": 855,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The rock-cut city of Petra is in which country?",
+      "answer": "Jordan",
+      "accept": [
+        "jordan"
+      ],
+      "hint": "Carved by the Nabataeans; the Treasury facade closes a narrow gorge."
+    },
+    {
+      "id": 856,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Chichén Itzá and its stepped pyramid are in which country?",
+      "answer": "Mexico",
+      "accept": [
+        "mexico"
+      ],
+      "hint": "Built by the Maya on the Yucatán Peninsula."
+    },
+    {
+      "id": 857,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Taj Mahal was built in which country?",
+      "answer": "India",
+      "accept": [
+        "india"
+      ],
+      "hint": "A mausoleum in Agra, built by Shah Jahan for his wife."
+    },
+    {
+      "id": 858,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Which is the only one of the Seven Wonders of the Ancient World still standing?",
+      "answer": "The Great Pyramid of Giza",
+      "accept": [
+        "great pyramid",
+        "the great pyramid",
+        "great pyramid of giza",
+        "pyramid of giza",
+        "the great pyramid of giza"
+      ],
+      "hint": "It was the tallest structure on Earth for about 3,800 years."
+    },
+    {
+      "id": 859,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Hanging Gardens, one of the ancient wonders, were said to be in which city?",
+      "answer": "Babylon",
+      "accept": [
+        "babylon"
+      ],
+      "hint": "In present-day Iraq, and no archaeological trace has ever been found."
+    },
+    {
+      "id": 860,
+      "category": "Landmarks & Wonders",
+      "difficulty": "hard",
+      "question": "The Colossus, a giant bronze statue among the ancient wonders, stood on which Greek island?",
+      "answer": "Rhodes",
+      "accept": [
+        "rhodes"
+      ],
+      "hint": "It stood barely fifty years before an earthquake felled it."
+    },
+    {
+      "id": 861,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "Stonehenge stands in which country?",
+      "answer": "England",
+      "accept": [
+        "england"
+      ],
+      "hint": "On Salisbury Plain; some of its stones came from Wales."
+    },
+    {
+      "id": 862,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Colosseum is in which city?",
+      "answer": "Rome",
+      "accept": [
+        "rome"
+      ],
+      "hint": "It held perhaps fifty thousand spectators and could be flooded."
+    },
+    {
+      "id": 863,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Leaning Tower stands in which Italian city?",
+      "answer": "Pisa",
+      "accept": [
+        "pisa"
+      ],
+      "hint": "It is the bell tower of the city's cathedral, and it began tilting during construction."
+    },
+    {
+      "id": 864,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Acropolis and its Parthenon overlook which capital?",
+      "answer": "Athens",
+      "accept": [
+        "athens"
+      ],
+      "hint": "The temple was dedicated to the goddess the city is named for."
+    },
+    {
+      "id": 865,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Alhambra palace complex is in which Spanish city?",
+      "answer": "Granada",
+      "accept": [
+        "granada"
+      ],
+      "hint": "A Moorish fortress-palace in Andalusia, with the Court of the Lions."
+    },
+    {
+      "id": 866,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Neuschwanstein Castle, the model for Disney's fairytale castle, is in which country?",
+      "answer": "Germany",
+      "accept": [
+        "germany"
+      ],
+      "hint": "Built in Bavaria for Ludwig II, and never finished."
+    },
+    {
+      "id": 867,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Brandenburg Gate stands in which city?",
+      "answer": "Berlin",
+      "accept": [
+        "berlin"
+      ],
+      "hint": "It stood in the no-man's-land beside the Wall for 28 years."
+    },
+    {
+      "id": 868,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Little Mermaid statue sits in the harbour of which capital?",
+      "answer": "Copenhagen",
+      "accept": [
+        "copenhagen"
+      ],
+      "hint": "Based on a Hans Christian Andersen story, and smaller than visitors expect."
+    },
+    {
+      "id": 869,
+      "category": "Landmarks & Wonders",
+      "difficulty": "hard",
+      "question": "The Manneken Pis fountain is a landmark of which capital?",
+      "answer": "Brussels",
+      "accept": [
+        "brussels"
+      ],
+      "hint": "A small bronze boy who is dressed in costumes hundreds of times a year."
+    },
+    {
+      "id": 870,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Hagia Sophia and the Blue Mosque face each other in which city?",
+      "answer": "Istanbul",
+      "accept": [
+        "istanbul"
+      ],
+      "hint": "One was a cathedral, then a mosque, then a museum, then a mosque again."
+    },
+    {
+      "id": 871,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "St Basil's Cathedral, with its swirling coloured domes, stands on which square?",
+      "answer": "Red Square",
+      "accept": [
+        "red square"
+      ],
+      "hint": "In Moscow, at the edge of the Kremlin."
+    },
+    {
+      "id": 872,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Forbidden City is in which capital?",
+      "answer": "Beijing",
+      "accept": [
+        "beijing",
+        "peking"
+      ],
+      "hint": "Nearly a thousand buildings, home to emperors for five centuries."
+    },
+    {
+      "id": 873,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Terracotta Army was buried near which Chinese city?",
+      "answer": "Xi'an",
+      "accept": [
+        "xian",
+        "xi an",
+        "xi'an"
+      ],
+      "hint": "Discovered by farmers digging a well in 1974."
+    },
+    {
+      "id": 874,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "Mount Fuji is the highest peak of which country?",
+      "answer": "Japan",
+      "accept": [
+        "japan"
+      ],
+      "hint": "An active volcano, and a pilgrimage site for centuries."
+    },
+    {
+      "id": 875,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The Petronas Towers stand in which capital?",
+      "answer": "Kuala Lumpur",
+      "accept": [
+        "kuala lumpur",
+        "kl"
+      ],
+      "hint": "Twin towers joined by a skybridge; they were the world's tallest until 2004."
+    },
+    {
+      "id": 876,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Burj Khalifa, the world's tallest building, is in which city?",
+      "answer": "Dubai",
+      "accept": [
+        "dubai"
+      ],
+      "hint": "It passed 828 metres and opened in 2010."
+    },
+    {
+      "id": 877,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "The moai, giant carved stone heads, stand on which remote island?",
+      "answer": "Easter Island",
+      "accept": [
+        "easter island",
+        "rapa nui"
+      ],
+      "hint": "It belongs to Chile, and lies over 3,000 km from the mainland."
+    },
+    {
+      "id": 878,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "Uluru, the great sandstone monolith, is in which country?",
+      "answer": "Australia",
+      "accept": [
+        "australia"
+      ],
+      "hint": "Sacred to the Anangu people, and once called Ayers Rock."
+    },
+    {
+      "id": 879,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Victoria Falls lies on the border between Zambia and which country?",
+      "answer": "Zimbabwe",
+      "accept": [
+        "zimbabwe"
+      ],
+      "hint": "The local name means 'the smoke that thunders'."
+    },
+    {
+      "id": 880,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Table Mountain overlooks which South African city?",
+      "answer": "Cape Town",
+      "accept": [
+        "cape town"
+      ],
+      "hint": "Its flat top gathers a cloud locals call the tablecloth."
+    },
+    {
+      "id": 881,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Mount Rushmore is carved into a mountain in which US state?",
+      "answer": "South Dakota",
+      "accept": [
+        "south dakota"
+      ],
+      "hint": "Four presidents, in the Black Hills."
+    },
+    {
+      "id": 882,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Golden Gate Bridge spans the entrance to which bay?",
+      "answer": "San Francisco Bay",
+      "accept": [
+        "san francisco bay",
+        "san francisco"
+      ],
+      "hint": "Its colour is officially called International Orange."
+    },
+    {
+      "id": 883,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "On which island does the Statue of Liberty stand?",
+      "answer": "Liberty Island",
+      "accept": [
+        "liberty island",
+        "bedloe's island"
+      ],
+      "hint": "Renamed in 1956; it sits in New York Harbor."
+    },
+    {
+      "id": 884,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Iguazu Falls straddles the border of Brazil and which country?",
+      "answer": "Argentina",
+      "accept": [
+        "argentina"
+      ],
+      "hint": "Hundreds of cascades, and the largest is called the Devil's Throat."
+    },
+    {
+      "id": 885,
+      "category": "Landmarks & Wonders",
+      "difficulty": "hard",
+      "question": "The Salar de Uyuni, the world's largest salt flat, is in which country?",
+      "answer": "Bolivia",
+      "accept": [
+        "bolivia"
+      ],
+      "hint": "When a thin layer of water covers it, it becomes an enormous mirror."
+    },
+    {
+      "id": 886,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Great Sphinx sits beside the pyramids in which country?",
+      "answer": "Egypt",
+      "accept": [
+        "egypt"
+      ],
+      "hint": "A lion's body with a human head, on the Giza plateau."
+    },
+    {
+      "id": 887,
+      "category": "Landmarks & Wonders",
+      "difficulty": "easy",
+      "question": "The Trevi Fountain is in which city?",
+      "answer": "Rome",
+      "accept": [
+        "rome"
+      ],
+      "hint": "Tradition says a coin thrown over the shoulder brings you back."
+    },
+    {
+      "id": 888,
+      "category": "Landmarks & Wonders",
+      "difficulty": "medium",
+      "question": "Which Cambodian temple complex appears on its country's national flag?",
+      "answer": "Angkor Wat",
+      "accept": [
+        "angkor wat",
+        "angkor"
+      ],
+      "hint": "The only building to feature on any national flag."
+    },
+    {
+      "id": 889,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which 1973 film about the possession of a young girl is often called the scariest ever made?",
+      "answer": "The Exorcist",
+      "accept": [
+        "exorcist",
+        "the exorcist"
+      ],
+      "hint": "It was the first horror film nominated for the Best Picture Oscar."
+    },
+    {
+      "id": 890,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which 1978 John Carpenter film introduced the masked killer Michael Myers?",
+      "answer": "Halloween",
+      "accept": [
+        "halloween"
+      ],
+      "hint": "Shot for around $300,000, and its synth theme is in 5/4 time."
+    },
+    {
+      "id": 891,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Who is the masked killer of the Friday the 13th franchise?",
+      "answer": "Jason Voorhees",
+      "accept": [
+        "jason",
+        "jason voorhees"
+      ],
+      "hint": "He does not actually wear the hockey mask until the third film."
+    },
+    {
+      "id": 892,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which horror villain stalks his victims in their dreams?",
+      "answer": "Freddy Krueger",
+      "accept": [
+        "freddy",
+        "freddy krueger"
+      ],
+      "hint": "A striped jumper, a burned face, and a bladed glove."
+    },
+    {
+      "id": 893,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 1999 found-footage film was marketed as real recovered tapes?",
+      "answer": "The Blair Witch Project",
+      "accept": [
+        "blair witch",
+        "the blair witch project",
+        "blair witch project"
+      ],
+      "hint": "Made for about $60,000 in the woods of Maryland."
+    },
+    {
+      "id": 894,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which Stephen King novel features the shape-shifting entity Pennywise?",
+      "answer": "It",
+      "accept": [
+        "it"
+      ],
+      "hint": "The children who face it call themselves the Losers' Club."
+    },
+    {
+      "id": 895,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 2017 Jordan Peele film won him the Oscar for Best Original Screenplay?",
+      "answer": "Get Out",
+      "accept": [
+        "get out"
+      ],
+      "hint": "The Sunken Place, a teacup, and a very uncomfortable weekend away."
+    },
+    {
+      "id": 896,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 1968 George Romero film established the modern zombie?",
+      "answer": "Night of the Living Dead",
+      "accept": [
+        "night of the living dead"
+      ],
+      "hint": "Shot in black and white in Pennsylvania; it fell into the public domain."
+    },
+    {
+      "id": 897,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 1922 German silent film was an unauthorised adaptation of Dracula?",
+      "answer": "Nosferatu",
+      "accept": [
+        "nosferatu"
+      ],
+      "hint": "Stoker's estate sued and most prints were ordered destroyed."
+    },
+    {
+      "id": 898,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Who wrote the 1897 novel Dracula?",
+      "answer": "Bram Stoker",
+      "accept": [
+        "bram stoker",
+        "stoker"
+      ],
+      "hint": "An Irish theatre manager who never visited Transylvania."
+    },
+    {
+      "id": 899,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which Japanese horror film centres on a videotape that kills its viewer in seven days?",
+      "answer": "Ringu",
+      "accept": [
+        "ringu",
+        "ring",
+        "the ring"
+      ],
+      "hint": "Remade in Hollywood in 2002; the ghost climbs out of a well."
+    },
+    {
+      "id": 900,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 2016 South Korean film traps passengers with zombies on a train?",
+      "answer": "Train to Busan",
+      "accept": [
+        "train to busan",
+        "busan"
+      ],
+      "hint": "The journey runs from Seoul to a southern port city."
+    },
+    {
+      "id": 901,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which mask is worn by the killer in the Scream franchise?",
+      "answer": "Ghostface",
+      "accept": [
+        "ghostface",
+        "the ghostface mask"
+      ],
+      "hint": "Its design was inspired by a Munch painting."
+    },
+    {
+      "id": 902,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which 1976 film, from a Stephen King novel, ends with a prom drenched in pig's blood?",
+      "answer": "Carrie",
+      "accept": [
+        "carrie"
+      ],
+      "hint": "Brian De Palma directed; Sissy Spacek was Oscar-nominated for it."
+    },
+    {
+      "id": 903,
+      "category": "Horror & Hauntings",
+      "difficulty": "hard",
+      "question": "Which 2018 Ari Aster film features a dollhouse, a decapitation and a cult?",
+      "answer": "Hereditary",
+      "accept": [
+        "hereditary"
+      ],
+      "hint": "Toni Collette's performance was widely called an Oscar snub."
+    },
+    {
+      "id": 904,
+      "category": "Horror & Hauntings",
+      "difficulty": "hard",
+      "question": "Which paranormal investigators, played by Vera Farmiga and Patrick Wilson, anchor The Conjuring films?",
+      "answer": "Ed and Lorraine Warren",
+      "accept": [
+        "the warrens",
+        "ed and lorraine warren",
+        "warrens"
+      ],
+      "hint": "A real married couple who also investigated the Amityville case."
+    },
+    {
+      "id": 905,
+      "category": "Horror & Hauntings",
+      "difficulty": "hard",
+      "question": "Which everyday object was modified into Michael Myers' mask in Halloween?",
+      "answer": "A Captain Kirk mask",
+      "accept": [
+        "captain kirk mask",
+        "a captain kirk mask",
+        "william shatner mask",
+        "star trek mask"
+      ],
+      "hint": "Bought cheaply, painted white, and the eyeholes widened."
+    },
+    {
+      "id": 906,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "What is the term for a person who transforms into a wolf?",
+      "answer": "A werewolf",
+      "accept": [
+        "werewolf",
+        "lycanthrope",
+        "a lycanthrope"
+      ],
+      "hint": "Traditionally the change comes with the full moon."
+    },
+    {
+      "id": 907,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "In Mary Shelley's novel, what is the name of Frankenstein's creation?",
+      "answer": "It has no name",
+      "accept": [
+        "no name",
+        "nameless",
+        "it has no name",
+        "the creature",
+        "the monster",
+        "unnamed"
+      ],
+      "hint": "Victor is the scientist; the thing he makes is only ever called creature, wretch or fiend."
+    },
+    {
+      "id": 908,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which vegetable was carved into lanterns before pumpkins took over?",
+      "answer": "The turnip",
+      "accept": [
+        "turnip",
+        "the turnip",
+        "turnips"
+      ],
+      "hint": "An Irish tradition, and pumpkins proved far easier to hollow out."
+    },
+    {
+      "id": 909,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "On which date is Halloween observed?",
+      "answer": "31 October",
+      "accept": [
+        "31 october",
+        "october 31",
+        "31st october",
+        "oct 31"
+      ],
+      "hint": "The eve of All Saints' Day."
+    },
+    {
+      "id": 910,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which Mexican holiday honours the dead with marigolds, altars and sugar skulls?",
+      "answer": "Day of the Dead",
+      "accept": [
+        "day of the dead",
+        "dia de muertos",
+        "dia de los muertos"
+      ],
+      "hint": "Observed on the first two days of November."
+    },
+    {
+      "id": 911,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "What is the term for a spirit said to move objects and make noise?",
+      "answer": "A poltergeist",
+      "accept": [
+        "poltergeist",
+        "a poltergeist"
+      ],
+      "hint": "German for 'noisy ghost'."
+    },
+    {
+      "id": 912,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "What is the affectionate nickname for the supposed monster of Loch Ness?",
+      "answer": "Nessie",
+      "accept": [
+        "nessie"
+      ],
+      "hint": "The famous 1934 'surgeon's photograph' was admitted to be a hoax."
+    },
+    {
+      "id": 913,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which large ape-like creature is said to roam the forests of the Pacific Northwest?",
+      "answer": "Bigfoot",
+      "accept": [
+        "bigfoot",
+        "sasquatch"
+      ],
+      "hint": "The 1967 Patterson-Gimlin film is its most famous supposed footage."
+    },
+    {
+      "id": 914,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which cryptid's name translates from Spanish as 'goat sucker'?",
+      "answer": "The chupacabra",
+      "accept": [
+        "chupacabra",
+        "the chupacabra"
+      ],
+      "hint": "Reports began in Puerto Rico in the mid-1990s."
+    },
+    {
+      "id": 915,
+      "category": "Horror & Hauntings",
+      "difficulty": "medium",
+      "question": "Which faceless, long-limbed figure in a suit began as a 2009 internet photo contest entry?",
+      "answer": "Slender Man",
+      "accept": [
+        "slender man",
+        "slenderman"
+      ],
+      "hint": "The first creepypasta character to escape into mainstream panic."
+    },
+    {
+      "id": 916,
+      "category": "Horror & Hauntings",
+      "difficulty": "hard",
+      "question": "What is the term for the unease provoked by something almost, but not quite, human?",
+      "answer": "The uncanny valley",
+      "accept": [
+        "uncanny valley",
+        "the uncanny valley"
+      ],
+      "hint": "Named by roboticist Masahiro Mori in 1970, after a dip in a graph."
+    },
+    {
+      "id": 917,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which stretch of the western Atlantic is blamed for unexplained disappearances of ships and planes?",
+      "answer": "The Bermuda Triangle",
+      "accept": [
+        "bermuda triangle",
+        "the bermuda triangle"
+      ],
+      "hint": "Also called the Devil's Triangle; insurers do not treat it as unusual."
+    },
+    {
+      "id": 918,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which 1980 Kubrick film has a boy riding a tricycle down an empty hotel corridor?",
+      "answer": "The Shining",
+      "accept": [
+        "the shining",
+        "shining"
+      ],
+      "hint": "Stephen King famously disliked this adaptation of his own novel."
+    },
+    {
+      "id": 919,
+      "category": "Horror & Hauntings",
+      "difficulty": "easy",
+      "question": "Which creature is traditionally repelled by garlic, running water and sunlight?",
+      "answer": "The vampire",
+      "accept": [
+        "vampire",
+        "a vampire",
+        "vampires"
+      ],
+      "hint": "Folklore across the Balkans long predates the Gothic novel version."
+    },
+    {
+      "id": 920,
+      "category": "Horror & Hauntings",
+      "difficulty": "hard",
+      "question": "Which 2014 Australian film features a children's book character in a top hat?",
+      "answer": "The Babadook",
+      "accept": [
+        "babadook",
+        "the babadook"
+      ],
+      "hint": "Its title creature later became an unlikely queer icon."
+    },
+    {
+      "id": 921,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "What is the only even prime number?",
+      "answer": "2",
+      "accept": [
+        "2",
+        "two"
+      ],
+      "hint": "Every other even number has it as a factor, which disqualifies them."
+    },
+    {
+      "id": 922,
+      "category": "Numbers & Puzzles",
+      "difficulty": "easy",
+      "question": "What is pi to two decimal places?",
+      "answer": "3.14",
+      "accept": [
+        "3.14",
+        "314"
+      ],
+      "hint": "Celebrated each year on the fourteenth of March."
+    },
+    {
+      "id": 923,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is the value of zero factorial?",
+      "answer": "1",
+      "accept": [
+        "1",
+        "one"
+      ],
+      "hint": "Defined so that the formula for combinations keeps working."
+    },
+    {
+      "id": 924,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is the approximate value of the golden ratio?",
+      "answer": "1.618",
+      "accept": [
+        "1.618",
+        "1.62",
+        "phi"
+      ],
+      "hint": "Denoted by a Greek letter, and the Fibonacci ratios converge on it."
+    },
+    {
+      "id": 925,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "How many zeros are in a googol?",
+      "answer": "100",
+      "accept": [
+        "100",
+        "a hundred",
+        "one hundred"
+      ],
+      "hint": "The search engine misspelled it on purpose."
+    },
+    {
+      "id": 926,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is the sum of the whole numbers from 1 to 100?",
+      "answer": "5050",
+      "accept": [
+        "5050",
+        "5,050"
+      ],
+      "hint": "Gauss reportedly worked it out as a schoolboy by pairing the ends."
+    },
+    {
+      "id": 927,
+      "category": "Numbers & Puzzles",
+      "difficulty": "easy",
+      "question": "What is the term for a number divisible only by 1 and itself?",
+      "answer": "A prime number",
+      "accept": [
+        "prime",
+        "a prime",
+        "prime number",
+        "a prime number"
+      ],
+      "hint": "Euclid proved there are infinitely many of them."
+    },
+    {
+      "id": 928,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is the smallest perfect number?",
+      "answer": "6",
+      "accept": [
+        "6",
+        "six"
+      ],
+      "hint": "Its divisors 1, 2 and 3 add up to itself."
+    },
+    {
+      "id": 929,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "What is 2 to the power of 10?",
+      "answer": "1024",
+      "accept": [
+        "1024",
+        "1,024"
+      ],
+      "hint": "The reason a kilobyte is not quite a thousand bytes."
+    },
+    {
+      "id": 930,
+      "category": "Numbers & Puzzles",
+      "difficulty": "easy",
+      "question": "Which Roman numeral represents 1000?",
+      "answer": "M",
+      "accept": [
+        "m"
+      ],
+      "hint": "From the Latin 'mille'."
+    },
+    {
+      "id": 931,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "Which Roman numeral represents 50?",
+      "answer": "L",
+      "accept": [
+        "l"
+      ],
+      "hint": "It sits between X and C."
+    },
+    {
+      "id": 932,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "How many items are in a gross?",
+      "answer": "144",
+      "accept": [
+        "144"
+      ],
+      "hint": "A dozen dozen."
+    },
+    {
+      "id": 933,
+      "category": "Numbers & Puzzles",
+      "difficulty": "easy",
+      "question": "How many degrees are in the interior angles of a triangle?",
+      "answer": "180",
+      "accept": [
+        "180",
+        "180 degrees"
+      ],
+      "hint": "Half a full turn, and it holds only on a flat surface."
+    },
+    {
+      "id": 934,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "Which number is the only one spelled with its letters in alphabetical order in English?",
+      "answer": "Forty",
+      "accept": [
+        "forty",
+        "40"
+      ],
+      "hint": "F, o, r, t, y — and one is the only number spelled in reverse alphabetical order."
+    },
+    {
+      "id": 935,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "In the Fibonacci sequence, which two numbers does it begin with?",
+      "answer": "0 and 1",
+      "accept": [
+        "0 and 1",
+        "1 and 1",
+        "zero and one",
+        "0 1"
+      ],
+      "hint": "Each term after that is the sum of the two before it."
+    },
+    {
+      "id": 936,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is the sum of all the numbers on a roulette wheel?",
+      "answer": "666",
+      "accept": [
+        "666"
+      ],
+      "hint": "Which is why it is sometimes called the Devil's wheel."
+    },
+    {
+      "id": 937,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "How many people must be in a room for a shared birthday to be more likely than not?",
+      "answer": "23",
+      "accept": [
+        "23",
+        "twenty three",
+        "twenty-three"
+      ],
+      "hint": "Far fewer than most people guess, because it counts pairs rather than matches to one person."
+    },
+    {
+      "id": 938,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "What is Euler's number to two decimal places?",
+      "answer": "2.72",
+      "accept": [
+        "2.72",
+        "2.718",
+        "e"
+      ],
+      "hint": "The base of natural logarithms, written as a single letter."
+    },
+    {
+      "id": 939,
+      "category": "Numbers & Puzzles",
+      "difficulty": "easy",
+      "question": "What is the largest single-digit prime number?",
+      "answer": "7",
+      "accept": [
+        "7",
+        "seven"
+      ],
+      "hint": "Eight and nine both have factors."
+    },
+    {
+      "id": 940,
+      "category": "Numbers & Puzzles",
+      "difficulty": "hard",
+      "question": "In the Monty Hall problem, should you switch doors after one is opened?",
+      "answer": "Yes",
+      "accept": [
+        "yes",
+        "switch",
+        "you should switch"
+      ],
+      "hint": "Switching wins two times in three, which almost nobody believes at first."
+    },
+    {
+      "id": 941,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "What is the term for the result of a division?",
+      "answer": "The quotient",
+      "accept": [
+        "quotient",
+        "the quotient"
+      ],
+      "hint": "The number being divided is the dividend."
+    },
+    {
+      "id": 942,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "What is a number that reads the same in both directions called?",
+      "answer": "A palindromic number",
+      "accept": [
+        "palindromic number",
+        "a palindromic number",
+        "palindrome",
+        "a palindrome"
+      ],
+      "hint": "12321 qualifies; so does every single digit."
+    },
+    {
+      "id": 943,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "How many faces does a standard six-sided die have in total, counting all pips?",
+      "answer": "21",
+      "accept": [
+        "21",
+        "twenty one",
+        "twenty-one"
+      ],
+      "hint": "The numbers one through six, added together."
+    },
+    {
+      "id": 944,
+      "category": "Numbers & Puzzles",
+      "difficulty": "medium",
+      "question": "What is the mathematical term for a number that cannot be written as a simple fraction?",
+      "answer": "An irrational number",
+      "accept": [
+        "irrational",
+        "irrational number",
+        "an irrational number"
+      ],
+      "hint": "The square root of two was the first one proved."
+    },
+    {
+      "id": 945,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the SI unit of force?",
+      "answer": "The newton",
+      "accept": [
+        "newton",
+        "the newton"
+      ],
+      "hint": "Named after the man who worked out why apples fall."
+    },
+    {
+      "id": 946,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the SI unit of energy?",
+      "answer": "The joule",
+      "accept": [
+        "joule",
+        "the joule"
+      ],
+      "hint": "Named after an English brewer who measured heat from work."
+    },
+    {
+      "id": 947,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the SI unit of power?",
+      "answer": "The watt",
+      "accept": [
+        "watt",
+        "the watt"
+      ],
+      "hint": "Named after the Scot who improved the steam engine."
+    },
+    {
+      "id": 948,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the SI unit of frequency?",
+      "answer": "The hertz",
+      "accept": [
+        "hertz",
+        "the hertz"
+      ],
+      "hint": "One cycle per second, named after the discoverer of radio waves."
+    },
+    {
+      "id": 949,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the SI unit of electric current?",
+      "answer": "The ampere",
+      "accept": [
+        "ampere",
+        "the ampere",
+        "amp"
+      ],
+      "hint": "Named after a French physicist; the shortened form is on every fuse."
+    },
+    {
+      "id": 950,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "In E=mc squared, what does c represent?",
+      "answer": "The speed of light",
+      "accept": [
+        "speed of light",
+        "the speed of light",
+        "light speed"
+      ],
+      "hint": "Squared, which is why a little mass yields enormous energy."
+    },
+    {
+      "id": 951,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "What is absolute zero in degrees Celsius?",
+      "answer": "-273.15",
+      "accept": [
+        "-273.15",
+        "273.15",
+        "-273",
+        "minus 273.15"
+      ],
+      "hint": "The point where a substance has no thermal energy left to give up."
+    },
+    {
+      "id": 952,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which subatomic particle in the nucleus carries no electric charge?",
+      "answer": "The neutron",
+      "accept": [
+        "neutron",
+        "the neutron"
+      ],
+      "hint": "Discovered by Chadwick in 1932, later than its charged neighbour."
+    },
+    {
+      "id": 953,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the bending of light as it passes from air into water called?",
+      "answer": "Refraction",
+      "accept": [
+        "refraction"
+      ],
+      "hint": "It is why a straw looks broken in a glass."
+    },
+    {
+      "id": 954,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "Which of Newton's laws states that every action has an equal and opposite reaction?",
+      "answer": "The third law",
+      "accept": [
+        "third",
+        "the third",
+        "third law",
+        "the third law",
+        "newton's third law"
+      ],
+      "hint": "The one that explains why a gun recoils."
+    },
+    {
+      "id": 955,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "What is the term for materials that conduct electricity with zero resistance?",
+      "answer": "Superconductors",
+      "accept": [
+        "superconductor",
+        "superconductors",
+        "superconductivity"
+      ],
+      "hint": "Most need to be cooled to extraordinarily low temperatures."
+    },
+    {
+      "id": 956,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "Roughly how fast does sound travel through air at sea level?",
+      "answer": "343 metres per second",
+      "accept": [
+        "343",
+        "343 m/s",
+        "343 metres per second",
+        "343 meters per second"
+      ],
+      "hint": "About a million times slower than the thing you see first."
+    },
+    {
+      "id": 957,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "Which fundamental force holds the atomic nucleus together?",
+      "answer": "The strong nuclear force",
+      "accept": [
+        "strong nuclear force",
+        "the strong force",
+        "strong force",
+        "the strong nuclear force"
+      ],
+      "hint": "It has to beat the electrical repulsion between protons."
+    },
+    {
+      "id": 958,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for iron?",
+      "answer": "Fe",
+      "accept": [
+        "fe"
+      ],
+      "hint": "Two letters, from the Latin 'ferrum'."
+    },
+    {
+      "id": 959,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for sodium?",
+      "answer": "Na",
+      "accept": [
+        "na"
+      ],
+      "hint": "Two letters, from the Latin 'natrium'."
+    },
+    {
+      "id": 960,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the chemical symbol for lead?",
+      "answer": "Pb",
+      "accept": [
+        "pb"
+      ],
+      "hint": "Two letters, from the Latin 'plumbum' — the root of plumber."
+    },
+    {
+      "id": 961,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the chemical symbol for copper?",
+      "answer": "Cu",
+      "accept": [
+        "cu"
+      ],
+      "hint": "Two letters, from the Latin for the island of Cyprus."
+    },
+    {
+      "id": 962,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the chemical name for table salt?",
+      "answer": "Sodium chloride",
+      "accept": [
+        "sodium chloride",
+        "nacl"
+      ],
+      "hint": "One metal, one halogen, and the reaction between them is violent."
+    },
+    {
+      "id": 963,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which element has atomic number 6?",
+      "answer": "Carbon",
+      "accept": [
+        "carbon"
+      ],
+      "hint": "Every living thing on Earth is built around it."
+    },
+    {
+      "id": 964,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the term for a substance that speeds up a reaction without being consumed?",
+      "answer": "A catalyst",
+      "accept": [
+        "catalyst",
+        "a catalyst"
+      ],
+      "hint": "Enzymes are the biological kind."
+    },
+    {
+      "id": 965,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "How many electrons can the innermost electron shell hold?",
+      "answer": "2",
+      "accept": [
+        "2",
+        "two"
+      ],
+      "hint": "Which is why helium is already full and inert."
+    },
+    {
+      "id": 966,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "Which element is the most electronegative?",
+      "answer": "Fluorine",
+      "accept": [
+        "fluorine"
+      ],
+      "hint": "Top right of the periodic table, ignoring the noble gases."
+    },
+    {
+      "id": 967,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which noble gas glows orange-red in illuminated signs?",
+      "answer": "Neon",
+      "accept": [
+        "neon"
+      ],
+      "hint": "The name is Greek for 'new'."
+    },
+    {
+      "id": 968,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the term for atoms of one element with differing numbers of neutrons?",
+      "answer": "Isotopes",
+      "accept": [
+        "isotope",
+        "isotopes"
+      ],
+      "hint": "Carbon-14 is the one used for dating."
+    },
+    {
+      "id": 969,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What gas is usually released when an acid reacts with a metal?",
+      "answer": "Hydrogen",
+      "accept": [
+        "hydrogen"
+      ],
+      "hint": "It pops when a lit splint is held to it."
+    },
+    {
+      "id": 970,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the basic structural unit of all living organisms?",
+      "answer": "The cell",
+      "accept": [
+        "cell",
+        "the cell"
+      ],
+      "hint": "Hooke named them after monks' rooms."
+    },
+    {
+      "id": 971,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which protein carries oxygen in the blood?",
+      "answer": "Haemoglobin",
+      "accept": [
+        "haemoglobin",
+        "hemoglobin"
+      ],
+      "hint": "It contains iron, which is why blood is red."
+    },
+    {
+      "id": 972,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the fluid component of blood called?",
+      "answer": "Plasma",
+      "accept": [
+        "plasma"
+      ],
+      "hint": "It makes up more than half the volume and is straw-coloured."
+    },
+    {
+      "id": 973,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What are the building blocks of proteins?",
+      "answer": "Amino acids",
+      "accept": [
+        "amino acid",
+        "amino acids"
+      ],
+      "hint": "Twenty of them are standard in the genetic code."
+    },
+    {
+      "id": 974,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "Which base pairs with adenine in DNA?",
+      "answer": "Thymine",
+      "accept": [
+        "thymine",
+        "t"
+      ],
+      "hint": "In RNA it is replaced by uracil."
+    },
+    {
+      "id": 975,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the cell division that produces gametes called?",
+      "answer": "Meiosis",
+      "accept": [
+        "meiosis"
+      ],
+      "hint": "It halves the chromosome count; its sibling process does not."
+    },
+    {
+      "id": 976,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "What is the process of programmed cell death called?",
+      "answer": "Apoptosis",
+      "accept": [
+        "apoptosis"
+      ],
+      "hint": "Greek for leaves falling from a tree; cancer cells evade it."
+    },
+    {
+      "id": 977,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which organs filter the blood to produce urine?",
+      "answer": "The kidneys",
+      "accept": [
+        "kidney",
+        "kidneys",
+        "the kidneys"
+      ],
+      "hint": "A pair, and you can live with one."
+    },
+    {
+      "id": 978,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the largest part of the human brain?",
+      "answer": "The cerebrum",
+      "accept": [
+        "cerebrum",
+        "the cerebrum"
+      ],
+      "hint": "Divided into two hemispheres, and it sits above the little brain."
+    },
+    {
+      "id": 979,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "What is the scientific binomial name for modern humans?",
+      "answer": "Homo sapiens",
+      "accept": [
+        "homo sapiens"
+      ],
+      "hint": "Latin for 'wise man'."
+    },
+    {
+      "id": 980,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the study of insects called?",
+      "answer": "Entomology",
+      "accept": [
+        "entomology"
+      ],
+      "hint": "Easily confused with the study of word origins."
+    },
+    {
+      "id": 981,
+      "category": "Science & Nature",
+      "difficulty": "medium",
+      "question": "What is the study of birds called?",
+      "answer": "Ornithology",
+      "accept": [
+        "ornithology"
+      ],
+      "hint": "From the Greek 'ornis'."
+    },
+    {
+      "id": 982,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "What is the term for an organism that produces its own food from sunlight or chemicals?",
+      "answer": "An autotroph",
+      "accept": [
+        "autotroph",
+        "an autotroph",
+        "producer"
+      ],
+      "hint": "Plants are the familiar kind; everything else eats them or eats those."
+    },
+    {
+      "id": 983,
+      "category": "Science & Nature",
+      "difficulty": "easy",
+      "question": "Which type of blood cell defends the body against infection?",
+      "answer": "White blood cells",
+      "accept": [
+        "white blood cell",
+        "white blood cells",
+        "leukocyte",
+        "leukocytes"
+      ],
+      "hint": "Far outnumbered by the red ones that carry oxygen."
+    },
+    {
+      "id": 984,
+      "category": "Science & Nature",
+      "difficulty": "hard",
+      "question": "How many chambers does a fish heart have?",
+      "answer": "Two",
+      "accept": [
+        "two",
+        "2"
+      ],
+      "hint": "Fewer than yours, because the blood makes a single circuit."
     }
   ]
 }

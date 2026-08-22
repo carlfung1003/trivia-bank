@@ -196,11 +196,16 @@ export function headCandidates(question) {
   /* Three tokens, not four. Reaching further routinely runs past the noun
      phrase into the verb — "which Beatles album cover SHOWS the band" — and
      a common verb will out-score the real head noun on frequency alone. */
-  const m = q.match(/\b(?:what|which|whose)\s+((?:[a-z-]+\s+){0,2}[a-z-]+)/);
+  /* Numerals are allowed through the skip positions but never kept. Without
+     that, "Which 1968 George Romero film..." failed to match at all — the
+     token class excluded digits — so the question fell back to the catch-all
+     class and pooled with everything, which is how a treaty ended up among
+     horror films. */
+  const m = q.match(/\b(?:what|which|whose)\s+((?:[a-z0-9'’-]+\s+){0,3}[a-z-]+)/);
   if (!m) return [];
   return m[1]
     .split(/\s+/)
-    .filter((w) => w && !ASK_STOPWORDS.has(w) && !NUMBER_WORDS.has(w))
+    .filter((w) => w && !/\d/.test(w) && !ASK_STOPWORDS.has(w) && !NUMBER_WORDS.has(w))
     .slice(0, 3)
     .map(singular);
 }

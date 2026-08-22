@@ -250,6 +250,16 @@ export const CATEGORY_SIGILS = {
   "Technology":         "⌘",  /* ⌘ */
   "Language & Words":   "¶",  /* ¶ */
   "Odds & Ends":        "⁂",  /* ⁂ */
+  /* Added with the themed expansion. These four have no slot in the 4x3
+     sprite (assets/art/sigils.png), so they fall back to the mono glyph —
+     which is the documented behaviour, not a gap. Regenerating the sheet at
+     4x4 with four more icons is in docs/ASSETS.md if it ever matters.
+     Deliberately plain glyphs: the astrological and zodiac symbols render as
+     colour emoji on macOS, which breaks the no-emoji rule. */
+  "Signs & Symbols":     "✧",
+  "Landmarks & Wonders": "⌂",
+  "Horror & Hauntings":  "†",
+  "Numbers & Puzzles":   "∑",
 };
 
 export const DEFAULT_SIGIL = "○";

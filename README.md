@@ -4,7 +4,7 @@ A trivia heist. Twelve locks, two safe havens, five tools in the kit — bank yo
 
 **Live:** [trivia.carlfung.dev](https://trivia.carlfung.dev)
 
-Built on a 735-question bank that started life as a 2023 Google Sheet of quiz answers.
+Built on a 904-question bank that started life as a 2023 Google Sheet of quiz answers.
 
 ---
 
@@ -81,7 +81,7 @@ Both are plain Node, no dependencies.
 
 ```jsonc
 {
-  "meta": { "name": "...", "version": "1.0.0", "count": 735 },
+  "meta": { "name": "...", "version": "1.0.0", "count": 904 },
   "categories": ["Geography", "History", "..."],
   "questions": [
     {
