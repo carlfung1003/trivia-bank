@@ -230,3 +230,25 @@ export const CATEGORY_SIGILS = {
 };
 
 export const DEFAULT_SIGIL = "○";
+
+/* Position of each category in assets/art/sigils.png, a 4x3 sprite read left
+   to right, top to bottom. The mono glyphs above remain the fallback for any
+   browser without mask-image, and stay the accessible text either way.
+
+   0 globe      1 hourglass   2 sprig      3 column
+   4 book       5 tuning fork 6 aperture   7 wine glass
+   8 wreath     9 microchip  10 section   11 compass rose                  */
+export const CATEGORY_SIGIL_INDEX = {
+  "Geography":          0,
+  "History":            1,
+  "Science & Nature":   2,
+  "Art & Architecture": 3,
+  "Literature":         4,
+  "Music":              5,
+  "Film & TV":          6,
+  "Food & Drink":       7,
+  "Sports & Games":     8,
+  "Technology":         9,
+  "Language & Words":  10,
+  "Odds & Ends":       11,
+};

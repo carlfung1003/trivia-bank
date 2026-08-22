@@ -90,6 +90,27 @@ else
   echo "  skip: brushed steel texture.png"
 fi
 
+# ---- Category sigils ------------------------------------------------------
+# Emitted as a white-on-transparent ALPHA MASK, not as coloured artwork.
+#
+# Two reasons. First, size: the brass strokes are anti-aliased over near-black,
+# which PNG compresses badly — the coloured sheet was 124 KB, the mask is 18.
+# Second, and more importantly, a mask takes its colour from CSS. The sigils
+# then inherit currentColor and track the palette for free: brass on a
+# category stamp, muted grey on a disabled chip, bright on hover. Baked-in
+# colour would have needed a separate sheet per state.
+if have "$SRC/Category sigils.png"; then
+  cp "$SRC/Category sigils.png" /tmp/_sig.png
+  ffmpeg -hide_banner -loglevel error -y -i /tmp/_sig.png \
+    -vf "crop=1448:1086:0:0,scale=384:288:flags=lanczos,format=rgba,\
+geq=r=255:g=255:b=255:a='clip((max(max(r(X,Y),g(X,Y)),b(X,Y))-20)*2.6,0,255)'" \
+    "$ART/sigils.png"
+  report "sigils.png" "384x288 mask" "$(du -h "$ART/sigils.png" | cut -f1)"
+  rm -f /tmp/_sig.png
+else
+  echo "  skip: Category sigils.png"
+fi
+
 rm -f /tmp/_vd.png /tmp/_vd2.png /tmp/_og.png /tmp/_og2.png /tmp/_og3.png /tmp/_icon.png /tmp/_tex.png /tmp/_tex2.png
 
 echo

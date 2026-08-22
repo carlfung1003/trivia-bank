@@ -7,7 +7,7 @@
    The split is what lets the whole game be played headlessly.
    ========================================================================== */
 
-import { MODES, DIFFICULTY, SCORING, CATEGORY_SIGILS, DEFAULT_SIGIL, LIFELINES } from "./config.js";
+import { MODES, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
 import { formatCredits } from "./util.js";
 
 const $  = (sel, root = document) => root.querySelector(sel);
@@ -106,6 +106,17 @@ export function announce(message) {
 
 export function sigilFor(category) {
   return CATEGORY_SIGILS[category] || DEFAULT_SIGIL;
+}
+
+/**
+ * Markup for a category mark. The sprite index drives a CSS alpha mask; the
+ * mono glyph inside stays as the accessible text and as the fallback where
+ * mask-image is unsupported.
+ */
+export function sigilHtml(category, extraClass = "") {
+  const idx = CATEGORY_SIGIL_INDEX[category];
+  const attr = idx === undefined ? "" : ` data-sigil="${idx}"`;
+  return `<span class="sigil ${extraClass}"${attr} aria-hidden="true">${sigilFor(category)}</span>`;
 }
 
 /* ---- Split-flap board ----------------------------------------------------- */
@@ -215,7 +226,7 @@ export function renderCategories(bank, selected) {
     chip.setAttribute("aria-pressed", String(on));
     chip.innerHTML = `
       <span class="chip__dot" aria-hidden="true"></span>
-      <span>${sigilFor(cat)} ${cat}</span>
+      <span class="chip__label">${sigilHtml(cat)} ${cat}</span>
       <span class="chip__n">${n}</span>
     `;
     el.categories.appendChild(chip);
@@ -258,7 +269,7 @@ export function renderLedger(store) {
   const cats = store.categoryRows();
   el.ledgerCats.innerHTML = cats.length ? cats.map((c) => `
     <div class="catbar">
-      <span class="catbar__sigil">${sigilFor(c.name)}</span>
+      <span class="catbar__sigil">${sigilHtml(c.name)}</span>
       <span>${c.name}</span>
       <span class="catbar__track"><span class="catbar__fill" style="width:${Math.round(c.pct * 100)}%"></span></span>
       <span class="catbar__n">${c.correct}/${c.seen}</span>
@@ -345,7 +356,12 @@ export function renderQuestion(game) {
   const q = s.question;
   if (!q) return;
 
+  /* The stamp's sigil is a persistent element, so set the sprite index and
+     the fallback glyph rather than replacing the node. */
   el.qSigil.textContent = sigilFor(q.category);
+  const sigilIdx = CATEGORY_SIGIL_INDEX[q.category];
+  if (sigilIdx === undefined) el.qSigil.removeAttribute("data-sigil");
+  else el.qSigil.dataset.sigil = String(sigilIdx);
   el.qCat.textContent = q.category;
   el.qDiff.textContent = DIFFICULTY.label[q.difficulty] || q.difficulty;
   el.qDiff.dataset.diff = q.difficulty;

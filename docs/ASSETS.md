@@ -6,7 +6,8 @@ Paste-ready prompts for every piece of generated media the game can use.
 and CSS-drawn artwork. Every slot is additive: drop the file at the stated path
 and it takes over automatically. Delete it and the fallback returns.
 
-> **Status: all nine assets are generated and shipped** (Aug 2026). Sources live
+> **Status: all ten assets are generated and shipped** (Aug 2026), including
+> the category sigils. Sources live
 > in `~/Desktop/trivia`; processed outputs are in `assets/`. Re-run
 > `bash scripts/process-audio.sh` and `bash scripts/process-images.sh` after
 > generating new takes. The prompts below are kept for regeneration and for
@@ -275,8 +276,19 @@ No text. No labels. No watermark.
 Style: minimal geometric iconography, precise line work, consistent stroke
 weight. Aspect ratio 4:3.
 ```
-**Save as:** `assets/art/sigils.png`. Slice into 12 SVGs to actually use them —
-they'd replace `CATEGORY_SIGILS` in `js/config.js`.
+**Save as:** `assets/art/sigils.png`.
+
+`scripts/process-images.sh` converts the sheet into a **white-on-transparent
+alpha mask** rather than keeping it as coloured artwork. Two reasons: the
+anti-aliased brass compresses badly (124 KB coloured vs 20 KB as a mask), and
+a mask takes its colour from CSS, so the sigils inherit `currentColor` and
+track the palette for free — brass on a category stamp, muted on a disabled
+chip. Baked-in colour would need a separate sheet per state.
+
+The grid order in the prompt maps 1:1 onto `CATEGORY_SIGIL_INDEX` in
+`js/config.js`, so keep the twelve subjects in that order if you regenerate.
+The mono glyphs stay in `CATEGORY_SIGILS` as the accessible text and as the
+fallback wherever `mask-image` is unsupported.
 
 ---
 

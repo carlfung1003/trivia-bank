@@ -1290,3 +1290,10 @@
   color: var(--jade-hi);
   letter-spacing: 0.06em;
 }
+
+/* Sigil sizing per context. The mask is square, so these govern both the mark
+   and the space it reserves. */
+.stamp .sigil     { width: 1.45em; height: 1.45em; vertical-align: -0.34em; color: var(--brass); }
+.chip__label      { display: inline-flex; align-items: center; gap: 0.45em; }
+.chip__label .sigil { width: 1.3em; height: 1.3em; flex: none; }
+.catbar__sigil .sigil { width: 1.1em; height: 1.1em; }

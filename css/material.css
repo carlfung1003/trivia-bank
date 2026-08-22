@@ -328,3 +328,46 @@
 @media (prefers-reduced-motion: reduce) {
   .mat-key { transition: none; }
 }
+
+/* ---- Category sigils ------------------------------------------------------
+   assets/art/sigils.png is a white-on-transparent 4x3 alpha mask, so the mark
+   is painted with currentColor and tracks whatever the surrounding text is
+   doing. The mono glyph in the markup stays as the accessible text and as the
+   fallback wherever mask-image is unsupported. */
+
+@supports ((mask-image: url("")) or (-webkit-mask-image: url(""))) {
+  .sigil[data-sigil] {
+    display: inline-block;
+    width: 1.24em;
+    height: 1.24em;
+    vertical-align: -0.24em;
+    background-color: currentColor;
+    -webkit-mask-image: url("../assets/art/sigils.png");
+            mask-image: url("../assets/art/sigils.png");
+    -webkit-mask-size: 400% 300%;
+            mask-size: 400% 300%;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    /* Hides the fallback glyph without removing it from the DOM.
+       Deliberately NOT font-size: 0 — the box is sized in em, and em resolves
+       against the element's OWN font-size, so zeroing it collapsed every
+       sigil to 0x0. Indent-and-clip hides the text and leaves em intact, so
+       the mark still scales with whatever type it sits in. */
+    text-indent: -200%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .sigil[data-sigil="0"]  { -webkit-mask-position: 0%      0%;   mask-position: 0%      0%;   }
+  .sigil[data-sigil="1"]  { -webkit-mask-position: 33.333% 0%;   mask-position: 33.333% 0%;   }
+  .sigil[data-sigil="2"]  { -webkit-mask-position: 66.667% 0%;   mask-position: 66.667% 0%;   }
+  .sigil[data-sigil="3"]  { -webkit-mask-position: 100%    0%;   mask-position: 100%    0%;   }
+  .sigil[data-sigil="4"]  { -webkit-mask-position: 0%      50%;  mask-position: 0%      50%;  }
+  .sigil[data-sigil="5"]  { -webkit-mask-position: 33.333% 50%;  mask-position: 33.333% 50%;  }
+  .sigil[data-sigil="6"]  { -webkit-mask-position: 66.667% 50%;  mask-position: 66.667% 50%;  }
+  .sigil[data-sigil="7"]  { -webkit-mask-position: 100%    50%;  mask-position: 100%    50%;  }
+  .sigil[data-sigil="8"]  { -webkit-mask-position: 0%      100%; mask-position: 0%      100%; }
+  .sigil[data-sigil="9"]  { -webkit-mask-position: 33.333% 100%; mask-position: 33.333% 100%; }
+  .sigil[data-sigil="10"] { -webkit-mask-position: 66.667% 100%; mask-position: 66.667% 100%; }
+  .sigil[data-sigil="11"] { -webkit-mask-position: 100%    100%; mask-position: 100%    100%; }
+}
