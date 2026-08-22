@@ -18,6 +18,10 @@ export const el = {
   shell: $(".shell"),
   srStatus: $("#sr-status"),
   vignette: $("#vignette"),
+  curtain: $("#curtain"),
+  banner: $("#banner"),
+  bannerLabel: $("#banner-label"),
+  bannerValue: $("#banner-value"),
   fxCanvas: $("#fx-canvas"),
   shareCanvas: $("#share-canvas"),
 
@@ -69,6 +73,10 @@ export const el = {
   nextBtn: $("#next-btn"),
   kit: $("#kit"),
   bankBtn: $("#bank-btn"),
+  pause: $("#pause"),
+  pauseStat: $("#pause-stat"),
+  resumeBtn: $("#resume-btn"),
+  abandonBtn: $("#abandon-btn"),
   bankBtnValue: $("#bank-btn-value"),
 
   resultEyebrow: $("#result-eyebrow"),
@@ -98,6 +106,86 @@ export function showScreen(name) {
   }
   document.body.dataset.screen = name;
   window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+}
+
+export const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let curtainBusy = false;
+
+/**
+ * Swap screens behind a closing vault door.
+ *
+ * An instant swap reads as a page change; a covered swap reads as a scene
+ * change, which is most of the difference between a web app and a game. The
+ * door shuts, `swap` runs while nothing is visible, then it opens.
+ *
+ * @param {() => void} swap  runs at the seam, while the door covers the screen
+ * @param {(kind: string) => void} [onBeat] fired at close and open, for sound
+ * @returns {Promise<void>}
+ */
+export function curtainSwap(swap, onBeat) {
+  if (reducedMotion() || !el.curtain) {
+    swap();
+    return Promise.resolve();
+  }
+  /* A second transition landing mid-flight would strand the overlay opaque
+     and lock the game behind it. */
+  if (curtainBusy) {
+    swap();
+    return Promise.resolve();
+  }
+  curtainBusy = true;
+
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      el.curtain.removeAttribute("data-state");
+      curtainBusy = false;
+      resolve();
+    };
+
+    /* The transition is load-bearing for navigation; the cues attached to it
+       are decoration. A throwing cue must never be able to strand the door
+       opaque over the whole app — which is exactly what happened when a
+       stale module left sound.doorShut undefined. */
+    const beat = (kind) => {
+      try { onBeat?.(kind); } catch (err) { console.warn("[curtain] cue failed", err); }
+    };
+
+    /* Hard ceiling. If a timer is throttled in a backgrounded tab, or an
+       animation event never lands, the overlay still comes down. */
+    const bail = setTimeout(finish, 2000);
+
+    el.curtain.removeAttribute("data-state");
+    void el.curtain.offsetWidth;
+    el.curtain.dataset.state = "closing";
+    beat("close");
+
+    setTimeout(() => {
+      try { swap(); } catch (err) { console.error("[curtain] swap threw", err); }
+      el.curtain.dataset.state = "opening";
+      beat("open");
+      setTimeout(() => { clearTimeout(bail); finish(); }, 520);
+    }, 420);
+  });
+}
+
+let bannerTimer = null;
+
+/** A milestone callout across the display: haven secured, tier change, streak. */
+export function banner(label, value = "", kind = "streak", ms = 1900) {
+  if (!el.banner) return;
+  el.bannerLabel.textContent = label;
+  el.bannerValue.textContent = value;
+  el.banner.dataset.kind = kind;
+  el.banner.removeAttribute("data-show");
+  void el.banner.offsetWidth;
+  el.banner.dataset.show = "true";
+  clearTimeout(bannerTimer);
+  bannerTimer = setTimeout(() => el.banner.removeAttribute("data-show"), ms);
+  announce(value ? `${label}. ${value}` : label);
 }
 
 export function announce(message) {
@@ -491,11 +579,36 @@ export function renderTimer(game) {
   el.timer.dataset.frozen = String(!!s.frozen && !usingRunClock);
 }
 
+/**
+ * Seat the chosen key and freeze the board, without saying yet whether it was
+ * right. The verdict follows a beat later — see LOCK_IN_MS in main.js.
+ */
+export function lockIn(game, given) {
+  if (game.answerMode === "choice") {
+    $$(".option", el.options).forEach((btn) => {
+      btn.disabled = true;
+      if (Number(btn.dataset.index) === given) {
+        btn.dataset.pressed = "true";
+        btn.dataset.locking = "true";
+      }
+    });
+  } else {
+    el.typedInput.disabled = true;
+    el.typedForm.dataset.locking = "true";
+  }
+  el.display?.setAttribute("data-locking", "true");
+}
+
 export function revealAnswer(game, { result, correctIndex, correctAnswer, given }) {
+  el.display?.removeAttribute("data-locking");
+  el.typedForm?.removeAttribute("data-locking");
+
   if (game.answerMode === "choice") {
     $$(".option", el.options).forEach((btn) => {
       const i = Number(btn.dataset.index);
       btn.disabled = true;
+      btn.removeAttribute("data-locking");
+      btn.removeAttribute("data-pressed");
       if (i === correctIndex) btn.dataset.state = "correct";
       else if (i === given && result !== "correct") btn.dataset.state = "wrong";
     });

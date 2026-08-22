@@ -37,6 +37,10 @@ preserved at `docs/prior-art/iteration-1.html` for reference. Do not resurrect i
 - **No emoji in the UI.** Sigils are mono glyphs (`✦ ◆ ▲ ⌘ ¶ ⁂`). Marks are `✓` / `✕`.
 - **CSS keyframes for entrances, not JS.** No SSR flash, no rAF stalls under an
   automation harness, and `prefers-reduced-motion` disarms everything for free.
+- **Cosmetic failures must never strand navigation.** `curtainSwap()` wraps its
+  sound cues in try/catch and carries a 2s bail timer, because a throwing cue
+  once left the transition door opaque over the entire app. Anything decorative
+  attached to a load-bearing flow gets the same treatment.
 - **Never `alert()` or `confirm()`.** They freeze the entire renderer — this genuinely
   happened during playtesting and killed the Chrome tab. Use `ui.toast()` and
   `ui.armConfirm()`.
@@ -101,6 +105,22 @@ real answer) falls back to synthesis rather than shipping a broken round.
 `id`, `category`, `difficulty` (`easy|medium|hard`), `question`, `answer`, `accept[]`.
 Optional: `options[]`. After swapping, run the audit — a new bank can reintroduce
 giveaway rounds that this one does not have.
+
+## The reveal is deliberately delayed
+
+`LOCK_IN_MS` (main.js) holds the verdict for ~260ms after the player answers.
+The ENGINE resolves immediately; only the rendering waits. Revealing on the same
+frame as the press reads as a form submit — the hold reads as a mechanism
+deciding, which is the whole conceit.
+
+Two things this creates, both handled, both easy to reintroduce:
+
+- A pending reveal must be cancelled on the `question` event, or advancing fast
+  paints correct/wrong states onto the options of the question that replaced it.
+- Player-driven advance goes through `advanceQuestion()`, which refuses while
+  `app.revealPending`. The engine's own `next()` is deliberately NOT gated —
+  `window.__game.autoplay()` drives it inside a synchronous loop where real-time
+  timers never run, so gating it there would hang the harness.
 
 ## Known gaps
 

@@ -272,3 +272,142 @@
 @media (prefers-reduced-motion: reduce) {
   .vault-art { opacity: 0.3; }
 }
+
+/* ==========================================================================
+   SCREEN TRANSITION — the door
+   --------------------------------------------------------------------------
+   Screens used to swap on a hidden attribute, which is instant and reads as a
+   page change rather than a scene change. The door now swings shut over the
+   outgoing screen, the swap happens while it covers, and it opens on the
+   incoming one. Two beats of ~420ms with the swap at the seam.
+   ========================================================================== */
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 50%,
+    hsl(222 40% 3% / 0.96) 0%, hsl(222 44% 2% / 0.99) 70%);
+}
+.curtain[data-state="closing"],
+.curtain[data-state="opening"] { pointer-events: all; }
+
+.curtain__door {
+  width: min(92vh, 92vw);
+  aspect-ratio: 1;
+  background: url("../assets/art/vault-door.jpg") center / contain no-repeat;
+  filter: drop-shadow(0 0 60px hsl(41 80% 50% / 0.28));
+  transform-origin: 50% 50%;
+}
+
+/* A brass flare at the moment the bolts seat. */
+.curtain__flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%,
+    hsl(44 90% 70% / 0.5) 0%, transparent 45%);
+  opacity: 0;
+}
+
+/* Shut: the door rushes in and lands, turning as it seats. */
+.curtain[data-state="closing"] { animation: curtain-close 420ms var(--ease) forwards; }
+.curtain[data-state="closing"] .curtain__door { animation: door-close 420ms var(--ease) forwards; }
+.curtain[data-state="closing"] .curtain__flash { animation: door-flash 420ms var(--ease) forwards; }
+
+/* Open: it unwinds and pulls away. */
+.curtain[data-state="opening"] { animation: curtain-open 460ms var(--ease) forwards; }
+.curtain[data-state="opening"] .curtain__door { animation: door-open 460ms var(--ease) forwards; }
+
+@keyframes curtain-close {
+  from { opacity: 0; }
+  40%  { opacity: 1; }
+  to   { opacity: 1; }
+}
+@keyframes curtain-open {
+  from { opacity: 1; }
+  70%  { opacity: 0.5; }
+  to   { opacity: 0; }
+}
+@keyframes door-close {
+  from { transform: scale(2.3) rotate(-42deg); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes door-open {
+  from { transform: scale(1) rotate(0deg); opacity: 1; }
+  to   { transform: scale(2.5) rotate(38deg); opacity: 0; }
+}
+@keyframes door-flash {
+  0%, 70% { opacity: 0; }
+  82%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+/* ==========================================================================
+   MILESTONE BANNERS
+   ========================================================================== */
+
+.banner {
+  position: fixed;
+  left: 50%;
+  top: 34%;
+  translate: -50% -50%;
+  z-index: 45;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: var(--sp-4) clamp(var(--sp-5), 7vw, var(--sp-9));
+  pointer-events: none;
+  opacity: 0;
+  text-align: center;
+  background: linear-gradient(180deg,
+    hsl(222 30% 8% / 0.94), hsl(222 34% 4% / 0.94));
+  border-top: 1px solid var(--banner-edge, var(--brass));
+  border-bottom: 1px solid var(--banner-edge, var(--brass));
+  box-shadow: 0 0 60px -10px var(--banner-glow, var(--brass-glow));
+  backdrop-filter: blur(6px);
+}
+.banner__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.68rem, 1.6vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--banner-fg, var(--brass-hi));
+  text-shadow: 0 0 18px var(--banner-glow, var(--brass-glow));
+}
+.banner__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3.4vw, 2.2rem);
+  line-height: 1;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+.banner__value:empty { display: none; }
+
+.banner[data-kind="haven"]  { --banner-edge: var(--jade);  --banner-glow: var(--jade);  --banner-fg: var(--jade-hi); }
+.banner[data-kind="tier"]   { --banner-edge: var(--alarm); --banner-glow: var(--alarm); --banner-fg: var(--alarm-hi); }
+.banner[data-kind="streak"] { --banner-edge: var(--brass); --banner-glow: var(--brass-glow); --banner-fg: var(--brass-hi); }
+
+.banner[data-show="true"] { animation: banner-sweep 1900ms var(--ease) forwards; }
+
+@keyframes banner-sweep {
+  /* filter is declared at EVERY stop on purpose. Declaring it only at the
+     ends lets it interpolate straight through the readable middle, which
+     left the banner softly blurred for its whole visible life — legible in a
+     paused frame, mush at speed. Held sharp from 12% to 78%. */
+  0%   { opacity: 0; transform: scaleX(0.7);  filter: blur(6px); }
+  12%  { opacity: 1; transform: scaleX(1.02); filter: blur(0); }
+  20%  { opacity: 1; transform: scaleX(1);    filter: blur(0); }
+  78%  { opacity: 1; transform: scaleX(1);    filter: blur(0); }
+  100% { opacity: 0; transform: scaleX(1.06); filter: blur(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain { display: none !important; }
+  .banner[data-show="true"] { animation: none; opacity: 1; }
+}

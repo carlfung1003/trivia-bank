@@ -17,7 +17,19 @@ import { shareText, drawCard, downloadCard, copyText } from "./share.js";
 import { localDateKey, formatCredits } from "./util.js";
 import * as ui from "./ui.js";
 
+const TIER_BLURB = {
+  medium: "The locks get real",
+  hard:   "No more easy money",
+};
+
+const LOCK_IN_MS = 260;   /* anticipation before the verdict lands */
+
 const app = {
+  lastTier: null,
+  revealTimer: null,
+  revealPending: false,
+  paused: false,
+  doorAngle: 0,
   bank: null,
   game: null,
   fx: null,
@@ -191,8 +203,33 @@ function toggleFilter(key, value, all) {
 }
 
 /* ==========================================================================
+   Haptics
+   --------------------------------------------------------------------------
+   Cheap and disproportionately effective on a phone, where there is no
+   keyboard travel and no speaker worth relying on. Silently absent on
+   desktop and on iOS Safari, which does not implement the API — hence the
+   guard rather than a feature check the caller has to make.
+   ========================================================================== */
+
+function haptic(pattern) {
+  if (!app.settings.sound) return;   /* sound off means feedback off */
+  try { navigator.vibrate?.(pattern); } catch { /* unsupported */ }
+}
+
+/* ==========================================================================
    Run lifecycle
    ========================================================================== */
+
+/** Every screen change goes through the door, with the matching cue. */
+function toScreen(name, swap) {
+  return ui.curtainSwap(
+    () => {
+      swap?.();
+      ui.showScreen(name);
+    },
+    (beat) => (beat === "close" ? sound.doorShut() : sound.doorOpen())
+  );
+}
 
 function startRun(modeId) {
   const mode = MODES[modeId];
@@ -207,6 +244,9 @@ function startRun(modeId) {
   }
 
   app.lastMode = modeId;
+  app.lastTier = null;
+  app.paused = false;
+  ui.el.pause.hidden = true;
 
   /* The Daily Heist is seeded by the date alone, so every player in the world
      gets the same ten locks in the same order. Every other mode gets a fresh
@@ -225,19 +265,38 @@ function startRun(modeId) {
   });
 
   wireGameEvents(app.game);
-  ui.showScreen("play");
-  app.fx.clear();
   sound.unlock();
-  sound.stopMusic();
-  sound.startHum();
-  sound.playMusic("bedTension", { gain: 0.18 });
 
-  app.game.start();
-  startLoop();
+  toScreen("play", () => {
+    app.fx.clear();
+    sound.stopMusic();
+    sound.startHum();
+    sound.playMusic("bedTension", { gain: 0.18 });
+    app.game.start();
+  }).then(() => startLoop());
 }
 
 function wireGameEvents(game) {
   game.on("question", () => {
+    /* Cancel any verdict still waiting on its anticipation beat. Without
+       this, advancing fast lets a stale reveal paint correct/wrong states
+       onto the options of the question that replaced it. */
+    clearTimeout(app.revealTimer);
+    app.revealTimer = null;
+    app.revealPending = false;
+
+    /* Announce a difficulty escalation the first time each tier appears —
+     the ramp is invisible otherwise, and crossing into Federal territory
+     should feel like a decision point rather than a quiet stat change. */
+    const diff = game.state.question?.difficulty;
+    if (diff && diff !== app.lastTier) {
+      if (app.lastTier !== null && DIFFICULTY.order.indexOf(diff) > DIFFICULTY.order.indexOf(app.lastTier)) {
+        ui.banner(`${DIFFICULTY.label[diff]} territory`, TIER_BLURB[diff] || "", "tier", 1800);
+        sound.timeout();
+      }
+      app.lastTier = diff;
+    }
+
     ui.renderQuestion(game);
     ui.renderHud(game);
     ui.renderLadder(game);
@@ -251,7 +310,8 @@ function wireGameEvents(game) {
   game.on("haven", ({ total }) => {
     sound.bankIt();
     app.fx.coinRain(28);
-    ui.announce(`Safe haven. ${formatCredits(total)} credits locked in.`);
+    haptic([20, 40, 20, 40, 60]);
+    ui.banner("Haven secured", `${formatCredits(total)} locked in`, "haven", 2200);
   });
 
   game.on("lifeline", ({ id, detail }) => onLifeline(game, id, detail));
@@ -265,54 +325,95 @@ function wireGameEvents(game) {
 }
 
 function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak }) {
-  ui.revealAnswer(game, { result, correctIndex, correctAnswer, given });
-
   /* Where the answer physically happened, for particles and popups. */
   const source = game.answerMode === "choice"
-    ? document.querySelector(`.option[data-index="${correctIndex}"]`)
+    ? document.querySelector(`.option[data-index="${given}"]`)
+      || document.querySelector(`.option[data-index="${correctIndex}"]`)
     : ui.el.typedForm;
 
-  if (result === RESULT.CORRECT) {
-    app.fx.hitPause(FX.hitPauseMs);
-    app.fx.flash("correct");
-    sound.correct(streak);
+  /* ---- The anticipation beat --------------------------------------------
+     The engine has already resolved; only the RENDERING waits. Revealing on
+     the same frame as the press reads as a form submit. A short hold — the
+     key seats, a tumbler turns, the rung fills — reads as a mechanism
+     deciding, which is the whole conceit of the game.
 
-    app.fx.burstAt(source, {
-      count: streak >= 4 ? FX.particleCountBig : FX.particleCount,
-      hue: 41,
-      speed: 5 + Math.min(streak, 6),
-    });
+     Kept short (LOCK_IN_MS) because it is paid on every single question, and
+     skipped entirely under reduced motion. */
+  ui.lockIn(game, given);
+  sound.tumbler();
+  haptic(12);
 
-    /* The earned number travels to the board that holds it. */
-    if (points > 0) {
-      app.fx.popup(`+${formatCredits(points)}`, source, ui.el.creditBoard, "gain");
+  const land = () => {
+    ui.revealAnswer(game, { result, correctIndex, correctAnswer, given });
+
+    if (result === RESULT.CORRECT) {
+      app.fx.hitPause(FX.hitPauseMs);
+      app.fx.flash("correct");
+      sound.correct(streak);
+      haptic([18, 30, 42]);
+      nudgeDoor(1);
+
+      app.fx.burstAt(source, {
+        count: streak >= 4 ? FX.particleCountBig : FX.particleCount,
+        hue: 41,
+        speed: 5 + Math.min(streak, 6),
+      });
+
+      /* The earned number travels to the board that holds it. */
+      if (points > 0) {
+        app.fx.popup(`+${formatCredits(points)}`, source, ui.el.creditBoard, "gain");
+      }
+      /* Blitz pays in seconds as well as credits — show both. */
+      if (game.mode.correctBonusSeconds) {
+        app.fx.popup(`+${game.mode.correctBonusSeconds}s`, source, ui.el.timer, "time");
+      }
+      if (streak >= 3) {
+        const mult = SCORING.streakLadder[Math.min(streak, SCORING.streakLadder.length - 1)];
+        app.fx.popup(`\u00d7${mult}`, ui.el.streak, ui.el.streak, "gain");
+      }
+      /* Streak milestones get a callout, but only on the way up. */
+      if (streak === 3 || streak === 5 || streak === 8) {
+        ui.banner(`${streak} in a row`, streak >= 8 ? "Untouchable" : "On a run", "streak", 1500);
+      }
+    } else {
+      app.fx.hitPause(FX.hitPauseWrongMs);
+      app.fx.shake(FX.shakeMagnitude, FX.shakeMs);
+      app.fx.flash("wrong");
+      nudgeDoor(-1);
+      if (result === RESULT.TIMEOUT) { sound.timeout(); haptic([140]); }
+      else { sound.wrong(); haptic([70, 40, 90]); }
+
+      if (points < 0) {
+        app.fx.popup(formatCredits(points), source, ui.el.creditBoard, "loss");
+      }
+      if (game.mode.wrongPenaltySeconds) {
+        app.fx.popup(`-${game.mode.wrongPenaltySeconds}s`, source, ui.el.timer, "loss");
+      }
     }
-    /* Blitz pays in seconds as well as credits — show both. */
-    if (game.mode.correctBonusSeconds) {
-      app.fx.popup(`+${game.mode.correctBonusSeconds}s`, source, ui.el.timer, "time");
-    }
-    if (streak >= 3) {
-      const mult = SCORING.streakLadder[Math.min(streak, SCORING.streakLadder.length - 1)];
-      app.fx.popup(`\u00d7${mult}`, ui.el.streak, ui.el.streak, "gain");
-    }
+
+    ui.renderHud(game);
+    ui.renderLadder(game);
+    ui.renderKit(kitState(game));
+  };
+
+  const delay = ui.reducedMotion() ? 0 : LOCK_IN_MS;
+  if (delay <= 0) {
+    land();
   } else {
-    app.fx.hitPause(FX.hitPauseWrongMs);
-    app.fx.shake(FX.shakeMagnitude, FX.shakeMs);
-    app.fx.flash("wrong");
-    if (result === RESULT.TIMEOUT) sound.timeout();
-    else sound.wrong();
-
-    if (points < 0) {
-      app.fx.popup(formatCredits(points), source, ui.el.creditBoard, "loss");
-    }
-    if (game.mode.wrongPenaltySeconds) {
-      app.fx.popup(`-${game.mode.wrongPenaltySeconds}s`, source, ui.el.timer, "loss");
-    }
+    app.revealPending = true;
+    clearTimeout(app.revealTimer);
+    app.revealTimer = setTimeout(() => {
+      app.revealPending = false;
+      land();
+    }, delay);
   }
+}
 
-  ui.renderHud(game);
-  ui.renderLadder(game);
-  ui.renderKit(kitState(game));
+/* The background door turns a notch on a hit and jolts on a miss, so the
+   thing the whole game is named after actually responds to play. */
+function nudgeDoor(direction) {
+  app.doorAngle = (app.doorAngle || 0) + direction * (3 + Math.random() * 2);
+  document.documentElement.style.setProperty("--door-rot", `${app.doorAngle.toFixed(2)}deg`);
 }
 
 function onLifeline(game, id, detail) {
@@ -347,6 +448,8 @@ function onLifeline(game, id, detail) {
 
 function onOver(game, summary) {
   stopLoop();
+  app.paused = false;
+  ui.el.pause.hidden = true;
   sound.stopHum();
   ui.setHeat(0);
 
@@ -357,25 +460,30 @@ function onOver(game, summary) {
   app.lastSummary = summary;
 
   const good = summary.reason === "banked" || summary.reason === "cleared" || summary.reason === "exhausted";
-  if (good && summary.score > 0) {
-    sound.vaultOpen();
-    app.fx.coinRain(90);
-  } else {
-    sound.lockdown();
-    app.fx.shake(FX.shakeMagnitude * 1.2, 520);
-  }
-
-  ui.showScreen("done");
-  ui.renderResults(summary, { unlocked, store, isRecord });
-
+  const won = good && summary.score > 0;
   const isDaily = summary.mode === "daily";
-  ui.renderShare(summary, { text: shareText(summary), isDaily });
 
-  /* Roll the headline number up rather than snapping it. */
-  ui.el.resultScore.textContent = "0";
-  rollNumber(ui.el.resultScore, 0, summary.score, 900, (n) => formatCredits(n));
+  /* The outcome is punctuated on the outgoing screen, where the player is
+     still looking, rather than under a closed door. */
+  if (won) app.fx.coinRain(90);
+  else app.fx.shake(FX.shakeMagnitude * 1.2, 520);
+  haptic(won ? [30, 60, 30, 60, 90] : [90, 50, 120]);
 
-  ui.el.againBtn.hidden = isDaily;
+  toScreen("done", () => {
+    ui.renderResults(summary, { unlocked, store, isRecord });
+    ui.renderShare(summary, { text: shareText(summary), isDaily });
+    ui.el.againBtn.hidden = isDaily;
+    /* Park the headline at zero so it has somewhere to count up from once
+       the door is out of the way. */
+    ui.el.resultScore.textContent = "0";
+  }).then(() => {
+    /* Sting and count-up land on the reveal, not behind the transition —
+       a payoff the player cannot see is a payoff wasted. */
+    if (won) sound.vaultOpen();
+    else sound.lockdown();
+    rollNumber(ui.el.resultScore, 0, summary.score, 1100, (n) => formatCredits(n));
+    if (won) app.fx.coinRain(50);
+  });
 }
 
 /* ==========================================================================
@@ -430,10 +538,7 @@ function wirePlay() {
     app.game.answer(value);
   });
 
-  ui.el.nextBtn.addEventListener("click", () => {
-    if (!app.game) return;
-    app.game.next();
-  });
+  ui.el.nextBtn.addEventListener("click", advanceQuestion);
 
   ui.el.kit.addEventListener("click", (e) => {
     const btn = e.target.closest(".tool");
@@ -446,25 +551,62 @@ function wirePlay() {
     app.game.bankIt();
   });
 
-  ui.el.quit.addEventListener("click", (e) => {
+  /* The back control now pauses rather than quitting. Leaving is a choice
+     made inside the pause panel, where the cost is stated. */
+  ui.el.quit.addEventListener("click", () => {
     const game = app.game;
     if (!game || game.state.phase === PHASE.OVER) { goHome(); return; }
-
-    /* Nothing at stake — just leave, no ceremony. */
-    const atRisk = game.state.pot > 0;
-    if (!atRisk) { abandon(); return; }
-
-    const btn = e.currentTarget;
-    if (btn.dataset.armed === "true") {
-      clearTimeout(Number(btn.dataset.timer));
-      btn.dataset.armed = "false";
-      abandon();
-      return;
-    }
-    btn.dataset.armed = "true";
-    ui.toast(`Abandon the heist? ${formatCredits(game.state.pot)} unbanked credits are lost. Press again to confirm.`);
-    btn.dataset.timer = String(setTimeout(() => { btn.dataset.armed = "false"; }, 3500));
+    setPaused(true);
   });
+
+  ui.el.resumeBtn.addEventListener("click", () => setPaused(false));
+
+  ui.el.abandonBtn.addEventListener("click", (e) => {
+    const game = app.game;
+    const atRisk = game?.state.pot > 0;
+    if (!atRisk) { setPaused(false); abandon(); return; }
+    ui.armConfirm(e.currentTarget, {
+      label: `Lose ${formatCredits(game.state.pot)}? Tap again`,
+      onConfirm: () => { setPaused(false); abandon(); },
+    });
+  });
+}
+
+/**
+ * Player-driven advance. Refuses while a verdict is still mid-anticipation,
+ * so hammering Enter cannot skip past the answer you were about to be shown.
+ * The engine's own next() is deliberately not gated — scripted playthroughs
+ * in window.__game.autoplay() drive it directly and must not depend on
+ * real-time timers, which never run inside a synchronous loop.
+ */
+/* ---- Pause -----------------------------------------------------------------
+   Esc used to abandon the run on the spot. Pausing stops the clock, which is
+   the only thing that actually needs to stop — the engine advances solely
+   through tick(dt), so not calling it IS the pause. No special engine state,
+   no way for the two to disagree. */
+
+function setPaused(on) {
+  const game = app.game;
+  if (!game || game.state.phase === PHASE.OVER) return;
+  app.paused = !!on;
+
+  ui.el.pause.hidden = !app.paused;
+  if (app.paused) {
+    stopLoop();
+    sound.setHeat(0);
+    const s = game.state;
+    ui.el.pauseStat.textContent =
+      `${formatCredits(s.banked + s.pot)} credits · lock ${s.qIndex + 1}` +
+      (s.pot > 0 ? ` · ${formatCredits(s.pot)} at risk` : "");
+    ui.el.resumeBtn.focus();
+  } else {
+    if (game.state.phase === PHASE.ASKING) startLoop();
+  }
+}
+
+function advanceQuestion() {
+  if (!app.game || app.revealPending) return;
+  app.game.next();
 }
 
 function submitChoice(index) {
@@ -515,13 +657,14 @@ function abandon() {
 }
 
 function goHome() {
-  sound.stopMusic();
-  sound.playMusic("themeTitle", { gain: 0.22 });
   app.game = null;
   stopLoop();
-  app.fx.clear();
-  renderTitle();
-  ui.showScreen("title");
+  toScreen("title", () => {
+    sound.stopMusic();
+    sound.playMusic("themeTitle", { gain: 0.22 });
+    app.fx.clear();
+    renderTitle();
+  });
 }
 
 /* ==========================================================================
@@ -548,12 +691,17 @@ function wireGlobalInput() {
     const screen = document.body.dataset.screen;
     const typing = e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement;
 
+    if (screen === "play" && app.paused) {
+      if (e.key === "Escape") { e.preventDefault(); setPaused(false); }
+      return;   /* every other key is inert while paused */
+    }
+
     if (screen === "play" && app.game) {
       const phase = app.game.state.phase;
 
       if (phase === PHASE.REVEALED && (e.key === "Enter" || e.key === " ")) {
         e.preventDefault();
-        app.game.next();
+        advanceQuestion();
         return;
       }
 
@@ -584,7 +732,7 @@ function wireGlobalInput() {
 
       if (e.key === "Escape") {
         e.preventDefault();
-        ui.el.quit.click();
+        setPaused(!app.paused);
       }
     }
 
@@ -599,7 +747,7 @@ function wireGlobalInput() {
      in a mode where time is the whole point. */
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) stopLoop();
-    else if (app.game && app.game.state.phase === PHASE.ASKING) startLoop();
+    else if (app.game && !app.paused && app.game.state.phase === PHASE.ASKING) startLoop();
   });
 }
 

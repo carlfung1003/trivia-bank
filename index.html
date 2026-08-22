@@ -27,8 +27,8 @@
 <link rel="stylesheet" href="css/tokens.css?v=2">
 <link rel="stylesheet" href="css/base.css?v=2">
 <link rel="stylesheet" href="css/material.css?v=6">
-<link rel="stylesheet" href="css/game.css?v=6">
-<link rel="stylesheet" href="css/fx.css?v=4">
+<link rel="stylesheet" href="css/game.css?v=10">
+<link rel="stylesheet" href="css/fx.css?v=11">
 </head>
 
 <body data-screen="boot">
@@ -51,6 +51,19 @@
   <div class="vault-art" aria-hidden="true"></div>
   <div class="vault-spill"></div>
 </div>
+<!-- Screen transition: the door swings shut over the outgoing screen and
+     opens on the incoming one. Sits above content, below the fx canvas. -->
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="curtain__door"></div>
+  <div class="curtain__flash"></div>
+</div>
+
+<!-- Milestone banners: haven secured, tier escalation, streak thresholds. -->
+<div class="banner" id="banner" aria-hidden="true">
+  <span class="banner__label" id="banner-label"></span>
+  <span class="banner__value" id="banner-value"></span>
+</div>
+
 <canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
 <div class="vignette" id="vignette" aria-hidden="true"></div>
@@ -299,9 +312,27 @@
 
 </main>
 
+<!-- Pause. Esc used to abandon the run outright, which is a hostile thing to
+     do on a stray keypress mid-heist. -->
+<div class="pause" id="pause" hidden role="dialog" aria-modal="true" aria-label="Paused">
+  <div class="pause__panel">
+    <span class="rivet rivet--tl" aria-hidden="true"></span>
+    <span class="rivet rivet--tr" aria-hidden="true"></span>
+    <span class="rivet rivet--bl" aria-hidden="true"></span>
+    <span class="rivet rivet--br" aria-hidden="true"></span>
+    <p class="eyebrow">Heist paused</p>
+    <p class="pause__stat" id="pause-stat"></p>
+    <div class="pause__actions">
+      <button type="button" class="btn btn--primary" id="resume-btn">Resume</button>
+      <button type="button" class="btn" id="abandon-btn">Abandon the heist</button>
+    </div>
+    <p class="pause__hint">Esc to resume</p>
+  </div>
+</div>
+
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=5"></script>
+<script type="module" src="js/main.js?v=10"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>
