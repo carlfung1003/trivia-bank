@@ -24,6 +24,17 @@ export class Bank {
     this.byId = new Map(this.questions.map((q) => [q.id, q]));
     this.index = buildIndex(this.questions);
 
+    /* Every answer and alias in the bank, as match keys. Used by checkTyped to
+       refuse a "typo" that happens to spell a different real answer — see
+       there for why the bank has to be the judge of that. */
+    this.lexicon = new Set();
+    for (const q of this.questions) {
+      for (const source of [q.answer, ...(q.accept || [])]) {
+        const key = matchKey(source);
+        if (key) this.lexicon.add(key);
+      }
+    }
+
     /* Bucketed for fast drawing: category -> difficulty -> [question]. */
     this.buckets = new Map();
     for (const q of this.questions) {
@@ -190,6 +201,16 @@ export class Bank {
 
     let nearMiss = false;
 
+    /* If what was typed is, verbatim, some other question's answer, it is not
+       a typo — it is a different answer. Edit distance cannot tell "Entomology"
+       from "Etymology" (two slips in ten characters, inside tolerance) or
+       "Titian" from "Titan", and both pairs are separately askable questions in
+       this very bank. Only the bank knows which strings are real words with
+       their own meaning, so only the bank can withhold the benefit of the
+       doubt. Reaching this point already means the input did not match THIS
+       question exactly or by key, so a hit here is always someone else's. */
+    const spellsAnotherAnswer = this.lexicon.has(givenKey);
+
     for (const candidate of candidates) {
       const n = normalise(candidate);
       if (!n) continue;
@@ -208,7 +229,7 @@ export class Bank {
         if (same) return true;
       }
 
-      if (demandsExact(candidate)) continue;
+      if (demandsExact(candidate) || spellsAnotherAnswer) continue;
 
       const verdict = fuzzyWordMatch(givenKey, key);
       if (verdict === "match") return true;

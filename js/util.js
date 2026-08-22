@@ -228,6 +228,51 @@ export function demandsExact(s) {
   return /\d/.test(n) || n.replace(/\s/g, "").length <= 4;
 }
 
+/* Endings that change a word's grammar without changing which word it is.
+   Ordered longest-first so "fastest" strips "est" rather than being caught
+   by a shorter tail. */
+const INFLECTIONS = ["ness", "est", "ing", "ly", "er", "ed"];
+
+/**
+ * Strip one inflectional ending, or return the word unchanged.
+ *
+ * The length guard (stem of at least four characters) is what keeps this from
+ * shredding words that merely END in these letters: "water" and "forest" and
+ * "Italy" are left alone, because "wat", "for" and "Ita" are too short to be
+ * anyone's stem. It costs the rule a few genuine cases — "bigger" reduces to
+ * "bigg" and stops — and that is the correct trade. Over-stripping produces
+ * silent false accepts; under-stripping produces one rejected synonym.
+ */
+function deinflect(w) {
+  for (const suffix of INFLECTIONS) {
+    if (w.length - suffix.length >= 4 && w.endsWith(suffix)) {
+      const base = w.slice(0, -suffix.length);
+      /* "happily" and "happier" both land on "happi"; restore the y so they
+         also meet "happy" itself. */
+      return base.endsWith("i") ? base.slice(0, -1) + "y" : base;
+    }
+  }
+  return w;
+}
+
+/**
+ * Are these two words the same word in different grammatical clothes?
+ *
+ * "louder" for "loudly" is the case that forced this. Edit distance cannot
+ * see it — swapping "er" for "ly" is two slips on a six-letter word, one past
+ * tolerance, so a player who plainly knew that forte means play loud was told
+ * they were merely close. Morphology answers what character counting cannot.
+ *
+ * Both words must reduce to the SAME stem, which is why this is safe where a
+ * prefix rule is not: "sil" does not reduce to "silver", but "louder" and
+ * "loudly" both reduce to "loud".
+ */
+export function sameWordFamily(a, b) {
+  if (a === b) return true;
+  const stem = deinflect(a);
+  return stem.length >= 4 && stem === deinflect(b);
+}
+
 /**
  * How many single-character slips to forgive in ONE WORD.
  *
@@ -260,6 +305,9 @@ export function fuzzyWordMatch(givenKey, targetKey) {
   let overBy = 0;
   for (let i = 0; i < a.length; i++) {
     if (a[i] === b[i]) continue;
+
+    /* Same word, different grammar: "play louder" for "play loudly". */
+    if (sameWordFamily(a[i], b[i])) continue;
 
     /* A clear abbreviation of one word, when every other word is intact:
        "beats per min" is someone who knows the answer, not someone guessing.

@@ -14,6 +14,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { Bank } from "../js/bank.js";
+import { answerForms, matchKey } from "../js/util.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const bank = new Bank(JSON.parse(readFileSync(join(here, "..", "data", "questions.json"), "utf8")));
@@ -65,6 +66,21 @@ const CASES = [
   [118, "10080", true,           "thousand separator omitted"],
   [377, "ovum", true,            "parenthetical alone"],
   [377, "egg cell", true,        "main form alone"],
+
+  /* ---- same word, different grammar --------------------------------------- */
+  [55,  "play louder", true, "comparative for adverb"],
+  [55,  "louder", true,      "comparative alone"],
+  [55,  "play loud", true,   "the bare adjective"],
+  [55,  "play quietly", false, "the opposite instruction, not a form of it"],
+
+  /* ---- a real word is never a typo for another real word ------------------ */
+  [95,  "Entomology", false, "insects are not word origins"],
+  [980, "Etymology", false,  "and the reverse"],
+  [566, "Titian", false,     "a Venetian painter is not a moon of Saturn"],
+  [798, "Titan", false,      "and the reverse"],
+  [878, "Austria", false,    "a different country, two slips away"],
+  [520, "The skin", false,   "a group of geese is not an organ"],
+  [927, "A pride", false,    "lions are not prime numbers"],
 
   /* ---- must NOT be accepted ---------------------------------------------- */
   [21,  "1913", false, "a year one out is a different answer"],
@@ -120,22 +136,50 @@ for (const q of bank.questions) {
   }
 }
 
-/* ---- Sweep: another question's answer must not match this one ------------- */
+/* ---- Sweep: another question's answer must not match this one -------------
+   Every ordered pair, not a sample. This used to walk a 129-pair diagonal and
+   reported a clean bill of health while the bank quietly accepted "Entomology"
+   for "Etymology", "Titian" for "Titan" and "Austria" for "Australia" — all
+   inside edit-distance tolerance, all separately askable questions here. The
+   full 800k-pair sweep costs a few seconds and would have caught every one.
+
+   Answers that legitimately overlap are excluded rather than counted: #303
+   "Greece" lists "athens" as an alias and #864's answer IS Athens, which is
+   the bank agreeing with itself, not the checker being loose. The test is
+   whether FUZZY matching let a different answer through, so a pair only counts
+   when the other answer is nowhere in this question's own accepted forms. */
+const formsOf = (q) => {
+  const keys = new Set();
+  for (const source of [q.answer, ...(q.accept || [])]) {
+    for (const form of answerForms(source)) {
+      const k = matchKey(form);
+      if (k) keys.add(k);
+    }
+  }
+  return keys;
+};
+
 let crossFail = 0;
+let crossPairs = 0;
 const crossExamples = [];
-for (let i = 0; i < bank.questions.length; i += 7) {
-  const q = bank.questions[i];
-  const other = bank.questions[(i + 137) % bank.questions.length];
-  if (other.id === q.id) continue;
-  if (bank.checkTyped(q, other.answer) === true) {
-    crossFail++;
-    if (crossExamples.length < 6) crossExamples.push(`  "${other.answer}" accepted for "${q.answer}"`);
+for (const q of bank.questions) {
+  const own = formsOf(q);
+  for (const other of bank.questions) {
+    if (other.id === q.id) continue;
+    crossPairs++;
+    if (own.has(matchKey(other.answer))) continue;   /* deliberate alias overlap */
+    if (bank.checkTyped(q, other.answer) === true) {
+      crossFail++;
+      if (crossExamples.length < 10) {
+        crossExamples.push(`  "${other.answer}" (#${other.id}) accepted for "${q.answer}" (#${q.id})`);
+      }
+    }
   }
 }
 
 console.log(`explicit cases: ${pass}/${CASES.length} passed`);
 console.log(`self-match sweep: ${selfFail} failures across ${bank.questions.length} questions and their aliases`);
-console.log(`cross-match sweep: ${crossFail} false accepts`);
+console.log(`cross-match sweep: ${crossFail} false accepts across ${crossPairs} answer pairs`);
 if (crossExamples.length) console.log(crossExamples.join("\n"));
 
 if (failures.length) {

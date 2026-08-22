@@ -138,10 +138,34 @@ Leniency stops where a near miss stops being a slip:
 - **Prefix abbreviations only in multi-word answers**, where the other words anchor it.
   On a single-word answer "sil" would sail through as "silver".
 
-`node scripts/test-matching.mjs` guards all of it: 48 explicit cases, plus two sweeps —
+Two rules do work edit distance cannot, and each exists because the other one alone got
+a real verdict wrong:
+
+- **Inflection is not a typo** (`sameWordFamily`, util.js). "Play louder" for "Play
+  loudly" is two slips on a six-letter word — one past tolerance, so the checker called
+  a right answer *close* and scored it wrong. Both words must reduce to the SAME stem of
+  four characters or more, which is why this is safe where the prefix rule is not: "sil"
+  does not reduce to "silver", but "louder" and "loudly" both reduce to "loud". The
+  four-character floor is what stops "water", "forest" and "Italy" being shredded into
+  "wat", "for" and "Ita" — it costs a few genuine cases ("bigger" stops at "bigg") and
+  that is the right trade, because over-stripping fails silently.
+- **A real word is never a typo for another real word** (`bank.lexicon`). Edit distance
+  cannot tell "Entomology" from "Etymology", or "Titian" from "Titan", or "Austria" from
+  "Australia" — every pair is inside tolerance, and every pair is two separately askable
+  questions in this bank. Only the bank knows which strings are real answers with their
+  own meaning, so `checkTyped` withholds the fuzzy pass entirely when the input spells
+  some other question's answer verbatim. Exact and alias matching run first, so this can
+  never reject a question's own answer.
+
+`node scripts/test-matching.mjs` guards all of it: 65 explicit cases, plus two sweeps —
 every answer and alias must match itself, and no other question's answer may match. The
 REJECT cases matter more than the accepts; a checker that accepts everything has quietly
 stopped being a quiz. Run it after any change to matching, normalisation, or the bank.
+
+The cross sweep is **every ordered pair** (~816k, a few seconds), not a sample. It used
+to walk a 129-pair diagonal and report a clean bill of health while all three word pairs
+above were being accepted. Do not thin it back out to save runtime; a sampled sweep of a
+matching table is a sweep that passes.
 
 ## Two viability filters, one per answer mode
 
