@@ -1014,7 +1014,25 @@
   .question { max-width: 100%; }
   .options { grid-template-columns: 1fr; }
   .option { min-height: 54px; }
-  .tool { min-width: 0; flex: 1; padding: var(--sp-2); }
+  /* Stack the lamp above the label and let every tool share the rail
+     equally — side-by-side they clipped to "WIRET" / "FREEZ" / "BYPAS". */
+  .kit { gap: 5px; }
+  .tool {
+    flex: 1 1 0;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 3px;
+    padding: 6px 3px;
+    text-align: center;
+  }
+  .tool__lamp { grid-row: auto; }
+  .tool__name {
+    font-size: 0.5rem;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    hyphens: auto;
+  }
   .tool__key { display: none; }
   .kit { padding-bottom: 66px; }   /* clear the fixed Bank button */
   .verdict { flex-direction: column; gap: var(--sp-2); }
