@@ -143,6 +143,31 @@ every answer and alias must match itself, and no other question's answer may mat
 REJECT cases matter more than the accepts; a checker that accepts everything has quietly
 stopped being a quiz. Run it after any change to matching, normalisation, or the bank.
 
+## Two viability filters, one per answer mode
+
+- `isChoiceViable()` (distractors.js) — can this be asked as MULTIPLE CHOICE?
+  Fails when an answer has no structural peers, so any three distractors leave it
+  the visible odd one out.
+- `Bank.isTypedViable()` (bank.js) — can this be asked as TYPE-IT? Fails when
+  nobody could reasonably produce the answer letter by letter.
+
+They are not symmetric, and neither is decoration. "What does RSVP stand for?" is a
+good multiple-choice question and a terrible typing question: reproducing "Répondez
+s'il vous plaît" tests French, not trivia.
+
+Structural cases are automatic — over five words, over 30 characters, or two or more
+commas (lists are an enumeration test). The five-word cutoff is deliberate: titles and
+names sit right at it, and both "The Silence of the Lambs" and "Ludwig Mies van der
+Rohe" are five words and perfectly typeable.
+
+What the rules cannot see is producibility, so a bank entry may carry `typedOk: false`
+to override — `scripts/author-typed-flags.mjs` holds those seven, all set-phrase
+answers in another language. The judgement lives in the data, so a swapped bank can
+carry its own.
+
+Both filters thread through `pool` / `count` / `draw` / `drawRun`, and BYPASS must pass
+them too or it can swap in a question the mode just excluded.
+
 ## Known gaps
 
 - **Never tested on a real phone.** The layout IS verified at 390px and 360px via

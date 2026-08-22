@@ -301,9 +301,11 @@ export function answerForms(s) {
   const beforeComma = withoutParens.split(",")[0].trim();
   if (beforeComma && beforeComma !== withoutParens) forms.add(beforeComma);
 
-  /* Em-dash asides: "Monotremes — the platypus and echidna". */
-  const beforeDash = raw.split(/\s[—–-]\s/)[0].trim();
-  if (beforeDash && beforeDash !== raw) forms.add(beforeDash);
+  /* Em-dash asides: "Monotremes — the platypus and echidna" should accept
+     either half. Same for "Shuimohua — ink wash painting", where the English
+     gloss is the far likelier thing to be typed. */
+  const dashParts = raw.split(/\s[—–-]\s/).map((x) => x.trim()).filter(Boolean);
+  if (dashParts.length > 1) for (const part of dashParts) forms.add(part);
 
   return [...forms];
 }

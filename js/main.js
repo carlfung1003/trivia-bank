@@ -108,6 +108,7 @@ function syncSetupSummary() {
     categories: app.settings.categories,
     difficulties: app.settings.difficulties,
     choiceOnly: app.settings.answerMode === "choice",
+    typedOnly: app.settings.answerMode === "typed",
   });
   ui.renderSetupSummary({ ...app.settings, poolSize });
 }

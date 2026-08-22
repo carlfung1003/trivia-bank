@@ -48,9 +48,48 @@ export class Bank {
     return this.questions.length;
   }
 
+  /**
+   * Is this question fair to ask in Type-It mode?
+   *
+   * The mirror of isChoiceViable(). Multiple choice fails on answers with no
+   * structural peers; TYPING fails on answers nobody could reasonably produce
+   * letter by letter, even knowing the fact. "What does RSVP stand for?" is a
+   * fine question — asking someone to type "Répondez s'il vous plaît" is not.
+   *
+   * A bank entry can override the verdict with `typedOk`, so the judgement is
+   * data rather than something baked into code.
+   */
+  static isTypedViable(q) {
+    if (typeof q.typedOk === "boolean") return q.typedOk;
+
+    /* Judge the answer without parentheticals and asides — those are already
+       optional at match time. */
+    const bare = String(q.answer || "")
+      .replace(/\([^)]*\)/g, " ")
+      .split(/\s[—–]\s/)[0]
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!bare) return false;
+
+    const words = bare.split(" ").length;
+
+    /* A sentence is not an answer you can type. Five words is the cutoff
+       because titles and names sit right at it — "The Silence of the Lambs"
+       and "Ludwig Mies van der Rohe" are both five and both perfectly
+       typeable, while length catches the genuinely long ones. */
+    if (words > 5) return false;
+    if (bare.length > 30) return false;
+
+    /* Lists — "Swan Lake, The Sleeping Beauty, and The Nutcracker" — are a
+       memory test of enumeration, not of typing. */
+    if ((bare.match(/,/g) || []).length >= 2) return false;
+
+    return true;
+  }
+
   /** How many questions match a filter set — drives the setup screen counter. */
-  count({ categories, difficulties, choiceOnly = false } = {}) {
-    return this.pool({ categories, difficulties, choiceOnly }).length;
+  count({ categories, difficulties, choiceOnly = false, typedOnly = false } = {}) {
+    return this.pool({ categories, difficulties, choiceOnly, typedOnly }).length;
   }
 
   /**
@@ -58,7 +97,7 @@ export class Bank {
    * `choiceOnly` drops the handful that cannot be asked fairly as multiple
    * choice (see distractors.js — structurally unique answers).
    */
-  pool({ categories, difficulties, choiceOnly = false, exclude } = {}) {
+  pool({ categories, difficulties, choiceOnly = false, typedOnly = false, exclude } = {}) {
     const cats = categories && categories.length ? new Set(categories) : null;
     const diffs = difficulties && difficulties.length ? new Set(difficulties) : null;
     const out = [];
@@ -67,6 +106,7 @@ export class Bank {
       if (diffs && !diffs.has(q.difficulty)) continue;
       if (exclude && exclude.has(q.id)) continue;
       if (choiceOnly && !isChoiceViable(q, this.index)) continue;
+      if (typedOnly && !Bank.isTypedViable(q)) continue;
       out.push(q);
     }
     return out;
@@ -77,9 +117,9 @@ export class Bank {
    * gracefully: a filter set with no 'hard' Music questions should still
    * produce a playable run rather than dead-ending mid-heist.
    */
-  draw(rng, { categories, difficulties, difficulty, exclude, choiceOnly = false } = {}) {
+  draw(rng, { categories, difficulties, difficulty, exclude, choiceOnly = false, typedOnly = false } = {}) {
     const tryDraw = (diffList) => {
-      const p = this.pool({ categories, difficulties: diffList, exclude, choiceOnly });
+      const p = this.pool({ categories, difficulties: diffList, exclude, choiceOnly, typedOnly });
       return p.length ? sample(rng, p, 1)[0] : null;
     };
 
@@ -100,12 +140,12 @@ export class Bank {
    * and identical for every player, and by Vault Run so the difficulty ramp
    * is guaranteed rather than hoped for.
    */
-  drawRun(rng, { length, ramp, categories, difficulties, choiceOnly = false } = {}) {
+  drawRun(rng, { length, ramp, categories, difficulties, choiceOnly = false, typedOnly = false } = {}) {
     const picked = [];
     const used = new Set();
     for (let i = 0; i < length; i++) {
       const difficulty = ramp ? ramp[Math.min(i, ramp.length - 1)] : null;
-      const q = this.draw(rng, { categories, difficulties, difficulty, exclude: used, choiceOnly });
+      const q = this.draw(rng, { categories, difficulties, difficulty, exclude: used, choiceOnly, typedOnly });
       if (!q) break;
       used.add(q.id);
       picked.push(q);

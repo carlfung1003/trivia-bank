@@ -1211,7 +1211,8 @@
       "accept": [
         "exempli gratia"
       ],
-      "hint": "Two Latin words meaning roughly 'for the sake of example'."
+      "hint": "Two Latin words meaning roughly 'for the sake of example'.",
+      "typedOk": false
     },
     {
       "id": 97,
@@ -1253,7 +1254,8 @@
         "touch heart",
         "dot heart"
       ],
-      "hint": "A poetic phrase about the organ that beats, not the stomach."
+      "hint": "A poetic phrase about the organ that beats, not the stomach.",
+      "typedOk": false
     },
     {
       "id": 100,
@@ -2845,7 +2847,8 @@
         "please reply",
         "please respond"
       ],
-      "hint": "French, and it is what you do when invited to a wedding."
+      "hint": "French, and it is what you do when invited to a wedding.",
+      "typedOk": false
     },
     {
       "id": 310,
@@ -2857,7 +2860,8 @@
         "ante meridiem",
         "ante meridian"
       ],
-      "hint": "Latin for 'before midday'."
+      "hint": "Latin for 'before midday'.",
+      "typedOk": false
     },
     {
       "id": 311,
@@ -2869,7 +2873,8 @@
         "et cetera",
         "etcetera"
       ],
-      "hint": "Latin, and it is what you write when the list gets too long."
+      "hint": "Latin, and it is what you write when the list gets too long.",
+      "typedOk": false
     },
     {
       "id": 312,
@@ -7606,7 +7611,8 @@
         "et alia",
         "and others"
       ],
-      "hint": "Latin, used when there are too many authors to list."
+      "hint": "Latin, used when there are too many authors to list.",
+      "typedOk": false
     },
     {
       "id": 691,
@@ -8872,7 +8878,8 @@
         "demoiselles d'avignon",
         "les demoiselles davignon"
       ],
-      "hint": "Five figures from a Barcelona brothel street, faces borrowed from African masks."
+      "hint": "Five figures from a Barcelona brothel street, faces borrowed from African masks.",
+      "typedOk": false
     },
     {
       "id": 790,

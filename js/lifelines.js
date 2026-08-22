@@ -131,6 +131,7 @@ function bypass(game) {
     difficulty: previous.difficulty,
     exclude: game.usedIds,
     choiceOnly: game.answerMode === "choice",
+    typedOnly: game.answerMode === "typed",
   });
 
   /* If the filtered pool is exhausted there is nothing to swap to; refund the

@@ -130,6 +130,7 @@ export class Game extends Emitter {
         categories: this.categories,
         difficulties: this.difficulties,
         choiceOnly: this.answerMode === "choice",
+        typedOnly: this.answerMode === "typed",
       });
     } else {
       this.queue = null;
@@ -164,6 +165,7 @@ export class Game extends Emitter {
         difficulty: this._nextDifficulty(),
         exclude: this.usedIds,
         choiceOnly: this.answerMode === "choice",
+        typedOnly: this.answerMode === "typed",
       });
     }
 

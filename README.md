@@ -138,6 +138,12 @@ Three questions in the bank are structurally unique (long definitional answers w
 peers). They are marked not-viable for multiple choice and only appear in Type-It mode,
 where length is not a tell.
 
+The reverse filter also exists: 24 questions are not viable for **Type-It**, because
+nobody could reasonably produce the answer letter by letter. "What does RSVP stand for?"
+is a fine multiple-choice question and a terrible typing one — reproducing "Répondez
+s'il vous plaît" tests French, not trivia. Sentences, lists and over-long answers are
+caught by rule; set phrases in another language carry an explicit `typedOk: false`.
+
 Measured over the whole bank across six seeds: **0 fatal issues, ≤0.5% giveaway rounds.**
 
 The remaining ceiling is semantic — nothing in the bank knows that *"Répondez s'il vous
