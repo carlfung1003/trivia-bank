@@ -128,16 +128,23 @@ class Sound {
   async _probeFiles() {
     if (this._probed) return;
     this._probed = true;
-    for (const [name, url] of Object.entries(AUDIO_FILES)) {
-      try {
-        const res = await fetch(url, { method: "HEAD" });
-        if (!res.ok) continue;
-        const full = await fetch(url);
-        const arr = await full.arrayBuffer();
-        this._buffers.set(name, await this.ctx.decodeAudioData(arr));
-        console.info(`[audio] using ${url}`);
-      } catch { /* not present — synthesis handles it */ }
-    }
+
+    /* One GET per slot, not a HEAD followed by a GET — a 404 body is a few
+       bytes, so the HEAD saved nothing and doubled the request count. All
+       four run concurrently; a missing file is the expected case, not an
+       error, so failures are swallowed and synthesis stays in charge. */
+    await Promise.all(
+      Object.entries(AUDIO_FILES).map(async ([name, url]) => {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) return;
+          const arr = await res.arrayBuffer();
+          if (!arr.byteLength) return;
+          this._buffers.set(name, await this.ctx.decodeAudioData(arr));
+          console.info(`[audio] using ${url}`);
+        } catch { /* not present, or undecodable — synthesis handles it */ }
+      })
+    );
   }
 
   hasFile(name) { return this._buffers.has(name); }

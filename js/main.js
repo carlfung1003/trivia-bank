@@ -529,8 +529,18 @@ function goHome() {
    ========================================================================== */
 
 function wireGlobalInput() {
-  /* Any first gesture unlocks audio — browsers require it. */
-  const unlockOnce = () => sound.unlock();
+  /* Any first gesture unlocks audio — browsers require it. The title theme
+     starts on that same gesture, since it cannot legally start before one. */
+  const unlockOnce = () => {
+    sound.unlock();
+    /* File probing is async; give it a beat before asking for the bed. If no
+       file is present playMusic returns false and nothing happens. */
+    setTimeout(() => {
+      if (document.body.dataset.screen === "title") {
+        sound.playMusic("themeTitle", { gain: 0.22 });
+      }
+    }, 700);
+  };
   window.addEventListener("pointerdown", unlockOnce, { once: true });
   window.addEventListener("keydown", unlockOnce, { once: true });
 
@@ -608,6 +618,10 @@ function exposeDebugApi() {
     get state() { return app.game?.state ?? null; },
     get bank() { return app.bank; },
     store,
+    /* Exposed for debugging the audio graph: whether the context started,
+       which optional files were found, and forcing playback without waiting
+       on a real gesture. */
+    sound,
 
     start(mode = "vault", opts = {}) {
       Object.assign(app.settings, opts);

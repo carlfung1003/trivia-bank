@@ -31,12 +31,18 @@
   --edge-lo:  hsl(222 60% 2% / 0.72);
   --edge-lo2: hsl(222 60% 2% / 0.4);
 
-  /* Brushed-metal grain, applied as an overlay layer. */
-  --grain-fine: repeating-linear-gradient(
-    90deg,
-    hsl(0 0% 100% / 0.020) 0 1px,
-    transparent 1px 3px
-  );
+  /* Brushed-metal grain, applied as an overlay layer.
+     A photographed grain sits under the procedural one: the scan carries
+     irregularity that a repeating-linear-gradient cannot, and the gradient
+     keeps the grain crisp where the tile softens. If the texture is missing
+     the layer simply does not paint and the gradient carries it alone. */
+  --grain-fine:
+    repeating-linear-gradient(
+      90deg,
+      hsl(0 0% 100% / 0.016) 0 1px,
+      transparent 1px 3px
+    ),
+    url("../assets/art/panel-texture.jpg") repeat;
   --grain-coarse: repeating-linear-gradient(
     90deg,
     hsl(0 0% 100% / 0.030) 0 1px,
@@ -103,7 +109,12 @@
   inset: 0;
   border-radius: inherit;
   background: var(--grain-fine);
-  opacity: 0.9;
+  background-size: auto, 260px 260px;
+  /* Overlay, not normal: at full opacity the photographed grain would paint
+     straight over the plate gradient and flatten the lighting. Blended, it
+     only modulates what is already there. */
+  mix-blend-mode: overlay;
+  opacity: 0.55;
   pointer-events: none;
   z-index: -1;
 }
@@ -191,6 +202,9 @@
   inset: 0;
   border-radius: inherit;
   background: var(--grain-fine);
+  background-size: auto, 260px 260px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
   pointer-events: none;
 }
 .mat-key:hover:not(:disabled) {

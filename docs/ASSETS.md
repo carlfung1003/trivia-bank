@@ -2,9 +2,19 @@
 
 Paste-ready prompts for every piece of generated media the game can use.
 
-**Nothing here is required.** The game ships fully playable with procedural
-audio and CSS-drawn artwork. Every slot below is additive: drop the file at the
-stated path and it takes over automatically. Delete it and the fallback returns.
+**Nothing here is required.** The game is fully playable with procedural audio
+and CSS-drawn artwork. Every slot is additive: drop the file at the stated path
+and it takes over automatically. Delete it and the fallback returns.
+
+> **Status: all nine assets are generated and shipped** (Aug 2026). Sources live
+> in `~/Desktop/trivia`; processed outputs are in `assets/`. Re-run
+> `bash scripts/process-audio.sh` and `bash scripts/process-images.sh` after
+> generating new takes. The prompts below are kept for regeneration and for
+> the two optional assets not yet used (category sigils).
+>
+> Raw generations totalled 23 MB. Processed payload is **964 KB of art and
+> 2.1 MB of audio**, because a no-build static site fetches every byte on
+> first paint and nothing here streams.
 
 **Palette — use these hex values verbatim in every prompt:**
 

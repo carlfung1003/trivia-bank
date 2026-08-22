@@ -33,7 +33,9 @@
   translate: -50% -50%;
   /* Heat opens the door: as the streak climbs or the clock bites, the rings
      spread apart and brighten. Driven by one custom property from JS. */
-  opacity: calc(0.16 + var(--heat) * 0.34);
+  /* Fallback artwork. With assets/art/vault-door.jpg present these sit
+     under it as faint reinforcement; without it they carry the screen. */
+  opacity: calc(0.09 + var(--heat) * 0.2);
   scale: calc(1 + var(--heat) * 0.06);
   transition: opacity var(--dur-slow) var(--ease), scale var(--dur-slow) var(--ease);
 }
@@ -241,11 +243,31 @@
   width: min(150vh, 150vw);
   aspect-ratio: 1;
   translate: -50% -50%;
-  background: url("../assets/art/vault-door.png") center / contain no-repeat;
-  opacity: calc(0.28 + var(--heat) * 0.42);
+  background: url("../assets/art/vault-door.jpg") center / contain no-repeat;
+  /* Low at rest, bright at full heat. A background that competes with the
+     content is a background doing the wrong job — at heat 0 this should
+     register as depth, not as subject matter. */
+  opacity: calc(0.13 + var(--heat) * 0.4);
+  /* Defocused, because it is behind everything. A pin-sharp backdrop reads
+     as a flat pasted image; one stop of blur reads as distance. */
+  filter: blur(1.5px);
   mix-blend-mode: screen;
   transition: opacity var(--dur-slow) var(--ease);
   pointer-events: none;
+}
+
+/* Scrim over the art so panel edges and body copy keep their contrast against
+   the door's high-frequency bolts and spokes. */
+.vault-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 45%,
+      hsl(222 40% 4% / 0.72) 0%,
+      hsl(222 40% 4% / 0.5) 45%,
+      hsl(222 40% 4% / 0.24) 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   .vault-art { opacity: 0.3; }
