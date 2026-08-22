@@ -14,9 +14,16 @@
   animation: spin 1.1s linear infinite;
 }
 .boot-error {
-  max-width: 46ch; text-align: center;
-  color: var(--alarm-hi); font-family: var(--font-mono); font-size: var(--text-sm);
+  display: grid;
+  justify-items: center;
+  max-width: 46ch;
+  text-align: center;
+  color: var(--alarm-hi);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
+.boot-error[hidden] { display: none !important; }
 
 /* ---- TITLE ---------------------------------------------------------------
    You are standing in front of the door. The wordmark is a brass plate bolted

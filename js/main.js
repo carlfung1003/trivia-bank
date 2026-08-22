@@ -672,10 +672,79 @@ function exposeDebugApi() {
   };
 }
 
+/* ==========================================================================
+   Boot guard
+   --------------------------------------------------------------------------
+   A no-build ES-module site has one failure mode worth handling explicitly:
+   MIXED MODULE VERSIONS. index.html versions its entry point (main.js?v=N)
+   but a module's own imports carry no query string, so a browser holding an
+   over-cached ./ui.js will happily load a fresh main.js against a stale
+   dependency. The symptom is a TypeError during boot and a blank screen.
+
+   This happened in production during a fifteen-minute window when JS was
+   still served `immutable` — and once a browser has cached under that
+   header, correcting the header does not evict the entry.
+
+   So instead of a white page: catch it, say what it is, and offer a button
+   that force-refetches every module and reloads. Self-healing beats a bug
+   report that reads "the site is blank".
+   ========================================================================== */
+
+const MODULES = [
+  "main", "ui", "fx", "audio", "engine", "distractors",
+  "config", "bank", "store", "share", "lifelines", "util",
+];
+const STYLES = ["tokens", "base", "material", "game", "fx"];
+
+async function purgeAndReload() {
+  try {
+    await Promise.all([
+      ...MODULES.map((m) => fetch(`js/${m}.js`, { cache: "reload" })),
+      ...STYLES.map((c) => fetch(`css/${c}.css`, { cache: "reload" })),
+      fetch("data/questions.json", { cache: "reload" }),
+    ]);
+  } catch { /* offline, or the fetch itself failed — reload anyway */ }
+  location.reload();
+}
+
+function showBootFailure(err) {
+  console.error("[boot]", err);
+  const box = ui.el.bootError;
+  if (!box) return;
+  box.hidden = false;
+  box.textContent = "";
+
+  const msg = document.createElement("p");
+  msg.textContent =
+    "The vault jammed on a stale file — your browser is holding an old copy " +
+    "of part of the game. One refresh clears it.";
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn btn--primary";
+  btn.textContent = "Clear and reload";
+  btn.style.marginTop = "1rem";
+  btn.addEventListener("click", purgeAndReload, { once: true });
+
+  const detail = document.createElement("p");
+  detail.style.cssText = "margin-top:1rem;opacity:0.55;font-size:0.72rem";
+  detail.textContent = String(err && err.message ? err.message : err);
+
+  box.append(msg, btn, detail);
+}
+
 /* ---- Go ------------------------------------------------------------------- */
 
+function start() {
+  try {
+    const result = boot();
+    if (result && typeof result.catch === "function") result.catch(showBootFailure);
+  } catch (err) {
+    showBootFailure(err);
+  }
+}
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", boot, { once: true });
+  document.addEventListener("DOMContentLoaded", start, { once: true });
 } else {
-  boot();
+  start();
 }
