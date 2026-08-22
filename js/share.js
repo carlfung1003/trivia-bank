@@ -24,9 +24,12 @@ const MARK = {
 export function shareText(summary, { url = "trivia.carlfung.dev" } = {}) {
   const date = localDateKey();
   const grid = summary.history.map((h) => MARK[h.result] || MARK.wrong).join("");
+  const isBoard = summary.mode === "board";
   const lines = [
-    `The Trivia Bank — Daily Heist ${date}`,
-    `${summary.correct}/${summary.answered} · ${formatCredits(summary.score)} credits`,
+    isBoard ? `The Trivia Bank — The Board ${date}` : `The Trivia Bank — Daily Heist ${date}`,
+    isBoard
+      ? `${summary.correct}/${summary.answered} · $${formatCredits(summary.score)}`
+      : `${summary.correct}/${summary.answered} · ${formatCredits(summary.score)} credits`,
     grid,
   ];
   if (summary.bestStreak >= 3) lines.push(`best run: ${summary.bestStreak} in a row`);

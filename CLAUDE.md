@@ -204,6 +204,57 @@ typeable answers — "Central Processing Unit", "The Silence of the Lambs", "Wol
 Amadeus Mozart" — while keeping the actual offenders. Length was never the problem.
 Typing BLIND was. Do not re-tighten the thresholds; add shape affordances instead.
 
+## The Board — the second engine
+
+`js/jeopardy.js` is a **separate rules engine** from `engine.js`, running off a **separate
+data file** (`data/jeopardy.json`) onto a **separate screen**. That is deliberate and worth
+defending: `engine.js` models a queue of questions and this models a grid you pick from.
+Grafting thirty cells, two floors, hidden wagers and a final round onto the queue would
+have put four working modes at risk to save one file. They share the matcher and
+`config.js` — the two things that genuinely want to agree — and nothing else.
+
+The house rules still apply in full: no DOM in `jeopardy.js`, no rules in `board-ui.js`,
+`main.js` the only module that knows both, every number in `config.js` (`BOARD`).
+
+**Shape.** Six columns × five rows, values `tier × 200` on the first floor and `× 400` on
+the second, then one final clue. Tiers are difficulty, not money, so any pack can be dealt
+into either floor.
+
+**Deviations from television, all deliberate:**
+
+- **Solo.** No rivals to buzz against, so a clue is yours the moment you pick it.
+- **The question form is optional and rewarded.** `stripQuestionForm()` removes a leading
+  "What is…" before matching, and `BOARD.formBonus` pays 20% for having supplied one.
+  Requiring it would test typing, not knowing; ignoring it would throw away the format.
+- **You can pass.** This is the single most important rule in the mode and it was
+  discovered by the headless sweep, not by playing. Without it, picking a cell is a forced
+  bet, and a player who knows a third of the board finishes at **minus eleven thousand** —
+  the sweep's `cautious` profiles exist to hold that line. A pass spends the cell and costs
+  nothing, which is exactly what not buzzing does on the show. It is tracked as `passed`,
+  never as `wrong`.
+- **A committed wager cannot be passed out of.** Escape and the Pass button are both
+  refused once a wildcard or the final is live.
+
+**Before you say it works:**
+
+```bash
+node scripts/audit-jeopardy.mjs        # pack structure, self-match, cross-accept
+node scripts/playtest-board.mjs 60     # seven player profiles, full games
+```
+
+The audit's most useful check is the **echo test** — an answer sitting in its own clue.
+It caught four on the first run. `STUPID ANSWERS` declares `"echoOk": true` because giving
+the answer away IS that category's joke; nothing else may.
+
+**Adding a pack:** append to `categories` in `data/jeopardy.json` with an `id`, a CAPS
+`name`, an optional `blurb`, and exactly five clues at tiers 1–5. Run the audit. Twenty-five
+packs is four floors' worth, so a game never repeats a category.
+
+**Shared state, separately kept.** `store.record()` branches on `mode === "board"`: its
+categories go to `boardCategories`, never to the vault's twelve, or a board run would put
+"DIM SUM" in the ledger and hand out Polymath. Every numeric add there is coerced through
+`num()`, because one `undefined` reaching a `+=` writes NaN into localStorage permanently.
+
 ## Known gaps
 
 - **Never tested on a real phone.** The layout IS verified at 390px and 360px via

@@ -4,7 +4,8 @@ A trivia heist. Twelve locks, two safe havens, five tools in the kit — bank yo
 
 **Live:** [trivia.carlfung.dev](https://trivia.carlfung.dev)
 
-Built on a 904-question bank that started life as a 2023 Google Sheet of quiz answers.
+Built on a 904-question bank that started life as a 2023 Google Sheet of quiz answers,
+plus 133 authored clues for The Board.
 
 ---
 
@@ -16,6 +17,30 @@ Built on a 904-question bank that started life as a 2023 Google Sheet of quiz an
 | **Blitz** | 90 seconds. Correct buys +3s (capped at 90), a miss costs 5s. Pure speed. | none |
 | **Survival** | Three alarms, endless vault, difficulty escalates every 5 locks. | Drill, Freeze |
 | **Daily Heist** | 10 locks, seeded by the date — the same ten for everyone, everywhere. One attempt, spoiler-free share card. | Drill, Wiretap |
+| **The Board** | A Jeopardy-shaped grid: 6 categories × 5 clues, two floors, hidden wagers, one final clue. Its own engine and its own clue file. | pass |
+
+### The Board
+
+A clue is a statement; the response is a question. `What is a martini?` and `a martini`
+are both accepted — requiring the wrapper would test typing rather than knowing — but
+supplying one pays a 20% bonus, because the format is the point.
+
+- **Two floors.** Values are `tier × 200`, then `tier × 400`. Tiers are difficulty, not
+  money, so a pack can be dealt into either floor. Twenty-five packs means four floors'
+  worth and no repeats within a game.
+- **Wildcards.** One hidden cell on the first floor, two on the second, never in the top
+  row. You name a stake before the clue is shown, and only you can answer it.
+- **The Last Lock.** One clue, one wager up to everything you have. It is the last thing
+  that happens.
+- **Pass.** A clue you decline spends the cell and costs nothing — the solo equivalent of
+  not buzzing. Without it the mode is a forced bet on every pick, and the headless sweep
+  showed what that does: a player who knows a third of the board finishes eleven thousand
+  dollars down.
+
+Categories mix the recurring staples the show actually runs — Before & After, Potpourri,
+Rhyme Time, Potent Potables, Word Origins, State Capitals, Stupid Answers, Anagrams —
+with everyday ones: Dim Sum, On The Menu, Around The House, Household Chores, Holidays,
+Name That Country, At The Movies.
 
 ## The kit
 
@@ -66,12 +91,18 @@ ES modules and `fetch` do not work over `file://` — it has to be served over H
 ```bash
 node scripts/audit-distractors.mjs [seed] [--show=8] [--cat="Music"]
 node scripts/playtest.mjs [runs]
+node scripts/test-matching.mjs
+node scripts/audit-jeopardy.mjs
+node scripts/playtest-board.mjs [runs]
 ```
 
 `audit-distractors` runs the option generator over the whole bank and fails on
 anything that would ruin a round. `playtest` drives the real engine headlessly
 across every mode with scripted players and asserts the game's invariants.
-Both are plain Node, no dependencies.
+`test-matching` checks typed-answer leniency against 65 explicit cases and sweeps
+every one of the 816,312 ordered answer pairs for false accepts. The last two do
+the same jobs for The Board: pack structure and cross-accepts, then seven scripted
+player profiles playing complete games. All plain Node, no dependencies.
 
 ---
 
@@ -180,15 +211,24 @@ js/
   distractors.js  ask-class tagging + option synthesis — pure
   bank.js         load, filter, draw, typed-answer checking
   engine.js       game rules. Zero DOM, zero wall-clock. Driven by tick(dt).
+  jeopardy.js     The Board's rules. Same contract, different game shape.
   lifelines.js    the kit. Pure state transitions on a Game.
   store.js        localStorage: records, achievements, prefs
   ui.js           owns the DOM, owns no rules
+  board-ui.js     the same, for The Board's grid, slab and wager pad
   fx.js           particles, shake, hit-pause, counter roll-up
   audio.js        Web Audio synthesis — no asset files
   share.js        spoiler-free text + canvas result card
   main.js         the only module that knows about both engine and DOM
-data/questions.json
+data/questions.json    904 typed-answer questions
+data/jeopardy.json     25 clue packs + finals, for The Board
 ```
+
+Two engines, one contract. `jeopardy.js` is separate from `engine.js` because
+`engine.js` walks a queue and The Board walks a grid — folding thirty cells, two
+floors and hidden wagers into the queue would have put four working modes at risk
+to save a file. They share the matcher and the balance file, which are the parts
+that want to agree.
 
 The engine takes no wall-clock time and touches no DOM, so the whole game can be
 played headlessly at any speed. That is what makes `scripts/playtest.mjs` and the
@@ -204,6 +244,15 @@ __game.lifeline('drill')
 __game.fastForward(30)           // advance the clock without waiting
 __game.autoplay({ accuracy: 0.7 })  // play a whole run, returns the summary
 __game.state
+
+__board.start()                  // The Board
+__board.pick(col, row)
+__board.wager(500)               // wildcard stake, or the final
+__board.answer('form')           // 'correct' | 'form' | 'wrong' | text
+__board.pass()
+__board.next()
+__board.autoplay({ accuracy: 0.8, cautious: true })
+__board.state
 ```
 
 ---

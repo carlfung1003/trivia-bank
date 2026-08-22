@@ -187,55 +187,76 @@ export class Bank {
    *   edit outside tolerance, which the UI can use to say so.
    */
   checkTyped(question, input) {
-    const given = normalise(input);
-    if (!given) return false;
-
-    const givenKey = matchKey(input);
-    const givenTokens = new Set(givenKey.split(" ").filter(Boolean));
-
-    /* Every form worth accepting, from the answer and from its aliases. */
-    const candidates = new Set();
-    for (const source of [question.answer, ...(question.accept || [])]) {
-      for (const form of answerForms(source)) candidates.add(form);
-    }
-
-    let nearMiss = false;
-
-    /* If what was typed is, verbatim, some other question's answer, it is not
-       a typo — it is a different answer. Edit distance cannot tell "Entomology"
-       from "Etymology" (two slips in ten characters, inside tolerance) or
-       "Titian" from "Titan", and both pairs are separately askable questions in
-       this very bank. Only the bank knows which strings are real words with
-       their own meaning, so only the bank can withhold the benefit of the
-       doubt. Reaching this point already means the input did not match THIS
-       question exactly or by key, so a hit here is always someone else's. */
-    const spellsAnotherAnswer = this.lexicon.has(givenKey);
-
-    for (const candidate of candidates) {
-      const n = normalise(candidate);
-      if (!n) continue;
-
-      if (given === n) return true;
-
-      const key = matchKey(candidate);
-      if (!key) continue;
-      if (givenKey === key) return true;
-
-      /* Word order: "China and Nepal" for "Nepal and China". */
-      const keyTokens = new Set(key.split(" ").filter(Boolean));
-      if (keyTokens.size > 1 && keyTokens.size === givenTokens.size) {
-        let same = true;
-        for (const t of keyTokens) if (!givenTokens.has(t)) { same = false; break; }
-        if (same) return true;
-      }
-
-      if (demandsExact(candidate) || spellsAnotherAnswer) continue;
-
-      const verdict = fuzzyWordMatch(givenKey, key);
-      if (verdict === "match") return true;
-      if (verdict === "close") nearMiss = true;
-    }
-
-    return nearMiss ? "close" : false;
+    return checkTypedAgainst(question, input, this.lexicon);
   }
 }
+
+/**
+ * The matcher itself, free of the Bank so a second question set can borrow it.
+ *
+ * The Board (js/jeopardy.js) runs off its own clue file and would otherwise
+ * have had to reimplement four passes of leniency it cannot afford to get
+ * subtly different — a clue that accepts what the vault rejects is worse than
+ * either rule on its own. It builds its own lexicon from its own clues and
+ * passes it in.
+ *
+ * @param {{answer: string, accept?: string[]}} question
+ * @param {string} input
+ * @param {Set<string>} lexicon  every answer in the containing set, as match
+ *   keys. Pass an empty Set to disable the different-answer guard.
+ * @returns {boolean|"close"}
+ */
+export function checkTypedAgainst(question, input, lexicon = EMPTY_LEXICON) {
+  const given = normalise(input);
+  if (!given) return false;
+
+  const givenKey = matchKey(input);
+  const givenTokens = new Set(givenKey.split(" ").filter(Boolean));
+
+  /* Every form worth accepting, from the answer and from its aliases. */
+  const candidates = new Set();
+  for (const source of [question.answer, ...(question.accept || [])]) {
+    for (const form of answerForms(source)) candidates.add(form);
+  }
+
+  let nearMiss = false;
+
+  /* If what was typed is, verbatim, some other question's answer, it is not
+     a typo — it is a different answer. Edit distance cannot tell "Entomology"
+     from "Etymology" (two slips in ten characters, inside tolerance) or
+     "Titian" from "Titan", and both pairs are separately askable questions in
+     this very bank. Only the bank knows which strings are real words with
+     their own meaning, so only the bank can withhold the benefit of the
+     doubt. Reaching this point already means the input did not match THIS
+     question exactly or by key, so a hit here is always someone else's. */
+  const spellsAnotherAnswer = lexicon.has(givenKey);
+
+  for (const candidate of candidates) {
+    const n = normalise(candidate);
+    if (!n) continue;
+
+    if (given === n) return true;
+
+    const key = matchKey(candidate);
+    if (!key) continue;
+    if (givenKey === key) return true;
+
+    /* Word order: "China and Nepal" for "Nepal and China". */
+    const keyTokens = new Set(key.split(" ").filter(Boolean));
+    if (keyTokens.size > 1 && keyTokens.size === givenTokens.size) {
+      let same = true;
+      for (const t of keyTokens) if (!givenTokens.has(t)) { same = false; break; }
+      if (same) return true;
+    }
+
+    if (demandsExact(candidate) || spellsAnotherAnswer) continue;
+
+    const verdict = fuzzyWordMatch(givenKey, key);
+    if (verdict === "match") return true;
+    if (verdict === "close") nearMiss = true;
+  }
+
+  return nearMiss ? "close" : false;
+}
+
+const EMPTY_LEXICON = new Set();

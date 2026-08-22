@@ -27,7 +27,8 @@
 <link rel="stylesheet" href="css/tokens.css?v=2">
 <link rel="stylesheet" href="css/base.css?v=2">
 <link rel="stylesheet" href="css/material.css?v=6">
-<link rel="stylesheet" href="css/game.css?v=17">
+<link rel="stylesheet" href="css/game.css?v=18">
+<link rel="stylesheet" href="css/board.css?v=6">
 <link rel="stylesheet" href="css/fx.css?v=11">
 </head>
 
@@ -291,6 +292,123 @@
     </button>
   </section>
 
+  <!-- =================== THE BOARD =================== -->
+  <!-- Six columns, five rows, two floors and a last lock. The clue does not
+       open a new screen — it takes the grid over, the way it does on the show,
+       so the board you are working through is never out of mind. -->
+  <section class="screen screen--board" data-screen="board" aria-label="The Board" hidden>
+
+    <div class="console console--board">
+      <span class="rivet rivet--tl" aria-hidden="true"></span>
+      <span class="rivet rivet--tr" aria-hidden="true"></span>
+      <span class="rivet rivet--bl" aria-hidden="true"></span>
+      <span class="rivet rivet--br" aria-hidden="true"></span>
+
+      <header class="rail rail--top">
+        <div class="rail__left">
+          <button type="button" class="icon-btn" id="board-quit" aria-label="Leave the board">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="plate plate--mode">
+            <span class="plate__label engraved" id="board-round">First Floor</span>
+            <span class="plate__value" id="board-progress">30 clues left</span>
+          </div>
+        </div>
+
+        <div class="meter meter--haul">
+          <span class="meter__cap engraved">Score</span>
+          <div class="flap-housing">
+            <div class="flap" id="board-flap" aria-label="Score" role="img"></div>
+          </div>
+          <div class="meter__risk" id="board-negative" hidden>
+            <span class="lamp lamp--alarm" data-on="true" aria-hidden="true"></span>
+            <span class="engraved">in the red</span>
+          </div>
+        </div>
+
+        <div class="rail__right">
+          <div class="gauge">
+            <span class="gauge__cap engraved">Streak</span>
+            <div class="streak" id="board-streak" aria-label="Streak"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ---- The grid, and the clue that covers it ---- -->
+      <div class="board-frame bezel">
+        <span class="rivet rivet--tl" aria-hidden="true"></span>
+        <span class="rivet rivet--tr" aria-hidden="true"></span>
+        <span class="rivet rivet--bl" aria-hidden="true"></span>
+        <span class="rivet rivet--br" aria-hidden="true"></span>
+
+        <div class="board-grid" id="board-grid" role="grid" aria-label="Clue board"></div>
+
+        <!-- The clue slab. Slides over the grid; never a separate screen. -->
+        <div class="slab" id="board-slab" hidden>
+          <div class="slab__head">
+            <span class="stamp" id="slab-cat">CATEGORY</span>
+            <span class="stamp stamp--diff" id="slab-value" data-diff="medium">$200</span>
+            <span class="stamp stamp--haven" id="slab-wildcard" hidden>Wildcard</span>
+          </div>
+
+          <p class="slab__clue" id="slab-clue">&nbsp;</p>
+
+          <div class="shape" id="slab-shape" hidden></div>
+
+          <div class="slab__foot">
+            <div class="dial dial--slab" id="slab-timer">
+              <svg class="dial__face" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="dial__well"  cx="60" cy="60" r="56"/>
+                <g class="dial__ticks" id="slab-dial-ticks"></g>
+                <circle class="dial__track" cx="60" cy="60" r="46"/>
+                <circle class="dial__fill"  cx="60" cy="60" r="46" id="slab-timer-fill"/>
+              </svg>
+              <span class="dial__value" id="slab-timer-value">22</span>
+              <span class="dial__cap engraved">sec</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The wager pad: wildcards and the last lock both land here. -->
+        <div class="slab slab--wager" id="board-wager" hidden>
+          <p class="eyebrow" id="wager-eyebrow">Wildcard</p>
+          <h3 class="wager__cat" id="wager-cat">CATEGORY</h3>
+          <p class="wager__note" id="wager-note">Name your stake before the clue is shown.</p>
+          <form class="wager__form" id="wager-form" autocomplete="off">
+            <label class="sr-only" for="wager-input">Your stake</label>
+            <div class="wager__well mat-inset">
+              <span class="wager__currency" aria-hidden="true">$</span>
+              <input class="wager__input" id="wager-input" type="number" inputmode="numeric" min="0" step="100" value="0">
+            </div>
+            <div class="wager__quick" id="wager-quick"></div>
+            <button type="submit" class="btn btn--primary">Lock the stake</button>
+          </form>
+          <p class="wager__range" id="wager-range"></p>
+        </div>
+      </div>
+
+      <!-- ---- Answer deck ---- -->
+      <div class="deck deck--board">
+        <form class="typed" id="board-form" hidden autocomplete="off">
+          <label class="sr-only" for="board-input">Your response</label>
+          <div class="typed__well mat-inset">
+            <input class="typed__input" id="board-input" type="text" placeholder="What is&hellip;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+          </div>
+          <button type="submit" class="btn btn--primary">Respond</button>
+          <button type="button" class="btn btn--ghost" id="board-pass">Pass</button>
+        </form>
+
+        <div class="verdict" id="board-verdict" hidden>
+          <p class="verdict__line" id="board-verdict-line"></p>
+          <p class="verdict__answer" id="board-verdict-answer"></p>
+          <button type="button" class="btn btn--primary" id="board-next">Back to the board</button>
+        </div>
+
+        <p class="board-hint" id="board-hint">Pick a cell. Respond in the form of a question for a bonus.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- =================== RESULTS =================== -->
   <section class="screen screen--done" data-screen="done" aria-label="Result" hidden>
     <div class="result">
@@ -348,7 +466,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=18"></script>
+<script type="module" src="js/main.js?v=21"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>

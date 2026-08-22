@@ -1,0 +1,339 @@
+/* ==========================================================================
+   THE BOARD — the grid, the clue slab, the wager pad.
+   --------------------------------------------------------------------------
+   Built from the same four primitives as the rest of the console
+   (.mat-plate / .mat-inset / .mat-glass / .mat-key) and lit from the same
+   single source: highlight on the top edge, shadow on the bottom, always.
+   No hex values live here — every colour comes from tokens.css.
+
+   The one idea worth stating: a clue does NOT open a new screen. The slab
+   slides over the grid inside the same frame, so the board you are working
+   through stays physically present the whole time. That is why .board-frame
+   is the positioning context and .slab is absolutely placed inside it.
+   ========================================================================== */
+
+/* ---- Frame ---------------------------------------------------------------- */
+
+.console--board {
+  gap: var(--sp-3);
+}
+
+.board-frame {
+  position: relative;
+  padding: var(--sp-3);
+  min-height: clamp(19rem, 44vh, 27rem);
+  display: grid;
+}
+
+/* ---- The grid ------------------------------------------------------------- */
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 6), minmax(0, 1fr));
+  gap: var(--sp-1);
+  align-content: start;
+  /* A grid item's automatic minimum is its MIN-CONTENT, so without this the
+     six columns refuse to shrink below the width of "$1000" plus padding and
+     the whole board hangs off the right edge of its own frame. minmax(0, 1fr)
+     on the tracks is not enough — the overflow happens one level up. */
+  min-width: 0;
+}
+
+.board-col {
+  display: grid;
+  grid-template-rows: auto repeat(5, minmax(0, 1fr));
+  gap: var(--sp-1);
+  min-width: 0;
+}
+
+/* Category caps. Set in caps because that is how a board reads, and kept on
+   two lines maximum — a third line pushes the $200 row off a laptop screen. */
+.board-cat {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: var(--sp-2) var(--sp-1);
+  min-height: 3.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(0.5625rem, 0.42rem + 0.4vw, 0.78rem);
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--ink-900);
+  text-shadow: 0 1px 0 hsl(222 60% 2% / 0.8);
+  /* No auto-hyphenation. It broke "sharing" across two lines of a category
+     cap, which on a board reads as a typo rather than as typography — these
+     strings are short enough to wrap on their spaces. */
+  hyphens: manual;
+}
+
+.board-cat__blurb {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ink-600);
+}
+
+/* Cells. A .mat-key so they seat like the rest of the console's buttons. */
+.board-cell {
+  display: grid;
+  place-content: center;
+  min-height: 2.6rem;
+  padding: var(--sp-2) var(--sp-1);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(0.9rem, 0.6rem + 1vw, 1.6rem);
+  letter-spacing: var(--track-tight);
+  color: var(--brass);
+  text-shadow: 0 2px 0 hsl(222 60% 2% / 0.75);
+  transition: transform var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              box-shadow var(--dur-fast) var(--ease);
+}
+
+.board-cell:hover:not(:disabled) {
+  color: var(--brass-hi);
+  transform: translateY(-2px);
+}
+
+/* A spent cell is not a disabled button — it is a hole in the board. It keeps
+   its footprint so the grid never reflows mid-game, and loses everything else. */
+.board-cell[data-used="true"] {
+  color: transparent;
+  box-shadow: inset 0 1px 0 hsl(222 60% 2% / 0.9),
+              inset 0 -1px 0 hsl(0 0% 100% / 0.03);
+  background: var(--ink-050);
+  cursor: default;
+  transform: none;
+}
+
+.board-cell[data-used="true"]::before { opacity: 0; }
+
+/* ---- The clue slab -------------------------------------------------------- */
+
+.slab {
+  position: absolute;
+  inset: var(--sp-3);
+  z-index: 3;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--sp-3);
+  padding: clamp(var(--sp-4), 3vw, var(--sp-6));
+  border-radius: var(--radius);
+  /* Opaque, not frosted. At 97% the dollar values behind it ghosted straight
+     through the clue text — atmospheric in a screenshot, unreadable in play. */
+  background: linear-gradient(var(--ink-100), var(--ink-050));
+  box-shadow: var(--shadow-lift), 0 0 0 1px var(--hairline-strong);
+  animation: slab-in var(--dur) var(--ease) both;
+}
+
+@keyframes slab-in {
+  from { opacity: 0; transform: scale(0.97) translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.slab__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+/* The clue itself. Display face, because on the show the clue IS the set. */
+.slab__clue {
+  align-self: center;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.72rem + 1.5vw, 2rem);
+  line-height: 1.22;
+  letter-spacing: var(--track-tight);
+  color: var(--ink-900);
+  text-wrap: balance;
+  text-align: center;
+}
+
+.slab__foot {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.dial--slab { transform: scale(0.82); transform-origin: bottom center; }
+
+/* A wildcard is the one time the slab is allowed to shout. */
+.slab[data-wildcard="true"] {
+  box-shadow: var(--shadow-lift), var(--glow-brass);
+}
+
+/* ---- The wager pad -------------------------------------------------------- */
+
+/* Auto rows, not the base slab's `auto 1fr auto`. The wager pad has five
+   stacked blocks and a fixed-height frame; a 1fr row in that grid pushed the
+   eyebrow out through the top of the bezel and the range line out through the
+   bottom. Centred auto rows fit what they have, and the scroll is the escape
+   hatch for a short viewport rather than a silent overflow. */
+/* Tighter than the clue slab on purpose: seven stacked blocks against a fixed
+   frame height. At the clue slab's spacing the pad needed 340px in a 280px
+   box, so the stake input scrolled out of sight — the one control the whole
+   screen exists for. */
+.slab--wager {
+  inset: var(--sp-2);
+  grid-template-rows: none;
+  grid-auto-rows: min-content;
+  /* `safe` matters here: a plain centred grid that overflows is clipped at
+     BOTH ends, and the top half is unreachable by scrolling. On a short
+     viewport that would hide the eyebrow and the category with no way to get
+     them back. `safe` falls back to start-alignment exactly when it overflows. */
+  align-content: safe center;
+  justify-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  text-align: center;
+  overflow-y: auto;
+}
+
+.wager__cat {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  letter-spacing: var(--track-tight);
+  color: var(--brass-hi);
+}
+
+.wager__note {
+  margin: 0;
+  max-width: 46ch;
+  margin-inline: auto;
+  font-size: var(--text-sm);
+  color: var(--ink-700);
+  line-height: var(--lh-tight);
+}
+
+.wager__form {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: center;
+  margin-top: var(--sp-2);
+}
+
+.wager__well {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius);
+  max-width: 15rem;
+}
+
+.wager__currency {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  color: var(--brass);
+}
+
+.wager__input {
+  width: 8ch;
+  border: 0;
+  background: none;
+  color: var(--ink-900);
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.wager__input:focus { outline: none; }
+.wager__input::-webkit-outer-spin-button,
+.wager__input::-webkit-inner-spin-button { appearance: none; margin: 0; }
+.wager__input { appearance: textfield; }
+
+.wager__quick {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wager__chip {
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-strong);
+  background: var(--ink-100);
+  color: var(--ink-700);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.wager__chip:hover { color: var(--brass-hi); border-color: var(--hairline-brass); }
+
+.wager__range {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+
+/* ---- Deck ----------------------------------------------------------------- */
+
+.deck--board { min-height: 5.5rem; }
+
+.btn--ghost {
+  background: none;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-600);
+}
+.btn--ghost:hover { color: var(--ink-800); border-color: var(--hairline-brass); }
+
+.board-hint {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--ink-600);
+}
+
+/* ---- Narrow screens -------------------------------------------------------
+   Six columns of legible type do not fit a phone. Below the breakpoint the
+   board turns into a horizontally scrolled carousel of full-size columns,
+   which keeps every cell a real touch target instead of shrinking all thirty
+   into unreadable slivers.
+
+   The breakpoint is 700px, not 820px, because a fitted six-up grid is still
+   comfortably readable down to about 700 — the first cut was carouselling
+   laptop windows, where a board with its last column sliced off reads as a
+   layout bug rather than as an affordance. */
+@media (max-width: 700px) {
+  .board-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(8.5rem, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: var(--sp-2);
+    -webkit-overflow-scrolling: touch;
+    /* Fade the trailing edge so the cut-off column reads as "keep going"
+       rather than as a clipped element. */
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  }
+  .board-col { scroll-snap-align: start; }
+  .board-cell { min-height: 3rem; }
+  .slab { inset: var(--sp-2); padding: var(--sp-4); }
+  .dial--slab { transform: scale(0.7); }
+}
+
+@media (max-width: 520px) {
+  .board-frame { padding: var(--sp-2); }
+  .slab__clue { font-size: clamp(1rem, 0.8rem + 1.2vw, 1.25rem); }
+}

@@ -7,7 +7,7 @@
    The split is what lets the whole game be played headlessly.
    ========================================================================== */
 
-import { MODES, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
+import { MODES, BOARD, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
 import { formatCredits, answerShape } from "./util.js";
 
 const $  = (sel, root = document) => root.querySelector(sel);
@@ -251,8 +251,9 @@ export function setFlap(root, value) {
    Engraved graduations around the timer well. Drawn once rather than authored
    in the HTML, so the count is a single number to change.                    */
 
-export function buildDialTicks({ count = 60, major = 5 } = {}) {
-  if (!el.dialTicks) return;
+export function buildDialTicks({ count = 60, major = 5, node = null } = {}) {
+  const target = node || el.dialTicks;
+  if (!target) return;
   const cx = 60, cy = 60, rOuter = 55, parts = [];
   for (let i = 0; i < count; i++) {
     const isMajor = i % major === 0;
@@ -262,14 +263,49 @@ export function buildDialTicks({ count = 60, major = 5 } = {}) {
     const x2 = cx + Math.cos(a) * rOuter, y2 = cy + Math.sin(a) * rOuter;
     parts.push(`<line class="${isMajor ? "major" : ""}" x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}"/>`);
   }
-  el.dialTicks.innerHTML = parts.join("");
+  target.innerHTML = parts.join("");
 }
 
 /* ---- Title screen --------------------------------------------------------- */
 
-export function renderModes(store, { dailyDone, dailyResult }) {
+export function renderModes(store, { dailyDone, dailyResult, boardAvailable = false }) {
   el.modes.innerHTML = "";
-  Object.values(MODES).forEach((mode, i) => {
+
+  /* The Board is not in MODES — it runs on its own engine and its own clue
+     file (see js/jeopardy.js), so it is described here rather than derived.
+     It only appears when that file actually loaded. */
+  const cards = Object.values(MODES).map((mode) => ({
+    id: mode.id,
+    name: mode.name,
+    tagline: mode.tagline,
+    done: !!(mode.oneAttemptPerDay && dailyDone),
+    meta: (() => {
+      const m = [];
+      if (Number.isFinite(mode.length)) m.push(`${mode.length} locks`);
+      if (mode.clock) m.push(`${mode.clock}s`);
+      if (mode.livesAlarm) m.push(`${mode.livesAlarm} alarms`);
+      m.push(mode.lifelines.length ? `${mode.lifelines.length} tools` : "no tools");
+      if (mode.safeHavens.length) m.push(`${mode.safeHavens.length} safe havens`);
+      return m;
+    })(),
+  }));
+
+  if (boardAvailable) {
+    cards.push({
+      id: BOARD.id,
+      name: BOARD.name,
+      tagline: BOARD.tagline,
+      done: false,
+      meta: [
+        `${BOARD.columns}×${BOARD.tiers} grid`,
+        "two floors",
+        "hidden wagers",
+        "type it",
+      ],
+    });
+  }
+
+  cards.forEach((mode, i) => {
     const card = document.createElement("button");
     card.type = "button";
     card.className = "mode-card mat-key";
@@ -277,17 +313,11 @@ export function renderModes(store, { dailyDone, dailyResult }) {
     card.dataset.mode = mode.id;
     card.style.setProperty("--i", String(i));
 
-    const done = mode.oneAttemptPerDay && dailyDone;
+    const done = mode.done;
     if (done) card.dataset.done = "true";
 
     const best = store.data.best[mode.id] || 0;
-    const meta = [];
-    if (Number.isFinite(mode.length)) meta.push(`${mode.length} locks`);
-    if (mode.clock) meta.push(`${mode.clock}s`);
-    if (mode.livesAlarm) meta.push(`${mode.livesAlarm} alarms`);
-    if (mode.lifelines.length) meta.push(`${mode.lifelines.length} tools`);
-    else meta.push("no tools");
-    if (mode.safeHavens.length) meta.push(`${mode.safeHavens.length} safe havens`);
+    const meta = mode.meta;
 
     /* Once today's heist is played, the card reports the result instead of
        advertising a run the player cannot take. */
@@ -687,20 +717,31 @@ const END_COPY = {
   time:      { eyebrow: "Time",                   sub: "credits" },
   exhausted: { eyebrow: "You emptied the bank",   sub: "credits" },
   quit:      { eyebrow: "You walked away",        sub: "credits" },
+
+  /* The Board's endings. It keeps score in dollars, not credits — a separate
+     currency for a separate game, which is also why its best score lives under
+     its own key and never shows up beside a Vault Run's. */
+  "played-out": { eyebrow: "Board cleared",            sub: "dollars" },
+  short:        { eyebrow: "Nothing left to wager",    sub: "dollars" },
+  walked:       { eyebrow: "You left the board",       sub: "dollars" },
 };
 
 export function renderResults(summary, { unlocked, store, isRecord }) {
   const copy = END_COPY[summary.reason] || END_COPY.time;
+  const isBoard = summary.mode === "board";
+
   el.resultEyebrow.textContent = isRecord ? `${copy.eyebrow} · personal best` : copy.eyebrow;
   el.resultScore.textContent = formatCredits(summary.score);
   el.resultSub.textContent = copy.sub;
 
   const acc = summary.answered ? Math.round((summary.correct / summary.answered) * 100) : 0;
   const stats = [
-    ["Locks", `${summary.correct}/${summary.answered}`],
+    [isBoard ? "Clues" : "Locks", `${summary.correct}/${summary.answered}`],
     ["Accuracy", `${acc}%`],
     ["Best run", summary.bestStreak],
-    ["Tools used", summary.lifelinesUsed],
+    /* A pass is the board's version of a tool: the decision not to play a
+       clue. Reporting "Tools used: undefined" is how that slot read before. */
+    isBoard ? ["Passed", summary.passed ?? 0] : ["Tools used", summary.lifelinesUsed ?? 0],
   ];
   el.resultStats.innerHTML = stats.map(([k, v]) => `
     <div class="stat"><span class="stat__v">${v}</span><span class="stat__k">${k}</span></div>

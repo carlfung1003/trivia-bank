@@ -104,6 +104,50 @@ export const MODES = {
   },
 };
 
+/* ==========================================================================
+   THE BOARD — the Jeopardy-shaped mode (js/jeopardy.js).
+   --------------------------------------------------------------------------
+   Kept out of MODES because it is a different game shape, not a different
+   ruleset: engine.js walks a queue, jeopardy.js walks a grid. The numbers
+   still live here, because that rule has no exceptions.
+   ========================================================================== */
+export const BOARD = {
+  id: "board",
+  name: "The Board",
+  tagline: "Six columns, five rows, two floors. Pick your own way in.",
+
+  columns: 6,
+  tiers: 5,
+
+  /* Values are tier x multiplier, so a pack can be dealt into either floor.
+     The last entry is the final round and deals no grid. */
+  rounds: [
+    { name: "First Floor",  multiplier: 200, wildcards: 1 },
+    { name: "Second Floor", multiplier: 400, wildcards: 2 },
+    { name: "The Last Lock", multiplier: 0,  wildcards: 0 },
+  ],
+
+  /* Seconds on a clue. The show gives five; five seconds to TYPE an answer is
+     a different task entirely, so this is the show's spirit at typing speed. */
+  clueSeconds: 22,
+  wildcardExtraSeconds: 8,
+  finalSeconds: 45,
+
+  /* Wildcards hide behind the harder rows only — a hidden wager on a $200 cell
+     is a prize nobody wants to find. */
+  wildcardMinTier: 2,
+  wagerMin: 100,
+
+  /* Below this you have nothing to wager, so there is no last lock. */
+  finalMinScore: 1,
+
+  /* Phrasing the response as a question pays this fraction on top. The format
+     is the point, but nobody should lose a clue over the ritual. */
+  formBonus: 0.2,
+
+  criticalClockFraction: 0.25,
+};
+
 export const LIFELINES = {
   drill: {
     id: "drill",

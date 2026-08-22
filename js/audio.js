@@ -347,6 +347,32 @@ class Sound {
     }
   }
 
+  /* ---- The door transition -------------------------------------------------
+     main.js has asked for these on every single screen change since the
+     curtain shipped, and they did not exist. The transition's try/catch caught
+     the TypeError each time and logged a warning, exactly as designed — which
+     is why the app never broke and also why nobody noticed the door was
+     silent for months. A guard that works is not a substitute for the thing it
+     guards.
+
+     Deliberately short and dry: they play UNDER a 940ms transition, so
+     anything with a tail is still ringing when the next screen arrives.      */
+
+  /** The door swinging shut: a hydraulic push, then bolts seating. */
+  doorShut() {
+    this._noise({ decay: 0.34, gain: 0.2, type: "lowpass", from: 1200, to: 140, q: 0.6, send: 0.18 });
+    this._tone({ freq: 120, decay: 0.4, type: "sawtooth", gain: 0.22, sweepTo: 44, send: 0.22,
+                 filter: { type: "lowpass", from: 800, to: 120 } });
+    this._tone({ freq: 220, decay: 0.09, type: "square", gain: 0.1, when: 0.3, sweepTo: 160, send: 0.25 });
+  }
+
+  /** The door swinging open: the same gesture inverted, and lighter. */
+  doorOpen() {
+    this._tone({ freq: 46, decay: 0.5, type: "sawtooth", gain: 0.2, sweepTo: 130, send: 0.24,
+                 filter: { type: "lowpass", from: 200, to: 1100 } });
+    this._noise({ decay: 0.42, gain: 0.12, type: "bandpass", from: 400, to: 2600, q: 0.8, send: 0.3 });
+  }
+
   /* ---- Tension bed ---------------------------------------------------------
      Two detuned oscillators through a lowpass whose cutoff tracks heat. One
      voice pair for the whole session, and it does more for tension than any

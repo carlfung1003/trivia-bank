@@ -104,21 +104,34 @@ export const store = {
     const d = this.data;
     const lt = d.lifetime;
 
+    /* The Board reports a different shape: no lifelines, no answerMode, and
+       category names of its own. Every add is coerced because ONE undefined
+       reaching a += writes NaN into localStorage, and a NaN in lifetime stats
+       is permanent — it survives every later run and every reload. */
+    const num = (v) => (Number.isFinite(v) ? v : 0);
+    const isBoard = summary.mode === "board";
+
     lt.runs += 1;
-    lt.correct += summary.correct;
-    lt.wrong += summary.wrong;
-    lt.credits += summary.score;
-    lt.bestStreak = Math.max(lt.bestStreak, summary.bestStreak);
-    lt.lifelinesUsed += summary.lifelinesUsed;
+    lt.correct += num(summary.correct);
+    lt.wrong += num(summary.wrong);
+    lt.credits += num(summary.score);
+    lt.bestStreak = Math.max(lt.bestStreak, num(summary.bestStreak));
+    lt.lifelinesUsed += num(summary.lifelinesUsed);
     if (summary.answerMode === "typed") lt.typedRuns += 1;
 
-    d.best[summary.mode] = Math.max(d.best[summary.mode] || 0, summary.score);
+    d.best[summary.mode] = Math.max(d.best[summary.mode] || 0, num(summary.score));
 
-    for (const h of summary.history) {
-      const c = d.categories[h.category] || { seen: 0, correct: 0 };
+    /* Board categories are its own packs ("DIM SUM", "RHYME TIME") and do not
+       belong in the vault's twelve — mixing them would put categories in the
+       ledger that no vault question can ever come from, and hand out the
+       Polymath achievement for clearing a board instead. */
+    const catBook = isBoard ? (d.boardCategories = d.boardCategories || {}) : d.categories;
+    for (const h of summary.history || []) {
+      if (!h.category) continue;
+      const c = catBook[h.category] || { seen: 0, correct: 0 };
       c.seen += 1;
       if (h.result === "correct") c.correct += 1;
-      d.categories[h.category] = c;
+      catBook[h.category] = c;
     }
 
     if (summary.mode === "daily") this._recordDaily(summary);

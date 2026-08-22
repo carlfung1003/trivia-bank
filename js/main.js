@@ -8,8 +8,10 @@
 
 import { Bank } from "./bank.js";
 import { Game, PHASE, RESULT } from "./engine.js";
+import { BoardGame, BPHASE } from "./jeopardy.js";
+import * as board from "./board-ui.js";
 import { use as useLifeline, kitState } from "./lifelines.js";
-import { MODES, DIFFICULTY, LIFELINES, FX, SCORING } from "./config.js";
+import { MODES, DIFFICULTY, LIFELINES, FX, SCORING, BOARD } from "./config.js";
 import { store } from "./store.js";
 import { sound } from "./audio.js";
 import { Fx, rollNumber } from "./fx.js";
@@ -32,6 +34,8 @@ const app = {
   doorAngle: 0,
   bank: null,
   game: null,
+  boardData: null,
+  boardGame: null,
   fx: null,
   raf: null,
   lastFrame: 0,
@@ -72,11 +76,27 @@ async function boot() {
 
   for (const node of ui.el.bankSize) node.textContent = String(app.bank.size);
 
+  /* The Board runs off its own clue file. A missing or broken one must not
+     take the vault down with it — the mode card simply does not appear. */
+  try {
+    const res = await fetch("data/jeopardy.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    app.boardData = await res.json();
+    if (!Array.isArray(app.boardData?.categories) || app.boardData.categories.length < BOARD.columns) {
+      throw new Error(`needs at least ${BOARD.columns} category packs`);
+    }
+  } catch (err) {
+    console.warn("[boot] The Board is unavailable:", err.message);
+    app.boardData = null;
+  }
+
   ui.buildDialTicks();
+  board.buildBoardDial();
   sound.setEnabled(app.settings.sound);
   wireGlobalInput();
   wireTitle();
   wirePlay();
+  wireBoard();
   wireResults();
   renderTitle();
   ui.showScreen("title");
@@ -88,7 +108,11 @@ async function boot() {
    ========================================================================== */
 
 function renderTitle() {
-  ui.renderModes(store, { dailyDone: store.dailyDone(), dailyResult: store.dailyResult() });
+  ui.renderModes(store, {
+    dailyDone: store.dailyDone(),
+    dailyResult: store.dailyResult(),
+    boardAvailable: !!app.boardData,
+  });
   ui.renderCategories(app.bank, app.settings.categories);
   ui.renderDifficulties(app.settings.difficulties);
   ui.renderLedger(store);
@@ -118,7 +142,8 @@ function wireTitle() {
     const card = e.target.closest(".mode-card");
     if (!card) return;
     sound.unlock();
-    startRun(card.dataset.mode);
+    if (card.dataset.mode === BOARD.id) startBoard();
+    else startRun(card.dataset.mode);
   });
 
   ui.el.answerMode.addEventListener("click", (e) => {
@@ -276,6 +301,237 @@ function startRun(modeId) {
     if (!sound.playMusic("bedTension", { gain: 0.18 })) sound.startHum();
     app.game.start();
   }).then(() => startLoop());
+}
+
+/* ==========================================================================
+   The Board
+   --------------------------------------------------------------------------
+   A parallel lifecycle to startRun(), against a different engine and a
+   different screen. Deliberately not folded into the one above: the two share
+   the door transition, the sound bus and the fx layer, and nothing else. Every
+   `if (isBoard)` avoided here is a branch that cannot break Vault Run.
+   ========================================================================== */
+
+function startBoard() {
+  if (!app.boardData) {
+    ui.toast("The clue file did not load, so The Board is closed. Reload the page.");
+    return;
+  }
+
+  app.lastMode = BOARD.id;
+  app.paused = false;
+  ui.el.pause.hidden = true;
+
+  app.boardGame = new BoardGame({
+    data: app.boardData,
+    seed: `board::${Date.now()}::${Math.random().toString(36).slice(2, 9)}`,
+  });
+
+  wireBoardEvents(app.boardGame);
+  sound.unlock();
+
+  toScreen("board", () => {
+    app.fx.clear();
+    sound.stopMusic();
+    if (!sound.playMusic("bedTension", { gain: 0.16 })) sound.startHum();
+    app.boardGame.start();
+  }).then(() => startBoardLoop());
+}
+
+function wireBoardEvents(game) {
+  const paint = () => {
+    board.renderBoard(game);
+    board.renderHud(game);
+    board.showGrid();
+  };
+
+  game.on("round", ({ name, round }) => {
+    paint();
+    /* A new floor is a scene change, not a stat change: the values double and
+       the categories are all different. Say so. */
+    if (round > 1) {
+      ui.banner(name, "Every value doubles", "tier", 2200);
+      sound.vaultOpen();
+    }
+  });
+
+  game.on("board", paint);
+
+  game.on("wildcard", ({ category, min, max }) => {
+    sound.heartbeat();
+    app.fx.shake(5, 300);
+    haptic([20, 40, 60]);
+    ui.banner("Wildcard", "Name your stake", "haven", 1800);
+    board.showWager({ category, min, max, value: min, kind: "wildcard" });
+    board.el.wagerInput.focus();
+  });
+
+  game.on("final", ({ category, max }) => {
+    sound.lockdown();
+    ui.banner("The last lock", "One clue, one stake", "tier", 2400);
+    board.showWager({ category, min: 0, max, value: 0, kind: "final" });
+    /* The rail still read "0 clues left" here — true, and the least useful
+       thing it could say at the moment the round changed under it. */
+    board.renderHud(game);
+    board.el.wagerInput.focus();
+  });
+
+  game.on("clue", (payload) => {
+    board.showClue(game, payload);
+    board.renderHud(game);
+    sound.tumbler();
+    board.focusInput();
+    startBoardLoop();
+  });
+
+  game.on("reveal", (payload) => onBoardReveal(game, payload));
+
+  game.on("heat", (heat) => {
+    ui.setHeat(heat);
+    sound.setHeat(heat);
+  });
+
+  game.on("over", (summary) => onBoardOver(game, summary));
+}
+
+function onBoardReveal(game, payload) {
+  stopLoop();
+  const { result, delta } = payload;
+  const good = result === "correct";
+
+  if (good) {
+    sound.correct(game.state.streak);
+    app.fx.burstAt(board.el.slab, { count: payload.final ? FX.particleCountBig : FX.particleCount });
+    app.fx.hitPause(FX.hitPauseMs);
+    haptic(delta > 0 ? [18, 30, 40] : 18);
+    nudgeDoor(1);
+  } else if (result === "timeout" && delta === 0) {
+    /* A pass is not a failure. No shake, no klaxon — just move on. */
+    sound.tick();
+  } else {
+    sound.wrong();
+    app.fx.shake(FX.shakeMagnitude, FX.shakeMs);
+    app.fx.hitPause(FX.hitPauseWrongMs);
+    haptic([70, 40, 90]);
+    nudgeDoor(-1);
+  }
+
+  board.showVerdict(payload);
+  board.renderHud(game);
+  board.renderBoard(game);
+  board.el.next.focus();
+}
+
+function onBoardOver(game, summary) {
+  stopLoop();
+  app.paused = false;
+  ui.el.pause.hidden = true;
+  sound.stopHum();
+  ui.setHeat(0);
+
+  const previousBest = store.data.best[BOARD.id] || 0;
+  const isRecord = summary.score > previousBest && summary.score > 0;
+  const unlocked = store.record(summary);
+  app.lastSummary = summary;
+  app.boardGame = null;
+
+  const won = summary.score > 0;
+  if (won) app.fx.coinRain(90);
+  else app.fx.shake(FX.shakeMagnitude * 1.2, 520);
+  haptic(won ? [30, 60, 30, 60, 90] : [90, 50, 120]);
+
+  toScreen("done", () => {
+    ui.renderResults(summary, { unlocked, store, isRecord });
+    ui.renderShare(summary, { text: shareText(summary), isDaily: false });
+    ui.el.againBtn.hidden = false;
+    ui.el.resultScore.textContent = "0";
+  }).then(() => {
+    if (won) sound.vaultOpen();
+    else sound.lockdown();
+    rollNumber(ui.el.resultScore, 0, summary.score, 1100, (n) => `$${formatCredits(n)}`);
+    if (won) app.fx.coinRain(50);
+  });
+}
+
+function startBoardLoop() {
+  stopLoop();
+  app.lastFrame = performance.now();
+  const frame = (now) => {
+    const dt = Math.min((now - app.lastFrame) / 1000, 0.25);
+    app.lastFrame = now;
+
+    const game = app.boardGame;
+    const s = game?.state;
+    const live = s && (s.phase === BPHASE.ASKING || (s.phase === BPHASE.FINAL && s.finalArmed));
+    if (live) {
+      game.tick(dt);
+      board.renderTimer(game);
+      if (game.clockFraction <= BOARD.criticalClockFraction && now - app.heartbeatAt > 780) {
+        app.heartbeatAt = now;
+        sound.heartbeat();
+      }
+    }
+    app.raf = requestAnimationFrame(frame);
+  };
+  app.raf = requestAnimationFrame(frame);
+}
+
+function wireBoard() {
+  board.el.grid.addEventListener("click", (e) => {
+    const cell = e.target.closest(".board-cell");
+    if (!cell || cell.disabled || !app.boardGame) return;
+    sound.tumbler();
+    app.boardGame.pick(Number(cell.dataset.col), Number(cell.dataset.row));
+  });
+
+  board.el.wagerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const game = app.boardGame;
+    if (!game) return;
+    const value = Number(board.el.wagerInput.value);
+    if (game.state.phase === BPHASE.WAGER) game.setWager(value);
+    else if (game.state.phase === BPHASE.FINAL) game.setFinalWager(value);
+  });
+
+  board.el.wagerQuick.addEventListener("click", (e) => {
+    const chip = e.target.closest(".wager__chip");
+    if (!chip) return;
+    board.el.wagerInput.value = chip.dataset.wager;
+    sound.tick();
+  });
+
+  board.el.form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const game = app.boardGame;
+    const value = board.el.input.value.trim();
+    if (!value || !game) return;
+    const s = game.state;
+    if (s.phase !== BPHASE.ASKING && !(s.phase === BPHASE.FINAL && s.finalArmed)) return;
+    game.answer(value);
+  });
+
+  board.el.pass.addEventListener("click", () => {
+    app.boardGame?.pass();
+  });
+
+  board.el.next.addEventListener("click", () => {
+    app.boardGame?.next();
+  });
+
+  board.el.quit.addEventListener("click", (e) => {
+    const game = app.boardGame;
+    if (!game) { goHome(); return; }
+    ui.armConfirm(e.currentTarget, {
+      label: `Leave with $${formatCredits(game.state.score)}? Tap again`,
+      onConfirm: () => {
+        stopLoop();
+        sound.stopHum();
+        ui.setHeat(0);
+        app.boardGame = null;
+        goHome();
+      },
+    });
+  });
 }
 
 function wireGameEvents(game) {
@@ -750,6 +1006,25 @@ function wireGlobalInput() {
       }
     }
 
+    if (screen === "board" && app.boardGame) {
+      const s = app.boardGame.state;
+
+      if (s.phase === BPHASE.REVEALED && (e.key === "Enter" || e.key === " ") && !typing) {
+        e.preventDefault();
+        app.boardGame.next();
+        return;
+      }
+
+      /* Pass on Escape, because declining a clue is the one action you want
+         under time pressure and it is a long way to the button. Only when
+         nothing is staked — Escape must not be able to fold a live bet. */
+      if (e.key === "Escape" && s.phase === BPHASE.ASKING && !s.onWildcard) {
+        e.preventDefault();
+        app.boardGame.pass();
+        return;
+      }
+    }
+
     if (screen === "done" && e.key === "Enter" && !typing) {
       e.preventDefault();
       if (!ui.el.againBtn.hidden) ui.el.againBtn.click();
@@ -845,6 +1120,82 @@ function exposeDebugApi() {
 
     modes: Object.keys(MODES),
     version: "1.0.0",
+  };
+
+  /* The Board gets its own handle for the same reason it gets its own engine:
+     the two simulations do not share a state shape, and one debug object
+     pretending otherwise would lie to whoever is driving it. */
+  window.__board = {
+    get game() { return app.boardGame; },
+    get state() { return app.boardGame?.state ?? null; },
+    get data() { return app.boardData; },
+
+    start() { startBoard(); return app.boardGame?.state ?? null; },
+
+    /** Answer by text, or "correct" / "wrong" / "form" (correct, in form). */
+    answer(what = "correct") {
+      const g = app.boardGame;
+      if (!g) return null;
+      const s = g.state;
+      if (s.phase !== BPHASE.ASKING && !(s.phase === BPHASE.FINAL && s.finalArmed)) return null;
+      if (what === "correct") return g.answer(s.clue.answer);
+      if (what === "form") return g.answer(`What is ${s.clue.answer}?`);
+      if (what === "wrong") return g.answer("__deliberately wrong__");
+      return g.answer(what);
+    },
+
+    pick(col, row) { return app.boardGame?.pick(col, row) ?? null; },
+    wager(n) {
+      const g = app.boardGame;
+      if (!g) return false;
+      return g.state.phase === BPHASE.FINAL ? g.setFinalWager(n) : g.setWager(n);
+    },
+    pass() { return app.boardGame?.pass() ?? null; },
+    next() { app.boardGame?.next(); return app.boardGame?.state ?? null; },
+
+    /** Advance the clue clock without waiting on real time. */
+    fastForward(seconds = 60, step = 0.25) {
+      const g = app.boardGame;
+      if (!g) return null;
+      for (let t = 0; t < seconds; t += step) {
+        const s = g.state;
+        if (s.phase !== BPHASE.ASKING && !(s.phase === BPHASE.FINAL && s.finalArmed)) break;
+        g.tick(step);
+      }
+      board.renderTimer(g);
+      return g.state;
+    },
+
+    /** Play a whole board at a scripted accuracy. Returns the summary. */
+    autoplay({ accuracy = 1, cautious = true, maxSteps = 4000 } = {}) {
+      const g = app.boardGame;
+      if (!g) return null;
+      let summary = null;
+      const off = g.on("over", (s) => { summary = s; });
+      let steps = 0;
+      while (g.state.phase !== BPHASE.OVER && steps++ < maxSteps) {
+        const s = g.state;
+        if (s.phase === BPHASE.BOARD) {
+          const open = [];
+          s.board.forEach((col, ci) => col.cells.forEach((cell, ri) => { if (!cell.used) open.push([ci, ri]); }));
+          if (!open.length) break;
+          const [ci, ri] = open[0];
+          g.pick(ci, ri);
+        } else if (s.phase === BPHASE.WAGER) {
+          g.setWager(g.maxWager());
+        } else if (s.phase === BPHASE.FINAL && !s.finalArmed) {
+          g.setFinalWager(Math.round(s.score / 2));
+        } else if (s.phase === BPHASE.ASKING || s.phase === BPHASE.FINAL) {
+          if (Math.random() < accuracy) g.answer(s.clue.answer);
+          else if (cautious && s.phase === BPHASE.ASKING && !s.onWildcard) g.pass();
+          else g.answer("__deliberately wrong__");
+        } else if (s.phase === BPHASE.REVEALED) {
+          g.next();
+        }
+      }
+      off();
+      return summary;
+    },
   };
 }
 
