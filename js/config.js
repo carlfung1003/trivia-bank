@@ -46,7 +46,7 @@ export const MODES = {
     ],
     /* Question indices (0-based) after which the haul is locked in. */
     safeHavens: [3, 7],
-    lifelines: ["drill", "wiretap", "freeze", "bypass", "doubledown"],
+    lifelines: ["drill", "wiretap", "etch", "informant", "freeze", "bypass", "doubledown"],
     timeScale: 1,
     canBank: true,
     livesAlarm: 0,
@@ -80,7 +80,7 @@ export const MODES = {
     /* Difficulty escalates one tier every N questions answered. */
     escalateEvery: 5,
     safeHavens: [],
-    lifelines: ["drill", "freeze"],
+    lifelines: ["drill", "etch", "freeze"],
     timeScale: 0.85,
     canBank: false,
     livesAlarm: 3,
@@ -96,7 +96,7 @@ export const MODES = {
       "hard", "hard", "hard",
     ],
     safeHavens: [],
-    lifelines: ["drill", "wiretap"],
+    lifelines: ["drill", "wiretap", "etch", "informant"],
     timeScale: 1,
     canBank: false,
     livesAlarm: 0,
@@ -137,6 +137,29 @@ export const LIFELINES = {
     key: "b",
     requiresChoice: false,
   },
+  /* ---- Type-It only -------------------------------------------------------
+     Drill and Wiretap both need options on screen, so typing left the player
+     with three tools against choice mode's five. These two only make sense
+     when there is nothing to pick from, which balances the kits at five
+     apiece and gives typing its own texture rather than a reduced version of
+     the same game. */
+  etch: {
+    id: "etch",
+    name: "Etch",
+    hint: "Scrape the lock for the answer's opening letter.",
+    key: "e",
+    requiresTyped: true,
+  },
+  informant: {
+    id: "informant",
+    name: "Informant",
+    hint: "A tip from someone on the inside.",
+    key: "i",
+    requiresTyped: true,
+    /* Unusable on a question with no authored hint — see scripts/author-hints.mjs. */
+    requiresHint: true,
+  },
+
   doubledown: {
     id: "doubledown",
     name: "Double Down",

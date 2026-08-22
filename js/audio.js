@@ -39,6 +39,8 @@ class Sound {
     this._buffers = new Map();
     this._music = null;
     this._musicGain = null;
+    this._musicShelf = null;
+    this._musicPresence = null;
     this._probed = false;
   }
 
@@ -352,6 +354,12 @@ class Sound {
 
   startHum() {
     if (!this.ctx || !this.enabled || this._hum) return;
+    /* The hum is a SUBSTITUTE for a music bed, not a companion to one. With a
+       Suno bed playing, its 49 Hz saw stacks under the track's own bass and
+       heat pushes it louder still — audibly boomy within a couple of
+       questions. When a bed is playing, tension is expressed by shaping the
+       bed instead (see setHeat). */
+    if (this._music) return;
 
     const gain = this.ctx.createGain();
     gain.gain.value = 0;
@@ -383,8 +391,19 @@ class Sound {
   }
 
   setHeat(heat) {
-    if (!this._hum || !this.ctx) return;
+    if (!this.ctx) return;
     const t = this.ctx.currentTime;
+
+    /* With a bed playing, tension TIGHTENS the mix rather than adding to it:
+       the low shelf comes down as heat rises, which reads as urgency without
+       any extra low end, and a touch of presence comes up instead. */
+    if (this._music && this._musicShelf) {
+      this._musicShelf.gain.setTargetAtTime(-10 * heat, t, 0.5);
+      this._musicPresence.gain.setTargetAtTime(3.5 * heat, t, 0.5);
+      return;
+    }
+
+    if (!this._hum) return;
     this._hum.gain.gain.setTargetAtTime(Math.min(0.2, 0.03 + heat * 0.17), t, 0.3);
     this._hum.filter.frequency.setTargetAtTime(200 + heat * 900, t, 0.4);
     this._hum.oscs[0].detune.setTargetAtTime(-6 - heat * 22, t, 0.5);
@@ -412,15 +431,36 @@ class Sound {
     src.buffer = buf;
     src.loop = loop;
 
+    /* Tone shaping the bed passes through, so heat can tighten it without
+       adding another voice to the low end. */
+    const shelf = this.ctx.createBiquadFilter();
+    shelf.type = "lowshelf";
+    shelf.frequency.value = 160;
+    shelf.gain.value = 0;
+
+    const presence = this.ctx.createBiquadFilter();
+    presence.type = "peaking";
+    presence.frequency.value = 1800;
+    presence.Q.value = 0.9;
+    presence.gain.value = 0;
+
     const g = this.ctx.createGain();
     g.gain.setValueAtTime(0.0001, this.ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(gain, this.ctx.currentTime + 1.2);
 
-    src.connect(g);
+    src.connect(shelf);
+    shelf.connect(presence);
+    presence.connect(g);
     g.connect(this.master);
     src.start();
+
     this._music = src;
     this._musicGain = g;
+    this._musicShelf = shelf;
+    this._musicPresence = presence;
+
+    /* A bed supersedes the synthesised hum — never both. */
+    this.stopHum();
     return true;
   }
 
@@ -433,6 +473,8 @@ class Sound {
     } catch { /* context closed */ }
     this._music = null;
     this._musicGain = null;
+    this._musicShelf = null;
+    this._musicPresence = null;
   }
 }
 

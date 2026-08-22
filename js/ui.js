@@ -64,6 +64,11 @@ export const el = {
   timerFill: $("#timer-fill"),
   timerValue: $("#timer-value"),
   question: $("#question"),
+  intel: $("#intel"),
+  intelEtch: $("#intel-etch"),
+  intelLetter: $("#intel-letter"),
+  intelTip: $("#intel-tip"),
+  intelText: $("#intel-text"),
   options: $("#options"),
   typedForm: $("#typed-form"),
   typedInput: $("#typed-input"),
@@ -463,6 +468,7 @@ export function renderQuestion(game) {
 
   el.verdict.hidden = true;
   el.verdict.removeAttribute("data-result");
+  renderIntel(game);
 
   if (game.answerMode === "choice") {
     el.options.hidden = false;
@@ -531,6 +537,20 @@ export function renderBurn(game, removed) {
       btn.dataset.removed = "true";
     }, 460);
   });
+}
+
+/** Paint whatever Etch and Informant have bought for this question. */
+export function renderIntel(game) {
+  const s = game.state;
+  const hasEtch = !!s.revealed;
+  const hasTip = !!s.intel;
+
+  el.intelEtch.hidden = !hasEtch;
+  el.intelTip.hidden = !hasTip;
+  el.intel.hidden = !(hasEtch || hasTip);
+
+  if (hasEtch) el.intelLetter.textContent = s.revealed;
+  if (hasTip) el.intelText.textContent = s.intel;
 }
 
 export function renderKit(kit) {

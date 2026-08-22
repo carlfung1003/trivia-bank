@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="css/tokens.css?v=2">
 <link rel="stylesheet" href="css/base.css?v=2">
 <link rel="stylesheet" href="css/material.css?v=6">
-<link rel="stylesheet" href="css/game.css?v=10">
+<link rel="stylesheet" href="css/game.css?v=12">
 <link rel="stylesheet" href="css/fx.css?v=11">
 </head>
 
@@ -225,6 +225,18 @@
 
           <h2 class="question" id="question">&nbsp;</h2>
 
+          <!-- Bought intel: the etched letter and the informant's tip. -->
+          <div class="intel" id="intel" hidden>
+            <span class="intel__etch" id="intel-etch" hidden>
+              <span class="intel__cap">Starts with</span>
+              <b id="intel-letter"></b>
+            </span>
+            <span class="intel__tip" id="intel-tip" hidden>
+              <span class="intel__cap">Informant</span>
+              <span id="intel-text"></span>
+            </span>
+          </div>
+
           <div class="display__foot">
             <div class="dial" id="timer">
               <svg class="dial__face" viewBox="0 0 120 120" aria-hidden="true">
@@ -332,7 +344,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=10"></script>
+<script type="module" src="js/main.js?v=13"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>

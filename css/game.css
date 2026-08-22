@@ -1379,3 +1379,55 @@
   text-transform: uppercase;
   color: var(--ink-500);
 }
+
+/* ---- Bought intel ------------------------------------------------------------
+   Where Etch and Informant put what they bought. Sits inside the display so it
+   reads as part of the lock's readout rather than as a UI notification. */
+
+.intel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  justify-content: center;
+  align-items: center;
+  max-width: 44ch;
+  animation: rise var(--dur) var(--ease-impact);
+}
+.intel__etch,
+.intel__tip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 5px var(--sp-3);
+  background: hsl(222 30% 8% / 0.75);
+  border: 1px solid var(--hairline-brass);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.06), 0 0 22px -8px var(--brass-glow);
+}
+.intel__cap {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: hsl(220 10% 48%);
+}
+.intel__etch b {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brass-hi);
+  text-shadow: 0 0 14px var(--brass-glow);
+  letter-spacing: 0.08em;
+}
+.intel__tip {
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--ink-800);
+  line-height: 1.4;
+}
+.intel__tip .intel__cap { flex: none; align-self: flex-start; padding-top: 2px; }
+
+@media (max-width: 720px) {
+  .intel { max-width: 100%; }
+  .intel__tip { font-size: 0.8rem; }
+}

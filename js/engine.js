@@ -85,6 +85,8 @@ export class Game extends Emitter {
       correctIndex: -1,
       removed: [],          /* option indices burned away by DRILL */
       poll: null,           /* WIRETAP result, array of 0..1 per option */
+      revealed: "",         /* ETCH: the opening letter, once bought        */
+      intel: "",            /* INFORMANT: the authored clue, once bought    */
 
       /* Timing. Per-question clock drives the ring; runClock drives Blitz. */
       questionTime: 0,
@@ -174,6 +176,8 @@ export class Game extends Emitter {
     s.question = q;
     s.removed = [];
     s.poll = null;
+    s.revealed = "";
+    s.intel = "";
     s.doubledDown = false;
     s.lastResult = null;
 

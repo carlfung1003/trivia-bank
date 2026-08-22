@@ -25,6 +25,12 @@ Built on a 735-question bank that started life as a 2023 Google Sheet of quiz an
 - **Bypass** — swap the lock for a fresh one, no penalty
 - **Double Down** — declared *before* answering: double the payout, or lose your entire unbanked haul
 
+**Type-It only** (Drill and Wiretap both need options on screen, so typing gets its own pair):
+
+- **Etch** — scrape out the answer's opening letter. Skips leading articles, so
+  "The Strait of Gibraltar" gives **S**, not T
+- **Informant** — a real authored clue. All 735 questions carry one
+
 ## Scoring
 
 ```
@@ -81,6 +87,7 @@ Both are plain Node, no dependencies.
       "question": "What is the largest country in the world by land area?",
       "answer": "Russia",
       "accept": ["russia", "russian federation"],   // for Type-It mode
+      "hint": "It alone covers about an eighth of the world's inhabited land.",
       "options": ["Russia", "Canada", "China", "Brazil"]   // OPTIONAL
     }
   ]
@@ -89,6 +96,11 @@ Both are plain Node, no dependencies.
 
 `options` is optional. When present it is used verbatim (shuffled); when absent
 the game synthesises four options at runtime — see below.
+
+`hint` powers the Informant lifeline. `scripts/author-hints.mjs` holds all 735 and
+refuses to write any hint containing its own answer or an accepted alias — a hint that
+gives away the answer is the answer with extra steps, and it costs a lifeline to see.
+Informant is disabled on any question without one.
 
 ---
 

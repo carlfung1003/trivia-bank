@@ -23,10 +23,20 @@ export function canUse(game, id) {
   const def = LIFELINES[id];
   /* 50/50 and the crowd poll are meaningless without options on screen. */
   if (def.requiresChoice && game.answerMode !== "choice") return false;
+  /* Etch and Informant are the mirror image: nothing to reveal when the
+     answer is already one of four things you can read. */
+  if (def.requiresTyped && game.answerMode !== "typed") return false;
+  /* An Informant with nothing to say should read as unavailable, not as a
+     tool that fires and does nothing. */
+  if (def.requiresHint && !s.question?.hint) return false;
 
   if (id === "drill") {
     const remaining = s.options.length - s.removed.length;
     return remaining > 2;
+  }
+  if (id === "etch") {
+    /* Nothing left to give once the whole answer is showing. */
+    return (s.revealed?.length || 0) < String(s.question?.answer || "").length;
   }
   if (id === "doubledown") {
     /* Nothing to double if there is nothing at risk. */
@@ -131,6 +141,10 @@ function bypass(game) {
   s.question = replacement;
   s.removed = [];
   s.poll = null;
+  /* A swapped-in lock is a different lock: anything already bought about the
+     old one would be actively misleading. */
+  s.revealed = "";
+  s.intel = "";
 
   if (game.answerMode === "choice") {
     /* Fresh seed slot so the swapped question does not reuse the burned
@@ -148,6 +162,34 @@ function bypass(game) {
   return { from: previous, to: replacement };
 }
 
+/* ---- ETCH — the opening letter --------------------------------------------
+   Derived, not authored: the first character of the answer, skipping leading
+   articles so "The Strait of Gibraltar" gives S rather than T. Giving away
+   "the" would be a wasted lifeline.                                          */
+
+function etch(game) {
+  const s = game.state;
+  const raw = String(s.question.answer || "").trim();
+  const stripped = raw.replace(/^(the|a|an)\s+/i, "");
+  const target = stripped || raw;
+  const letter = (target.match(/[\p{L}\p{N}]/u) || [""])[0];
+  if (!letter) return null;
+
+  s.revealed = letter.toUpperCase();
+  s.etchedFrom = stripped !== raw ? raw.slice(0, raw.length - stripped.length).trim() : "";
+  return { letter: s.revealed, droppedArticle: s.etchedFrom };
+}
+
+/* ---- INFORMANT — an authored clue ------------------------------------------ */
+
+function informant(game) {
+  const s = game.state;
+  const hint = s.question?.hint;
+  if (!hint) return null;
+  s.intel = hint;
+  return { hint };
+}
+
 /* ---- DOUBLE DOWN — declared before answering ------------------------------ */
 
 function doubledown(game) {
@@ -155,7 +197,7 @@ function doubledown(game) {
   return { armed: true, atRisk: game.state.pot };
 }
 
-const HANDLERS = { drill, wiretap, freeze, bypass, doubledown };
+const HANDLERS = { drill, wiretap, freeze, bypass, doubledown, etch, informant };
 
 /**
  * Use a lifeline. Returns the handler's detail object, or null if it could

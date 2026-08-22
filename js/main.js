@@ -270,8 +270,9 @@ function startRun(modeId) {
   toScreen("play", () => {
     app.fx.clear();
     sound.stopMusic();
-    sound.startHum();
-    sound.playMusic("bedTension", { gain: 0.18 });
+    /* The hum only stands in when there is no bed to play. Running both put
+       two bass sources on top of each other. */
+    if (!sound.playMusic("bedTension", { gain: 0.18 })) sound.startHum();
     app.game.start();
   }).then(() => startLoop());
 }
@@ -435,6 +436,18 @@ function onLifeline(game, id, detail) {
       sound.tumbler();
       ui.renderQuestion(game);
       ui.renderTimer(game);
+      break;
+    case "etch":
+      sound.drill();
+      ui.renderIntel(game);
+      haptic(18);
+      ui.announce(`The answer starts with ${detail.letter}.`);
+      break;
+    case "informant":
+      sound.tumbler();
+      ui.renderIntel(game);
+      haptic([12, 30, 12]);
+      ui.announce(`Informant: ${detail.hint}`);
       break;
     case "doubledown":
       sound.heartbeat();
