@@ -384,6 +384,7 @@ function resolveAsk(questions) {
 export function buildIndex(questions) {
   const byAsk = new Map();       /* ask class            -> entries */
   const byAskRoot = new Map();   /* ask class root       -> entries */
+  const byAskRootCat = new Map();/* ask root + category  -> entries */
   const byAskCat = new Map();    /* ask class + category -> entries */
   const byType = new Map();
   const byTypeCat = new Map();
@@ -418,7 +419,13 @@ export function buildIndex(questions) {
        borrowing acronym expansions: "Universal Serial Bus" is three
        capitalised words, so detectType() calls it a PERSON, and the
        type-based tiers happily hand it over. The `who` root does not. */
-    push(byAskRoot, ask.split(/[:+]/)[0]);
+    const root = ask.split(/[:+]/)[0];
+    push(byAskRoot, root);
+    /* Root ALONE is too coarse for "who". Every who:* question shares the
+       root, so "Who sculpted The Thinker?" was drawing Neil Armstrong and
+       Mr. Burns — correct type, absurd domain. Pairing the root with the
+       category keeps sculptors with sculptors and actors with actors. */
+    push(byAskRootCat, `${root}::${q.category}`);
     push(byAskCat, `${ask}::${q.category}`);
     push(byType, type);
     push(byTypeCat, `${type}::${q.category}`);
@@ -436,8 +443,21 @@ export function buildIndex(questions) {
      multiple choice. They still appear in Type-It mode, where length is not
      a tell at all — the constraint is a property of the FORMAT, not of the
      question, so the question stays in the bank. */
+  const authoredIds = new Set(
+    questions
+      .filter((q) => Array.isArray(q.options) && q.options.length >= 2 && q.options.includes(q.answer))
+      .map((q) => q.id)
+  );
+
   const choiceViable = new Set();
   for (const e of all) {
+    /* Authored options are viable by definition — the peer test exists only to
+       predict whether SYNTHESIS can produce a fair set. Without this, a
+       question could carry hand-written options that the game never shows:
+       #516's answer is an 11-word sentence, so it failed the peer test and was
+       routed to Type-It only, taking its authored options with it. */
+    if (authoredIds.has(e.id)) { choiceViable.add(e.id); continue; }
+
     let peers = 0;
     for (const other of all) {
       if (other.id === e.id) continue;
@@ -448,7 +468,7 @@ export function buildIndex(questions) {
     if (peers >= 3) choiceViable.add(e.id);
   }
 
-  return { byAsk, byAskRoot, byAskCat, byType, byTypeCat, byCat, all, choiceViable, askById };
+  return { byAsk, byAskRoot, byAskRootCat, byAskCat, byType, byTypeCat, byCat, all, choiceViable, askById };
 }
 
 /** True when a question can fairly be asked as multiple choice. */
@@ -571,9 +591,11 @@ export function makeDistractors(question, index, rng, n) {
   const tiers = [
     { pool: index.byAskCat.get(`${ask}::${question.category}`),   fit: FIT.STRICT },
     { pool: index.byAsk.get(ask),                                 fit: FIT.STRICT },
+    { pool: index.byAskRootCat.get(`${askRoot}::${question.category}`), fit: FIT.STRICT },
     { pool: index.byAskRoot.get(askRoot),                         fit: FIT.STRICT },
     { pool: index.byTypeCat.get(`${type}::${question.category}`), fit: FIT.STRICT },
     { pool: index.byAsk.get(ask),                                 fit: FIT.LOOSE  },
+    { pool: index.byAskRootCat.get(`${askRoot}::${question.category}`), fit: FIT.LOOSE  },
     { pool: index.byAskRoot.get(askRoot),                         fit: FIT.LOOSE  },
     { pool: index.byTypeCat.get(`${type}::${question.category}`), fit: FIT.LOOSE  },
     { pool: index.byType.get(type),                               fit: FIT.LOOSE  },
