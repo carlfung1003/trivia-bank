@@ -22,8 +22,18 @@ preserved at `docs/prior-art/iteration-1.html` for reference. Do not resurrect i
   this as a zero-build static site.)
 - **Balance is data.** Every tunable number lives in `js/config.js`. If you find yourself
   typing a number into `engine.js`, `lifelines.js` or `modes`, it belongs in config.
-- **No hex outside `css/tokens.css`.** One gray family, one easing curve (`--ease`), plus
-  one documented impact curve (`--ease-impact`) for things meant to feel struck.
+- **No hex outside `css/tokens.css` and `css/material.css`.** One gray family, one easing
+  curve (`--ease`), plus one documented impact curve (`--ease-impact`) for struck things.
+- **The UI is a machined object, not a document.** `css/material.css` holds the four
+  primitives everything is built from — `.mat-plate`, `.mat-inset`, `.mat-glass`,
+  `.mat-key` — plus rivets and lamps. ONE light source, above and slightly front: every
+  highlight sits on a top edge, every shadow on a bottom edge. Breaking that lighting
+  model is what makes CSS "3D" collapse into stacked rectangles.
+- **Use `scripts/serve.py`, not `python3 -m http.server`.** The plain server lets the
+  browser reuse cached ES modules without revalidating, and since a module's imports
+  carry no `?v=`, a stale `./audio.js` survives a reload of a freshly versioned
+  `main.js`. That cost a debugging round mid-build, with the page reporting a method
+  missing that was plainly on disk. `serve.py` sends `no-store`.
 - **No emoji in the UI.** Sigils are mono glyphs (`✦ ◆ ▲ ⌘ ¶ ⁂`). Marks are `✓` / `✕`.
 - **CSS keyframes for entrances, not JS.** No SSR flash, no rAF stalls under an
   automation harness, and `prefers-reduced-motion` disarms everything for free.
@@ -102,7 +112,12 @@ giveaway rounds that this one does not have.
   What that does NOT cover is real touch targets, iOS Safari's dynamic viewport and
   address-bar behaviour, or the Web Audio unlock gesture on iOS. Try it on an actual
   handset before promoting the link.
-- Semantic distractor quality has a ceiling — see README. `options[]` is the fix.
+- Semantic distractor quality has a ceiling — see README. `options[]` is the fix, and
+  26 questions already carry authored sets (`scripts/author-options.mjs`).
+- **Generated media is all optional.** `docs/ASSETS.md` has paste-ready Suno and
+  ChatGPT Image 2.0 prompts. Audio files in `assets/audio/` are probed at unlock and
+  take over from synthesis; `assets/art/vault-door.png` is a pure-CSS-fallback
+  background slot. Nothing breaks when they are absent — that is the design.
 - Blitz and Survival scores run ~100× higher than Vault Run's. Intentional (separate
   per-mode leaderboards) but it looks odd if they are ever shown side by side.
 

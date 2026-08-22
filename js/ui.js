@@ -44,10 +44,14 @@ export const el = {
   potValue: $("#pot-value"),
   streak: $("#streak"),
   alarms: $("#alarms"),
+  alarmsGauge: $("#alarms-gauge"),
+  display: $("#display"),
+  dialTicks: $("#dial-ticks"),
+  console: $(".console"),
   ladder: $("#ladder"),
   quit: $("#quit"),
 
-  stage: $(".stage"),
+  stage: $(".display"),   /* the glass display is what reacts to a hit */
   qSigil: $("#q-sigil"),
   qCat: $("#q-cat"),
   qDiff: $("#q-diff"),
@@ -83,7 +87,7 @@ export const el = {
   reviewList: $("#review-list"),
 };
 
-const TIMER_CIRCUMFERENCE = 2 * Math.PI * 54;
+const TIMER_CIRCUMFERENCE = 2 * Math.PI * 46;   /* dial__fill r=46 */
 const OPTION_KEYS = ["A", "B", "C", "D", "E", "F"];
 
 /* ---- Screens -------------------------------------------------------------- */
@@ -137,6 +141,25 @@ export function setFlap(root, value) {
   root.setAttribute("aria-label", `${text} credits`);
 }
 
+
+/* ---- Dial ticks -----------------------------------------------------------
+   Engraved graduations around the timer well. Drawn once rather than authored
+   in the HTML, so the count is a single number to change.                    */
+
+export function buildDialTicks({ count = 60, major = 5 } = {}) {
+  if (!el.dialTicks) return;
+  const cx = 60, cy = 60, rOuter = 55, parts = [];
+  for (let i = 0; i < count; i++) {
+    const isMajor = i % major === 0;
+    const a = (i / count) * Math.PI * 2;
+    const rInner = rOuter - (isMajor ? 7 : 4);
+    const x1 = cx + Math.cos(a) * rInner, y1 = cy + Math.sin(a) * rInner;
+    const x2 = cx + Math.cos(a) * rOuter, y2 = cy + Math.sin(a) * rOuter;
+    parts.push(`<line class="${isMajor ? "major" : ""}" x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}"/>`);
+  }
+  el.dialTicks.innerHTML = parts.join("");
+}
+
 /* ---- Title screen --------------------------------------------------------- */
 
 export function renderModes(store, { dailyDone, dailyResult }) {
@@ -144,7 +167,7 @@ export function renderModes(store, { dailyDone, dailyResult }) {
   Object.values(MODES).forEach((mode, i) => {
     const card = document.createElement("button");
     card.type = "button";
-    card.className = "mode-card";
+    card.className = "mode-card mat-key";
     card.setAttribute("role", "listitem");
     card.dataset.mode = mode.id;
     card.style.setProperty("--i", String(i));
@@ -168,6 +191,7 @@ export function renderModes(store, { dailyDone, dailyResult }) {
       : "";
 
     card.innerHTML = `
+      <span class="lamp mode-card__lamp${done ? "" : " lamp--jade"}" data-on="${!done}" aria-hidden="true"></span>
       ${best ? `<span class="mode-card__best">best ${formatCredits(best)}</span>` : ""}
       <span class="mode-card__name">${mode.name}</span>
       <span class="mode-card__tag">${mode.tagline}</span>
@@ -287,12 +311,12 @@ export function renderHud(game) {
 
   /* Alarms (Survival). */
   if (mode.livesAlarm) {
-    el.alarms.hidden = false;
+    el.alarmsGauge.hidden = false;
     el.alarms.innerHTML = Array.from({ length: mode.livesAlarm }, (_, i) =>
       `<span class="alarm-pip" data-spent="${i >= s.lives}"></span>`
     ).join("");
   } else {
-    el.alarms.hidden = true;
+    el.alarmsGauge.hidden = true;
   }
 
   /* Bank button (Vault Run only, and only with something at risk). */
@@ -359,7 +383,7 @@ export function renderOptions(game) {
   s.options.forEach((text, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "option";
+    btn.className = "option mat-key";
     btn.dataset.index = String(i);
     btn.style.setProperty("--i", String(i));
     if (s.removed.includes(i)) btn.dataset.removed = "true";
@@ -416,7 +440,9 @@ export function renderKit(kit) {
     if (tool.used) btn.dataset.used = "true";
     btn.title = tool.hint;
     btn.setAttribute("aria-label", `${tool.name}. ${tool.hint}${tool.used ? " Already spent." : ""}`);
+    btn.classList.add("mat-key");
     btn.innerHTML = `
+      <span class="lamp tool__lamp" data-on="${!tool.used}" aria-hidden="true"></span>
       <span class="tool__name">${tool.name}</span>
       <span class="tool__key">${tool.key.toUpperCase()}</span>
     `;

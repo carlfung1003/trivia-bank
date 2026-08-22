@@ -195,7 +195,7 @@
 /* Hit-pause: the whole stage holds for a beat on impact. The single highest
    ROI piece of juice in the game — it is what makes a correct answer feel
    struck rather than merely registered. */
-.stage[data-freeze="true"] { animation: none !important; filter: brightness(1.25) saturate(1.15); }
+.display[data-freeze="true"] { filter: brightness(1.3) saturate(1.2) contrast(1.05); }
 
 /* Drill burn-away. */
 @keyframes burn {
@@ -227,4 +227,26 @@
     transition-duration: 1ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---- Optional generated art -----------------------------------------------
+   A drop-in slot for a rendered vault door (see docs/ASSETS.md). When the
+   file is absent the background-image simply fails to load, the element
+   stays transparent, and the procedural rings above remain the artwork.
+   No JS probe, no fallback logic, no loading state. */
+.vault-art {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(150vh, 150vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: url("../assets/art/vault-door.png") center / contain no-repeat;
+  opacity: calc(0.28 + var(--heat) * 0.42);
+  mix-blend-mode: screen;
+  transition: opacity var(--dur-slow) var(--ease);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vault-art { opacity: 0.3; }
 }

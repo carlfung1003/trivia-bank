@@ -195,7 +195,69 @@ export class Fx {
 
   coinRain(n) { this.particles.rain(n); }
 
-  clear() { this.particles.clear(); }
+  /**
+   * Fly a value from wherever it was earned to wherever it is counted.
+   *
+   * Without this the score board just changes, and the player has to infer
+   * that the change came from the key they pressed. With it, the number is
+   * visibly the thing they earned, travelling to the place that holds it —
+   * which is most of why arcade scoring feels good.
+   */
+  popup(text, fromEl, toEl, kind = "gain") {
+    if (!fromEl) return;
+    const node = document.createElement("div");
+    node.className = `popup popup--${kind}`;
+    node.textContent = text;
+    document.body.appendChild(node);
+
+    const from = fromEl.getBoundingClientRect();
+    const startX = from.left + from.width / 2;
+    const startY = from.top + from.height / 2;
+    node.style.left = `${startX}px`;
+    node.style.top = `${startY}px`;
+
+    const cleanup = () => node.remove();
+
+    if (reduced()) {
+      node.style.transform = "translate(-50%, -50%)";
+      setTimeout(cleanup, 700);
+      return;
+    }
+
+    const to = toEl?.getBoundingClientRect();
+    const dx = to ? to.left + to.width / 2 - startX : 0;
+    const dy = to ? to.top + to.height / 2 - startY : -70;
+
+    /* Two phases: a punchy pop where it was earned, then a travel to the
+       board. Arcing via a mid-keyframe rather than a straight line — a
+       straight tween reads as a UI transition, an arc reads as a thrown
+       object. */
+    const anim = node.animate(
+      [
+        { transform: "translate(-50%, -50%) scale(0.6)", opacity: 0, offset: 0 },
+        { transform: "translate(-50%, -50%) scale(1.15)", opacity: 1, offset: 0.14 },
+        { transform: "translate(-50%, -50%) scale(1) translateY(-18px)", opacity: 1, offset: 0.42 },
+        {
+          transform: `translate(-50%, -50%) translate(${dx * 0.55}px, ${dy * 0.4 - 26}px) scale(0.85)`,
+          opacity: 1,
+          offset: 0.7,
+        },
+        {
+          transform: `translate(-50%, -50%) translate(${dx}px, ${dy}px) scale(0.45)`,
+          opacity: 0,
+          offset: 1,
+        },
+      ],
+      { duration: 1050, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" }
+    );
+    anim.onfinish = cleanup;
+    anim.oncancel = cleanup;
+  }
+
+  clear() {
+    this.particles.clear();
+    for (const p of document.querySelectorAll(".popup")) p.remove();
+  }
 }
 
 /* ---- Counter roll-up ------------------------------------------------------

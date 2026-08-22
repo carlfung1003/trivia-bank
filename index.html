@@ -19,10 +19,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/tokens.css?v=1">
-<link rel="stylesheet" href="css/base.css?v=1">
-<link rel="stylesheet" href="css/game.css?v=1">
-<link rel="stylesheet" href="css/fx.css?v=1">
+<link rel="stylesheet" href="css/tokens.css?v=2">
+<link rel="stylesheet" href="css/base.css?v=2">
+<link rel="stylesheet" href="css/material.css?v=2">
+<link rel="stylesheet" href="css/game.css?v=2">
+<link rel="stylesheet" href="css/fx.css?v=2">
 </head>
 
 <body data-screen="boot">
@@ -39,6 +40,10 @@
     </div>
     <div class="vault-hub"></div>
   </div>
+  <!-- Optional generated art. If assets/art/vault-door.png is absent the
+       element simply renders nothing and the CSS rings below stay in charge —
+       no probe, no error, no loading state. -->
+  <div class="vault-art" aria-hidden="true"></div>
   <div class="vault-spill"></div>
 </div>
 <canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
@@ -63,6 +68,10 @@
   <section class="screen screen--title" data-screen="title" aria-label="Choose a heist" hidden>
 
     <header class="masthead">
+      <span class="rivet rivet--tl" aria-hidden="true"></span>
+      <span class="rivet rivet--tr" aria-hidden="true"></span>
+      <span class="rivet rivet--bl" aria-hidden="true"></span>
+      <span class="rivet rivet--br" aria-hidden="true"></span>
       <p class="eyebrow eyebrow--brass">Est. from a 2023 spreadsheet <span class="rule"></span> <span id="bank-size">735</span> locks on file</p>
       <h1 class="wordmark">
         <span class="wordmark__line" style="--i:0">The</span>
@@ -128,70 +137,121 @@
   </section>
 
   <!-- =================== PLAY =================== -->
+  <!-- The whole screen is one machined console. Rivets, channels and bezels
+       are decorative on purpose: real equipment has fasteners, and their
+       absence is most of why a rounded rectangle reads as a div. -->
   <section class="screen screen--play" data-screen="play" aria-label="Heist in progress" hidden>
 
-    <header class="hud">
-      <div class="hud__left">
-        <button type="button" class="icon-btn" id="quit" aria-label="Abandon the heist">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <div class="hud__mode">
-          <span class="eyebrow" id="hud-mode">Vault Run</span>
-          <span class="hud__progress" id="hud-progress">Lock 1 of 12</span>
+    <div class="console">
+      <span class="rivet rivet--tl" aria-hidden="true"></span>
+      <span class="rivet rivet--tr" aria-hidden="true"></span>
+      <span class="rivet rivet--bl" aria-hidden="true"></span>
+      <span class="rivet rivet--br" aria-hidden="true"></span>
+
+      <!-- ---- Top rail ---- -->
+      <header class="rail rail--top">
+        <div class="rail__left">
+          <button type="button" class="icon-btn" id="quit" aria-label="Abandon the heist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="plate plate--mode">
+            <span class="plate__label engraved" id="hud-mode">Vault Run</span>
+            <span class="plate__value" id="hud-progress">Lock 1 / 12</span>
+          </div>
+        </div>
+
+        <div class="meter meter--haul">
+          <span class="meter__cap engraved">Haul</span>
+          <div class="flap-housing">
+            <div class="flap" id="credit-board" aria-label="Credits" role="img"></div>
+          </div>
+          <div class="meter__risk" id="hud-pot" hidden>
+            <span class="lamp lamp--alarm" data-on="true" aria-hidden="true"></span>
+            <span class="engraved">at risk</span> <b id="pot-value">0</b>
+          </div>
+        </div>
+
+        <div class="rail__right">
+          <div class="gauge" id="alarms-gauge" hidden>
+            <span class="gauge__cap engraved">Alarms</span>
+            <div class="alarms" id="alarms" aria-label="Alarms remaining"></div>
+          </div>
+          <div class="gauge">
+            <span class="gauge__cap engraved">Streak</span>
+            <div class="streak" id="streak" aria-label="Streak"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ---- Progress channel ---- -->
+      <div class="ladder-channel">
+        <div class="ladder" id="ladder" aria-hidden="true"></div>
+      </div>
+
+      <!-- ---- Main display ---- -->
+      <div class="bezel display-bezel">
+        <span class="rivet rivet--tl" aria-hidden="true"></span>
+        <span class="rivet rivet--tr" aria-hidden="true"></span>
+        <span class="rivet rivet--bl" aria-hidden="true"></span>
+        <span class="rivet rivet--br" aria-hidden="true"></span>
+
+        <div class="mat-glass display" id="display">
+          <div class="display__head">
+            <span class="stamp" id="q-cat-stamp">
+              <span class="sigil" id="q-sigil" aria-hidden="true">○</span>
+              <span id="q-cat">Geography</span>
+            </span>
+            <span class="stamp stamp--diff" id="q-diff" data-diff="easy">Petty</span>
+            <span class="stamp stamp--haven" id="q-haven" hidden>Safe haven</span>
+          </div>
+
+          <h2 class="question" id="question">&nbsp;</h2>
+
+          <div class="display__foot">
+            <div class="dial" id="timer">
+              <svg class="dial__face" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="dial__well"  cx="60" cy="60" r="56"/>
+                <g class="dial__ticks" id="dial-ticks"></g>
+                <circle class="dial__track" cx="60" cy="60" r="46"/>
+                <circle class="dial__fill"  cx="60" cy="60" r="46" id="timer-fill"/>
+              </svg>
+              <span class="dial__value" id="timer-value">20</span>
+              <span class="dial__cap engraved">sec</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="hud__board">
-        <span class="board__label eyebrow">Haul</span>
-        <div class="flap" id="credit-board" aria-label="Credits" role="img"></div>
-        <div class="hud__pot" id="hud-pot" hidden><span class="eyebrow">at risk</span> <b id="pot-value">0</b></div>
+      <!-- ---- Key deck ---- -->
+      <div class="deck">
+        <div class="options" id="options" role="group" aria-label="Answers"></div>
+
+        <form class="typed" id="typed-form" hidden autocomplete="off">
+          <label class="sr-only" for="typed-input">Your answer</label>
+          <div class="typed__well mat-inset">
+            <input class="typed__input" id="typed-input" type="text" placeholder="Type your answer" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+          </div>
+          <button type="submit" class="btn btn--primary">Lock it in</button>
+        </form>
+
+        <div class="verdict" id="verdict" hidden>
+          <p class="verdict__line" id="verdict-line"></p>
+          <p class="verdict__answer" id="verdict-answer"></p>
+          <button type="button" class="btn btn--primary" id="next-btn">Next lock</button>
+        </div>
       </div>
 
-      <div class="hud__right">
-        <div class="alarms" id="alarms" hidden aria-label="Alarms remaining"></div>
-        <div class="streak" id="streak" aria-label="Streak"></div>
-      </div>
-    </header>
-
-    <div class="ladder" id="ladder" aria-hidden="true"></div>
-
-    <div class="stage">
-
-      <div class="stage__meta">
-        <span class="sigil" id="q-sigil" aria-hidden="true">○</span>
-        <span class="q-cat" id="q-cat">Geography</span>
-        <span class="q-diff" id="q-diff" data-diff="easy">Petty</span>
-        <span class="q-haven" id="q-haven" hidden>Safe haven</span>
-      </div>
-
-      <div class="timer" id="timer">
-        <svg viewBox="0 0 120 120" aria-hidden="true">
-          <circle class="timer__track" cx="60" cy="60" r="54"/>
-          <circle class="timer__fill"  cx="60" cy="60" r="54" id="timer-fill"/>
-        </svg>
-        <span class="timer__value" id="timer-value">20</span>
-      </div>
-
-      <h2 class="question" id="question">&nbsp;</h2>
-
-      <div class="options" id="options" role="group" aria-label="Answers"></div>
-
-      <form class="typed" id="typed-form" hidden autocomplete="off">
-        <label class="sr-only" for="typed-input">Your answer</label>
-        <input class="typed__input" id="typed-input" type="text" placeholder="Type your answer" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
-        <button type="submit" class="btn btn--primary">Lock it in</button>
-      </form>
-
-      <div class="verdict" id="verdict" hidden>
-        <p class="verdict__line" id="verdict-line"></p>
-        <p class="verdict__answer" id="verdict-answer"></p>
-        <button type="button" class="btn btn--primary" id="next-btn">Next lock</button>
-      </div>
+      <!-- ---- Tool rail ---- -->
+      <footer class="rail rail--tools">
+        <span class="rail__cap engraved">The kit</span>
+        <div class="kit" id="kit" aria-label="Your kit"></div>
+      </footer>
     </div>
 
-    <footer class="kit" id="kit" aria-label="Your kit"></footer>
-
     <button type="button" class="bank-btn" id="bank-btn" hidden>
+      <span class="bank-btn__glyph" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 10h16M6 10V7l6-3 6 3v3M7 10v8M12 10v8M17 10v8M4 18h16v3H4z"/></svg>
+      </span>
       <span class="bank-btn__label">Bank it</span>
       <span class="bank-btn__value" id="bank-btn-value">0</span>
     </button>
@@ -236,7 +296,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=1"></script>
+<script type="module" src="js/main.js?v=2"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>

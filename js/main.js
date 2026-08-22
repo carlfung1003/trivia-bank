@@ -9,7 +9,7 @@
 import { Bank } from "./bank.js";
 import { Game, PHASE, RESULT } from "./engine.js";
 import { use as useLifeline, kitState } from "./lifelines.js";
-import { MODES, DIFFICULTY, LIFELINES, FX } from "./config.js";
+import { MODES, DIFFICULTY, LIFELINES, FX, SCORING } from "./config.js";
 import { store } from "./store.js";
 import { sound } from "./audio.js";
 import { Fx, rollNumber } from "./fx.js";
@@ -60,6 +60,7 @@ async function boot() {
 
   for (const node of ui.el.bankSize) node.textContent = String(app.bank.size);
 
+  ui.buildDialTicks();
   sound.setEnabled(app.settings.sound);
   wireGlobalInput();
   wireTitle();
@@ -227,7 +228,9 @@ function startRun(modeId) {
   ui.showScreen("play");
   app.fx.clear();
   sound.unlock();
+  sound.stopMusic();
   sound.startHum();
+  sound.playMusic("bedTension", { gain: 0.18 });
 
   app.game.start();
   startLoop();
@@ -264,26 +267,47 @@ function wireGameEvents(game) {
 function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak }) {
   ui.revealAnswer(game, { result, correctIndex, correctAnswer, given });
 
+  /* Where the answer physically happened, for particles and popups. */
+  const source = game.answerMode === "choice"
+    ? document.querySelector(`.option[data-index="${correctIndex}"]`)
+    : ui.el.typedForm;
+
   if (result === RESULT.CORRECT) {
     app.fx.hitPause(FX.hitPauseMs);
     app.fx.flash("correct");
     sound.correct(streak);
 
-    /* Burst from the option the player actually chose. */
-    const target = game.answerMode === "choice"
-      ? document.querySelector(`.option[data-index="${correctIndex}"]`)
-      : ui.el.typedForm;
-    app.fx.burstAt(target, {
+    app.fx.burstAt(source, {
       count: streak >= 4 ? FX.particleCountBig : FX.particleCount,
       hue: 41,
       speed: 5 + Math.min(streak, 6),
     });
+
+    /* The earned number travels to the board that holds it. */
+    if (points > 0) {
+      app.fx.popup(`+${formatCredits(points)}`, source, ui.el.creditBoard, "gain");
+    }
+    /* Blitz pays in seconds as well as credits — show both. */
+    if (game.mode.correctBonusSeconds) {
+      app.fx.popup(`+${game.mode.correctBonusSeconds}s`, source, ui.el.timer, "time");
+    }
+    if (streak >= 3) {
+      const mult = SCORING.streakLadder[Math.min(streak, SCORING.streakLadder.length - 1)];
+      app.fx.popup(`\u00d7${mult}`, ui.el.streak, ui.el.streak, "gain");
+    }
   } else {
     app.fx.hitPause(FX.hitPauseWrongMs);
     app.fx.shake(FX.shakeMagnitude, FX.shakeMs);
     app.fx.flash("wrong");
     if (result === RESULT.TIMEOUT) sound.timeout();
     else sound.wrong();
+
+    if (points < 0) {
+      app.fx.popup(formatCredits(points), source, ui.el.creditBoard, "loss");
+    }
+    if (game.mode.wrongPenaltySeconds) {
+      app.fx.popup(`-${game.mode.wrongPenaltySeconds}s`, source, ui.el.timer, "loss");
+    }
   }
 
   ui.renderHud(game);
@@ -491,6 +515,8 @@ function abandon() {
 }
 
 function goHome() {
+  sound.stopMusic();
+  sound.playMusic("themeTitle", { gain: 0.22 });
   app.game = null;
   stopLoop();
   app.fx.clear();

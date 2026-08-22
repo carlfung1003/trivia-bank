@@ -42,9 +42,12 @@ picking it pays ×1.5. Every one of those numbers lives in `js/config.js`.
 No build step. It is plain HTML, CSS and ES modules.
 
 ```bash
-python3 -m http.server 8791
+python3 scripts/serve.py 8791
 open http://127.0.0.1:8791/
 ```
+
+Use `serve.py` rather than `python3 -m http.server` — it sends `no-store`, which is the
+only reliable way to avoid the browser reusing a cached ES module during development.
 
 ES modules and `fetch` do not work over `file://` — it has to be served over HTTP.
 
@@ -132,11 +135,23 @@ distractors for the awkward questions, droppable into the JSON with no code chan
 
 ---
 
+## Look
+
+The interface is built as a machined object rather than a styled document. `css/material.css`
+provides four primitives — a brushed steel plate, a milled recess, backlit display glass, and
+a key that physically travels — composed into a vault console: rivets at the panel corners,
+a split-flap haul meter in its own housing, a dial gauge set into the display, answer keys
+that depress, and lifelines as switches with status lamps. One light source, always above.
+
+No image assets are required for any of it. `docs/ASSETS.md` has Suno and ChatGPT Image 2.0
+prompts if you want generated music and artwork; every slot is additive and falls back
+cleanly when empty.
+
 ## Architecture
 
 ```
 index.html
-css/    tokens · base · game · fx          design tokens; no hex outside tokens.css
+css/    tokens · base · material · game · fx   design tokens; material primitives
 js/
   config.js       ALL balance numbers. No magic numbers anywhere else.
   util.js         seeded RNG, normalisation, similarity — pure

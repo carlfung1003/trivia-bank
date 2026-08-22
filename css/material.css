@@ -1,0 +1,316 @@
+/* ==========================================================================
+   MATERIAL SYSTEM
+   --------------------------------------------------------------------------
+   The interface is a machined object, not a document. Everything below builds
+   physical surfaces out of CSS alone — no image assets required, so the game
+   still works before any generated art lands.
+
+   Four primitives, composed everywhere:
+     .mat-plate   brushed steel panel, lit from above, bevelled edge
+     .mat-inset   a recess milled into a plate
+     .mat-glass   dark display glass, backlit, faint scanlines
+     .mat-key     a physical key that actually depresses
+
+   The lighting model is fixed: ONE light source, above and slightly front.
+   Every highlight is on a top edge, every shadow on a bottom edge. Breaking
+   that is what makes CSS "3D" look like stacked rectangles.
+   ========================================================================== */
+
+:root {
+  /* Steel body — warmer and lighter than the page ink so panels read as
+     objects sitting ON the background rather than holes cut into it. */
+  --steel-000: hsl(222 14% 11%);
+  --steel-100: hsl(222 13% 15%);
+  --steel-200: hsl(222 12% 19%);
+  --steel-300: hsl(220 11% 24%);
+  --steel-400: hsl(220 10% 31%);
+
+  /* Edge lighting. Kept as tokens so a whole panel can be re-lit at once. */
+  --edge-hi:  hsl(210 30% 100% / 0.16);
+  --edge-hi2: hsl(210 30% 100% / 0.07);
+  --edge-lo:  hsl(222 60% 2% / 0.72);
+  --edge-lo2: hsl(222 60% 2% / 0.4);
+
+  /* Brushed-metal grain, applied as an overlay layer. */
+  --grain-fine: repeating-linear-gradient(
+    90deg,
+    hsl(0 0% 100% / 0.020) 0 1px,
+    transparent 1px 3px
+  );
+  --grain-coarse: repeating-linear-gradient(
+    90deg,
+    hsl(0 0% 100% / 0.030) 0 1px,
+    transparent 1px 5px
+  );
+
+  /* Knurling for grips and rails. */
+  --knurl: repeating-linear-gradient(
+    45deg,
+    hsl(0 0% 100% / 0.05) 0 1px,
+    transparent 1px 4px
+  );
+
+  --bevel-sm:
+    inset 0 1px 0 var(--edge-hi),
+    inset 0 -1px 0 var(--edge-lo),
+    0 1px 2px hsl(222 60% 2% / 0.5);
+
+  --bevel:
+    inset 0 1px 0 var(--edge-hi),
+    inset 0 2px 3px var(--edge-hi2),
+    inset 0 -1px 0 var(--edge-lo),
+    inset 0 -3px 6px var(--edge-lo2),
+    0 2px 0 hsl(222 30% 6%),
+    0 6px 14px -4px hsl(222 60% 2% / 0.7);
+
+  --bevel-lg:
+    inset 0 1px 0 var(--edge-hi),
+    inset 0 3px 6px var(--edge-hi2),
+    inset 0 -2px 0 var(--edge-lo),
+    inset 0 -8px 18px var(--edge-lo2),
+    0 3px 0 hsl(222 30% 5%),
+    0 20px 44px -14px hsl(222 60% 1% / 0.85);
+
+  /* A recess: light on the BOTTOM inner edge, dark on top. Inverted from a
+     raised plate — that inversion is the entire illusion. */
+  --recess:
+    inset 0 2px 5px hsl(222 60% 2% / 0.85),
+    inset 0 -1px 0 var(--edge-hi2),
+    0 1px 0 var(--edge-hi2);
+
+  --recess-deep:
+    inset 0 4px 12px hsl(222 60% 1% / 0.95),
+    inset 0 1px 2px hsl(222 60% 1% / 0.9),
+    inset 0 -1px 0 var(--edge-hi2);
+}
+
+/* ---- Plate ---------------------------------------------------------------
+   A milled steel panel. The ::before carries the brushed grain so the base
+   background stays available for state changes.                             */
+
+.mat-plate {
+  position: relative;
+  background:
+    linear-gradient(180deg, var(--steel-300) 0%, var(--steel-100) 42%, var(--steel-000) 100%);
+  border: 1px solid hsl(222 20% 100% / 0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--bevel);
+  isolation: isolate;
+}
+.mat-plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--grain-fine);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mat-plate--lg { border-radius: var(--radius-lg); box-shadow: var(--bevel-lg); }
+
+/* ---- Inset --------------------------------------------------------------- */
+
+.mat-inset {
+  background: linear-gradient(180deg, var(--ink-000), hsl(222 30% 7%));
+  border-radius: var(--radius-sm);
+  box-shadow: var(--recess);
+}
+
+/* ---- Glass ---------------------------------------------------------------
+   The display surface. Backlit from the centre, scanlined, with a specular
+   sweep across the top third — the thing that reads as "a screen" rather
+   than "a dark box".                                                        */
+
+.mat-glass {
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 50% 20%,
+      color-mix(in srgb, var(--brass) 7%, transparent) 0%,
+      transparent 62%),
+    linear-gradient(180deg, hsl(222 36% 8%), hsl(222 40% 5%));
+  border-radius: var(--radius);
+  box-shadow: var(--recess-deep);
+  overflow: hidden;
+  isolation: isolate;
+}
+/* Scanlines. Very low contrast — visible as texture, never as stripes. */
+.mat-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    hsl(0 0% 0% / 0.16) 0 1px,
+    transparent 1px 3px
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+/* Specular sweep across the top of the glass. */
+.mat-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 42%;
+  background: linear-gradient(180deg, hsl(200 40% 100% / 0.045), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.mat-glass > * { position: relative; z-index: 2; }
+
+/* ---- Key -----------------------------------------------------------------
+   A key that travels. The trick is that the drop shadow shrinks by exactly
+   the travel distance, so the key appears to move toward the board rather
+   than just shifting down the page.                                         */
+
+.mat-key {
+  --key-travel: 3px;
+  --key-face-1: var(--steel-300);
+  --key-face-2: var(--steel-100);
+  position: relative;
+  background: linear-gradient(180deg, var(--key-face-1), var(--key-face-2));
+  border: 1px solid hsl(222 20% 100% / 0.06);
+  border-radius: var(--radius);
+  box-shadow:
+    inset 0 1px 0 var(--edge-hi),
+    inset 0 -2px 4px var(--edge-lo2),
+    0 var(--key-travel) 0 hsl(222 32% 7%),
+    0 calc(var(--key-travel) + 6px) 16px -6px hsl(222 60% 1% / 0.8);
+  transition:
+    transform var(--dur-instant) var(--ease),
+    box-shadow var(--dur-instant) var(--ease),
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+.mat-key::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--grain-fine);
+  pointer-events: none;
+}
+.mat-key:hover:not(:disabled) {
+  --key-face-1: var(--steel-400);
+  --key-face-2: var(--steel-200);
+  border-color: var(--hairline-brass);
+}
+.mat-key:active:not(:disabled),
+.mat-key[data-pressed="true"] {
+  transform: translateY(var(--key-travel));
+  box-shadow:
+    inset 0 2px 5px hsl(222 60% 2% / 0.8),
+    inset 0 1px 0 var(--edge-hi2),
+    0 0 0 hsl(222 32% 7%),
+    0 2px 6px -3px hsl(222 60% 1% / 0.7);
+}
+
+/* ---- Rivets & screws -----------------------------------------------------
+   Placed at panel corners. Purely decorative, and that is the point: real
+   objects have fasteners, and their absence is part of why a flat rounded
+   rectangle reads as a div.                                                 */
+
+.rivet {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 30%,
+      hsl(220 12% 46%) 0%,
+      hsl(220 12% 28%) 46%,
+      hsl(220 14% 14%) 100%);
+  box-shadow:
+    inset 0 -1px 1px hsl(0 0% 0% / 0.6),
+    inset 0 1px 1px hsl(0 0% 100% / 0.22),
+    0 1px 2px hsl(0 0% 0% / 0.55);
+  pointer-events: none;
+  z-index: 3;
+}
+/* Slot head, rotated per-corner so they do not look stamped from one die. */
+.rivet::after {
+  content: "";
+  position: absolute;
+  inset: 3px 1.5px;
+  border-radius: 1px;
+  background: hsl(220 16% 12%);
+  box-shadow: 0 1px 0 hsl(0 0% 100% / 0.12);
+}
+.rivet--tl { top: 8px; left: 8px; }
+.rivet--tr { top: 8px; right: 8px; transform: rotate(52deg); }
+.rivet--bl { bottom: 8px; left: 8px; transform: rotate(-38deg); }
+.rivet--br { bottom: 8px; right: 8px; transform: rotate(14deg); }
+
+/* ---- Lamp ----------------------------------------------------------------
+   An indicator LED: dark lens when off, lit lens plus bloom when on.        */
+
+.lamp {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 32%, hsl(220 12% 26%), hsl(220 14% 10%));
+  box-shadow:
+    inset 0 1px 1px hsl(0 0% 100% / 0.14),
+    inset 0 -1px 2px hsl(0 0% 0% / 0.7);
+  transition: background var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.lamp[data-on="true"] {
+  background: radial-gradient(circle at 36% 32%,
+    var(--lamp-hi, var(--brass-hi)), var(--lamp-lo, var(--brass-lo)));
+  box-shadow:
+    inset 0 1px 1px hsl(0 0% 100% / 0.4),
+    inset 0 -1px 2px hsl(0 0% 0% / 0.4),
+    0 0 8px 1px var(--lamp-glow, var(--brass-glow)),
+    0 0 20px -2px var(--lamp-glow, var(--brass-glow));
+}
+.lamp--alarm { --lamp-hi: var(--alarm-hi); --lamp-lo: var(--alarm-lo); --lamp-glow: var(--alarm); }
+.lamp--jade  { --lamp-hi: var(--jade-hi);  --lamp-lo: var(--jade-lo);  --lamp-glow: var(--jade); }
+
+/* ---- Engraved / embossed text -------------------------------------------
+   Labels stamped into the metal rather than printed on top of it.          */
+
+.engraved {
+  color: hsl(220 10% 46%);
+  text-shadow: 0 1px 0 hsl(0 0% 100% / 0.09);
+}
+.embossed {
+  color: var(--ink-800);
+  text-shadow: 0 -1px 0 hsl(222 60% 2% / 0.8);
+}
+
+/* ---- Rails and channels --------------------------------------------------
+   A milled channel that other elements sit inside.                          */
+
+.channel {
+  background: linear-gradient(180deg, hsl(222 30% 5%), hsl(222 26% 9%));
+  border-radius: var(--radius-pill);
+  box-shadow: var(--recess);
+}
+
+/* ---- Screw-down bezel around a display ----------------------------------- */
+
+.bezel {
+  position: relative;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, var(--steel-300), var(--steel-100) 55%, var(--steel-000));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--bevel-lg);
+}
+.bezel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--grain-coarse);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mat-key { transition: none; }
+}
