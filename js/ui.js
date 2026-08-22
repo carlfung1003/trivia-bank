@@ -8,7 +8,7 @@
    ========================================================================== */
 
 import { MODES, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
-import { formatCredits } from "./util.js";
+import { formatCredits, answerShape } from "./util.js";
 
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -64,6 +64,7 @@ export const el = {
   timerFill: $("#timer-fill"),
   timerValue: $("#timer-value"),
   question: $("#question"),
+  shape: $("#shape"),
   intel: $("#intel"),
   intelEtch: $("#intel-etch"),
   intelLetter: $("#intel-letter"),
@@ -468,6 +469,7 @@ export function renderQuestion(game) {
 
   el.verdict.hidden = true;
   el.verdict.removeAttribute("data-result");
+  renderShape(game);
   renderIntel(game);
 
   if (game.answerMode === "choice") {
@@ -537,6 +539,27 @@ export function renderBurn(game, removed) {
       btn.dataset.removed = "true";
     }, 460);
   });
+}
+
+/** The answer's letter pattern, shown for free in Type-It. */
+export function renderShape(game) {
+  const show = game.answerMode === "typed" && game.state.question;
+  el.shape.hidden = !show;
+  if (!show) return;
+
+  const words = answerShape(game.state.question.answer);
+  const total = words.reduce((a, b) => a + b, 0);
+  el.shape.innerHTML =
+    words
+      .map((n) => `<span class="shape__word">${'<span class="shape__slot"></span>'.repeat(n)}</span>`)
+      .join("") +
+    `<span class="shape__count">${total} letter${total === 1 ? "" : "s"}${
+      words.length > 1 ? `, ${words.length} words` : ""
+    }</span>`;
+  el.shape.setAttribute(
+    "aria-label",
+    `Answer shape: ${words.length} word${words.length === 1 ? "" : "s"}, ${words.join(", ")} letters.`
+  );
 }
 
 /** Paint whatever Etch and Informant have bought for this question. */

@@ -168,6 +168,18 @@ carry its own.
 Both filters thread through `pool` / `count` / `draw` / `drawRun`, and BYPASS must pass
 them too or it can swap in a question the mode just excluded.
 
+## Type-It shows the answer's shape, and that is the point
+
+`renderShape()` puts one slot per letter, grouped into words, under every typed
+question. It is free — not a lifeline — and it is why the mode is playable.
+
+The diagnosis matters more than the feature. Typed mode felt brutal, and the obvious
+read was that the answers were too long, so the first instinct was to tighten
+`isTypedViable` to three words. Modelling it showed that would have cut 46 perfectly
+typeable answers — "Central Processing Unit", "The Silence of the Lambs", "Wolfgang
+Amadeus Mozart" — while keeping the actual offenders. Length was never the problem.
+Typing BLIND was. Do not re-tighten the thresholds; add shape affordances instead.
+
 ## Known gaps
 
 - **Never tested on a real phone.** The layout IS verified at 390px and 360px via

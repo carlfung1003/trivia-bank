@@ -1431,3 +1431,37 @@
   .intel { max-width: 100%; }
   .intel__tip { font-size: 0.8rem; }
 }
+
+/* ---- Answer shape -----------------------------------------------------------
+   One slot per letter, grouped into words. Shown for free in Type-It, because
+   the mode's real difficulty was never the length of the answers — it was not
+   being able to see what you were aiming at. */
+
+.shape {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1.6vw, 0.9rem);
+  justify-content: center;
+  align-items: flex-end;
+  animation: rise var(--dur) var(--ease);
+}
+.shape__word { display: flex; gap: 3px; }
+.shape__slot {
+  width: clamp(9px, 1.5vw, 13px);
+  height: 2px;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--brass) 45%, transparent);
+  box-shadow: 0 0 6px -2px var(--brass-glow);
+}
+/* Every fifth slot sits slightly proud, so long words stay countable at a
+   glance rather than needing to be counted. */
+.shape__slot:nth-child(5n) { background: var(--brass); height: 3px; }
+.shape__count {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(220 10% 46%);
+  align-self: center;
+  margin-left: 0.4em;
+}

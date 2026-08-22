@@ -315,3 +315,27 @@ export function answerForms(s) {
 
   return [...forms];
 }
+
+/**
+ * The shape of an answer: how many letters in each word.
+ *
+ * Typing was unfair not because answers are long but because they were
+ * invisible — "Central Processing Unit" is easy to type and impossible to
+ * commit to when you cannot see that it is three words of 7, 10 and 4. Every
+ * word game shows the shape; this is that.
+ *
+ * Measured on the bare form (parentheticals and asides stripped), which is
+ * both the shortest accepted answer and the one shown on reveal.
+ */
+export function answerShape(answer) {
+  const bare = String(answer ?? "")
+    .replace(/\([^)]*\)/g, " ")
+    .split(/\s[—–]\s/)[0]
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!bare) return [];
+  return bare
+    .split(" ")
+    .map((w) => w.replace(/[^\p{L}\p{N}]/gu, "").length)
+    .filter((n) => n > 0);
+}

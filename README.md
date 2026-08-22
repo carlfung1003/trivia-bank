@@ -31,6 +31,10 @@ Built on a 735-question bank that started life as a 2023 Google Sheet of quiz an
   "The Strait of Gibraltar" gives **S**, not T
 - **Informant** — a real authored clue. All 735 questions carry one
 
+Type-It also shows the answer's **shape** for free — one slot per letter, grouped into
+words — because the mode's difficulty was never the length of the answers, it was not
+being able to see what you were aiming at.
+
 ## Scoring
 
 ```

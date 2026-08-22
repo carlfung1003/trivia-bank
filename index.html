@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="css/tokens.css?v=2">
 <link rel="stylesheet" href="css/base.css?v=2">
 <link rel="stylesheet" href="css/material.css?v=6">
-<link rel="stylesheet" href="css/game.css?v=12">
+<link rel="stylesheet" href="css/game.css?v=17">
 <link rel="stylesheet" href="css/fx.css?v=11">
 </head>
 
@@ -225,6 +225,10 @@
 
           <h2 class="question" id="question">&nbsp;</h2>
 
+          <!-- The answer's shape. Free, and always shown in Type-It: typing
+               blind is what made the mode unfair, not the answers' length. -->
+          <div class="shape" id="shape" hidden></div>
+
           <!-- Bought intel: the etched letter and the informant's tip. -->
           <div class="intel" id="intel" hidden>
             <span class="intel__etch" id="intel-etch" hidden>
@@ -344,7 +348,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=16"></script>
+<script type="module" src="js/main.js?v=17"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>
