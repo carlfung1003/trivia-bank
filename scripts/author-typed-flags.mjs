@@ -30,6 +30,15 @@ const CHOICE_ONLY = {
   690: "Latin set phrase — 'Et alii'",
   789: "French painting title — 'Les Demoiselles d'Avignon'",
   99:  "asks for a literal translation; exact wording is unguessable",
+
+  /* Definitional answers. The question is sound, but the answer is a
+     description rather than a name, so there is no single string a player
+     could be expected to reproduce — "cheese" is right in substance and
+     would be marked wrong. */
+  470: "definition, not a name — 'A fresh, unaged cheese'",
+  665: "definition, not a name — 'A genericised trademark'",
+  503: "a relation, not a name — 'The other way around' has many phrasings",
+  230: "an approximation with units — 'About 300,000 km per second'",
 };
 
 const byId = new Map(bank.questions.map((q) => [q.id, q]));

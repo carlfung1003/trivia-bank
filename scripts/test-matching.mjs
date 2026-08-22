@@ -59,6 +59,12 @@ const CASES = [
   [339, "a school", true,        "the main form alone"],
   [559, "etiology", true,        "parenthetical variant spelling"],
   [337, "monotremes", true,      "before the em-dash aside"],
+  [337, "the platypus and echidna", true, "after the em-dash aside"],
+  [506, "3000", true,            "approximation qualifier dropped"],
+  [506, "about 3000", true,      "approximation qualifier kept"],
+  [118, "10080", true,           "thousand separator omitted"],
+  [377, "ovum", true,            "parenthetical alone"],
+  [377, "egg cell", true,        "main form alone"],
 
   /* ---- must NOT be accepted ---------------------------------------------- */
   [21,  "1913", false, "a year one out is a different answer"],

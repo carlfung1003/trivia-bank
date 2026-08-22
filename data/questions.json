@@ -1887,7 +1887,8 @@
         "About 3 million km per second",
         "About 300 km per second"
       ],
-      "hint": "Fast enough to circle the Earth seven times in a second."
+      "hint": "Fast enough to circle the Earth seven times in a second.",
+      "typedOk": false
     },
     {
       "id": 231,
@@ -4846,7 +4847,8 @@
         "a cheese",
         "curd cheese"
       ],
-      "hint": "It does not melt, which is why it holds its shape in curry."
+      "hint": "It does not melt, which is why it holds its shape in curry.",
+      "typedOk": false
     },
     {
       "id": 471,
@@ -5255,7 +5257,8 @@
         "conversely",
         "the reverse"
       ],
-      "hint": "Latin for turning the order of two things around."
+      "hint": "Latin for turning the order of two things around.",
+      "typedOk": false
     },
     {
       "id": 504,
@@ -7310,7 +7313,8 @@
         "proprietary eponym",
         "eponym"
       ],
-      "hint": "Like 'hoover', 'escalator' and 'aspirin' before it."
+      "hint": "Like 'hoover', 'escalator' and 'aspirin' before it.",
+      "typedOk": false
     },
     {
       "id": 666,

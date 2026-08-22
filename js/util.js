@@ -291,6 +291,12 @@ export function answerForms(s) {
   const withoutParens = raw.replace(/\([^)]*\)/g, " ").replace(/\s+/g, " ").trim();
   if (withoutParens) forms.add(withoutParens);
 
+  /* Approximation qualifiers are the author hedging, not part of the answer.
+     "About 3,000" should accept "3000". Only hedges that leave the value
+     unchanged — "over" and "more than" would change what was asked. */
+  const unhedged = withoutParens.replace(/^(about|roughly|approximately|approx\.?|around|circa|c\.)\s+/i, "").trim();
+  if (unhedged && unhedged !== withoutParens) forms.add(unhedged);
+
   for (const m of raw.matchAll(/\(([^)]*)\)/g)) {
     const inner = m[1].replace(/^\s*(or|aka|also)\s+/i, "").trim();
     if (inner) forms.add(inner);
