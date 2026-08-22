@@ -325,7 +325,7 @@ function wireGameEvents(game) {
   game.on("over", (summary) => onOver(game, summary));
 }
 
-function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak }) {
+function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak, close }) {
   /* Where the answer physically happened, for particles and popups. */
   const source = game.answerMode === "choice"
     ? document.querySelector(`.option[data-index="${given}"]`)
@@ -345,7 +345,7 @@ function onReveal(game, { result, correctIndex, correctAnswer, given, points, st
   haptic(12);
 
   const land = () => {
-    ui.revealAnswer(game, { result, correctIndex, correctAnswer, given });
+    ui.revealAnswer(game, { result, correctIndex, correctAnswer, given, close });
 
     if (result === RESULT.CORRECT) {
       app.fx.hitPause(FX.hitPauseMs);

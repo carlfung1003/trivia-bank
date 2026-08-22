@@ -11,7 +11,10 @@
    ========================================================================== */
 
 import { buildIndex, isChoiceViable } from "./distractors.js";
-import { normalise, sample, shuffle } from "./util.js";
+import {
+  normalise, sample, shuffle, levenshtein,
+  matchKey, demandsExact, fuzzyWordMatch, answerForms,
+} from "./util.js";
 
 export class Bank {
   constructor(raw) {
@@ -111,21 +114,67 @@ export class Bank {
   }
 
   /**
-   * Typed-answer checking against the author's alias list.
-   * Deliberately generous — a player who typed the right thing should never
-   * be told they are wrong over a hyphen or a definite article.
+   * Typed-answer checking.
+   *
+   * Graded, not exact. A player who has plainly got it right should never be
+   * told they are wrong over a plural, a spelling convention, or a slipped
+   * key — "beat per minute" against "Beats per minute" was doing exactly
+   * that. Four passes, cheapest first:
+   *
+   *   1. exact, after normalisation
+   *   2. match key — spelling variants canonicalised, words stemmed, so
+   *      singular/plural and colour/color collapse together
+   *   3. same word set in any order, for conjunction answers
+   *   4. bounded edit distance, scored WORD BY WORD, for typos
+   *
+   * Pass 4 is deliberately withheld where a near miss means a different
+   * answer rather than a slip: anything containing a digit, and anything four
+   * characters or shorter. "1913" is not a typo for 1912, and "K" is not a
+   * typo for "C".
+   *
+   * @returns {boolean|"close"} true when accepted; "close" when it was one
+   *   edit outside tolerance, which the UI can use to say so.
    */
   checkTyped(question, input) {
     const given = normalise(input);
     if (!given) return false;
-    if (given === normalise(question.answer)) return true;
-    for (const alias of question.accept || []) {
-      if (given === normalise(alias)) return true;
+
+    const givenKey = matchKey(input);
+    const givenTokens = new Set(givenKey.split(" ").filter(Boolean));
+
+    /* Every form worth accepting, from the answer and from its aliases. */
+    const candidates = new Set();
+    for (const source of [question.answer, ...(question.accept || [])]) {
+      for (const form of answerForms(source)) candidates.add(form);
     }
-    /* Allow the player to omit a parenthetical: the bank's
-       "A school (or shoal)" should accept "a school". */
-    const bare = normalise(String(question.answer).replace(/\([^)]*\)/g, ""));
-    if (bare && given === bare) return true;
-    return false;
+
+    let nearMiss = false;
+
+    for (const candidate of candidates) {
+      const n = normalise(candidate);
+      if (!n) continue;
+
+      if (given === n) return true;
+
+      const key = matchKey(candidate);
+      if (!key) continue;
+      if (givenKey === key) return true;
+
+      /* Word order: "China and Nepal" for "Nepal and China". */
+      const keyTokens = new Set(key.split(" ").filter(Boolean));
+      if (keyTokens.size > 1 && keyTokens.size === givenTokens.size) {
+        let same = true;
+        for (const t of keyTokens) if (!givenTokens.has(t)) { same = false; break; }
+        if (same) return true;
+      }
+
+      if (demandsExact(candidate)) continue;
+
+      const verdict = fuzzyWordMatch(givenKey, key);
+      if (verdict === "match") return true;
+      if (verdict === "close") nearMiss = true;
+    }
+
+    return nearMiss ? "close" : false;
   }
 }

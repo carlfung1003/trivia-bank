@@ -179,6 +179,7 @@ export class Game extends Emitter {
     s.revealed = "";
     s.intel = "";
     s.doubledDown = false;
+    s.wasClose = false;
     s.lastResult = null;
 
     if (this.answerMode === "choice") {
@@ -269,8 +270,13 @@ export class Game extends Emitter {
       return this._resolve(idx, correct ? RESULT.CORRECT : RESULT.WRONG);
     }
 
-    correct = this.bank.checkTyped(s.question, String(answer));
-    return this._resolve(String(answer), correct ? RESULT.CORRECT : RESULT.WRONG);
+    /* checkTyped returns true | "close" | false. "close" is TRUTHY, so it
+       must be compared explicitly — treating it as correct would hand out
+       points for a near miss. It is carried through so the reveal can say
+       "so close" instead of a flat wrong. */
+    const verdict = this.bank.checkTyped(s.question, String(answer));
+    s.wasClose = verdict === "close";
+    return this._resolve(String(answer), verdict === true ? RESULT.CORRECT : RESULT.WRONG);
   }
 
   /** Continue past the reveal. */
@@ -360,6 +366,7 @@ export class Game extends Emitter {
 
     this.emit("reveal", {
       result,
+      close: !!s.wasClose && result !== RESULT.CORRECT,
       correctIndex: s.correctIndex,
       correctAnswer: q.answer,
       given,

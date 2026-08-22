@@ -122,6 +122,27 @@ Two things this creates, both handled, both easy to reintroduce:
   `window.__game.autoplay()` drives it inside a synchronous loop where real-time
   timers never run, so gating it there would hang the harness.
 
+## Typed-answer matching is deliberately graded
+
+`bank.checkTyped()` returns `true | "close" | false`. **"close" is truthy** — compare it
+explicitly or near misses score points. `engine.js` does; anything new must too.
+
+Leniency stops where a near miss stops being a slip:
+
+- **Per word, never per string.** A whole-string tolerance loose enough to accept
+  "Ulanbatar" for "Ulaanbaatar" also accepts "bytes per minute" for "beats per minute" —
+  identical edit distance, completely different answer. Scoring word by word gives long
+  words room and short words none.
+- **Exact required** for anything containing a digit, and anything four characters or
+  shorter. "1913" is not a typo for 1912; "K" is not a typo for "C".
+- **Prefix abbreviations only in multi-word answers**, where the other words anchor it.
+  On a single-word answer "sil" would sail through as "silver".
+
+`node scripts/test-matching.mjs` guards all of it: 48 explicit cases, plus two sweeps —
+every answer and alias must match itself, and no other question's answer may match. The
+REJECT cases matter more than the accepts; a checker that accepts everything has quietly
+stopped being a quiz. Run it after any change to matching, normalisation, or the bank.
+
 ## Known gaps
 
 - **Never tested on a real phone.** The layout IS verified at 390px and 360px via

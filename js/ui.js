@@ -619,7 +619,7 @@ export function lockIn(game, given) {
   el.display?.setAttribute("data-locking", "true");
 }
 
-export function revealAnswer(game, { result, correctIndex, correctAnswer, given }) {
+export function revealAnswer(game, { result, correctIndex, correctAnswer, given, close }) {
   el.display?.removeAttribute("data-locking");
   el.typedForm?.removeAttribute("data-locking");
 
@@ -642,7 +642,9 @@ export function revealAnswer(game, { result, correctIndex, correctAnswer, given 
     timeout: "Out of time",
   };
   el.verdict.dataset.result = result;
-  el.verdictLine.textContent = lines[result] || "";
+  /* A near miss is still a miss, but saying so is kinder than a flat "wrong"
+     — and it tells the player the checker actually looked at what they typed. */
+  el.verdictLine.textContent = close && result === "wrong" ? "So close" : (lines[result] || "");
   el.verdictAnswer.textContent = result === "correct" ? correctAnswer : `Answer: ${correctAnswer}`;
   el.verdict.hidden = false;
   el.nextBtn.focus();
