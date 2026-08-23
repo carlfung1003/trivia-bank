@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="css/material.css?v=6">
 <link rel="stylesheet" href="css/game.css?v=18">
 <link rel="stylesheet" href="css/board.css?v=6">
+<link rel="stylesheet" href="css/street.css?v=3">
 <link rel="stylesheet" href="css/fx.css?v=11">
 </head>
 
@@ -409,6 +410,117 @@
     </div>
   </section>
 
+  <!-- =================== THE STREET =================== -->
+  <!-- Survey board. One prompt, a ranked set of hidden answers, each worth its
+       share of the room. The slots keep their footprint while hidden so the
+       board never reflows as it fills — you learn the shape of what is left. -->
+  <section class="screen screen--street" data-screen="street" aria-label="The Street" hidden>
+
+    <div class="console console--street">
+      <span class="rivet rivet--tl" aria-hidden="true"></span>
+      <span class="rivet rivet--tr" aria-hidden="true"></span>
+      <span class="rivet rivet--bl" aria-hidden="true"></span>
+      <span class="rivet rivet--br" aria-hidden="true"></span>
+
+      <header class="rail rail--top">
+        <div class="rail__left">
+          <button type="button" class="icon-btn" id="street-quit" aria-label="Leave the street">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="plate plate--mode">
+            <span class="plate__label engraved" id="street-round">Round 1 of 5</span>
+            <span class="plate__value" id="street-mult">Face value</span>
+          </div>
+        </div>
+
+        <div class="meter meter--haul">
+          <span class="meter__cap engraved">Banked</span>
+          <div class="flap-housing">
+            <div class="flap" id="street-flap" aria-label="Banked" role="img"></div>
+          </div>
+          <div class="meter__risk" id="street-pot" hidden>
+            <span class="lamp lamp--alarm" data-on="true" aria-hidden="true"></span>
+            <span class="engraved">on the table</span> <b id="street-pot-value">0</b>
+          </div>
+        </div>
+
+        <div class="rail__right">
+          <div class="gauge">
+            <span class="gauge__cap engraved">Strikes</span>
+            <div class="strikes" id="street-strikes" aria-label="Strikes"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ---- Prompt ---- -->
+      <div class="bezel street-prompt-bezel">
+        <span class="rivet rivet--tl" aria-hidden="true"></span>
+        <span class="rivet rivet--tr" aria-hidden="true"></span>
+        <span class="rivet rivet--bl" aria-hidden="true"></span>
+        <span class="rivet rivet--br" aria-hidden="true"></span>
+        <div class="mat-glass street-prompt">
+          <!-- The eyebrow and the prompt are ONE grid child. Three children in
+               a two-column grid auto-placed the prompt into the dial's column
+               and ran it off the edge of the console. -->
+          <div class="street-prompt__body">
+            <p class="eyebrow eyebrow--brass">The street reckons</p>
+            <h2 class="street-prompt__text" id="street-prompt">&nbsp;</h2>
+          </div>
+          <div class="dial dial--street" id="street-timer">
+            <svg class="dial__face" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="dial__well"  cx="60" cy="60" r="56"/>
+              <g class="dial__ticks" id="street-dial-ticks"></g>
+              <circle class="dial__track" cx="60" cy="60" r="46"/>
+              <circle class="dial__fill"  cx="60" cy="60" r="46" id="street-timer-fill"/>
+            </svg>
+            <span class="dial__value" id="street-timer-value">75</span>
+            <span class="dial__cap engraved">sec</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- The board ---- -->
+      <div class="street-board" id="street-board" role="list" aria-label="Survey answers"></div>
+
+      <!-- ---- Deck ---- -->
+      <div class="deck deck--street">
+        <form class="typed typed--street" id="street-form" autocomplete="off">
+          <label class="sr-only" for="street-input">What do you reckon?</label>
+          <div class="typed__well mat-inset">
+            <input class="typed__input" id="street-input" type="text" placeholder="Say what you reckon&hellip;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+          </div>
+          <button type="submit" class="btn btn--primary">Say it</button>
+          <!-- In the deck, not floating over it. The vault's fixed bank button
+               is anchored to the bottom of the viewport, which on this screen
+               landed square on top of the answer field. -->
+          <button type="button" class="btn btn--bank" id="street-bank" hidden>
+            <span class="btn__glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 10h16M6 10V7l6-3 6 3v3M7 10v8M12 10v8M17 10v8M4 18h16v3H4z"/></svg>
+            </span>
+            Bank <b id="street-bank-value">0</b>
+          </button>
+        </form>
+
+        <p class="street-hint" id="street-hint">Three strikes and everything on the table is gone.</p>
+      </div>
+    </div>
+
+    <!-- Round card: the full board, revealed, plus what it cost or kept. -->
+    <div class="street-card" id="street-card" hidden role="dialog" aria-modal="true" aria-label="Round result">
+      <div class="street-card__panel mat-plate">
+        <span class="rivet rivet--tl" aria-hidden="true"></span>
+        <span class="rivet rivet--tr" aria-hidden="true"></span>
+        <span class="rivet rivet--bl" aria-hidden="true"></span>
+        <span class="rivet rivet--br" aria-hidden="true"></span>
+        <p class="eyebrow" id="street-card-eyebrow">Banked</p>
+        <p class="street-card__value" id="street-card-value">0</p>
+        <p class="street-card__sub" id="street-card-sub"></p>
+        <ol class="street-card__list" id="street-card-list"></ol>
+        <button type="button" class="btn btn--primary" id="street-next">Next survey</button>
+      </div>
+    </div>
+  </section>
+
   <!-- =================== RESULTS =================== -->
   <section class="screen screen--done" data-screen="done" aria-label="Result" hidden>
     <div class="result">
@@ -466,7 +578,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=21"></script>
+<script type="module" src="js/main.js?v=23"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>

@@ -10,8 +10,10 @@ import { Bank } from "./bank.js";
 import { Game, PHASE, RESULT } from "./engine.js";
 import { BoardGame, BPHASE } from "./jeopardy.js";
 import * as board from "./board-ui.js";
+import { SurveyGame, SPHASE } from "./survey.js";
+import * as street from "./street-ui.js";
 import { use as useLifeline, kitState } from "./lifelines.js";
-import { MODES, DIFFICULTY, LIFELINES, FX, SCORING, BOARD } from "./config.js";
+import { MODES, DIFFICULTY, LIFELINES, FX, SCORING, BOARD, STREET } from "./config.js";
 import { store } from "./store.js";
 import { sound } from "./audio.js";
 import { Fx, rollNumber } from "./fx.js";
@@ -36,6 +38,8 @@ const app = {
   game: null,
   boardData: null,
   boardGame: null,
+  streetData: null,
+  streetGame: null,
   fx: null,
   raf: null,
   lastFrame: 0,
@@ -90,13 +94,27 @@ async function boot() {
     app.boardData = null;
   }
 
+  try {
+    const res = await fetch("data/surveys.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    app.streetData = await res.json();
+    if (!Array.isArray(app.streetData?.surveys) || app.streetData.surveys.length < STREET.rounds.length) {
+      throw new Error(`needs at least ${STREET.rounds.length} surveys`);
+    }
+  } catch (err) {
+    console.warn("[boot] The Street is unavailable:", err.message);
+    app.streetData = null;
+  }
+
   ui.buildDialTicks();
   board.buildBoardDial();
+  street.buildStreetDial();
   sound.setEnabled(app.settings.sound);
   wireGlobalInput();
   wireTitle();
   wirePlay();
   wireBoard();
+  wireStreet();
   wireResults();
   renderTitle();
   ui.showScreen("title");
@@ -112,6 +130,7 @@ function renderTitle() {
     dailyDone: store.dailyDone(),
     dailyResult: store.dailyResult(),
     boardAvailable: !!app.boardData,
+    streetAvailable: !!app.streetData,
   });
   ui.renderCategories(app.bank, app.settings.categories);
   ui.renderDifficulties(app.settings.difficulties);
@@ -143,6 +162,7 @@ function wireTitle() {
     if (!card) return;
     sound.unlock();
     if (card.dataset.mode === BOARD.id) startBoard();
+    else if (card.dataset.mode === STREET.id) startStreet();
     else startRun(card.dataset.mode);
   });
 
@@ -532,6 +552,208 @@ function wireBoard() {
       },
     });
   });
+}
+
+/* ==========================================================================
+   The Street
+   --------------------------------------------------------------------------
+   Third lifecycle, third engine, third screen. Shares the door, the sound bus
+   and the fx layer with the other two and nothing else.
+   ========================================================================== */
+
+function startStreet() {
+  if (!app.streetData) {
+    ui.toast("The survey file did not load, so The Street is closed. Reload the page.");
+    return;
+  }
+
+  app.lastMode = STREET.id;
+  app.paused = false;
+  ui.el.pause.hidden = true;
+
+  app.streetGame = new SurveyGame({
+    data: app.streetData,
+    seed: `street::${Date.now()}::${Math.random().toString(36).slice(2, 9)}`,
+  });
+
+  wireStreetEvents(app.streetGame);
+  sound.unlock();
+
+  toScreen("street", () => {
+    app.fx.clear();
+    street.hideCard();
+    sound.stopMusic();
+    if (!sound.playMusic("bedTension", { gain: 0.16 })) sound.startHum();
+    app.streetGame.start();
+  }).then(() => startStreetLoop());
+}
+
+function wireStreetEvents(game) {
+  game.on("round", ({ prompt, round, multiplier }) => {
+    street.hideCard();
+    street.setPrompt(prompt);
+    street.renderBoard(game);
+    street.renderHud(game);
+    street.renderTimer(game);
+    street.resetHint();
+    street.setInputEnabled(true);
+    street.focusInput();
+    sound.tumbler();
+
+    /* The multiplier is the reason to keep playing, and it is invisible if
+       nobody says it out loud. */
+    if (multiplier > 1 && round > 1) {
+      ui.banner(multiplier === 3 ? "Triple" : "Double", "Every share counts more", "tier", 2000);
+    }
+    startStreetLoop();
+  });
+
+  game.on("guess", (payload) => onStreetGuess(game, payload));
+
+  game.on("roundEnd", (payload) => onStreetRoundEnd(game, payload));
+
+  game.on("heat", (heat) => {
+    ui.setHeat(heat);
+    sound.setHeat(heat);
+  });
+
+  game.on("over", (summary) => onStreetOver(game, summary));
+}
+
+function onStreetGuess(game, payload) {
+  const { verdict, rank } = payload;
+
+  if (verdict === "hit") {
+    /* The top answer is the one everyone is chasing — it gets the big cue. */
+    sound.correct(rank === 1 ? 4 : 1);
+    app.fx.burstAt(street.el.board, { count: rank === 1 ? FX.particleCountBig : FX.particleCount });
+    app.fx.hitPause(FX.hitPauseMs);
+    haptic(rank === 1 ? [20, 40, 20, 40, 60] : [18, 30]);
+    nudgeDoor(1);
+  } else if (verdict === "repeat") {
+    sound.tick();
+  } else {
+    sound.wrong();
+    app.fx.shake(FX.shakeMagnitude * 0.8, FX.shakeMs);
+    haptic([70, 40, 90]);
+    nudgeDoor(-1);
+  }
+
+  street.showGuess(payload);
+  street.renderBoard(game);
+  street.renderHud(game);
+  street.focusInput();
+}
+
+function onStreetRoundEnd(game, payload) {
+  stopLoop();
+  street.setInputEnabled(false);
+  street.renderBoard(game, { revealAll: true });
+  street.renderHud(game);
+
+  const kept = payload.reason === "swept" || payload.reason === "banked";
+  if (kept) {
+    sound.bankIt();
+    app.fx.coinRain(payload.reason === "swept" ? 60 : 34);
+    haptic([20, 40, 20, 40, 60]);
+  } else {
+    sound.lockdown();
+    app.fx.shake(FX.shakeMagnitude * 1.2, 520);
+    haptic([90, 50, 120]);
+  }
+
+  street.showCard(payload);
+}
+
+function onStreetOver(game, summary) {
+  stopLoop();
+  app.paused = false;
+  ui.el.pause.hidden = true;
+  sound.stopHum();
+  ui.setHeat(0);
+  street.hideCard();
+
+  const previousBest = store.data.best[STREET.id] || 0;
+  const isRecord = summary.score > previousBest && summary.score > 0;
+  const unlocked = store.record(summary);
+  app.lastSummary = summary;
+  app.streetGame = null;
+
+  const won = summary.score > 0;
+  if (won) app.fx.coinRain(90);
+  else app.fx.shake(FX.shakeMagnitude * 1.2, 520);
+  haptic(won ? [30, 60, 30, 60, 90] : [90, 50, 120]);
+
+  toScreen("done", () => {
+    ui.renderResults(summary, { unlocked, store, isRecord });
+    ui.renderShare(summary, { text: shareText(summary), isDaily: false });
+    ui.el.againBtn.hidden = false;
+    ui.el.resultScore.textContent = "0";
+  }).then(() => {
+    if (won) sound.vaultOpen();
+    else sound.lockdown();
+    rollNumber(ui.el.resultScore, 0, summary.score, 1100, (n) => formatCredits(n));
+    if (won) app.fx.coinRain(50);
+  });
+}
+
+function startStreetLoop() {
+  stopLoop();
+  app.lastFrame = performance.now();
+  const frame = (now) => {
+    const dt = Math.min((now - app.lastFrame) / 1000, 0.25);
+    app.lastFrame = now;
+
+    const game = app.streetGame;
+    if (game && game.state.phase === SPHASE.ASKING) {
+      game.tick(dt);
+      street.renderTimer(game);
+      if (game.clockFraction <= STREET.criticalClockFraction && now - app.heartbeatAt > 780) {
+        app.heartbeatAt = now;
+        sound.heartbeat();
+      }
+    }
+    app.raf = requestAnimationFrame(frame);
+  };
+  app.raf = requestAnimationFrame(frame);
+}
+
+function wireStreet() {
+  street.el.form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const game = app.streetGame;
+    const value = street.el.input.value.trim();
+    if (!value || !game || game.state.phase !== SPHASE.ASKING) return;
+    game.guess(value);
+  });
+
+  street.el.bank.addEventListener("click", () => {
+    app.streetGame?.bank();
+  });
+
+  street.el.next.addEventListener("click", () => {
+    app.streetGame?.next();
+  });
+
+  street.el.quit.addEventListener("click", (e) => {
+    const game = app.streetGame;
+    if (!game) { goHome(); return; }
+    const atRisk = game.state.pot;
+    if (!atRisk) { leaveStreet(); return; }
+    ui.armConfirm(e.currentTarget, {
+      label: `Leave ${formatCredits(atRisk)} on the table? Tap again`,
+      onConfirm: leaveStreet,
+    });
+  });
+}
+
+function leaveStreet() {
+  stopLoop();
+  sound.stopHum();
+  ui.setHeat(0);
+  street.hideCard();
+  app.streetGame = null;
+  goHome();
 }
 
 function wireGameEvents(game) {
@@ -1025,6 +1247,15 @@ function wireGlobalInput() {
       }
     }
 
+    if (screen === "street" && app.streetGame) {
+      const s = app.streetGame.state;
+      if (s.phase === SPHASE.ROUND && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        app.streetGame.next();
+        return;
+      }
+    }
+
     if (screen === "done" && e.key === "Enter" && !typing) {
       e.preventDefault();
       if (!ui.el.againBtn.hidden) ui.el.againBtn.click();
@@ -1120,6 +1351,63 @@ function exposeDebugApi() {
 
     modes: Object.keys(MODES),
     version: "1.0.0",
+  };
+
+  window.__street = {
+    get game() { return app.streetGame; },
+    get state() { return app.streetGame?.state ?? null; },
+    get data() { return app.streetData; },
+
+    start() { startStreet(); return app.streetGame?.state ?? null; },
+
+    /** Say something, or "top" / "next" to name the best unfound answer. */
+    guess(what = "next") {
+      const g = app.streetGame;
+      if (!g || g.state.phase !== SPHASE.ASKING) return null;
+      if (what === "top" || what === "next") {
+        const slot = g.state.slots.find((x) => !x.found);
+        return slot ? g.guess(slot.text) : null;
+      }
+      if (what === "wrong") return g.guess("__deliberately wrong__");
+      return g.guess(what);
+    },
+
+    bank() { return app.streetGame?.bank() ?? false; },
+    next() { app.streetGame?.next(); return app.streetGame?.state ?? null; },
+
+    /** Burn the round clock without waiting on real time. */
+    fastForward(seconds = 90, step = 0.25) {
+      const g = app.streetGame;
+      if (!g) return null;
+      for (let t = 0; t < seconds && g.state.phase === SPHASE.ASKING; t += step) g.tick(step);
+      street.renderTimer(g);
+      return g.state;
+    },
+
+    /**
+     * Play a whole run. `knows` is the chance of thinking of any given answer,
+     * weighted by how popular it is; `banksWhenStuck` is the decision the mode
+     * is built on — see scripts/playtest-survey.mjs.
+     */
+    autoplay({ knows = 0.8, banksWhenStuck = true, maxSteps = 3000 } = {}) {
+      const g = app.streetGame;
+      if (!g) return null;
+      let summary = null;
+      const off = g.on("over", (s) => { summary = s; });
+      let steps = 0;
+      while (g.state.phase !== SPHASE.OVER && steps++ < maxSteps) {
+        const s = g.state;
+        if (s.phase === SPHASE.ROUND) { g.next(); continue; }
+        if (s.phase !== SPHASE.ASKING) break;
+        const unfound = s.slots.filter((x) => !x.found);
+        const known = unfound.filter((x) => Math.random() < knows * (x.share / 30 + 0.25));
+        if (known.length) g.guess(known[0].text);
+        else if (banksWhenStuck && s.pot > 0) g.bank();
+        else g.guess("__deliberately wrong__");
+      }
+      off();
+      return summary;
+    },
   };
 
   /* The Board gets its own handle for the same reason it gets its own engine:

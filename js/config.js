@@ -148,6 +148,41 @@ export const BOARD = {
   criticalClockFraction: 0.25,
 };
 
+/* ==========================================================================
+   THE STREET — the survey-board mode (js/survey.js).
+   --------------------------------------------------------------------------
+   Family Feud's shape: one prompt, a ranked board of hidden answers, each
+   worth its share of the room. Three strikes ends the round.
+   ========================================================================== */
+export const STREET = {
+  id: "street",
+  name: "The Street",
+  tagline: "Name what everyone else named. Three strikes and the pot is gone.",
+
+  strikes: 3,
+
+  /* Five surveys, the last two worth more — the show's single/double/triple
+     ladder, compressed. A run is the whole ladder or nothing. */
+  rounds: [
+    { multiplier: 1 },
+    { multiplier: 1 },
+    { multiplier: 2 },
+    { multiplier: 2 },
+    { multiplier: 3 },
+  ],
+
+  /* Per SURVEY, not per guess. A per-guess clock turns an open-text game into
+     a typing test; a round clock keeps the pressure on the decision. */
+  roundSeconds: 75,
+
+  /* Clearing a board pays this fraction on top. Deliberately large: the long
+     tail of a survey board is where runs die, so sweeping one has to be worth
+     more than the safe bank it cost you. */
+  sweepBonus: 0.5,
+
+  criticalClockFraction: 0.25,
+};
+
 export const LIFELINES = {
   drill: {
     id: "drill",

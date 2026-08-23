@@ -7,7 +7,7 @@
    The split is what lets the whole game be played headlessly.
    ========================================================================== */
 
-import { MODES, BOARD, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
+import { MODES, BOARD, STREET, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
 import { formatCredits, answerShape } from "./util.js";
 
 const $  = (sel, root = document) => root.querySelector(sel);
@@ -268,7 +268,7 @@ export function buildDialTicks({ count = 60, major = 5, node = null } = {}) {
 
 /* ---- Title screen --------------------------------------------------------- */
 
-export function renderModes(store, { dailyDone, dailyResult, boardAvailable = false }) {
+export function renderModes(store, { dailyDone, dailyResult, boardAvailable = false, streetAvailable = false }) {
   el.modes.innerHTML = "";
 
   /* The Board is not in MODES — it runs on its own engine and its own clue
@@ -301,6 +301,21 @@ export function renderModes(store, { dailyDone, dailyResult, boardAvailable = fa
         "two floors",
         "hidden wagers",
         "type it",
+      ],
+    });
+  }
+
+  if (streetAvailable) {
+    cards.push({
+      id: STREET.id,
+      name: STREET.name,
+      tagline: STREET.tagline,
+      done: false,
+      meta: [
+        `${STREET.rounds.length} surveys`,
+        `${STREET.strikes} strikes`,
+        `${STREET.roundSeconds}s each`,
+        "bank or push",
       ],
     });
   }
@@ -722,6 +737,9 @@ const END_COPY = {
      currency for a separate game, which is also why its best score lives under
      its own key and never shows up beside a Vault Run's. */
   "played-out": { eyebrow: "Board cleared",            sub: "dollars" },
+  /* The Street plays its whole ladder or nothing, so there is only one way to
+     reach the end of it. Its currency is the same credits as the vault. */
+  "street-done": { eyebrow: "Five surveys, done",      sub: "credits banked" },
   short:        { eyebrow: "Nothing left to wager",    sub: "dollars" },
   walked:       { eyebrow: "You left the board",       sub: "dollars" },
 };
@@ -734,15 +752,26 @@ export function renderResults(summary, { unlocked, store, isRecord }) {
   el.resultScore.textContent = formatCredits(summary.score);
   el.resultSub.textContent = copy.sub;
 
+  const isStreet = summary.mode === "street";
   const acc = summary.answered ? Math.round((summary.correct / summary.answered) * 100) : 0;
-  const stats = [
-    [isBoard ? "Clues" : "Locks", `${summary.correct}/${summary.answered}`],
-    ["Accuracy", `${acc}%`],
-    ["Best run", summary.bestStreak],
-    /* A pass is the board's version of a tool: the decision not to play a
-       clue. Reporting "Tools used: undefined" is how that slot read before. */
-    isBoard ? ["Passed", summary.passed ?? 0] : ["Tools used", summary.lifelinesUsed ?? 0],
-  ];
+
+  /* Each mode counts a different thing, so the tiles say what that thing is
+     rather than forcing three games through the vault's vocabulary. */
+  const stats = isStreet
+    ? [
+        ["Named", summary.correct],
+        ["Strikes", summary.wrong],
+        ["Best round", summary.bestStreak],
+        ["Boards swept", summary.sweeps ?? 0],
+      ]
+    : [
+        [isBoard ? "Clues" : "Locks", `${summary.correct}/${summary.answered}`],
+        ["Accuracy", `${acc}%`],
+        ["Best run", summary.bestStreak],
+        /* A pass is the board's version of a tool: the decision not to play a
+           clue. Reporting "Tools used: undefined" is how that slot read before. */
+        isBoard ? ["Passed", summary.passed ?? 0] : ["Tools used", summary.lifelinesUsed ?? 0],
+      ];
   el.resultStats.innerHTML = stats.map(([k, v]) => `
     <div class="stat"><span class="stat__v">${v}</span><span class="stat__k">${k}</span></div>
   `).join("");

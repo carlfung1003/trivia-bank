@@ -1,0 +1,287 @@
+/* ==========================================================================
+   THE STREET — prompt, survey board, strikes, round card.
+   --------------------------------------------------------------------------
+   Same four primitives and the same single light source as the rest of the
+   console. No hex values; everything comes from tokens.css.
+
+   The one idea that carries the screen: a hidden slot keeps its full
+   footprint. The board never reflows as it fills, so the empty rows are
+   information — you can see how much is still out there, and the gap between
+   "two left" and "two left, both worth four per cent" is the whole game.
+   ========================================================================== */
+
+.console--street { gap: var(--sp-3); }
+
+/* ---- Prompt --------------------------------------------------------------- */
+
+.street-prompt-bezel { padding: var(--sp-2); }
+
+.street-prompt {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--radius);
+  min-height: 6.5rem;
+}
+
+/* min-width: 0 on the text column. A grid item's automatic minimum is its
+   min-content, so without it a long prompt refuses to wrap and takes the whole
+   console off the right edge of the page — the same trap the survey board and
+   the clue grid both fell into. */
+.street-prompt__body { min-width: 0; }
+
+.street-prompt__text {
+  margin: var(--sp-2) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.78rem + 1.1vw, 1.75rem);
+  line-height: 1.18;
+  letter-spacing: var(--track-tight);
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+
+.dial--street { transform: scale(0.62); transform-origin: center right; margin: calc(var(--sp-5) * -1) 0; }
+
+/* ---- The board ------------------------------------------------------------ */
+
+.street-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2);
+  min-width: 0;
+}
+.slot__text, .slot__dashes { min-width: 0; }
+
+.slot {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 3.1rem;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-inset);
+  box-shadow: inset 0 1px 0 hsl(222 60% 2% / 0.9),
+              inset 0 -1px 0 hsl(0 0% 100% / 0.04);
+  transition: background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+/* The rank badge. Present whether or not the slot is filled — it is the row
+   number on the board, not a reward for finding it. */
+.slot__rank {
+  display: grid;
+  place-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--ink-200);
+  color: var(--ink-600);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.05);
+}
+
+/* Hidden: dashes sized to the answer, so the row has weight without giving
+   the answer away. Same affordance as Type-It's shape, same reasoning. */
+.slot__dashes {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.slot__dash {
+  width: clamp(0.6rem, 2vw, 1.1rem);
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ink-400);
+}
+
+.slot__text {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--text-base);
+  letter-spacing: -0.005em;
+  color: var(--ink-900);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.slot__share {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-md);
+  letter-spacing: var(--track-tight);
+  color: var(--brass);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Found. The flip is the payoff of the whole mode, so it gets the impact
+   curve rather than the standard one — this is a thing being struck. */
+.slot[data-found="true"] {
+  background: linear-gradient(var(--ink-200), var(--ink-100));
+  box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset,
+              0 10px 24px -16px hsl(222 60% 2% / 0.9),
+              0 0 0 1px var(--hairline-brass);
+  animation: slot-flip var(--dur) var(--ease-impact) both;
+}
+.slot[data-found="true"] .slot__rank { background: var(--brass-lo); color: var(--ink-900); }
+
+@keyframes slot-flip {
+  from { transform: perspective(600px) rotateX(-88deg); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* Revealed at round end without having been found — shown dimmer, because it
+   is news rather than an achievement. */
+.slot[data-missed="true"] {
+  background: var(--ink-050);
+  box-shadow: inset 0 1px 0 hsl(222 60% 2% / 0.9);
+  animation: slot-flip var(--dur) var(--ease) both;
+}
+.slot[data-missed="true"] .slot__text  { color: var(--ink-600); }
+.slot[data-missed="true"] .slot__share { color: var(--ink-500); }
+
+/* ---- Strikes -------------------------------------------------------------- */
+
+.strikes { display: flex; gap: var(--sp-1); align-items: center; }
+
+.strike {
+  display: grid;
+  place-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-500);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.strike[data-on="true"] {
+  color: var(--alarm-hi);
+  border-color: var(--alarm);
+  box-shadow: 0 0 14px -4px var(--alarm);
+  animation: strike-in var(--dur-fast) var(--ease-impact) both;
+}
+@keyframes strike-in {
+  from { transform: scale(1.6); }
+  to   { transform: none; }
+}
+
+/* ---- Deck ----------------------------------------------------------------- */
+
+.deck--street { min-height: 5rem; }
+.typed--street { display: flex; gap: var(--sp-3); align-items: stretch; flex-wrap: wrap; }
+.typed--street .typed__well { flex: 1 1 12rem; min-width: 0; }
+
+/* The bank button reads as an alternative to answering, not a second submit,
+   so it takes the jade state colour rather than the brass primary. */
+.btn--bank {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  border: 1px solid var(--jade-lo);
+  background: linear-gradient(hsl(157 40% 18%), hsl(157 42% 12%));
+  color: var(--jade-hi);
+  white-space: nowrap;
+}
+.btn--bank:hover { border-color: var(--jade); color: var(--ink-900); }
+.btn--bank b { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.btn__glyph { display: grid; place-content: center; width: 1.1rem; }
+.btn__glyph svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+.street-hint {
+  margin: var(--sp-2) 0 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--ink-600);
+}
+.street-hint[data-kind="strike"]  { color: var(--alarm-hi); }
+.street-hint[data-kind="hit"]     { color: var(--jade-hi); }
+.street-hint[data-kind="repeat"]  { color: var(--brass); }
+
+/* ---- Round card ----------------------------------------------------------- */
+
+.street-card {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: var(--sp-4);
+  background: hsl(222 40% 3% / 0.82);
+  animation: card-in var(--dur) var(--ease) both;
+}
+@keyframes card-in { from { opacity: 0; } to { opacity: 1; } }
+
+.street-card__panel {
+  position: relative;
+  width: min(30rem, 100%);
+  max-height: 86vh;
+  overflow-y: auto;
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: center;
+  text-align: center;
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-radius: var(--radius-lg);
+}
+
+.street-card__value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: var(--track-display);
+  line-height: 1;
+  color: var(--brass-hi);
+}
+.street-card[data-kind="lost"] .street-card__value { color: var(--alarm-hi); }
+
+.street-card__sub {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--ink-700);
+}
+
+.street-card__list {
+  list-style: none;
+  margin: var(--sp-3) 0 var(--sp-2);
+  padding: 0;
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+.street-card__list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--ink-700);
+}
+.street-card__list li[data-found="true"] {
+  background: hsl(41 52% 54% / 0.09);
+  color: var(--ink-900);
+}
+.street-card__mark { font-family: var(--font-mono); color: var(--ink-500); }
+.street-card__list li[data-found="true"] .street-card__mark { color: var(--brass); }
+.street-card__pct { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ---- Narrow screens -------------------------------------------------------
+   One column below the breakpoint. Two columns of survey answers on a phone
+   puts the text at four words a line and the share off the edge. */
+@media (max-width: 700px) {
+  .street-board { grid-template-columns: none; }
+  .street-prompt { grid-template-columns: none; gap: var(--sp-2); justify-items: center; text-align: center; }
+  .dial--street { transform: scale(0.55); transform-origin: center; margin: calc(var(--sp-6) * -1) auto; }
+  .slot { min-height: 2.8rem; gap: var(--sp-2); }
+}

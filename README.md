@@ -5,7 +5,7 @@ A trivia heist. Twelve locks, two safe havens, five tools in the kit — bank yo
 **Live:** [trivia.carlfung.dev](https://trivia.carlfung.dev)
 
 Built on a 904-question bank that started life as a 2023 Google Sheet of quiz answers,
-plus 133 authored clues for The Board.
+plus 133 authored clues for The Board and 189 survey answers for The Street.
 
 ---
 
@@ -18,6 +18,30 @@ plus 133 authored clues for The Board.
 | **Survival** | Three alarms, endless vault, difficulty escalates every 5 locks. | Drill, Freeze |
 | **Daily Heist** | 10 locks, seeded by the date — the same ten for everyone, everywhere. One attempt, spoiler-free share card. | Drill, Wiretap |
 | **The Board** | A Jeopardy-shaped grid: 6 categories × 5 clues, two floors, hidden wagers, one final clue. Its own engine and its own clue file. | pass |
+| **The Street** | A Family Feud–shaped survey board: one prompt, a ranked set of hidden answers, each worth its share of the room. Three strikes and the pot is gone. | bank |
+
+### The Street
+
+*"Name the most popular wizard."* — and the board holds Harry Potter at 30%, Gandalf at
+21%, Merlin at 14%, down to Saruman at 4%. Say what you reckon; every answer you name adds
+its share to the pot.
+
+- **Three strikes takes everything on the table.** There is no rival family to steal it, so
+  the tension is a decision instead: bank the pot and move on, or swing at the tail.
+  Sweeping a whole board pays a 50% bonus, which is what makes swinging tempting.
+- **Open text, not options.** Long authored alias lists do the matching — "dr strange",
+  "professor dumbledore" and "Gandalf the Grey" all land — and the audit refuses to ship a
+  board where one guess could match two slots.
+- **Saying the same thing twice is free.** A repeat is a memory slip, not a wrong answer.
+- **Five surveys per run**, the last three at double and triple value.
+
+**The percentages are authored, not collected.** Nobody was surveyed — they are balance
+numbers chosen to feel like a real spread. That is why the screen says "the street
+reckons" rather than "we asked 100 people".
+
+Boards cover the everyday (kitchen drawers, the chore nobody wants, dim sum, what you do
+the moment you get home from work, things you always lose) and the pop-culture "most
+popular X" shape (wizards, superheroes, detectives, pet names).
 
 ### The Board
 
@@ -94,6 +118,8 @@ node scripts/playtest.mjs [runs]
 node scripts/test-matching.mjs
 node scripts/audit-jeopardy.mjs
 node scripts/playtest-board.mjs [runs]
+node scripts/audit-surveys.mjs [--show=6]
+node scripts/playtest-survey.mjs [runs]
 ```
 
 `audit-distractors` runs the option generator over the whole bank and fails on
@@ -212,19 +238,22 @@ js/
   bank.js         load, filter, draw, typed-answer checking
   engine.js       game rules. Zero DOM, zero wall-clock. Driven by tick(dt).
   jeopardy.js     The Board's rules. Same contract, different game shape.
+  survey.js       The Street's rules. Likewise.
   lifelines.js    the kit. Pure state transitions on a Game.
   store.js        localStorage: records, achievements, prefs
   ui.js           owns the DOM, owns no rules
   board-ui.js     the same, for The Board's grid, slab and wager pad
+  street-ui.js    the same, for The Street's survey board and round card
   fx.js           particles, shake, hit-pause, counter roll-up
   audio.js        Web Audio synthesis — no asset files
   share.js        spoiler-free text + canvas result card
   main.js         the only module that knows about both engine and DOM
 data/questions.json    904 typed-answer questions
 data/jeopardy.json     25 clue packs + finals, for The Board
+data/surveys.json      28 survey boards, for The Street
 ```
 
-Two engines, one contract. `jeopardy.js` is separate from `engine.js` because
+Three engines, one contract. `jeopardy.js` is separate from `engine.js` because
 `engine.js` walks a queue and The Board walks a grid — folding thirty cells, two
 floors and hidden wagers into the queue would have put four working modes at risk
 to save a file. They share the matcher and the balance file, which are the parts
@@ -253,6 +282,14 @@ __board.pass()
 __board.next()
 __board.autoplay({ accuracy: 0.8, cautious: true })
 __board.state
+
+__street.start()                 // The Street
+__street.guess('next')           // 'next' names the best unfound answer
+__street.bank()
+__street.next()
+__street.fastForward(60)
+__street.autoplay({ knows: 0.8, banksWhenStuck: true })
+__street.state
 ```
 
 ---

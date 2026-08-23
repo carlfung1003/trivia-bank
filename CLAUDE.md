@@ -255,6 +255,55 @@ categories go to `boardCategories`, never to the vault's twelve, or a board run 
 "DIM SUM" in the ledger and hand out Polymath. Every numeric add there is coerced through
 `num()`, because one `undefined` reaching a `+=` writes NaN into localStorage permanently.
 
+## The Street — the third engine
+
+`js/survey.js` on `data/surveys.json`. Family Feud's shape: one open prompt, a ranked
+board of hidden answers, each worth its share of the room. Three strikes ends the round.
+Third engine, third data file, third screen, same three rules — no DOM in `survey.js`, no
+rules in `street-ui.js`, every number in `config.js` (`STREET`).
+
+**⚠️ The percentages are AUTHORED, not collected.** Nobody was surveyed. They are balance
+numbers picked to feel like a real spread. This is why the UI says *"the street reckons"*
+and never *"we asked 100 people"* — the mechanic is the fun, and a made-up statistic
+should not be dressed as research. The `meta.honesty` field in the data file says the same
+thing; keep it accurate if the bank is ever swapped for real data.
+
+**What changed from television, and why:**
+
+- **Banking replaces the steal.** Solo, there is no rival family, and three strikes with
+  nothing at stake is a shrug. So the pot is live until you lock it and a third strike
+  takes all of it — the show's "do we risk one more?" rebuilt out of the mechanic this
+  site already had.
+- **A repeat is not a strike.** `guess()` matches against found slots too, precisely so
+  saying something twice comes back as `"repeat"`. Burning a strike on a memory slip reads
+  as a bug.
+- **"close" counts as a hit here**, unlike everywhere else in the codebase. On an
+  open-text board the alias lists cannot anticipate every phrasing, and being strict
+  punishes the exact thing the mode is for. It is still compared explicitly — never let
+  the truthiness of `"close"` decide anything by accident.
+
+**Before you say it works:**
+
+```bash
+node scripts/audit-surveys.mjs [--show=6]   # structure, shares, AMBIGUITY
+node scripts/playtest-survey.mjs 60         # ledger + the decision curve
+```
+
+The audit's headline check is **ambiguity**: no guess may match two slots on the same
+board. That is the failure that ruins an open-text game — you say the right thing and the
+board picks which right thing you meant. Zero is the only acceptable number.
+
+The playtest asserts something a balance pass cannot eyeball: **banking must be a real
+decision.** Holding knowledge fixed and varying only what a player does on running dry,
+swinging has to pay for a player who knows the board and banking has to pay for one who
+does not. Current numbers: sharp +13% for swinging, clueless +11000% for banking, average
++14% for banking. If either half flips, one of the two buttons is decoration.
+
+That invariant also caught a bad *test*, which is worth remembering: the first version
+compared fixed-threshold bankers against never-bankers and reported that banking never
+pays. The model was wrong, not the game — nobody locks a small pot while still holding
+good answers. Fix the player before tuning the balance.
+
 ## Known gaps
 
 - **Never tested on a real phone.** The layout IS verified at 390px and 360px via
