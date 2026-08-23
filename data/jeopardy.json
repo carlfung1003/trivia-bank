@@ -1,347 +1,3470 @@
 {
-  "meta": {
-    "version": 1,
-    "note": "Clue packs for The Board. Written in clue form — a statement whose response is a question — so 'What is a martini?' and 'a martini' both land. Tier 1..5 is difficulty, not money: the board multiplies it (200 on the first floor, 400 on the second), so any pack can be dealt into either round.",
-    "categoryCount": 25,
-    "clueCount": 125
-  },
-
-  "categories": [
+ "meta": {
+  "version": 1,
+  "note": "Clue packs for The Board. Written in clue form — a statement whose response is a question — so 'What is a martini?' and 'a martini' both land. Tier 1..5 is difficulty, not money: the board multiplies it (200 on the first floor, 400 on the second), so any pack can be dealt into either round.",
+  "categoryCount": 59,
+  "clueCount": 295,
+  "finalCount": 16
+ },
+ "categories": [
+  {
+   "id": "dim-sum",
+   "name": "DIM SUM",
+   "blurb": "Push the cart.",
+   "clues": [
     {
-      "id": "dim-sum",
-      "name": "DIM SUM",
-      "blurb": "Push the cart.",
-      "clues": [
-        { "tier": 1, "clue": "Open at the top and often crowned with a dot of roe, this steamed pork-and-shrimp dumpling is the one everybody points at first.", "answer": "Siu mai", "accept": ["siu mai", "shumai", "shao mai", "siumai", "shu mai", "pork dumpling"] },
-        { "tier": 2, "clue": "A good chef pleats this translucent shrimp dumpling at least seven times; the wrapper is wheat starch, not flour.", "answer": "Har gow", "accept": ["har gow", "har gao", "ha gao", "hargow", "shrimp dumpling", "shrimp dumplings"] },
-        { "tier": 3, "clue": "Slippery sheets of steamed rice noodle, rolled around shrimp or a fried dough stick and flooded with sweet soy.", "answer": "Cheung fun", "accept": ["cheung fun", "cheong fun", "rice noodle roll", "rice noodle rolls", "chang fen", "rice roll"] },
-        { "tier": 4, "clue": "Two words in Cantonese name the whole ritual dim sum is served during — literally, 'drink tea'.", "answer": "Yum cha", "accept": ["yum cha", "yumcha", "yam cha", "drink tea"] },
-        { "tier": 5, "clue": "Braised, fried and steamed until the skin gives way, this cart item goes by the poetic name 'phoenix talons'.", "answer": "Chicken feet", "accept": ["chicken feet", "chickens feet", "phoenix talons", "phoenix claws", "feng zhua"] }
-      ]
+     "tier": 1,
+     "clue": "Open at the top and often crowned with a dot of roe, this steamed pork-and-shrimp dumpling is the one everybody points at first.",
+     "answer": "Siu mai",
+     "accept": [
+      "siu mai",
+      "shumai",
+      "shao mai",
+      "siumai",
+      "shu mai",
+      "pork dumpling"
+     ]
     },
-
     {
-      "id": "on-the-menu",
-      "name": "ON THE MENU",
-      "blurb": "Order anything.",
-      "clues": [
-        { "tier": 1, "clue": "Pasta cooked to this Italian standard still has a firm bite; the phrase means 'to the tooth'.", "answer": "Al dente", "accept": ["al dente", "aldente"] },
-        { "tier": 2, "clue": "The white, red and green of a pizza margherita were chosen to match this country's flag.", "answer": "Italy", "accept": ["italy", "italian"] },
-        { "tier": 3, "clue": "The dried stigma of a crocus, it is the most expensive spice in the world by weight.", "answer": "Saffron", "accept": ["saffron"] },
-        { "tier": 4, "clue": "Every station is prepped and every tool laid out before service under this three-word French rule.", "answer": "Mise en place", "accept": ["mise en place", "mise-en-place"] },
-        { "tier": 5, "clue": "In 1908 a Tokyo chemist isolated glutamate from a broth of this seaweed and named the fifth taste umami.", "answer": "Kombu", "accept": ["kombu", "konbu", "kelp", "dashi", "kombu dashi"] }
-      ]
+     "tier": 2,
+     "clue": "A good chef pleats this translucent shrimp dumpling at least seven times; the wrapper is wheat starch, not flour.",
+     "answer": "Har gow",
+     "accept": [
+      "har gow",
+      "har gao",
+      "ha gao",
+      "hargow",
+      "shrimp dumpling",
+      "shrimp dumplings"
+     ]
     },
-
     {
-      "id": "name-that-country",
-      "name": "NAME THAT COUNTRY",
-      "blurb": "One nation per clue.",
-      "clues": [
-        { "tier": 1, "clue": "It is the only country that is also a continent.", "answer": "Australia", "accept": ["australia"] },
-        { "tier": 2, "clue": "Its flag is the only national flag on Earth that is not a rectangle.", "answer": "Nepal", "accept": ["nepal"] },
-        { "tier": 3, "clue": "Pretoria, Cape Town and Bloemfontein each hold one branch of this country's government.", "answer": "South Africa", "accept": ["south africa"] },
-        { "tier": 4, "clue": "After Vatican City it is the smallest country in the world — a Mediterranean principality of about two square kilometres.", "answer": "Monaco", "accept": ["monaco"] },
-        { "tier": 5, "clue": "Along with Liechtenstein it is one of only two doubly landlocked countries: every neighbour is landlocked too.", "answer": "Uzbekistan", "accept": ["uzbekistan"] }
-      ]
+     "tier": 3,
+     "clue": "Slippery sheets of steamed rice noodle, rolled around shrimp or a fried dough stick and flooded with sweet soy.",
+     "answer": "Cheung fun",
+     "accept": [
+      "cheung fun",
+      "cheong fun",
+      "rice noodle roll",
+      "rice noodle rolls",
+      "chang fen",
+      "rice roll"
+     ]
     },
-
     {
-      "id": "at-the-movies",
-      "name": "AT THE MOVIES",
-      "blurb": "Lights down.",
-      "clues": [
-        { "tier": 1, "clue": "Released in 1977 without a number in its title, it was retroactively subtitled 'A New Hope'.", "answer": "Star Wars", "accept": ["star wars", "a new hope", "star wars a new hope"] },
-        { "tier": 2, "clue": "Hitchcock shot this 1960 film in black and white partly so the shower would not look too red.", "answer": "Psycho", "accept": ["psycho"] },
-        { "tier": 3, "clue": "In 2020 it became the first film not in English to win Best Picture.", "answer": "Parasite", "accept": ["parasite", "gisaengchung"] },
-        { "tier": 4, "clue": "Anthony Hopkins is on screen for about sixteen minutes of this 1991 film, one of only three to sweep the five major Oscars.", "answer": "The Silence of the Lambs", "accept": ["the silence of the lambs", "silence of the lambs"] },
-        { "tier": 5, "clue": "First heard in the 1951 western 'Distant Drums', this stock yell has been dropped into hundreds of films since.", "answer": "The Wilhelm scream", "accept": ["the wilhelm scream", "wilhelm scream", "wilhelm"] }
-      ]
+     "tier": 4,
+     "clue": "Two words in Cantonese name the whole ritual dim sum is served during — literally, 'drink tea'.",
+     "answer": "Yum cha",
+     "accept": [
+      "yum cha",
+      "yumcha",
+      "yam cha",
+      "drink tea"
+     ]
     },
-
     {
-      "id": "around-the-house",
-      "name": "AROUND THE HOUSE",
-      "blurb": "Things in the drawer.",
-      "clues": [
-        { "tier": 1, "clue": "Flexible, flat and usually silicone, it is the tool that scrapes the bowl clean.", "answer": "A spatula", "accept": ["a spatula", "spatula", "scraper"] },
-        { "tier": 2, "clue": "The curved, forked end opposite the striking face pulls the nail back out.", "answer": "A claw hammer", "accept": ["a claw hammer", "claw hammer", "a hammer", "hammer", "the claw"] },
-        { "tier": 3, "clue": "It is the little sheath at the end of a shoelace, and it has a proper name.", "answer": "An aglet", "accept": ["an aglet", "aglet", "aiglet"] },
-        { "tier": 4, "clue": "Shaped like its letter, this bend of pipe under the sink holds a plug of water so sewer gas cannot climb back up.", "answer": "A P-trap", "accept": ["a p trap", "p trap", "ptrap", "a p-trap", "trap"] },
-        { "tier": 5, "clue": "A silvered double wall with the air pumped out from between keeps the contents hot or cold; the Scottish chemist who built the first one in 1892 lent it his name.", "answer": "A Dewar flask", "accept": ["a dewar flask", "dewar flask", "dewar", "vacuum flask", "a vacuum flask", "thermos", "a thermos"] }
-      ]
-    },
-
-    {
-      "id": "household-chores",
-      "name": "HOUSEHOLD CHORES",
-      "blurb": "Somebody has to.",
-      "clues": [
-        { "tier": 1, "clue": "Sorting the whites from the colours is step one of this weekly job.", "answer": "Laundry", "accept": ["laundry", "the laundry", "doing the laundry", "washing", "washing clothes"] },
-        { "tier": 2, "clue": "Squeegee, bucket, lint-free cloth — and you work top to bottom so the drips land on what you have not done yet.", "answer": "Washing the windows", "accept": ["washing the windows", "window washing", "cleaning the windows", "washing windows", "cleaning windows", "windows"] },
-        { "tier": 3, "clue": "Marie Kondo's method and every feng shui consultant agree this comes first: getting rid of what you are not keeping.", "answer": "Decluttering", "accept": ["decluttering", "declutter", "tidying", "tidying up", "getting rid of clutter"] },
-        { "tier": 4, "clue": "Iron this part of a shirt first, so the rest of the shirt does not crush it on the way past.", "answer": "The collar", "accept": ["the collar", "collar"] },
-        { "tier": 5, "clue": "Baking soda followed by vinegar is the folk remedy for a slow one of these.", "answer": "A drain", "accept": ["a drain", "drain", "a clogged drain", "the drain", "a blocked drain"] }
-      ]
-    },
-
-    {
-      "id": "holidays",
-      "name": "HOLIDAYS & HOLY DAYS",
-      "blurb": "Mark the calendar.",
-      "clues": [
-        { "tier": 1, "clue": "In the United States it lands on the fourth Thursday of November.", "answer": "Thanksgiving", "accept": ["thanksgiving", "thanksgiving day"] },
-        { "tier": 2, "clue": "Diwali is the festival of lights, and these small clay oil lamps are the lights.", "answer": "Diyas", "accept": ["diyas", "diya", "deepa", "oil lamps", "clay lamps"] },
-        { "tier": 3, "clue": "The Day of Atonement, it is kept with a fast of about twenty-five hours.", "answer": "Yom Kippur", "accept": ["yom kippur", "the day of atonement", "day of atonement"] },
-        { "tier": 4, "clue": "Orange and heavily scented, this flower is strewn on Día de los Muertos altars to guide the dead home.", "answer": "The marigold", "accept": ["the marigold", "marigold", "marigolds", "cempasuchil", "cempasúchil"] },
-        { "tier": 5, "clue": "Lunar New Year moves around the calendar because it falls on the second new moon after this event.", "answer": "The winter solstice", "accept": ["the winter solstice", "winter solstice", "the solstice"] }
-      ]
-    },
-
-    {
-      "id": "in-the-kitchen",
-      "name": "IN THE KITCHEN",
-      "blurb": "Technique, not recipes.",
-      "clues": [
-        { "tier": 1, "clue": "It is the knife cut that turns a vegetable into matchsticks.", "answer": "Julienne", "accept": ["julienne", "a julienne", "julienned"] },
-        { "tier": 2, "clue": "Egg yolk, oil and acid whisked into a stable emulsion make this sauce.", "answer": "Mayonnaise", "accept": ["mayonnaise", "mayo"] },
-        { "tier": 3, "clue": "Cooked slowly and submerged in its own fat, duck prepared this way keeps for months.", "answer": "Confit", "accept": ["confit", "duck confit", "confit de canard"] },
-        { "tier": 4, "clue": "A bain-marie is the French name for this gentler setup, which keeps a custard from scrambling.", "answer": "A water bath", "accept": ["a water bath", "water bath", "double boiler", "a double boiler", "bain marie"] },
-        { "tier": 5, "clue": "Browning is not caramelisation: the Maillard reaction pairs sugars with these building blocks of protein.", "answer": "Amino acids", "accept": ["amino acids", "amino acid", "proteins", "protein"] }
-      ]
-    },
-
-    {
-      "id": "fruits-and-vegetables",
-      "name": "FRUITS & VEGETABLES",
-      "blurb": "Produce aisle.",
-      "clues": [
-        { "tier": 1, "clue": "Botanically a fruit, it was ruled a vegetable by the US Supreme Court in 1893 so it could be taxed as one.", "answer": "The tomato", "accept": ["the tomato", "tomato", "tomatoes"] },
-        { "tier": 2, "clue": "Its stalks go into pie, but its leaves hold enough oxalic acid to be treated as poisonous.", "answer": "Rhubarb", "accept": ["rhubarb"] },
-        { "tier": 3, "clue": "Broccoli, cauliflower, kale, cabbage and Brussels sprouts are all cultivars of this one wild species.", "answer": "Brassica oleracea", "accept": ["brassica oleracea", "wild cabbage", "wild mustard", "brassica"] },
-        { "tier": 4, "clue": "Each nut hangs beneath a fleshy false fruit that gives this tree's crop its odd two-part look.", "answer": "The cashew", "accept": ["the cashew", "cashew", "cashews", "cashew apple", "the cashew apple"] },
-        { "tier": 5, "clue": "Spiky, pungent and capable of topping fifty kilograms, it is the heaviest fruit that grows on a tree.", "answer": "The jackfruit", "accept": ["the jackfruit", "jackfruit", "jak fruit"] }
-      ]
-    },
-
-    {
-      "id": "before-and-after",
-      "name": "BEFORE & AFTER",
-      "blurb": "Two answers sharing a word.",
-      "clues": [
-        { "tier": 1, "clue": "Tony Stark's armoured alter ego becomes Superman's 2013 reboot.", "answer": "Iron Man of Steel", "accept": ["iron man of steel"] },
-        { "tier": 2, "clue": "Spielberg's dinosaur island becomes a street on the Monopoly board.", "answer": "Jurassic Park Avenue", "accept": ["jurassic park avenue", "jurassic park place"] },
-        { "tier": 3, "clue": "The carol written in an Austrian village in 1818 becomes Romero's 1968 zombie picture.", "answer": "Silent Night of the Living Dead", "accept": ["silent night of the living dead"] },
-        { "tier": 4, "clue": "The faded silent star's Los Angeles street becomes Green Day's road of shattered hopes.", "answer": "Sunset Boulevard of Broken Dreams", "accept": ["sunset boulevard of broken dreams"] },
-        { "tier": 5, "clue": "The fortification you can walk for thousands of kilometres becomes Polanski's 1974 noir.", "answer": "The Great Wall of Chinatown", "accept": ["the great wall of chinatown", "great wall of chinatown"] }
-      ]
-    },
-
-    {
-      "id": "potpourri",
-      "name": "POTPOURRI",
-      "blurb": "Rightmost column, as tradition demands.",
-      "clues": [
-        { "tier": 1, "clue": "It is the only mammal capable of true, sustained flight.", "answer": "The bat", "accept": ["the bat", "bat", "bats"] },
-        { "tier": 2, "clue": "It is the only letter of the alphabet that appears in no US state name.", "answer": "Q", "accept": ["q", "the letter q"] },
-        { "tier": 3, "clue": "The dot over a lowercase i or j has this three-letter name.", "answer": "A tittle", "accept": ["a tittle", "tittle"] },
-        { "tier": 4, "clue": "The metal band clamping a pencil's eraser in place shares its name with the collar on a chisel handle.", "answer": "A ferrule", "accept": ["a ferrule", "ferrule", "ferule"] },
-        { "tier": 5, "clue": "Anatomists call the smooth patch between your eyebrows this.", "answer": "The glabella", "accept": ["the glabella", "glabella"] }
-      ]
-    },
-
-    {
-      "id": "word-origins",
-      "name": "WORD ORIGINS",
-      "blurb": "Where it came from.",
-      "clues": [
-        { "tier": 1, "clue": "'Salary' comes from the Latin for this, once handed out to Roman soldiers.", "answer": "Salt", "accept": ["salt", "sal"] },
-        { "tier": 2, "clue": "'Quarantine' comes from the Italian for this number — the days a ship waited off Venice.", "answer": "Forty", "accept": ["forty", "40"] },
-        { "tier": 3, "clue": "'Sarcasm' comes from a Greek verb meaning to tear at this, the way dogs do.", "answer": "Flesh", "accept": ["flesh", "meat"] },
-        { "tier": 4, "clue": "'Muscle' is Latin for a little one of these, named for the way a flexed bicep seems to scurry under the skin.", "answer": "A mouse", "accept": ["a mouse", "mouse", "mice", "musculus"] },
-        { "tier": 5, "clue": "A 'clue' was first a 'clew' — a ball of this, the kind Theseus unwound in the labyrinth.", "answer": "Thread", "accept": ["thread", "yarn", "string", "a ball of thread"] }
-      ]
-    },
-
-    {
-      "id": "rhyme-time",
-      "name": "RHYME TIME",
-      "blurb": "Two rhyming words.",
-      "clues": [
-        { "tier": 1, "clue": "An overweight feline.", "answer": "A fat cat", "accept": ["a fat cat", "fat cat"] },
-        { "tier": 2, "clue": "A melancholy father.", "answer": "A sad dad", "accept": ["a sad dad", "sad dad"] },
-        { "tier": 3, "clue": "An amusing rabbit.", "answer": "A funny bunny", "accept": ["a funny bunny", "funny bunny"] },
-        { "tier": 4, "clue": "A counterfeit serpent.", "answer": "A fake snake", "accept": ["a fake snake", "fake snake"] },
-        { "tier": 5, "clue": "A raptor operating outside the law.", "answer": "An illegal eagle", "accept": ["an illegal eagle", "illegal eagle"] }
-      ]
-    },
-
-    {
-      "id": "potent-potables",
-      "name": "POTENT POTABLES",
-      "blurb": "Name the drink.",
-      "clues": [
-        { "tier": 1, "clue": "Gin, dry vermouth, an olive — and an argument about how dry it should be.", "answer": "A martini", "accept": ["a martini", "martini", "dry martini"] },
-        { "tier": 2, "clue": "Tequila, lime, orange liqueur, salt around the rim.", "answer": "A margarita", "accept": ["a margarita", "margarita"] },
-        { "tier": 3, "clue": "Rum, lime and mint muddled with sugar and topped with soda — Havana's own.", "answer": "A mojito", "accept": ["a mojito", "mojito"] },
-        { "tier": 4, "clue": "Rye or bourbon, sweet vermouth, Angostura bitters, cherry — named for a New York borough.", "answer": "A Manhattan", "accept": ["a manhattan", "manhattan"] },
-        { "tier": 5, "clue": "Cachaça, lime and sugar, muddled in the glass — Brazil's national cocktail.", "answer": "A caipirinha", "accept": ["a caipirinha", "caipirinha"] }
-      ]
-    },
-
-    {
-      "id": "state-capitals",
-      "name": "STATE CAPITALS",
-      "blurb": "Not the biggest city.",
-      "clues": [
-        { "tier": 1, "clue": "The capital of Texas, and not Houston or Dallas.", "answer": "Austin", "accept": ["austin"] },
-        { "tier": 2, "clue": "California's capital sits at the meeting of two rivers, one of which shares its name.", "answer": "Sacramento", "accept": ["sacramento"] },
-        { "tier": 3, "clue": "New York State runs its government from this city on the Hudson, not from the city everyone means.", "answer": "Albany", "accept": ["albany"] },
-        { "tier": 4, "clue": "No road connects this state capital to the rest of the continent; you arrive by boat or plane.", "answer": "Juneau", "accept": ["juneau", "juneau alaska"] },
-        { "tier": 5, "clue": "With fewer than ten thousand residents, Vermont's capital is the smallest in the country — and has no McDonald's.", "answer": "Montpelier", "accept": ["montpelier", "montpellier"] }
-      ]
-    },
-
-    {
-      "id": "american-history",
-      "name": "AMERICAN HISTORY",
-      "blurb": "Stateside.",
-      "clues": [
-        { "tier": 1, "clue": "Adopted on the fourth of July, 1776.", "answer": "The Declaration of Independence", "accept": ["the declaration of independence", "declaration of independence"] },
-        { "tier": 2, "clue": "This 1803 deal with France roughly doubled the size of the young country.", "answer": "The Louisiana Purchase", "accept": ["the louisiana purchase", "louisiana purchase"] },
-        { "tier": 3, "clue": "Two hundred and seventy-two words, delivered in November 1863 at a cemetery dedication.", "answer": "The Gettysburg Address", "accept": ["the gettysburg address", "gettysburg address"] },
-        { "tier": 4, "clue": "Ratified in 1920, it stopped the states denying anyone the vote on account of sex.", "answer": "The 19th Amendment", "accept": ["the 19th amendment", "19th amendment", "nineteenth amendment", "the nineteenth amendment"] },
-        { "tier": 5, "clue": "Elected in 1884 and again in 1892, he was for well over a century the only president with non-consecutive terms.", "answer": "Grover Cleveland", "accept": ["grover cleveland", "cleveland"] }
-      ]
-    },
-
-    {
-      "id": "world-history",
-      "name": "WORLD HISTORY",
-      "blurb": "Everywhere else.",
-      "clues": [
-        { "tier": 1, "clue": "It came down in November 1989, and people took hammers to it on television.", "answer": "The Berlin Wall", "accept": ["the berlin wall", "berlin wall"] },
-        { "tier": 2, "clue": "Sealed at Runnymede in 1215, it put England's King John under the law.", "answer": "Magna Carta", "accept": ["magna carta", "the magna carta"] },
-        { "tier": 3, "clue": "Napoleon's last battle, fought in what is now Belgium in 1815.", "answer": "Waterloo", "accept": ["waterloo", "the battle of waterloo", "battle of waterloo"] },
-        { "tier": 4, "clue": "Signed in 1919, it formally ended the First World War and set the terms Germany would resent.", "answer": "The Treaty of Versailles", "accept": ["the treaty of versailles", "treaty of versailles", "versailles"] },
-        { "tier": 5, "clue": "Ruled from Constantinople, this continuation of Rome finally fell in 1453.", "answer": "The Byzantine Empire", "accept": ["the byzantine empire", "byzantine empire", "byzantium", "the eastern roman empire", "eastern roman empire"] }
-      ]
-    },
-
-    {
-      "id": "literature",
-      "name": "LITERATURE",
-      "blurb": "On the shelf.",
-      "clues": [
-        { "tier": 1, "clue": "Shakespeare's longest play, about a prince of Denmark who cannot decide.", "answer": "Hamlet", "accept": ["hamlet"] },
-        { "tier": 2, "clue": "'Call me Ishmael' opens this 1851 novel about a captain and a whale.", "answer": "Moby-Dick", "accept": ["moby dick", "moby-dick"] },
-        { "tier": 3, "clue": "Winston Smith works at the Ministry of Truth in this 1949 novel.", "answer": "Nineteen Eighty-Four", "accept": ["nineteen eighty four", "1984", "nineteen eighty-four"] },
-        { "tier": 4, "clue": "This Colombian's 'One Hundred Years of Solitude' put Macondo on the literary map.", "answer": "Gabriel García Márquez", "accept": ["gabriel garcia marquez", "garcia marquez", "marquez", "gabriel garcía márquez"] },
-        { "tier": 5, "clue": "A lady-in-waiting at the Heian court, she wrote 'The Tale of Genji' around the year 1010.", "answer": "Murasaki Shikibu", "accept": ["murasaki shikibu", "murasaki", "lady murasaki"] }
-      ]
-    },
-
-    {
-      "id": "science",
-      "name": "SCIENCE",
-      "blurb": "Show your working.",
-      "clues": [
-        { "tier": 1, "clue": "The symbol Fe on the periodic table stands for this metal.", "answer": "Iron", "accept": ["iron"] },
-        { "tier": 2, "clue": "It is the only metal that is liquid at room temperature.", "answer": "Mercury", "accept": ["mercury"] },
-        { "tier": 3, "clue": "This organ sits behind the stomach and makes the insulin.", "answer": "The pancreas", "accept": ["the pancreas", "pancreas"] },
-        { "tier": 4, "clue": "In one year — 1905 — he published four papers, one of which gave us E=mc².", "answer": "Albert Einstein", "accept": ["albert einstein", "einstein"] },
-        { "tier": 5, "clue": "Absolute zero, in degrees Celsius, to two decimal places.", "answer": "-273.15", "accept": ["-273.15", "273.15", "minus 273.15", "-273.15 c", "negative 273.15"] }
-      ]
-    },
-
-    {
-      "id": "sports",
-      "name": "SPORTS",
-      "blurb": "Play on.",
-      "clues": [
-        { "tier": 1, "clue": "Regulation play in association football runs this many minutes, before anything the referee adds.", "answer": "90", "accept": ["90", "ninety", "90 minutes", "ninety minutes"] },
-        { "tier": 2, "clue": "In tennis this word means a score of zero, and nobody agrees where it came from.", "answer": "Love", "accept": ["love"] },
-        { "tier": 3, "clue": "The overall leader of the Tour de France wears a jersey of this colour.", "answer": "Yellow", "accept": ["yellow", "the yellow jersey", "yellow jersey", "maillot jaune"] },
-        { "tier": 4, "clue": "Its name means 'the gentle way', and it became an Olympic sport in 1964.", "answer": "Judo", "accept": ["judo"] },
-        { "tier": 5, "clue": "In 1971 Alan Shepard smuggled a six-iron head aboard Apollo 14 and became the first person to play this sport off Earth.", "answer": "Golf", "accept": ["golf"] }
-      ]
-    },
-
-    {
-      "id": "colleges",
-      "name": "COLLEGES & UNIVERSITIES",
-      "blurb": "Higher education.",
-      "clues": [
-        { "tier": 1, "clue": "Founded in 1636, it is the oldest university in the United States.", "answer": "Harvard", "accept": ["harvard", "harvard university"] },
-        { "tier": 2, "clue": "The Ivy League has this many member schools.", "answer": "Eight", "accept": ["eight", "8"] },
-        { "tier": 3, "clue": "'Lux et veritas' — light and truth — belongs to this university in New Haven.", "answer": "Yale", "accept": ["yale", "yale university"] },
-        { "tier": 4, "clue": "Its teams are the Cardinal, but the thing that dances on the sideline is an unofficial tree.", "answer": "Stanford", "accept": ["stanford", "stanford university"] },
-        { "tier": 5, "clue": "Founded in 1088, it is the oldest university in continuous operation anywhere.", "answer": "The University of Bologna", "accept": ["the university of bologna", "university of bologna", "bologna"] }
-      ]
-    },
-
-    {
-      "id": "stupid-answers",
-      "name": "STUPID ANSWERS",
-      "blurb": "The answer is in the clue. Really.",
-      "echoOk": true,
-      "clues": [
-        { "tier": 1, "clue": "Buffalo wings are named for this city in western New York.", "answer": "Buffalo", "accept": ["buffalo"] },
-        { "tier": 2, "clue": "Sunflower oil is pressed from the seeds of this plant.", "answer": "The sunflower", "accept": ["the sunflower", "sunflower", "sunflowers"] },
-        { "tier": 3, "clue": "A palindrome reads the same forwards as it does in this direction.", "answer": "Backwards", "accept": ["backwards", "backward", "in reverse", "reverse"] },
-        { "tier": 4, "clue": "The Sahara is the largest hot one of these on Earth.", "answer": "A desert", "accept": ["a desert", "desert", "deserts"] },
-        { "tier": 5, "clue": "The Hundred Years' War ran 116 years, so it is off by sixteen from this round number in its name.", "answer": "A hundred", "accept": ["a hundred", "hundred", "one hundred", "100"] }
-      ]
-    },
-
-    {
-      "id": "anagrams",
-      "name": "ANAGRAMS",
-      "blurb": "Same letters, new meaning.",
-      "clues": [
-        { "tier": 1, "clue": "LISTEN rearranges into this word for saying nothing.", "answer": "Silent", "accept": ["silent"] },
-        { "tier": 2, "clue": "THE EYES rearranges into this two-word phrase about what they do.", "answer": "They see", "accept": ["they see"] },
-        { "tier": 3, "clue": "DORMITORY rearranges into this two-word verdict on the state of one.", "answer": "Dirty room", "accept": ["dirty room", "a dirty room"] },
-        { "tier": 4, "clue": "ASTRONOMER rearranges into this two-word job description.", "answer": "Moon starer", "accept": ["moon starer", "moonstarer", "moon starers"] },
-        { "tier": 5, "clue": "A DECIMAL POINT rearranges into this four-word sentence about where it sits.", "answer": "I'm a dot in place", "accept": ["im a dot in place", "i'm a dot in place", "i am a dot in place"] }
-      ]
-    },
-
-    {
-      "id": "body-language",
-      "name": "BODY LANGUAGE",
-      "blurb": "Idioms, anatomically.",
-      "clues": [
-        { "tier": 1, "clue": "To have something memorised completely is to know it by this.", "answer": "Heart", "accept": ["heart", "by heart", "the heart"] },
-        { "tier": 2, "clue": "To be overcharged badly is to pay through this.", "answer": "The nose", "accept": ["the nose", "nose"] },
-        { "tier": 3, "clue": "Something ruinously expensive costs you these two limbs.", "answer": "An arm and a leg", "accept": ["an arm and a leg", "arm and a leg", "arm and leg"] },
-        { "tier": 4, "clue": "To escape by the narrowest possible margin is to do it by the skin of these.", "answer": "Your teeth", "accept": ["your teeth", "teeth", "the teeth", "my teeth"] },
-        { "tier": 5, "clue": "To give away the secret deliberately is to spill these.", "answer": "The beans", "accept": ["the beans", "beans", "spill the beans"] }
-      ]
-    },
-
-    {
-      "id": "on-television",
-      "name": "ON TELEVISION",
-      "blurb": "Small screen.",
-      "clues": [
-        { "tier": 1, "clue": "This animated family from Springfield has been on the air since 1989.", "answer": "The Simpsons", "accept": ["the simpsons", "simpsons"] },
-        { "tier": 2, "clue": "Six twentysomethings, one Manhattan coffee house called Central Perk, ten seasons.", "answer": "Friends", "accept": ["friends"] },
-        { "tier": 3, "clue": "A high-school chemistry teacher turns to cooking something else entirely in this AMC series.", "answer": "Breaking Bad", "accept": ["breaking bad"] },
-        { "tier": 4, "clue": "HBO adapted George R.R. Martin's 'A Song of Ice and Fire' under this title.", "answer": "Game of Thrones", "accept": ["game of thrones"] },
-        { "tier": 5, "clue": "'Space, the final frontier' opened this series in 1966.", "answer": "Star Trek", "accept": ["star trek", "star trek the original series"] }
-      ]
+     "tier": 5,
+     "clue": "Braised, fried and steamed until the skin gives way, this cart item goes by the poetic name 'phoenix talons'.",
+     "answer": "Chicken feet",
+     "accept": [
+      "chicken feet",
+      "chickens feet",
+      "phoenix talons",
+      "phoenix claws",
+      "feng zhua"
+     ]
     }
-  ],
-
-  "final": [
-    { "category": "WORLD GEOGRAPHY", "clue": "Both the Equator and the Tropic of Capricorn cross this single country.", "answer": "Brazil", "accept": ["brazil"] },
-    { "category": "AMERICAN HISTORY", "clue": "He is the only person to have signed the Declaration of Independence, the Treaty of Paris, and the US Constitution — and he never held the presidency.", "answer": "Benjamin Franklin", "accept": ["benjamin franklin", "ben franklin", "franklin"] },
-    { "category": "FOOD & DRINK", "clue": "Native to Mexico and grown from an orchid, it must be pollinated by hand everywhere else on Earth — which is why it is the second most expensive spice.", "answer": "Vanilla", "accept": ["vanilla"] },
-    { "category": "LITERATURE", "clue": "It opens: 'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.'", "answer": "Pride and Prejudice", "accept": ["pride and prejudice"] },
-    { "category": "SCIENCE", "clue": "Element 43, it was the first element made artificially, and it has no stable isotopes.", "answer": "Technetium", "accept": ["technetium", "tc"] },
-    { "category": "AT THE MOVIES", "clue": "In 1940 it became the first colour film to win Best Picture.", "answer": "Gone with the Wind", "accept": ["gone with the wind"] },
-    { "category": "MUSIC", "clue": "By the 1824 premiere of his Ninth Symphony he could not hear the ovation and had to be turned around to see it.", "answer": "Ludwig van Beethoven", "accept": ["ludwig van beethoven", "beethoven"] },
-    { "category": "AROUND THE HOUSE", "clue": "Invented by Whitcomb Judson and perfected by Gideon Sundback, it was first called the 'clasp locker' before B.F. Goodrich named it for the sound.", "answer": "The zipper", "accept": ["the zipper", "zipper", "zip", "the zip"] }
-  ]
+   ]
+  },
+  {
+   "id": "on-the-menu",
+   "name": "ON THE MENU",
+   "blurb": "Order anything.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Pasta cooked to this Italian standard still has a firm bite; the phrase means 'to the tooth'.",
+     "answer": "Al dente",
+     "accept": [
+      "al dente",
+      "aldente"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The white, red and green of a pizza margherita were chosen to match this country's flag.",
+     "answer": "Italy",
+     "accept": [
+      "italy",
+      "italian"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The dried stigma of a crocus, it is the most expensive spice in the world by weight.",
+     "answer": "Saffron",
+     "accept": [
+      "saffron"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Every station is prepped and every tool laid out before service under this three-word French rule.",
+     "answer": "Mise en place",
+     "accept": [
+      "mise en place",
+      "mise-en-place"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "In 1908 a Tokyo chemist isolated glutamate from a broth of this seaweed and named the fifth taste umami.",
+     "answer": "Kombu",
+     "accept": [
+      "kombu",
+      "konbu",
+      "kelp",
+      "dashi",
+      "kombu dashi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "name-that-country",
+   "name": "NAME THAT COUNTRY",
+   "blurb": "One nation per clue.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It is the only country that is also a continent.",
+     "answer": "Australia",
+     "accept": [
+      "australia"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Its flag is the only national flag on Earth that is not a rectangle.",
+     "answer": "Nepal",
+     "accept": [
+      "nepal"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Pretoria, Cape Town and Bloemfontein each hold one branch of this country's government.",
+     "answer": "South Africa",
+     "accept": [
+      "south africa"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "After Vatican City it is the smallest country in the world — a Mediterranean principality of about two square kilometres.",
+     "answer": "Monaco",
+     "accept": [
+      "monaco"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Along with Liechtenstein it is one of only two doubly landlocked countries: every neighbour is landlocked too.",
+     "answer": "Uzbekistan",
+     "accept": [
+      "uzbekistan"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "at-the-movies",
+   "name": "AT THE MOVIES",
+   "blurb": "Lights down.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Released in 1977 without a number in its title, it was retroactively subtitled 'A New Hope'.",
+     "answer": "Star Wars",
+     "accept": [
+      "star wars",
+      "a new hope",
+      "star wars a new hope"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Hitchcock shot this 1960 film in black and white partly so the shower would not look too red.",
+     "answer": "Psycho",
+     "accept": [
+      "psycho"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "In 2020 it became the first film not in English to win Best Picture.",
+     "answer": "Parasite",
+     "accept": [
+      "parasite",
+      "gisaengchung"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Anthony Hopkins is on screen for about sixteen minutes of this 1991 film, one of only three to sweep the five major Oscars.",
+     "answer": "The Silence of the Lambs",
+     "accept": [
+      "the silence of the lambs",
+      "silence of the lambs"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "First heard in the 1951 western 'Distant Drums', this stock yell has been dropped into hundreds of films since.",
+     "answer": "The Wilhelm scream",
+     "accept": [
+      "the wilhelm scream",
+      "wilhelm scream",
+      "wilhelm"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "around-the-house",
+   "name": "AROUND THE HOUSE",
+   "blurb": "Things in the drawer.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Flexible, flat and usually silicone, it is the tool that scrapes the bowl clean.",
+     "answer": "A spatula",
+     "accept": [
+      "a spatula",
+      "spatula",
+      "scraper"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The curved, forked end opposite the striking face pulls the nail back out.",
+     "answer": "A claw hammer",
+     "accept": [
+      "a claw hammer",
+      "claw hammer",
+      "a hammer",
+      "hammer",
+      "the claw"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "It is the little sheath at the end of a shoelace, and it has a proper name.",
+     "answer": "An aglet",
+     "accept": [
+      "an aglet",
+      "aglet",
+      "aiglet"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Shaped like its letter, this bend of pipe under the sink holds a plug of water so sewer gas cannot climb back up.",
+     "answer": "A P-trap",
+     "accept": [
+      "a p trap",
+      "p trap",
+      "ptrap",
+      "a p-trap",
+      "trap"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A silvered double wall with the air pumped out from between keeps the contents hot or cold; the Scottish chemist who built the first one in 1892 lent it his name.",
+     "answer": "A Dewar flask",
+     "accept": [
+      "a dewar flask",
+      "dewar flask",
+      "dewar",
+      "vacuum flask",
+      "a vacuum flask",
+      "thermos",
+      "a thermos"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "household-chores",
+   "name": "HOUSEHOLD CHORES",
+   "blurb": "Somebody has to.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Sorting the whites from the colours is step one of this weekly job.",
+     "answer": "Laundry",
+     "accept": [
+      "laundry",
+      "the laundry",
+      "doing the laundry",
+      "washing",
+      "washing clothes"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Squeegee, bucket, lint-free cloth — and you work top to bottom so the drips land on what you have not done yet.",
+     "answer": "Washing the windows",
+     "accept": [
+      "washing the windows",
+      "window washing",
+      "cleaning the windows",
+      "washing windows",
+      "cleaning windows",
+      "windows"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Marie Kondo's method and every feng shui consultant agree this comes first: getting rid of what you are not keeping.",
+     "answer": "Decluttering",
+     "accept": [
+      "decluttering",
+      "declutter",
+      "tidying",
+      "tidying up",
+      "getting rid of clutter"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Iron this part of a shirt first, so the rest of the shirt does not crush it on the way past.",
+     "answer": "The collar",
+     "accept": [
+      "the collar",
+      "collar"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Baking soda followed by vinegar is the folk remedy for a slow one of these.",
+     "answer": "A drain",
+     "accept": [
+      "a drain",
+      "drain",
+      "a clogged drain",
+      "the drain",
+      "a blocked drain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "holidays",
+   "name": "HOLIDAYS & HOLY DAYS",
+   "blurb": "Mark the calendar.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "In the United States it lands on the fourth Thursday of November.",
+     "answer": "Thanksgiving",
+     "accept": [
+      "thanksgiving",
+      "thanksgiving day"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Diwali is the festival of lights, and these small clay oil lamps are the lights.",
+     "answer": "Diyas",
+     "accept": [
+      "diyas",
+      "diya",
+      "deepa",
+      "oil lamps",
+      "clay lamps"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The Day of Atonement, it is kept with a fast of about twenty-five hours.",
+     "answer": "Yom Kippur",
+     "accept": [
+      "yom kippur",
+      "the day of atonement",
+      "day of atonement"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Orange and heavily scented, this flower is strewn on Día de los Muertos altars to guide the dead home.",
+     "answer": "The marigold",
+     "accept": [
+      "the marigold",
+      "marigold",
+      "marigolds",
+      "cempasuchil",
+      "cempasúchil"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Lunar New Year moves around the calendar because it falls on the second new moon after this event.",
+     "answer": "The winter solstice",
+     "accept": [
+      "the winter solstice",
+      "winter solstice",
+      "the solstice"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-the-kitchen",
+   "name": "IN THE KITCHEN",
+   "blurb": "Technique, not recipes.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It is the knife cut that turns a vegetable into matchsticks.",
+     "answer": "Julienne",
+     "accept": [
+      "julienne",
+      "a julienne",
+      "julienned"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Egg yolk, oil and acid whisked into a stable emulsion make this sauce.",
+     "answer": "Mayonnaise",
+     "accept": [
+      "mayonnaise",
+      "mayo"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Cooked slowly and submerged in its own fat, duck prepared this way keeps for months.",
+     "answer": "Confit",
+     "accept": [
+      "confit",
+      "duck confit",
+      "confit de canard"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A bain-marie is the French name for this gentler setup, which keeps a custard from scrambling.",
+     "answer": "A water bath",
+     "accept": [
+      "a water bath",
+      "water bath",
+      "double boiler",
+      "a double boiler",
+      "bain marie"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Browning is not caramelisation: the Maillard reaction pairs sugars with these building blocks of protein.",
+     "answer": "Amino acids",
+     "accept": [
+      "amino acids",
+      "amino acid",
+      "proteins",
+      "protein"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fruits-and-vegetables",
+   "name": "FRUITS & VEGETABLES",
+   "blurb": "Produce aisle.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Botanically a fruit, it was ruled a vegetable by the US Supreme Court in 1893 so it could be taxed as one.",
+     "answer": "The tomato",
+     "accept": [
+      "the tomato",
+      "tomato",
+      "tomatoes"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Its stalks go into pie, but its leaves hold enough oxalic acid to be treated as poisonous.",
+     "answer": "Rhubarb",
+     "accept": [
+      "rhubarb"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Broccoli, cauliflower, kale, cabbage and Brussels sprouts are all cultivars of this one wild species.",
+     "answer": "Brassica oleracea",
+     "accept": [
+      "brassica oleracea",
+      "wild cabbage",
+      "wild mustard",
+      "brassica"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Each nut hangs beneath a fleshy false fruit that gives this tree's crop its odd two-part look.",
+     "answer": "The cashew",
+     "accept": [
+      "the cashew",
+      "cashew",
+      "cashews",
+      "cashew apple",
+      "the cashew apple"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Spiky, pungent and capable of topping fifty kilograms, it is the heaviest fruit that grows on a tree.",
+     "answer": "The jackfruit",
+     "accept": [
+      "the jackfruit",
+      "jackfruit",
+      "jak fruit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "before-and-after",
+   "name": "BEFORE & AFTER",
+   "blurb": "Two answers sharing a word.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Tony Stark's armoured alter ego becomes Superman's 2013 reboot.",
+     "answer": "Iron Man of Steel",
+     "accept": [
+      "iron man of steel"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Spielberg's dinosaur island becomes a street on the Monopoly board.",
+     "answer": "Jurassic Park Avenue",
+     "accept": [
+      "jurassic park avenue",
+      "jurassic park place"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The carol written in an Austrian village in 1818 becomes Romero's 1968 zombie picture.",
+     "answer": "Silent Night of the Living Dead",
+     "accept": [
+      "silent night of the living dead"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The faded silent star's Los Angeles street becomes Green Day's road of shattered hopes.",
+     "answer": "Sunset Boulevard of Broken Dreams",
+     "accept": [
+      "sunset boulevard of broken dreams"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The fortification you can walk for thousands of kilometres becomes Polanski's 1974 noir.",
+     "answer": "The Great Wall of Chinatown",
+     "accept": [
+      "the great wall of chinatown",
+      "great wall of chinatown"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "potpourri",
+   "name": "POTPOURRI",
+   "blurb": "Rightmost column, as tradition demands.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It is the only mammal capable of true, sustained flight.",
+     "answer": "The bat",
+     "accept": [
+      "the bat",
+      "bat",
+      "bats"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "It is the only letter of the alphabet that appears in no US state name.",
+     "answer": "Q",
+     "accept": [
+      "q",
+      "the letter q"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The dot over a lowercase i or j has this three-letter name.",
+     "answer": "A tittle",
+     "accept": [
+      "a tittle",
+      "tittle"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The metal band clamping a pencil's eraser in place shares its name with the collar on a chisel handle.",
+     "answer": "A ferrule",
+     "accept": [
+      "a ferrule",
+      "ferrule",
+      "ferule"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Anatomists call the smooth patch between your eyebrows this.",
+     "answer": "The glabella",
+     "accept": [
+      "the glabella",
+      "glabella"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "word-origins",
+   "name": "WORD ORIGINS",
+   "blurb": "Where it came from.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "'Salary' comes from the Latin for this, once handed out to Roman soldiers.",
+     "answer": "Salt",
+     "accept": [
+      "salt",
+      "sal"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "'Quarantine' comes from the Italian for this number — the days a ship waited off Venice.",
+     "answer": "Forty",
+     "accept": [
+      "forty",
+      "40"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "'Sarcasm' comes from a Greek verb meaning to tear at this, the way dogs do.",
+     "answer": "Flesh",
+     "accept": [
+      "flesh",
+      "meat"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "'Muscle' is Latin for a little one of these, named for the way a flexed bicep seems to scurry under the skin.",
+     "answer": "A mouse",
+     "accept": [
+      "a mouse",
+      "mouse",
+      "mice",
+      "musculus"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A 'clue' was first a 'clew' — a ball of this, the kind Theseus unwound in the labyrinth.",
+     "answer": "Thread",
+     "accept": [
+      "thread",
+      "yarn",
+      "string",
+      "a ball of thread"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rhyme-time",
+   "name": "RHYME TIME",
+   "blurb": "Two rhyming words.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "An overweight feline.",
+     "answer": "A fat cat",
+     "accept": [
+      "a fat cat",
+      "fat cat"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A melancholy father.",
+     "answer": "A sad dad",
+     "accept": [
+      "a sad dad",
+      "sad dad"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "An amusing rabbit.",
+     "answer": "A funny bunny",
+     "accept": [
+      "a funny bunny",
+      "funny bunny"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A counterfeit serpent.",
+     "answer": "A fake snake",
+     "accept": [
+      "a fake snake",
+      "fake snake"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A raptor operating outside the law.",
+     "answer": "An illegal eagle",
+     "accept": [
+      "an illegal eagle",
+      "illegal eagle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "potent-potables",
+   "name": "POTENT POTABLES",
+   "blurb": "Name the drink.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Gin, dry vermouth, an olive — and an argument about how dry it should be.",
+     "answer": "A martini",
+     "accept": [
+      "a martini",
+      "martini",
+      "dry martini"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Tequila, lime, orange liqueur, salt around the rim.",
+     "answer": "A margarita",
+     "accept": [
+      "a margarita",
+      "margarita"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Rum, lime and mint muddled with sugar and topped with soda — Havana's own.",
+     "answer": "A mojito",
+     "accept": [
+      "a mojito",
+      "mojito"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Rye or bourbon, sweet vermouth, Angostura bitters, cherry — named for a New York borough.",
+     "answer": "A Manhattan",
+     "accept": [
+      "a manhattan",
+      "manhattan"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Cachaça, lime and sugar, muddled in the glass — Brazil's national cocktail.",
+     "answer": "A caipirinha",
+     "accept": [
+      "a caipirinha",
+      "caipirinha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "state-capitals",
+   "name": "STATE CAPITALS",
+   "blurb": "Not the biggest city.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The capital of Texas, and not Houston or Dallas.",
+     "answer": "Austin",
+     "accept": [
+      "austin"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "California's capital sits at the meeting of two rivers, one of which shares its name.",
+     "answer": "Sacramento",
+     "accept": [
+      "sacramento"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "New York State runs its government from this city on the Hudson, not from the city everyone means.",
+     "answer": "Albany",
+     "accept": [
+      "albany"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "No road connects this state capital to the rest of the continent; you arrive by boat or plane.",
+     "answer": "Juneau",
+     "accept": [
+      "juneau",
+      "juneau alaska"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "With fewer than ten thousand residents, Vermont's capital is the smallest in the country — and has no McDonald's.",
+     "answer": "Montpelier",
+     "accept": [
+      "montpelier",
+      "montpellier"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "american-history",
+   "name": "AMERICAN HISTORY",
+   "blurb": "Stateside.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Adopted on the fourth of July, 1776.",
+     "answer": "The Declaration of Independence",
+     "accept": [
+      "the declaration of independence",
+      "declaration of independence"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This 1803 deal with France roughly doubled the size of the young country.",
+     "answer": "The Louisiana Purchase",
+     "accept": [
+      "the louisiana purchase",
+      "louisiana purchase"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Two hundred and seventy-two words, delivered in November 1863 at a cemetery dedication.",
+     "answer": "The Gettysburg Address",
+     "accept": [
+      "the gettysburg address",
+      "gettysburg address"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Ratified in 1920, it stopped the states denying anyone the vote on account of sex.",
+     "answer": "The 19th Amendment",
+     "accept": [
+      "the 19th amendment",
+      "19th amendment",
+      "nineteenth amendment",
+      "the nineteenth amendment"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Elected in 1884 and again in 1892, he was for well over a century the only president with non-consecutive terms.",
+     "answer": "Grover Cleveland",
+     "accept": [
+      "grover cleveland",
+      "cleveland"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "world-history",
+   "name": "WORLD HISTORY",
+   "blurb": "Everywhere else.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It came down in November 1989, and people took hammers to it on television.",
+     "answer": "The Berlin Wall",
+     "accept": [
+      "the berlin wall",
+      "berlin wall"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Sealed at Runnymede in 1215, it put England's King John under the law.",
+     "answer": "Magna Carta",
+     "accept": [
+      "magna carta",
+      "the magna carta"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Napoleon's last battle, fought in what is now Belgium in 1815.",
+     "answer": "Waterloo",
+     "accept": [
+      "waterloo",
+      "the battle of waterloo",
+      "battle of waterloo"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Signed in 1919, it formally ended the First World War and set the terms Germany would resent.",
+     "answer": "The Treaty of Versailles",
+     "accept": [
+      "the treaty of versailles",
+      "treaty of versailles",
+      "versailles"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Ruled from Constantinople, this continuation of Rome finally fell in 1453.",
+     "answer": "The Byzantine Empire",
+     "accept": [
+      "the byzantine empire",
+      "byzantine empire",
+      "byzantium",
+      "the eastern roman empire",
+      "eastern roman empire"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "literature",
+   "name": "LITERATURE",
+   "blurb": "On the shelf.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Shakespeare's longest play, about a prince of Denmark who cannot decide.",
+     "answer": "Hamlet",
+     "accept": [
+      "hamlet"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "'Call me Ishmael' opens this 1851 novel about a captain and a whale.",
+     "answer": "Moby-Dick",
+     "accept": [
+      "moby dick",
+      "moby-dick"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Winston Smith works at the Ministry of Truth in this 1949 novel.",
+     "answer": "Nineteen Eighty-Four",
+     "accept": [
+      "nineteen eighty four",
+      "1984",
+      "nineteen eighty-four"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This Colombian's 'One Hundred Years of Solitude' put Macondo on the literary map.",
+     "answer": "Gabriel García Márquez",
+     "accept": [
+      "gabriel garcia marquez",
+      "garcia marquez",
+      "marquez",
+      "gabriel garcía márquez"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A lady-in-waiting at the Heian court, she wrote 'The Tale of Genji' around the year 1010.",
+     "answer": "Murasaki Shikibu",
+     "accept": [
+      "murasaki shikibu",
+      "murasaki",
+      "lady murasaki"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "science",
+   "name": "SCIENCE",
+   "blurb": "Show your working.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The symbol Fe on the periodic table stands for this metal.",
+     "answer": "Iron",
+     "accept": [
+      "iron"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "It is the only metal that is liquid at room temperature.",
+     "answer": "Mercury",
+     "accept": [
+      "mercury"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This organ sits behind the stomach and makes the insulin.",
+     "answer": "The pancreas",
+     "accept": [
+      "the pancreas",
+      "pancreas"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "In one year — 1905 — he published four papers, one of which gave us E=mc².",
+     "answer": "Albert Einstein",
+     "accept": [
+      "albert einstein",
+      "einstein"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Absolute zero, in degrees Celsius, to two decimal places.",
+     "answer": "-273.15",
+     "accept": [
+      "-273.15",
+      "273.15",
+      "minus 273.15",
+      "-273.15 c",
+      "negative 273.15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sports",
+   "name": "SPORTS",
+   "blurb": "Play on.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Regulation play in association football runs this many minutes, before anything the referee adds.",
+     "answer": "90",
+     "accept": [
+      "90",
+      "ninety",
+      "90 minutes",
+      "ninety minutes"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "In tennis this word means a score of zero, and nobody agrees where it came from.",
+     "answer": "Love",
+     "accept": [
+      "love"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The overall leader of the Tour de France wears a jersey of this colour.",
+     "answer": "Yellow",
+     "accept": [
+      "yellow",
+      "the yellow jersey",
+      "yellow jersey",
+      "maillot jaune"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Its name means 'the gentle way', and it became an Olympic sport in 1964.",
+     "answer": "Judo",
+     "accept": [
+      "judo"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "In 1971 Alan Shepard smuggled a six-iron head aboard Apollo 14 and became the first person to play this sport off Earth.",
+     "answer": "Golf",
+     "accept": [
+      "golf"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "colleges",
+   "name": "COLLEGES & UNIVERSITIES",
+   "blurb": "Higher education.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Founded in 1636, it is the oldest university in the United States.",
+     "answer": "Harvard",
+     "accept": [
+      "harvard",
+      "harvard university"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The Ivy League has this many member schools.",
+     "answer": "Eight",
+     "accept": [
+      "eight",
+      "8"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "'Lux et veritas' — light and truth — belongs to this university in New Haven.",
+     "answer": "Yale",
+     "accept": [
+      "yale",
+      "yale university"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Its teams are the Cardinal, but the thing that dances on the sideline is an unofficial tree.",
+     "answer": "Stanford",
+     "accept": [
+      "stanford",
+      "stanford university"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Founded in 1088, it is the oldest university in continuous operation anywhere.",
+     "answer": "The University of Bologna",
+     "accept": [
+      "the university of bologna",
+      "university of bologna",
+      "bologna"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stupid-answers",
+   "name": "STUPID ANSWERS",
+   "blurb": "The answer is in the clue. Really.",
+   "echoOk": true,
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Buffalo wings are named for this city in western New York.",
+     "answer": "Buffalo",
+     "accept": [
+      "buffalo"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Sunflower oil is pressed from the seeds of this plant.",
+     "answer": "The sunflower",
+     "accept": [
+      "the sunflower",
+      "sunflower",
+      "sunflowers"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A palindrome reads the same forwards as it does in this direction.",
+     "answer": "Backwards",
+     "accept": [
+      "backwards",
+      "backward",
+      "in reverse",
+      "reverse"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The Sahara is the largest hot one of these on Earth.",
+     "answer": "A desert",
+     "accept": [
+      "a desert",
+      "desert",
+      "deserts"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The Hundred Years' War ran 116 years, so it is off by sixteen from this round number in its name.",
+     "answer": "A hundred",
+     "accept": [
+      "a hundred",
+      "hundred",
+      "one hundred",
+      "100"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anagrams",
+   "name": "ANAGRAMS",
+   "blurb": "Same letters, new meaning.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "LISTEN rearranges into this word for saying nothing.",
+     "answer": "Silent",
+     "accept": [
+      "silent"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "THE EYES rearranges into this two-word phrase about what they do.",
+     "answer": "They see",
+     "accept": [
+      "they see"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "DORMITORY rearranges into this two-word verdict on the state of one.",
+     "answer": "Dirty room",
+     "accept": [
+      "dirty room",
+      "a dirty room"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "ASTRONOMER rearranges into this two-word job description.",
+     "answer": "Moon starer",
+     "accept": [
+      "moon starer",
+      "moonstarer",
+      "moon starers"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A DECIMAL POINT rearranges into this four-word sentence about where it sits.",
+     "answer": "I'm a dot in place",
+     "accept": [
+      "im a dot in place",
+      "i'm a dot in place",
+      "i am a dot in place"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "body-language",
+   "name": "BODY LANGUAGE",
+   "blurb": "Idioms, anatomically.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "To have something memorised completely is to know it by this.",
+     "answer": "Heart",
+     "accept": [
+      "heart",
+      "by heart",
+      "the heart"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "To be overcharged badly is to pay through this.",
+     "answer": "The nose",
+     "accept": [
+      "the nose",
+      "nose"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Something ruinously expensive costs you these two limbs.",
+     "answer": "An arm and a leg",
+     "accept": [
+      "an arm and a leg",
+      "arm and a leg",
+      "arm and leg"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "To escape by the narrowest possible margin is to do it by the skin of these.",
+     "answer": "Your teeth",
+     "accept": [
+      "your teeth",
+      "teeth",
+      "the teeth",
+      "my teeth"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "To give away the secret deliberately is to spill these.",
+     "answer": "The beans",
+     "accept": [
+      "the beans",
+      "beans",
+      "spill the beans"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-television",
+   "name": "ON TELEVISION",
+   "blurb": "Small screen.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "This animated family from Springfield has been on the air since 1989.",
+     "answer": "The Simpsons",
+     "accept": [
+      "the simpsons",
+      "simpsons"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Six twentysomethings, one Manhattan coffee house called Central Perk, ten seasons.",
+     "answer": "Friends",
+     "accept": [
+      "friends"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A high-school chemistry teacher turns to cooking something else entirely in this AMC series.",
+     "answer": "Breaking Bad",
+     "accept": [
+      "breaking bad"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "HBO adapted George R.R. Martin's 'A Song of Ice and Fire' under this title.",
+     "answer": "Game of Thrones",
+     "accept": [
+      "game of thrones"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "'Space, the final frontier' opened this series in 1966.",
+     "answer": "Star Trek",
+     "accept": [
+      "star trek",
+      "star trek the original series"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dim-sum-2",
+   "name": "DIM SUM",
+   "blurb": "Second trolley.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Pillowy and white, this steamed bun is folded shut around sweetened barbecued pork.",
+     "answer": "Char siu bao",
+     "accept": [
+      "char siu bao",
+      "cha siu bao",
+      "bbq pork bun",
+      "pork bun",
+      "steamed pork bun",
+      "barbecue pork bun"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Flaky outside, wobbling custard within, and Hong Kong argues endlessly about whose is best.",
+     "answer": "Egg tart",
+     "accept": [
+      "egg tart",
+      "egg tarts",
+      "dan tat",
+      "daan taat",
+      "custard tart",
+      "portuguese egg tart"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Shredded white radish, dried shrimp and sausage set into a savoury block, then fried in slices.",
+     "answer": "Turnip cake",
+     "accept": [
+      "turnip cake",
+      "radish cake",
+      "lo bak go",
+      "law bak go",
+      "daikon cake"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Sticky glutinous rice wrapped around chicken and steamed inside a lotus leaf.",
+     "answer": "Lo mai gai",
+     "accept": [
+      "lo mai gai",
+      "lo mai kai",
+      "sticky rice in lotus leaf",
+      "lotus leaf rice",
+      "glutinous rice parcel"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Its name promises water chestnut, though the translucent squares are set with a quite different starch.",
+     "answer": "Ma tai go",
+     "accept": [
+      "ma tai go",
+      "matai go",
+      "water chestnut cake",
+      "ma tai gou"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "at-the-movies-2",
+   "name": "AT THE MOVIES",
+   "blurb": "Second showing.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Its mechanical shark barely worked, so Spielberg cut around it and invented the summer blockbuster by accident.",
+     "answer": "Jaws",
+     "accept": [
+      "jaws"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Kubrick's 1968 space film opens on four minutes of black screen and barely speaks for twenty more.",
+     "answer": "2001: A Space Odyssey",
+     "accept": [
+      "2001 a space odyssey",
+      "2001",
+      "a space odyssey",
+      "two thousand and one"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Miyazaki's 2001 bathhouse fantasy is still the only hand-drawn feature to take the animation Oscar.",
+     "answer": "Spirited Away",
+     "accept": [
+      "spirited away",
+      "sen to chihiro",
+      "sen to chihiro no kamikakushi"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Hitchcock's 1958 study of obsession topped the critics' poll in 2012 after fifty years in second place.",
+     "answer": "Vertigo",
+     "accept": [
+      "vertigo"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Shot inside one St Petersburg museum in a single unbroken take, this 2002 film runs 96 minutes without a cut.",
+     "answer": "Russian Ark",
+     "accept": [
+      "russian ark",
+      "russkiy kovcheg"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "name-that-country-2",
+   "name": "NAME THAT COUNTRY",
+   "blurb": "Second round of borders.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It has the longest coastline of any nation, and most of its people live within 160 km of one border.",
+     "answer": "Canada",
+     "accept": [
+      "canada"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "About a sixth of it sits below sea level, which is why its word for a sea wall entered English.",
+     "answer": "The Netherlands",
+     "accept": [
+      "the netherlands",
+      "netherlands",
+      "holland"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "More than 17,000 islands, and in 2019 it announced it was moving its capital off the sinking one.",
+     "answer": "Indonesia",
+     "accept": [
+      "indonesia"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Landlocked in southern Africa, it is the only nation lying entirely above 1,000 metres.",
+     "answer": "Lesotho",
+     "accept": [
+      "lesotho"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "It measures Gross National Happiness, and was the last country on Earth to permit television.",
+     "answer": "Bhutan",
+     "accept": [
+      "bhutan"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-the-menu-2",
+   "name": "ON THE MENU",
+   "blurb": "Second sitting.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Cheese, egg yolk, cured pork and pepper — and absolutely no cream, whatever the jar says.",
+     "answer": "Carbonara",
+     "accept": [
+      "carbonara",
+      "spaghetti carbonara",
+      "pasta alla carbonara"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The starter that raises this bread is a living culture, some of them older than the bakers.",
+     "answer": "Sourdough",
+     "accept": [
+      "sourdough",
+      "sourdough bread",
+      "levain"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Called the king of fruits in Southeast Asia, it is banned by name from Singapore's trains.",
+     "answer": "Durian",
+     "accept": [
+      "durian"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This Japanese method cures fish in salt and rice for months, and is the ancestor of every sushi roll.",
+     "answer": "Narezushi",
+     "accept": [
+      "narezushi",
+      "nare zushi",
+      "funazushi",
+      "fermented sushi"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Cacao, chilli, no sugar at all — roughly how the Aztecs drank the thing Europe later sweetened into a bar.",
+     "answer": "Xocolatl",
+     "accept": [
+      "xocolatl",
+      "xocoatl",
+      "chocolatl",
+      "aztec chocolate",
+      "cacao drink"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "around-the-house-2",
+   "name": "AROUND THE HOUSE",
+   "blurb": "Second drawer.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Sprung steel jaws on a wire loop, and every kitchen owns more than anyone remembers buying.",
+     "answer": "A clothes peg",
+     "accept": [
+      "a clothes peg",
+      "clothes peg",
+      "clothespin",
+      "a clothespin",
+      "clothes pin",
+      "peg"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The rubber ring that stops a tap dripping, and the first thing a plumber reaches for.",
+     "answer": "A washer",
+     "accept": [
+      "a washer",
+      "washer",
+      "tap washer",
+      "rubber washer",
+      "o ring",
+      "an o ring"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This slotted guard inside a plug socket blocks anything narrower than a proper pin.",
+     "answer": "A shutter",
+     "accept": [
+      "a shutter",
+      "shutter",
+      "safety shutter",
+      "socket shutter"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The plastic anchor you tap into masonry so a screw has something to bite.",
+     "answer": "A rawlplug",
+     "accept": [
+      "a rawlplug",
+      "rawlplug",
+      "rawl plug",
+      "wall plug",
+      "wall anchor",
+      "a wall plug"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The flexible strip along the bottom of an exterior door, sweeping the threshold as it shuts.",
+     "answer": "A draught excluder",
+     "accept": [
+      "a draught excluder",
+      "draught excluder",
+      "draft excluder",
+      "a draft excluder",
+      "door sweep",
+      "a door sweep",
+      "weatherstrip"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "science-2",
+   "name": "SCIENCE",
+   "blurb": "Second experiment.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Sound cannot travel through it, which is why space is silent.",
+     "answer": "A vacuum",
+     "accept": [
+      "a vacuum",
+      "vacuum",
+      "empty space",
+      "the vacuum"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This organelle turns sugar and oxygen into usable energy, and carries DNA of its own.",
+     "answer": "The mitochondrion",
+     "accept": [
+      "the mitochondrion",
+      "mitochondrion",
+      "mitochondria",
+      "the mitochondria"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Now fixed by definition rather than measured, it is exactly 299,792,458 metres per second.",
+     "answer": "The speed of light",
+     "accept": [
+      "the speed of light",
+      "speed of light",
+      "lightspeed"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Two flavours of this particle, up and down, make up every proton and neutron.",
+     "answer": "Quarks",
+     "accept": [
+      "quarks",
+      "quark",
+      "a quark"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Bees, ants and naked mole rats all earn this label for colonies with a single breeding female.",
+     "answer": "Eusocial",
+     "accept": [
+      "eusocial",
+      "eusociality",
+      "eusocial animals"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "literature-2",
+   "name": "LITERATURE",
+   "blurb": "Second shelf.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Scout Finch narrates this 1960 novel about her father defending Tom Robinson.",
+     "answer": "To Kill a Mockingbird",
+     "accept": [
+      "to kill a mockingbird",
+      "mockingbird"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Gregor Samsa wakes as an enormous insect on the first page of this novella.",
+     "answer": "The Metamorphosis",
+     "accept": [
+      "the metamorphosis",
+      "metamorphosis",
+      "die verwandlung"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This Nigerian novel about Okonkwo takes its title from a line of Yeats.",
+     "answer": "Things Fall Apart",
+     "accept": [
+      "things fall apart"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "He wrote 'Crime and Punishment' after four years in a Siberian prison camp.",
+     "answer": "Fyodor Dostoevsky",
+     "accept": [
+      "fyodor dostoevsky",
+      "dostoevsky",
+      "dostoyevsky",
+      "fyodor dostoyevsky"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "This Chilean Nobel laureate wrote odes to a tomato, a pair of socks and an artichoke.",
+     "answer": "Pablo Neruda",
+     "accept": [
+      "pablo neruda",
+      "neruda"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "world-history-2",
+   "name": "WORLD HISTORY",
+   "blurb": "Second chapter.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Vesuvius buried this Roman town under ash in AD 79, preserving it almost intact.",
+     "answer": "Pompeii",
+     "accept": [
+      "pompeii"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Genghis Khan founded it in 1206; at its height it was the largest contiguous land empire in history.",
+     "answer": "The Mongol Empire",
+     "accept": [
+      "the mongol empire",
+      "mongol empire",
+      "the mongols",
+      "mongolia"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This 1789 storming of a Paris prison is taken as the start of a revolution.",
+     "answer": "The Bastille",
+     "accept": [
+      "the bastille",
+      "bastille",
+      "storming of the bastille"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Found in 1799 and carrying one decree in three scripts, it unlocked Egyptian hieroglyphs.",
+     "answer": "The Rosetta Stone",
+     "accept": [
+      "the rosetta stone",
+      "rosetta stone",
+      "rosetta"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Magellan died partway, so it was Juan Sebastián Elcano who finished this in 1522.",
+     "answer": "The first circumnavigation",
+     "accept": [
+      "the first circumnavigation",
+      "first circumnavigation",
+      "circumnavigation",
+      "sailing around the world",
+      "the first voyage around the world"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "american-history-2",
+   "name": "AMERICAN HISTORY",
+   "blurb": "Second draft.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "This 1773 protest emptied 342 chests of tea into a harbour.",
+     "answer": "The Boston Tea Party",
+     "accept": [
+      "the boston tea party",
+      "boston tea party"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Lewis and Clark set out in 1804 to find a water route to this ocean.",
+     "answer": "The Pacific",
+     "accept": [
+      "the pacific",
+      "pacific",
+      "the pacific ocean",
+      "pacific ocean"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The 1848 find at Sutter's Mill set off a rush to this state.",
+     "answer": "California",
+     "accept": [
+      "california"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Rosa Parks refused to give up her seat in this Alabama city in 1955.",
+     "answer": "Montgomery",
+     "accept": [
+      "montgomery",
+      "montgomery alabama"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A golden spike was driven at Promontory Summit in 1869 to finish this.",
+     "answer": "The Transcontinental Railroad",
+     "accept": [
+      "the transcontinental railroad",
+      "transcontinental railroad",
+      "the golden spike",
+      "golden spike"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "music",
+   "name": "MUSIC",
+   "blurb": "Turn it up.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A standard piano has 88 of these, 52 white and 36 black.",
+     "answer": "Keys",
+     "accept": [
+      "keys",
+      "key",
+      "piano keys"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Fela Kuti fused Nigerian drumming, jazz and highlife into this genre in the 1970s.",
+     "answer": "Afrobeat",
+     "accept": [
+      "afrobeat",
+      "afro beat"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Play the notes of a chord one after another instead of together and you are doing this.",
+     "answer": "An arpeggio",
+     "accept": [
+      "an arpeggio",
+      "arpeggio",
+      "arpeggiated",
+      "broken chord",
+      "a broken chord"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "His most notorious piece is four minutes and thirty-three seconds of whatever the audience happens to do.",
+     "answer": "John Cage",
+     "accept": [
+      "john cage",
+      "cage"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Twelve equal steps to the octave, adopted so one keyboard could play in every key at once.",
+     "answer": "Equal temperament",
+     "accept": [
+      "equal temperament",
+      "equal tempered tuning",
+      "twelve tone equal temperament"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "animal-kingdom",
+   "name": "ANIMAL KINGDOM",
+   "blurb": "Field guide.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Despite the neck, it has exactly as many vertebrae in it as you do.",
+     "answer": "The giraffe",
+     "accept": [
+      "the giraffe",
+      "giraffe",
+      "giraffes"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Three hearts, blue blood, and it can taste with its arms.",
+     "answer": "The octopus",
+     "accept": [
+      "the octopus",
+      "octopus",
+      "octopuses",
+      "an octopus"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This flightless bird lays the largest egg of any living animal.",
+     "answer": "The ostrich",
+     "accept": [
+      "the ostrich",
+      "ostrich",
+      "ostriches"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Only the female bites, and it kills more people every year than any other creature.",
+     "answer": "The mosquito",
+     "accept": [
+      "the mosquito",
+      "mosquito",
+      "mosquitoes",
+      "mosquitos"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Boiling, freezing, radiation and hard vacuum: this microscopic animal survives them all by drying out.",
+     "answer": "The tardigrade",
+     "accept": [
+      "the tardigrade",
+      "tardigrade",
+      "tardigrades",
+      "water bear",
+      "the water bear",
+      "moss piglet"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the-human-body",
+   "name": "THE HUMAN BODY",
+   "blurb": "Standard issue.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "An adult has 206 of these; a newborn has around 300.",
+     "answer": "Bones",
+     "accept": [
+      "bones",
+      "bone"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This organ can regrow to full size from as little as a quarter of itself.",
+     "answer": "The liver",
+     "accept": [
+      "the liver",
+      "liver"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "It is the only bone in you that connects to no other bone.",
+     "answer": "The hyoid",
+     "accept": [
+      "the hyoid",
+      "hyoid",
+      "hyoid bone",
+      "the hyoid bone"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Named for a hero's weak point, it is the thickest tendon you own.",
+     "answer": "The Achilles tendon",
+     "accept": [
+      "the achilles tendon",
+      "achilles tendon",
+      "achilles",
+      "the achilles"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Stapes, incus and malleus: three of your smallest bones, and all in the same cavity.",
+     "answer": "The middle ear",
+     "accept": [
+      "the middle ear",
+      "middle ear",
+      "the ear",
+      "ear"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "space",
+   "name": "SPACE",
+   "blurb": "Look up.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Its light takes about eight minutes and twenty seconds to reach us.",
+     "answer": "The Sun",
+     "accept": [
+      "the sun",
+      "sun",
+      "sol"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Reclassified in 2006, it is the best known of the dwarf planets.",
+     "answer": "Pluto",
+     "accept": [
+      "pluto"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Launched in 1977, these twin probes are the only human objects in interstellar space.",
+     "answer": "Voyager",
+     "accept": [
+      "voyager",
+      "the voyagers",
+      "voyager 1 and 2",
+      "voyager probes",
+      "voyager 1"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This boundary around a black hole is the point past which nothing comes back out.",
+     "answer": "The event horizon",
+     "accept": [
+      "the event horizon",
+      "event horizon"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Eighty-eight of them officially divide the whole sky between them.",
+     "answer": "Constellations",
+     "accept": [
+      "constellations",
+      "constellation",
+      "a constellation"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mythology",
+   "name": "MYTHOLOGY",
+   "blurb": "Older than history.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "This Greek king of the gods threw lightning and kept a famously poor marriage.",
+     "answer": "Zeus",
+     "accept": [
+      "zeus"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Norse thunder came from this god's hammer, Mjölnir.",
+     "answer": "Thor",
+     "accept": [
+      "thor"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Half man, half bull, and kept in a labyrinth on Crete.",
+     "answer": "The Minotaur",
+     "accept": [
+      "the minotaur",
+      "minotaur"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Jackal-headed, he weighed the hearts of the Egyptian dead against a feather.",
+     "answer": "Anubis",
+     "accept": [
+      "anubis"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "This Japanese sun goddess hid in a cave and had to be lured out with a mirror.",
+     "answer": "Amaterasu",
+     "accept": [
+      "amaterasu",
+      "amaterasu omikami"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "acronyms",
+   "name": "ACRONYMS",
+   "blurb": "Spell it out.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "On a diver's back, five letters standing for a self-contained underwater breathing apparatus.",
+     "answer": "Scuba",
+     "accept": [
+      "scuba"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Your computer's short-term working memory, in three letters.",
+     "answer": "RAM",
+     "accept": [
+      "ram",
+      "random access memory"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Named for light amplified by stimulated emission of radiation.",
+     "answer": "Laser",
+     "accept": [
+      "laser"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A palindrome, and also a way of detecting things by bouncing radio waves off them.",
+     "answer": "Radar",
+     "accept": [
+      "radar"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Four letters that begin every web address, standing for a protocol that moves hypertext.",
+     "answer": "HTTP",
+     "accept": [
+      "http",
+      "hypertext transfer protocol",
+      "https"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "capital-cities",
+   "name": "CAPITAL CITIES",
+   "blurb": "Not always the biggest.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Australia planted its seat of government here in 1913, halfway between its two biggest rivals.",
+     "answer": "Canberra",
+     "accept": [
+      "canberra"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Turkey moved its capital here from Istanbul in 1923.",
+     "answer": "Ankara",
+     "accept": [
+      "ankara"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Brazil built this one from nothing in the 1950s, laid out in the shape of an aeroplane.",
+     "answer": "Brasília",
+     "accept": [
+      "brasilia",
+      "brasília"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "At around 3,600 metres, this Bolivian seat of government is the highest in the world.",
+     "answer": "La Paz",
+     "accept": [
+      "la paz",
+      "lapaz"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Myanmar quietly moved its government to this purpose-built city in 2005.",
+     "answer": "Naypyidaw",
+     "accept": [
+      "naypyidaw",
+      "nay pyi taw",
+      "naypyitaw"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rhyme-time-2",
+   "name": "RHYME TIME",
+   "blurb": "Second pair.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A timid insect.",
+     "answer": "A shy fly",
+     "accept": [
+      "a shy fly",
+      "shy fly"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "An enormous wig.",
+     "answer": "A big wig",
+     "accept": [
+      "a big wig",
+      "big wig",
+      "bigwig"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "An unhappy male parent's brother.",
+     "answer": "A glum chum",
+     "accept": [
+      "a glum chum",
+      "glum chum"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "An unhurried crow relative.",
+     "answer": "A slow crow",
+     "accept": [
+      "a slow crow",
+      "slow crow"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A brawl over a small winged bulb.",
+     "answer": "A light fight",
+     "accept": [
+      "a light fight",
+      "light fight"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "before-and-after-2",
+   "name": "BEFORE & AFTER",
+   "blurb": "Second overlap.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Disney's flying elephant meets the sound a bell makes.",
+     "answer": "Dumbo Ring",
+     "accept": [
+      "dumbo ring"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The Beatles' undersea vessel meets a hoagie you eat.",
+     "answer": "Yellow Submarine Sandwich",
+     "accept": [
+      "yellow submarine sandwich"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Fleming's shaken-not-stirred spy meets a Tolkien trilogy about jewellery.",
+     "answer": "James Bond of the Rings",
+     "accept": [
+      "james bond of the rings"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Coppola's mafia patriarch meets Sinatra's most famous city song.",
+     "answer": "The Godfather New York, New York",
+     "accept": [
+      "the godfather new york new york",
+      "godfather new york new york"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Dickens's Christmas miser meets Disney's ice-bound sister film.",
+     "answer": "Ebenezer Scrooge Frozen",
+     "accept": [
+      "ebenezer scrooge frozen",
+      "scrooge frozen"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "potpourri-2",
+   "name": "POTPOURRI",
+   "blurb": "Second rightmost column.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "There are 32 of these on a chessboard at the start of a game.",
+     "answer": "Pieces",
+     "accept": [
+      "pieces",
+      "piece",
+      "chess pieces",
+      "chessmen"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Honey never spoils, because it is too acidic and too dry for this to grow in it.",
+     "answer": "Bacteria",
+     "accept": [
+      "bacteria",
+      "bacterium",
+      "microbes",
+      "mould",
+      "mold",
+      "germs"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The plastic sheath on a shoelace is an aglet; this is the bit of paper that wraps a lollipop stick.",
+     "answer": "A wrapper",
+     "accept": [
+      "a wrapper",
+      "wrapper",
+      "the wrapper"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This word for a group of crows is also what a lawyer would like to avoid being charged with.",
+     "answer": "A murder",
+     "accept": [
+      "a murder",
+      "murder",
+      "a murder of crows"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Fear of long words carries an ironically long name beginning hippopoto- and ending -phobia.",
+     "answer": "Hippopotomonstrosesquippedaliophobia",
+     "accept": [
+      "hippopotomonstrosesquippedaliophobia",
+      "sesquipedalophobia",
+      "hippopotomonstrosesquipedaliophobia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "word-origins-2",
+   "name": "WORD ORIGINS",
+   "blurb": "Second etymology.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "'Companion' comes from Latin for someone you share this with.",
+     "answer": "Bread",
+     "accept": [
+      "bread",
+      "panis",
+      "a loaf",
+      "loaf"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "'Disaster' comes from Greek and Italian for a bad one of these.",
+     "answer": "A star",
+     "accept": [
+      "a star",
+      "star",
+      "stars"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "'Malaria' comes from Italian for bad this, before anyone knew about mosquitoes.",
+     "answer": "Air",
+     "accept": [
+      "air",
+      "bad air",
+      "mal aria"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "In Middle English it was an insult meaning foolish or ignorant, from a Latin root for 'not knowing'; today it is the blandest praise there is.",
+     "answer": "Nice",
+     "accept": [
+      "nice"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "'Assassin' is traced to an Arabic word for eaters of this plant.",
+     "answer": "Hashish",
+     "accept": [
+      "hashish",
+      "hash",
+      "cannabis",
+      "hashishin"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stupid-answers-2",
+   "name": "STUPID ANSWERS",
+   "blurb": "Still in the clue.",
+   "echoOk": true,
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Grape juice fermented properly becomes this drink.",
+     "answer": "Wine",
+     "accept": [
+      "wine",
+      "grape wine"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The Great Wall of China is a wall in which country?",
+     "answer": "China",
+     "accept": [
+      "china"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A dishwasher is a machine that washes these.",
+     "answer": "Dishes",
+     "accept": [
+      "dishes",
+      "dish",
+      "the dishes",
+      "plates"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The Hundred Years' War was fought between England and this country whose name it does not mention.",
+     "answer": "France",
+     "accept": [
+      "france"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "On the periodic table, the symbol for oxygen is the first letter of this element.",
+     "answer": "Oxygen",
+     "accept": [
+      "oxygen",
+      "o"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anagrams-2",
+   "name": "ANAGRAMS",
+   "blurb": "Second shuffle.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "EVIL rearranges into this word for being alive.",
+     "answer": "Live",
+     "accept": [
+      "live",
+      "vile",
+      "veil",
+      "levi"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "NIGHT rearranges into this word for an object.",
+     "answer": "Thing",
+     "accept": [
+      "thing"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "SCHOOLMASTER rearranges into this two-word description of where he works.",
+     "answer": "The classroom",
+     "accept": [
+      "the classroom",
+      "classroom"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "ELEVEN PLUS TWO rearranges into this three-word phrase — which happens to be the same number.",
+     "answer": "Twelve plus one",
+     "accept": [
+      "twelve plus one",
+      "twelve plus 1"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "THE MORSE CODE rearranges into this two-word phrase about what it consists of.",
+     "answer": "Here come dots",
+     "accept": [
+      "here come dots"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "holidays-2",
+   "name": "HOLIDAYS & HOLY DAYS",
+   "blurb": "Second calendar.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Children leave a shoe out for this December visitor in much of northern Europe, weeks before the 25th.",
+     "answer": "Saint Nicholas",
+     "accept": [
+      "saint nicholas",
+      "st nicholas",
+      "sinterklaas",
+      "santa claus",
+      "san nicolas"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Coloured powder is thrown in the streets at this Hindu spring festival.",
+     "answer": "Holi",
+     "accept": [
+      "holi",
+      "the festival of colours",
+      "festival of colors"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This month of dawn-to-dusk fasting ends with Eid al-Fitr.",
+     "answer": "Ramadan",
+     "accept": [
+      "ramadan",
+      "ramzan",
+      "ramadhan"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Mooncakes are eaten and lanterns carried on the fifteenth day of the eighth lunar month.",
+     "answer": "Mid-Autumn Festival",
+     "accept": [
+      "mid autumn festival",
+      "the mid autumn festival",
+      "mooncake festival",
+      "zhongqiu",
+      "moon festival"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Iceland's Christmas Eve tradition of giving books and reading all night has this name.",
+     "answer": "Jólabókaflóð",
+     "accept": [
+      "jolabokaflod",
+      "jólabókaflóð",
+      "the christmas book flood",
+      "yule book flood",
+      "book flood"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sports-2",
+   "name": "SPORTS",
+   "blurb": "Second half.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Five interlocking rings on a white field make this flag.",
+     "answer": "The Olympic flag",
+     "accept": [
+      "the olympic flag",
+      "olympic flag",
+      "the olympics",
+      "olympic rings",
+      "the olympic rings"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A perfect score in ten-pin bowling is this number.",
+     "answer": "300",
+     "accept": [
+      "300",
+      "three hundred"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Golf's four majors are the Masters, the PGA, the Open and this one.",
+     "answer": "The US Open",
+     "accept": [
+      "the us open",
+      "us open",
+      "the united states open",
+      "u s open"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "In cricket, taking three wickets with three consecutive deliveries earns this name.",
+     "answer": "A hat-trick",
+     "accept": [
+      "a hat trick",
+      "hat trick",
+      "hattrick",
+      "a hattrick"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "This Japanese sport's ring is called a dohyo, and stepping outside it loses the bout.",
+     "answer": "Sumo",
+     "accept": [
+      "sumo",
+      "sumo wrestling"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-television-2",
+   "name": "ON TELEVISION",
+   "blurb": "Second channel.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Four scientists and a waitress share a Pasadena stairwell in this long-running sitcom.",
+     "answer": "The Big Bang Theory",
+     "accept": [
+      "the big bang theory",
+      "big bang theory"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This Korean survival drama became Netflix's most-watched series in 2021.",
+     "answer": "Squid Game",
+     "accept": [
+      "squid game",
+      "ojingeo geim"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Set in a Scranton paper company, this mockumentary was remade from a British original.",
+     "answer": "The Office",
+     "accept": [
+      "the office",
+      "office"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "An American football coach is hired to manage an English club he knows nothing about.",
+     "answer": "Ted Lasso",
+     "accept": [
+      "ted lasso",
+      "lasso"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Rod Serling opened every episode of this anthology by describing a dimension of imagination.",
+     "answer": "The Twilight Zone",
+     "accept": [
+      "the twilight zone",
+      "twilight zone"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-the-kitchen-2",
+   "name": "IN THE KITCHEN",
+   "blurb": "Second service.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Beating air into egg whites until they hold a peak is doing this to them.",
+     "answer": "Whipping",
+     "accept": [
+      "whipping",
+      "whisking",
+      "beating",
+      "whip",
+      "whisk"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Deglazing a pan means loosening these browned bits with liquid; the French call them sucs.",
+     "answer": "Fond",
+     "accept": [
+      "fond",
+      "the fond",
+      "browned bits",
+      "pan drippings"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Confusingly, this word means both to cook briefly in fat and to jump, from the same French verb.",
+     "answer": "Sauté",
+     "accept": [
+      "saute",
+      "sauté",
+      "sauteing",
+      "sauteed"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Onion, carrot and celery diced together form this French aromatic base.",
+     "answer": "Mirepoix",
+     "accept": [
+      "mirepoix"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Cooking sealed in a bag in precisely controlled water goes by this French term for 'under vacuum'.",
+     "answer": "Sous vide",
+     "accept": [
+      "sous vide",
+      "souvide",
+      "sousvide"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "art",
+   "name": "ART",
+   "blurb": "On the wall.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It hangs behind bulletproof glass in the Louvre and is far smaller than most visitors expect.",
+     "answer": "The Mona Lisa",
+     "accept": [
+      "the mona lisa",
+      "mona lisa",
+      "la gioconda"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "He cut off part of his own ear in Arles and sold almost nothing in his lifetime.",
+     "answer": "Vincent van Gogh",
+     "accept": [
+      "vincent van gogh",
+      "van gogh",
+      "vangogh"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This Mexican painter made some 55 self-portraits, many after a near-fatal bus crash.",
+     "answer": "Frida Kahlo",
+     "accept": [
+      "frida kahlo",
+      "kahlo"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Guernica was painted in response to the bombing of a Basque town by this artist.",
+     "answer": "Pablo Picasso",
+     "accept": [
+      "pablo picasso",
+      "picasso"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "He dripped and poured household paint onto canvas laid flat on the floor.",
+     "answer": "Jackson Pollock",
+     "accept": [
+      "jackson pollock",
+      "pollock"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "technology",
+   "name": "TECHNOLOGY",
+   "blurb": "Turn it off and on again.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The icon of drifting vapour on your phone means the data actually lives on somebody else's computer.",
+     "answer": "The cloud",
+     "accept": [
+      "the cloud",
+      "cloud",
+      "cloud storage"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "She wrote the first algorithm intended for a machine, a century before one existed.",
+     "answer": "Ada Lovelace",
+     "accept": [
+      "ada lovelace",
+      "lovelace",
+      "ada byron"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Named for a Danish king who united tribes, this protocol unites your headphones and your phone.",
+     "answer": "Bluetooth",
+     "accept": [
+      "bluetooth"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Grace Hopper taped a moth into a logbook in 1947 and popularised this word for a fault.",
+     "answer": "A bug",
+     "accept": [
+      "a bug",
+      "bug",
+      "bugs",
+      "debugging"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "This 1970 date is where Unix starts counting seconds, and where a lot of software breaks.",
+     "answer": "The Unix epoch",
+     "accept": [
+      "the unix epoch",
+      "unix epoch",
+      "epoch",
+      "january 1 1970",
+      "1 january 1970"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the-ocean",
+   "name": "THE OCEAN",
+   "blurb": "Deep end.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "About 71 per cent of Earth's surface is covered by this.",
+     "answer": "Water",
+     "accept": [
+      "water",
+      "the ocean",
+      "ocean",
+      "the sea",
+      "sea",
+      "oceans"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "At nearly 11 km down, this Pacific trench is the deepest place in any ocean.",
+     "answer": "The Mariana Trench",
+     "accept": [
+      "the mariana trench",
+      "mariana trench",
+      "marianas trench",
+      "challenger deep"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The largest structure built by living things, it can be seen from orbit off Queensland.",
+     "answer": "The Great Barrier Reef",
+     "accept": [
+      "the great barrier reef",
+      "great barrier reef",
+      "barrier reef"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This warm current carries Caribbean water north-east and keeps north-west Europe mild.",
+     "answer": "The Gulf Stream",
+     "accept": [
+      "the gulf stream",
+      "gulf stream",
+      "the north atlantic drift"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Below about a kilometre down, sunlight gives out entirely and the water is permanently black.",
+     "answer": "The midnight zone",
+     "accept": [
+      "the midnight zone",
+      "midnight zone",
+      "the bathypelagic zone",
+      "bathypelagic",
+      "the aphotic zone",
+      "aphotic zone"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "transport",
+   "name": "CARS & TRANSPORT",
+   "blurb": "Mind the gap.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Opened in 1863, the world's first underground railway runs beneath this city.",
+     "answer": "London",
+     "accept": [
+      "london"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Karl Benz patented the first practical one in 1886, and it had three wheels.",
+     "answer": "The automobile",
+     "accept": [
+      "the automobile",
+      "automobile",
+      "the car",
+      "car",
+      "the motorcar",
+      "motor car"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Japan's high-speed rail network carries this name meaning 'new trunk line'.",
+     "answer": "Shinkansen",
+     "accept": [
+      "shinkansen",
+      "the shinkansen",
+      "bullet train",
+      "the bullet train"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This aircraft cruised at twice the speed of sound until it was retired in 2003.",
+     "answer": "Concorde",
+     "accept": [
+      "concorde",
+      "the concorde"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Every road sign distance in Britain is measured to a point in this London square.",
+     "answer": "Charing Cross",
+     "accept": [
+      "charing cross",
+      "charing cross london"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "languages",
+   "name": "LANGUAGES",
+   "blurb": "Say again.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "More people speak this language as a first language than any other.",
+     "answer": "Mandarin",
+     "accept": [
+      "mandarin",
+      "mandarin chinese",
+      "chinese",
+      "putonghua"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Icelandic, Faroese and Norwegian all descend from this language of the sagas.",
+     "answer": "Old Norse",
+     "accept": [
+      "old norse",
+      "norse"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "With over 400 million speakers as a first language, it is the world's second most spoken by that measure.",
+     "answer": "Spanish",
+     "accept": [
+      "spanish",
+      "castilian",
+      "espanol"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Basque is famous for being one of these — a language with no known living relatives.",
+     "answer": "A language isolate",
+     "accept": [
+      "a language isolate",
+      "language isolate",
+      "an isolate",
+      "isolate"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Invented in 1887 to be easy and neutral, it has around two million speakers and no country.",
+     "answer": "Esperanto",
+     "accept": [
+      "esperanto"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "money",
+   "name": "MONEY",
+   "blurb": "Follow it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "This Japanese currency's symbol is a Y with two bars through it.",
+     "answer": "The yen",
+     "accept": [
+      "the yen",
+      "yen",
+      "japanese yen"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Nineteen EU countries share this currency, introduced as cash in 2002.",
+     "answer": "The euro",
+     "accept": [
+      "the euro",
+      "euro",
+      "euros"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This 2008 white paper by Satoshi Nakamoto introduced a peer-to-peer electronic cash system.",
+     "answer": "Bitcoin",
+     "accept": [
+      "bitcoin",
+      "the bitcoin white paper",
+      "btc"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Britain's currency takes its name from a Roman weight — libra — which is also why it is abbreviated with an L.",
+     "answer": "The pound",
+     "accept": [
+      "the pound",
+      "pound",
+      "pound sterling",
+      "sterling",
+      "gbp"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Kublai Khan's use of it astonished Marco Polo, centuries before Europe tried it.",
+     "answer": "Paper money",
+     "accept": [
+      "paper money",
+      "banknotes",
+      "paper currency",
+      "banknote",
+      "notes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "first-lines",
+   "name": "FIRST LINES",
+   "blurb": "Name the book.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "'Call me Ishmael.'",
+     "answer": "Moby-Dick",
+     "accept": [
+      "moby dick",
+      "moby-dick"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "'It was a bright cold day in April, and the clocks were striking thirteen.'",
+     "answer": "Nineteen Eighty-Four",
+     "accept": [
+      "nineteen eighty four",
+      "1984",
+      "nineteen eighty-four"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "'All happy families are alike; each unhappy family is unhappy in its own way.'",
+     "answer": "Anna Karenina",
+     "accept": [
+      "anna karenina",
+      "karenina"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "'It was the best of times, it was the worst of times.'",
+     "answer": "A Tale of Two Cities",
+     "accept": [
+      "a tale of two cities",
+      "tale of two cities"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "'Many years later, as he faced the firing squad, Colonel Aureliano Buendía was to remember that distant afternoon.'",
+     "answer": "One Hundred Years of Solitude",
+     "accept": [
+      "one hundred years of solitude",
+      "100 years of solitude",
+      "cien anos de soledad"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "inventions",
+   "name": "INVENTIONS",
+   "blurb": "Somebody thought of it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Gutenberg's version of this around 1440 put books within reach of ordinary people.",
+     "answer": "The printing press",
+     "accept": [
+      "the printing press",
+      "printing press",
+      "movable type",
+      "the press",
+      "moveable type"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Fleming left a petri dish out over holiday in 1928 and came back to this.",
+     "answer": "Penicillin",
+     "accept": [
+      "penicillin"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Percy Spencer noticed a chocolate bar melting near a magnetron and patented this in 1945.",
+     "answer": "The microwave oven",
+     "accept": [
+      "the microwave oven",
+      "microwave oven",
+      "the microwave",
+      "microwave"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "George de Mestral looked at burrs stuck to his dog and invented this hooked fastener.",
+     "answer": "Velcro",
+     "accept": [
+      "velcro",
+      "hook and loop",
+      "hook and loop fastener"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Whitcomb Judson called it a clasp locker; B.F. Goodrich renamed it for the noise it makes.",
+     "answer": "The zip",
+     "accept": [
+      "the zip",
+      "zip",
+      "zipper",
+      "the zipper"
+     ]
+    }
+   ]
+  }
+ ],
+ "final": [
+  {
+   "category": "WORLD GEOGRAPHY",
+   "clue": "Both the Equator and the Tropic of Capricorn cross this single country.",
+   "answer": "Brazil",
+   "accept": [
+    "brazil"
+   ]
+  },
+  {
+   "category": "AMERICAN HISTORY",
+   "clue": "He is the only person to have signed the Declaration of Independence, the Treaty of Paris, and the US Constitution — and he never held the presidency.",
+   "answer": "Benjamin Franklin",
+   "accept": [
+    "benjamin franklin",
+    "ben franklin",
+    "franklin"
+   ]
+  },
+  {
+   "category": "FOOD & DRINK",
+   "clue": "Native to Mexico and grown from an orchid, it must be pollinated by hand everywhere else on Earth — which is why it is the second most expensive spice.",
+   "answer": "Vanilla",
+   "accept": [
+    "vanilla"
+   ]
+  },
+  {
+   "category": "LITERATURE",
+   "clue": "It opens: 'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.'",
+   "answer": "Pride and Prejudice",
+   "accept": [
+    "pride and prejudice"
+   ]
+  },
+  {
+   "category": "SCIENCE",
+   "clue": "Element 43, it was the first element made artificially, and it has no stable isotopes.",
+   "answer": "Technetium",
+   "accept": [
+    "technetium",
+    "tc"
+   ]
+  },
+  {
+   "category": "AT THE MOVIES",
+   "clue": "In 1940 it became the first colour film to win Best Picture.",
+   "answer": "Gone with the Wind",
+   "accept": [
+    "gone with the wind"
+   ]
+  },
+  {
+   "category": "MUSIC",
+   "clue": "By the 1824 premiere of his Ninth Symphony he could not hear the ovation and had to be turned around to see it.",
+   "answer": "Ludwig van Beethoven",
+   "accept": [
+    "ludwig van beethoven",
+    "beethoven"
+   ]
+  },
+  {
+   "category": "AROUND THE HOUSE",
+   "clue": "Invented by Whitcomb Judson and perfected by Gideon Sundback, it was first called the 'clasp locker' before B.F. Goodrich named it for the sound.",
+   "answer": "The zipper",
+   "accept": [
+    "the zipper",
+    "zipper",
+    "zip",
+    "the zip"
+   ]
+  },
+  {
+   "category": "THE HUMAN BODY",
+   "clue": "You have about 37 trillion of them, and roughly 330 billion are replaced every single day.",
+   "answer": "Cells",
+   "accept": [
+    "cells",
+    "cell",
+    "human cells"
+   ]
+  },
+  {
+   "category": "WORLD GEOGRAPHY",
+   "clue": "Russia borders fourteen countries; only one other nation borders as many, and it is in Asia too.",
+   "answer": "China",
+   "accept": [
+    "china"
+   ]
+  },
+  {
+   "category": "TECHNOLOGY",
+   "clue": "The first message sent over ARPANET in 1969 was meant to be LOGIN, but the system crashed after these two letters.",
+   "answer": "LO",
+   "accept": [
+    "lo",
+    "l o",
+    "the letters lo"
+   ]
+  },
+  {
+   "category": "MYTHOLOGY",
+   "clue": "This Greek figure was given prophecy by Apollo and then cursed so that nobody would ever believe her.",
+   "answer": "Cassandra",
+   "accept": [
+    "cassandra"
+   ]
+  },
+  {
+   "category": "ANIMAL KINGDOM",
+   "clue": "It is the only mammal that lays eggs, produces venom, and detects prey by electric field.",
+   "answer": "The platypus",
+   "accept": [
+    "the platypus",
+    "platypus",
+    "duck billed platypus"
+   ]
+  },
+  {
+   "category": "MUSIC",
+   "clue": "Four of its five members were dead by 1980, and its 1975 single spent nine weeks at number one with no chorus.",
+   "answer": "Queen",
+   "accept": [
+    "queen"
+   ]
+  },
+  {
+   "category": "ON THE MENU",
+   "clue": "Botanically a berry, this crop feeds more people by weight than any other fruit, and nearly every one sold is a clone.",
+   "answer": "The banana",
+   "accept": [
+    "the banana",
+    "banana",
+    "bananas",
+    "cavendish"
+   ]
+  },
+  {
+   "category": "CAPITAL CITIES",
+   "clue": "Three cities share the seat of government of this country, and none of them is its largest.",
+   "answer": "South Africa",
+   "accept": [
+    "south africa"
+   ]
+  }
+ ]
 }

@@ -79,7 +79,19 @@ export function stripQuestionForm(input) {
  * low, and a wildcard on a $200 cell is not worth finding.
  */
 function dealRound(rng, packs, { columns, wildcards, multiplier }) {
-  const chosen = sample(rng, packs, columns);
+  /* Collapse variants before sampling: one pack per heading, chosen at random
+     among that heading's variants. Sampling first and filtering after would
+     quietly deal fewer than `columns` columns whenever two variants collided. */
+  const byName = new Map();
+  for (const pack of packs) {
+    if (!byName.has(pack.name)) byName.set(pack.name, []);
+    byName.get(pack.name).push(pack);
+  }
+  const oneEach = [...byName.values()].map((variants) =>
+    variants.length === 1 ? variants[0] : sample(rng, variants, 1)[0]
+  );
+
+  const chosen = sample(rng, oneEach, columns);
   const board = chosen.map((pack) => ({
     id: pack.id,
     name: pack.name,
@@ -189,12 +201,17 @@ export class BoardGame extends Emitter {
   start() {
     this.state = this._blankState();
     this.rng = makeRng(this.seed);
-    if (this.packs.length < BOARD.columns) {
-      /* Not enough packs to deal a legal board is a data problem, and it must
-         be loud rather than a half-empty grid. */
-      throw new Error(`The Board needs at least ${BOARD.columns} category packs, found ${this.packs.length}`);
+    /* Headings, not packs — five variants of one category still deal one
+       column, so counting packs would let a broken file through. */
+    const headings = new Set(this.packs.map((p) => p.name)).size;
+    if (headings < BOARD.columns) {
+      throw new Error(`The Board needs at least ${BOARD.columns} distinct categories, found ${headings}`);
     }
-    this.usedPackIds = new Set();
+    /* Deduped by NAME, not id, because a category may have several packs of
+       different clues under the same heading — "DIM SUM" appearing on the
+       second floor with five questions you have not seen is the point of
+       variants, but "DIM SUM" appearing twice in one game is a bug. */
+    this.usedPackNames = new Set();
     this.emit("start", { seed: this.seed });
     this._startRound(1);
     return this;
@@ -205,12 +222,12 @@ export class BoardGame extends Emitter {
     const spec = BOARD.rounds[round - 1];
     s.round = round;
     s.roundName = spec.name;
-    s.board = dealRound(this.rng, this.packs.filter((p) => !this.usedPackIds.has(p.id)), {
+    s.board = dealRound(this.rng, this.packs.filter((p) => !this.usedPackNames.has(p.name)), {
       columns: BOARD.columns,
       wildcards: spec.wildcards,
       multiplier: spec.multiplier,
     });
-    for (const col of s.board) this.usedPackIds.add(col.id);
+    for (const col of s.board) this.usedPackNames.add(col.name);
     s.phase = BPHASE.BOARD;
     s.cell = null;
     s.clue = null;

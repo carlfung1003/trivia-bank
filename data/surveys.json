@@ -1,396 +1,4995 @@
 {
-  "meta": {
-    "version": 1,
-    "format": "Survey board — one open prompt, a ranked set of hidden answers, each worth its share of the room.",
-    "honesty": "THE PERCENTAGES ARE AUTHORED, NOT COLLECTED. Nobody was surveyed. They are balance numbers chosen to feel like a real spread — a fat top answer, a long tail, and a gap you can lose a round in. The UI says 'the street reckons' rather than 'we asked 100 people' for exactly this reason: the mechanic is the fun part, and a made-up statistic should not be dressed as research. If this bank is ever swapped for real survey data, say so here.",
-    "surveyCount": 28,
-    "note": "Shares never total 100 — the remainder is everyone who said something too rare to put on a board. Keep it that way; a board that sums to exactly 100 implies the list is exhaustive."
-  },
-
-  "surveys": [
+ "meta": {
+  "version": 1,
+  "format": "Survey board — one open prompt, a ranked set of hidden answers, each worth its share of the room.",
+  "honesty": "THE PERCENTAGES ARE AUTHORED, NOT COLLECTED. Nobody was surveyed. They are balance numbers chosen to feel like a real spread — a fat top answer, a long tail, and a gap you can lose a round in. The UI says 'the street reckons' rather than 'we asked 100 people' for exactly this reason: the mechanic is the fun part, and a made-up statistic should not be dressed as research. If this bank is ever swapped for real survey data, say so here.",
+  "surveyCount": 71,
+  "note": "Shares never total 100 — the remainder is everyone who said something too rare to put on a board. Keep it that way; a board that sums to exactly 100 implies the list is exhaustive."
+ },
+ "surveys": [
+  {
+   "id": "most-popular-wizard",
+   "prompt": "Name the most popular wizard.",
+   "answers": [
     {
-      "id": "most-popular-wizard",
-      "prompt": "Name the most popular wizard.",
-      "answers": [
-        { "text": "Harry Potter", "share": 30, "accept": ["harry potter", "harry", "potter"] },
-        { "text": "Gandalf", "share": 21, "accept": ["gandalf", "gandalf the grey", "gandalf the white"] },
-        { "text": "Merlin", "share": 14, "accept": ["merlin"] },
-        { "text": "Dumbledore", "share": 12, "accept": ["dumbledore", "albus dumbledore", "professor dumbledore"] },
-        { "text": "The Wizard of Oz", "share": 9, "accept": ["the wizard of oz", "wizard of oz", "oz"] },
-        { "text": "Doctor Strange", "share": 7, "accept": ["doctor strange", "dr strange", "stephen strange"] },
-        { "text": "Saruman", "share": 4, "accept": ["saruman", "voldemort", "sauron"] }
-      ]
+     "text": "Harry Potter",
+     "share": 30,
+     "accept": [
+      "harry potter",
+      "harry",
+      "potter"
+     ]
     },
-
     {
-      "id": "most-famous-superhero",
-      "prompt": "Name the most famous superhero.",
-      "answers": [
-        { "text": "Superman", "share": 24, "accept": ["superman", "clark kent", "man of steel"] },
-        { "text": "Batman", "share": 22, "accept": ["batman", "bruce wayne", "the dark knight"] },
-        { "text": "Spider-Man", "share": 18, "accept": ["spider man", "spiderman", "peter parker"] },
-        { "text": "Iron Man", "share": 12, "accept": ["iron man", "ironman", "tony stark"] },
-        { "text": "Wonder Woman", "share": 10, "accept": ["wonder woman", "diana prince"] },
-        { "text": "Captain America", "share": 7, "accept": ["captain america", "steve rogers", "cap"] },
-        { "text": "The Hulk", "share": 5, "accept": ["the hulk", "hulk", "bruce banner", "incredible hulk"] }
-      ]
+     "text": "Gandalf",
+     "share": 21,
+     "accept": [
+      "gandalf",
+      "gandalf the grey",
+      "gandalf the white"
+     ]
     },
-
     {
-      "id": "most-famous-detective",
-      "prompt": "Name the most famous detective.",
-      "answers": [
-        { "text": "Sherlock Holmes", "share": 36, "accept": ["sherlock holmes", "sherlock", "holmes"] },
-        { "text": "Hercule Poirot", "share": 16, "accept": ["hercule poirot", "poirot"] },
-        { "text": "Columbo", "share": 12, "accept": ["columbo", "lieutenant columbo"] },
-        { "text": "Batman", "share": 11, "accept": ["batman", "the worlds greatest detective"] },
-        { "text": "Scooby-Doo", "share": 9, "accept": ["scooby doo", "scooby", "the mystery gang", "velma"] },
-        { "text": "Miss Marple", "share": 8, "accept": ["miss marple", "marple", "jane marple"] },
-        { "text": "Inspector Gadget", "share": 5, "accept": ["inspector gadget", "gadget"] }
-      ]
+     "text": "Merlin",
+     "share": 14,
+     "accept": [
+      "merlin"
+     ]
     },
-
     {
-      "id": "most-popular-pet-name",
-      "prompt": "Name the most popular name for a pet.",
-      "answers": [
-        { "text": "Bella", "share": 22, "accept": ["bella"] },
-        { "text": "Max", "share": 20, "accept": ["max", "maxi"] },
-        { "text": "Luna", "share": 17, "accept": ["luna"] },
-        { "text": "Charlie", "share": 14, "accept": ["charlie"] },
-        { "text": "Milo", "share": 11, "accept": ["milo"] },
-        { "text": "Daisy", "share": 9, "accept": ["daisy"] },
-        { "text": "Coco", "share": 6, "accept": ["coco", "cocoa"] }
-      ]
+     "text": "Dumbledore",
+     "share": 12,
+     "accept": [
+      "dumbledore",
+      "albus dumbledore",
+      "professor dumbledore"
+     ]
     },
-
     {
-      "id": "kitchen-drawer",
-      "prompt": "Name something you'd find in a kitchen drawer.",
-      "answers": [
-        { "text": "Cutlery", "share": 31, "accept": ["cutlery", "silverware", "forks", "fork", "knives", "knife", "spoons", "spoon", "utensils", "flatware"] },
-        { "text": "Takeaway menus", "share": 14, "accept": ["takeaway menus", "takeout menus", "menus", "menu", "takeaway menu", "flyers", "leaflets"] },
-        { "text": "Batteries", "share": 12, "accept": ["batteries", "battery", "dead batteries", "aa batteries"] },
-        { "text": "Scissors", "share": 11, "accept": ["scissors", "a pair of scissors", "kitchen scissors", "shears"] },
-        { "text": "A bottle opener", "share": 9, "accept": ["a bottle opener", "bottle opener", "corkscrew", "a corkscrew", "can opener", "a can opener", "opener"] },
-        { "text": "Rubber bands", "share": 8, "accept": ["rubber bands", "rubber band", "elastic bands", "elastics", "hair ties", "twist ties"] },
-        { "text": "Birthday candles", "share": 5, "accept": ["birthday candles", "candles", "candle", "cake candles"] }
-      ]
+     "text": "The Wizard of Oz",
+     "share": 9,
+     "accept": [
+      "the wizard of oz",
+      "wizard of oz",
+      "oz"
+     ]
     },
-
     {
-      "id": "worst-chore",
-      "prompt": "Name the chore nobody wants to do.",
-      "answers": [
-        { "text": "Cleaning the toilet", "share": 28, "accept": ["cleaning the toilet", "clean the toilet", "the toilet", "toilet", "scrubbing the toilet", "cleaning the bathroom", "the bathroom", "bathroom"] },
-        { "text": "The dishes", "share": 21, "accept": ["the dishes", "dishes", "washing up", "the washing up", "washing the dishes", "doing the dishes", "dishwashing"] },
-        { "text": "Laundry", "share": 15, "accept": ["laundry", "the laundry", "washing clothes", "doing the laundry", "folding laundry", "folding the washing"] },
-        { "text": "Ironing", "share": 12, "accept": ["ironing", "the ironing", "iron", "pressing shirts"] },
-        { "text": "Taking out the bins", "share": 9, "accept": ["taking out the bins", "taking out the trash", "the bins", "bins", "trash", "the trash", "rubbish", "taking out the rubbish", "garbage"] },
-        { "text": "Mopping", "share": 8, "accept": ["mopping", "mopping the floor", "the floors", "floors", "mop", "scrubbing floors"] },
-        { "text": "Cleaning the oven", "share": 5, "accept": ["cleaning the oven", "the oven", "oven", "scrubbing the oven"] }
-      ]
+     "text": "Doctor Strange",
+     "share": 7,
+     "accept": [
+      "doctor strange",
+      "dr strange",
+      "stephen strange"
+     ]
     },
-
     {
-      "id": "dim-sum-order",
-      "prompt": "Name something you always order at dim sum.",
-      "answers": [
-        { "text": "Har gow", "share": 26, "accept": ["har gow", "har gao", "hargow", "ha gao", "shrimp dumpling", "shrimp dumplings", "prawn dumplings"] },
-        { "text": "Siu mai", "share": 22, "accept": ["siu mai", "shumai", "shu mai", "siumai", "shao mai", "pork dumpling", "pork dumplings"] },
-        { "text": "Char siu bao", "share": 16, "accept": ["char siu bao", "cha siu bao", "bbq pork bun", "bbq pork buns", "pork bun", "pork buns", "barbecue pork bun"] },
-        { "text": "Cheung fun", "share": 12, "accept": ["cheung fun", "cheong fun", "rice noodle roll", "rice noodle rolls", "rice roll", "rice rolls"] },
-        { "text": "Egg tarts", "share": 10, "accept": ["egg tarts", "egg tart", "dan tat", "daan tat", "custard tart", "custard tarts"] },
-        { "text": "Chicken feet", "share": 7, "accept": ["chicken feet", "phoenix claws", "phoenix talons", "feng zhua"] },
-        { "text": "Turnip cake", "share": 5, "accept": ["turnip cake", "radish cake", "lo bak go", "law bak go", "daikon cake"] }
-      ]
-    },
-
-    {
-      "id": "dream-country",
-      "prompt": "Name a country everybody says they want to visit.",
-      "answers": [
-        { "text": "Japan", "share": 24, "accept": ["japan", "nippon"] },
-        { "text": "Italy", "share": 19, "accept": ["italy"] },
-        { "text": "France", "share": 15, "accept": ["france"] },
-        { "text": "Australia", "share": 11, "accept": ["australia"] },
-        { "text": "Iceland", "share": 9, "accept": ["iceland"] },
-        { "text": "Thailand", "share": 8, "accept": ["thailand"] },
-        { "text": "Brazil", "share": 6, "accept": ["brazil"] }
-      ]
-    },
-
-    {
-      "id": "walk-in-the-door",
-      "prompt": "Name something people do the moment they get home from work.",
-      "answers": [
-        { "text": "Take their shoes off", "share": 27, "accept": ["take their shoes off", "take off their shoes", "take off shoes", "shoes off", "remove shoes", "take my shoes off", "kick off their shoes"] },
-        { "text": "Open the fridge", "share": 18, "accept": ["open the fridge", "check the fridge", "the fridge", "look in the fridge", "raid the fridge", "get a snack"] },
-        { "text": "Change clothes", "share": 16, "accept": ["change clothes", "get changed", "change", "put on comfy clothes", "change into pyjamas", "put on pyjamas"] },
-        { "text": "Put the kettle on", "share": 12, "accept": ["put the kettle on", "kettle", "the kettle", "make tea", "make a cup of tea", "boil the kettle", "make coffee"] },
-        { "text": "Sit down", "share": 10, "accept": ["sit down", "sit", "collapse on the sofa", "flop on the couch", "lie down"] },
-        { "text": "Plug in their phone", "share": 9, "accept": ["plug in their phone", "charge their phone", "charge the phone", "put their phone on charge", "phone charger"] },
-        { "text": "Greet whoever's in", "share": 5, "accept": ["greet whoevers in", "say hello", "greet the dog", "greet others", "greet the family", "say hi", "hug the dog", "kiss their partner", "greet people"] }
-      ]
-    },
-
-    {
-      "id": "greatest-film",
-      "prompt": "Name a film people call the greatest of all time.",
-      "answers": [
-        { "text": "The Godfather", "share": 23, "accept": ["the godfather", "godfather"] },
-        { "text": "The Shawshank Redemption", "share": 20, "accept": ["the shawshank redemption", "shawshank redemption", "shawshank"] },
-        { "text": "Star Wars", "share": 14, "accept": ["star wars", "a new hope", "the empire strikes back"] },
-        { "text": "Citizen Kane", "share": 12, "accept": ["citizen kane", "kane"] },
-        { "text": "Pulp Fiction", "share": 10, "accept": ["pulp fiction"] },
-        { "text": "Titanic", "share": 8, "accept": ["titanic"] },
-        { "text": "Casablanca", "share": 7, "accept": ["casablanca"] }
-      ]
-    },
-
-    {
-      "id": "always-lose",
-      "prompt": "Name something people are always losing at home.",
-      "answers": [
-        { "text": "Keys", "share": 30, "accept": ["keys", "key", "my keys", "house keys", "car keys"] },
-        { "text": "Their phone", "share": 21, "accept": ["their phone", "phone", "my phone", "mobile", "cell phone", "the phone"] },
-        { "text": "The remote", "share": 18, "accept": ["the remote", "remote", "remote control", "the remote control", "tv remote", "the clicker"] },
-        { "text": "Socks", "share": 12, "accept": ["socks", "sock", "one sock", "a sock", "odd socks"] },
-        { "text": "Glasses", "share": 9, "accept": ["glasses", "spectacles", "reading glasses", "sunglasses", "specs"] },
-        { "text": "Chargers", "share": 6, "accept": ["chargers", "charger", "phone charger", "charging cable", "cables", "the cable"] },
-        { "text": "Pens", "share": 3, "accept": ["pens", "pen", "a pen", "biros"] }
-      ]
-    },
-
-    {
-      "id": "day-off-holiday",
-      "prompt": "Name a holiday people take the day off for.",
-      "answers": [
-        { "text": "Christmas", "share": 29, "accept": ["christmas", "xmas", "christmas day"] },
-        { "text": "Thanksgiving", "share": 18, "accept": ["thanksgiving", "thanksgiving day"] },
-        { "text": "New Year's Day", "share": 16, "accept": ["new years day", "new year", "new years", "new years eve", "nye"] },
-        { "text": "Lunar New Year", "share": 13, "accept": ["lunar new year", "chinese new year", "cny", "spring festival", "tet"] },
-        { "text": "Easter", "share": 9, "accept": ["easter", "good friday", "easter sunday"] },
-        { "text": "Halloween", "share": 8, "accept": ["halloween", "hallowe'en"] },
-        { "text": "Diwali", "share": 5, "accept": ["diwali", "deepavali", "divali"] }
-      ]
-    },
-
-    {
-      "id": "fridge-too-long",
-      "prompt": "Name something in the fridge that has been there far too long.",
-      "answers": [
-        { "text": "Condiments", "share": 24, "accept": ["condiments", "sauces", "sauce", "ketchup", "mustard", "mayonnaise", "mayo", "chilli sauce", "hot sauce", "jars of sauce"] },
-        { "text": "Leftovers", "share": 22, "accept": ["leftovers", "leftover food", "old leftovers", "last week's dinner"] },
-        { "text": "Milk", "share": 15, "accept": ["milk", "sour milk", "old milk", "cream"] },
-        { "text": "Cheese", "share": 12, "accept": ["cheese", "old cheese", "mouldy cheese", "moldy cheese", "a block of cheese"] },
-        { "text": "Takeaway containers", "share": 11, "accept": ["takeaway containers", "takeout containers", "takeaway boxes", "takeout boxes", "containers", "tupperware"] },
-        { "text": "Vegetables", "share": 9, "accept": ["vegetables", "veg", "veggies", "lettuce", "salad", "the salad drawer", "wilted vegetables", "wilted veg"] },
-        { "text": "Yoghurt", "share": 5, "accept": ["yoghurt", "yogurt", "yoghurts", "yogurts"] }
-      ]
-    },
-
-    {
-      "id": "on-toast",
-      "prompt": "Name something people put on toast.",
-      "answers": [
-        { "text": "Butter", "share": 27, "accept": ["butter", "margarine", "spread"] },
-        { "text": "Jam", "share": 22, "accept": ["jam", "jelly", "marmalade", "preserves", "strawberry jam"] },
-        { "text": "Peanut butter", "share": 16, "accept": ["peanut butter", "pb", "nut butter", "almond butter"] },
-        { "text": "Avocado", "share": 12, "accept": ["avocado", "avo", "smashed avocado", "avocado toast", "guacamole"] },
-        { "text": "Honey", "share": 9, "accept": ["honey"] },
-        { "text": "Marmite", "share": 7, "accept": ["marmite", "vegemite", "yeast extract"] },
-        { "text": "Nutella", "share": 5, "accept": ["nutella", "chocolate spread", "hazelnut spread"] }
-      ]
-    },
-
-    {
-      "id": "never-use",
-      "prompt": "Name a kitchen gadget people own but never use.",
-      "answers": [
-        { "text": "A blender", "share": 19, "accept": ["a blender", "blender", "smoothie maker", "nutribullet"] },
-        { "text": "A fondue set", "share": 18, "accept": ["a fondue set", "fondue set", "fondue", "fondue pot", "raclette"] },
-        { "text": "A bread maker", "share": 15, "accept": ["a bread maker", "bread maker", "breadmaker", "bread machine"] },
-        { "text": "A waffle iron", "share": 14, "accept": ["a waffle iron", "waffle iron", "waffle maker", "waffle machine"] },
-        { "text": "A juicer", "share": 13, "accept": ["a juicer", "juicer", "juice machine"] },
-        { "text": "An ice cream maker", "share": 11, "accept": ["an ice cream maker", "ice cream maker", "ice cream machine"] },
-        { "text": "A pasta machine", "share": 6, "accept": ["a pasta machine", "pasta machine", "pasta maker", "pasta roller"] }
-      ]
-    },
-
-    {
-      "id": "road-trip-argument",
-      "prompt": "Name something couples argue about on a road trip.",
-      "answers": [
-        { "text": "Directions", "share": 26, "accept": ["directions", "the map", "navigation", "which way to go", "the sat nav", "gps", "getting lost", "a wrong turn"] },
-        { "text": "The music", "share": 21, "accept": ["the music", "music", "the playlist", "playlist", "what to listen to", "the radio"] },
-        { "text": "Where to eat", "share": 16, "accept": ["where to eat", "food", "where to stop for food", "lunch", "what to eat", "restaurants"] },
-        { "text": "How fast to drive", "share": 13, "accept": ["how fast to drive", "speed", "driving too fast", "the speed", "speeding", "how they drive", "the driving"] },
-        { "text": "Toilet stops", "share": 12, "accept": ["toilet stops", "bathroom breaks", "toilet breaks", "stopping for the toilet", "rest stops", "when to stop"] },
-        { "text": "The air conditioning", "share": 7, "accept": ["the air conditioning", "air conditioning", "aircon", "ac", "the temperature", "the heating", "the windows"] }
-      ]
-    },
-
-    {
-      "id": "eat-every-day",
-      "prompt": "Name a food people say they could eat every day.",
-      "answers": [
-        { "text": "Pizza", "share": 25, "accept": ["pizza"] },
-        { "text": "Rice", "share": 17, "accept": ["rice", "white rice", "steamed rice", "fried rice"] },
-        { "text": "Noodles", "share": 15, "accept": ["noodles", "noodle", "ramen", "pasta", "spaghetti"] },
-        { "text": "Bread", "share": 13, "accept": ["bread", "toast", "a sandwich", "sandwiches"] },
-        { "text": "Eggs", "share": 12, "accept": ["eggs", "egg", "fried eggs", "scrambled eggs"] },
-        { "text": "Chocolate", "share": 10, "accept": ["chocolate", "choc"] },
-        { "text": "Cheese", "share": 6, "accept": ["cheese"] }
-      ]
-    },
-
-    {
-      "id": "waiting-for-kettle",
-      "prompt": "Name something people do while waiting for the kettle.",
-      "answers": [
-        { "text": "Check their phone", "share": 30, "accept": ["check their phone", "look at their phone", "phone", "their phone", "scroll", "scroll their phone", "go on their phone", "check messages"] },
-        { "text": "Get a mug out", "share": 22, "accept": ["get a mug out", "get a mug", "get the mug", "mug", "get a cup", "cup", "put a teabag in"] },
-        { "text": "Stare at it", "share": 15, "accept": ["stare at it", "stare at the kettle", "watch it", "watch the kettle", "just stand there", "stand there"] },
-        { "text": "Wipe the counter", "share": 12, "accept": ["wipe the counter", "wipe the worktop", "clean the counter", "tidy up", "wipe down the side"] },
-        { "text": "Open the fridge", "share": 11, "accept": ["open the fridge", "look in the fridge", "the fridge", "check the fridge"] },
-        { "text": "Wash up a plate", "share": 8, "accept": ["wash up a plate", "wash something up", "do the washing up", "rinse a plate", "wash a dish", "the dishes"] }
-      ]
-    },
-
-    {
-      "id": "food-country",
-      "prompt": "Name a country famous for its food.",
-      "answers": [
-        { "text": "Italy", "share": 27, "accept": ["italy"] },
-        { "text": "Japan", "share": 19, "accept": ["japan"] },
-        { "text": "France", "share": 16, "accept": ["france"] },
-        { "text": "China", "share": 13, "accept": ["china"] },
-        { "text": "Mexico", "share": 11, "accept": ["mexico"] },
-        { "text": "Thailand", "share": 9, "accept": ["thailand"] },
-        { "text": "India", "share": 4, "accept": ["india"] }
-      ]
-    },
-
-    {
-      "id": "forget-to-pack",
-      "prompt": "Name something people always forget to pack.",
-      "answers": [
-        { "text": "A toothbrush", "share": 24, "accept": ["a toothbrush", "toothbrush", "toothpaste", "their toothbrush"] },
-        { "text": "A charger", "share": 22, "accept": ["a charger", "charger", "phone charger", "their charger", "charging cable", "cable"] },
-        { "text": "Underwear", "share": 15, "accept": ["underwear", "pants", "socks", "spare underwear", "knickers", "undies"] },
-        { "text": "A travel adapter", "share": 12, "accept": ["a travel adapter", "travel adapter", "adapter", "adaptor", "plug adapter"] },
-        { "text": "Medication", "share": 11, "accept": ["medication", "medicine", "their pills", "pills", "tablets", "prescriptions"] },
-        { "text": "Sunscreen", "share": 10, "accept": ["sunscreen", "sun cream", "suncream", "spf", "sunblock"] },
-        { "text": "A towel", "share": 5, "accept": ["a towel", "towel", "towels", "a beach towel"] }
-      ]
-    },
-
-    {
-      "id": "chore-while-watching-tv",
-      "prompt": "Name a chore you can do while watching TV.",
-      "answers": [
-        { "text": "Folding laundry", "share": 32, "accept": ["folding laundry", "folding the washing", "folding clothes", "laundry", "folding", "sorting laundry", "matching socks"] },
-        { "text": "Ironing", "share": 19, "accept": ["ironing", "the ironing", "iron"] },
-        { "text": "Sorting the post", "share": 13, "accept": ["sorting the post", "sorting the mail", "the post", "the mail", "opening letters", "paperwork", "admin"] },
-        { "text": "Meal prep", "share": 12, "accept": ["meal prep", "chopping vegetables", "prepping food", "peeling potatoes", "prepping dinner", "chopping"] },
-        { "text": "Tidying up", "share": 11, "accept": ["tidying up", "tidying", "putting things away", "picking things up", "decluttering"] },
-        { "text": "Polishing shoes", "share": 7, "accept": ["polishing shoes", "cleaning shoes", "shoes", "shining shoes"] }
-      ]
-    },
-
-    {
-      "id": "film-that-makes-you-cry",
-      "prompt": "Name a film that always makes people cry.",
-      "answers": [
-        { "text": "Titanic", "share": 22, "accept": ["titanic"] },
-        { "text": "The Lion King", "share": 19, "accept": ["the lion king", "lion king"] },
-        { "text": "Up", "share": 18, "accept": ["up", "pixar's up"] },
-        { "text": "Marley & Me", "share": 13, "accept": ["marley and me", "marley & me", "marley me"] },
-        { "text": "Toy Story 3", "share": 11, "accept": ["toy story 3", "toy story three", "toy story"] },
-        { "text": "Coco", "share": 10, "accept": ["coco"] },
-        { "text": "Bambi", "share": 5, "accept": ["bambi"] }
-      ]
-    },
-
-    {
-      "id": "new-years-eve",
-      "prompt": "Name something people do on New Year's Eve.",
-      "answers": [
-        { "text": "Watch the fireworks", "share": 26, "accept": ["watch the fireworks", "fireworks", "the fireworks", "watch fireworks", "let off fireworks"] },
-        { "text": "Count down", "share": 21, "accept": ["count down", "countdown", "the countdown", "count down from ten", "shout happy new year"] },
-        { "text": "Drink champagne", "share": 17, "accept": ["drink champagne", "champagne", "prosecco", "drink", "drinking", "have a drink", "toast"] },
-        { "text": "Kiss someone", "share": 12, "accept": ["kiss someone", "kiss", "midnight kiss", "kiss at midnight"] },
-        { "text": "Make resolutions", "share": 11, "accept": ["make resolutions", "resolutions", "new years resolutions", "make a resolution"] },
-        { "text": "Fall asleep before midnight", "share": 8, "accept": ["fall asleep before midnight", "fall asleep", "go to bed", "sleep", "go to bed early", "miss it"] }
-      ]
-    },
-
-    {
-      "id": "cannot-live-without",
-      "prompt": "Name the household appliance people could not live without.",
-      "answers": [
-        { "text": "The fridge", "share": 31, "accept": ["the fridge", "fridge", "refrigerator", "the refrigerator", "freezer"] },
-        { "text": "The washing machine", "share": 22, "accept": ["the washing machine", "washing machine", "washer", "the washer"] },
-        { "text": "The kettle", "share": 14, "accept": ["the kettle", "kettle"] },
-        { "text": "The microwave", "share": 12, "accept": ["the microwave", "microwave"] },
-        { "text": "The oven", "share": 10, "accept": ["the oven", "oven", "the cooker", "cooker", "the stove", "stove"] },
-        { "text": "The rice cooker", "share": 6, "accept": ["the rice cooker", "rice cooker"] },
-        { "text": "The vacuum", "share": 4, "accept": ["the vacuum", "vacuum", "hoover", "the hoover", "vacuum cleaner"] }
-      ]
-    },
-
-    {
-      "id": "dim-sum-trolley",
-      "prompt": "Besides dumplings, name something coming round on the dim sum trolley.",
-      "answers": [
-        { "text": "Egg tarts", "share": 25, "accept": ["egg tarts", "egg tart", "dan tat", "custard tarts", "custard tart"] },
-        { "text": "Congee", "share": 18, "accept": ["congee", "jook", "rice porridge", "porridge"] },
-        { "text": "Rice noodle rolls", "share": 16, "accept": ["rice noodle rolls", "rice noodle roll", "cheung fun", "cheong fun", "rice rolls"] },
-        { "text": "Turnip cake", "share": 14, "accept": ["turnip cake", "radish cake", "lo bak go", "daikon cake"] },
-        { "text": "Sticky rice in lotus leaf", "share": 11, "accept": ["sticky rice in lotus leaf", "sticky rice", "lo mai gai", "lotus leaf rice", "glutinous rice"] },
-        { "text": "Mango pudding", "share": 9, "accept": ["mango pudding", "pudding", "mango"] },
-        { "text": "Sesame balls", "share": 6, "accept": ["sesame balls", "sesame ball", "jin deui", "sesame seed balls"] }
-      ]
-    },
-
-    {
-      "id": "food-arrives",
-      "prompt": "Name something people say the second the food arrives.",
-      "answers": [
-        { "text": "That looks amazing", "share": 24, "accept": ["that looks amazing", "that looks good", "looks amazing", "looks good", "wow", "that looks incredible", "yum"] },
-        { "text": "Wait, let me take a photo", "share": 21, "accept": ["wait let me take a photo", "take a photo", "let me take a photo", "photo", "picture", "wait for the photo", "dont eat yet", "instagram"] },
-        { "text": "Finally", "share": 15, "accept": ["finally", "about time", "at last", "took long enough"] },
-        { "text": "That's huge", "share": 13, "accept": ["thats huge", "its huge", "thats massive", "thats big", "thats a lot", "portion is huge"] },
-        { "text": "Whose is this?", "share": 12, "accept": ["whose is this", "who ordered this", "who had the", "is this mine", "who is this for"] },
-        { "text": "Careful, it's hot", "share": 10, "accept": ["careful its hot", "its hot", "watch out its hot", "the plate is hot", "hot plate", "be careful"] }
-      ]
-    },
-
-    {
-      "id": "mixed-up-countries",
-      "prompt": "Name a country people constantly mix up with another one.",
-      "answers": [
-        { "text": "Austria", "share": 25, "accept": ["austria", "austria and australia", "austria australia"] },
-        { "text": "Slovakia", "share": 21, "accept": ["slovakia", "slovenia", "slovakia and slovenia"] },
-        { "text": "Sweden", "share": 18, "accept": ["sweden", "switzerland", "sweden and switzerland", "swiss"] },
-        { "text": "Iran", "share": 14, "accept": ["iran", "iraq", "iran and iraq"] },
-        { "text": "Niger", "share": 12, "accept": ["niger", "nigeria", "niger and nigeria"] },
-        { "text": "The Dominican Republic", "share": 8, "accept": ["the dominican republic", "dominican republic", "dominica"] }
-      ]
-    },
-
-    {
-      "id": "avoid-a-chore",
-      "prompt": "Name something people do to put off a chore.",
-      "answers": [
-        { "text": "Scroll their phone", "share": 28, "accept": ["scroll their phone", "scroll", "go on their phone", "phone", "scrolling", "social media", "tiktok", "look at their phone"] },
-        { "text": "Say \"in a minute\"", "share": 20, "accept": ["say in a minute", "in a minute", "say later", "later", "say ill do it later", "ill do it later", "promise to do it later"] },
-        { "text": "Make a snack", "share": 15, "accept": ["make a snack", "snack", "get a snack", "eat something", "make a cup of tea", "make tea", "get food"] },
-        { "text": "Clean something else", "share": 13, "accept": ["clean something else", "do a different chore", "tidy something else", "suddenly clean something else", "reorganise a drawer", "another chore"] },
-        { "text": "Take a nap", "share": 12, "accept": ["take a nap", "nap", "sleep", "lie down", "have a nap", "go to bed"] },
-        { "text": "Go for a walk", "share": 8, "accept": ["go for a walk", "a walk", "walk", "go outside", "walk the dog", "go out"] }
-      ]
+     "text": "Saruman",
+     "share": 4,
+     "accept": [
+      "saruman",
+      "voldemort",
+      "sauron"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "most-famous-superhero",
+   "prompt": "Name the most famous superhero.",
+   "answers": [
+    {
+     "text": "Superman",
+     "share": 24,
+     "accept": [
+      "superman",
+      "clark kent",
+      "man of steel"
+     ]
+    },
+    {
+     "text": "Batman",
+     "share": 22,
+     "accept": [
+      "batman",
+      "bruce wayne",
+      "the dark knight"
+     ]
+    },
+    {
+     "text": "Spider-Man",
+     "share": 18,
+     "accept": [
+      "spider man",
+      "spiderman",
+      "peter parker"
+     ]
+    },
+    {
+     "text": "Iron Man",
+     "share": 12,
+     "accept": [
+      "iron man",
+      "ironman",
+      "tony stark"
+     ]
+    },
+    {
+     "text": "Wonder Woman",
+     "share": 10,
+     "accept": [
+      "wonder woman",
+      "diana prince"
+     ]
+    },
+    {
+     "text": "Captain America",
+     "share": 7,
+     "accept": [
+      "captain america",
+      "steve rogers",
+      "cap"
+     ]
+    },
+    {
+     "text": "The Hulk",
+     "share": 5,
+     "accept": [
+      "the hulk",
+      "hulk",
+      "bruce banner",
+      "incredible hulk"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-famous-detective",
+   "prompt": "Name the most famous detective.",
+   "answers": [
+    {
+     "text": "Sherlock Holmes",
+     "share": 36,
+     "accept": [
+      "sherlock holmes",
+      "sherlock",
+      "holmes"
+     ]
+    },
+    {
+     "text": "Hercule Poirot",
+     "share": 16,
+     "accept": [
+      "hercule poirot",
+      "poirot"
+     ]
+    },
+    {
+     "text": "Columbo",
+     "share": 12,
+     "accept": [
+      "columbo",
+      "lieutenant columbo"
+     ]
+    },
+    {
+     "text": "Batman",
+     "share": 11,
+     "accept": [
+      "batman",
+      "the worlds greatest detective"
+     ]
+    },
+    {
+     "text": "Scooby-Doo",
+     "share": 9,
+     "accept": [
+      "scooby doo",
+      "scooby",
+      "the mystery gang",
+      "velma"
+     ]
+    },
+    {
+     "text": "Miss Marple",
+     "share": 8,
+     "accept": [
+      "miss marple",
+      "marple",
+      "jane marple"
+     ]
+    },
+    {
+     "text": "Inspector Gadget",
+     "share": 5,
+     "accept": [
+      "inspector gadget",
+      "gadget"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-popular-pet-name",
+   "prompt": "Name the most popular name for a pet.",
+   "answers": [
+    {
+     "text": "Bella",
+     "share": 22,
+     "accept": [
+      "bella"
+     ]
+    },
+    {
+     "text": "Max",
+     "share": 20,
+     "accept": [
+      "max",
+      "maxi"
+     ]
+    },
+    {
+     "text": "Luna",
+     "share": 17,
+     "accept": [
+      "luna"
+     ]
+    },
+    {
+     "text": "Charlie",
+     "share": 14,
+     "accept": [
+      "charlie"
+     ]
+    },
+    {
+     "text": "Milo",
+     "share": 11,
+     "accept": [
+      "milo"
+     ]
+    },
+    {
+     "text": "Daisy",
+     "share": 9,
+     "accept": [
+      "daisy"
+     ]
+    },
+    {
+     "text": "Coco",
+     "share": 6,
+     "accept": [
+      "coco",
+      "cocoa"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kitchen-drawer",
+   "prompt": "Name something you'd find in a kitchen drawer.",
+   "answers": [
+    {
+     "text": "Cutlery",
+     "share": 31,
+     "accept": [
+      "cutlery",
+      "silverware",
+      "forks",
+      "fork",
+      "knives",
+      "knife",
+      "spoons",
+      "spoon",
+      "utensils",
+      "flatware"
+     ]
+    },
+    {
+     "text": "Takeaway menus",
+     "share": 14,
+     "accept": [
+      "takeaway menus",
+      "takeout menus",
+      "menus",
+      "menu",
+      "takeaway menu",
+      "flyers",
+      "leaflets"
+     ]
+    },
+    {
+     "text": "Batteries",
+     "share": 12,
+     "accept": [
+      "batteries",
+      "battery",
+      "dead batteries",
+      "aa batteries"
+     ]
+    },
+    {
+     "text": "Scissors",
+     "share": 11,
+     "accept": [
+      "scissors",
+      "a pair of scissors",
+      "kitchen scissors",
+      "shears"
+     ]
+    },
+    {
+     "text": "A bottle opener",
+     "share": 9,
+     "accept": [
+      "a bottle opener",
+      "bottle opener",
+      "corkscrew",
+      "a corkscrew",
+      "can opener",
+      "a can opener",
+      "opener"
+     ]
+    },
+    {
+     "text": "Rubber bands",
+     "share": 8,
+     "accept": [
+      "rubber bands",
+      "rubber band",
+      "elastic bands",
+      "elastics",
+      "hair ties",
+      "twist ties"
+     ]
+    },
+    {
+     "text": "Birthday candles",
+     "share": 5,
+     "accept": [
+      "birthday candles",
+      "candles",
+      "candle",
+      "cake candles"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "worst-chore",
+   "prompt": "Name the chore nobody wants to do.",
+   "answers": [
+    {
+     "text": "Cleaning the toilet",
+     "share": 28,
+     "accept": [
+      "cleaning the toilet",
+      "clean the toilet",
+      "the toilet",
+      "toilet",
+      "scrubbing the toilet",
+      "cleaning the bathroom",
+      "the bathroom",
+      "bathroom"
+     ]
+    },
+    {
+     "text": "The dishes",
+     "share": 21,
+     "accept": [
+      "the dishes",
+      "dishes",
+      "washing up",
+      "the washing up",
+      "washing the dishes",
+      "doing the dishes",
+      "dishwashing"
+     ]
+    },
+    {
+     "text": "Laundry",
+     "share": 15,
+     "accept": [
+      "laundry",
+      "the laundry",
+      "washing clothes",
+      "doing the laundry",
+      "folding laundry",
+      "folding the washing"
+     ]
+    },
+    {
+     "text": "Ironing",
+     "share": 12,
+     "accept": [
+      "ironing",
+      "the ironing",
+      "iron",
+      "pressing shirts"
+     ]
+    },
+    {
+     "text": "Taking out the bins",
+     "share": 9,
+     "accept": [
+      "taking out the bins",
+      "taking out the trash",
+      "the bins",
+      "bins",
+      "trash",
+      "the trash",
+      "rubbish",
+      "taking out the rubbish",
+      "garbage"
+     ]
+    },
+    {
+     "text": "Mopping",
+     "share": 8,
+     "accept": [
+      "mopping",
+      "mopping the floor",
+      "the floors",
+      "floors",
+      "mop",
+      "scrubbing floors"
+     ]
+    },
+    {
+     "text": "Cleaning the oven",
+     "share": 5,
+     "accept": [
+      "cleaning the oven",
+      "the oven",
+      "oven",
+      "scrubbing the oven"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dim-sum-order",
+   "prompt": "Name something you always order at dim sum.",
+   "answers": [
+    {
+     "text": "Har gow",
+     "share": 26,
+     "accept": [
+      "har gow",
+      "har gao",
+      "hargow",
+      "ha gao",
+      "shrimp dumpling",
+      "shrimp dumplings",
+      "prawn dumplings"
+     ]
+    },
+    {
+     "text": "Siu mai",
+     "share": 22,
+     "accept": [
+      "siu mai",
+      "shumai",
+      "shu mai",
+      "siumai",
+      "shao mai",
+      "pork dumpling",
+      "pork dumplings"
+     ]
+    },
+    {
+     "text": "Char siu bao",
+     "share": 16,
+     "accept": [
+      "char siu bao",
+      "cha siu bao",
+      "bbq pork bun",
+      "bbq pork buns",
+      "pork bun",
+      "pork buns",
+      "barbecue pork bun"
+     ]
+    },
+    {
+     "text": "Cheung fun",
+     "share": 12,
+     "accept": [
+      "cheung fun",
+      "cheong fun",
+      "rice noodle roll",
+      "rice noodle rolls",
+      "rice roll",
+      "rice rolls"
+     ]
+    },
+    {
+     "text": "Egg tarts",
+     "share": 10,
+     "accept": [
+      "egg tarts",
+      "egg tart",
+      "dan tat",
+      "daan tat",
+      "custard tart",
+      "custard tarts"
+     ]
+    },
+    {
+     "text": "Chicken feet",
+     "share": 7,
+     "accept": [
+      "chicken feet",
+      "phoenix claws",
+      "phoenix talons",
+      "feng zhua"
+     ]
+    },
+    {
+     "text": "Turnip cake",
+     "share": 5,
+     "accept": [
+      "turnip cake",
+      "radish cake",
+      "lo bak go",
+      "law bak go",
+      "daikon cake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dream-country",
+   "prompt": "Name a country everybody says they want to visit.",
+   "answers": [
+    {
+     "text": "Japan",
+     "share": 24,
+     "accept": [
+      "japan",
+      "nippon"
+     ]
+    },
+    {
+     "text": "Italy",
+     "share": 19,
+     "accept": [
+      "italy"
+     ]
+    },
+    {
+     "text": "France",
+     "share": 15,
+     "accept": [
+      "france"
+     ]
+    },
+    {
+     "text": "Australia",
+     "share": 11,
+     "accept": [
+      "australia"
+     ]
+    },
+    {
+     "text": "Iceland",
+     "share": 9,
+     "accept": [
+      "iceland"
+     ]
+    },
+    {
+     "text": "Thailand",
+     "share": 8,
+     "accept": [
+      "thailand"
+     ]
+    },
+    {
+     "text": "Brazil",
+     "share": 6,
+     "accept": [
+      "brazil"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "walk-in-the-door",
+   "prompt": "Name something people do the moment they get home from work.",
+   "answers": [
+    {
+     "text": "Take their shoes off",
+     "share": 27,
+     "accept": [
+      "take their shoes off",
+      "take off their shoes",
+      "take off shoes",
+      "shoes off",
+      "remove shoes",
+      "take my shoes off",
+      "kick off their shoes"
+     ]
+    },
+    {
+     "text": "Open the fridge",
+     "share": 18,
+     "accept": [
+      "open the fridge",
+      "check the fridge",
+      "the fridge",
+      "look in the fridge",
+      "raid the fridge",
+      "get a snack"
+     ]
+    },
+    {
+     "text": "Change clothes",
+     "share": 16,
+     "accept": [
+      "change clothes",
+      "get changed",
+      "change",
+      "put on comfy clothes",
+      "change into pyjamas",
+      "put on pyjamas"
+     ]
+    },
+    {
+     "text": "Put the kettle on",
+     "share": 12,
+     "accept": [
+      "put the kettle on",
+      "kettle",
+      "the kettle",
+      "make tea",
+      "make a cup of tea",
+      "boil the kettle",
+      "make coffee"
+     ]
+    },
+    {
+     "text": "Sit down",
+     "share": 10,
+     "accept": [
+      "sit down",
+      "sit",
+      "collapse on the sofa",
+      "flop on the couch",
+      "lie down"
+     ]
+    },
+    {
+     "text": "Plug in their phone",
+     "share": 9,
+     "accept": [
+      "plug in their phone",
+      "charge their phone",
+      "charge the phone",
+      "put their phone on charge",
+      "phone charger"
+     ]
+    },
+    {
+     "text": "Greet whoever's in",
+     "share": 5,
+     "accept": [
+      "greet whoevers in",
+      "say hello",
+      "greet the dog",
+      "greet others",
+      "greet the family",
+      "say hi",
+      "hug the dog",
+      "kiss their partner",
+      "greet people"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "greatest-film",
+   "prompt": "Name a film people call the greatest of all time.",
+   "answers": [
+    {
+     "text": "The Godfather",
+     "share": 23,
+     "accept": [
+      "the godfather",
+      "godfather"
+     ]
+    },
+    {
+     "text": "The Shawshank Redemption",
+     "share": 20,
+     "accept": [
+      "the shawshank redemption",
+      "shawshank redemption",
+      "shawshank"
+     ]
+    },
+    {
+     "text": "Star Wars",
+     "share": 14,
+     "accept": [
+      "star wars",
+      "a new hope",
+      "the empire strikes back"
+     ]
+    },
+    {
+     "text": "Citizen Kane",
+     "share": 12,
+     "accept": [
+      "citizen kane",
+      "kane"
+     ]
+    },
+    {
+     "text": "Pulp Fiction",
+     "share": 10,
+     "accept": [
+      "pulp fiction"
+     ]
+    },
+    {
+     "text": "Titanic",
+     "share": 8,
+     "accept": [
+      "titanic"
+     ]
+    },
+    {
+     "text": "Casablanca",
+     "share": 7,
+     "accept": [
+      "casablanca"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "always-lose",
+   "prompt": "Name something people are always losing at home.",
+   "answers": [
+    {
+     "text": "Keys",
+     "share": 30,
+     "accept": [
+      "keys",
+      "key",
+      "my keys",
+      "house keys",
+      "car keys"
+     ]
+    },
+    {
+     "text": "Their phone",
+     "share": 21,
+     "accept": [
+      "their phone",
+      "phone",
+      "my phone",
+      "mobile",
+      "cell phone",
+      "the phone"
+     ]
+    },
+    {
+     "text": "The remote",
+     "share": 18,
+     "accept": [
+      "the remote",
+      "remote",
+      "remote control",
+      "the remote control",
+      "tv remote",
+      "the clicker"
+     ]
+    },
+    {
+     "text": "Socks",
+     "share": 12,
+     "accept": [
+      "socks",
+      "sock",
+      "one sock",
+      "a sock",
+      "odd socks"
+     ]
+    },
+    {
+     "text": "Glasses",
+     "share": 9,
+     "accept": [
+      "glasses",
+      "spectacles",
+      "reading glasses",
+      "sunglasses",
+      "specs"
+     ]
+    },
+    {
+     "text": "Chargers",
+     "share": 6,
+     "accept": [
+      "chargers",
+      "charger",
+      "phone charger",
+      "charging cable",
+      "cables",
+      "the cable"
+     ]
+    },
+    {
+     "text": "Pens",
+     "share": 3,
+     "accept": [
+      "pens",
+      "pen",
+      "a pen",
+      "biros"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "day-off-holiday",
+   "prompt": "Name a holiday people take the day off for.",
+   "answers": [
+    {
+     "text": "Christmas",
+     "share": 29,
+     "accept": [
+      "christmas",
+      "xmas",
+      "christmas day"
+     ]
+    },
+    {
+     "text": "Thanksgiving",
+     "share": 18,
+     "accept": [
+      "thanksgiving",
+      "thanksgiving day"
+     ]
+    },
+    {
+     "text": "New Year's Day",
+     "share": 16,
+     "accept": [
+      "new years day",
+      "new year",
+      "new years",
+      "new years eve",
+      "nye"
+     ]
+    },
+    {
+     "text": "Lunar New Year",
+     "share": 13,
+     "accept": [
+      "lunar new year",
+      "chinese new year",
+      "cny",
+      "spring festival",
+      "tet"
+     ]
+    },
+    {
+     "text": "Easter",
+     "share": 9,
+     "accept": [
+      "easter",
+      "good friday",
+      "easter sunday"
+     ]
+    },
+    {
+     "text": "Halloween",
+     "share": 8,
+     "accept": [
+      "halloween",
+      "hallowe'en"
+     ]
+    },
+    {
+     "text": "Diwali",
+     "share": 5,
+     "accept": [
+      "diwali",
+      "deepavali",
+      "divali"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fridge-too-long",
+   "prompt": "Name something in the fridge that has been there far too long.",
+   "answers": [
+    {
+     "text": "Condiments",
+     "share": 24,
+     "accept": [
+      "condiments",
+      "sauces",
+      "sauce",
+      "ketchup",
+      "mustard",
+      "mayonnaise",
+      "mayo",
+      "chilli sauce",
+      "hot sauce",
+      "jars of sauce"
+     ]
+    },
+    {
+     "text": "Leftovers",
+     "share": 22,
+     "accept": [
+      "leftovers",
+      "leftover food",
+      "old leftovers",
+      "last week's dinner"
+     ]
+    },
+    {
+     "text": "Milk",
+     "share": 15,
+     "accept": [
+      "milk",
+      "sour milk",
+      "old milk",
+      "cream"
+     ]
+    },
+    {
+     "text": "Cheese",
+     "share": 12,
+     "accept": [
+      "cheese",
+      "old cheese",
+      "mouldy cheese",
+      "moldy cheese",
+      "a block of cheese"
+     ]
+    },
+    {
+     "text": "Takeaway containers",
+     "share": 11,
+     "accept": [
+      "takeaway containers",
+      "takeout containers",
+      "takeaway boxes",
+      "takeout boxes",
+      "containers",
+      "tupperware"
+     ]
+    },
+    {
+     "text": "Vegetables",
+     "share": 9,
+     "accept": [
+      "vegetables",
+      "veg",
+      "veggies",
+      "lettuce",
+      "salad",
+      "the salad drawer",
+      "wilted vegetables",
+      "wilted veg"
+     ]
+    },
+    {
+     "text": "Yoghurt",
+     "share": 5,
+     "accept": [
+      "yoghurt",
+      "yogurt",
+      "yoghurts",
+      "yogurts"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-toast",
+   "prompt": "Name something people put on toast.",
+   "answers": [
+    {
+     "text": "Butter",
+     "share": 27,
+     "accept": [
+      "butter",
+      "margarine",
+      "spread"
+     ]
+    },
+    {
+     "text": "Jam",
+     "share": 22,
+     "accept": [
+      "jam",
+      "jelly",
+      "marmalade",
+      "preserves",
+      "strawberry jam"
+     ]
+    },
+    {
+     "text": "Peanut butter",
+     "share": 16,
+     "accept": [
+      "peanut butter",
+      "pb",
+      "nut butter",
+      "almond butter"
+     ]
+    },
+    {
+     "text": "Avocado",
+     "share": 12,
+     "accept": [
+      "avocado",
+      "avo",
+      "smashed avocado",
+      "avocado toast",
+      "guacamole"
+     ]
+    },
+    {
+     "text": "Honey",
+     "share": 9,
+     "accept": [
+      "honey"
+     ]
+    },
+    {
+     "text": "Marmite",
+     "share": 7,
+     "accept": [
+      "marmite",
+      "vegemite",
+      "yeast extract"
+     ]
+    },
+    {
+     "text": "Nutella",
+     "share": 5,
+     "accept": [
+      "nutella",
+      "chocolate spread",
+      "hazelnut spread"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "never-use",
+   "prompt": "Name a kitchen gadget people own but never use.",
+   "answers": [
+    {
+     "text": "A blender",
+     "share": 19,
+     "accept": [
+      "a blender",
+      "blender",
+      "smoothie maker",
+      "nutribullet"
+     ]
+    },
+    {
+     "text": "A fondue set",
+     "share": 18,
+     "accept": [
+      "a fondue set",
+      "fondue set",
+      "fondue",
+      "fondue pot",
+      "raclette"
+     ]
+    },
+    {
+     "text": "A bread maker",
+     "share": 15,
+     "accept": [
+      "a bread maker",
+      "bread maker",
+      "breadmaker",
+      "bread machine"
+     ]
+    },
+    {
+     "text": "A waffle iron",
+     "share": 14,
+     "accept": [
+      "a waffle iron",
+      "waffle iron",
+      "waffle maker",
+      "waffle machine"
+     ]
+    },
+    {
+     "text": "A juicer",
+     "share": 13,
+     "accept": [
+      "a juicer",
+      "juicer",
+      "juice machine"
+     ]
+    },
+    {
+     "text": "An ice cream maker",
+     "share": 11,
+     "accept": [
+      "an ice cream maker",
+      "ice cream maker",
+      "ice cream machine"
+     ]
+    },
+    {
+     "text": "A pasta machine",
+     "share": 6,
+     "accept": [
+      "a pasta machine",
+      "pasta machine",
+      "pasta maker",
+      "pasta roller"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "road-trip-argument",
+   "prompt": "Name something couples argue about on a road trip.",
+   "answers": [
+    {
+     "text": "Directions",
+     "share": 26,
+     "accept": [
+      "directions",
+      "the map",
+      "navigation",
+      "which way to go",
+      "the sat nav",
+      "gps",
+      "getting lost",
+      "a wrong turn"
+     ]
+    },
+    {
+     "text": "The music",
+     "share": 21,
+     "accept": [
+      "the music",
+      "music",
+      "the playlist",
+      "playlist",
+      "what to listen to",
+      "the radio"
+     ]
+    },
+    {
+     "text": "Where to eat",
+     "share": 16,
+     "accept": [
+      "where to eat",
+      "food",
+      "where to stop for food",
+      "lunch",
+      "what to eat",
+      "restaurants"
+     ]
+    },
+    {
+     "text": "How fast to drive",
+     "share": 13,
+     "accept": [
+      "how fast to drive",
+      "speed",
+      "driving too fast",
+      "the speed",
+      "speeding",
+      "how they drive",
+      "the driving"
+     ]
+    },
+    {
+     "text": "Toilet stops",
+     "share": 12,
+     "accept": [
+      "toilet stops",
+      "bathroom breaks",
+      "toilet breaks",
+      "stopping for the toilet",
+      "rest stops",
+      "when to stop"
+     ]
+    },
+    {
+     "text": "The air conditioning",
+     "share": 7,
+     "accept": [
+      "the air conditioning",
+      "air conditioning",
+      "aircon",
+      "ac",
+      "the temperature",
+      "the heating",
+      "the windows"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eat-every-day",
+   "prompt": "Name a food people say they could eat every day.",
+   "answers": [
+    {
+     "text": "Pizza",
+     "share": 25,
+     "accept": [
+      "pizza"
+     ]
+    },
+    {
+     "text": "Rice",
+     "share": 17,
+     "accept": [
+      "rice",
+      "white rice",
+      "steamed rice",
+      "fried rice"
+     ]
+    },
+    {
+     "text": "Noodles",
+     "share": 15,
+     "accept": [
+      "noodles",
+      "noodle",
+      "ramen",
+      "pasta",
+      "spaghetti"
+     ]
+    },
+    {
+     "text": "Bread",
+     "share": 13,
+     "accept": [
+      "bread",
+      "toast",
+      "a sandwich",
+      "sandwiches"
+     ]
+    },
+    {
+     "text": "Eggs",
+     "share": 12,
+     "accept": [
+      "eggs",
+      "egg",
+      "fried eggs",
+      "scrambled eggs"
+     ]
+    },
+    {
+     "text": "Chocolate",
+     "share": 10,
+     "accept": [
+      "chocolate",
+      "choc"
+     ]
+    },
+    {
+     "text": "Cheese",
+     "share": 6,
+     "accept": [
+      "cheese"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "waiting-for-kettle",
+   "prompt": "Name something people do while waiting for the kettle.",
+   "answers": [
+    {
+     "text": "Check their phone",
+     "share": 30,
+     "accept": [
+      "check their phone",
+      "look at their phone",
+      "phone",
+      "their phone",
+      "scroll",
+      "scroll their phone",
+      "go on their phone",
+      "check messages"
+     ]
+    },
+    {
+     "text": "Get a mug out",
+     "share": 22,
+     "accept": [
+      "get a mug out",
+      "get a mug",
+      "get the mug",
+      "mug",
+      "get a cup",
+      "cup",
+      "put a teabag in"
+     ]
+    },
+    {
+     "text": "Stare at it",
+     "share": 15,
+     "accept": [
+      "stare at it",
+      "stare at the kettle",
+      "watch it",
+      "watch the kettle",
+      "just stand there",
+      "stand there"
+     ]
+    },
+    {
+     "text": "Wipe the counter",
+     "share": 12,
+     "accept": [
+      "wipe the counter",
+      "wipe the worktop",
+      "clean the counter",
+      "tidy up",
+      "wipe down the side"
+     ]
+    },
+    {
+     "text": "Open the fridge",
+     "share": 11,
+     "accept": [
+      "open the fridge",
+      "look in the fridge",
+      "the fridge",
+      "check the fridge"
+     ]
+    },
+    {
+     "text": "Wash up a plate",
+     "share": 8,
+     "accept": [
+      "wash up a plate",
+      "wash something up",
+      "do the washing up",
+      "rinse a plate",
+      "wash a dish",
+      "the dishes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "food-country",
+   "prompt": "Name a country famous for its food.",
+   "answers": [
+    {
+     "text": "Italy",
+     "share": 27,
+     "accept": [
+      "italy"
+     ]
+    },
+    {
+     "text": "Japan",
+     "share": 19,
+     "accept": [
+      "japan"
+     ]
+    },
+    {
+     "text": "France",
+     "share": 16,
+     "accept": [
+      "france"
+     ]
+    },
+    {
+     "text": "China",
+     "share": 13,
+     "accept": [
+      "china"
+     ]
+    },
+    {
+     "text": "Mexico",
+     "share": 11,
+     "accept": [
+      "mexico"
+     ]
+    },
+    {
+     "text": "Thailand",
+     "share": 9,
+     "accept": [
+      "thailand"
+     ]
+    },
+    {
+     "text": "India",
+     "share": 4,
+     "accept": [
+      "india"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "forget-to-pack",
+   "prompt": "Name something people always forget to pack.",
+   "answers": [
+    {
+     "text": "A toothbrush",
+     "share": 24,
+     "accept": [
+      "a toothbrush",
+      "toothbrush",
+      "toothpaste",
+      "their toothbrush"
+     ]
+    },
+    {
+     "text": "A charger",
+     "share": 22,
+     "accept": [
+      "a charger",
+      "charger",
+      "phone charger",
+      "their charger",
+      "charging cable",
+      "cable"
+     ]
+    },
+    {
+     "text": "Underwear",
+     "share": 15,
+     "accept": [
+      "underwear",
+      "pants",
+      "socks",
+      "spare underwear",
+      "knickers",
+      "undies"
+     ]
+    },
+    {
+     "text": "A travel adapter",
+     "share": 12,
+     "accept": [
+      "a travel adapter",
+      "travel adapter",
+      "adapter",
+      "adaptor",
+      "plug adapter"
+     ]
+    },
+    {
+     "text": "Medication",
+     "share": 11,
+     "accept": [
+      "medication",
+      "medicine",
+      "their pills",
+      "pills",
+      "tablets",
+      "prescriptions"
+     ]
+    },
+    {
+     "text": "Sunscreen",
+     "share": 10,
+     "accept": [
+      "sunscreen",
+      "sun cream",
+      "suncream",
+      "spf",
+      "sunblock"
+     ]
+    },
+    {
+     "text": "A towel",
+     "share": 5,
+     "accept": [
+      "a towel",
+      "towel",
+      "towels",
+      "a beach towel"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chore-while-watching-tv",
+   "prompt": "Name a chore you can do while watching TV.",
+   "answers": [
+    {
+     "text": "Folding laundry",
+     "share": 32,
+     "accept": [
+      "folding laundry",
+      "folding the washing",
+      "folding clothes",
+      "laundry",
+      "folding",
+      "sorting laundry",
+      "matching socks"
+     ]
+    },
+    {
+     "text": "Ironing",
+     "share": 19,
+     "accept": [
+      "ironing",
+      "the ironing",
+      "iron"
+     ]
+    },
+    {
+     "text": "Sorting the post",
+     "share": 13,
+     "accept": [
+      "sorting the post",
+      "sorting the mail",
+      "the post",
+      "the mail",
+      "opening letters",
+      "paperwork",
+      "admin"
+     ]
+    },
+    {
+     "text": "Meal prep",
+     "share": 12,
+     "accept": [
+      "meal prep",
+      "chopping vegetables",
+      "prepping food",
+      "peeling potatoes",
+      "prepping dinner",
+      "chopping"
+     ]
+    },
+    {
+     "text": "Tidying up",
+     "share": 11,
+     "accept": [
+      "tidying up",
+      "tidying",
+      "putting things away",
+      "picking things up",
+      "decluttering"
+     ]
+    },
+    {
+     "text": "Polishing shoes",
+     "share": 7,
+     "accept": [
+      "polishing shoes",
+      "cleaning shoes",
+      "shoes",
+      "shining shoes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "film-that-makes-you-cry",
+   "prompt": "Name a film that always makes people cry.",
+   "answers": [
+    {
+     "text": "Titanic",
+     "share": 22,
+     "accept": [
+      "titanic"
+     ]
+    },
+    {
+     "text": "The Lion King",
+     "share": 19,
+     "accept": [
+      "the lion king",
+      "lion king"
+     ]
+    },
+    {
+     "text": "Up",
+     "share": 18,
+     "accept": [
+      "up",
+      "pixar's up"
+     ]
+    },
+    {
+     "text": "Marley & Me",
+     "share": 13,
+     "accept": [
+      "marley and me",
+      "marley & me",
+      "marley me"
+     ]
+    },
+    {
+     "text": "Toy Story 3",
+     "share": 11,
+     "accept": [
+      "toy story 3",
+      "toy story three",
+      "toy story"
+     ]
+    },
+    {
+     "text": "Coco",
+     "share": 10,
+     "accept": [
+      "coco"
+     ]
+    },
+    {
+     "text": "Bambi",
+     "share": 5,
+     "accept": [
+      "bambi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "new-years-eve",
+   "prompt": "Name something people do on New Year's Eve.",
+   "answers": [
+    {
+     "text": "Watch the fireworks",
+     "share": 26,
+     "accept": [
+      "watch the fireworks",
+      "fireworks",
+      "the fireworks",
+      "watch fireworks",
+      "let off fireworks"
+     ]
+    },
+    {
+     "text": "Count down",
+     "share": 21,
+     "accept": [
+      "count down",
+      "countdown",
+      "the countdown",
+      "count down from ten",
+      "shout happy new year"
+     ]
+    },
+    {
+     "text": "Drink champagne",
+     "share": 17,
+     "accept": [
+      "drink champagne",
+      "champagne",
+      "prosecco",
+      "drink",
+      "drinking",
+      "have a drink",
+      "toast"
+     ]
+    },
+    {
+     "text": "Kiss someone",
+     "share": 12,
+     "accept": [
+      "kiss someone",
+      "kiss",
+      "midnight kiss",
+      "kiss at midnight"
+     ]
+    },
+    {
+     "text": "Make resolutions",
+     "share": 11,
+     "accept": [
+      "make resolutions",
+      "resolutions",
+      "new years resolutions",
+      "make a resolution"
+     ]
+    },
+    {
+     "text": "Fall asleep before midnight",
+     "share": 8,
+     "accept": [
+      "fall asleep before midnight",
+      "fall asleep",
+      "go to bed",
+      "sleep",
+      "go to bed early",
+      "miss it"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cannot-live-without",
+   "prompt": "Name the household appliance people could not live without.",
+   "answers": [
+    {
+     "text": "The fridge",
+     "share": 31,
+     "accept": [
+      "the fridge",
+      "fridge",
+      "refrigerator",
+      "the refrigerator",
+      "freezer"
+     ]
+    },
+    {
+     "text": "The washing machine",
+     "share": 22,
+     "accept": [
+      "the washing machine",
+      "washing machine",
+      "washer",
+      "the washer"
+     ]
+    },
+    {
+     "text": "The kettle",
+     "share": 14,
+     "accept": [
+      "the kettle",
+      "kettle"
+     ]
+    },
+    {
+     "text": "The microwave",
+     "share": 12,
+     "accept": [
+      "the microwave",
+      "microwave"
+     ]
+    },
+    {
+     "text": "The oven",
+     "share": 10,
+     "accept": [
+      "the oven",
+      "oven",
+      "the cooker",
+      "cooker",
+      "the stove",
+      "stove"
+     ]
+    },
+    {
+     "text": "The rice cooker",
+     "share": 6,
+     "accept": [
+      "the rice cooker",
+      "rice cooker"
+     ]
+    },
+    {
+     "text": "The vacuum",
+     "share": 4,
+     "accept": [
+      "the vacuum",
+      "vacuum",
+      "hoover",
+      "the hoover",
+      "vacuum cleaner"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dim-sum-trolley",
+   "prompt": "Besides dumplings, name something coming round on the dim sum trolley.",
+   "answers": [
+    {
+     "text": "Egg tarts",
+     "share": 25,
+     "accept": [
+      "egg tarts",
+      "egg tart",
+      "dan tat",
+      "custard tarts",
+      "custard tart"
+     ]
+    },
+    {
+     "text": "Congee",
+     "share": 18,
+     "accept": [
+      "congee",
+      "jook",
+      "rice porridge",
+      "porridge"
+     ]
+    },
+    {
+     "text": "Rice noodle rolls",
+     "share": 16,
+     "accept": [
+      "rice noodle rolls",
+      "rice noodle roll",
+      "cheung fun",
+      "cheong fun",
+      "rice rolls"
+     ]
+    },
+    {
+     "text": "Turnip cake",
+     "share": 14,
+     "accept": [
+      "turnip cake",
+      "radish cake",
+      "lo bak go",
+      "daikon cake"
+     ]
+    },
+    {
+     "text": "Sticky rice in lotus leaf",
+     "share": 11,
+     "accept": [
+      "sticky rice in lotus leaf",
+      "sticky rice",
+      "lo mai gai",
+      "lotus leaf rice",
+      "glutinous rice"
+     ]
+    },
+    {
+     "text": "Mango pudding",
+     "share": 9,
+     "accept": [
+      "mango pudding",
+      "pudding",
+      "mango"
+     ]
+    },
+    {
+     "text": "Sesame balls",
+     "share": 6,
+     "accept": [
+      "sesame balls",
+      "sesame ball",
+      "jin deui",
+      "sesame seed balls"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "food-arrives",
+   "prompt": "Name something people say the second the food arrives.",
+   "answers": [
+    {
+     "text": "That looks amazing",
+     "share": 24,
+     "accept": [
+      "that looks amazing",
+      "that looks good",
+      "looks amazing",
+      "looks good",
+      "wow",
+      "that looks incredible",
+      "yum"
+     ]
+    },
+    {
+     "text": "Wait, let me take a photo",
+     "share": 21,
+     "accept": [
+      "wait let me take a photo",
+      "take a photo",
+      "let me take a photo",
+      "photo",
+      "picture",
+      "wait for the photo",
+      "dont eat yet",
+      "instagram"
+     ]
+    },
+    {
+     "text": "Finally",
+     "share": 15,
+     "accept": [
+      "finally",
+      "about time",
+      "at last",
+      "took long enough"
+     ]
+    },
+    {
+     "text": "That's huge",
+     "share": 13,
+     "accept": [
+      "thats huge",
+      "its huge",
+      "thats massive",
+      "thats big",
+      "thats a lot",
+      "portion is huge"
+     ]
+    },
+    {
+     "text": "Whose is this?",
+     "share": 12,
+     "accept": [
+      "whose is this",
+      "who ordered this",
+      "who had the",
+      "is this mine",
+      "who is this for"
+     ]
+    },
+    {
+     "text": "Careful, it's hot",
+     "share": 10,
+     "accept": [
+      "careful its hot",
+      "its hot",
+      "watch out its hot",
+      "the plate is hot",
+      "hot plate",
+      "be careful"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mixed-up-countries",
+   "prompt": "Name a country people constantly mix up with another one.",
+   "answers": [
+    {
+     "text": "Austria",
+     "share": 25,
+     "accept": [
+      "austria",
+      "austria and australia",
+      "austria australia"
+     ]
+    },
+    {
+     "text": "Slovakia",
+     "share": 21,
+     "accept": [
+      "slovakia",
+      "slovenia",
+      "slovakia and slovenia"
+     ]
+    },
+    {
+     "text": "Sweden",
+     "share": 18,
+     "accept": [
+      "sweden",
+      "switzerland",
+      "sweden and switzerland",
+      "swiss"
+     ]
+    },
+    {
+     "text": "Iran",
+     "share": 14,
+     "accept": [
+      "iran",
+      "iraq",
+      "iran and iraq"
+     ]
+    },
+    {
+     "text": "Niger",
+     "share": 12,
+     "accept": [
+      "niger",
+      "nigeria",
+      "niger and nigeria"
+     ]
+    },
+    {
+     "text": "The Dominican Republic",
+     "share": 8,
+     "accept": [
+      "the dominican republic",
+      "dominican republic",
+      "dominica"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "avoid-a-chore",
+   "prompt": "Name something people do to put off a chore.",
+   "answers": [
+    {
+     "text": "Scroll their phone",
+     "share": 28,
+     "accept": [
+      "scroll their phone",
+      "scroll",
+      "go on their phone",
+      "phone",
+      "scrolling",
+      "social media",
+      "tiktok",
+      "look at their phone"
+     ]
+    },
+    {
+     "text": "Say \"in a minute\"",
+     "share": 20,
+     "accept": [
+      "say in a minute",
+      "in a minute",
+      "say later",
+      "later",
+      "say ill do it later",
+      "ill do it later",
+      "promise to do it later"
+     ]
+    },
+    {
+     "text": "Make a snack",
+     "share": 15,
+     "accept": [
+      "make a snack",
+      "snack",
+      "get a snack",
+      "eat something",
+      "make a cup of tea",
+      "make tea",
+      "get food"
+     ]
+    },
+    {
+     "text": "Clean something else",
+     "share": 13,
+     "accept": [
+      "clean something else",
+      "do a different chore",
+      "tidy something else",
+      "suddenly clean something else",
+      "reorganise a drawer",
+      "another chore"
+     ]
+    },
+    {
+     "text": "Take a nap",
+     "share": 12,
+     "accept": [
+      "take a nap",
+      "nap",
+      "sleep",
+      "lie down",
+      "have a nap",
+      "go to bed"
+     ]
+    },
+    {
+     "text": "Go for a walk",
+     "share": 8,
+     "accept": [
+      "go for a walk",
+      "a walk",
+      "walk",
+      "go outside",
+      "walk the dog",
+      "go out"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-famous-villain",
+   "prompt": "Name the most famous villain.",
+   "answers": [
+    {
+     "text": "Darth Vader",
+     "share": 24,
+     "accept": [
+      "darth vader",
+      "vader",
+      "anakin skywalker"
+     ]
+    },
+    {
+     "text": "The Joker",
+     "share": 20,
+     "accept": [
+      "the joker",
+      "joker"
+     ]
+    },
+    {
+     "text": "Voldemort",
+     "share": 15,
+     "accept": [
+      "voldemort",
+      "lord voldemort",
+      "he who must not be named",
+      "tom riddle"
+     ]
+    },
+    {
+     "text": "Hannibal Lecter",
+     "share": 13,
+     "accept": [
+      "hannibal lecter",
+      "hannibal",
+      "lecter"
+     ]
+    },
+    {
+     "text": "Thanos",
+     "share": 11,
+     "accept": [
+      "thanos"
+     ]
+    },
+    {
+     "text": "Sauron",
+     "share": 9,
+     "accept": [
+      "sauron"
+     ]
+    },
+    {
+     "text": "Cruella de Vil",
+     "share": 5,
+     "accept": [
+      "cruella de vil",
+      "cruella",
+      "cruella deville"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-famous-scientist",
+   "prompt": "Name the most famous scientist.",
+   "answers": [
+    {
+     "text": "Albert Einstein",
+     "share": 32,
+     "accept": [
+      "albert einstein",
+      "einstein"
+     ]
+    },
+    {
+     "text": "Isaac Newton",
+     "share": 21,
+     "accept": [
+      "isaac newton",
+      "newton",
+      "sir isaac newton"
+     ]
+    },
+    {
+     "text": "Marie Curie",
+     "share": 16,
+     "accept": [
+      "marie curie",
+      "curie",
+      "madame curie"
+     ]
+    },
+    {
+     "text": "Charles Darwin",
+     "share": 12,
+     "accept": [
+      "charles darwin",
+      "darwin"
+     ]
+    },
+    {
+     "text": "Stephen Hawking",
+     "share": 10,
+     "accept": [
+      "stephen hawking",
+      "hawking"
+     ]
+    },
+    {
+     "text": "Nikola Tesla",
+     "share": 6,
+     "accept": [
+      "nikola tesla",
+      "tesla"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-popular-pizza-topping",
+   "prompt": "Name the most popular pizza topping.",
+   "answers": [
+    {
+     "text": "Pepperoni",
+     "share": 30,
+     "accept": [
+      "pepperoni",
+      "peperoni",
+      "salami"
+     ]
+    },
+    {
+     "text": "Cheese",
+     "share": 21,
+     "accept": [
+      "cheese",
+      "extra cheese",
+      "mozzarella",
+      "four cheese"
+     ]
+    },
+    {
+     "text": "Mushrooms",
+     "share": 15,
+     "accept": [
+      "mushrooms",
+      "mushroom"
+     ]
+    },
+    {
+     "text": "Ham",
+     "share": 12,
+     "accept": [
+      "ham",
+      "prosciutto",
+      "bacon"
+     ]
+    },
+    {
+     "text": "Pineapple",
+     "share": 10,
+     "accept": [
+      "pineapple"
+     ]
+    },
+    {
+     "text": "Onion",
+     "share": 7,
+     "accept": [
+      "onion",
+      "onions",
+      "red onion"
+     ]
+    },
+    {
+     "text": "Olives",
+     "share": 4,
+     "accept": [
+      "olives",
+      "olive",
+      "black olives"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-famous-landmark",
+   "prompt": "Name the most famous landmark in the world.",
+   "answers": [
+    {
+     "text": "The Eiffel Tower",
+     "share": 27,
+     "accept": [
+      "the eiffel tower",
+      "eiffel tower",
+      "eiffel"
+     ]
+    },
+    {
+     "text": "The Great Wall of China",
+     "share": 19,
+     "accept": [
+      "the great wall of china",
+      "great wall of china",
+      "the great wall",
+      "great wall"
+     ]
+    },
+    {
+     "text": "The Pyramids",
+     "share": 15,
+     "accept": [
+      "the pyramids",
+      "pyramids",
+      "the great pyramid",
+      "giza",
+      "the pyramids of giza"
+     ]
+    },
+    {
+     "text": "The Statue of Liberty",
+     "share": 13,
+     "accept": [
+      "the statue of liberty",
+      "statue of liberty"
+     ]
+    },
+    {
+     "text": "The Taj Mahal",
+     "share": 11,
+     "accept": [
+      "the taj mahal",
+      "taj mahal",
+      "taj"
+     ]
+    },
+    {
+     "text": "The Colosseum",
+     "share": 8,
+     "accept": [
+      "the colosseum",
+      "colosseum",
+      "coliseum"
+     ]
+    },
+    {
+     "text": "Big Ben",
+     "share": 5,
+     "accept": [
+      "big ben"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-popular-board-game",
+   "prompt": "Name the most popular board game.",
+   "answers": [
+    {
+     "text": "Monopoly",
+     "share": 29,
+     "accept": [
+      "monopoly"
+     ]
+    },
+    {
+     "text": "Scrabble",
+     "share": 19,
+     "accept": [
+      "scrabble"
+     ]
+    },
+    {
+     "text": "Chess",
+     "share": 17,
+     "accept": [
+      "chess"
+     ]
+    },
+    {
+     "text": "Cluedo",
+     "share": 11,
+     "accept": [
+      "cluedo",
+      "clue"
+     ]
+    },
+    {
+     "text": "Risk",
+     "share": 9,
+     "accept": [
+      "risk"
+     ]
+    },
+    {
+     "text": "Snakes and Ladders",
+     "share": 8,
+     "accept": [
+      "snakes and ladders",
+      "chutes and ladders",
+      "snakes ladders"
+     ]
+    },
+    {
+     "text": "Catan",
+     "share": 5,
+     "accept": [
+      "catan",
+      "settlers of catan"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-famous-painting",
+   "prompt": "Name the most famous painting.",
+   "answers": [
+    {
+     "text": "The Mona Lisa",
+     "share": 38,
+     "accept": [
+      "the mona lisa",
+      "mona lisa",
+      "la gioconda"
+     ]
+    },
+    {
+     "text": "The Starry Night",
+     "share": 18,
+     "accept": [
+      "the starry night",
+      "starry night"
+     ]
+    },
+    {
+     "text": "The Scream",
+     "share": 14,
+     "accept": [
+      "the scream",
+      "scream"
+     ]
+    },
+    {
+     "text": "The Last Supper",
+     "share": 11,
+     "accept": [
+      "the last supper",
+      "last supper"
+     ]
+    },
+    {
+     "text": "Girl with a Pearl Earring",
+     "share": 9,
+     "accept": [
+      "girl with a pearl earring",
+      "pearl earring",
+      "the girl with a pearl earring"
+     ]
+    },
+    {
+     "text": "The Persistence of Memory",
+     "share": 6,
+     "accept": [
+      "the persistence of memory",
+      "persistence of memory",
+      "the melting clocks",
+      "melting clocks"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "most-popular-instrument",
+   "prompt": "Name the instrument most people learn first.",
+   "answers": [
+    {
+     "text": "The piano",
+     "share": 28,
+     "accept": [
+      "the piano",
+      "piano",
+      "keyboard",
+      "the keyboard"
+     ]
+    },
+    {
+     "text": "The recorder",
+     "share": 21,
+     "accept": [
+      "the recorder",
+      "recorder"
+     ]
+    },
+    {
+     "text": "The guitar",
+     "share": 19,
+     "accept": [
+      "the guitar",
+      "guitar",
+      "acoustic guitar"
+     ]
+    },
+    {
+     "text": "The violin",
+     "share": 13,
+     "accept": [
+      "the violin",
+      "violin",
+      "fiddle"
+     ]
+    },
+    {
+     "text": "The drums",
+     "share": 9,
+     "accept": [
+      "the drums",
+      "drums",
+      "drum kit",
+      "percussion"
+     ]
+    },
+    {
+     "text": "The flute",
+     "share": 6,
+     "accept": [
+      "the flute",
+      "flute"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bad-at-cooking",
+   "prompt": "Name something people burn even though it is easy.",
+   "answers": [
+    {
+     "text": "Toast",
+     "share": 31,
+     "accept": [
+      "toast",
+      "bread"
+     ]
+    },
+    {
+     "text": "Rice",
+     "share": 18,
+     "accept": [
+      "rice"
+     ]
+    },
+    {
+     "text": "Garlic",
+     "share": 15,
+     "accept": [
+      "garlic"
+     ]
+    },
+    {
+     "text": "Popcorn",
+     "share": 13,
+     "accept": [
+      "popcorn"
+     ]
+    },
+    {
+     "text": "Onions",
+     "share": 10,
+     "accept": [
+      "onions",
+      "onion"
+     ]
+    },
+    {
+     "text": "Milk",
+     "share": 7,
+     "accept": [
+      "milk",
+      "boiling milk"
+     ]
+    },
+    {
+     "text": "Eggs",
+     "share": 4,
+     "accept": [
+      "eggs",
+      "egg",
+      "a fried egg"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-a-handbag",
+   "prompt": "Name something always found at the bottom of a bag.",
+   "answers": [
+    {
+     "text": "Receipts",
+     "share": 26,
+     "accept": [
+      "receipts",
+      "receipt",
+      "old receipts",
+      "paper"
+     ]
+    },
+    {
+     "text": "Crumbs",
+     "share": 19,
+     "accept": [
+      "crumbs",
+      "crumb",
+      "biscuit crumbs"
+     ]
+    },
+    {
+     "text": "Loose change",
+     "share": 16,
+     "accept": [
+      "loose change",
+      "change",
+      "coins",
+      "coin",
+      "money"
+     ]
+    },
+    {
+     "text": "A pen",
+     "share": 13,
+     "accept": [
+      "a pen",
+      "pen",
+      "pens",
+      "a biro"
+     ]
+    },
+    {
+     "text": "Tissues",
+     "share": 11,
+     "accept": [
+      "tissues",
+      "tissue",
+      "a tissue",
+      "kleenex"
+     ]
+    },
+    {
+     "text": "Old headphones",
+     "share": 9,
+     "accept": [
+      "old headphones",
+      "headphones",
+      "earphones",
+      "earbuds",
+      "tangled headphones"
+     ]
+    },
+    {
+     "text": "Lip balm",
+     "share": 5,
+     "accept": [
+      "lip balm",
+      "chapstick",
+      "lipstick",
+      "lip gloss"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "put-off-until-tomorrow",
+   "prompt": "Name something everybody says they will start on Monday.",
+   "answers": [
+    {
+     "text": "A diet",
+     "share": 27,
+     "accept": [
+      "a diet",
+      "diet",
+      "eating healthy",
+      "healthy eating",
+      "dieting"
+     ]
+    },
+    {
+     "text": "Going to the gym",
+     "share": 24,
+     "accept": [
+      "going to the gym",
+      "the gym",
+      "gym",
+      "exercise",
+      "exercising",
+      "working out"
+     ]
+    },
+    {
+     "text": "Getting up early",
+     "share": 14,
+     "accept": [
+      "getting up early",
+      "waking up early",
+      "early mornings",
+      "a sleep schedule"
+     ]
+    },
+    {
+     "text": "Quitting smoking",
+     "share": 12,
+     "accept": [
+      "quitting smoking",
+      "stop smoking",
+      "giving up smoking",
+      "quit smoking"
+     ]
+    },
+    {
+     "text": "Tidying the house",
+     "share": 11,
+     "accept": [
+      "tidying the house",
+      "cleaning",
+      "tidying",
+      "cleaning the house",
+      "decluttering"
+     ]
+    },
+    {
+     "text": "Saving money",
+     "share": 9,
+     "accept": [
+      "saving money",
+      "budgeting",
+      "saving",
+      "a budget"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "phone-battery",
+   "prompt": "Name something people blame when their phone battery dies.",
+   "answers": [
+    {
+     "text": "The screen brightness",
+     "share": 24,
+     "accept": [
+      "the screen brightness",
+      "brightness",
+      "the screen",
+      "screen brightness",
+      "the display"
+     ]
+    },
+    {
+     "text": "Apps running in the background",
+     "share": 22,
+     "accept": [
+      "apps running in the background",
+      "background apps",
+      "apps",
+      "too many apps",
+      "apps in the background"
+     ]
+    },
+    {
+     "text": "The battery being old",
+     "share": 18,
+     "accept": [
+      "the battery being old",
+      "old battery",
+      "the battery is old",
+      "battery health",
+      "an old phone"
+     ]
+    },
+    {
+     "text": "The last update",
+     "share": 15,
+     "accept": [
+      "the last update",
+      "the update",
+      "software update",
+      "an update",
+      "updates",
+      "ios update"
+     ]
+    },
+    {
+     "text": "The cold",
+     "share": 11,
+     "accept": [
+      "the cold",
+      "cold",
+      "cold weather",
+      "the weather"
+     ]
+    },
+    {
+     "text": "Games",
+     "share": 8,
+     "accept": [
+      "games",
+      "gaming",
+      "playing games",
+      "a game"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "queue-annoyance",
+   "prompt": "Name something that annoys people in a queue.",
+   "answers": [
+    {
+     "text": "Somebody pushing in",
+     "share": 30,
+     "accept": [
+      "somebody pushing in",
+      "pushing in",
+      "queue jumping",
+      "cutting in line",
+      "people cutting",
+      "line cutters"
+     ]
+    },
+    {
+     "text": "The other queue moving faster",
+     "share": 21,
+     "accept": [
+      "the other queue moving faster",
+      "the other line is faster",
+      "picking the wrong queue",
+      "the wrong line",
+      "other line moves faster"
+     ]
+    },
+    {
+     "text": "Someone on speakerphone",
+     "share": 15,
+     "accept": [
+      "someone on speakerphone",
+      "speakerphone",
+      "loud phone calls",
+      "people on their phone",
+      "phone calls"
+     ]
+    },
+    {
+     "text": "Standing too close",
+     "share": 13,
+     "accept": [
+      "standing too close",
+      "people standing too close",
+      "no personal space",
+      "being crowded"
+     ]
+    },
+    {
+     "text": "Somebody paying in coins",
+     "share": 12,
+     "accept": [
+      "somebody paying in coins",
+      "paying in coins",
+      "counting out change",
+      "slow payment",
+      "paying by cheque"
+     ]
+    },
+    {
+     "text": "Only one till open",
+     "share": 8,
+     "accept": [
+      "only one till open",
+      "one till open",
+      "not enough tills",
+      "one register",
+      "understaffed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lost-in-the-house",
+   "prompt": "Name a place things go missing in the house.",
+   "answers": [
+    {
+     "text": "Down the back of the sofa",
+     "share": 28,
+     "accept": [
+      "down the back of the sofa",
+      "behind the sofa",
+      "the sofa",
+      "under the sofa",
+      "the couch",
+      "behind the couch"
+     ]
+    },
+    {
+     "text": "The junk drawer",
+     "share": 21,
+     "accept": [
+      "the junk drawer",
+      "junk drawer",
+      "a drawer",
+      "the drawer",
+      "the kitchen drawer"
+     ]
+    },
+    {
+     "text": "Under the bed",
+     "share": 17,
+     "accept": [
+      "under the bed",
+      "the bed",
+      "beneath the bed"
+     ]
+    },
+    {
+     "text": "In a coat pocket",
+     "share": 13,
+     "accept": [
+      "in a coat pocket",
+      "a coat pocket",
+      "coat pockets",
+      "pockets",
+      "a pocket",
+      "jacket pocket"
+     ]
+    },
+    {
+     "text": "The washing machine",
+     "share": 11,
+     "accept": [
+      "the washing machine",
+      "washing machine",
+      "the tumble dryer",
+      "the dryer",
+      "the laundry"
+     ]
+    },
+    {
+     "text": "In the car",
+     "share": 8,
+     "accept": [
+      "in the car",
+      "the car",
+      "the glove box",
+      "under the car seat"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "packing-argument",
+   "prompt": "Name something couples disagree about when packing.",
+   "answers": [
+    {
+     "text": "How many shoes",
+     "share": 25,
+     "accept": [
+      "how many shoes",
+      "shoes",
+      "too many shoes",
+      "the shoes"
+     ]
+    },
+    {
+     "text": "How early to leave",
+     "share": 20,
+     "accept": [
+      "how early to leave",
+      "what time to leave",
+      "leaving on time",
+      "when to leave",
+      "how early to get to the airport"
+     ]
+    },
+    {
+     "text": "Whether it will fit",
+     "share": 17,
+     "accept": [
+      "whether it will fit",
+      "if it will fit",
+      "the case is too full",
+      "overpacking",
+      "the suitcase is too small"
+     ]
+    },
+    {
+     "text": "Hand luggage or hold",
+     "share": 15,
+     "accept": [
+      "hand luggage or hold",
+      "hand luggage",
+      "checked bags",
+      "carry on",
+      "whether to check a bag"
+     ]
+    },
+    {
+     "text": "What the weather will be",
+     "share": 13,
+     "accept": [
+      "what the weather will be",
+      "the weather",
+      "how hot it will be",
+      "what to wear"
+     ]
+    },
+    {
+     "text": "Who packs the chargers",
+     "share": 8,
+     "accept": [
+      "who packs the chargers",
+      "chargers",
+      "the chargers",
+      "who brings the charger",
+      "adapters"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "restaurant-complaint",
+   "prompt": "Name something people complain about in a restaurant.",
+   "answers": [
+    {
+     "text": "The wait",
+     "share": 26,
+     "accept": [
+      "the wait",
+      "waiting",
+      "slow service",
+      "how long it takes",
+      "the service is slow",
+      "it took too long"
+     ]
+    },
+    {
+     "text": "The food is cold",
+     "share": 21,
+     "accept": [
+      "the food is cold",
+      "cold food",
+      "its cold",
+      "the food was cold"
+     ]
+    },
+    {
+     "text": "The price",
+     "share": 17,
+     "accept": [
+      "the price",
+      "prices",
+      "how expensive it is",
+      "the bill",
+      "expensive",
+      "the cost"
+     ]
+    },
+    {
+     "text": "The music is too loud",
+     "share": 14,
+     "accept": [
+      "the music is too loud",
+      "too loud",
+      "the noise",
+      "its noisy",
+      "loud music",
+      "the music"
+     ]
+    },
+    {
+     "text": "The portion size",
+     "share": 13,
+     "accept": [
+      "the portion size",
+      "small portions",
+      "the portions",
+      "tiny portions",
+      "portion sizes"
+     ]
+    },
+    {
+     "text": "The table is wobbly",
+     "share": 7,
+     "accept": [
+      "the table is wobbly",
+      "a wobbly table",
+      "the table wobbles",
+      "wobbly table"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "morning-routine",
+   "prompt": "Name the first thing people do when their alarm goes off.",
+   "answers": [
+    {
+     "text": "Hit snooze",
+     "share": 32,
+     "accept": [
+      "hit snooze",
+      "snooze",
+      "press snooze",
+      "the snooze button",
+      "hit the snooze button"
+     ]
+    },
+    {
+     "text": "Check their phone",
+     "share": 25,
+     "accept": [
+      "check their phone",
+      "look at their phone",
+      "their phone",
+      "scroll",
+      "check messages",
+      "check notifications"
+     ]
+    },
+    {
+     "text": "Groan",
+     "share": 13,
+     "accept": [
+      "groan",
+      "complain",
+      "moan",
+      "sigh",
+      "swear"
+     ]
+    },
+    {
+     "text": "Go to the toilet",
+     "share": 12,
+     "accept": [
+      "go to the toilet",
+      "the toilet",
+      "the bathroom",
+      "go to the bathroom",
+      "pee"
+     ]
+    },
+    {
+     "text": "Stretch",
+     "share": 10,
+     "accept": [
+      "stretch",
+      "stretching",
+      "yawn",
+      "yawning"
+     ]
+    },
+    {
+     "text": "Turn the light on",
+     "share": 7,
+     "accept": [
+      "turn the light on",
+      "the light",
+      "open the curtains",
+      "the curtains",
+      "the blinds"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "supermarket-forget",
+   "prompt": "Name the thing people forget at the supermarket.",
+   "answers": [
+    {
+     "text": "The one thing they came for",
+     "share": 26,
+     "accept": [
+      "the one thing they came for",
+      "the thing they came for",
+      "what they came for",
+      "the main thing",
+      "the one item"
+     ]
+    },
+    {
+     "text": "Milk",
+     "share": 21,
+     "accept": [
+      "milk"
+     ]
+    },
+    {
+     "text": "Their bags",
+     "share": 18,
+     "accept": [
+      "their bags",
+      "bags",
+      "shopping bags",
+      "reusable bags",
+      "the bags"
+     ]
+    },
+    {
+     "text": "The shopping list",
+     "share": 14,
+     "accept": [
+      "the shopping list",
+      "the list",
+      "their list",
+      "shopping list"
+     ]
+    },
+    {
+     "text": "Bin bags",
+     "share": 11,
+     "accept": [
+      "bin bags",
+      "bin liners",
+      "trash bags",
+      "garbage bags"
+     ]
+    },
+    {
+     "text": "Loyalty card",
+     "share": 7,
+     "accept": [
+      "loyalty card",
+      "the loyalty card",
+      "club card",
+      "points card",
+      "their card"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "comfort-food",
+   "prompt": "Name a comfort food people eat when they feel awful.",
+   "answers": [
+    {
+     "text": "Ice cream",
+     "share": 24,
+     "accept": [
+      "ice cream",
+      "icecream",
+      "gelato"
+     ]
+    },
+    {
+     "text": "Chocolate",
+     "share": 20,
+     "accept": [
+      "chocolate",
+      "choc",
+      "a chocolate bar"
+     ]
+    },
+    {
+     "text": "Soup",
+     "share": 16,
+     "accept": [
+      "soup",
+      "chicken soup",
+      "noodle soup",
+      "broth"
+     ]
+    },
+    {
+     "text": "Pizza",
+     "share": 14,
+     "accept": [
+      "pizza"
+     ]
+    },
+    {
+     "text": "Mashed potato",
+     "share": 11,
+     "accept": [
+      "mashed potato",
+      "mash",
+      "mashed potatoes",
+      "potatoes"
+     ]
+    },
+    {
+     "text": "Instant noodles",
+     "share": 9,
+     "accept": [
+      "instant noodles",
+      "ramen",
+      "noodles",
+      "cup noodles",
+      "pot noodle"
+     ]
+    },
+    {
+     "text": "Crisps",
+     "share": 5,
+     "accept": [
+      "crisps",
+      "chips",
+      "potato chips"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "breakfast",
+   "prompt": "Name something people eat for breakfast.",
+   "answers": [
+    {
+     "text": "Toast",
+     "share": 24,
+     "accept": [
+      "toast",
+      "bread",
+      "buttered toast"
+     ]
+    },
+    {
+     "text": "Cereal",
+     "share": 21,
+     "accept": [
+      "cereal",
+      "corn flakes",
+      "muesli",
+      "granola"
+     ]
+    },
+    {
+     "text": "Eggs",
+     "share": 18,
+     "accept": [
+      "eggs",
+      "egg",
+      "scrambled eggs",
+      "fried eggs",
+      "boiled egg"
+     ]
+    },
+    {
+     "text": "Porridge",
+     "share": 13,
+     "accept": [
+      "porridge",
+      "oatmeal",
+      "oats",
+      "congee"
+     ]
+    },
+    {
+     "text": "Fruit",
+     "share": 10,
+     "accept": [
+      "fruit",
+      "a banana",
+      "banana",
+      "an apple",
+      "berries"
+     ]
+    },
+    {
+     "text": "Bacon",
+     "share": 8,
+     "accept": [
+      "bacon",
+      "a fry up",
+      "sausages",
+      "a full english"
+     ]
+    },
+    {
+     "text": "Yoghurt",
+     "share": 5,
+     "accept": [
+      "yoghurt",
+      "yogurt",
+      "greek yoghurt"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tea-argument",
+   "prompt": "Name something people argue about when making tea.",
+   "answers": [
+    {
+     "text": "Milk first or last",
+     "share": 30,
+     "accept": [
+      "milk first or last",
+      "milk first",
+      "milk or water first",
+      "when to add the milk",
+      "milk before or after"
+     ]
+    },
+    {
+     "text": "How long to brew",
+     "share": 22,
+     "accept": [
+      "how long to brew",
+      "brewing time",
+      "how long to leave the bag in",
+      "steeping time",
+      "how strong"
+     ]
+    },
+    {
+     "text": "Sugar or no sugar",
+     "share": 17,
+     "accept": [
+      "sugar or no sugar",
+      "sugar",
+      "how much sugar",
+      "sweetener"
+     ]
+    },
+    {
+     "text": "Squeezing the bag",
+     "share": 13,
+     "accept": [
+      "squeezing the bag",
+      "squeezing the teabag",
+      "whether to squeeze it",
+      "pressing the bag"
+     ]
+    },
+    {
+     "text": "Bag in the mug or a pot",
+     "share": 11,
+     "accept": [
+      "bag in the mug or a pot",
+      "teapot or mug",
+      "using a teapot",
+      "loose leaf or bags",
+      "loose leaf"
+     ]
+    },
+    {
+     "text": "Whether it is the right mug",
+     "share": 6,
+     "accept": [
+      "whether it is the right mug",
+      "the mug",
+      "the wrong mug",
+      "their favourite mug",
+      "the right mug"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "noodle-dish",
+   "prompt": "Name a noodle dish everybody knows.",
+   "answers": [
+    {
+     "text": "Spaghetti bolognese",
+     "share": 23,
+     "accept": [
+      "spaghetti bolognese",
+      "bolognese",
+      "spag bol",
+      "spaghetti"
+     ]
+    },
+    {
+     "text": "Ramen",
+     "share": 20,
+     "accept": [
+      "ramen",
+      "tonkotsu ramen"
+     ]
+    },
+    {
+     "text": "Pad thai",
+     "share": 17,
+     "accept": [
+      "pad thai",
+      "padthai"
+     ]
+    },
+    {
+     "text": "Chow mein",
+     "share": 14,
+     "accept": [
+      "chow mein",
+      "chowmein",
+      "lo mein"
+     ]
+    },
+    {
+     "text": "Pho",
+     "share": 12,
+     "accept": [
+      "pho",
+      "vietnamese pho"
+     ]
+    },
+    {
+     "text": "Macaroni cheese",
+     "share": 9,
+     "accept": [
+      "macaroni cheese",
+      "mac and cheese",
+      "macaroni and cheese",
+      "mac n cheese"
+     ]
+    },
+    {
+     "text": "Laksa",
+     "share": 4,
+     "accept": [
+      "laksa"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "airport-annoyance",
+   "prompt": "Name the worst part of an airport.",
+   "answers": [
+    {
+     "text": "Security",
+     "share": 29,
+     "accept": [
+      "security",
+      "the security queue",
+      "going through security",
+      "taking your shoes off",
+      "the scanner"
+     ]
+    },
+    {
+     "text": "Waiting at baggage claim",
+     "share": 19,
+     "accept": [
+      "waiting at baggage claim",
+      "baggage claim",
+      "waiting for your bag",
+      "luggage carousel",
+      "the carousel",
+      "waiting for luggage"
+     ]
+    },
+    {
+     "text": "The prices",
+     "share": 16,
+     "accept": [
+      "the prices",
+      "prices",
+      "expensive food",
+      "how expensive it is",
+      "the cost of food",
+      "overpriced"
+     ]
+    },
+    {
+     "text": "Delays",
+     "share": 15,
+     "accept": [
+      "delays",
+      "a delay",
+      "delayed flights",
+      "cancellations"
+     ]
+    },
+    {
+     "text": "Boarding",
+     "share": 11,
+     "accept": [
+      "boarding",
+      "the boarding queue",
+      "queuing to board",
+      "the gate",
+      "gate changes"
+     ]
+    },
+    {
+     "text": "Passport control",
+     "share": 8,
+     "accept": [
+      "passport control",
+      "immigration",
+      "customs",
+      "border control"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "holiday-souvenir",
+   "prompt": "Name a souvenir people always bring home.",
+   "answers": [
+    {
+     "text": "A fridge magnet",
+     "share": 30,
+     "accept": [
+      "a fridge magnet",
+      "fridge magnet",
+      "magnet",
+      "magnets",
+      "a magnet"
+     ]
+    },
+    {
+     "text": "A keyring",
+     "share": 21,
+     "accept": [
+      "a keyring",
+      "keyring",
+      "key ring",
+      "keychain",
+      "a keychain"
+     ]
+    },
+    {
+     "text": "A postcard",
+     "share": 16,
+     "accept": [
+      "a postcard",
+      "postcard",
+      "postcards"
+     ]
+    },
+    {
+     "text": "Chocolate",
+     "share": 13,
+     "accept": [
+      "chocolate",
+      "sweets",
+      "local chocolate",
+      "candy"
+     ]
+    },
+    {
+     "text": "A T-shirt",
+     "share": 11,
+     "accept": [
+      "a t shirt",
+      "t shirt",
+      "tshirt",
+      "a tshirt",
+      "a shirt"
+     ]
+    },
+    {
+     "text": "Sand or a shell",
+     "share": 7,
+     "accept": [
+      "sand or a shell",
+      "a shell",
+      "shells",
+      "sand",
+      "a stone",
+      "a pebble",
+      "a rock"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "long-flight",
+   "prompt": "Name something people do on a long flight.",
+   "answers": [
+    {
+     "text": "Watch films",
+     "share": 28,
+     "accept": [
+      "watch films",
+      "watch movies",
+      "films",
+      "movies",
+      "the in flight entertainment",
+      "watch a movie"
+     ]
+    },
+    {
+     "text": "Sleep",
+     "share": 24,
+     "accept": [
+      "sleep",
+      "try to sleep",
+      "nap",
+      "doze"
+     ]
+    },
+    {
+     "text": "Eat",
+     "share": 15,
+     "accept": [
+      "eat",
+      "the meal",
+      "eat the food",
+      "airline food",
+      "snack"
+     ]
+    },
+    {
+     "text": "Read",
+     "share": 13,
+     "accept": [
+      "read",
+      "read a book",
+      "a book",
+      "reading"
+     ]
+    },
+    {
+     "text": "Get up and walk about",
+     "share": 11,
+     "accept": [
+      "get up and walk about",
+      "walk about",
+      "stretch their legs",
+      "walk around",
+      "go to the toilet"
+     ]
+    },
+    {
+     "text": "Check the flight map",
+     "share": 7,
+     "accept": [
+      "check the flight map",
+      "the flight map",
+      "watch the map",
+      "the map",
+      "see how far to go"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "work-excuse",
+   "prompt": "Name an excuse people give for being late to work.",
+   "answers": [
+    {
+     "text": "Traffic",
+     "share": 31,
+     "accept": [
+      "traffic",
+      "the traffic",
+      "a traffic jam",
+      "roadworks"
+     ]
+    },
+    {
+     "text": "The train was delayed",
+     "share": 22,
+     "accept": [
+      "the train was delayed",
+      "the train",
+      "public transport",
+      "the bus",
+      "train delays",
+      "the tube"
+     ]
+    },
+    {
+     "text": "Alarm did not go off",
+     "share": 18,
+     "accept": [
+      "alarm did not go off",
+      "the alarm didnt go off",
+      "i slept in",
+      "overslept",
+      "the alarm",
+      "slept through the alarm"
+     ]
+    },
+    {
+     "text": "The kids",
+     "share": 12,
+     "accept": [
+      "the kids",
+      "the children",
+      "school run",
+      "dropping the kids off",
+      "a child was sick"
+     ]
+    },
+    {
+     "text": "The dog",
+     "share": 9,
+     "accept": [
+      "the dog",
+      "the dog was sick",
+      "walking the dog",
+      "a pet emergency",
+      "the cat"
+     ]
+    },
+    {
+     "text": "A doctor's appointment",
+     "share": 7,
+     "accept": [
+      "a doctors appointment",
+      "the doctor",
+      "a dentist appointment",
+      "the dentist",
+      "an appointment"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meeting-phrase",
+   "prompt": "Name a phrase people say in every meeting.",
+   "answers": [
+    {
+     "text": "Can everyone hear me?",
+     "share": 24,
+     "accept": [
+      "can everyone hear me",
+      "can you hear me",
+      "youre on mute",
+      "am i audible",
+      "can you all hear me"
+     ]
+    },
+    {
+     "text": "Let's take that offline",
+     "share": 21,
+     "accept": [
+      "lets take that offline",
+      "take it offline",
+      "take that offline",
+      "offline"
+     ]
+    },
+    {
+     "text": "Circle back",
+     "share": 18,
+     "accept": [
+      "circle back",
+      "lets circle back",
+      "ill circle back",
+      "touch base"
+     ]
+    },
+    {
+     "text": "This could have been an email",
+     "share": 15,
+     "accept": [
+      "this could have been an email",
+      "could have been an email",
+      "just send an email"
+     ]
+    },
+    {
+     "text": "Any questions?",
+     "share": 13,
+     "accept": [
+      "any questions",
+      "questions",
+      "does anyone have questions"
+     ]
+    },
+    {
+     "text": "Sorry, you go ahead",
+     "share": 8,
+     "accept": [
+      "sorry you go ahead",
+      "you go ahead",
+      "no you first",
+      "sorry go ahead",
+      "talking over each other"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "school-subject",
+   "prompt": "Name the school subject people say they were worst at.",
+   "answers": [
+    {
+     "text": "Maths",
+     "share": 30,
+     "accept": [
+      "maths",
+      "math",
+      "mathematics",
+      "algebra"
+     ]
+    },
+    {
+     "text": "PE",
+     "share": 19,
+     "accept": [
+      "pe",
+      "gym",
+      "physical education",
+      "sport",
+      "games"
+     ]
+    },
+    {
+     "text": "Chemistry",
+     "share": 15,
+     "accept": [
+      "chemistry"
+     ]
+    },
+    {
+     "text": "French",
+     "share": 13,
+     "accept": [
+      "french",
+      "languages",
+      "a foreign language",
+      "spanish",
+      "german"
+     ]
+    },
+    {
+     "text": "Art",
+     "share": 11,
+     "accept": [
+      "art",
+      "drawing",
+      "painting"
+     ]
+    },
+    {
+     "text": "History",
+     "share": 8,
+     "accept": [
+      "history",
+      "dates"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "under-the-sink",
+   "prompt": "Name something kept under the kitchen sink.",
+   "answers": [
+    {
+     "text": "Cleaning spray",
+     "share": 27,
+     "accept": [
+      "cleaning spray",
+      "cleaning products",
+      "spray",
+      "bleach",
+      "surface cleaner",
+      "detergent",
+      "cleaning stuff"
+     ]
+    },
+    {
+     "text": "Washing-up liquid",
+     "share": 21,
+     "accept": [
+      "washing up liquid",
+      "dish soap",
+      "fairy liquid",
+      "washing up",
+      "soap"
+     ]
+    },
+    {
+     "text": "Bin bags",
+     "share": 17,
+     "accept": [
+      "bin bags",
+      "bin liners",
+      "trash bags",
+      "rubbish bags",
+      "garbage bags"
+     ]
+    },
+    {
+     "text": "Sponges and cloths",
+     "share": 14,
+     "accept": [
+      "sponges and cloths",
+      "sponges",
+      "a sponge",
+      "cloths",
+      "a cloth",
+      "scourers"
+     ]
+    },
+    {
+     "text": "A bucket",
+     "share": 11,
+     "accept": [
+      "a bucket",
+      "bucket",
+      "a washing up bowl",
+      "a bowl"
+     ]
+    },
+    {
+     "text": "Rubber gloves",
+     "share": 8,
+     "accept": [
+      "rubber gloves",
+      "gloves",
+      "marigolds"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "never-thrown-away",
+   "prompt": "Name something people keep but never use.",
+   "answers": [
+    {
+     "text": "Plastic bags",
+     "share": 25,
+     "accept": [
+      "plastic bags",
+      "carrier bags",
+      "a bag of bags",
+      "bags",
+      "shopping bags"
+     ]
+    },
+    {
+     "text": "Cables",
+     "share": 20,
+     "accept": [
+      "cables",
+      "old cables",
+      "wires",
+      "chargers",
+      "a box of cables",
+      "leads"
+     ]
+    },
+    {
+     "text": "Takeaway containers",
+     "share": 17,
+     "accept": [
+      "takeaway containers",
+      "takeout containers",
+      "plastic tubs",
+      "containers",
+      "tupperware"
+     ]
+    },
+    {
+     "text": "Instruction manuals",
+     "share": 14,
+     "accept": [
+      "instruction manuals",
+      "manuals",
+      "instructions",
+      "the manual",
+      "user guides"
+     ]
+    },
+    {
+     "text": "Old phones",
+     "share": 12,
+     "accept": [
+      "old phones",
+      "an old phone",
+      "old devices",
+      "an old laptop",
+      "old electronics"
+     ]
+    },
+    {
+     "text": "Spare buttons",
+     "share": 9,
+     "accept": [
+      "spare buttons",
+      "buttons",
+      "the spare button",
+      "little bags of buttons"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "neighbour-noise",
+   "prompt": "Name a noise that gets neighbours complaining.",
+   "answers": [
+    {
+     "text": "Loud music",
+     "share": 28,
+     "accept": [
+      "loud music",
+      "music",
+      "a party",
+      "parties",
+      "bass",
+      "the stereo"
+     ]
+    },
+    {
+     "text": "A barking dog",
+     "share": 22,
+     "accept": [
+      "a barking dog",
+      "barking",
+      "dogs barking",
+      "the dog",
+      "a dog"
+     ]
+    },
+    {
+     "text": "DIY drilling",
+     "share": 17,
+     "accept": [
+      "diy drilling",
+      "drilling",
+      "a drill",
+      "hammering",
+      "diy",
+      "building work"
+     ]
+    },
+    {
+     "text": "A crying baby",
+     "share": 13,
+     "accept": [
+      "a crying baby",
+      "a baby crying",
+      "babies",
+      "a screaming child",
+      "children screaming",
+      "kids"
+     ]
+    },
+    {
+     "text": "Mowing the lawn early",
+     "share": 11,
+     "accept": [
+      "mowing the lawn early",
+      "the lawnmower",
+      "mowing",
+      "lawnmower",
+      "gardening early"
+     ]
+    },
+    {
+     "text": "Stomping upstairs",
+     "share": 8,
+     "accept": [
+      "stomping upstairs",
+      "footsteps",
+      "stomping",
+      "people walking above",
+      "banging about"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "christmas-film",
+   "prompt": "Name a film people watch every Christmas.",
+   "answers": [
+    {
+     "text": "Home Alone",
+     "share": 26,
+     "accept": [
+      "home alone"
+     ]
+    },
+    {
+     "text": "Elf",
+     "share": 19,
+     "accept": [
+      "elf"
+     ]
+    },
+    {
+     "text": "Love Actually",
+     "share": 16,
+     "accept": [
+      "love actually"
+     ]
+    },
+    {
+     "text": "It's a Wonderful Life",
+     "share": 13,
+     "accept": [
+      "its a wonderful life",
+      "it is a wonderful life",
+      "wonderful life"
+     ]
+    },
+    {
+     "text": "Die Hard",
+     "share": 12,
+     "accept": [
+      "die hard"
+     ]
+    },
+    {
+     "text": "The Muppet Christmas Carol",
+     "share": 9,
+     "accept": [
+      "the muppet christmas carol",
+      "muppet christmas carol",
+      "a christmas carol",
+      "the muppets"
+     ]
+    },
+    {
+     "text": "The Grinch",
+     "share": 4,
+     "accept": [
+      "the grinch",
+      "grinch",
+      "how the grinch stole christmas"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "karaoke-song",
+   "prompt": "Name a song everybody picks at karaoke.",
+   "answers": [
+    {
+     "text": "Bohemian Rhapsody",
+     "share": 24,
+     "accept": [
+      "bohemian rhapsody",
+      "bohemian rapsody",
+      "queen"
+     ]
+    },
+    {
+     "text": "Don't Stop Believin'",
+     "share": 20,
+     "accept": [
+      "dont stop believin",
+      "dont stop believing",
+      "journey"
+     ]
+    },
+    {
+     "text": "I Will Survive",
+     "share": 16,
+     "accept": [
+      "i will survive",
+      "gloria gaynor"
+     ]
+    },
+    {
+     "text": "Sweet Caroline",
+     "share": 15,
+     "accept": [
+      "sweet caroline",
+      "neil diamond"
+     ]
+    },
+    {
+     "text": "Livin' on a Prayer",
+     "share": 12,
+     "accept": [
+      "livin on a prayer",
+      "living on a prayer",
+      "bon jovi"
+     ]
+    },
+    {
+     "text": "Wonderwall",
+     "share": 9,
+     "accept": [
+      "wonderwall",
+      "oasis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "superpower",
+   "prompt": "Name the superpower most people would choose.",
+   "answers": [
+    {
+     "text": "Flying",
+     "share": 29,
+     "accept": [
+      "flying",
+      "flight",
+      "to fly",
+      "the ability to fly"
+     ]
+    },
+    {
+     "text": "Invisibility",
+     "share": 22,
+     "accept": [
+      "invisibility",
+      "being invisible",
+      "to be invisible",
+      "invisible"
+     ]
+    },
+    {
+     "text": "Teleportation",
+     "share": 18,
+     "accept": [
+      "teleportation",
+      "teleporting",
+      "teleport",
+      "apparating"
+     ]
+    },
+    {
+     "text": "Time travel",
+     "share": 14,
+     "accept": [
+      "time travel",
+      "time travelling",
+      "stopping time",
+      "time control",
+      "freezing time"
+     ]
+    },
+    {
+     "text": "Reading minds",
+     "share": 10,
+     "accept": [
+      "reading minds",
+      "mind reading",
+      "telepathy",
+      "hearing thoughts"
+     ]
+    },
+    {
+     "text": "Super strength",
+     "share": 6,
+     "accept": [
+      "super strength",
+      "strength",
+      "being strong",
+      "superstrength"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cartoon-character",
+   "prompt": "Name the most recognisable cartoon character.",
+   "answers": [
+    {
+     "text": "Mickey Mouse",
+     "share": 30,
+     "accept": [
+      "mickey mouse",
+      "mickey"
+     ]
+    },
+    {
+     "text": "Bugs Bunny",
+     "share": 18,
+     "accept": [
+      "bugs bunny",
+      "bugs"
+     ]
+    },
+    {
+     "text": "SpongeBob",
+     "share": 16,
+     "accept": [
+      "spongebob",
+      "spongebob squarepants",
+      "sponge bob"
+     ]
+    },
+    {
+     "text": "Homer Simpson",
+     "share": 14,
+     "accept": [
+      "homer simpson",
+      "homer",
+      "bart simpson",
+      "the simpsons"
+     ]
+    },
+    {
+     "text": "Pikachu",
+     "share": 12,
+     "accept": [
+      "pikachu",
+      "pokemon"
+     ]
+    },
+    {
+     "text": "Scooby-Doo",
+     "share": 8,
+     "accept": [
+      "scooby doo",
+      "scooby"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "video-game",
+   "prompt": "Name a video game almost everyone has played.",
+   "answers": [
+    {
+     "text": "Minecraft",
+     "share": 25,
+     "accept": [
+      "minecraft"
+     ]
+    },
+    {
+     "text": "Tetris",
+     "share": 21,
+     "accept": [
+      "tetris"
+     ]
+    },
+    {
+     "text": "Mario",
+     "share": 19,
+     "accept": [
+      "mario",
+      "super mario",
+      "mario kart",
+      "super mario bros"
+     ]
+    },
+    {
+     "text": "Fortnite",
+     "share": 13,
+     "accept": [
+      "fortnite"
+     ]
+    },
+    {
+     "text": "Candy Crush",
+     "share": 11,
+     "accept": [
+      "candy crush",
+      "candycrush"
+     ]
+    },
+    {
+     "text": "Pac-Man",
+     "share": 9,
+     "accept": [
+      "pac man",
+      "pacman"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scary-animal",
+   "prompt": "Name an animal people are most frightened of.",
+   "answers": [
+    {
+     "text": "Spiders",
+     "share": 27,
+     "accept": [
+      "spiders",
+      "a spider",
+      "spider"
+     ]
+    },
+    {
+     "text": "Snakes",
+     "share": 24,
+     "accept": [
+      "snakes",
+      "a snake",
+      "snake"
+     ]
+    },
+    {
+     "text": "Sharks",
+     "share": 17,
+     "accept": [
+      "sharks",
+      "a shark",
+      "shark"
+     ]
+    },
+    {
+     "text": "Wasps",
+     "share": 13,
+     "accept": [
+      "wasps",
+      "a wasp",
+      "bees",
+      "hornets"
+     ]
+    },
+    {
+     "text": "Rats",
+     "share": 10,
+     "accept": [
+      "rats",
+      "a rat",
+      "mice",
+      "rodents"
+     ]
+    },
+    {
+     "text": "Bears",
+     "share": 7,
+     "accept": [
+      "bears",
+      "a bear",
+      "grizzly"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pet-trouble",
+   "prompt": "Name something a pet does that drives owners mad.",
+   "answers": [
+    {
+     "text": "Sheds fur everywhere",
+     "share": 24,
+     "accept": [
+      "sheds fur everywhere",
+      "shedding",
+      "fur everywhere",
+      "hair everywhere",
+      "moulting",
+      "fur on everything"
+     ]
+    },
+    {
+     "text": "Barks at nothing",
+     "share": 21,
+     "accept": [
+      "barks at nothing",
+      "barking",
+      "barks at the door",
+      "barking at nothing",
+      "meowing"
+     ]
+    },
+    {
+     "text": "Wakes you up early",
+     "share": 17,
+     "accept": [
+      "wakes you up early",
+      "wakes you at 5am",
+      "waking you up",
+      "wants feeding at dawn",
+      "early wake ups"
+     ]
+    },
+    {
+     "text": "Chews things",
+     "share": 15,
+     "accept": [
+      "chews things",
+      "chewing",
+      "chews shoes",
+      "destroys things",
+      "scratching the furniture",
+      "scratches the sofa"
+     ]
+    },
+    {
+     "text": "Sits on your keyboard",
+     "share": 12,
+     "accept": [
+      "sits on your keyboard",
+      "sits on the laptop",
+      "walks on the keyboard",
+      "gets in the way",
+      "sits on your work"
+     ]
+    },
+    {
+     "text": "Brings you something dead",
+     "share": 8,
+     "accept": [
+      "brings you something dead",
+      "brings dead animals",
+      "a dead mouse",
+      "brings in a bird",
+      "hunting"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "garden-job",
+   "prompt": "Name a garden job people put off.",
+   "answers": [
+    {
+     "text": "Weeding",
+     "share": 29,
+     "accept": [
+      "weeding",
+      "the weeds",
+      "pulling weeds",
+      "weeds"
+     ]
+    },
+    {
+     "text": "Mowing the lawn",
+     "share": 22,
+     "accept": [
+      "mowing the lawn",
+      "mowing",
+      "cutting the grass",
+      "the lawn",
+      "the grass"
+     ]
+    },
+    {
+     "text": "Cutting the hedge",
+     "share": 16,
+     "accept": [
+      "cutting the hedge",
+      "the hedge",
+      "trimming the hedge",
+      "hedge trimming",
+      "pruning"
+     ]
+    },
+    {
+     "text": "Clearing the gutters",
+     "share": 13,
+     "accept": [
+      "clearing the gutters",
+      "the gutters",
+      "gutter cleaning",
+      "cleaning the gutters"
+     ]
+    },
+    {
+     "text": "Raking leaves",
+     "share": 12,
+     "accept": [
+      "raking leaves",
+      "the leaves",
+      "leaves",
+      "sweeping leaves"
+     ]
+    },
+    {
+     "text": "Jet-washing the patio",
+     "share": 7,
+     "accept": [
+      "jet washing the patio",
+      "the patio",
+      "pressure washing",
+      "cleaning the patio",
+      "the decking"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bad-gift",
+   "prompt": "Name a present nobody actually wants.",
+   "answers": [
+    {
+     "text": "Socks",
+     "share": 28,
+     "accept": [
+      "socks",
+      "a pair of socks",
+      "sock"
+     ]
+    },
+    {
+     "text": "Bath sets",
+     "share": 20,
+     "accept": [
+      "bath sets",
+      "bubble bath",
+      "smellies",
+      "toiletries",
+      "shower gel",
+      "bath bombs"
+     ]
+    },
+    {
+     "text": "A novelty mug",
+     "share": 16,
+     "accept": [
+      "a novelty mug",
+      "a mug",
+      "mugs",
+      "novelty mug"
+     ]
+    },
+    {
+     "text": "A scented candle",
+     "share": 14,
+     "accept": [
+      "a scented candle",
+      "candles",
+      "a candle",
+      "scented candles"
+     ]
+    },
+    {
+     "text": "A tie",
+     "share": 11,
+     "accept": [
+      "a tie",
+      "tie",
+      "ties",
+      "a novelty tie"
+     ]
+    },
+    {
+     "text": "A calendar",
+     "share": 8,
+     "accept": [
+      "a calendar",
+      "calendar",
+      "a diary",
+      "a wall calendar"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wedding-moment",
+   "prompt": "Name the part of a wedding people remember.",
+   "answers": [
+    {
+     "text": "The vows",
+     "share": 24,
+     "accept": [
+      "the vows",
+      "vows",
+      "saying i do",
+      "the ceremony",
+      "exchanging vows"
+     ]
+    },
+    {
+     "text": "The first dance",
+     "share": 21,
+     "accept": [
+      "the first dance",
+      "first dance",
+      "the dancing",
+      "dancing"
+     ]
+    },
+    {
+     "text": "The speeches",
+     "share": 18,
+     "accept": [
+      "the speeches",
+      "speeches",
+      "the best mans speech",
+      "the toast",
+      "the toasts"
+     ]
+    },
+    {
+     "text": "The dress",
+     "share": 15,
+     "accept": [
+      "the dress",
+      "the wedding dress",
+      "what the bride wore",
+      "the outfit"
+     ]
+    },
+    {
+     "text": "The cake",
+     "share": 12,
+     "accept": [
+      "the cake",
+      "cake",
+      "cutting the cake"
+     ]
+    },
+    {
+     "text": "Somebody crying",
+     "share": 8,
+     "accept": [
+      "somebody crying",
+      "crying",
+      "tears",
+      "the groom crying",
+      "people crying"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bad-driver",
+   "prompt": "Name something bad drivers do.",
+   "answers": [
+    {
+     "text": "Not indicating",
+     "share": 26,
+     "accept": [
+      "not indicating",
+      "no indicator",
+      "dont use their indicators",
+      "not signalling",
+      "no signal",
+      "forgetting to indicate"
+     ]
+    },
+    {
+     "text": "Tailgating",
+     "share": 22,
+     "accept": [
+      "tailgating",
+      "driving too close",
+      "sitting on your bumper",
+      "following too close"
+     ]
+    },
+    {
+     "text": "Cutting people up",
+     "share": 17,
+     "accept": [
+      "cutting people up",
+      "cutting in",
+      "cutting you off",
+      "swerving in front"
+     ]
+    },
+    {
+     "text": "Parking badly",
+     "share": 14,
+     "accept": [
+      "parking badly",
+      "bad parking",
+      "taking two spaces",
+      "parking across two bays",
+      "cant park"
+     ]
+    },
+    {
+     "text": "Using their phone",
+     "share": 13,
+     "accept": [
+      "using their phone",
+      "on their phone",
+      "texting while driving",
+      "phone at the wheel"
+     ]
+    },
+    {
+     "text": "Driving too slowly",
+     "share": 7,
+     "accept": [
+      "driving too slowly",
+      "too slow",
+      "going too slow",
+      "dawdling"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "clothing-in-cupboard",
+   "prompt": "Name a piece of clothing everybody owns but rarely wears.",
+   "answers": [
+    {
+     "text": "A suit",
+     "share": 24,
+     "accept": [
+      "a suit",
+      "suit",
+      "a formal suit",
+      "a blazer"
+     ]
+    },
+    {
+     "text": "Uncomfortable shoes",
+     "share": 20,
+     "accept": [
+      "uncomfortable shoes",
+      "heels",
+      "high heels",
+      "dress shoes",
+      "shoes that hurt",
+      "smart shoes"
+     ]
+    },
+    {
+     "text": "A Christmas jumper",
+     "share": 17,
+     "accept": [
+      "a christmas jumper",
+      "christmas jumper",
+      "christmas sweater",
+      "a novelty jumper",
+      "an ugly sweater"
+     ]
+    },
+    {
+     "text": "Jeans that no longer fit",
+     "share": 15,
+     "accept": [
+      "jeans that no longer fit",
+      "jeans that dont fit",
+      "old jeans",
+      "clothes that dont fit",
+      "trousers that dont fit"
+     ]
+    },
+    {
+     "text": "A swimming costume",
+     "share": 13,
+     "accept": [
+      "a swimming costume",
+      "swimwear",
+      "swimming trunks",
+      "a swimsuit",
+      "a bikini",
+      "swimming shorts"
+     ]
+    },
+    {
+     "text": "A tie",
+     "share": 9,
+     "accept": [
+      "a tie",
+      "tie",
+      "ties",
+      "a bow tie"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "phone-photo",
+   "prompt": "Name something clogging up everyone's camera roll.",
+   "answers": [
+    {
+     "text": "Screenshots",
+     "share": 26,
+     "accept": [
+      "screenshots",
+      "a screenshot",
+      "screen shots",
+      "screenshotting"
+     ]
+    },
+    {
+     "text": "Food photos",
+     "share": 21,
+     "accept": [
+      "food photos",
+      "pictures of food",
+      "meals",
+      "food pics",
+      "photos of dinner"
+     ]
+    },
+    {
+     "text": "Pets",
+     "share": 18,
+     "accept": [
+      "pets",
+      "the dog",
+      "the cat",
+      "photos of the dog",
+      "cat pictures",
+      "dog pictures"
+     ]
+    },
+    {
+     "text": "Blurry duplicates",
+     "share": 15,
+     "accept": [
+      "blurry duplicates",
+      "duplicates",
+      "the same photo forty times",
+      "blurry photos",
+      "near identical shots",
+      "bad photos"
+     ]
+    },
+    {
+     "text": "Sunsets",
+     "share": 11,
+     "accept": [
+      "sunsets",
+      "a sunset",
+      "the sky",
+      "clouds"
+     ]
+    },
+    {
+     "text": "Photos of a car park space",
+     "share": 8,
+     "accept": [
+      "photos of a car park space",
+      "where you parked",
+      "the parking space",
+      "a parking spot",
+      "where the car is"
+     ]
+    }
+   ]
+  }
+ ]
 }

@@ -247,8 +247,21 @@ It caught four on the first run. `STUPID ANSWERS` declares `"echoOk": true` beca
 the answer away IS that category's joke; nothing else may.
 
 **Adding a pack:** append to `categories` in `data/jeopardy.json` with an `id`, a CAPS
-`name`, an optional `blurb`, and exactly five clues at tiers 1–5. Run the audit. Twenty-five
-packs is four floors' worth, so a game never repeats a category.
+`name`, an optional `blurb`, and exactly five clues at tiers 1–5. Run the audit.
+
+**Variants — several packs under one heading.** `name` may repeat; `id` may not. The
+dealer collapses variants to one pack per heading BEFORE sampling, then dedupes by name
+across floors, so "DIM SUM" can turn up in a later game with five clues you have not seen
+and can never appear twice in the same game. Sampling first and filtering after would have
+quietly dealt five-column floors whenever two variants collided — that ordering is the
+whole of `dealRound`.
+
+The audit enforces the pair: ids unique, and no two packs under one heading sharing a clue
+or an answer. A variant that recycles questions is not a variant.
+
+Current file: **59 packs under 40 headings, 295 clues, 16 finals** —
+3 full games with no heading repeated, and 19 headings carrying a second
+set of questions.
 
 **Shared state, separately kept.** `store.record()` branches on `mode === "board"`: its
 categories go to `boardCategories`, never to the vault's twelve, or a board run would put
@@ -292,6 +305,9 @@ node scripts/playtest-survey.mjs 60         # ledger + the decision curve
 The audit's headline check is **ambiguity**: no guess may match two slots on the same
 board. That is the failure that ruins an open-text game — you say the right thing and the
 board picks which right thing you meant. Zero is the only acceptable number.
+
+Current file: **71 survey boards, 457 answers** — 14 runs before a
+board could repeat.
 
 The playtest asserts something a balance pass cannot eyeball: **banking must be a real
 decision.** Holding knowledge fixed and varying only what a player does on running dry,

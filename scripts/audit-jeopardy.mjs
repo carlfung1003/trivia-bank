@@ -42,12 +42,16 @@ for (const pack of packs) {
 
 /* ---- Structure ------------------------------------------------------------ */
 
-if (packs.length < BOARD.columns * 2) {
-  warn.push(`only ${packs.length} packs — a two-floor game needs ${BOARD.columns * 2} distinct ones, so floors will repeat categories`);
+const headingCount = new Set(packs.map((p) => p.name)).size;
+if (headingCount < BOARD.columns * 2) {
+  fatal.push(`only ${headingCount} distinct categories — a two-floor game needs ${BOARD.columns * 2}`);
 }
 
 const seenIds = new Set();
-const seenNames = new Set();
+/* Names may repeat — a heading can carry several packs of different clues, and
+   the dealer picks one variant per game. What must be unique is the id, and
+   what must never repeat is a CLUE. */
+const variantsByName = new Map();
 
 for (const pack of packs) {
   const where = `[${pack.name || pack.id || "?"}]`;
@@ -57,8 +61,8 @@ for (const pack of packs) {
   seenIds.add(pack.id);
 
   if (!pack.name) fatal.push(`${where} has no name`);
-  if (seenNames.has(pack.name)) fatal.push(`${where} duplicate name`);
-  seenNames.add(pack.name);
+  if (!variantsByName.has(pack.name)) variantsByName.set(pack.name, []);
+  variantsByName.get(pack.name).push(pack);
 
   if (pack.name && pack.name !== pack.name.toUpperCase()) {
     warn.push(`${where} category names are set in caps on the board; this one is not`);
@@ -126,9 +130,35 @@ for (const pack of packs) {
     }
 
     if (clue.clue.length > 220) warn.push(`${at} clue is ${clue.clue.length} characters — it has to fit a cell reveal`);
-    if (!/[.!?]$/.test(clue.clue.trim())) warn.push(`${at} clue does not end in punctuation`);
+    /* A closing quote counts: a FIRST LINES pack is nothing but quotations. */
+    if (!/[.!?]["'\u2019\u201d]?$/.test(clue.clue.trim())) warn.push(`${at} clue does not end in punctuation`);
     if (/^(what|who|where|when|which)\b/i.test(clue.clue.trim())) {
       warn.push(`${at} clue is phrased as a question; on this board the CLUE is the statement`);
+    }
+  }
+}
+
+/* ---- Variants: same heading, genuinely different questions ------------------ */
+
+let variantClash = 0;
+const variantExamples = [];
+for (const [name, variants] of variantsByName) {
+  if (variants.length < 2) continue;
+  for (let i = 0; i < variants.length; i++) {
+    for (let j = i + 1; j < variants.length; j++) {
+      const a = variants[i], b = variants[j];
+      for (const ca of a.clues || []) {
+        for (const cb of b.clues || []) {
+          const sameAnswer = matchKey(ca.answer) === matchKey(cb.answer);
+          const sameClue = normalise(ca.clue) === normalise(cb.clue);
+          if (sameAnswer || sameClue) {
+            variantClash++;
+            if (variantExamples.length < 10) {
+              variantExamples.push(`  "${name}" ${a.id} and ${b.id} both use "${ca.answer}"`);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -171,8 +201,12 @@ for (const f of finals) {
 /* ---- Report ---------------------------------------------------------------- */
 
 const clueCount = allClues.length;
-console.log(`\nThe Board — ${packs.length} packs, ${clueCount} clues, ${finals.length} finals`);
-console.log(`board needs ${BOARD.columns} packs per floor; ${packs.length} available, ${Math.floor(packs.length / BOARD.columns)} floors' worth\n`);
+const multi = [...variantsByName.entries()].filter(([, v]) => v.length > 1);
+console.log(`\nThe Board — ${packs.length} packs under ${headingCount} headings, ${clueCount} clues, ${finals.length} finals`);
+console.log(`${multi.length} headings carry more than one pack: ${multi.map(([n, v]) => `${n} ×${v.length}`).join(", ") || "none"}`);
+console.log(`a game deals ${BOARD.columns * 2} headings; ${headingCount} available\n`);
+console.log(`variant sweep: ${variantClash} clue(s) shared between packs under the same heading`);
+if (variantExamples.length) console.log(variantExamples.join("\n"));
 console.log(`cross-accept sweep: ${crossFail} false accepts across ${clueCount * (clueCount - 1)} clue pairs`);
 if (crossExamples.length) console.log(crossExamples.join("\n"));
 
@@ -187,6 +221,6 @@ if (fatal.length) {
   for (const f of fatal.slice(0, 30)) console.log("  -", f);
 }
 
-const bad = fatal.length + crossFail;
+const bad = fatal.length + crossFail + variantClash;
 console.log(`\n${bad === 0 ? "PASS" : "FAIL"} — ${bad} fatal issue(s), ${warn.length} warning(s)\n`);
 process.exit(bad === 0 ? 0 : 1);

@@ -5,7 +5,7 @@ A trivia heist. Twelve locks, two safe havens, five tools in the kit — bank yo
 **Live:** [trivia.carlfung.dev](https://trivia.carlfung.dev)
 
 Built on a 904-question bank that started life as a 2023 Google Sheet of quiz answers,
-plus 133 authored clues for The Board and 189 survey answers for The Street.
+plus 311 authored clues for The Board and 457 survey answers for The Street.
 
 ---
 
@@ -33,7 +33,7 @@ its share to the pot.
   "professor dumbledore" and "Gandalf the Grey" all land — and the audit refuses to ship a
   board where one guess could match two slots.
 - **Saying the same thing twice is free.** A repeat is a memory slip, not a wrong answer.
-- **Five surveys per run**, the last three at double and triple value.
+- **Five surveys per run** drawn from 71 boards, the last three at double and triple value.
 
 **The percentages are authored, not collected.** Nobody was surveyed — they are balance
 numbers chosen to feel like a real spread. That is why the screen says "the street
@@ -50,8 +50,10 @@ are both accepted — requiring the wrapper would test typing rather than knowin
 supplying one pays a 20% bonus, because the format is the point.
 
 - **Two floors.** Values are `tier × 200`, then `tier × 400`. Tiers are difficulty, not
-  money, so a pack can be dealt into either floor. Twenty-five packs means four floors'
-  worth and no repeats within a game.
+  money, so a pack can be dealt into either floor.
+- **Categories have variants.** 40 headings across 59 packs: a heading like DIM SUM
+  or RHYME TIME can come back in a later game carrying five questions you have not seen,
+  and can never appear twice in the same game.
 - **Wildcards.** One hidden cell on the first floor, two on the second, never in the top
   row. You name a stake before the clue is shown, and only you can answer it.
 - **The Last Lock.** One clue, one wager up to everything you have. It is the last thing
@@ -249,8 +251,8 @@ js/
   share.js        spoiler-free text + canvas result card
   main.js         the only module that knows about both engine and DOM
 data/questions.json    904 typed-answer questions
-data/jeopardy.json     25 clue packs + finals, for The Board
-data/surveys.json      28 survey boards, for The Street
+data/jeopardy.json     59 clue packs (40 headings) + 16 finals
+data/surveys.json      71 survey boards, for The Street
 ```
 
 Three engines, one contract. `jeopardy.js` is separate from `engine.js` because
