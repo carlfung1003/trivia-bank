@@ -2,9 +2,9 @@
  "meta": {
   "version": 1,
   "note": "Clue packs for The Board. Written in clue form — a statement whose response is a question — so 'What is a martini?' and 'a martini' both land. Tier 1..5 is difficulty, not money: the board multiplies it (200 on the first floor, 400 on the second), so any pack can be dealt into either round.",
-  "categoryCount": 81,
-  "clueCount": 405,
-  "finalCount": 24
+  "categoryCount": 107,
+  "clueCount": 535,
+  "finalCount": 32
  },
  "categories": [
   {
@@ -4620,6 +4620,1511 @@
      ]
     }
    ]
+  },
+  {
+   "id": "islands",
+   "name": "ISLANDS",
+   "blurb": "Surrounded.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Counting Australia as a continent instead, this ice-covered Danish territory takes the title of biggest island.",
+     "answer": "Greenland",
+     "accept": [
+      "greenland",
+      "kalaallit nunaat"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Indonesia, Malaysia and Brunei all hold part of it, which no other island can say.",
+     "answer": "Borneo",
+     "accept": [
+      "borneo",
+      "kalimantan"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Napoleon was born on this Mediterranean island in 1769, a year after France bought it from Genoa.",
+     "answer": "Corsica",
+     "accept": [
+      "corsica",
+      "corse"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Nearly 900 carved stone figures called moai stand on this remote Pacific island.",
+     "answer": "Easter Island",
+     "accept": [
+      "easter island",
+      "rapa nui",
+      "isla de pascua"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Darwin spent five weeks here in 1835 and did not work out what the finches meant until he got home.",
+     "answer": "The Galápagos",
+     "accept": [
+      "the galapagos",
+      "galapagos",
+      "the galápagos",
+      "galapagos islands"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "birds",
+   "name": "BIRDS",
+   "blurb": "On the wing.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Flightless, nocturnal, and the informal name for a New Zealander.",
+     "answer": "The kiwi",
+     "accept": [
+      "the kiwi",
+      "kiwi",
+      "kiwis"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "It can hover and fly backwards, and its wings beat dozens of times a second.",
+     "answer": "The hummingbird",
+     "accept": [
+      "the hummingbird",
+      "hummingbird",
+      "hummingbirds"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A wingspan over three metres lets this ocean bird glide for hours without a flap.",
+     "answer": "The albatross",
+     "accept": [
+      "the albatross",
+      "albatross",
+      "wandering albatross"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Flamingos are born grey; the pink comes from these pigments in what they eat.",
+     "answer": "Carotenoids",
+     "accept": [
+      "carotenoids",
+      "carotenoid",
+      "beta carotene",
+      "pigments in shrimp",
+      "carotene"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "On New Caledonia this corvid has been filmed bending a length of wire into a hook to fish grubs from a tube.",
+     "answer": "The crow",
+     "accept": [
+      "the crow",
+      "crow",
+      "crows",
+      "the new caledonian crow",
+      "new caledonian crow"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trees-and-plants",
+   "name": "TREES & PLANTS",
+   "blurb": "Rooted.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Despite the height and the woody stem, bamboo is botanically one of these.",
+     "answer": "A grass",
+     "accept": [
+      "a grass",
+      "grass",
+      "grasses",
+      "a giant grass"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Fan-shaped leaves, no close living relatives, and several survived the Hiroshima blast.",
+     "answer": "The ginkgo",
+     "accept": [
+      "the ginkgo",
+      "ginkgo",
+      "gingko",
+      "ginkgo biloba",
+      "maidenhair tree"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Counting and cross-matching the rings in timber gives dates accurate to the year, a science with this name.",
+     "answer": "Dendrochronology",
+     "accept": [
+      "dendrochronology",
+      "tree ring dating",
+      "dendro"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Rafflesia's metre-wide bloom smells of rotting meat because these are what it needs to pollinate it.",
+     "answer": "Flies",
+     "accept": [
+      "flies",
+      "fly",
+      "carrion flies",
+      "blowflies",
+      "beetles and flies"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Underground fungal networks trade sugar and nutrients with tree roots in a partnership called this.",
+     "answer": "Mycorrhiza",
+     "accept": [
+      "mycorrhiza",
+      "mycorrhizae",
+      "mycorrhizal networks",
+      "the wood wide web",
+      "symbiosis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gems-and-minerals",
+   "name": "GEMS & MINERALS",
+   "blurb": "Dig it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Diamond and graphite are both nothing but this one element, arranged differently.",
+     "answer": "Carbon",
+     "accept": [
+      "carbon",
+      "c"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "On the Mohs hardness scale talc is 1, and this sits at 10.",
+     "answer": "Diamond",
+     "accept": [
+      "diamond",
+      "diamonds",
+      "a diamond"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Ruby and sapphire are the same mineral in different colours; that mineral is called this.",
+     "answer": "Corundum",
+     "accept": [
+      "corundum",
+      "aluminium oxide",
+      "alumina",
+      "aluminum oxide"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Not a stone at all, it is fossilised tree resin, and it sometimes has an insect inside.",
+     "answer": "Amber",
+     "accept": [
+      "amber"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A pearl forms when a mollusc coats an irritant in layer after layer of this same material its shell is lined with.",
+     "answer": "Nacre",
+     "accept": [
+      "nacre",
+      "mother of pearl",
+      "mother-of-pearl",
+      "aragonite"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cheese",
+   "name": "CHEESE",
+   "blurb": "Say it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The holes in Emmental are bubbles of this gas, left by bacteria as the cheese ripens.",
+     "answer": "Carbon dioxide",
+     "accept": [
+      "carbon dioxide",
+      "co2",
+      "carbon dioxide gas"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Aged at least twelve months and branded on the rind, its name is protected across the EU.",
+     "answer": "Parmigiano-Reggiano",
+     "accept": [
+      "parmigiano reggiano",
+      "parmigiano",
+      "parmesan",
+      "parmigiano-reggiano"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The blue veins in Stilton and Roquefort are a deliberately introduced mould of this genus.",
+     "answer": "Penicillium",
+     "accept": [
+      "penicillium",
+      "penicillium roqueforti",
+      "penicillin mould",
+      "mould"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Greek, crumbly, traditionally made from sheep's milk and kept in brine.",
+     "answer": "Feta",
+     "accept": [
+      "feta"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Proper mozzarella di bufala is made from the milk of this animal, not a cow.",
+     "answer": "The water buffalo",
+     "accept": [
+      "the water buffalo",
+      "water buffalo",
+      "buffalo",
+      "a buffalo"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "spices-and-herbs",
+   "name": "SPICES & HERBS",
+   "blurb": "Back of the cupboard.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Cinnamon is the dried inner layer of this part of a tree.",
+     "answer": "Bark",
+     "accept": [
+      "bark",
+      "the bark",
+      "tree bark",
+      "inner bark"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Cloves are dried flower ones of these, picked before they open.",
+     "answer": "Buds",
+     "accept": [
+      "buds",
+      "bud",
+      "flower buds",
+      "a bud"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Nutmeg and mace grow on one tree; mace is the lacy red covering around this.",
+     "answer": "The seed",
+     "accept": [
+      "the seed",
+      "seed",
+      "the nutmeg seed",
+      "the kernel",
+      "the aril"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Black, white and green peppercorns come from one vine and differ only in this.",
+     "answer": "Ripeness",
+     "accept": [
+      "ripeness",
+      "when they are picked",
+      "how ripe they are",
+      "processing",
+      "the stage of picking",
+      "maturity"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Star anise supplies shikimic acid, once the starting material for the antiviral Tamiflu — and it is native to this country.",
+     "answer": "China",
+     "accept": [
+      "china",
+      "southern china",
+      "vietnam and china"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "coffee-and-tea",
+   "name": "COFFEE & TEA",
+   "blurb": "Another cup.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Green, black, white and oolong all come from one plant and differ mainly by how far this has gone.",
+     "answer": "Oxidation",
+     "accept": [
+      "oxidation",
+      "oxidisation",
+      "fermentation",
+      "how long they oxidise",
+      "processing"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "It is neither a bean nor a roast but a way of forcing hot water through grounds under pressure.",
+     "answer": "Espresso",
+     "accept": [
+      "espresso",
+      "expresso",
+      "an espresso"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Arabica makes up most of the world's crop; this hardier, more bitter species makes up nearly all the rest.",
+     "answer": "Robusta",
+     "accept": [
+      "robusta",
+      "coffea canephora",
+      "canephora"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Legend gives the discovery of coffee to an Ethiopian goatherd of this name, who noticed his flock would not sleep.",
+     "answer": "Kaldi",
+     "accept": [
+      "kaldi"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Britain's tea habit and the opium trade were both built to fix a trade deficit with this country.",
+     "answer": "China",
+     "accept": [
+      "china",
+      "qing china",
+      "imperial china"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "punctuation",
+   "name": "PUNCTUATION",
+   "blurb": "Mind the marks.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It marks a possession or the letters left out of a contraction.",
+     "answer": "The apostrophe",
+     "accept": [
+      "the apostrophe",
+      "apostrophe",
+      "apostrophes"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Three dots showing that something has been left out.",
+     "answer": "An ellipsis",
+     "accept": [
+      "an ellipsis",
+      "ellipsis",
+      "ellipses",
+      "dot dot dot",
+      "three dots"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Two dots over a vowel telling you to sound it separately, as in naïve.",
+     "answer": "A diaeresis",
+     "accept": [
+      "a diaeresis",
+      "diaeresis",
+      "dieresis",
+      "an umlaut",
+      "umlaut",
+      "a trema"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "This backwards-P mark shows where a new paragraph begins.",
+     "answer": "The pilcrow",
+     "accept": [
+      "the pilcrow",
+      "pilcrow",
+      "paragraph mark",
+      "the paragraph mark"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Coined in 1962, the interrobang fuses a question mark with this other mark.",
+     "answer": "An exclamation mark",
+     "accept": [
+      "an exclamation mark",
+      "exclamation mark",
+      "exclamation point",
+      "an exclamation point",
+      "a bang"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the-olympics",
+   "name": "THE OLYMPICS",
+   "blurb": "Every four years.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The modern Games were revived in 1896 in this city.",
+     "answer": "Athens",
+     "accept": [
+      "athens"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Pierre de Coubertin drew this five-part symbol in 1913, picking colours so every flag would share one.",
+     "answer": "The Olympic rings",
+     "accept": [
+      "the olympic rings",
+      "olympic rings",
+      "the rings",
+      "the five rings"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Its distance was fixed at 26 miles and 385 yards at the 1908 London Games, to suit the royal box.",
+     "answer": "The marathon",
+     "accept": [
+      "the marathon",
+      "marathon"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The flame is kindled at Olympia months beforehand using sunlight and one of these.",
+     "answer": "A mirror",
+     "accept": [
+      "a mirror",
+      "mirror",
+      "a parabolic mirror",
+      "parabolic mirror",
+      "a curved mirror",
+      "the sun and a mirror"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Faster, higher, stronger — and since 2021 a fourth word was added meaning together.",
+     "answer": "Citius, Altius, Fortius",
+     "accept": [
+      "citius altius fortius",
+      "citius altius fortius communiter",
+      "the olympic motto",
+      "faster higher stronger"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "castles",
+   "name": "CASTLES & CATHEDRALS",
+   "blurb": "Stone on stone.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The ditch around a castle, whether or not there is water in it.",
+     "answer": "A moat",
+     "accept": [
+      "a moat",
+      "moat",
+      "moats"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The strongest tower of a castle, and the last place to fall.",
+     "answer": "The keep",
+     "accept": [
+      "the keep",
+      "keep",
+      "the donjon",
+      "donjon"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Carved waterspouts on a cathedral take their name from the French for throat, and the gurgle water makes in one.",
+     "answer": "Gargoyles",
+     "accept": [
+      "gargoyles",
+      "gargoyle",
+      "a gargoyle"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The gaps in a battlement that you shoot through, alternating with the solid blocks between.",
+     "answer": "Crenels",
+     "accept": [
+      "crenels",
+      "crenel",
+      "embrasures",
+      "embrasure",
+      "crenellations",
+      "the gaps"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Castle stairs usually spiral clockwise on the way up, so a descending defender's sword arm had room — that arm being this one.",
+     "answer": "The right",
+     "accept": [
+      "the right",
+      "right",
+      "the right arm",
+      "his right",
+      "the right hand",
+      "right hand"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bridges-and-tunnels",
+   "name": "BRIDGES & TUNNELS",
+   "blurb": "Getting across.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The Golden Gate is this kind of bridge, its deck hung from cables draped between two towers.",
+     "answer": "A suspension bridge",
+     "accept": [
+      "a suspension bridge",
+      "suspension bridge",
+      "suspension"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The Channel Tunnel runs from England to this country.",
+     "answer": "France",
+     "accept": [
+      "france"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The Romans built these to carry water across valleys, and the Pont du Gard is the showpiece.",
+     "answer": "Aqueducts",
+     "accept": [
+      "aqueducts",
+      "aqueduct",
+      "an aqueduct"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Ships climb the Panama Canal in stepped chambers, each one called this.",
+     "answer": "A lock",
+     "accept": [
+      "a lock",
+      "lock",
+      "locks",
+      "a canal lock"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Venice's Bridge of Sighs is named for the sound prisoners supposedly made on their last look at the city before reaching this.",
+     "answer": "The prison",
+     "accept": [
+      "the prison",
+      "prison",
+      "jail",
+      "the cells",
+      "the dungeon",
+      "gaol"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "clocks-and-time",
+   "name": "CLOCKS & TIME",
+   "blurb": "Tick.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A leap year puts an extra day on the end of this month.",
+     "answer": "February",
+     "accept": [
+      "february",
+      "feb"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The angled blade of a sundial, the bit that casts the shadow.",
+     "answer": "The gnomon",
+     "accept": [
+      "the gnomon",
+      "gnomon",
+      "the style",
+      "the pointer"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Cross this line in the Pacific going west and you lose a day.",
+     "answer": "The International Date Line",
+     "accept": [
+      "the international date line",
+      "international date line",
+      "the date line",
+      "date line"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Galileo noticed a swinging lamp kept time whatever the swing; a pendulum's period depends on its length and not on this.",
+     "answer": "Its weight",
+     "accept": [
+      "its weight",
+      "weight",
+      "its mass",
+      "mass",
+      "the bob's weight",
+      "how heavy it is"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Since 1967 the second has been defined by counting oscillations in atoms of this element.",
+     "answer": "Caesium",
+     "accept": [
+      "caesium",
+      "cesium",
+      "caesium 133",
+      "cesium 133"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "light-and-optics",
+   "name": "LIGHT & OPTICS",
+   "blurb": "Look closer.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "White light fans out into colours on passing through this wedge of glass.",
+     "answer": "A prism",
+     "accept": [
+      "a prism",
+      "prism",
+      "prisms"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Light bends when it crosses from air into water, an effect called this.",
+     "answer": "Refraction",
+     "accept": [
+      "refraction",
+      "refracting",
+      "refract"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Light from it takes about 1.3 seconds to reach us, which is why radio chats with it had a pause.",
+     "answer": "The Moon",
+     "accept": [
+      "the moon",
+      "moon",
+      "luna"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A lens thinner in the middle than at the edges spreads light apart, and is described as this.",
+     "answer": "Concave",
+     "accept": [
+      "concave",
+      "a concave lens",
+      "concave lens",
+      "diverging",
+      "a diverging lens"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The sky is blue because short wavelengths bounce off air molecules more, in scattering named for this British physicist.",
+     "answer": "Rayleigh",
+     "accept": [
+      "rayleigh",
+      "lord rayleigh",
+      "rayleigh scattering",
+      "john william strutt"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fairy-tales",
+   "name": "FAIRY TALES",
+   "blurb": "Once upon a time.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A glass slipper, a pumpkin, and a deadline of midnight.",
+     "answer": "Cinderella",
+     "accept": [
+      "cinderella",
+      "cendrillon",
+      "aschenputtel"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Breadcrumbs, a house made of sweets, and an oven.",
+     "answer": "Hansel and Gretel",
+     "accept": [
+      "hansel and gretel",
+      "hansel gretel"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The Grimms collected German folk tales; this Dane wrote his own, including The Little Mermaid.",
+     "answer": "Hans Christian Andersen",
+     "accept": [
+      "hans christian andersen",
+      "andersen",
+      "hans andersen"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "He spins straw into gold and wants a firstborn child, and loses everything when his name is guessed.",
+     "answer": "Rumpelstiltskin",
+     "accept": [
+      "rumpelstiltskin",
+      "rumplestiltskin",
+      "rumpelstilzchen"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "In Perrault's 1697 version she is eaten and the story stops there; the Grimms are the ones who added a huntsman.",
+     "answer": "Little Red Riding Hood",
+     "accept": [
+      "little red riding hood",
+      "red riding hood",
+      "le petit chaperon rouge"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "superstitions",
+   "name": "SUPERSTITIONS",
+   "blurb": "Just in case.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "You knock on this to keep your luck from turning.",
+     "answer": "Wood",
+     "accept": [
+      "wood",
+      "on wood",
+      "timber",
+      "a table"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Spill it and you throw a pinch over your left shoulder.",
+     "answer": "Salt",
+     "accept": [
+      "salt"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Actors refuse to say the name of this Shakespeare play indoors, calling it the Scottish one.",
+     "answer": "Macbeth",
+     "accept": [
+      "macbeth",
+      "the scottish play"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "In much of East Asia this number is avoided in floors and phone numbers, because it sounds like the word for death.",
+     "answer": "Four",
+     "accept": [
+      "four",
+      "4"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Fear of the number thirteen carries this Greek-rooted name, and buildings skip the floor to humour it.",
+     "answer": "Triskaidekaphobia",
+     "accept": [
+      "triskaidekaphobia",
+      "triskaidecaphobia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hong-kong",
+   "name": "HONG KONG",
+   "blurb": "Pearl of the Orient.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The Star Ferry has crossed this stretch of water between Kowloon and the island since 1888.",
+     "answer": "Victoria Harbour",
+     "accept": [
+      "victoria harbour",
+      "victoria harbor",
+      "the harbour",
+      "the harbor"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The city's name means this in Cantonese, and probably referred to the incense trade.",
+     "answer": "Fragrant harbour",
+     "accept": [
+      "fragrant harbour",
+      "fragrant harbor",
+      "heung gong",
+      "perfumed harbour"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A funicular has climbed to the top of this since 1888, and the view is the postcard.",
+     "answer": "Victoria Peak",
+     "accept": [
+      "victoria peak",
+      "the peak",
+      "tai ping shan"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Since 1983 the local currency has been held inside a narrow band against this one, at roughly 7.8 to 1.",
+     "answer": "The US dollar",
+     "accept": [
+      "the us dollar",
+      "us dollar",
+      "the american dollar",
+      "usd",
+      "greenback"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Demolished in 1994, this ungoverned warren of stacked flats packed some 33,000 people onto a single city block.",
+     "answer": "Kowloon Walled City",
+     "accept": [
+      "kowloon walled city",
+      "the walled city",
+      "kowloon city"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "japan",
+   "name": "JAPAN",
+   "blurb": "Nihon.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It last erupted in 1707, and Hokusai printed it thirty-six times.",
+     "answer": "Mount Fuji",
+     "accept": [
+      "mount fuji",
+      "fuji",
+      "fujisan",
+      "mt fuji",
+      "fuji san"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The disciplined art of arranging flowers, where the empty space counts as much as the stems.",
+     "answer": "Ikebana",
+     "accept": [
+      "ikebana",
+      "kado"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Broken pottery mended with gold lacquer so the repair is the point, not the disguise.",
+     "answer": "Kintsugi",
+     "accept": [
+      "kintsugi",
+      "kintsukuroi"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Stylised, all-male, and played in heavy white makeup with a runway through the audience.",
+     "answer": "Kabuki",
+     "accept": [
+      "kabuki"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The forty-seven rōnin avenged their master in 1703 and were then ordered to do this.",
+     "answer": "Commit seppuku",
+     "accept": [
+      "commit seppuku",
+      "seppuku",
+      "hara kiri",
+      "harakiri",
+      "ritual suicide",
+      "kill themselves"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "noodles",
+   "name": "NOODLES",
+   "blurb": "Slurp.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Thick, white, chewy Japanese wheat noodles, good hot in broth or cold with dipping sauce.",
+     "answer": "Udon",
+     "accept": [
+      "udon"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Thin Japanese noodles made from buckwheat, traditionally eaten on New Year's Eve.",
+     "answer": "Soba",
+     "accept": [
+      "soba"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Italian for 'little worms', it is a shade thinner than spaghetti.",
+     "answer": "Vermicelli",
+     "accept": [
+      "vermicelli"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Rice noodles in a clear beef broth with herbs, from Vietnam.",
+     "answer": "Pho",
+     "accept": [
+      "pho",
+      "phở",
+      "pho bo"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Hand-pulled by repeatedly doubling the dough, this Chinese noodle doubles its count with every fold.",
+     "answer": "Lamian",
+     "accept": [
+      "lamian",
+      "la mian",
+      "hand pulled noodles",
+      "lanzhou noodles",
+      "biang biang"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "at-the-movies-3",
+   "name": "AT THE MOVIES",
+   "blurb": "Third showing.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Its opening line — an undertaker asking a favour on a wedding day — begins a 1972 film about a New York family business.",
+     "answer": "The Godfather",
+     "accept": [
+      "the godfather",
+      "godfather"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Rick's Café Américain, wartime Morocco, and letters of transit.",
+     "answer": "Casablanca",
+     "accept": [
+      "casablanca"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Pixar's first feature, released in 1995, was the first made entirely with computer animation.",
+     "answer": "Toy Story",
+     "accept": [
+      "toy story",
+      "toy story 1"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Kurosawa's 1950 film tells one crime four incompatible ways, and lent its name to the effect.",
+     "answer": "Rashomon",
+     "accept": [
+      "rashomon",
+      "rashômon"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Fritz Lang's 1927 vision of a divided future city was cut to ribbons; a near-complete print turned up in Buenos Aires in 2008.",
+     "answer": "Metropolis",
+     "accept": [
+      "metropolis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "science-3",
+   "name": "SCIENCE",
+   "blurb": "Third experiment.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Plants use sunlight to turn carbon dioxide and water into sugar by this process.",
+     "answer": "Photosynthesis",
+     "accept": [
+      "photosynthesis"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "It speeds a reaction up without being used up itself.",
+     "answer": "A catalyst",
+     "accept": [
+      "a catalyst",
+      "catalyst",
+      "catalysts",
+      "an enzyme",
+      "enzyme"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The second law of thermodynamics says this quantity, a measure of disorder, never decreases in a closed system.",
+     "answer": "Entropy",
+     "accept": [
+      "entropy"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Wegener was mocked for suggesting the continents move; the mechanism turned out to be this.",
+     "answer": "Plate tectonics",
+     "accept": [
+      "plate tectonics",
+      "tectonic plates",
+      "continental drift",
+      "plate movement"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Predicted in 1964 and confirmed at CERN in 2012, this particle explains why others have mass.",
+     "answer": "The Higgs boson",
+     "accept": [
+      "the higgs boson",
+      "higgs boson",
+      "the higgs",
+      "higgs particle",
+      "higgs"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "literature-3",
+   "name": "LITERATURE",
+   "blurb": "Third shelf.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "He tilts at windmills with Sancho Panza beside him in a novel of 1605.",
+     "answer": "Don Quixote",
+     "accept": [
+      "don quixote",
+      "quixote",
+      "don quijote"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A ten-year voyage home from Troy, a cyclops, and a wife unpicking her weaving every night.",
+     "answer": "The Odyssey",
+     "accept": [
+      "the odyssey",
+      "odyssey",
+      "homers odyssey"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "She published anonymously as 'A Lady' and wrote six novels about marriage and money in the English gentry.",
+     "answer": "Jane Austen",
+     "accept": [
+      "jane austen",
+      "austen"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Beloved and Song of Solomon won this American her Nobel in 1993.",
+     "answer": "Toni Morrison",
+     "accept": [
+      "toni morrison",
+      "morrison"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Seventeen syllables in three lines, and traditionally a word marking the season.",
+     "answer": "A haiku",
+     "accept": [
+      "a haiku",
+      "haiku",
+      "haikus"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "world-history-3",
+   "name": "WORLD HISTORY",
+   "blurb": "Third chapter.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Buried with the first Qin emperor and dug up by well-diggers in 1974, some 8,000 figures stand in ranks.",
+     "answer": "The Terracotta Army",
+     "accept": [
+      "the terracotta army",
+      "terracotta army",
+      "the terracotta warriors",
+      "terracotta warriors"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Arriving in Europe in 1347, it killed perhaps a third of the continent in six years.",
+     "answer": "The Black Death",
+     "accept": [
+      "the black death",
+      "black death",
+      "the plague",
+      "bubonic plague",
+      "the bubonic plague"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Begun in AD 122, this 117-km barrier marked the north-west limit of Roman Britain.",
+     "answer": "Hadrian's Wall",
+     "accept": [
+      "hadrians wall",
+      "hadrian's wall",
+      "the roman wall"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "In 1868 Japan ended two and a half centuries of shogunate and restored the emperor, an upheaval named for him.",
+     "answer": "The Meiji Restoration",
+     "accept": [
+      "the meiji restoration",
+      "meiji restoration",
+      "meiji",
+      "the meiji era"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "In 1494 Spain and Portugal drew a line down the Atlantic and divided the unexplored world between them by this treaty.",
+     "answer": "The Treaty of Tordesillas",
+     "accept": [
+      "the treaty of tordesillas",
+      "treaty of tordesillas",
+      "tordesillas"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "name-that-country-3",
+   "name": "NAME THAT COUNTRY",
+   "blurb": "Third round of borders.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Over 4,000 km from north to south and never more than about 350 km wide.",
+     "answer": "Chile",
+     "accept": [
+      "chile"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Its largest city sits on two continents at once, split by the Bosphorus.",
+     "answer": "Turkey",
+     "accept": [
+      "turkey",
+      "turkiye",
+      "türkiye"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Four official languages, no coastline, and it stayed out of the UN until 2002.",
+     "answer": "Switzerland",
+     "accept": [
+      "switzerland",
+      "the swiss confederation",
+      "helvetia"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Its farmland is a thin green ribbon either side of one river, and almost everyone lives on it.",
+     "answer": "Egypt",
+     "accept": [
+      "egypt"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Under half a square kilometre, it became a sovereign state only in 1929.",
+     "answer": "Vatican City",
+     "accept": [
+      "vatican city",
+      "the vatican",
+      "vatican",
+      "holy see",
+      "the holy see"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-the-menu-3",
+   "name": "ON THE MENU",
+   "blurb": "Third sitting.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Saffron rice cooked flat in a wide two-handled pan, from Valencia.",
+     "answer": "Paella",
+     "accept": [
+      "paella"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Salted, spiced and fermented cabbage, buried in jars through the Korean winter.",
+     "answer": "Kimchi",
+     "accept": [
+      "kimchi",
+      "gimchi",
+      "kimchee"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Raw fish 'cooked' by the acid in lime juice, from the Peruvian coast.",
+     "answer": "Ceviche",
+     "accept": [
+      "ceviche",
+      "cebiche",
+      "seviche"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Portuguese missionaries brought the batter-and-fry technique to Japan, where it became this.",
+     "answer": "Tempura",
+     "accept": [
+      "tempura"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Fermented soybean paste, the backbone of a Japanese breakfast soup.",
+     "answer": "Miso",
+     "accept": [
+      "miso",
+      "miso paste"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sports-3",
+   "name": "SPORTS",
+   "blurb": "Third half.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "One under par on a golf hole.",
+     "answer": "A birdie",
+     "accept": [
+      "a birdie",
+      "birdie",
+      "birdies"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "England and Australia have played for this tiny urn since 1882.",
+     "answer": "The Ashes",
+     "accept": [
+      "the ashes",
+      "ashes"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The oldest tennis championship, and still played on grass.",
+     "answer": "Wimbledon",
+     "accept": [
+      "wimbledon",
+      "the championships"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Eight forwards a side bind together to restart play in this rugby formation.",
+     "answer": "A scrum",
+     "accept": [
+      "a scrum",
+      "scrum",
+      "the scrum",
+      "scrummage"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "In fencing, this is the only weapon where the whole body counts as a target.",
+     "answer": "The épée",
+     "accept": [
+      "the epee",
+      "epee",
+      "épée",
+      "the épée"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "on-television-3",
+   "name": "ON TELEVISION",
+   "blurb": "Third channel.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A time-travelling alien in a police box, running since 1963 with a cast that keeps changing face.",
+     "answer": "Doctor Who",
+     "accept": [
+      "doctor who",
+      "dr who"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Big Bird, Oscar and a giant yellow street have taught letters and numbers since 1969.",
+     "answer": "Sesame Street",
+     "accept": [
+      "sesame street"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A comedy set in a Korean War field hospital that ran on air for more than three times as long as the war itself.",
+     "answer": "M*A*S*H",
+     "accept": [
+      "mash",
+      "m a s h",
+      "m*a*s*h"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A show about nothing, set largely in a Manhattan flat and a diner.",
+     "answer": "Seinfeld",
+     "accept": [
+      "seinfeld"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "His narration has carried BBC natural history since the 1950s, and Life on Earth in 1979 made the format.",
+     "answer": "David Attenborough",
+     "accept": [
+      "david attenborough",
+      "attenborough",
+      "sir david attenborough"
+     ]
+    }
+   ]
   }
  ],
  "final": [
@@ -4845,6 +6350,90 @@
     "canada",
     "the canadian flag",
     "the maple leaf"
+   ]
+  },
+  {
+   "category": "ISLANDS",
+   "clue": "It has no mosquitoes, its parliament traces its founding to the year 930, and it straddles two tectonic plates pulling apart beneath it.",
+   "answer": "Iceland",
+   "accept": [
+    "iceland",
+    "island"
+   ]
+  },
+  {
+   "category": "PUNCTUATION",
+   "clue": "A 1962 coinage fusing two marks, it never caught on but is in Unicode; a sentence needing it asks and exclaims at once.",
+   "answer": "The interrobang",
+   "accept": [
+    "the interrobang",
+    "interrobang"
+   ]
+  },
+  {
+   "category": "CLOCKS & TIME",
+   "clue": "Britain and its empire skipped eleven days in September 1752 to make this change, and some people believed their lives had been shortened.",
+   "answer": "The Gregorian calendar",
+   "accept": [
+    "the gregorian calendar",
+    "gregorian calendar",
+    "switching calendars",
+    "the calendar change",
+    "new style calendar"
+   ]
+  },
+  {
+   "category": "BIRDS",
+   "clue": "Extinct by about 1690, flightless, and named by Dutch sailors with a word that may mean 'sluggard'.",
+   "answer": "The dodo",
+   "accept": [
+    "the dodo",
+    "dodo",
+    "dodos"
+   ]
+  },
+  {
+   "category": "JAPAN",
+   "clue": "Two centuries of near-total isolation ended when American warships arrived in 1853; the policy was called sakoku, meaning this.",
+   "answer": "Closed country",
+   "accept": [
+    "closed country",
+    "locked country",
+    "chained country",
+    "national isolation",
+    "isolation"
+   ]
+  },
+  {
+   "category": "CHEESE",
+   "clue": "Legend says it was discovered when milk carried in a stomach-lined pouch curdled on a journey — the agent being this enzyme.",
+   "answer": "Rennet",
+   "accept": [
+    "rennet",
+    "chymosin",
+    "rennin"
+   ]
+  },
+  {
+   "category": "THE OLYMPICS",
+   "clue": "Held every four years, the gap between games has this name, borrowed from the ancient Greek unit of time it measured.",
+   "answer": "An Olympiad",
+   "accept": [
+    "an olympiad",
+    "olympiad",
+    "olympiads"
+   ]
+  },
+  {
+   "category": "HONG KONG",
+   "clue": "Signed in 1842 after the First Opium War, this treaty ceded Hong Kong Island to Britain.",
+   "answer": "The Treaty of Nanking",
+   "accept": [
+    "the treaty of nanking",
+    "treaty of nanking",
+    "treaty of nanjing",
+    "the treaty of nanjing",
+    "nanking"
    ]
   }
  ]

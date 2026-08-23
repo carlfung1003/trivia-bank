@@ -197,6 +197,20 @@ for (const f of finals) {
     fatal.push(`${at} does not accept its own answer "${f.answer}"`);
   }
   for (const why of recencyRisk(f.clue)) warn.push(`${at} recency risk: ${why}`);
+
+  /* Finals were exempt from the echo test purely because this loop was written
+     separately from the pack loop, and a final promptly shipped naming its own
+     answer in its first three words. Same rule, same place. */
+  const fClueKey = ` ${matchKey(f.clue)} `;
+  const fAnswerKey = matchKey(f.answer);
+  if (fAnswerKey && fClueKey.includes(` ${fAnswerKey} `)) {
+    fatal.push(`${at} the clue contains the answer verbatim: "${f.answer}"`);
+  } else {
+    const meaty = fAnswerKey.split(" ").filter((w) => w.length >= 5);
+    if (meaty.length && meaty.every((w) => fClueKey.includes(` ${w} `))) {
+      warn.push(`${at} every substantial word of "${f.answer}" appears in the clue`);
+    }
+  }
   for (const alias of f.accept || []) {
     if (checkTypedAgainst(f, alias, lexicon) !== true) {
       fatal.push(`${at} rejects its own alias "${alias}"`);

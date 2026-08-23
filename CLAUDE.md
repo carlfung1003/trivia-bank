@@ -275,8 +275,8 @@ whole of `dealRound`.
 The audit enforces the pair: ids unique, and no two packs under one heading sharing a clue
 or an answer. A variant that recycles questions is not a variant.
 
-Current file: **81 packs under 54 headings, 405 clues, 24 finals** —
-4 full games with no heading repeated, and 19 headings carrying more than
+Current file: **107 packs under 72 headings, 535 clues, 32 finals** —
+6 full games with no heading repeated, and 19 headings carrying more than
 one set of questions.
 
 **Shared state, separately kept.** `store.record()` branches on `mode === "board"`: its
@@ -322,7 +322,7 @@ The audit's headline check is **ambiguity**: no guess may match two slots on the
 board. That is the failure that ruins an open-text game — you say the right thing and the
 board picks which right thing you meant. Zero is the only acceptable number.
 
-Current file: **111 survey boards, 701 answers** — 22 runs before a
+Current file: **153 survey boards, 956 answers** — 30 runs before a
 board could repeat.
 
 The playtest asserts something a balance pass cannot eyeball: **banking must be a real
