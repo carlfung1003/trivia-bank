@@ -2,9 +2,9 @@
  "meta": {
   "version": 1,
   "note": "Clue packs for The Board. Written in clue form — a statement whose response is a question — so 'What is a martini?' and 'a martini' both land. Tier 1..5 is difficulty, not money: the board multiplies it (200 on the first floor, 400 on the second), so any pack can be dealt into either round.",
-  "categoryCount": 59,
-  "clueCount": 295,
-  "finalCount": 16
+  "categoryCount": 81,
+  "clueCount": 405,
+  "finalCount": 24
  },
  "categories": [
   {
@@ -101,7 +101,7 @@
     },
     {
      "tier": 3,
-     "clue": "The dried stigma of a crocus, it is the most expensive spice in the world by weight.",
+     "clue": "Around 150 crocus flowers are stripped by hand for a single gram of this spice, which is why it costs what it does.",
      "answer": "Saffron",
      "accept": [
       "saffron"
@@ -1212,7 +1212,7 @@
     },
     {
      "tier": 4,
-     "clue": "The Sahara is the largest hot one of these on Earth.",
+     "clue": "The Sahara is a hot, dry, sandy one of these.",
      "answer": "A desert",
      "accept": [
       "a desert",
@@ -1485,7 +1485,7 @@
     },
     {
      "tier": 3,
-     "clue": "Miyazaki's 2001 bathhouse fantasy is still the only hand-drawn feature to take the animation Oscar.",
+     "clue": "Miyazaki's 2001 bathhouse fantasy was the first hand-drawn film, and the first in Japanese, to take the animation Oscar.",
      "answer": "Spirited Away",
      "accept": [
       "spirited away",
@@ -3163,7 +3163,7 @@
     },
     {
      "tier": 2,
-     "clue": "Nineteen EU countries share this currency, introduced as cash in 2002.",
+     "clue": "Cash versions of this currency reached people's pockets on 1 January 2002, three years after it existed on paper.",
      "answer": "The euro",
      "accept": [
       "the euro",
@@ -3319,6 +3319,1307 @@
      ]
     }
    ]
+  },
+  {
+   "id": "dim-sum-3",
+   "name": "DIM SUM",
+   "blurb": "Third trolley.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Deep-fried, ridged and stuffed with pork, this football-shaped dumpling shatters when you bite it.",
+     "answer": "Ham sui gok",
+     "accept": [
+      "ham sui gok",
+      "haam seui gok",
+      "fried dumpling",
+      "glutinous rice dumpling",
+      "fried pork dumpling"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Wrapped in bean-curd skin and braised in a savoury sauce, these rolls are usually stuffed with pork and mushroom.",
+     "answer": "Beancurd rolls",
+     "accept": [
+      "beancurd rolls",
+      "bean curd rolls",
+      "fu pei guen",
+      "tofu skin rolls",
+      "bean curd skin rolls"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Steamed pork ribs cut small, tossed with fermented black beans and eaten off the bone.",
+     "answer": "Pai gwat",
+     "accept": [
+      "pai gwat",
+      "paai gwat",
+      "black bean spare ribs",
+      "spare ribs",
+      "steamed ribs",
+      "pork ribs"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Poached in a sweet syrup and served in a shallow bowl, this jelly-soft soy dessert is scooped, never sliced.",
+     "answer": "Tofu pudding",
+     "accept": [
+      "tofu pudding",
+      "douhua",
+      "dau fu fa",
+      "tofu fa",
+      "beancurd pudding",
+      "soybean pudding"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A gong-shaped tea implement aside, tapping two fingers on the table at yum cha is a wordless way of saying this.",
+     "answer": "Thank you",
+     "accept": [
+      "thank you",
+      "thanks",
+      "doh je",
+      "m goi",
+      "gratitude"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rhyme-time-3",
+   "name": "RHYME TIME",
+   "blurb": "Third pair.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A hairless carnivorous mammal of the family Ursidae.",
+     "answer": "A bare bear",
+     "accept": [
+      "a bare bear",
+      "bare bear"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A hovering aircraft used by a chief executive.",
+     "answer": "A boss's copter",
+     "accept": [
+      "a bosss copter",
+      "a boss copter",
+      "boss copter",
+      "bosses copter"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A more pleasant sibling's daughter.",
+     "answer": "A nicer niece",
+     "accept": [
+      "a nicer niece",
+      "nicer niece"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A crimson sleeping place.",
+     "answer": "A red bed",
+     "accept": [
+      "a red bed",
+      "red bed"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "An unadventurous baked dish of pasta and cheese.",
+     "answer": "A tame bake",
+     "accept": [
+      "a tame bake",
+      "tame bake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "potpourri-3",
+   "name": "POTPOURRI",
+   "blurb": "Third mixed bag.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A single one of these has six sides, and no two are ever the same.",
+     "answer": "A snowflake",
+     "accept": [
+      "a snowflake",
+      "snowflake",
+      "snowflakes",
+      "a snow crystal"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This word for the space between two teeth is also the name for a gap in a hedge.",
+     "answer": "An interstice",
+     "accept": [
+      "an interstice",
+      "interstice",
+      "interstices",
+      "a gap",
+      "embrasure"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The plastic or metal loop that keeps a pair of scissors' finger holes from splitting has this name.",
+     "answer": "A bow",
+     "accept": [
+      "a bow",
+      "bow",
+      "the bow",
+      "finger bow",
+      "the handle"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The smell of rain hitting dry ground has this name, coined by two Australian scientists in 1964.",
+     "answer": "Petrichor",
+     "accept": [
+      "petrichor"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "That specific sensation of a word being on the tip of your tongue has a name from the Greek for 'not knowing'.",
+     "answer": "Lethologica",
+     "accept": [
+      "lethologica",
+      "tip of the tongue",
+      "the tip of the tongue phenomenon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "before-and-after-3",
+   "name": "BEFORE & AFTER",
+   "blurb": "Third overlap.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "The Antarctic bird that cannot fly meets a hyphenated 1968 Beatles single about a walrus.",
+     "answer": "Penguin Lady Madonna",
+     "accept": [
+      "penguin lady madonna"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Barrie's boy who would not grow up meets the seed spread on toast.",
+     "answer": "Peter Pan Butter",
+     "accept": [
+      "peter pan butter",
+      "peter peanut butter"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "The pinnacle of Everest meets the model that walks a catwalk.",
+     "answer": "Summit Model",
+     "accept": [
+      "summit model"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Steinbeck's Dust Bowl novel meets a Californian wine region.",
+     "answer": "The Grapes of Wrath Valley",
+     "accept": [
+      "the grapes of wrath valley",
+      "grapes of wrath valley"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Melville's white whale meets a Yuletide beverage of egg and cream.",
+     "answer": "Moby-Dick Eggnog",
+     "accept": [
+      "moby dick eggnog",
+      "moby-dick eggnog"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "word-origins-3",
+   "name": "WORD ORIGINS",
+   "blurb": "Third etymology.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "'Volcano' comes from the Roman god of fire and the forge.",
+     "answer": "Vulcan",
+     "accept": [
+      "vulcan",
+      "vulcanus"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "'Denim' is a contraction of 'de Nîmes', naming the French city the cloth came from; 'jeans' names this Italian port.",
+     "answer": "Genoa",
+     "accept": [
+      "genoa",
+      "genova",
+      "gênes"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This pre-Lent festival takes its name from Latin words meaning 'farewell to meat'.",
+     "answer": "Carnival",
+     "accept": [
+      "carnival",
+      "carnevale",
+      "carne vale",
+      "mardi gras"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "'Ketchup' entered English from a Hokkien word for the brine of pickled this.",
+     "answer": "Fish",
+     "accept": [
+      "fish",
+      "fish sauce",
+      "pickled fish",
+      "seafood"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "'Silhouette' mocks a French finance minister whose cheeseparing made his name a byword for doing things on the cheap.",
+     "answer": "Étienne de Silhouette",
+     "accept": [
+      "etienne de silhouette",
+      "de silhouette",
+      "silhouette",
+      "etienne silhouette"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anagrams-3",
+   "name": "ANAGRAMS",
+   "blurb": "Third shuffle.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "EARTH rearranges into this organ.",
+     "answer": "Heart",
+     "accept": [
+      "heart",
+      "hater",
+      "rathe"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "STOP rearranges into this word for containers of soil.",
+     "answer": "Pots",
+     "accept": [
+      "pots",
+      "tops",
+      "opts",
+      "spot"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "FUNERAL rearranges into this word meaning genuine.",
+     "answer": "Real fun",
+     "accept": [
+      "real fun"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "PRESBYTERIAN rearranges into this two-word description of somebody who wrecks a party.",
+     "answer": "Best in prayer",
+     "accept": [
+      "best in prayer"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "SLOT MACHINES rearranges into this three-word verdict on how they treat you.",
+     "answer": "Cash lost in me",
+     "accept": [
+      "cash lost in me"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stupid-answers-3",
+   "name": "STUPID ANSWERS",
+   "blurb": "Third helping. Still in the clue.",
+   "echoOk": true,
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A goldfish is a fish of roughly what colour?",
+     "answer": "Gold",
+     "accept": [
+      "gold",
+      "golden",
+      "orange"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "The Blue Mountains of Australia are a range of mountains that look what colour from a distance?",
+     "answer": "Blue",
+     "accept": [
+      "blue"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A screwdriver is a tool that drives these.",
+     "answer": "Screws",
+     "accept": [
+      "screws",
+      "screw",
+      "a screw"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The Dead Sea is so salty that almost nothing in it is this.",
+     "answer": "Alive",
+     "accept": [
+      "alive",
+      "living",
+      "live",
+      "not dead"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The Leaning Tower of Pisa is a tower in Pisa that does what?",
+     "answer": "Leans",
+     "accept": [
+      "leans",
+      "lean",
+      "it leans",
+      "tilts",
+      "leaning"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-the-kitchen-3",
+   "name": "IN THE KITCHEN",
+   "blurb": "Third service.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Salting aubergine and leaving it to weep draws out water by this process.",
+     "answer": "Osmosis",
+     "accept": [
+      "osmosis",
+      "drawing out water",
+      "dehydration"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Rested dough relaxes because these protein strands stop pulling back.",
+     "answer": "Gluten",
+     "accept": [
+      "gluten",
+      "gluten strands",
+      "glutens"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This word covers both the froth on a stock and the act of lifting it off.",
+     "answer": "Skimming",
+     "accept": [
+      "skimming",
+      "skim",
+      "to skim",
+      "skimming off",
+      "the scum"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A roux of equal flour and butter cooked to pale, blond or brown thickens by this process, from the Latin for glue.",
+     "answer": "Gelatinisation",
+     "accept": [
+      "gelatinisation",
+      "gelatinization",
+      "starch gelatinisation",
+      "thickening"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Whisking a hot liquid slowly into beaten egg so it does not scramble goes by this word.",
+     "answer": "Tempering",
+     "accept": [
+      "tempering",
+      "temper",
+      "to temper"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the-periodic-table",
+   "name": "THE PERIODIC TABLE",
+   "blurb": "Elementary.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Element number one, and about three quarters of the ordinary matter in the universe.",
+     "answer": "Hydrogen",
+     "accept": [
+      "hydrogen",
+      "h"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Its symbol Na comes from natrium, and it explodes on contact with water.",
+     "answer": "Sodium",
+     "accept": [
+      "sodium",
+      "na"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Named for Cyprus, where the Romans mined it, this metal turns green as it corrodes.",
+     "answer": "Copper",
+     "accept": [
+      "copper",
+      "cu"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Discovered in the Sun's spectrum before it was found on Earth, it is named for the Greek sun god.",
+     "answer": "Helium",
+     "accept": [
+      "helium",
+      "he"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Mendeleev left a gap for it and called it eka-silicon; it turned up fifteen years later and is now in every transistor.",
+     "answer": "Germanium",
+     "accept": [
+      "germanium",
+      "ge"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "geometry",
+   "name": "SHAPES & NUMBERS",
+   "blurb": "Show your working.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Three sides, and the interior angles always total 180 degrees.",
+     "answer": "A triangle",
+     "accept": [
+      "a triangle",
+      "triangle",
+      "triangles"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Approximately 3.14159, and it has been computed to trillions of decimal places.",
+     "answer": "Pi",
+     "accept": [
+      "pi",
+      "3.14159",
+      "3.14",
+      "pie"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A shape with this many sides is a dodecagon, and a year has that many months.",
+     "answer": "Twelve",
+     "accept": [
+      "twelve",
+      "12"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Roughly 1.618, it turns up in pentagons, sunflower spirals and a great deal of overheated design writing.",
+     "answer": "The golden ratio",
+     "accept": [
+      "the golden ratio",
+      "golden ratio",
+      "phi",
+      "the divine proportion",
+      "golden section"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A one-sided surface you make by giving a paper strip a half twist and joining the ends.",
+     "answer": "A Möbius strip",
+     "accept": [
+      "a mobius strip",
+      "mobius strip",
+      "möbius strip",
+      "a mobius band",
+      "mobius band"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rivers-and-mountains",
+   "name": "RIVERS & MOUNTAINS",
+   "blurb": "Terrain.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "It flows north through eleven countries and drains about a tenth of Africa.",
+     "answer": "The Nile",
+     "accept": [
+      "the nile",
+      "nile",
+      "river nile"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Its basin holds more fresh water than any other river's, and it discharges more than the next several combined.",
+     "answer": "The Amazon",
+     "accept": [
+      "the amazon",
+      "amazon",
+      "river amazon",
+      "amazon river"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This Alpine peak's near-perfect pyramid sits on the border of Switzerland and Italy.",
+     "answer": "The Matterhorn",
+     "accept": [
+      "the matterhorn",
+      "matterhorn",
+      "monte cervino",
+      "cervino"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Measured from its base on the seabed rather than sea level, this Hawaiian volcano beats Everest by a mile.",
+     "answer": "Mauna Kea",
+     "accept": [
+      "mauna kea",
+      "maunakea"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Rising in Tibet and shared with the Brahmaputra, its delta covers most of Bangladesh.",
+     "answer": "The Ganges",
+     "accept": [
+      "the ganges",
+      "ganges",
+      "ganga",
+      "the ganga",
+      "ganges brahmaputra"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "weather",
+   "name": "WEATHER",
+   "blurb": "Look out the window.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "You see it before you hear it because light travels far faster than sound.",
+     "answer": "Lightning",
+     "accept": [
+      "lightning",
+      "a lightning bolt",
+      "lightening"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Water droplets refract sunlight at about 42 degrees to make this arc.",
+     "answer": "A rainbow",
+     "accept": [
+      "a rainbow",
+      "rainbow",
+      "rainbows"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Called a hurricane in the Atlantic and a typhoon in the north-west Pacific, it is one of these.",
+     "answer": "A tropical cyclone",
+     "accept": [
+      "a tropical cyclone",
+      "tropical cyclone",
+      "a cyclone",
+      "cyclone",
+      "a storm"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The Beaufort scale runs from 0, calm, to 12, which carries this name.",
+     "answer": "Hurricane force",
+     "accept": [
+      "hurricane force",
+      "hurricane",
+      "a hurricane",
+      "force 12"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Warm air trapped beneath cold reverses the usual pattern and holds smog over a city; the effect is called this.",
+     "answer": "A temperature inversion",
+     "accept": [
+      "a temperature inversion",
+      "temperature inversion",
+      "an inversion",
+      "inversion",
+      "thermal inversion"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "colours",
+   "name": "COLOURS",
+   "blurb": "Mix it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Mixing red and blue light gives this colour, which has no single wavelength of its own.",
+     "answer": "Magenta",
+     "accept": [
+      "magenta",
+      "purple",
+      "violet",
+      "pink"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Ground from lapis lazuli and once dearer than gold, this blue was reserved for the Virgin's robes.",
+     "answer": "Ultramarine",
+     "accept": [
+      "ultramarine",
+      "lapis",
+      "lapis lazuli blue"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Crushed cochineal insects give this deep red used in food colouring and lipstick.",
+     "answer": "Carmine",
+     "accept": [
+      "carmine",
+      "cochineal",
+      "crimson",
+      "carminic acid"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Extracted a drop at a time from sea snails, this dye gave Roman emperors their trim.",
+     "answer": "Tyrian purple",
+     "accept": [
+      "tyrian purple",
+      "imperial purple",
+      "royal purple",
+      "murex purple"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "The first synthetic organic dye, made by an 18-year-old chemist trying to synthesise quinine in 1856.",
+     "answer": "Mauveine",
+     "accept": [
+      "mauveine",
+      "mauve",
+      "perkins mauve",
+      "aniline purple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "buildings",
+   "name": "ARCHITECTURE",
+   "blurb": "Look up.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Its unreinforced concrete dome has stood in Rome for nearly nineteen centuries with a hole in the top.",
+     "answer": "The Pantheon",
+     "accept": [
+      "the pantheon",
+      "pantheon"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Gaudí began this Barcelona basilica in 1882 and it is still being built.",
+     "answer": "The Sagrada Família",
+     "accept": [
+      "the sagrada familia",
+      "sagrada familia",
+      "sagrada família",
+      "la sagrada familia"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This pointed arch and flying buttress style was called by an insulting name meaning 'barbarian'.",
+     "answer": "Gothic",
+     "accept": [
+      "gothic",
+      "gothic architecture"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Utzon's shells over Sydney Harbour were meant to be spheres cut from one imaginary ball.",
+     "answer": "The Sydney Opera House",
+     "accept": [
+      "the sydney opera house",
+      "sydney opera house",
+      "the opera house"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "'Less is more' belonged to this German-American architect of glass boxes.",
+     "answer": "Mies van der Rohe",
+     "accept": [
+      "mies van der rohe",
+      "mies",
+      "ludwig mies van der rohe"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sea-and-ships",
+   "name": "SEA & SHIPS",
+   "blurb": "All hands.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Left as you face the bow is called this.",
+     "answer": "Port",
+     "accept": [
+      "port",
+      "the port side",
+      "port side",
+      "larboard"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "One of these is 1,852 metres, so a knot is one of them per hour.",
+     "answer": "A nautical mile",
+     "accept": [
+      "a nautical mile",
+      "nautical mile",
+      "nautical miles",
+      "a sea mile"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "This mark on a hull shows how deep a ship may legally be loaded in different waters.",
+     "answer": "The Plimsoll line",
+     "accept": [
+      "the plimsoll line",
+      "plimsoll line",
+      "plimsoll mark",
+      "the load line",
+      "load line"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Sailors called it the doldrums; meteorologists call it the intertropical convergence zone, a belt of this.",
+     "answer": "Calm",
+     "accept": [
+      "calm",
+      "calms",
+      "no wind",
+      "dead calm",
+      "still air",
+      "windlessness"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Latitude was easy; the prize John Harrison won in the 18th century was for measuring this at sea.",
+     "answer": "Longitude",
+     "accept": [
+      "longitude"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "medicine",
+   "name": "MEDICINE",
+   "blurb": "Take two.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Jenner used cowpox in 1796 to protect against this disease, later the only human one ever eradicated.",
+     "answer": "Smallpox",
+     "accept": [
+      "smallpox",
+      "variola"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This instrument for listening to the chest was invented in 1816 by a doctor too embarrassed to press his ear to a woman's ribs.",
+     "answer": "The stethoscope",
+     "accept": [
+      "the stethoscope",
+      "stethoscope"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Willow bark gave its name to the acid behind this painkiller, marketed from 1899.",
+     "answer": "Aspirin",
+     "accept": [
+      "aspirin",
+      "acetylsalicylic acid",
+      "asprin"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Semmelweis was ridiculed in the 1840s for insisting doctors do this before delivering babies.",
+     "answer": "Wash their hands",
+     "accept": [
+      "wash their hands",
+      "washing hands",
+      "hand washing",
+      "wash hands",
+      "handwashing",
+      "clean their hands"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Rosalind Franklin's Photo 51 was an X-ray image of this molecule's shape.",
+     "answer": "DNA",
+     "accept": [
+      "dna",
+      "the double helix",
+      "deoxyribonucleic acid",
+      "the dna helix"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "toys-and-games",
+   "name": "GAMES & TOYS",
+   "blurb": "Your turn.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A Hungarian design professor built the first one in 1974 to show students how three-dimensional movement worked.",
+     "answer": "The Rubik's Cube",
+     "accept": [
+      "the rubiks cube",
+      "rubiks cube",
+      "rubik cube",
+      "the rubik cube",
+      "magic cube",
+      "the cube"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This Danish company's name is a contraction of two words meaning 'play well'.",
+     "answer": "Lego",
+     "accept": [
+      "lego"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Invented in India as chaturanga, this game reached Europe by way of Persia and the Arab world.",
+     "answer": "Chess",
+     "accept": [
+      "chess",
+      "shatranj",
+      "chaturanga"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Its four suits and 52 cards arrived in Europe from Mamluk Egypt in the 14th century.",
+     "answer": "Playing cards",
+     "accept": [
+      "playing cards",
+      "a deck of cards",
+      "cards",
+      "a pack of cards",
+      "the deck"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Elizabeth Magie patented The Landlord's Game in 1904 to argue AGAINST landlords; the version that made a fortune kept the board and lost the point.",
+     "answer": "Monopoly",
+     "accept": [
+      "monopoly"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the-alphabet",
+   "name": "THE ALPHABET",
+   "blurb": "A to Z.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "'Alphabet' is simply the first two letters of the Greek one, run together.",
+     "answer": "Alpha and beta",
+     "accept": [
+      "alpha and beta",
+      "alpha beta",
+      "alpha and bet",
+      "alpha, beta"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "An Italian grammarian separated it from I in 1524, making it the last letter to join the alphabet.",
+     "answer": "J",
+     "accept": [
+      "j",
+      "the letter j"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Recited at the end of the alphabet as 'per se and', the phrase slurred together into this symbol's name.",
+     "answer": "Ampersand",
+     "accept": [
+      "ampersand",
+      "the ampersand",
+      "and per se and"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "'The quick brown fox jumps over the lazy dog' is the best known example of one of these.",
+     "answer": "A pangram",
+     "accept": [
+      "a pangram",
+      "pangram",
+      "pangrams"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "English lost the letters thorn and eth; thorn survives disguised as a Y in this two-word phrase on mock-antique shop signs.",
+     "answer": "Ye olde",
+     "accept": [
+      "ye olde",
+      "ye olde shoppe",
+      "ye"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flags",
+   "name": "FLAGS",
+   "blurb": "Run it up.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Its single red circle on white is called the Hinomaru, the circle of the sun.",
+     "answer": "Japan",
+     "accept": [
+      "japan",
+      "japanese flag",
+      "the flag of japan"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A maple leaf between two red bars was adopted by this country in 1965.",
+     "answer": "Canada",
+     "accept": [
+      "canada",
+      "the canadian flag"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Its blue disc carries 27 stars, one for each state and the federal district, and a motto about order and progress.",
+     "answer": "Brazil",
+     "accept": [
+      "brazil",
+      "the brazilian flag"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The Union Jack in the corner and the Southern Cross below appear on both Australia's flag and this neighbour's.",
+     "answer": "New Zealand",
+     "accept": [
+      "new zealand",
+      "nz",
+      "the new zealand flag"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Every sovereign flag is a rectangle except Nepal's, which is two of these stacked one above the other.",
+     "answer": "Pennants",
+     "accept": [
+      "pennants",
+      "pennant",
+      "a pennant",
+      "triangles",
+      "triangle",
+      "pennons",
+      "two triangles"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "world-of-work",
+   "name": "ODD JOBS",
+   "blurb": "Somebody does it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A cooper makes and repairs these wooden vessels.",
+     "answer": "Barrels",
+     "accept": [
+      "barrels",
+      "barrel",
+      "casks",
+      "cask",
+      "a barrel"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "A farrier's entire trade concerns this part of a horse.",
+     "answer": "The hoof",
+     "accept": [
+      "the hoof",
+      "hoof",
+      "hooves",
+      "the hooves",
+      "the feet",
+      "its feet"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A cordwainer makes new ones of these; a cobbler only mends them.",
+     "answer": "Shoes",
+     "accept": [
+      "shoes",
+      "shoe",
+      "boots",
+      "footwear"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "A fletcher fits feathers to these.",
+     "answer": "Arrows",
+     "accept": [
+      "arrows",
+      "arrow",
+      "an arrow"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "A knocker-up walked the streets before alarm clocks, doing this to windows with a long pole.",
+     "answer": "Tapping",
+     "accept": [
+      "tapping",
+      "tapping on them",
+      "knocking",
+      "tapping the window",
+      "rapping",
+      "knocking on windows"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "maps",
+   "name": "MAPS",
+   "blurb": "You are here.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "Zero degrees longitude runs through this London borough.",
+     "answer": "Greenwich",
+     "accept": [
+      "greenwich",
+      "greenwich london"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "This 1569 projection keeps angles true for navigation and grotesquely inflates Greenland.",
+     "answer": "The Mercator projection",
+     "accept": [
+      "the mercator projection",
+      "mercator projection",
+      "mercator",
+      "mercators projection"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "Lines joining points of equal height on a map carry this name.",
+     "answer": "Contour lines",
+     "accept": [
+      "contour lines",
+      "contours",
+      "a contour line",
+      "isolines",
+      "contour"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "The line at roughly 23.4 degrees north where the sun can be directly overhead at the June solstice.",
+     "answer": "The Tropic of Cancer",
+     "accept": [
+      "the tropic of cancer",
+      "tropic of cancer"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "Cartographers slip a fictitious street into a map so they can prove a rival copied it; such an invention is called this.",
+     "answer": "A paper town",
+     "accept": [
+      "a paper town",
+      "paper town",
+      "paper towns",
+      "a trap street",
+      "trap street",
+      "a copyright trap",
+      "copyright trap"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "letters-and-numbers",
+   "name": "BY THE NUMBERS",
+   "blurb": "Count it.",
+   "clues": [
+    {
+     "tier": 1,
+     "clue": "A dozen dozen is this number, also called a gross.",
+     "answer": "144",
+     "accept": [
+      "144",
+      "one hundred and forty four",
+      "a gross",
+      "gross"
+     ]
+    },
+    {
+     "tier": 2,
+     "clue": "Roman numerals have no symbol for it, which is part of why they are so awkward to calculate with.",
+     "answer": "Zero",
+     "accept": [
+      "zero",
+      "0",
+      "nought",
+      "nil"
+     ]
+    },
+    {
+     "tier": 3,
+     "clue": "A googol is one followed by this many zeros.",
+     "answer": "100",
+     "accept": [
+      "100",
+      "a hundred",
+      "one hundred",
+      "hundred"
+     ]
+    },
+    {
+     "tier": 4,
+     "clue": "Each number in this sequence is the sum of the two before it, and the ratio between them approaches the golden ratio.",
+     "answer": "Fibonacci",
+     "accept": [
+      "fibonacci",
+      "the fibonacci sequence",
+      "fibonacci sequence",
+      "fibonacci numbers"
+     ]
+    },
+    {
+     "tier": 5,
+     "clue": "2, 3, 5, 7, 11: Euclid proved around 300 BC that there is no largest one of these.",
+     "answer": "A prime",
+     "accept": [
+      "a prime",
+      "prime",
+      "primes",
+      "a prime number",
+      "prime numbers"
+     ]
+    }
+   ]
   }
  ],
  "final": [
@@ -3464,6 +4765,86 @@
    "answer": "South Africa",
    "accept": [
     "south africa"
+   ]
+  },
+  {
+   "category": "WORD ORIGINS",
+   "clue": "Both 'muscle' and 'mussel' come from the Latin for a small one of these; so does the pointing device beside your keyboard.",
+   "answer": "A mouse",
+   "accept": [
+    "a mouse",
+    "mouse",
+    "mice"
+   ]
+  },
+  {
+   "category": "SHAPES & NUMBERS",
+   "clue": "Take any three-digit number, repeat it to make six digits, and it is always divisible by 7, 11 and this.",
+   "answer": "13",
+   "accept": [
+    "13",
+    "thirteen"
+   ]
+  },
+  {
+   "category": "ARCHITECTURE",
+   "clue": "Completed in 1889 as a temporary exhibition piece, it was due for demolition until its owners found a use for it as a radio mast.",
+   "answer": "The Eiffel Tower",
+   "accept": [
+    "the eiffel tower",
+    "eiffel tower",
+    "eiffel"
+   ]
+  },
+  {
+   "category": "MEDICINE",
+   "clue": "This 1928 accident on an unwashed petri dish went unused for over a decade until two Oxford scientists worked out how to make it in quantity.",
+   "answer": "Penicillin",
+   "accept": [
+    "penicillin"
+   ]
+  },
+  {
+   "category": "THE OCEAN",
+   "clue": "More people have stood on the Moon than have reached the bottom of this, the deepest point in any ocean.",
+   "answer": "The Mariana Trench",
+   "accept": [
+    "the mariana trench",
+    "mariana trench",
+    "challenger deep",
+    "the challenger deep",
+    "marianas trench"
+   ]
+  },
+  {
+   "category": "LANGUAGES",
+   "clue": "Revived from liturgical use into a spoken mother tongue in the 20th century, it is the only such revival to have fully succeeded.",
+   "answer": "Hebrew",
+   "accept": [
+    "hebrew",
+    "modern hebrew",
+    "ivrit"
+   ]
+  },
+  {
+   "category": "ANIMAL KINGDOM",
+   "clue": "A group of them is a parliament, they cannot move their eyes in their sockets, and they turn their heads instead.",
+   "answer": "Owls",
+   "accept": [
+    "owls",
+    "owl",
+    "an owl",
+    "the owl"
+   ]
+  },
+  {
+   "category": "FLAGS",
+   "clue": "Adopted in 1965 after decades of argument, its single stylised leaf has eleven points chosen purely because they photographed well in wind-tunnel tests.",
+   "answer": "Canada",
+   "accept": [
+    "canada",
+    "the canadian flag",
+    "the maple leaf"
    ]
   }
  ]

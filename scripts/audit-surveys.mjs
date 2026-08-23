@@ -20,6 +20,7 @@ import { dirname, join } from "node:path";
 import { checkTypedAgainst } from "../js/bank.js";
 import { matchKey } from "../js/util.js";
 import { STREET } from "../js/config.js";
+import { recencyRisk } from "./recency.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(here, "..", "data", "surveys.json"), "utf8"));
@@ -54,6 +55,15 @@ for (const survey of surveys) {
   if (!survey.prompt) fatal.push(`${where} has no prompt`);
   if (seenPrompts.has(survey.prompt)) fatal.push(`${where} duplicate prompt`);
   seenPrompts.add(survey.prompt);
+
+  /* A survey prompt rots the same way a clue does — "name the most popular X"
+     is fine because the ANSWERS are opinions, but a prompt asserting a live
+     record is not. */
+  for (const why of recencyRisk(survey.prompt)) {
+    if (!/^name the most (popular|famous|recognisable)/i.test(String(survey.prompt).trim())) {
+      warn.push(`${where} recency risk: ${why}`);
+    }
+  }
 
   if (survey.prompt && !/^name /i.test(survey.prompt.trim()) && !/^besides /i.test(survey.prompt.trim())) {
     warn.push(`${where} prompt does not open with "Name…" — the board reads as an instruction, not a question`);

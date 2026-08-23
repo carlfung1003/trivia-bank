@@ -242,6 +242,22 @@ node scripts/audit-jeopardy.mjs        # pack structure, self-match, cross-accep
 node scripts/playtest-board.mjs 60     # seven player profiles, full games
 ```
 
+**Facts rot, so the audit checks for the shape of a rotting fact.** `scripts/recency.mjs`
+flags claims that stop being true without anyone editing them — live counts, uncontested
+superlatives, "still the only", "the current". Two had already shipped:
+
+- *"Nineteen EU countries share this currency"* — twenty-one since January 2026.
+- *"Spirited Away is still the only hand-drawn feature to take the animation Oscar"* —
+  The Boy and the Heron, 2024.
+
+Note what both also contained: a year. The linter's first cut treated any date as proof
+the author had pinned the claim down and waved both straight through. That was backwards.
+"In 2002" dates the euro's launch and says nothing about how many countries use it now.
+So a date only excuses patterns a date can genuinely fix (`anchorable: true`); a live
+count and a "still the only" are never excused. **When authoring, prefer a fact that
+cannot move** — an etymology, a definition, a date, a physical constant — over one that
+merely happens to be true today.
+
 The audit's most useful check is the **echo test** — an answer sitting in its own clue.
 It caught four on the first run. `STUPID ANSWERS` declares `"echoOk": true` because giving
 the answer away IS that category's joke; nothing else may.
@@ -259,9 +275,9 @@ whole of `dealRound`.
 The audit enforces the pair: ids unique, and no two packs under one heading sharing a clue
 or an answer. A variant that recycles questions is not a variant.
 
-Current file: **59 packs under 40 headings, 295 clues, 16 finals** —
-3 full games with no heading repeated, and 19 headings carrying a second
-set of questions.
+Current file: **81 packs under 54 headings, 405 clues, 24 finals** —
+4 full games with no heading repeated, and 19 headings carrying more than
+one set of questions.
 
 **Shared state, separately kept.** `store.record()` branches on `mode === "board"`: its
 categories go to `boardCategories`, never to the vault's twelve, or a board run would put
@@ -306,7 +322,7 @@ The audit's headline check is **ambiguity**: no guess may match two slots on the
 board. That is the failure that ruins an open-text game — you say the right thing and the
 board picks which right thing you meant. Zero is the only acceptable number.
 
-Current file: **71 survey boards, 457 answers** — 14 runs before a
+Current file: **111 survey boards, 701 answers** — 22 runs before a
 board could repeat.
 
 The playtest asserts something a balance pass cannot eyeball: **banking must be a real

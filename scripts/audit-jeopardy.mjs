@@ -19,6 +19,7 @@ import { dirname, join } from "node:path";
 import { checkTypedAgainst } from "../js/bank.js";
 import { matchKey, normalise } from "../js/util.js";
 import { BOARD } from "../js/config.js";
+import { recencyRisk } from "./recency.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(here, "..", "data", "jeopardy.json"), "utf8"));
@@ -129,6 +130,10 @@ for (const pack of packs) {
       }
     }
 
+    /* Facts rot. See scripts/recency.mjs — this flags the SHAPE of a claim
+       that stops being true, not the claim itself. */
+    for (const why of recencyRisk(clue.clue)) warn.push(`${at} recency risk: ${why} — "${clue.clue.slice(0, 70)}…"`);
+
     if (clue.clue.length > 220) warn.push(`${at} clue is ${clue.clue.length} characters — it has to fit a cell reveal`);
     /* A closing quote counts: a FIRST LINES pack is nothing but quotations. */
     if (!/[.!?]["'\u2019\u201d]?$/.test(clue.clue.trim())) warn.push(`${at} clue does not end in punctuation`);
@@ -191,6 +196,7 @@ for (const f of finals) {
   if (checkTypedAgainst(f, f.answer, lexicon) !== true) {
     fatal.push(`${at} does not accept its own answer "${f.answer}"`);
   }
+  for (const why of recencyRisk(f.clue)) warn.push(`${at} recency risk: ${why}`);
   for (const alias of f.accept || []) {
     if (checkTypedAgainst(f, alias, lexicon) !== true) {
       fatal.push(`${at} rejects its own alias "${alias}"`);
