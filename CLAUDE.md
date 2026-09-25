@@ -122,6 +122,40 @@ Two things this creates, both handled, both easy to reintroduce:
   `window.__game.autoplay()` drives it inside a synchronous loop where real-time
   timers never run, so gating it there would hang the harness.
 
+## A run that ends on a miss holds on the answer
+
+Busted (Vault Run), alarms (Survival) and time (Blitz) all end on a lock the player
+did not get. The engine emits `reveal` and then `over` in the same synchronous call, so
+`onOver` used to swap straight to the results and put the door down over the verdict.
+The player learned they were wrong and never saw what was right.
+
+Now `onOver` records the run immediately (closing the tab must not lose it), then for
+those three reasons parks `showResults` in `app.pendingResults` and relabels the verdict
+button "See the damage". `advanceQuestion()` and Enter/Space call it. Blitz has no
+reveal of its own when the clock dies mid-question, so `onOver` paints one for the
+unanswered lock. Banked, cleared and exhausted runs still go straight to the results.
+If you add an ending, decide which list it belongs in (`ENDS_ON_A_MISS`, main.js).
+
+## The Alibi — the one passive tool
+
+Vault Run carries `alibi` (config `passive: true`): the run's first miss is forgiven.
+Nothing presses it. Nobody knows in advance which lock they are about to miss, so an
+armed version would only pay out for players who guessed right about being wrong.
+
+- It is spent in `engine._forgive()`, during resolution, not in lifelines.js.
+  `canUse()` always returns false for it, and the kit renders it enabled (not dimmed)
+  with an `AUTO` key label and a jade lamp. Clicking it explains itself in a toast.
+- A forgiven miss is still a miss: streak resets, `wrongCount` goes up, Clean Sweep is
+  lost, and it counts as a tool used (so Bare Hands keeps its meaning). Only the bust is
+  waived.
+- A haven reached on a forgiven miss still locks in. The ladder shows the haven behind
+  you, and a later miss dropping you below it would contradict the ladder.
+- A forgiven miss on lock 12 does not end the run in the same call. It stays REVEALED
+  so the answer can be read, and `next()` banks the pot and ends `cleared`.
+- A Double Down riding on the forgiven miss still loses the pot. The two compose.
+
+`scripts/playtest.mjs` asserts all of the above. Disabling `_forgive()` fails ten checks.
+
 ## Typed-answer matching is deliberately graded
 
 `bank.checkTyped()` returns `true | "close" | false`. **"close" is truthy** — compare it

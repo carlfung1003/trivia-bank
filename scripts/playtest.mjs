@@ -9,6 +9,7 @@
      - lifelines can be spent and are consumed exactly once
      - Vault Run safe havens really do protect the haul
      - Blitz ends on the clock, Survival ends on alarms
+     - the Alibi forgives exactly one Vault Run miss, and nothing else
    ========================================================================== */
 
 import { readFileSync } from "node:fs";
@@ -168,6 +169,88 @@ for (const mode of Object.keys(MODES)) {
   check(over && over.reason === "busted", "haven test did not bust", { reason: over?.reason });
   check(over && over.score > 0, "safe haven did not protect the haul", { score: over?.score });
   console.log(`safe-haven check: busted after haven, kept ${over?.score} credits`);
+}
+
+/* ---- Targeted invariant: the Alibi forgives exactly one miss -------------- */
+{
+  const wrongIndex = (s) => s.options.map((_, i) => i).find((i) => i !== s.correctIndex);
+  const fresh = (seed) => {
+    const g = new Game({ bank, mode: "vault", seed, answerMode: "choice" });
+    const out = { g, over: null, reveals: [] };
+    g.on("over", (s) => { out.over = s; });
+    g.on("reveal", (p) => out.reveals.push(p));
+    g.start();
+    return out;
+  };
+
+  /* 1. First miss: forgiven, run continues, Alibi spent and counted. Second
+        miss: busts as it always did. */
+  {
+    const { g, reveals } = fresh("alibi-basic");
+    check(g.state.kit.alibi && !g.state.kit.alibi.used, "vault run has no unspent alibi");
+    check(!canUse(g, "alibi"), "alibi is pressable — it should be passive");
+    check(useLifeline(g, "alibi") === null, "pressing alibi did something");
+    g.answer(g.state.correctIndex); g.next();
+    const potBefore = g.state.pot;
+    g.answer(wrongIndex(g.state));
+    check(reveals.at(-1)?.forgiven === true, "first miss not flagged forgiven");
+    check(g.state.phase === PHASE.REVEALED, "first miss ended the run despite alibi", { phase: g.state.phase });
+    check(g.state.kit.alibi.used, "alibi not spent on first miss");
+    check(g.state.lifelinesUsed === 1, "alibi not counted as a tool used", { used: g.state.lifelinesUsed });
+    check(g.state.pot === potBefore, "forgiven miss changed the pot", { potBefore, pot: g.state.pot });
+    check(g.state.streak === 0, "forgiven miss kept the streak");
+    check(g.state.wrongCount === 1, "forgiven miss not tallied as wrong");
+    g.next();
+    g.answer(wrongIndex(g.state));
+    check(reveals.at(-1)?.forgiven === false, "second miss flagged forgiven");
+    check(g.state.phase === PHASE.OVER, "second miss did not end the run");
+    console.log(`alibi check: first miss forgiven, second miss ended the run (${g.state.endReason})`);
+  }
+
+  /* 2. A forgiven miss ON a haven still locks the haven in. */
+  {
+    const { g } = fresh("alibi-haven");
+    const haven = MODES.vault.safeHavens[0];
+    while (g.state.qIndex < haven) { g.answer(g.state.correctIndex); g.next(); }
+    const pot = g.state.pot;
+    g.answer(wrongIndex(g.state));
+    check(g.state.banked === pot && g.state.pot === 0, "forgiven miss on a haven did not lock it", { pot, banked: g.state.banked });
+  }
+
+  /* 3. A forgiven miss on the LAST lock walks out with the pot. */
+  {
+    const t = fresh("alibi-last");
+    const { g } = t;
+    const last = MODES.vault.length - 1;
+    while (g.state.qIndex < last) { g.answer(g.state.correctIndex); g.next(); }
+    const haul = g.state.banked + g.state.pot;
+    g.answer(wrongIndex(g.state));
+    check(g.state.phase === PHASE.REVEALED, "forgiven last miss ended before the reveal could be read");
+    g.next();
+    check(t.over?.reason === "cleared", "forgiven last miss did not clear", { reason: t.over?.reason });
+    check(t.over?.score === haul && haul > 0, "forgiven last miss lost the haul", { haul, score: t.over?.score });
+  }
+
+  /* 4. Double Down riding on the forgiven miss still costs the pot. */
+  {
+    const { g } = fresh("alibi-dd");
+    g.answer(g.state.correctIndex); g.next();
+    g.answer(g.state.correctIndex); g.next();
+    check(g.state.pot > 0, "no pot to risk");
+    useLifeline(g, "doubledown");
+    g.answer(wrongIndex(g.state));
+    check(g.state.phase === PHASE.REVEALED && g.state.pot === 0, "double down + alibi: pot kept or run ended", { phase: g.state.phase, pot: g.state.pot });
+  }
+
+  /* 5. Modes without an Alibi are untouched: Survival still loses an alarm. */
+  {
+    const g = new Game({ bank, mode: "survival", seed: "alibi-none", answerMode: "choice" });
+    g.start();
+    check(!g.state.kit.alibi, "survival carries an alibi");
+    const lives = g.state.lives;
+    g.answer(wrongIndex(g.state));
+    check(g.state.lives === lives - 1, "survival miss did not cost an alarm");
+  }
 }
 
 /* ---- Report --------------------------------------------------------------- */

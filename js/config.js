@@ -46,7 +46,7 @@ export const MODES = {
     ],
     /* Question indices (0-based) after which the haul is locked in. */
     safeHavens: [3, 7],
-    lifelines: ["drill", "wiretap", "etch", "informant", "freeze", "bypass", "doubledown"],
+    lifelines: ["drill", "wiretap", "etch", "informant", "freeze", "bypass", "doubledown", "alibi"],
     timeScale: 1,
     canBank: true,
     livesAlarm: 0,
@@ -246,6 +246,21 @@ export const LIFELINES = {
     key: "x",
     requiresChoice: false,
     armed: true,              /* declared before answering, not after */
+  },
+
+  /* ---- Passive ------------------------------------------------------------
+     Vault Run is the only mode where one miss ends everything, so it is the
+     only one that carries this. It is never pressed: an unspent Alibi takes
+     the run's first miss on its own, which is the whole value of it — nobody
+     knows in advance which lock they are about to get wrong. The miss still
+     counts as a miss (streak, stats, Clean Sweep); only the bust is waived.
+     A Double Down riding on that miss still loses the pot. */
+  alibi: {
+    id: "alibi",
+    name: "Alibi",
+    hint: "Your first wrong answer is forgiven. Works on its own.",
+    key: null,
+    passive: true,
   },
 };
 

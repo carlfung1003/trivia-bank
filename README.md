@@ -13,7 +13,7 @@ plus 567 authored clues for The Board and 956 survey answers for The Street.
 
 | Mode | Shape | Tools |
 |---|---|---|
-| **Vault Run** | 12 locks, difficulty ramps easy → hard, safe havens at 4 and 8. A miss ends the run and drops you to the last haven. Bank out at any time. | all 5 |
+| **Vault Run** | 12 locks, difficulty ramps easy → hard, safe havens at 4 and 8. A miss ends the run and drops you to the last haven, but your first miss is covered by the Alibi. Bank out at any time. | all, plus the Alibi |
 | **Blitz** | 90 seconds. Correct buys +3s (capped at 90), a miss costs 5s. Pure speed. | none |
 | **Survival** | Three alarms, endless vault, difficulty escalates every 5 locks. | Drill, Freeze |
 | **Daily Heist** | 10 locks, seeded by the date — the same ten for everyone, everywhere. One attempt, spoiler-free share card. | Drill, Wiretap |
@@ -75,6 +75,10 @@ Name That Country, At The Movies.
 - **Freeze** — jam the clock on one lock, for as long as you like
 - **Bypass** — swap the lock for a fresh one, no penalty
 - **Double Down** — declared *before* answering: double the payout, or lose your entire unbanked haul
+- **Alibi** (Vault Run only, automatic) — your first wrong answer doesn't end the run. Nothing
+  to press: nobody knows in advance which lock they're about to miss. The miss still counts as a
+  miss (streak, accuracy, Clean Sweep), a haven reached on it still locks in, and a Double Down
+  riding on it still loses the pot
 
 **Type-It only** (Drill and Wiretap both need options on screen, so typing gets its own pair):
 

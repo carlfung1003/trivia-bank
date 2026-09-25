@@ -21,6 +21,9 @@ export function canUse(game, id) {
   if (s.phase !== PHASE.ASKING) return false;
 
   const def = LIFELINES[id];
+  /* The Alibi spends itself on a miss (engine._forgive); there is nothing to
+     press, so it is never "usable" in the sense the kit buttons mean. */
+  if (def.passive) return false;
   /* 50/50 and the crowd poll are meaningless without options on screen. */
   if (def.requiresChoice && game.answerMode !== "choice") return false;
   /* Etch and Informant are the mirror image: nothing to reveal when the
@@ -226,6 +229,7 @@ export function kitState(game) {
     hint: slot.hint,
     key: slot.key,
     used: slot.used,
+    passive: !!slot.passive,
     available: canUse(game, slot.id),
   }));
 }

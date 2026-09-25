@@ -514,6 +514,9 @@ export function renderQuestion(game) {
 
   el.verdict.hidden = true;
   el.verdict.removeAttribute("data-result");
+  /* A run that ended on a miss relabels this to "See the damage" (main.js
+     onOver); every fresh question puts it back. */
+  el.nextBtn.textContent = "Next lock";
   renderShape(game);
   renderIntel(game);
 
@@ -628,15 +631,19 @@ export function renderKit(kit) {
     btn.type = "button";
     btn.className = "tool";
     btn.dataset.tool = tool.id;
-    btn.disabled = !tool.available;
+    /* A passive tool is never "available" to press, but an unspent one is
+       standing by, not disabled — dimming it would read as "you can't have
+       this" when it is actually already working for you. */
+    btn.disabled = tool.passive ? tool.used : !tool.available;
     if (tool.used) btn.dataset.used = "true";
+    if (tool.passive) btn.dataset.passive = "true";
     btn.title = tool.hint;
     btn.setAttribute("aria-label", `${tool.name}. ${tool.hint}${tool.used ? " Already spent." : ""}`);
     btn.classList.add("mat-key");
     btn.innerHTML = `
-      <span class="lamp tool__lamp" data-on="${!tool.used}" aria-hidden="true"></span>
+      <span class="lamp tool__lamp${tool.passive ? " lamp--jade" : ""}" data-on="${!tool.used}" aria-hidden="true"></span>
       <span class="tool__name">${tool.name}</span>
-      <span class="tool__key">${tool.key.toUpperCase()}</span>
+      <span class="tool__key">${tool.passive ? "AUTO" : tool.key.toUpperCase()}</span>
     `;
     el.kit.appendChild(btn);
   }
@@ -687,7 +694,7 @@ export function lockIn(game, given) {
   el.display?.setAttribute("data-locking", "true");
 }
 
-export function revealAnswer(game, { result, correctIndex, correctAnswer, given, close }) {
+export function revealAnswer(game, { result, correctIndex, correctAnswer, given, close, forgiven }) {
   el.display?.removeAttribute("data-locking");
   el.typedForm?.removeAttribute("data-locking");
 
@@ -712,14 +719,17 @@ export function revealAnswer(game, { result, correctIndex, correctAnswer, given,
   el.verdict.dataset.result = result;
   /* A near miss is still a miss, but saying so is kinder than a flat "wrong"
      — and it tells the player the checker actually looked at what they typed. */
-  el.verdictLine.textContent = close && result === "wrong" ? "So close" : (lines[result] || "");
+  const line = close && result === "wrong" ? "So close" : (lines[result] || "");
+  /* Said on the verdict itself, not only in the banner: the banner is gone in
+     two seconds, and this is the one miss the player must not read as fatal. */
+  el.verdictLine.textContent = forgiven ? `${line} · Alibi spent` : line;
   el.verdictAnswer.textContent = result === "correct" ? correctAnswer : `Answer: ${correctAnswer}`;
   el.verdict.hidden = false;
   el.nextBtn.focus();
 
   announce(result === "correct"
     ? `Correct. ${correctAnswer}.`
-    : `${lines[result]}. The answer was ${correctAnswer}.`);
+    : `${lines[result]}. The answer was ${correctAnswer}.${forgiven ? " Your alibi covered it — you're still in." : ""}`);
 }
 
 /* ---- Results -------------------------------------------------------------- */

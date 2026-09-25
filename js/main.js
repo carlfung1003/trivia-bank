@@ -32,6 +32,9 @@ const app = {
   lastTier: null,
   revealTimer: null,
   revealPending: false,
+  /* Set while a run that ended on a miss holds on its verdict; calling it
+     moves on to the results. See onOver. */
+  pendingResults: null,
   paused: false,
   doorAngle: 0,
   bank: null,
@@ -292,6 +295,7 @@ function startRun(modeId) {
   app.lastMode = modeId;
   app.lastTier = null;
   app.paused = false;
+  app.pendingResults = null;
   ui.el.pause.hidden = true;
 
   /* The Daily Heist is seeded by the date alone, so every player in the world
@@ -804,7 +808,7 @@ function wireGameEvents(game) {
   game.on("over", (summary) => onOver(game, summary));
 }
 
-function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak, close }) {
+function onReveal(game, { result, correctIndex, correctAnswer, given, points, streak, close, forgiven }) {
   /* Where the answer physically happened, for particles and popups. */
   const source = game.answerMode === "choice"
     ? document.querySelector(`.option[data-index="${given}"]`)
@@ -824,7 +828,10 @@ function onReveal(game, { result, correctIndex, correctAnswer, given, points, st
   haptic(12);
 
   const land = () => {
-    ui.revealAnswer(game, { result, correctIndex, correctAnswer, given, close });
+    /* Banner first: revealAnswer's announcement (which carries the answer)
+       must be the last thing written to the live region. */
+    if (forgiven) ui.banner("Alibi spent", "That one's off the record", "haven", 2200);
+    ui.revealAnswer(game, { result, correctIndex, correctAnswer, given, close, forgiven });
 
     if (result === RESULT.CORRECT) {
       app.fx.hitPause(FX.hitPauseMs);
@@ -938,6 +945,13 @@ function onLifeline(game, id, detail) {
   ui.renderHud(game);
 }
 
+/* Endings that land on a lock the player did not get. Busted and alarms come
+   out of the same resolve that revealed the miss; Blitz's clock runs out on a
+   question nobody answered. Either way the answer has not been read yet, and
+   swapping straight to the results put the door down over it — the player
+   learned they were wrong and never learned what was right. */
+const ENDS_ON_A_MISS = new Set(["busted", "alarms", "time"]);
+
 function onOver(game, summary) {
   stopLoop();
   app.paused = false;
@@ -948,9 +962,32 @@ function onOver(game, summary) {
   const previousBest = store.data.best[summary.mode] || 0;
   const isRecord = summary.score > previousBest && summary.score > 0;
 
+  /* Recorded now, not when the player clicks through: closing the tab on the
+     verdict must not lose the run. */
   const unlocked = store.record(summary);
   app.lastSummary = summary;
 
+  const results = () => showResults(summary, { unlocked, isRecord });
+
+  if (!ENDS_ON_A_MISS.has(summary.reason)) { results(); return; }
+
+  /* Hold on the verdict until the player asks to move on. */
+  app.pendingResults = results;
+  ui.el.nextBtn.textContent = "See the damage";
+  if (summary.reason === "time") {
+    const s = game.state;
+    sound.timeout();
+    ui.revealAnswer(game, {
+      result: RESULT.TIMEOUT,
+      correctIndex: s.correctIndex,
+      correctAnswer: s.question?.answer ?? "",
+      given: null,
+    });
+  }
+}
+
+function showResults(summary, { unlocked, isRecord }) {
+  app.pendingResults = null;
   const good = summary.reason === "banked" || summary.reason === "cleared" || summary.reason === "exhausted";
   const won = good && summary.score > 0;
   const isDaily = summary.mode === "daily";
@@ -1098,6 +1135,7 @@ function setPaused(on) {
 
 function advanceQuestion() {
   if (!app.game || app.revealPending) return;
+  if (app.pendingResults) { app.pendingResults(); return; }
   app.game.next();
 }
 
@@ -1114,7 +1152,9 @@ function fireLifeline(id) {
   if (!result) {
     /* Give a reason rather than failing silently. */
     const def = LIFELINES[id];
-    if (def?.requiresChoice && game.answerMode !== "choice") {
+    if (def?.passive) {
+      ui.toast(`${def.name} works on its own — your first wrong answer won't end the run.`);
+    } else if (def?.requiresChoice && game.answerMode !== "choice") {
       ui.announce(`${def.name} needs multiple choice.`);
     }
   }
@@ -1150,6 +1190,7 @@ function abandon() {
 
 function goHome() {
   app.game = null;
+  app.pendingResults = null;
   stopLoop();
   toScreen("title", () => {
     sound.stopMusic();
@@ -1191,7 +1232,7 @@ function wireGlobalInput() {
     if (screen === "play" && app.game) {
       const phase = app.game.state.phase;
 
-      if (phase === PHASE.REVEALED && (e.key === "Enter" || e.key === " ")) {
+      if ((phase === PHASE.REVEALED || app.pendingResults) && (e.key === "Enter" || e.key === " ")) {
         e.preventDefault();
         advanceQuestion();
         return;

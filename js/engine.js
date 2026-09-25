@@ -286,6 +286,11 @@ export class Game extends Emitter {
     const s = this.state;
     if (s.phase !== PHASE.REVEALED) return;
     if (Number.isFinite(this.mode.length) && s.qIndex + 1 >= this.mode.length) {
+      /* Only reached when the last lock was a miss that did not end the run —
+         Daily always, Vault Run only on an Alibi. Either way you walked out
+         the far side, so the pot comes with you. */
+      s.banked += s.pot;
+      s.pot = 0;
       this._end("cleared");
       return;
     }
@@ -316,6 +321,7 @@ export class Game extends Emitter {
     s.answered += 1;
 
     let points = 0;
+    let forgiven = false;
     if (result === RESULT.CORRECT) {
       s.correctCount += 1;
       s.streak += 1;
@@ -348,7 +354,8 @@ export class Game extends Emitter {
         points = -s.pot;
         s.pot = 0;
       }
-      if (this.mode.livesAlarm) s.lives -= 1;
+      forgiven = this._forgive();
+      if (this.mode.livesAlarm && !forgiven) s.lives -= 1;
     }
 
     s.lastResult = result;
@@ -363,11 +370,13 @@ export class Game extends Emitter {
       points,
       seconds: Number(elapsed.toFixed(2)),
       doubledDown: s.doubledDown,
+      forgiven,
     };
     s.history.push(entry);
 
     this.emit("reveal", {
       result,
+      forgiven,
       close: !!s.wasClose && result !== RESULT.CORRECT,
       correctIndex: s.correctIndex,
       correctAnswer: q.answer,
@@ -379,8 +388,8 @@ export class Game extends Emitter {
     });
     this._recomputeHeat();
 
-    /* Run-ending conditions, per mode. */
-    if (result !== RESULT.CORRECT) {
+    /* Run-ending conditions, per mode. A forgiven miss ends nothing. */
+    if (result !== RESULT.CORRECT && !forgiven) {
       if (this.mode.canBank) {
         /* Vault Run: a miss drops you to the last safe haven and ends it. */
         const haven = this._havenValue();
@@ -403,14 +412,31 @@ export class Game extends Emitter {
       return entry;
     }
 
-    /* Crossing a safe haven locks the haul in. */
-    if (result === RESULT.CORRECT && this.mode.safeHavens.includes(s.qIndex)) {
+    /* Crossing a safe haven locks the haul in. Getting past one on an Alibi
+       still counts as getting past it — the ladder says the haven is behind
+       you, and a later miss dropping you below it would contradict the ladder. */
+    if ((result === RESULT.CORRECT || forgiven) && this.mode.safeHavens.includes(s.qIndex)) {
       s.banked += s.pot;
       s.pot = 0;
       this.emit("haven", { index: s.qIndex, total: s.banked });
     }
 
     return entry;
+  }
+
+  /**
+   * Spend an unspent Alibi on the miss being resolved. Lives here rather than
+   * in lifelines.js because it is part of resolving a miss, not a player
+   * intent — nothing presses it. Counted as a tool used, so Bare Hands still
+   * means what it says.
+   */
+  _forgive() {
+    const s = this.state;
+    const slot = s.kit.alibi;
+    if (!slot || slot.used) return false;
+    slot.used = true;
+    s.lifelinesUsed += 1;
+    return true;
   }
 
   /** The amount guaranteed by the highest safe haven already passed. */
