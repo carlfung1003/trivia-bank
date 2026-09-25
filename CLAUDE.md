@@ -47,6 +47,49 @@ preserved at `docs/prior-art/iteration-1.html` for reference. Do not resurrect i
 - **Git email must be `carlfung1003@users.noreply.github.com`** or Vercel rejects the
   deploy. It is per-commit, not sticky.
 
+## Visual system (v2, Sep 2026) — read before restyling
+
+The first build read as generated UI: every surface the same gray plate, every label
+tiny letter-spaced mono, the vault art dimmed to nothing, text-only mode cards. v2 kept
+the machined-brass identity and executed it like a game. The rules that came out of it:
+
+- **Four faces, one job each** (`tokens.css`). Bodoni = the bank (wordmark, questions,
+  answers, headlines). Big Shoulders (`--font-hud`) = every label, button, gauge and
+  chip. Big Shoulders **Stencil** (`--font-stencil`) = only things that are *struck*:
+  verdict stamps, mode names, rank. Plex Mono = digits only (flaps, dials, readouts).
+  Do not bring back mono caps at 0.26em tracking for labels — that was the loudest tell.
+- **Key art is the backdrop.** `.vault-scene` (fx.css) shows `assets/art/scene-vault.jpg`
+  vivid on the title and blurred and dimmed behind play (`body[data-screen]`). The
+  procedural rings and door disc are hidden where the painting is on show and come
+  forward only behind play, where the disc turning on each hit still works.
+  Dust and light shafts are CSS layers, no canvas. Prompts are in `docs/ASSETS.md` Part C.
+- **Mode cards carry art** from `assets/art/modes/<id>.jpg`, set as `--art` inline.
+  The URL is **root-absolute on purpose**: a relative `url()` inside a custom property
+  resolves against the stylesheet that uses `var()` (css/), not the page, and 404s.
+- **Verdicts are stamped.** `ui.strikeStamp()` puts CRACKED / ALARM / TIME'S UP / SO
+  CLOSE / ALIBI across the display glass, and the question dims under it (`:has`).
+  The Alibi is announced by the stamp and verdict line only. A banner used to fire as
+  well and swept straight across the question.
+- **Banners live at the top of the screen**, over the HUD, never over the question.
+  Tier banners fire the instant a question lands with its clock running.
+- **Buttons are keys** (`base.css .btn`): face gradient, a lip that shrinks as it
+  travels, brass for primary, steel otherwise. `.btn--xl` is for the one CTA per screen.
+- **The kit has icons** (`TOOL_ICONS` in ui.js, 24px strokes). On phones the tools a
+  mode can never use (`kitState().inapplicable`) are hidden; desktop keeps them dimmed.
+- **Rank** (`RANKS` in config.js) is presentation only, from lifetime credits. Nothing
+  is gated on it.
+- `scripts/serve.py` crashed its own log hook on every 404 and dropped the connection,
+  so a missing asset showed as `ERR_EMPTY_RESPONSE`. Fixed. If you see that error
+  locally again, suspect the server before the page.
+
+Judge changes with the screenshot rig, never from code: desktop 1440×900 and a
+390×844 phone, every screen (title, play, reveal, busted hold, results, board, street).
+
+```bash
+python3 scripts/serve.py 8765 &
+PLAYWRIGHT_MODULE=~/ai-journey/node_modules/playwright node scripts/shots.cjs /tmp/tb-shots
+```
+
 ## The load-bearing architectural rule
 
 `engine.js` and `lifelines.js` touch **no DOM and no wall-clock**. The engine advances

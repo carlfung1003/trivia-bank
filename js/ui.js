@@ -7,7 +7,7 @@
    The split is what lets the whole game be played headlessly.
    ========================================================================== */
 
-import { MODES, BOARD, STREET, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES } from "./config.js";
+import { MODES, BOARD, STREET, DIFFICULTY, SCORING, CATEGORY_SIGILS, CATEGORY_SIGIL_INDEX, DEFAULT_SIGIL, LIFELINES, RANKS } from "./config.js";
 import { formatCredits, answerShape } from "./util.js";
 
 const $  = (sel, root = document) => root.querySelector(sel);
@@ -29,6 +29,8 @@ export const el = {
   bankSize: $$("#bank-size, #bank-size-2"),
 
   modes: $("#modes"),
+  heroPlay: $("#hero-play"),
+  dossier: $("#dossier"),
   answerMode: $("#answer-mode"),
   soundToggle: $("#sound-toggle"),
   categories: $("#categories"),
@@ -77,6 +79,10 @@ export const el = {
   verdictLine: $("#verdict-line"),
   verdictAnswer: $("#verdict-answer"),
   nextBtn: $("#next-btn"),
+  result: $("#result"),
+  resultRecord: $("#result-record"),
+  reviewCount: $("#review-count"),
+  verdictStamp: $("#verdict-stamp"),
   kit: $("#kit"),
   bankBtn: $("#bank-btn"),
   pause: $("#pause"),
@@ -323,7 +329,7 @@ export function renderModes(store, { dailyDone, dailyResult, boardAvailable = fa
   cards.forEach((mode, i) => {
     const card = document.createElement("button");
     card.type = "button";
-    card.className = "mode-card mat-key";
+    card.className = "mode-card";
     card.setAttribute("role", "listitem");
     card.dataset.mode = mode.id;
     card.style.setProperty("--i", String(i));
@@ -340,15 +346,56 @@ export function renderModes(store, { dailyDone, dailyResult, boardAvailable = fa
       ? `<span class="mode-card__done">Today: ${dailyResult.correct}/${dailyResult.total} · ${formatCredits(dailyResult.score)} credits</span>`
       : "";
 
+    /* Key art per mode lives at assets/art/modes/<id>.jpg. A missing file just
+       leaves the steel gradient under it — the card never depends on it.
+       Root-absolute on purpose: a relative url() inside a custom property is
+       resolved against the stylesheet that USES it (css/), not this page. */
     card.innerHTML = `
-      <span class="lamp mode-card__lamp${done ? "" : " lamp--jade"}" data-on="${!done}" aria-hidden="true"></span>
-      ${best ? `<span class="mode-card__best">best ${formatCredits(best)}</span>` : ""}
-      <span class="mode-card__name">${mode.name}</span>
-      <span class="mode-card__tag">${mode.tagline}</span>
-      ${doneLine || `<span class="mode-card__meta">${meta.map((m) => `<span>${m}</span>`).join("")}</span>`}
+      <span class="mode-card__art" style="--art:url('/assets/art/modes/${mode.id}.jpg')" aria-hidden="true"></span>
+      ${best ? `<span class="mode-card__best"><span>Best</span> ${formatCredits(best)}</span>` : ""}
+      ${done ? `<span class="mode-card__stamp" aria-hidden="true">Played today</span>` : ""}
+      <span class="mode-card__body">
+        <span class="mode-card__name">${mode.name}</span>
+        <span class="mode-card__tag">${mode.tagline}</span>
+        ${doneLine || `<span class="mode-card__meta">${meta.map((m) => `<span>${m}</span>`).join("")}</span>`}
+      </span>
+      <span class="mode-card__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
     `;
     el.modes.appendChild(card);
   });
+}
+
+/** Where a lifetime of credits puts you, and how far to the next rung. */
+export function rankFor(credits) {
+  let idx = 0;
+  RANKS.forEach((r, i) => { if (credits >= r.at) idx = i; });
+  const here = RANKS[idx];
+  const next = RANKS[idx + 1] || null;
+  const progress = next ? (credits - here.at) / (next.at - here.at) : 1;
+  return { idx, name: here.name, next, progress: Math.max(0, Math.min(1, progress)) };
+}
+
+export function renderDossier(store) {
+  if (!el.dossier) return;
+  const lt = store.data.lifetime;
+  const credits = Number.isFinite(lt.credits) ? lt.credits : 0;
+  const rank = rankFor(credits);
+  el.dossier.innerHTML = `
+    <span class="dossier__badge" aria-hidden="true">${rank.idx + 1}</span>
+    <div class="dossier__id">
+      <p class="dossier__cap">Crew rank</p>
+      <p class="dossier__rank">${rank.name}</p>
+    </div>
+    <div class="dossier__track">
+      <div class="dossier__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(rank.progress * 100)}"
+           aria-label="${rank.next ? `Progress to ${rank.next.name}` : "Top rank"}">
+        <span class="dossier__fill" style="--p:${rank.progress.toFixed(3)}"></span>
+      </div>
+      <p class="dossier__next">${rank.next
+        ? `<b>${formatCredits(Math.max(0, rank.next.at - credits))}</b> to ${rank.next.name}`
+        : "Top of the crew"}</p>
+    </div>
+  `;
 }
 
 export function renderCategories(bank, selected) {
@@ -514,6 +561,7 @@ export function renderQuestion(game) {
 
   el.verdict.hidden = true;
   el.verdict.removeAttribute("data-result");
+  if (el.verdictStamp) el.verdictStamp.hidden = true;
   /* A run that ended on a miss relabels this to "See the damage" (main.js
      onOver); every fresh question puts it back. */
   el.nextBtn.textContent = "Next lock";
@@ -624,6 +672,25 @@ export function renderIntel(game) {
   if (hasTip) el.intelText.textContent = s.intel;
 }
 
+/* Tool icons: one 24px stroke drawing each, so every tool reads by shape
+   before its name is read — a text-only kit was eight identical rectangles.
+   Stroke, not fill, so they take the key's colour and its lit/spent state. */
+const TOOL_ICONS = {
+  drill:      '<path d="M2.5 10h5v4h-5z"/><path d="M7.5 9h8.5l5.5 3-5.5 3H7.5z"/><path d="M10.5 9l2 6M13.5 9l2 6"/>',
+  wiretap:    '<path d="M4 15v-2a8 8 0 0 1 16 0v2"/><path d="M4 15h3v5H5.5A1.5 1.5 0 0 1 4 18.5zM20 15h-3v5h1.5a1.5 1.5 0 0 0 1.5-1.5z"/>',
+  etch:       '<path d="M15 4l5 5-9.5 9.5H5.5v-5z"/><path d="M13 6l5 5"/><path d="M4 21h9"/>',
+  informant:  '<path d="M3 16.5c3.5 1.8 14.5 1.8 18 0"/><path d="M6 16.2C6 11 7.4 7 12 7s6 4 6 9.2"/><path d="M8.2 12.2c2.4.9 5.2.9 7.6 0"/>',
+  freeze:     '<path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/><path d="M9.6 4.6L12 7l2.4-2.4M9.6 19.4L12 17l2.4 2.4"/>',
+  bypass:     '<path d="M4 8h14M15 5l3 3-3 3"/><path d="M20 16H6M9 13l-3 3 3 3"/>',
+  doubledown: '<ellipse cx="12" cy="8" rx="7" ry="3"/><path d="M5 8v4c0 1.7 3.1 3 7 3s7-1.3 7-3V8"/><path d="M5 12v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/>',
+  alibi:      '<path d="M2.5 9.5c2.6-1.8 6.4-1.8 9.5.2 3.1-2 6.9-2 9.5-.2 0 4.3-2.2 7.3-5.2 7.3-2 0-3.1-1.9-4.3-1.9s-2.3 1.9-4.3 1.9c-3 0-5.2-3-5.2-7.3z"/><path d="M6.5 12h2.6M14.9 12h2.6"/>',
+};
+
+export function toolIcon(id) {
+  const body = TOOL_ICONS[id];
+  return body ? `<svg class="tool__icon" viewBox="0 0 24 24" aria-hidden="true">${body}</svg>` : "";
+}
+
 export function renderKit(kit) {
   el.kit.innerHTML = "";
   for (const tool of kit) {
@@ -637,11 +704,13 @@ export function renderKit(kit) {
     btn.disabled = tool.passive ? tool.used : !tool.available;
     if (tool.used) btn.dataset.used = "true";
     if (tool.passive) btn.dataset.passive = "true";
+    if (tool.inapplicable) btn.dataset.inapplicable = "true";
     btn.title = tool.hint;
     btn.setAttribute("aria-label", `${tool.name}. ${tool.hint}${tool.used ? " Already spent." : ""}`);
     btn.classList.add("mat-key");
     btn.innerHTML = `
       <span class="lamp tool__lamp${tool.passive ? " lamp--jade" : ""}" data-on="${!tool.used}" aria-hidden="true"></span>
+      ${toolIcon(tool.id)}
       <span class="tool__name">${tool.name}</span>
       <span class="tool__key">${tool.passive ? "AUTO" : tool.key.toUpperCase()}</span>
     `;
@@ -726,10 +795,35 @@ export function revealAnswer(game, { result, correctIndex, correctAnswer, given,
   el.verdictAnswer.textContent = result === "correct" ? correctAnswer : `Answer: ${correctAnswer}`;
   el.verdict.hidden = false;
   el.nextBtn.focus();
+  strikeStamp(result, { close, forgiven });
 
   announce(result === "correct"
     ? `Correct. ${correctAnswer}.`
     : `${lines[result]}. The answer was ${correctAnswer}.${forgiven ? " Your alibi covered it — you're still in." : ""}`);
+}
+
+/* The stamp is the verdict you see from across the room; the verdict bar
+   underneath is the one you read. Words are the heist's, not the quiz's. */
+const STAMP_WORDS = {
+  correct: "Cracked",
+  wrong: "Alarm",
+  timeout: "Time's up",
+  close: "So close",
+  forgiven: "Alibi",
+  passed: "Passed",
+};
+
+/** Strike a verdict stamp. The Board passes its own slab's node. */
+export function strikeStamp(result, { close = false, forgiven = false, passed = false } = {}, node = el.verdictStamp) {
+  if (!node) return;
+  const kind = forgiven ? "forgiven" : passed ? "passed" : close && result === "wrong" ? "close" : result;
+  node.textContent = STAMP_WORDS[kind] || "";
+  node.dataset.kind = kind;
+  node.hidden = false;
+  /* Restart the strike even when two verdicts land on the same node. */
+  node.style.animation = "none";
+  void node.offsetWidth;
+  node.style.animation = "";
 }
 
 /* ---- Results -------------------------------------------------------------- */
@@ -758,7 +852,16 @@ export function renderResults(summary, { unlocked, store, isRecord }) {
   const copy = END_COPY[summary.reason] || END_COPY.time;
   const isBoard = summary.mode === "board";
 
-  el.resultEyebrow.textContent = isRecord ? `${copy.eyebrow} · personal best` : copy.eyebrow;
+  el.resultEyebrow.textContent = copy.eyebrow;
+  if (el.resultRecord) el.resultRecord.hidden = !isRecord;
+  /* Gold for a haul you walked out with, red for one the alarm took. Drives
+     the whole slip's lighting (game.css .result[data-outcome]). */
+  const won = ["banked", "cleared", "exhausted", "played-out", "street-done"].includes(summary.reason) && summary.score > 0;
+  if (el.result) el.result.dataset.outcome = won ? "won" : "lost";
+  if (el.reviewCount) {
+    const n = summary.history?.length || 0;
+    el.reviewCount.textContent = n ? `${summary.correct}/${n}` : "";
+  }
   el.resultScore.textContent = formatCredits(summary.score);
   el.resultSub.textContent = copy.sub;
 

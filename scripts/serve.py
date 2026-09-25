@@ -22,7 +22,10 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         super().end_headers()
 
     def log_message(self, fmt, *args):
-        if "GET" in (args[0] if args else ""):
+        # args[0] is the request line for access logs but an HTTPStatus for
+        # send_error() — so a 404 used to raise here and drop the connection,
+        # which the browser reports as ERR_EMPTY_RESPONSE rather than a 404.
+        if args and "GET" in str(args[0]):
             return                      # quiet the per-asset noise
         super().log_message(fmt, *args)
 

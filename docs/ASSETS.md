@@ -299,6 +299,48 @@ fallback wherever `mask-image` is unsupported.
 
 ---
 
+
+# Part C — Key art series (Vertex AI, Sep 2026)
+
+The v2 visual pass added painted key art: one wide scene behind every screen
+and one card per mode. Generated with **Nano Banana Pro** through
+`~/scripts/gcp-media/gemini-image.sh` (house rule: Vertex AI, never the Gemini
+API), raws in `~/Desktop/trivia/v2/`, processed with `sips` to JPEG sized to
+display (cards 1000px long edge q80, scene 2400px q74).
+
+**Run them one at a time.** Seven in parallel hit HTTP 429 and four exhausted
+their retries; sequential runs went through.
+
+Every prompt ends with the same style block, which is what makes six separate
+generations read as one series:
+
+```
+Photoreal cinematic AAA video game key art, same series as a brushed gunmetal
+steel bank vault door with polished brass bolts. Palette strictly: near-black
+blue ink #0A0C10 shadows, gunmetal steel #252A33, warm brass #C9A24D and bright
+brass #E6C883 light, tiny accents only of jade #43A882 or alarm red #E0483C
+where stated. Low-key lighting, one warm key light, volumetric haze, fine
+floating dust, shallow depth of field, rich contrast, film grain. Absolutely no
+text, no letters, no numbers, no logos, no signage, no watermark, no people's
+faces, no UI.
+```
+
+| File | Aspect / size | Subject (prepended to the style block) |
+|---|---|---|
+| `assets/art/scene-vault.jpg` | 16:9 · 2K | Grand 1920s vault at night; colossal door half open at the far RIGHT edge, gold light raking a marble floor, deposit boxes receding along the LEFT edge; the CENTER calm and nearly empty so UI can sit on it |
+| `assets/art/modes/vault.jpg` | 4:3 · 1K | Close-up of the vault door's brass combination dial and wheel, a black-gloved hand turning the dial |
+| `assets/art/modes/blitz.jpg` | 4:3 · 1K | Brass pocket stopwatch on dark steel, a burning fuse of white-gold sparks racing toward it |
+| `assets/art/modes/survival.jpg` | 4:3 · 1K | Hazy vault corridor crossed by red security laser beams, a red rotating alarm beacon on the wall |
+| `assets/art/modes/daily.jpg` | 4:3 · 1K | One brass deposit box drawn out and open, a small brass key in its lock, dawn light through venetian blinds |
+| `assets/art/modes/board.jpg` | 4:3 · 1K | Straight-on wall of backlit brass deposit-box doors, a few glowing gold, one swung open |
+| `assets/art/modes/street.jpg` | 4:3 · 1K | Rainy night street outside a neoclassical bank, silhouetted crowd with umbrellas from behind, brass lamps in wet cobbles |
+
+The scene's composition is load-bearing: the title grades the LEFT side dark
+for the wordmark and leaves the door on the right alone. A regeneration that
+moves the door to the centre puts it behind the wordmark.
+
+---
+
 # Workflow
 
 1. Generate → download → save at the stated path.

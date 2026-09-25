@@ -22,21 +22,26 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Big+Shoulders+Stencil+Display:wght@800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/tokens.css?v=2">
-<link rel="stylesheet" href="css/base.css?v=2">
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
 <link rel="stylesheet" href="css/material.css?v=6">
-<link rel="stylesheet" href="css/game.css?v=19">
-<link rel="stylesheet" href="css/board.css?v=6">
-<link rel="stylesheet" href="css/street.css?v=3">
-<link rel="stylesheet" href="css/fx.css?v=11">
+<link rel="stylesheet" href="css/game.css?v=20">
+<link rel="stylesheet" href="css/board.css?v=7">
+<link rel="stylesheet" href="css/street.css?v=4">
+<link rel="stylesheet" href="css/fx.css?v=12">
 </head>
 
 <body data-screen="boot">
 
 <!-- Ambient layers ------------------------------------------------------- -->
 <div class="vault-bg" aria-hidden="true">
+  <!-- The key art: the whole game happens inside this vault. Lit on the
+       title, pushed back into soft focus behind play (fx.css). -->
+  <div class="vault-scene"></div>
+  <div class="vault-shafts"></div>
+  <div class="vault-dust"></div>
   <div class="vault-door">
     <div class="vault-ring vault-ring--outer"></div>
     <div class="vault-ring vault-ring--mid"></div>
@@ -87,37 +92,58 @@
   <!-- =================== TITLE =================== -->
   <section class="screen screen--title" data-screen="title" aria-label="Choose a heist" hidden>
 
-    <header class="masthead">
-      <span class="rivet rivet--tl" aria-hidden="true"></span>
-      <span class="rivet rivet--tr" aria-hidden="true"></span>
-      <span class="rivet rivet--bl" aria-hidden="true"></span>
-      <span class="rivet rivet--br" aria-hidden="true"></span>
-      <p class="eyebrow eyebrow--brass">Est. from a 2023 spreadsheet <span class="rule"></span> <span id="bank-size">904</span> locks on file</p>
-      <h1 class="wordmark">
-        <span class="wordmark__line" style="--i:0">The</span>
-        <span class="wordmark__line" style="--i:1">Trivia</span>
-        <span class="wordmark__line wordmark__line--brass" style="--i:2">Bank</span>
-      </h1>
-      <p class="tagline">Answer well and the door opens. Answer badly and it doesn't.</p>
+    <!-- The hero is a game's main menu, not a landing page: the wordmark
+         sits over the key art, and the one button that matters is the
+         biggest thing on the screen. -->
+    <!-- The crew file: rank earned from lifetime credits, and progress to the
+         next one. A compact chip in the corner, the way a game shows your
+         level on its menu, so it never sits over the painting's door. -->
+    <div class="title-bar">
+      <aside class="dossier" id="dossier" aria-label="Your crew file"></aside>
+    </div>
+
+    <header class="hero">
+      <div class="hero__brand">
+        <p class="hero__kicker"><span class="hero__est">Est. from a 2023 spreadsheet <span class="rule"></span></span> <span><span id="bank-size">904</span> locks on file</span></p>
+        <h1 class="wordmark">
+          <span class="wordmark__line" style="--i:0">The</span>
+          <span class="wordmark__line" style="--i:1">Trivia</span>
+          <span class="wordmark__line wordmark__line--brass" style="--i:2">Bank</span>
+        </h1>
+        <p class="tagline">Answer well and the door opens. Answer badly and it doesn't.</p>
+        <div class="hero__cta">
+          <button type="button" class="btn btn--primary btn--xl" id="hero-play">
+            Crack the vault
+            <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="hero__hint">Twelve locks · two safe havens · one alibi</p>
+        </div>
+      </div>
+
     </header>
+
+    <div class="heists-head">
+      <h2 class="section-title">Choose your heist</h2>
+      <div class="loadout-quick">
+        <span class="loadout-quick__cap">Answer by</span>
+        <div class="segmented" id="answer-mode" role="radiogroup" aria-label="Answer mode">
+          <button type="button" role="radio" aria-checked="true"  data-value="choice">Four options</button>
+          <button type="button" role="radio" aria-checked="false" data-value="typed">Type it <span class="mult">&times;1.5</span></button>
+        </div>
+      </div>
+    </div>
 
     <div class="modes" id="modes" role="list"></div>
 
     <details class="panel panel--setup">
       <summary>
-        <span class="eyebrow">The kit &amp; the paperwork</span>
+        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+        <span class="panel__title">Loadout</span>
         <span class="summary-hint" id="setup-summary">4 options &middot; all categories</span>
       </summary>
 
       <div class="panel__body">
-        <fieldset class="field">
-          <legend class="eyebrow">How you answer</legend>
-          <div class="segmented" id="answer-mode" role="radiogroup" aria-label="Answer mode">
-            <button type="button" role="radio" aria-checked="true"  data-value="choice">Four options</button>
-            <button type="button" role="radio" aria-checked="false" data-value="typed">Type it <span class="mult">&times;1.5</span></button>
-          </div>
-          <p class="field__note">Typing pays half again as much. There are no options to eliminate, so the Drill and the Wiretap stay in the bag.</p>
-        </fieldset>
+        <p class="field__note field__note--lead">Typing pays half again as much. There are no options to eliminate, so the Drill and the Wiretap stay in the bag, and the Etch and the Informant come out.</p>
 
         <fieldset class="field">
           <legend class="eyebrow">Categories</legend>
@@ -145,7 +171,7 @@
     </details>
 
     <section class="ledger" aria-label="Your record">
-      <h2 class="eyebrow">The ledger</h2>
+      <h2 class="section-title section-title--sm">The ledger</h2>
       <div class="ledger__grid" id="ledger"></div>
       <div class="ledger__cats" id="ledger-cats"></div>
     </section>
@@ -242,6 +268,9 @@
               <span id="intel-text"></span>
             </span>
           </div>
+
+          <!-- The verdict, struck across the glass. Set by ui.revealAnswer. -->
+          <div class="verdict-stamp" id="verdict-stamp" aria-hidden="true" hidden></div>
 
           <div class="display__foot">
             <div class="dial" id="timer">
@@ -355,6 +384,8 @@
           <p class="slab__clue" id="slab-clue">&nbsp;</p>
 
           <div class="shape" id="slab-shape" hidden></div>
+
+          <div class="verdict-stamp" id="board-stamp" aria-hidden="true" hidden></div>
 
           <div class="slab__foot">
             <div class="dial dial--slab" id="slab-timer">
@@ -523,10 +554,13 @@
 
   <!-- =================== RESULTS =================== -->
   <section class="screen screen--done" data-screen="done" aria-label="Result" hidden>
-    <div class="result">
-      <p class="eyebrow" id="result-eyebrow">The door held</p>
-      <h2 class="result__score" id="result-score">0</h2>
-      <p class="result__sub" id="result-sub">credits</p>
+    <div class="result" id="result">
+      <p class="result__record" id="result-record" hidden>New personal best</p>
+      <h2 class="result__title" id="result-eyebrow">The door held</h2>
+      <div class="result__haul">
+        <p class="result__score" id="result-score">0</p>
+        <p class="result__sub" id="result-sub">credits</p>
+      </div>
 
       <div class="result__stats" id="result-stats"></div>
 
@@ -550,7 +584,7 @@
       </div>
 
       <details class="review">
-        <summary><span class="eyebrow">Review every lock</span></summary>
+        <summary><span class="review__title">Review every lock</span> <span class="review__count" id="review-count"></span></summary>
         <ol class="review__list" id="review-list"></ol>
       </details>
     </div>
@@ -578,7 +612,7 @@
 
 <canvas id="share-canvas" width="1200" height="630" hidden></canvas>
 
-<script type="module" src="js/main.js?v=24"></script>
+<script type="module" src="js/main.js?v=25"></script>
 <noscript>
   <p style="padding:2rem;font-family:system-ui;color:#ddd">The Trivia Bank needs JavaScript — the whole vault runs in your browser.</p>
 </noscript>

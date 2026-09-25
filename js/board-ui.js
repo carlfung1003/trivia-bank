@@ -9,7 +9,7 @@
 
 import { BOARD } from "./config.js";
 import { formatCredits, answerShape } from "./util.js";
-import { el as core, escapeHtml, setFlap, buildDialTicks, announce } from "./ui.js";
+import { el as core, escapeHtml, setFlap, buildDialTicks, announce, strikeStamp } from "./ui.js";
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -29,6 +29,7 @@ export const el = {
   slabWild:    $("#slab-wildcard"),
   slabClue:    $("#slab-clue"),
   slabShape:   $("#slab-shape"),
+  stamp:       $("#board-stamp"),
   slabTimer:   $("#slab-timer"),
   slabFill:    $("#slab-timer-fill"),
   slabTime:    $("#slab-timer-value"),
@@ -194,6 +195,7 @@ export function showClue(game, { category, clue, value, wildcard, final }) {
   el.verdict.hidden = true;
   el.form.hidden = false;
   el.hint.hidden = true;
+  if (el.stamp) el.stamp.hidden = true;
 
   el.slab.dataset.wildcard = String(!!wildcard);
   el.slabCat.textContent = category;
@@ -255,6 +257,11 @@ export function showVerdict({ result, close, answer, delta, inForm, final, score
   };
   el.verdictLine.textContent = lines[result] || "";
   el.verdictLine.dataset.result = result;
+  /* The bar takes the outcome colour too (game.css .verdict[data-result]).
+     A pass is not a miss, so it reads neutral rather than as a timeout. */
+  const passed = result === "timeout" && delta === 0;
+  el.verdict.dataset.result = passed ? "passed" : result;
+  strikeStamp(result, { close, passed }, el.stamp);
 
   const bonus = result === "correct" && inForm && !final
     ? " <span class=\"verdict__bonus\">+ question form</span>"

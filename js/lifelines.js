@@ -230,6 +230,11 @@ export function kitState(game) {
     key: slot.key,
     used: slot.used,
     passive: !!slot.passive,
+    /* Unusable for the whole run, not just this question: a choice-only tool
+       in Type-It or a typed-only one in multiple choice. The UI may hide these
+       where space is short (phones) instead of dimming them. */
+    inapplicable: (!!slot.requiresChoice && game.answerMode !== "choice")
+      || (!!slot.requiresTyped && game.answerMode !== "typed"),
     available: canUse(game, slot.id),
   }));
 }

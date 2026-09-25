@@ -138,6 +138,7 @@ function renderTitle() {
   ui.renderCategories(app.bank, app.settings.categories);
   ui.renderDifficulties(app.settings.difficulties);
   ui.renderLedger(store);
+  ui.renderDossier(store);
   syncSetupSummary();
   syncSegmented(ui.el.answerMode, app.settings.answerMode);
   syncSegmented(ui.el.soundToggle, app.settings.sound ? "on" : "off");
@@ -160,6 +161,12 @@ function syncSetupSummary() {
 }
 
 function wireTitle() {
+  /* The hero's one button: straight into the flagship mode. */
+  ui.el.heroPlay?.addEventListener("click", () => {
+    sound.unlock();
+    startRun("vault");
+  });
+
   ui.el.modes.addEventListener("click", (e) => {
     const card = e.target.closest(".mode-card");
     if (!card) return;
@@ -828,9 +835,9 @@ function onReveal(game, { result, correctIndex, correctAnswer, given, points, st
   haptic(12);
 
   const land = () => {
-    /* Banner first: revealAnswer's announcement (which carries the answer)
-       must be the last thing written to the live region. */
-    if (forgiven) ui.banner("Alibi spent", "That one's off the record", "haven", 2200);
+    /* The Alibi is announced by the verdict itself — the ALIBI stamp on the
+       glass and "Alibi spent" on the verdict line. It used to be a banner as
+       well, which swept straight across the question text. */
     ui.revealAnswer(game, { result, correctIndex, correctAnswer, given, close, forgiven });
 
     if (result === RESULT.CORRECT) {

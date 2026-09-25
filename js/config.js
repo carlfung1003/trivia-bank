@@ -312,6 +312,23 @@ export const AUDIO = {
   fanfare: [0, 4, 7, 12, 16, 19],
 };
 
+/* ==========================================================================
+   RANK — the crew title on the title screen, earned from lifetime credits.
+   --------------------------------------------------------------------------
+   Pure presentation: nothing is gated behind a rank. It exists so the title
+   screen says who you are in this game rather than printing a row of zeros.
+   Blitz and Survival pay ~100x a Vault Run (see CLAUDE.md), so the upper
+   rungs are spaced for a player who plays everything, not vault alone.
+   ========================================================================== */
+export const RANKS = [
+  { name: "Lookout",     at: 0 },
+  { name: "Pickpocket",  at: 2500 },
+  { name: "Cat Burglar", at: 15000 },
+  { name: "Safecracker", at: 75000 },
+  { name: "Inside Man",  at: 300000 },
+  { name: "Mastermind",  at: 1000000 },
+];
+
 export const STORE = {
   key: "trivia-bank/v1",
   /* Achievements are pure predicates over a finished run + lifetime stats. */

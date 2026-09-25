@@ -5,7 +5,8 @@
      - ONE gray family. No stray hexes anywhere outside this file.
      - ONE easing curve for motion (+ one impact curve, documented below).
      - Fluid clamp type scale. Negative tracking, sub-1 line-heights on display.
-     - One mono eyebrow system.
+     - Four faces, one job each (see --font-* below). Labels are the
+       condensed HUD face, not letter-spaced mono.
      - No emoji anywhere in the UI. Marks are drawn glyphs or SVG.
    ========================================================================== */
 
@@ -31,6 +32,11 @@
   --brass-lo:   hsl(41 46% 40%);
   --brass-hi:   hsl(44 72% 72%);
   --brass-glow: hsl(41 90% 60%);
+  /* A polished brass KEY FACE, top to bottom: the resting key and the lit
+     (hovered / selected) one. Every brass button, stud and keycap uses these,
+     so a recolour is one edit here. */
+  --brass-face:    linear-gradient(180deg, hsl(44 70% 66%), hsl(38 56% 42%));
+  --brass-face-lit: linear-gradient(180deg, hsl(46 84% 72%), hsl(39 60% 46%));
 
   --jade:       hsl(157 46% 46%);
   --jade-lo:    hsl(157 44% 26%);
@@ -52,9 +58,21 @@
 
   /* ---- Type ramp --------------------------------------------------------
      Fluid clamps: min at 360px viewport, max at 1440px.                     */
+  /* Four faces, each with one job. Bodoni is the BANK (wordmark, questions,
+     answers). Big Shoulders is the HEIST CREW's equipment — condensed,
+     industrial, the voice of every label, button and gauge. The stencil cut
+     of it is reserved for things that are STRUCK: verdict stamps, mode names,
+     rank plates. Plex Mono is the MACHINE: digits only — flaps, dials,
+     readouts. Archivo carries running prose and nothing else.
+
+     The mono used to do the labels too, letter-spaced to 0.26em. Tiny spaced
+     monospace caps on every surface is the single loudest "generated UI"
+     tell, and it made every label the same weight as every other. */
   --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
   --font-ui:      "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-hud:     "Big Shoulders Display", "Archivo Narrow", "Arial Narrow", system-ui, sans-serif;
+  --font-stencil: "Big Shoulders Stencil Display", "Big Shoulders Display", "Arial Narrow", sans-serif;
 
   --text-hero:  clamp(2.75rem, 1.20rem + 6.9vw, 7.5rem);
   --text-xl:    clamp(1.75rem, 1.06rem + 3.1vw, 3.5rem);
@@ -70,7 +88,8 @@
 
   --track-display: -0.035em;
   --track-tight:   -0.02em;
-  --track-eyebrow:  0.26em;   /* the ONE eyebrow tracking                    */
+  --track-eyebrow:  0.26em;   /* mono eyebrows — now rare, see --font-hud     */
+  --track-hud:      0.08em;   /* the condensed face needs far less air        */
 
   /* ---- Space ------------------------------------------------------------- */
   --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;  --sp-4: 1rem;

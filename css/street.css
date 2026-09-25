@@ -16,6 +16,10 @@
 
 .street-prompt-bezel { padding: var(--sp-2); }
 
+/* Four children on a five-row console template left an empty track — and its
+   gap — under the deck. */
+.console--street { grid-template-rows: auto auto 1fr auto; }
+
 .street-prompt {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -78,9 +82,9 @@
   border-radius: var(--radius-sm);
   background: var(--ink-200);
   color: var(--ink-600);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 600;
+  font-family: var(--font-hud);
+  font-size: 0.95rem;
+  font-weight: 900;
   box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.05);
 }
 
@@ -109,10 +113,11 @@
 }
 
 .slot__share {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-md);
-  letter-spacing: var(--track-tight);
+  font-family: var(--font-hud);
+  font-weight: 900;
+  font-size: clamp(1.2rem, 1rem + 0.6vw, 1.6rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 14px hsl(41 90% 60% / 0.35);
   color: var(--brass);
   font-variant-numeric: tabular-nums;
 }
@@ -155,8 +160,9 @@
   border-radius: var(--radius-sm);
   border: 1px solid var(--hairline-strong);
   color: var(--ink-500);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-hud);
+  font-size: 0.95rem;
+  font-weight: 900;
   line-height: 1;
   transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
 }
@@ -180,15 +186,20 @@
 /* The bank button reads as an alternative to answering, not a second submit,
    so it takes the jade state colour rather than the brass primary. */
 .btn--bank {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  border: 1px solid var(--jade-lo);
-  background: linear-gradient(hsl(157 40% 18%), hsl(157 42% 12%));
-  color: var(--jade-hi);
+  --btn-face-1: hsl(157 36% 30%);
+  --btn-face-2: hsl(157 42% 15%);
+  --btn-fg: var(--jade-hi);
+  --btn-edge: hsl(157 50% 55% / 0.6);
+  --btn-lip: hsl(157 45% 8%);
+  --btn-glow: hsl(157 60% 45% / 0.45);
   white-space: nowrap;
 }
-.btn--bank:hover { border-color: var(--jade); color: var(--ink-900); }
+.btn--bank:hover:not(:disabled) {
+  --btn-face-1: hsl(157 40% 36%);
+  --btn-face-2: hsl(157 44% 18%);
+  --btn-edge: var(--jade-hi);
+  --btn-fg: var(--ink-900);
+}
 .btn--bank b { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .btn__glyph { display: grid; place-content: center; width: 1.1rem; }
 .btn__glyph svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; }
@@ -196,9 +207,10 @@
 .street-hint {
   margin: var(--sp-2) 0 0;
   text-align: center;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.08em;
+  font-family: var(--font-hud);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   color: var(--ink-600);
 }
 .street-hint[data-kind="strike"]  { color: var(--alarm-hi); }
@@ -281,7 +293,11 @@
    puts the text at four words a line and the share off the edge. */
 @media (max-width: 700px) {
   .street-board { grid-template-columns: none; }
-  .street-prompt { grid-template-columns: none; gap: var(--sp-2); justify-items: center; text-align: center; }
-  .dial--street { transform: scale(0.55); transform-origin: center; margin: calc(var(--sp-6) * -1) auto; }
+  /* The dial goes to the corner of the glass, as on the vault's display —
+     scaled down in the flow it overlapped the last line of the prompt. */
+  .street-prompt { grid-template-columns: none; gap: var(--sp-2); padding: var(--sp-4) 66px var(--sp-4) var(--sp-4); }
+  .dial--street { position: absolute; top: 8px; right: 8px; width: 50px; transform: none; margin: 0; }
+  .dial--street .dial__cap { display: none; }
+  .dial--street .dial__value { font-size: 0.95rem; }
   .slot { min-height: 2.8rem; gap: var(--sp-2); }
 }
