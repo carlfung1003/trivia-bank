@@ -14,14 +14,23 @@
    and offer four options.
    ========================================================================== */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { Bank } from "../js/bank.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const bankPath = join(here, "..", "data", "questions.json");
 const bank = JSON.parse(readFileSync(bankPath, "utf8"));
 const dry = process.argv.includes("--dry");
+
+/* The bulk set: three wrong options for every question, in a plain data file
+   so it can be reviewed and diffed as data (scripts/authored-options.json).
+   Written in Sep 2026 after a real-phone playtest found synthesis offering
+   "343 metres per second" as a candidate for the smallest bone. The WRONG
+   table below keeps the hand-annotated originals and wins on any overlap. */
+const bulkPath = join(here, "authored-options.json");
+const BULK = existsSync(bulkPath) ? JSON.parse(readFileSync(bulkPath, "utf8")) : {};
 
 /* id -> the three wrong options. The real answer is spliced in automatically,
    so it can never be omitted or misspelt here. */
@@ -92,13 +101,39 @@ const WRONG = {
   /* --- places where the near-misses are the real ones --------------------- */
   64:  ["Colombia", "Vietnam", "Ethiopia"],
   464: ["France", "Hungary", "Germany"],
+
+  /* --- re-authored after amend-questions.mjs tightened the question -------
+     Each of these had its best trap withheld because it was arguably right
+     under the OLD wording. The rewording made it plainly wrong, so it can go
+     back in as the near-miss it always should have been. */
+  273: ["Antonín Dvořák", "Gustav Mahler", "Anton Bruckner"],      /* all wrote Ninths; only one was deaf */
+  327: ["Six", "Five", "Eight"],                                     /* six and five are other models */
+  269: ["Five", "Three", "Six"],                                     /* five in the Hamburg years */
+  984: ["Three", "Four", "One"],
+  365: ["China", "Spain", "Germany"],                                /* one site behind in 2024 */
+  527: ["California", "Florida", "Texas"],
+  499: ["Heteronyms", "Synonyms", "Paronyms"],                       /* homophones was arguable */
+  454: ["The cello", "The viola", "The violin"],
+
+  /* --- the classic confusions, restored -----------------------------------
+     These are THE wrong answers people actually give, and the typed checker
+     used to accept every one as a one-letter slip, so they could not be
+     offered. Now that options are in the checker's lexicon (bank.js), typing
+     one is correctly wrong, and it can finally be the trap it should be. */
+  953: ["Reflection", "Diffraction", "Dispersion"],
+  571: ["An ectotherm", "A poikilotherm", "A thermophile"],
+  18:  ["Phycology", "Bacteriology", "Pteridology"],
+  695: ["A bicentenary (bicentennial)", "A sesquicentenary (sesquicentennial)", "A semicentenary (semicentennial)"],
+  389: ["Vitamin D", "Vitamin B1", "Vitamin B12"],
+  732: ["Samson and Delilah", "Tristan and Isolde", "Dido and Aeneas"],   /* see amend-questions #732 */
 };
 
 const byId = new Map(bank.questions.map((q) => [q.id, q]));
 const problems = [];
 let applied = 0;
+const pending = [];
 
-for (const [rawId, wrong] of Object.entries(WRONG)) {
+for (const [rawId, wrong] of Object.entries({ ...BULK, ...WRONG })) {
   const id = Number(rawId);
   const q = byId.get(id);
   if (!q) { problems.push(`#${id} not found in bank`); continue; }
@@ -120,10 +155,25 @@ for (const [rawId, wrong] of Object.entries(WRONG)) {
     for (const alias of q.accept || []) {
       if (norm(w) === norm(alias)) problems.push(`#${id} distractor "${w}" is an accepted alias`);
     }
+    pending.push([q, w]);
   }
 
   q.options = options;
   applied++;
+}
+
+/* Checked AFTER every set is applied, against a bank that includes them:
+   the checker's real-word guard reads the options too (bank.js lexicon), so
+   the verdict has to come from the bank as it will actually ship. Aliases
+   are only the listed spellings; the checker is looser (per-word typo
+   tolerance, inflections). A distractor it marks right, or "close", is a
+   second answer wearing a disguise. */
+const checker = new Bank(bank);
+for (const [q, w] of pending) {
+  const verdict = checker.checkTyped(q, w);
+  if (verdict === true || verdict === "close") {
+    problems.push(`#${q.id} distractor "${w}" is ${verdict === true ? "accepted" : "close"} by the typed checker`);
+  }
 }
 
 if (problems.length) {

@@ -233,6 +233,10 @@ a:hover { color: var(--brass-hi); }
   transition: color var(--dur-fast) var(--ease);
 }
 .link:hover { color: var(--brass); }
+/* Text links are tiny by nature; pad the hit area out to 44px without moving
+   anything around them. */
+.link { position: relative; }
+.link::after { content: ""; position: absolute; inset: -14px -8px; }
 
 .icon-btn {
   appearance: none;
@@ -247,6 +251,9 @@ a:hover { color: var(--brass-hi); }
   transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 .icon-btn:hover { border-color: var(--brass); color: var(--brass); }
+/* The visible disc shrinks on short phones; the finger target never does. */
+.icon-btn { position: relative; }
+.icon-btn::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; }
 .icon-btn svg {
   width: 20px; height: 20px;
   fill: none; stroke: currentColor; stroke-width: 1.6;

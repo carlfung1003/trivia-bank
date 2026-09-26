@@ -24,12 +24,16 @@ export class Bank {
     this.byId = new Map(this.questions.map((q) => [q.id, q]));
     this.index = buildIndex(this.questions);
 
-    /* Every answer and alias in the bank, as match keys. Used by checkTyped to
-       refuse a "typo" that happens to spell a different real answer — see
-       there for why the bank has to be the judge of that. */
+    /* Every answer, alias AND authored option in the bank, as match keys.
+       Used by checkTyped to refuse a "typo" that happens to spell a different
+       real thing — see there for why the bank has to be the judge of that.
+       The options joined in Sep 2026: with only answers in here, "Reflection"
+       passed as a slip for Refraction and "Phycology" for Mycology, because
+       neither is the answer to anything. Every hand-written wrong option is a
+       real, on-topic term, which is exactly the vocabulary this guard needs. */
     this.lexicon = new Set();
     for (const q of this.questions) {
-      for (const source of [q.answer, ...(q.accept || [])]) {
+      for (const source of [q.answer, ...(q.accept || []), ...(q.options || [])]) {
         const key = matchKey(source);
         if (key) this.lexicon.add(key);
       }

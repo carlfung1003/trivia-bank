@@ -82,6 +82,14 @@ the machined-brass identity and executed it like a game. The rules that came out
   so a missing asset showed as `ERR_EMPTY_RESPONSE`. Fixed. If you see that error
   locally again, suspect the server before the page.
 
+- **Play screens fit one screen** (the "FIT TO SCREEN" block at the end of game.css).
+  The console is capped at `100dvh`; the display is the row that gives, with a 128px
+  floor; short phones (≤700px tall) pay with 2×2 keys and a one-row Type-It form; on
+  phones the verdict takes the kit's slot during a reveal; the Bank button docks under
+  the console; The Street's board scrolls in its own well. Check with the
+  `mobile-web-hardening` skill (`--app` mode) at all four iPhone sizes, in every state,
+  and look at the screenshots: a zero-overflow layout once hid the question entirely.
+
 Judge changes with the screenshot rig, never from code: desktop 1440×900 and a
 390×844 phone, every screen (title, play, reveal, busted hold, results, board, street).
 
@@ -137,10 +145,28 @@ If you change it, re-run the audit across several seeds — a single seed hides 
 for s in alpha beta gamma "$(date +%F)"; do node scripts/audit-distractors.mjs "$s" | tail -3; done
 ```
 
-**Preferred way to improve option quality** is not more heuristics — it is adding an
-`options: [...]` array to awkward questions in `data/questions.json`. Authored options
-win over synthesis automatically. A malformed list (fewer than 2 entries, or missing the
-real answer) falls back to synthesis rather than shipping a broken round.
+**Every question now carries hand-written options** (Sep 2026, all 904). A real-phone
+playtest found synthesis offering "343 metres per second" and "White blood cells" for the
+smallest bone, and "b"/"q" for a chemical symbol. Synthesis borrows other answers by
+shape and cannot know meaning, so it is now only the fallback for a swapped-in bank.
+
+The data pipeline, in this order:
+
+```bash
+node scripts/amend-questions.mjs    # content fixes, each with a reason (idempotent)
+node scripts/author-options.mjs     # scripts/authored-options.json + WRONG table -> bank
+node scripts/test-matching.mjs      # includes the own-option sweep
+node scripts/audit-distractors.mjs seed-1
+```
+
+`scripts/authored-options.json` is the bulk set (three wrong options per id). The
+`WRONG` table in `author-options.mjs` is for annotated overrides and wins on overlap. The
+bar the options were written to: same kind of thing as the answer, genuinely tempting
+(the near-miss people actually give), parallel form (article, qualifier, units, length),
+and *definitely* wrong. Writing wrong answers is how ~35 bad questions were found: a
+second valid answer, a stale fact, a clue containing its answer. Those fixes live in
+`amend-questions.mjs`. Change a question's wording there, never by hand in the JSON,
+so the reason travels with it.
 
 ## Swapping the bank
 
@@ -226,7 +252,9 @@ a real verdict wrong:
   four-character floor is what stops "water", "forest" and "Italy" being shredded into
   "wat", "for" and "Ita" — it costs a few genuine cases ("bigger" stops at "bigg") and
   that is the right trade, because over-stripping fails silently.
-- **A real word is never a typo for another real word** (`bank.lexicon`). Edit distance
+- **A real word is never a typo for another real word** (`bank.lexicon`, which holds
+  every answer, alias AND authored option: with answers alone, "Reflection" passed for
+  Refraction and "Phycology" for Mycology, since neither answers anything). Edit distance
   cannot tell "Entomology" from "Etymology", or "Titian" from "Titan", or "Austria" from
   "Australia" — every pair is inside tolerance, and every pair is two separately askable
   questions in this bank. Only the bank knows which strings are real answers with their
@@ -428,8 +456,8 @@ good answers. Fix the player before tuning the balance.
   What that does NOT cover is real touch targets, iOS Safari's dynamic viewport and
   address-bar behaviour, or the Web Audio unlock gesture on iOS. Try it on an actual
   handset before promoting the link.
-- Semantic distractor quality has a ceiling — see README. `options[]` is the fix, and
-  26 questions already carry authored sets (`scripts/author-options.mjs`).
+- All 904 questions carry authored options; synthesis only runs for a swapped-in bank.
+  Two shape tells remain by necessity (#655 "Ko", #894 "It": no peers of that length).
 - **Generated media is all optional.** `docs/ASSETS.md` has paste-ready Suno and
   ChatGPT Image 2.0 prompts. Audio files in `assets/audio/` are probed at unlock and
   take over from synthesis; `assets/art/vault-door.png` is a pure-CSS-fallback

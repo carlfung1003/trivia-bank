@@ -177,16 +177,41 @@ for (const q of bank.questions) {
   }
 }
 
+/* ---- Sweep: a question's own wrong options must never match it ------------
+   Added with the bulk authored options (Sep 2026). The four-key screen and the
+   typed checker must agree: if "Reflection" is a wrong key for Refraction, then
+   typing "Reflection" must be wrong too. Before the options joined the bank's
+   lexicon, the checker called it a one-letter slip and paid out. Every
+   distractor, every question — not a sample. */
+let optionFail = 0;
+let optionPairs = 0;
+const optionExamples = [];
+for (const q of bank.questions) {
+  if (!Array.isArray(q.options)) continue;
+  const own = formsOf(q);
+  for (const o of q.options) {
+    if (o === q.answer || own.has(matchKey(o))) continue;
+    optionPairs++;
+    const v = bank.checkTyped(q, o);
+    if (v === true || v === "close") {
+      optionFail++;
+      if (optionExamples.length < 10) optionExamples.push(`  option "${o}" ${v === true ? "accepted" : "close"} for "${q.answer}" (#${q.id})`);
+    }
+  }
+}
+
 console.log(`explicit cases: ${pass}/${CASES.length} passed`);
 console.log(`self-match sweep: ${selfFail} failures across ${bank.questions.length} questions and their aliases`);
 console.log(`cross-match sweep: ${crossFail} false accepts across ${crossPairs} answer pairs`);
 if (crossExamples.length) console.log(crossExamples.join("\n"));
+console.log(`own-option sweep: ${optionFail} wrong options accepted across ${optionPairs} options`);
+if (optionExamples.length) console.log(optionExamples.join("\n"));
 
 if (failures.length) {
   console.log(`\nFAILURES (${failures.length}):`);
   for (const f of failures.slice(0, 25)) console.log("  -", f);
 }
 
-const bad = failures.length + crossFail;
+const bad = failures.length + crossFail + optionFail;
 console.log(`\n${bad === 0 ? "PASS" : "FAIL"} — ${bad} problem(s)\n`);
 process.exit(bad === 0 ? 0 : 1);

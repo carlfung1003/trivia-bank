@@ -1,0 +1,4392 @@
+{
+ "1": [
+  "Canada",
+  "China",
+  "United States"
+ ],
+ "2": [
+  "Nepal and India",
+  "India and China",
+  "Bhutan and China"
+ ],
+ "3": [
+  "The Strait of Messina",
+  "The Strait of Dover",
+  "The Strait of Hormuz"
+ ],
+ "4": [
+  "Russia and Kazakhstan",
+  "Chile and Argentina",
+  "China and Mongolia"
+ ],
+ "5": [
+  "Hohhot",
+  "Ulan-Ude",
+  "Astana"
+ ],
+ "6": [
+  "Eswatini",
+  "Botswana",
+  "Zimbabwe"
+ ],
+ "7": [
+  "Mongolia",
+  "Kazakhstan",
+  "Tanzania"
+ ],
+ "8": [
+  "Russia",
+  "United States",
+  "United Kingdom"
+ ],
+ "9": [
+  "Uruguay",
+  "Guyana",
+  "Ecuador"
+ ],
+ "10": [
+  "Ankara",
+  "Çanakkale",
+  "Izmir"
+ ],
+ "11": [
+  "Oxygen",
+  "Argon",
+  "Carbon dioxide"
+ ],
+ "12": [
+  "Ag",
+  "Gd",
+  "Ga"
+ ],
+ "14": [
+  "The proton",
+  "The neutron",
+  "The positron"
+ ],
+ "15": [
+  "The volt",
+  "The ampere",
+  "The siemens"
+ ],
+ "16": [
+  "Saturn",
+  "Mercury",
+  "Uranus"
+ ],
+ "17": [
+  "Iron",
+  "Calcium",
+  "Magnesium"
+ ],
+ "18": [
+  "Bacteriology",
+  "Palynology",
+  "Pteridology"
+ ],
+ "19": [
+  "Henry Walter Bates",
+  "Thomas Henry Huxley",
+  "Joseph Dalton Hooker"
+ ],
+ "20": [
+  "The photon sphere",
+  "The ergosphere",
+  "The Roche limit"
+ ],
+ "21": [
+  "1911",
+  "1913",
+  "1915"
+ ],
+ "22": [
+  "Theresa May",
+  "Liz Truss",
+  "Barbara Castle"
+ ],
+ "23": [
+  "Explorer 1",
+  "Vanguard 1",
+  "Telstar 1"
+ ],
+ "24": [
+  "The Mughal Empire",
+  "The Safavid Empire",
+  "The Seljuk Empire"
+ ],
+ "25": [
+  "Babylonian cuneiform",
+  "Mycenaean Linear B",
+  "Maya glyphs"
+ ],
+ "26": [
+  "The Treaty of Brest-Litovsk",
+  "The Treaty of Saint-Germain",
+  "The Treaty of Trianon"
+ ],
+ "27": [
+  "Japan",
+  "Burma",
+  "Afghanistan"
+ ],
+ "28": [
+  "The 13th century",
+  "The 15th century",
+  "The 17th century"
+ ],
+ "29": [
+  "Jean-Jacques Dessalines",
+  "Henri Christophe",
+  "Alexandre Pétion"
+ ],
+ "30": [
+  "China",
+  "Korea",
+  "Thailand"
+ ],
+ "31": [
+  "Dorothy L. Sayers",
+  "Ngaio Marsh",
+  "Margery Allingham"
+ ],
+ "32": [
+  "Leo Tolstoy",
+  "Ivan Turgenev",
+  "Nikolai Gogol"
+ ],
+ "33": [
+  "Emmanuel Goldstein",
+  "Old Major",
+  "Comrade Ogilvy"
+ ],
+ "34": [
+  "Mario Vargas Llosa",
+  "Jorge Luis Borges",
+  "Isabel Allende"
+ ],
+ "35": [
+  "Hector Hugh Munro",
+  "Charles Lutwidge Dodgson",
+  "James Alfred Wight"
+ ],
+ "36": [
+  "Kazuo Ishiguro",
+  "Yukio Mishima",
+  "Banana Yoshimoto"
+ ],
+ "37": [
+  "Neil Gaiman",
+  "Douglas Adams",
+  "Piers Anthony"
+ ],
+ "38": [
+  "Water Margin",
+  "Romance of the Three Kingdoms",
+  "Dream of the Red Chamber"
+ ],
+ "39": [
+  "Wole Soyinka",
+  "Chimamanda Ngozi Adichie",
+  "Cyprian Ekwensi"
+ ],
+ "40": [
+  "Milton's Paradise Lost (Book One)",
+  "Virgil's Aeneid (Book Six)",
+  "Spenser's Faerie Queene (Book One)"
+ ],
+ "41": [
+  "Isao Takahata",
+  "Makoto Shinkai",
+  "Mamoru Hosoda"
+ ],
+ "42": [
+  "The blue pill",
+  "The green pill",
+  "The white pill"
+ ],
+ "43": [
+  "Zamunda",
+  "Sokovia",
+  "Latveria"
+ ],
+ "44": [
+  "Twin Peaks",
+  "Riverdale",
+  "Gravity Falls"
+ ],
+ "45": [
+  "Schrödinger",
+  "Cap'n Cook",
+  "Saul Goodman"
+ ],
+ "46": [
+  "Johnnie To",
+  "Ann Hui",
+  "Wong Jing"
+ ],
+ "47": [
+  "Dr. Strangelove",
+  "A Clockwork Orange",
+  "Full Metal Jacket"
+ ],
+ "48": [
+  "Park Chan-wook",
+  "Lee Chang-dong",
+  "Kim Jee-woon"
+ ],
+ "49": [
+  "Jackie Chan",
+  "Jet Li",
+  "Brandon Lee"
+ ],
+ "50": [
+  "The Jazz Singer (1927)",
+  "The Broadway Melody (1929)",
+  "7th Heaven (1927)"
+ ],
+ "51": [
+  "85",
+  "76",
+  "92"
+ ],
+ "52": [
+  "Three",
+  "Five",
+  "Six"
+ ],
+ "53": [
+  "Let It Be",
+  "Rubber Soul",
+  "Revolver"
+ ],
+ "54": [
+  "Led Zeppelin",
+  "Deep Purple",
+  "King Crimson"
+ ],
+ "55": [
+  "Play softly",
+  "Play quickly",
+  "Play smoothly"
+ ],
+ "56": [
+  "Eight",
+  "Seven",
+  "Thirteen"
+ ],
+ "57": [
+  "The pipa",
+  "The guqin",
+  "The sanxian"
+ ],
+ "58": [
+  "Ludwig van Beethoven",
+  "Johann Sebastian Bach",
+  "Gustav Mahler"
+ ],
+ "59": [
+  "The guqin",
+  "The yangqin",
+  "The pipa"
+ ],
+ "60": [
+  "A tempo",
+  "Sotto voce",
+  "Tacet"
+ ],
+ "61": [
+  "Lentils",
+  "Fava beans",
+  "Aubergines"
+ ],
+ "62": [
+  "Gin",
+  "Vodka",
+  "Bourbon"
+ ],
+ "63": [
+  "Lentils",
+  "Wheat gluten",
+  "Rice"
+ ],
+ "65": [
+  "Bibimbap",
+  "Bulgogi",
+  "Japchae"
+ ],
+ "66": [
+  "Vanilla",
+  "Cardamom",
+  "Turmeric"
+ ],
+ "67": [
+  "Fujian (Hokkien southeastern China)",
+  "Sichuan (Sichuanese southwestern China)",
+  "Shanghai (Shanghainese eastern China)"
+ ],
+ "68": [
+  "Puff pastry",
+  "Filo pastry",
+  "Shortcrust pastry"
+ ],
+ "69": [
+  "Kokumi",
+  "Nigami",
+  "Shibumi"
+ ],
+ "70": [
+  "Gunpowder green",
+  "Da hong pao",
+  "Pu-erh"
+ ],
+ "71": [
+  "Edvard Munch",
+  "Paul Gauguin",
+  "Claude Monet"
+ ],
+ "72": [
+  "Cubism",
+  "Dadaism",
+  "Expressionism"
+ ],
+ "73": [
+  "Bronze",
+  "Alabaster",
+  "Limestone"
+ ],
+ "74": [
+  "Lluís Domènech i Montaner",
+  "Josep Puig i Cadafalch",
+  "Santiago Calatrava"
+ ],
+ "75": [
+  "Utagawa Hiroshige",
+  "Kitagawa Utamaro",
+  "Utagawa Kuniyoshi"
+ ],
+ "76": [
+  "Secco",
+  "Tempera",
+  "Gesso"
+ ],
+ "77": [
+  "Takashi Murakami",
+  "Damien Hirst",
+  "Yoshitomo Nara"
+ ],
+ "78": [
+  "Romanesque",
+  "Baroque",
+  "Byzantine"
+ ],
+ "79": [
+  "The Musée d'Orsay",
+  "The Petit Palais",
+  "The Musée Rodin"
+ ],
+ "80": [
+  "Yeung lau",
+  "Diaolou",
+  "Shikumen"
+ ],
+ "81": [
+  "Ten",
+  "Twelve",
+  "Nine"
+ ],
+ "82": [
+  "The queen",
+  "The pawn",
+  "The knight"
+ ],
+ "83": [
+  "Deuce",
+  "Nil",
+  "Nought"
+ ],
+ "84": [
+  "Germany",
+  "Italy",
+  "Argentina"
+ ],
+ "85": [
+  "9",
+  "12",
+  "20"
+ ],
+ "86": [
+  "The modern pentathlon",
+  "The omnium",
+  "The heptathlon"
+ ],
+ "87": [
+  "Discs",
+  "Tiles",
+  "Seeds"
+ ],
+ "88": [
+  "Five",
+  "Six",
+  "Eight"
+ ],
+ "89": [
+  "Hapkido",
+  "Karate",
+  "Muay Thai"
+ ],
+ "90": [
+  "A maiden",
+  "A treble",
+  "A five-for"
+ ],
+ "91": [
+  "An anagram",
+  "An ambigram",
+  "A pangram"
+ ],
+ "92": [
+  "Alliteration",
+  "Assonance",
+  "Consonance"
+ ],
+ "93": [
+  "Glagolitic",
+  "Greek",
+  "Latin"
+ ],
+ "94": [
+  "22",
+  "26",
+  "28"
+ ],
+ "95": [
+  "Lexicography",
+  "Morphology",
+  "Onomastics"
+ ],
+ "96": [
+  "Id est",
+  "Verbi gratia",
+  "Nota bene"
+ ],
+ "97": [
+  "Castilian Spanish",
+  "Hindi-Urdu",
+  "American English"
+ ],
+ "98": [
+  "A simplified revival of classical Latin",
+  "A standardised pan-Slavic literary language",
+  "An international sign language for the deaf"
+ ],
+ "99": [
+  "To open the appetite",
+  "To warm the stomach",
+  "To please the eye"
+ ],
+ "100": [
+  "A calque",
+  "A cognate",
+  "A neologism"
+ ],
+ "101": [
+  "Computer Processing Unit",
+  "Central Programming Unit",
+  "Core Processing Unit"
+ ],
+ "102": [
+  "Rapid Access Memory",
+  "Read Access Memory",
+  "Remote Access Memory"
+ ],
+ "103": [
+  "Server",
+  "Socket",
+  "Standard"
+ ],
+ "104": [
+  "Vint Cerf",
+  "Marc Andreessen",
+  "Ted Nelson"
+ ],
+ "105": [
+  "Ruby",
+  "Perl",
+  "Java"
+ ],
+ "106": [
+  "BitKeeper",
+  "Mercurial",
+  "Subversion"
+ ],
+ "107": [
+  "Standard Query Language",
+  "Sequential Query Language",
+  "Simple Query Language"
+ ],
+ "108": [
+  "Grace Hopper",
+  "Mary Somerville",
+  "Sophie Germain"
+ ],
+ "109": [
+  "1010",
+  "1100",
+  "1001"
+ ],
+ "110": [
+  "The 8-bit generation",
+  "The 32-bit generation",
+  "The 64-bit generation"
+ ],
+ "111": [
+  "Venus",
+  "Mars",
+  "Neptune"
+ ],
+ "112": [
+  "180",
+  "270",
+  "90"
+ ],
+ "113": [
+  "Gemini",
+  "Virgo",
+  "Aquarius"
+ ],
+ "114": [
+  "The euro",
+  "The Swedish krona",
+  "The Austrian schilling"
+ ],
+ "115": [
+  "A murder",
+  "A conspiracy",
+  "A congress"
+ ],
+ "116": [
+  "Two",
+  "Four",
+  "Nine"
+ ],
+ "117": [
+  "Gold",
+  "Pearl",
+  "Ruby"
+ ],
+ "118": [
+  "10,800",
+  "8,640",
+  "11,200"
+ ],
+ "119": [
+  "Tugela Falls, South Africa",
+  "Kaieteur Falls, Guyana",
+  "Victoria Falls, Zambia"
+ ],
+ "201": [
+  "Sydney",
+  "Melbourne",
+  "Adelaide"
+ ],
+ "202": [
+  "The Atlantic Ocean",
+  "The Indian Ocean",
+  "The Southern Ocean"
+ ],
+ "203": [
+  "Monaco",
+  "San Marino",
+  "Liechtenstein"
+ ],
+ "204": [
+  "Africa",
+  "North America",
+  "Antarctica"
+ ],
+ "205": [
+  "Toronto",
+  "Montreal",
+  "Vancouver"
+ ],
+ "206": [
+  "South Korea",
+  "China",
+  "Thailand"
+ ],
+ "207": [
+  "Texas",
+  "California",
+  "Montana"
+ ],
+ "208": [
+  "K2",
+  "Kangchenjunga",
+  "Mauna Kea"
+ ],
+ "209": [
+  "The Yangtze",
+  "The Mississippi",
+  "The Congo"
+ ],
+ "210": [
+  "The Gobi",
+  "The Kalahari",
+  "The Arabian Desert"
+ ],
+ "211": [
+  "Rio de Janeiro",
+  "São Paulo",
+  "Salvador"
+ ],
+ "212": [
+  "25",
+  "28",
+  "30"
+ ],
+ "213": [
+  "Israel and Egypt",
+  "Jordan and Syria",
+  "Jordan and Saudi Arabia"
+ ],
+ "214": [
+  "Eritrea",
+  "Algeria",
+  "Somalia"
+ ],
+ "215": [
+  "Japan",
+  "India",
+  "Vietnam"
+ ],
+ "216": [
+  "H2O2",
+  "HO2",
+  "CO2"
+ ],
+ "217": [
+  "208",
+  "212",
+  "270"
+ ],
+ "218": [
+  "Saturn",
+  "Neptune",
+  "Uranus"
+ ],
+ "219": [
+  "Venus",
+  "Mercury",
+  "Jupiter"
+ ],
+ "220": [
+  "The liver",
+  "The lungs",
+  "The small intestine"
+ ],
+ "221": [
+  "Nine",
+  "Seven",
+  "Ten"
+ ],
+ "222": [
+  "90°C",
+  "110°C",
+  "212°C"
+ ],
+ "223": [
+  "Quartz",
+  "Titanium",
+  "Corundum"
+ ],
+ "224": [
+  "Proxima Centauri",
+  "Sirius",
+  "The North Star"
+ ],
+ "225": [
+  "The chloroplast",
+  "The ribosome",
+  "The nucleus"
+ ],
+ "226": [
+  "Max Planck",
+  "Niels Bohr",
+  "Henri Poincaré"
+ ],
+ "227": [
+  "Au",
+  "Si",
+  "Sn"
+ ],
+ "228": [
+  "AB positive",
+  "O positive",
+  "AB negative"
+ ],
+ "229": [
+  "Ribonucleic acid",
+  "Deoxycholic acid",
+  "Docosahexaenoic acid"
+ ],
+ "231": [
+  "Buzz Aldrin",
+  "Michael Collins",
+  "Yuri Gagarin"
+ ],
+ "232": [
+  "1943",
+  "1944",
+  "1946"
+ ],
+ "233": [
+  "John Adams",
+  "Thomas Jefferson",
+  "Benjamin Franklin"
+ ],
+ "234": [
+  "Britain",
+  "Spain",
+  "Italy"
+ ],
+ "235": [
+  "1987",
+  "1990",
+  "1991"
+ ],
+ "236": [
+  "Lyndon B. Johnson",
+  "Dwight D. Eisenhower",
+  "Richard M. Nixon"
+ ],
+ "237": [
+  "1913",
+  "1916",
+  "1918"
+ ],
+ "238": [
+  "The Speedwell",
+  "The Susan Constant",
+  "The Arbella"
+ ],
+ "239": [
+  "John Adams",
+  "Benjamin Franklin",
+  "James Madison"
+ ],
+ "240": [
+  "The Maya",
+  "The Aztec",
+  "The Chimú"
+ ],
+ "241": [
+  "William Caxton",
+  "Johann Fust",
+  "Aldus Manutius"
+ ],
+ "242": [
+  "Nefertiti",
+  "Hatshepsut",
+  "Berenice"
+ ],
+ "243": [
+  "Vladimir Lenin",
+  "Nikita Khrushchev",
+  "Vyacheslav Molotov"
+ ],
+ "244": [
+  "Christopher Marlowe",
+  "Ben Jonson",
+  "John Webster"
+ ],
+ "245": [
+  "C.S. Lewis",
+  "R.L. Stine",
+  "J.M. Barrie"
+ ],
+ "246": [
+  "Charlotte Brontë",
+  "Elizabeth Gaskell",
+  "George Eliot"
+ ],
+ "247": [
+  "Robert Louis Stevenson",
+  "Wilkie Collins",
+  "G.K. Chesterton"
+ ],
+ "248": [
+  "C.S. Lewis",
+  "T.H. White",
+  "George R.R. Martin"
+ ],
+ "249": [
+  "Ernest Hemingway",
+  "John Dos Passos",
+  "Sinclair Lewis"
+ ],
+ "250": [
+  "Truman Capote",
+  "Carson McCullers",
+  "Flannery O'Connor"
+ ],
+ "251": [
+  "John Polidori",
+  "Ann Radcliffe",
+  "Bram Stoker"
+ ],
+ "252": [
+  "Exodus",
+  "Leviticus",
+  "Deuteronomy"
+ ],
+ "253": [
+  "John Steinbeck",
+  "Herman Melville",
+  "Jack London"
+ ],
+ "254": [
+  "Lope de Vega",
+  "Francisco de Quevedo",
+  "Tirso de Molina"
+ ],
+ "255": [
+  "Matt Damon",
+  "Brad Pitt",
+  "Matthew McConaughey"
+ ],
+ "256": [
+  "Star Trek",
+  "Stargate",
+  "Battlestar Galactica"
+ ],
+ "257": [
+  "Errol",
+  "Pigwidgeon",
+  "Hermes"
+ ],
+ "258": [
+  "The Jungle Book",
+  "The Aristocats",
+  "The Fox and the Hound"
+ ],
+ "259": [
+  "Café Nervosa",
+  "Monk's Café",
+  "Luke's Diner"
+ ],
+ "260": [
+  "DreamWorks",
+  "Illumination",
+  "Blue Sky"
+ ],
+ "261": [
+  "Chris Evans",
+  "Don Cheadle",
+  "Mark Ruffalo"
+ ],
+ "262": [
+  "George Lucas",
+  "Brian De Palma",
+  "John Carpenter"
+ ],
+ "263": [
+  "Robert Rodriguez",
+  "Guy Ritchie",
+  "Martin Scorsese"
+ ],
+ "264": [
+  "Red Dragon",
+  "Manhunter",
+  "Hannibal Rising"
+ ],
+ "265": [
+  "Family Guy",
+  "South Park",
+  "The Flintstones"
+ ],
+ "266": [
+  "The Abyss",
+  "Titanic",
+  "Aliens"
+ ],
+ "267": [
+  "Kansas City",
+  "Munchkinland",
+  "The Land of Oz"
+ ],
+ "268": [
+  "Chuck Berry",
+  "Buddy Holly",
+  "Jerry Lee Lewis"
+ ],
+ "269": [
+  "Three",
+  "Six",
+  "Seven"
+ ],
+ "270": [
+  "Lionel Richie",
+  "Stevie Wonder",
+  "Quincy Jones"
+ ],
+ "271": [
+  "Norway",
+  "Denmark",
+  "Finland"
+ ],
+ "272": [
+  "Four",
+  "Seven",
+  "Twelve"
+ ],
+ "273": [
+  "Johann Sebastian Bach",
+  "George Frideric Handel",
+  "Wolfgang Amadeus Mozart"
+ ],
+ "274": [
+  "Arcangelo Corelli",
+  "Tomaso Albinoni",
+  "Domenico Scarlatti"
+ ],
+ "275": [
+  "The saxophone",
+  "The trombone",
+  "The clarinet"
+ ],
+ "276": [
+  "Mick Jagger",
+  "Neil Young",
+  "Paul Simon"
+ ],
+ "277": [
+  "America the Beautiful",
+  "God Bless America",
+  "The Battle Hymn of the Republic"
+ ],
+ "278": [
+  "Genesis",
+  "Wings",
+  "Oasis"
+ ],
+ "279": [
+  "Apples",
+  "Olives",
+  "Pears"
+ ],
+ "280": [
+  "Tomatillo",
+  "Cucumber",
+  "Aubergine"
+ ],
+ "281": [
+  "Greece",
+  "France",
+  "Spain"
+ ],
+ "282": [
+  "The carob bean",
+  "The vanilla bean",
+  "The coffee bean"
+ ],
+ "283": [
+  "Nectar",
+  "Pollen",
+  "Silk"
+ ],
+ "284": [
+  "Flour",
+  "Milk",
+  "Cheese"
+ ],
+ "285": [
+  "The Brix scale",
+  "The Kelvin scale",
+  "The Mohs scale"
+ ],
+ "286": [
+  "Pistachio",
+  "Hazelnut",
+  "Cashew"
+ ],
+ "287": [
+  "Lamb",
+  "Mutton",
+  "Venison"
+ ],
+ "288": [
+  "South Korea",
+  "Taiwan",
+  "Portugal"
+ ],
+ "289": [
+  "Michelangelo Buonarroti",
+  "Sandro Botticelli",
+  "Raphael Sanzio"
+ ],
+ "290": [
+  "Raphael",
+  "Leonardo",
+  "Botticelli"
+ ],
+ "291": [
+  "Red, green, and blue",
+  "Cyan, magenta, and yellow",
+  "Orange, green, and purple"
+ ],
+ "292": [
+  "Roy Lichtenstein",
+  "Robert Rauschenberg",
+  "Jasper Johns"
+ ],
+ "293": [
+  "Camille Claudel",
+  "Antonio Canova",
+  "Antoine Bourdelle"
+ ],
+ "294": [
+  "Joan Miró",
+  "Salvador Dalí",
+  "Juan Gris"
+ ],
+ "295": [
+  "René Magritte",
+  "Max Ernst",
+  "Yves Tanguy"
+ ],
+ "296": [
+  "Four",
+  "Six",
+  "Seven"
+ ],
+ "297": [
+  "Three",
+  "Four",
+  "Six"
+ ],
+ "298": [
+  "Rugby",
+  "Badminton",
+  "Squash"
+ ],
+ "299": [
+  "Every two years",
+  "Every three years",
+  "Every five years"
+ ],
+ "300": [
+  "Field hockey",
+  "Curling",
+  "Water polo"
+ ],
+ "301": [
+  "Rugby (union)",
+  "Basketball (hoops)",
+  "Table tennis (ping-pong)"
+ ],
+ "302": [
+  "Floyd Mayweather",
+  "Sugar Ray Robinson",
+  "Joe Frazier"
+ ],
+ "303": [
+  "France",
+  "England",
+  "Italy"
+ ],
+ "304": [
+  "A double",
+  "A hambone",
+  "A spare"
+ ],
+ "305": [
+  "11",
+  "13",
+  "12"
+ ],
+ "306": [
+  "24",
+  "25",
+  "28"
+ ],
+ "307": [
+  "A, E, I, O, Y",
+  "A, E, I, U, Y",
+  "A, E, O, U, Y"
+ ],
+ "308": [
+  "Dutch",
+  "Italian",
+  "Romansh"
+ ],
+ "309": [
+  "Répondez si vous pouvez",
+  "Réservez s'il vous plaît",
+  "Revenez sans vous presser"
+ ],
+ "310": [
+  "Ante mane",
+  "Ante mortem",
+  "Ad matutinum"
+ ],
+ "311": [
+  "Et alii",
+  "Et sequentes",
+  "Ad infinitum"
+ ],
+ "312": [
+  "Goosen",
+  "Ganders",
+  "Goslings"
+ ],
+ "313": [
+  "World Wide Website",
+  "World Wireless Web",
+  "World Wide Wireless"
+ ],
+ "314": [
+  "Automated Intelligence",
+  "Advanced Intelligence",
+  "Artificial Interface"
+ ],
+ "315": [
+  "Nintendo",
+  "Microsoft",
+  "Sega"
+ ],
+ "318": [
+  "Universal System Bus",
+  "Unified Serial Bus",
+  "Universal Storage Bus"
+ ],
+ "319": [
+  "Published Document Format",
+  "Portable Data Format",
+  "Portable Document File"
+ ],
+ "320": [
+  "Sega",
+  "Atari",
+  "Namco"
+ ],
+ "321": [
+  "365",
+  "364",
+  "367"
+ ],
+ "322": [
+  "A pack",
+  "A troop",
+  "A herd"
+ ],
+ "323": [
+  "Five",
+  "Seven",
+  "Eight"
+ ],
+ "324": [
+  "The African elephant",
+  "The whale shark",
+  "The sperm whale"
+ ],
+ "325": [
+  "Five",
+  "Six",
+  "Eight"
+ ],
+ "326": [
+  "The leopard",
+  "The pronghorn",
+  "The springbok"
+ ],
+ "327": [
+  "Eight",
+  "Nine",
+  "Ten"
+ ],
+ "328": [
+  "The elephant",
+  "The ostrich",
+  "The camel"
+ ],
+ "329": [
+  "48",
+  "54",
+  "56"
+ ],
+ "330": [
+  "Five",
+  "Six",
+  "Ten"
+ ],
+ "331": [
+  "The horse",
+  "The cat",
+  "The dolphin"
+ ],
+ "332": [
+  "32",
+  "81",
+  "100"
+ ],
+ "333": [
+  "1,400",
+  "1,480",
+  "2,400"
+ ],
+ "334": [
+  "360",
+  "6,000",
+  "36,000"
+ ],
+ "335": [
+  "Two",
+  "Four",
+  "One"
+ ],
+ "336": [
+  "A positive",
+  "O negative",
+  "AB positive"
+ ],
+ "338": [
+  "A parliament",
+  "An unkindness",
+  "A charm"
+ ],
+ "339": [
+  "A pod (or gam)",
+  "A smack (or bloom)",
+  "A colony (or rookery)"
+ ],
+ "340": [
+  "20",
+  "30",
+  "36"
+ ],
+ "341": [
+  "Australia",
+  "Zealandia",
+  "Europe"
+ ],
+ "342": [
+  "12",
+  "30",
+  "48"
+ ],
+ "343": [
+  "Climatology",
+  "Hydrology",
+  "Nephology"
+ ],
+ "344": [
+  "12 pieces each",
+  "15 pieces each",
+  "32 pieces each"
+ ],
+ "345": [
+  "The emu",
+  "The cassowary",
+  "The Andean condor"
+ ],
+ "346": [
+  "Ruby",
+  "Emerald",
+  "Sapphire"
+ ],
+ "347": [
+  "The kingfisher",
+  "The kestrel",
+  "The swift"
+ ],
+ "348": [
+  "A parliament",
+  "A clattering",
+  "An exaltation"
+ ],
+ "349": [
+  "About 150",
+  "About 206",
+  "About 400"
+ ],
+ "350": [
+  "Z",
+  "X",
+  "J"
+ ],
+ "351": [
+  "Norway",
+  "Indonesia",
+  "Russia"
+ ],
+ "352": [
+  "Lake Superior",
+  "Lake Victoria",
+  "The Aral Sea"
+ ],
+ "353": [
+  "Europe and Asia",
+  "Africa and Europe",
+  "North and South America"
+ ],
+ "354": [
+  "The floor of Death Valley",
+  "The shore of Lake Assal",
+  "The shore of the Caspian Sea"
+ ],
+ "355": [
+  "Norway",
+  "Finland",
+  "Indonesia"
+ ],
+ "356": [
+  "Almaty",
+  "Tashkent",
+  "Bishkek"
+ ],
+ "357": [
+  "New Guinea",
+  "Borneo",
+  "Madagascar"
+ ],
+ "358": [
+  "The Red Sea",
+  "The Black Sea",
+  "The Caspian Sea"
+ ],
+ "359": [
+  "The Mesoamerican Barrier Reef",
+  "The New Caledonia Barrier Reef",
+  "The Red Sea Coral Reef"
+ ],
+ "360": [
+  "Japan",
+  "The Philippines",
+  "Chile"
+ ],
+ "361": [
+  "The Pacific and the Indian",
+  "The Atlantic and the Indian",
+  "The Arctic and the Pacific"
+ ],
+ "362": [
+  "Bhutan",
+  "Qatar",
+  "Belgium"
+ ],
+ "363": [
+  "The Altai Mountains",
+  "The Carpathian Mountains",
+  "The Pamir Mountains"
+ ],
+ "364": [
+  "Lake Tanganyika",
+  "Lake Malawi",
+  "Lake Chad"
+ ],
+ "365": [
+  "Spain",
+  "France",
+  "Germany"
+ ],
+ "366": [
+  "Florida",
+  "California",
+  "Hawaii"
+ ],
+ "367": [
+  "Zurich",
+  "Geneva",
+  "Lausanne"
+ ],
+ "368": [
+  "Bogotá, Colombia",
+  "Sucre, Bolivia",
+  "Cusco, Peru"
+ ],
+ "369": [
+  "The Taklamakan Desert",
+  "The Karakum Desert",
+  "The Thar Desert"
+ ],
+ "370": [
+  "The Colorado River",
+  "The Pecos River",
+  "The Rio Conchos"
+ ],
+ "371": [
+  "The tibia",
+  "The humerus",
+  "The fibula"
+ ],
+ "372": [
+  "The incus, in the middle ear",
+  "The malleus, in the middle ear",
+  "The pisiform, in the wrist"
+ ],
+ "373": [
+  "The liver",
+  "The spleen",
+  "The gallbladder"
+ ],
+ "374": [
+  "Two",
+  "Three",
+  "Five"
+ ],
+ "375": [
+  "The heart",
+  "The kidney",
+  "The pancreas"
+ ],
+ "376": [
+  "Three",
+  "Seven",
+  "Nine"
+ ],
+ "377": [
+  "The sperm cell (spermatozoon)",
+  "The liver cell (hepatocyte)",
+  "The skin cell (keratinocyte)"
+ ],
+ "378": [
+  "The blue whale",
+  "The African elephant",
+  "The killer whale"
+ ],
+ "379": [
+  "The golden eagle",
+  "The Eurasian hobby",
+  "The white-throated needletail"
+ ],
+ "380": [
+  "The vervain hummingbird",
+  "The ruby-throated hummingbird",
+  "The goldcrest"
+ ],
+ "381": [
+  "Helium",
+  "Oxygen",
+  "Carbon"
+ ],
+ "382": [
+  "P",
+  "Po",
+  "Na"
+ ],
+ "383": [
+  "Neptunium",
+  "Titanium",
+  "Tellurium"
+ ],
+ "384": [
+  "Oxygen",
+  "Nitrogen",
+  "Carbon monoxide"
+ ],
+ "385": [
+  "0",
+  "8",
+  "14"
+ ],
+ "386": [
+  "Jupiter",
+  "Uranus",
+  "Neptune"
+ ],
+ "387": [
+  "Vespertine",
+  "Matutinal",
+  "Cathemeral"
+ ],
+ "388": [
+  "The basking shark",
+  "The great white shark",
+  "The blue whale"
+ ],
+ "389": [
+  "Vitamin D3",
+  "Vitamin B1",
+  "Vitamin B12"
+ ],
+ "390": [
+  "21",
+  "22",
+  "24"
+ ],
+ "391": [
+  "Deposition",
+  "Evaporation",
+  "Efflorescence"
+ ],
+ "392": [
+  "Sedimentary rock",
+  "Metamorphic rock",
+  "Evaporite rock"
+ ],
+ "393": [
+  "Alexander III",
+  "Alexander II",
+  "Ivan IV"
+ ],
+ "394": [
+  "The Seven Years' War",
+  "The Crimean War",
+  "The War of 1812"
+ ],
+ "395": [
+  "Joseph Bonaparte",
+  "Joachim Murat",
+  "Jean-Baptiste Bernadotte"
+ ],
+ "396": [
+  "1787",
+  "1792",
+  "1799"
+ ],
+ "397": [
+  "The Mughal Empire",
+  "The Timurid Empire",
+  "The Hunnic Empire"
+ ],
+ "398": [
+  "The Temple of Artemis (Artemision)",
+  "The Serapeum of Alexandria (Serapeion)",
+  "The Library of Alexandria (Mouseion)"
+ ],
+ "399": [
+  "Queen Victoria",
+  "King George III",
+  "King Henry III"
+ ],
+ "400": [
+  "1979",
+  "1984",
+  "1987"
+ ],
+ "401": [
+  "Cambodia",
+  "Myanmar",
+  "Laos"
+ ],
+ "402": [
+  "Zhu Di",
+  "Li Zicheng",
+  "Liu Bang"
+ ],
+ "403": [
+  "1984",
+  "1996",
+  "1999"
+ ],
+ "404": [
+  "Carta de Foresta",
+  "Domesday Book",
+  "Bill of Rights"
+ ],
+ "405": [
+  "The Montgolfier brothers",
+  "The Voisin brothers",
+  "The Lumière brothers"
+ ],
+ "406": [
+  "The Inca Empire",
+  "The Toltec Empire",
+  "The Tarascan Empire"
+ ],
+ "407": [
+  "Bertha von Suttner",
+  "Selma Lagerlöf",
+  "Jane Addams"
+ ],
+ "408": [
+  "Hawaii",
+  "Oregon",
+  "Washington"
+ ],
+ "409": [
+  "Operation Dragoon",
+  "Operation Fortitude",
+  "Operation Market Garden"
+ ],
+ "410": [
+  "The Qin dynasty",
+  "The Han dynasty",
+  "The Sui dynasty"
+ ],
+ "411": [
+  "Hermann Hesse",
+  "Thomas Mann",
+  "Stefan Zweig"
+ ],
+ "412": [
+  "Billy Budd",
+  "Robinson Crusoe",
+  "Lord Jim"
+ ],
+ "413": [
+  "Aldous Huxley",
+  "Kurt Vonnegut",
+  "Philip K. Dick"
+ ],
+ "414": [
+  "Bilbo Baggins",
+  "Samwise Gamgee",
+  "Peregrin Took"
+ ],
+ "415": [
+  "Henry Wadsworth Longfellow",
+  "Nathaniel Hawthorne",
+  "Walt Whitman"
+ ],
+ "416": [
+  "Alice Munro",
+  "Ursula K. Le Guin",
+  "Doris Lessing"
+ ],
+ "417": [
+  "A villanelle",
+  "A sestina",
+  "A ballade"
+ ],
+ "418": [
+  "Fyodor Dostoevsky",
+  "Ivan Turgenev",
+  "Anton Chekhov"
+ ],
+ "419": [
+  "Gabriela Mistral",
+  "Nicanor Parra",
+  "Vicente Huidobro"
+ ],
+ "420": [
+  "A parody",
+  "A satire",
+  "A parable"
+ ],
+ "421": [
+  "Jean de Brunhoff",
+  "Guy de Maupassant",
+  "Albert Camus"
+ ],
+ "422": [
+  "The Essex",
+  "The Rachel",
+  "The Acushnet"
+ ],
+ "423": [
+  "Tanka",
+  "Waka",
+  "Kanshi"
+ ],
+ "424": [
+  "Alice Walker",
+  "Maya Angelou",
+  "Zora Neale Hurston"
+ ],
+ "425": [
+  "The Stanley Hotel",
+  "The Timberline Lodge",
+  "The Bates Motel"
+ ],
+ "426": [
+  "The Black Hole",
+  "Event Horizon",
+  "The Thing"
+ ],
+ "427": [
+  "Martin Scorsese",
+  "Brian De Palma",
+  "Sergio Leone"
+ ],
+ "428": [
+  "Benji",
+  "Nana",
+  "Snowy"
+ ],
+ "429": [
+  "A Pontiac",
+  "A Lotus",
+  "A Mercedes-Benz"
+ ],
+ "430": [
+  "The Cat Returns",
+  "Kiki's Delivery Service",
+  "Whisper of the Heart"
+ ],
+ "431": [
+  "Tim Allen",
+  "Billy Crystal",
+  "Owen Wilson"
+ ],
+ "432": [
+  "Parks and Recreation",
+  "Superstore",
+  "Abbott Elementary"
+ ],
+ "433": [
+  "Isla Sorna",
+  "Isla Matanceros",
+  "Isla Muerta"
+ ],
+ "434": [
+  "Sean Connery",
+  "Daniel Craig",
+  "Pierce Brosnan"
+ ],
+ "435": [
+  "Aldovia",
+  "Florin",
+  "Ruritania"
+ ],
+ "436": [
+  "Orson Welles",
+  "Billy Wilder",
+  "Fritz Lang"
+ ],
+ "437": [
+  "Metropolis",
+  "Central City",
+  "Star City"
+ ],
+ "438": [
+  "Mr. Slate",
+  "Mr. Spacely",
+  "Mr. Krabs"
+ ],
+ "439": [
+  "American Beauty",
+  "Office Space",
+  "Magnolia"
+ ],
+ "440": [
+  "AUTO",
+  "M-O",
+  "BURN-E"
+ ],
+ "441": [
+  "Shanghai Noon",
+  "Bad Boys",
+  "Lethal Weapon"
+ ],
+ "442": [
+  "Amity Island",
+  "Shutter Island",
+  "Pleasantville"
+ ],
+ "443": [
+  "Rocko's Modern Life",
+  "Fish Hooks",
+  "Octonauts"
+ ],
+ "444": [
+  "Fallen Angels",
+  "Ashes of Time",
+  "Happy Together"
+ ],
+ "445": [
+  "Nina Simone",
+  "Gladys Knight",
+  "Diana Ross"
+ ],
+ "446": [
+  "Gwen Stefani",
+  "Katy Perry",
+  "Ariana Grande"
+ ],
+ "447": [
+  "The glockenspiel",
+  "The vibraphone",
+  "The celesta"
+ ],
+ "448": [
+  "Josef Strauss",
+  "Joseph Lanner",
+  "Franz Lehár"
+ ],
+ "449": [
+  "Macklemore",
+  "Drake",
+  "Ludacris"
+ ],
+ "450": [
+  "Three",
+  "Five",
+  "Two"
+ ],
+ "451": [
+  "Blues",
+  "Ragtime",
+  "Zydeco"
+ ],
+ "452": [
+  "Bars per minute",
+  "Beats per measure",
+  "Bass pulse modulation"
+ ],
+ "453": [
+  "The shinobue",
+  "The ryuteki",
+  "The nokan"
+ ],
+ "454": [
+  "The cello",
+  "The viola",
+  "The bass guitar"
+ ],
+ "455": [
+  "Claude Debussy",
+  "Erik Satie",
+  "Gabriel Fauré"
+ ],
+ "456": [
+  "Madonna",
+  "Sting",
+  "Seal"
+ ],
+ "457": [
+  "Diminuendo",
+  "Accelerando",
+  "Sforzando"
+ ],
+ "458": [
+  "The dharma drum (faat gu / fagu)",
+  "The singing bowl (hing / qing)",
+  "The clapper board (paak baan / paiban)"
+ ],
+ "459": [
+  "A minor",
+  "C-sharp major",
+  "G-flat major"
+ ],
+ "460": [
+  "Altamont",
+  "Monterey Pop",
+  "Watkins Glen"
+ ],
+ "461": [
+  "Umeshu",
+  "Soju",
+  "Makgeolli"
+ ],
+ "462": [
+  "Parsley",
+  "Oregano",
+  "Coriander"
+ ],
+ "463": [
+  "Beetroot",
+  "Leek",
+  "Pumpkin"
+ ],
+ "465": [
+  "Amaretti",
+  "Savoiardi",
+  "Pizzelle"
+ ],
+ "466": [
+  "Adzuki beans",
+  "Broad beans",
+  "Mung beans"
+ ],
+ "467": [
+  "Strong green tea (typically Longjing)",
+  "Strong oolong tea (typically Tieguanyin)",
+  "Strong jasmine tea (typically Fujian)"
+ ],
+ "469": [
+  "Ireland",
+  "United Kingdom",
+  "Morocco"
+ ],
+ "470": [
+  "A fresh, unleavened flatbread",
+  "A thick, strained yoghurt",
+  "A clarified, nutty butter"
+ ],
+ "471": [
+  "Bún chả",
+  "Bún thịt nướng",
+  "Bánh mì"
+ ],
+ "473": [
+  "Pulque",
+  "Pisco",
+  "Cachaça"
+ ],
+ "474": [
+  "Siu mai",
+  "Fun guo",
+  "Cheung fun"
+ ],
+ "475": [
+  "Symbolism",
+  "Fauvism",
+  "Realism"
+ ],
+ "476": [
+  "Collage",
+  "Marquetry",
+  "Decoupage"
+ ],
+ "477": [
+  "Ferdinand de Lesseps",
+  "Charles Garnier",
+  "Georges-Eugène Haussmann"
+ ],
+ "478": [
+  "Cloisonnism",
+  "Tachisme",
+  "Impasto"
+ ],
+ "479": [
+  "Pieter de Hooch",
+  "Frans Hals",
+  "Carel Fabritius"
+ ],
+ "480": [
+  "Maki-e",
+  "Wabi-sabi",
+  "Raku"
+ ],
+ "481": [
+  "Walter Gropius",
+  "Louis Henry Sullivan",
+  "Le Corbusier"
+ ],
+ "482": [
+  "Rome",
+  "Venice",
+  "Siena"
+ ],
+ "483": [
+  "Preah Vihear",
+  "Koh Ker",
+  "Beng Mealea"
+ ],
+ "484": [
+  "Jeff Koons",
+  "Olafur Eliasson",
+  "Richard Serra"
+ ],
+ "485": [
+  "Art Nouveau",
+  "Bauhaus",
+  "International Style"
+ ],
+ "486": [
+  "The xiyuan",
+  "The tingzi",
+  "The paifang"
+ ],
+ "487": [
+  "32",
+  "36",
+  "44"
+ ],
+ "488": [
+  "150",
+  "170",
+  "171"
+ ],
+ "489": [
+  "16 inches",
+  "20 inches",
+  "24 inches"
+ ],
+ "490": [
+  "China",
+  "Japan",
+  "France"
+ ],
+ "491": [
+  "Checkmate",
+  "Zugzwang",
+  "Deadlock"
+ ],
+ "492": [
+  "Four",
+  "Five",
+  "Seven"
+ ],
+ "493": [
+  "The Grey Cup",
+  "The Calder Cup",
+  "The Presidents' Trophy"
+ ],
+ "494": [
+  "Tennis",
+  "Sailing",
+  "Cricket"
+ ],
+ "495": [
+  "Jujitsu",
+  "Aikido",
+  "Kendo"
+ ],
+ "496": [
+  "10",
+  "15",
+  "16"
+ ],
+ "497": [
+  "200",
+  "270",
+  "330"
+ ],
+ "498": [
+  "Rounders",
+  "Baseball",
+  "Lacrosse"
+ ],
+ "499": [
+  "Homophones",
+  "Synonyms",
+  "Paronyms"
+ ],
+ "500": [
+  "Two",
+  "Body",
+  "Nature"
+ ],
+ "501": [
+  "Japanese",
+  "Mongolian",
+  "Vietnamese"
+ ],
+ "502": [
+  "Litotes",
+  "Hyperbaton",
+  "Metaphor"
+ ],
+ "503": [
+  "In place of another",
+  "Word for word",
+  "In the same way"
+ ],
+ "504": [
+  "Hindi",
+  "Malay",
+  "Tagalog"
+ ],
+ "505": [
+  "An initialism",
+  "A contraction",
+  "A portmanteau"
+ ],
+ "506": [
+  "About 800",
+  "About 10,000",
+  "About 50,000"
+ ],
+ "507": [
+  "A lipogram",
+  "A tautogram",
+  "An anagram"
+ ],
+ "508": [
+  "A synonym",
+  "A homonym",
+  "A hyponym"
+ ],
+ "509": [
+  "Random-Order Memory",
+  "Read-Once Memory",
+  "Rapid-Output Memory"
+ ],
+ "510": [
+  "Howard Aiken",
+  "Jean Bartik",
+  "John von Neumann"
+ ],
+ "511": [
+  "Graphics Image Format",
+  "Graphical Interface Format",
+  "General Image File"
+ ],
+ "512": [
+  "Motorola",
+  "Texas Instruments",
+  "Zilog"
+ ],
+ "513": [
+  "Uniform Resource Identifier",
+  "Uniform Resource Link",
+  "Unique Resource Locator"
+ ],
+ "514": [
+  "Advanced Encoding Standard",
+  "Automated Encryption System",
+  "Asymmetric Encryption Scheme"
+ ],
+ "517": [
+  "DNS",
+  "ARP",
+  "NAT"
+ ],
+ "518": [
+  "The Fairchild Channel F",
+  "The Magnavox Odyssey",
+  "The Mattel Intellivision"
+ ],
+ "519": [
+  "A leap",
+  "A pack",
+  "A drove"
+ ],
+ "520": [
+  "A gaggle",
+  "A paddling",
+  "A murmuration"
+ ],
+ "521": [
+  "Agoraphobia",
+  "Acrophobia",
+  "Nyctophobia"
+ ],
+ "522": [
+  "Entomophobia",
+  "Ophidiophobia",
+  "Apiphobia"
+ ],
+ "523": [
+  "The columella",
+  "The vermilion",
+  "The glabella"
+ ],
+ "525": [
+  "Silver",
+  "Ruby",
+  "Diamond"
+ ],
+ "526": [
+  "Six",
+  "Ten",
+  "Twelve"
+ ],
+ "527": [
+  "Florida",
+  "Louisiana",
+  "Texas"
+ ],
+ "528": [
+  "A nonagon",
+  "A hendecagon",
+  "An octagon"
+ ],
+ "529": [
+  "A herbivore",
+  "An insectivore",
+  "A scavenger"
+ ],
+ "530": [
+  "32°F",
+  "100°F",
+  "180°F"
+ ],
+ "531": [
+  "A gaggle",
+  "A chatter",
+  "A pride"
+ ],
+ "532": [
+  "Four",
+  "Six",
+  "Seven"
+ ],
+ "534": [
+  "Vulcanology",
+  "Orology",
+  "Limnology"
+ ],
+ "536": [
+  "A palindrome",
+  "A spoonerism",
+  "An acrostic"
+ ],
+ "537": [
+  "Saffron",
+  "Cinnamon",
+  "Green cardamom"
+ ],
+ "538": [
+  "An array",
+  "A quiver",
+  "A sleuth"
+ ],
+ "539": [
+  "Uranus",
+  "Saturn",
+  "Pluto"
+ ],
+ "540": [
+  "A common year",
+  "A lunar year",
+  "A solar year"
+ ],
+ "542": [
+  "The shoreline",
+  "The zenith",
+  "The equator"
+ ],
+ "543": [
+  "Three",
+  "Five",
+  "Six"
+ ],
+ "544": [
+  "The summer solstice",
+  "The vernal equinox",
+  "The autumnal equinox"
+ ],
+ "545": [
+  "Gallium",
+  "Caesium",
+  "Bromine"
+ ],
+ "546": [
+  "Iraq",
+  "Turkmenistan",
+  "Azerbaijan"
+ ],
+ "547": [
+  "Bolivia",
+  "Sri Lanka",
+  "Malaysia"
+ ],
+ "548": [
+  "The Challenger Deep, in the Mariana Trench",
+  "The Meteor Deep, in the South Sandwich Trench",
+  "The Molloy Deep, in the Fram Strait"
+ ],
+ "549": [
+  "Norway",
+  "Russia",
+  "Greenland"
+ ],
+ "550": [
+  "Minjerribah (North Stradbroke Island), Australia",
+  "Mulgumpin (Moreton Island), Australia",
+  "Padre Island, United States"
+ ],
+ "551": [
+  "Indonesia",
+  "East Timor",
+  "Solomon Islands"
+ ],
+ "552": [
+  "Quebec",
+  "Queensland",
+  "Qinghai"
+ ],
+ "553": [
+  "Libya",
+  "Oman",
+  "United Arab Emirates"
+ ],
+ "554": [
+  "Lake Poopó",
+  "Lake Issyk-Kul",
+  "Lake Tahoe"
+ ],
+ "555": [
+  "The Davis Strait",
+  "The Tatar Strait",
+  "The Hudson Strait"
+ ],
+ "556": [
+  "The Scandinavian Peninsula",
+  "The Labrador Peninsula",
+  "The Indochinese Peninsula"
+ ],
+ "557": [
+  "Missouri and Colorado",
+  "Tennessee and Kentucky",
+  "Kentucky and Colorado"
+ ],
+ "558": [
+  "Egypt",
+  "Ethiopia",
+  "Mali"
+ ],
+ "559": [
+  "Pathogenesis (pathogeny)",
+  "Nosology (nosography)",
+  "Palaeopathology (paleopathology)"
+ ],
+ "560": [
+  "The gluon",
+  "The Z boson",
+  "The graviton"
+ ],
+ "561": [
+  "Oxygen",
+  "Aluminium",
+  "Iron"
+ ],
+ "562": [
+  "The curie",
+  "The sievert",
+  "The gray"
+ ],
+ "563": [
+  "Aphelion",
+  "Perigee",
+  "Perijove"
+ ],
+ "564": [
+  "The pons",
+  "The medulla oblongata",
+  "The thalamus"
+ ],
+ "565": [
+  "Charles's Law",
+  "Gay-Lussac's Law",
+  "Avogadro's Law"
+ ],
+ "566": [
+  "Enceladus",
+  "Rhea",
+  "Iapetus"
+ ],
+ "567": [
+  "Beta radiation",
+  "Gamma radiation",
+  "Neutron radiation"
+ ],
+ "568": [
+  "The bar",
+  "The newton",
+  "The torr"
+ ],
+ "569": [
+  "Exocytosis",
+  "Transcytosis",
+  "Cytolysis"
+ ],
+ "570": [
+  "Corundum",
+  "Topaz",
+  "Moissanite"
+ ],
+ "571": [
+  "A poikilotherm",
+  "A thermophile",
+  "A thermoconformer"
+ ],
+ "572": [
+  "The pulmonary artery",
+  "The vena cava",
+  "The carotid artery"
+ ],
+ "573": [
+  "The Treaty of Zaragoza",
+  "The Treaty of Alcáçovas",
+  "The Treaty of Madrid"
+ ],
+ "574": [
+  "Theodosius the Great",
+  "Justinian the Great",
+  "Julian the Apostate"
+ ],
+ "575": [
+  "The Battle of Stamford Bridge",
+  "The Battle of Fulford",
+  "The Battle of Bosworth"
+ ],
+ "576": [
+  "The regency (sekkan)",
+  "The cloistered rule (insei)",
+  "The imperial court (chōtei)"
+ ],
+ "577": [
+  "The Congress of Berlin",
+  "The Brussels Conference",
+  "The Algeciras Conference"
+ ],
+ "578": [
+  "Hamilcar",
+  "Himilco",
+  "Xanthippus"
+ ],
+ "579": [
+  "The Qin dynasty",
+  "The Northern Zhou dynasty",
+  "The Chen dynasty"
+ ],
+ "580": [
+  "The Congress of Aix-la-Chapelle",
+  "The Congress of Berlin",
+  "The Congress of Verona"
+ ],
+ "581": [
+  "Vallabhbhai Patel",
+  "Rajendra Prasad",
+  "Lal Bahadur Shastri"
+ ],
+ "582": [
+  "The First Sino-Japanese War",
+  "The First Anglo-Afghan War",
+  "The Taiping Rebellion"
+ ],
+ "583": [
+  "Sputnik 2",
+  "Voskhod 1",
+  "Friendship 7"
+ ],
+ "584": [
+  "Akhenaten",
+  "Ramesses II",
+  "Thutmose IV"
+ ],
+ "585": [
+  "The Qajar Empire",
+  "The Mughal Empire",
+  "The Austro-Hungarian Empire"
+ ],
+ "586": [
+  "Sei Shonagon",
+  "Izumi Shikibu",
+  "Akazome Emon"
+ ],
+ "587": [
+  "Samuel Beckett",
+  "Flann O'Brien",
+  "Oscar Wilde"
+ ],
+ "588": [
+  "An ode",
+  "A panegyric",
+  "An epithalamium"
+ ],
+ "590": [
+  "John Gower",
+  "William Langland",
+  "Giovanni Boccaccio"
+ ],
+ "591": [
+  "Chinua Achebe",
+  "Ben Okri",
+  "Femi Osofisan"
+ ],
+ "592": [
+  "Tom Buchanan",
+  "Jordan Baker",
+  "George Wilson"
+ ],
+ "593": [
+  "The Castle",
+  "The Metamorphosis",
+  "Amerika"
+ ],
+ "594": [
+  "Richard Wright",
+  "James Baldwin",
+  "H. G. Wells"
+ ],
+ "595": [
+  "Ottava rima",
+  "Rhyme royal",
+  "Sestina"
+ ],
+ "596": [
+  "War and Peace",
+  "Hadji Murat",
+  "The Kreutzer Sonata"
+ ],
+ "597": [
+  "Jack Kerouac",
+  "Tom Wolfe",
+  "Joseph Heller"
+ ],
+ "598": [
+  "One Flew Over the Cuckoo's Nest (1975)",
+  "The Silence of the Lambs (1991)",
+  "Gone with the Wind (1939)"
+ ],
+ "599": [
+  "Yojimbo",
+  "Throne of Blood",
+  "The Hidden Fortress"
+ ],
+ "600": [
+  "The Thirteenth Floor",
+  "eXistenZ",
+  "The Mummy"
+ ],
+ "601": [
+  "The New York Chronicle",
+  "The New York Journal",
+  "The New York Globe"
+ ],
+ "602": [
+  "Meryl Streep, with four",
+  "Jack Nicholson, with four",
+  "Daniel Day-Lewis, with four"
+ ],
+ "603": [
+  "A Better Tomorrow",
+  "Election",
+  "Cold War"
+ ],
+ "604": [
+  "Elite Squad",
+  "Black Orpheus",
+  "Central Station"
+ ],
+ "605": [
+  "Full Metal Jacket",
+  "Eyes Wide Shut",
+  "Barry Lyndon"
+ ],
+ "606": [
+  "MU-TH-UR 6000",
+  "GERTY 3000",
+  "Proteus IV"
+ ],
+ "607": [
+  "The Corner",
+  "Treme",
+  "The Deuce"
+ ],
+ "608": [
+  "David Cronenberg",
+  "Chris Carter",
+  "Terry Gilliam"
+ ],
+ "609": [
+  "Nosferatu",
+  "Woman in the Moon",
+  "The Golem"
+ ],
+ "610": [
+  "Tsui Hark",
+  "Ringo Lam",
+  "Kirk Wong"
+ ],
+ "611": [
+  "Allegro",
+  "Vivace",
+  "Allegretto"
+ ],
+ "612": [
+  "Sergei Prokofiev",
+  "Claude Debussy",
+  "Maurice Ravel"
+ ],
+ "613": [
+  "A perfect fourth",
+  "A major third",
+  "A major sixth"
+ ],
+ "614": [
+  "Pharoah Sanders",
+  "Sonny Rollins",
+  "Wayne Shorter"
+ ],
+ "615": [
+  "A duplet",
+  "A quadruplet",
+  "A quintuplet"
+ ],
+ "616": [
+  "The sarod",
+  "The veena",
+  "The tanpura"
+ ],
+ "617": [
+  "Mezzo-soprano",
+  "Soprano",
+  "Countertenor"
+ ],
+ "618": [
+  "Charles Gounod",
+  "Jules Massenet",
+  "Léo Delibes"
+ ],
+ "619": [
+  "Stephen Sondheim",
+  "Richard Rodgers",
+  "Aaron Copland"
+ ],
+ "620": [
+  "Harmony",
+  "Heterophony",
+  "Antiphony"
+ ],
+ "621": [
+  "Sanjo",
+  "Gagok",
+  "Pungmul"
+ ],
+ "622": [
+  "Seven",
+  "Six",
+  "Eight"
+ ],
+ "623": [
+  "Okara",
+  "Shiokara",
+  "Umeboshi"
+ ],
+ "624": [
+  "Aspergillus",
+  "Botrytis",
+  "Geotrichum"
+ ],
+ "625": [
+  "The anther",
+  "The filament",
+  "The petal"
+ ],
+ "626": [
+  "Fo hau",
+  "Siu mei",
+  "Lou mei"
+ ],
+ "627": [
+  "Citric acid",
+  "Butyric acid",
+  "Propionic acid"
+ ],
+ "628": [
+  "Fonio",
+  "Amaranth",
+  "Spelt"
+ ],
+ "629": [
+  "Madeira",
+  "Vin Santo",
+  "Sherry"
+ ],
+ "630": [
+  "Kombu",
+  "Wakame",
+  "Hijiki"
+ ],
+ "631": [
+  "Chile",
+  "Colombia",
+  "Brazil"
+ ],
+ "632": [
+  "Doenjang",
+  "Ssamjang",
+  "Cheonggukjang"
+ ],
+ "634": [
+  "Pieter Bruegel",
+  "Hans Memling",
+  "Joachim Patinir"
+ ],
+ "635": [
+  "A quadriptych",
+  "A predella",
+  "A reredos"
+ ],
+ "636": [
+  "El Lissitzky",
+  "Vladimir Tatlin",
+  "Alexander Rodchenko"
+ ],
+ "637": [
+  "Chiaroscuro",
+  "Cangiante",
+  "Pentimento"
+ ],
+ "638": [
+  "Arne Jacobsen",
+  "Henning Larsen",
+  "Bjarke Ingels"
+ ],
+ "639": [
+  "George Rickey",
+  "Isamu Noguchi",
+  "David Smith"
+ ],
+ "640": [
+  "Formalism",
+  "Iconoclasm",
+  "Connoisseurship"
+ ],
+ "641": [
+  "José Clemente Orozco",
+  "David Alfaro Siqueiros",
+  "Rufino Tamayo"
+ ],
+ "642": [
+  "Frank Gehry",
+  "Marcel Breuer",
+  "Louis Kahn"
+ ],
+ "643": [
+  "Aerial perspective",
+  "Isometric projection",
+  "Foreshortening"
+ ],
+ "644": [
+  "Gongbi — meticulous brush painting",
+  "Mogu — boneless painting",
+  "Jiehua — ruled-line painting"
+ ],
+ "646": [
+  "The Soviet Union",
+  "The United Kingdom",
+  "China"
+ ],
+ "647": [
+  "41.860 km",
+  "42.750 km",
+  "40.260 km"
+ ],
+ "648": [
+  "A maiden",
+  "A dolly",
+  "A Nelson"
+ ],
+ "650": [
+  "The Preakness Stakes",
+  "The Belmont Stakes",
+  "The Epsom Derby"
+ ],
+ "651": [
+  "The tatami",
+  "The keikoba",
+  "The kokugikan"
+ ],
+ "652": [
+  "140",
+  "150",
+  "180"
+ ],
+ "653": [
+  "12 minutes",
+  "15 minutes",
+  "25 minutes"
+ ],
+ "654": [
+  "The French Defence",
+  "The Caro-Kann Defence",
+  "The Scandinavian Defence"
+ ],
+ "655": [
+  "Aji",
+  "Seki",
+  "Atari"
+ ],
+ "656": [
+  "Homographs",
+  "Heteronyms",
+  "Synonyms"
+ ],
+ "657": [
+  "Altaic (Transeurasian)",
+  "Baltic (Balto-Slavic)",
+  "Nordic (North Germanic)"
+ ],
+ "658": [
+  "A phoneme",
+  "A lexeme",
+  "A syllable"
+ ],
+ "659": [
+  "Korean",
+  "Chinese",
+  "Vietnamese"
+ ],
+ "660": [
+  "An idiolect",
+  "A proverb",
+  "A cliché"
+ ],
+ "661": [
+  "Morphology",
+  "Semantics",
+  "Pragmatics"
+ ],
+ "663": [
+  "A heteronym (heterophone)",
+  "A semordnilap (heteropalindrome)",
+  "An oxymoron (contradictio in terminis)"
+ ],
+ "664": [
+  "Descriptive linguistics",
+  "Structural linguistics",
+  "Cognitive linguistics"
+ ],
+ "665": [
+  "A descriptive trademark (merely descriptive mark)",
+  "A diluted trademark (blurred mark)",
+  "A collective trademark (membership mark)"
+ ],
+ "666": [
+  "Transfer Control Protocol",
+  "Transport Connection Protocol",
+  "Transmission Channel Protocol"
+ ],
+ "667": [
+  "Mergesort",
+  "Heapsort",
+  "Shellsort"
+ ],
+ "668": [
+  "2006",
+  "2008",
+  "2009"
+ ],
+ "669": [
+  "Application Protocol Interface",
+  "Automated Programming Interface",
+  "Application Process Integration"
+ ],
+ "670": [
+  "Xerox PARC",
+  "Project MAC",
+  "IBM Research"
+ ],
+ "671": [
+  "A queue",
+  "A heap",
+  "A linked list"
+ ],
+ "672": [
+  "MAC addresses",
+  "Port numbers",
+  "Subnet masks"
+ ],
+ "673": [
+  "Object-oriented programming",
+  "Procedural programming",
+  "Imperative programming"
+ ],
+ "674": [
+  "A byte",
+  "A nibble",
+  "A word"
+ ],
+ "675": [
+  "Random Array of Independent Disks",
+  "Redundant Array of Integrated Drives",
+  "Reliable Archive of Indexed Data"
+ ],
+ "676": [
+  "B",
+  "D",
+  "Go"
+ ],
+ "677": [
+  "A bloat",
+  "A memory",
+  "An obstinacy"
+ ],
+ "678": [
+  "Paraskevidekatriaphobia",
+  "Tetraphobia",
+  "Arithmophobia"
+ ],
+ "679": [
+  "19",
+  "26",
+  "32"
+ ],
+ "680": [
+  "8",
+  "10",
+  "20"
+ ],
+ "681": [
+  "8",
+  "9",
+  "13"
+ ],
+ "682": [
+  "A paddling",
+  "A bloat",
+  "A smack"
+ ],
+ "683": [
+  "Phrenology",
+  "Palaeography",
+  "Physiognomy"
+ ],
+ "684": [
+  "Sulphur dioxide",
+  "Nitrogen",
+  "Methane"
+ ],
+ "685": [
+  "Claustrophobia",
+  "Anthropophobia",
+  "Nyctophobia"
+ ],
+ "686": [
+  "12",
+  "24",
+  "30"
+ ],
+ "687": [
+  "A romp",
+  "A mischief",
+  "A skulk"
+ ],
+ "688": [
+  "The lumen",
+  "The lux",
+  "The kelvin"
+ ],
+ "689": [
+  "Heraldry",
+  "Onomastics",
+  "Prosopography"
+ ],
+ "690": [
+  "Et cetera",
+  "Et sequentes",
+  "Et uxor"
+ ],
+ "691": [
+  "17",
+  "19",
+  "38"
+ ],
+ "692": [
+  "An unkindness",
+  "An ambush",
+  "An obstinacy"
+ ],
+ "693": [
+  "Philately",
+  "Scripophily",
+  "Phaleristics"
+ ],
+ "694": [
+  "An anagram",
+  "A monogram",
+  "A palindrome"
+ ],
+ "695": [
+  "A sesquicentenary (sesquicentennial)",
+  "A semicentenary (semicentennial)",
+  "A millenary (millennial)"
+ ],
+ "696": [
+  "Franz Liszt",
+  "Robert Schumann",
+  "Karol Szymanowski"
+ ],
+ "698": [
+  "Prelude Op. 28 No. 4",
+  "Prelude Op. 28 No. 17",
+  "Prelude Op. 28 No. 20"
+ ],
+ "699": [
+  "The overthrow of Charles X during the July Revolution",
+  "The Russian crushing of the Decembrist revolt in Saint Petersburg",
+  "The Austrian seizure of Kraków during the Kraków Uprising"
+ ],
+ "700": [
+  "Kraków",
+  "Poznań",
+  "Vienna"
+ ],
+ "702": [
+  "Vienna",
+  "Warsaw",
+  "London"
+ ],
+ "703": [
+  "Symphony No. 5",
+  "Symphony No. 7",
+  "Symphony No. 9"
+ ],
+ "704": [
+  "Symphony No. 3",
+  "Symphony No. 7",
+  "Symphony No. 9"
+ ],
+ "706": [
+  "A sonatina",
+  "An impromptu",
+  "A nocturne"
+ ],
+ "707": [
+  "Egmont",
+  "Genoveva",
+  "Idomeneo"
+ ],
+ "708": [
+  "Symphony No. 5",
+  "Symphony No. 7",
+  "Symphony No. 8"
+ ],
+ "709": [
+  "Johann Wolfgang von Goethe",
+  "Friedrich Hölderlin",
+  "Heinrich Heine"
+ ],
+ "710": [
+  "A Little Dance Music",
+  "A Little Table Music",
+  "A Little Morning Music"
+ ],
+ "711": [
+  "Prague",
+  "Linz",
+  "Haffner"
+ ],
+ "712": [
+  "Così fan tutte",
+  "Le nozze di Figaro",
+  "La clemenza di Tito"
+ ],
+ "713": [
+  "Vienna",
+  "Linz",
+  "Innsbruck"
+ ],
+ "714": [
+  "The Art of Fugue",
+  "The Musical Offering",
+  "The Inventions and Sinfonias"
+ ],
+ "715": [
+  "The Diabelli Variations",
+  "The Handel Variations",
+  "The Paganini Variations"
+ ],
+ "716": [
+  "The harpsichord",
+  "The clavichord",
+  "The piano"
+ ],
+ "717": [
+  "The cello",
+  "The flute",
+  "The mandolin"
+ ],
+ "718": [
+  "Richard Strauss",
+  "Gustav Mahler",
+  "Anton Bruckner"
+ ],
+ "719": [
+  "Götterdämmerung (Twilight of the Gods)",
+  "Der fliegende Holländer (The Flying Dutchman)",
+  "Die Meistersinger von Nürnberg (The Mastersingers of Nuremberg)"
+ ],
+ "720": [
+  "Judas Maccabaeus",
+  "Israel in Egypt",
+  "Solomon"
+ ],
+ "721": [
+  "Queen Anne",
+  "King George III",
+  "King William III"
+ ],
+ "722": [
+  "Bedřich Smetana",
+  "Leoš Janáček",
+  "Bohuslav Martinů"
+ ],
+ "723": [
+  "Fredrik Pacius",
+  "Einojuhani Rautavaara",
+  "Carl Nielsen"
+ ],
+ "724": [
+  "Jean Sibelius",
+  "Johan Svendsen",
+  "Christian Sinding"
+ ],
+ "725": [
+  "Nikolai Rimsky-Korsakov",
+  "Alexander Borodin",
+  "Mikhail Glinka"
+ ],
+ "726": [
+  "Swan Lake, Giselle, and The Nutcracker",
+  "Coppélia, The Sleeping Beauty, and The Nutcracker",
+  "Swan Lake, The Sleeping Beauty, and The Firebird"
+ ],
+ "727": [
+  "Johann Strauss II",
+  "Richard Wagner",
+  "György Ligeti"
+ ],
+ "728": [
+  "Pour le piano",
+  "Petite suite",
+  "Estampes"
+ ],
+ "729": [
+  "Gabriel Fauré",
+  "Paul Dukas",
+  "Jules Massenet"
+ ],
+ "730": [
+  "Dmitri Shostakovich",
+  "Sergei Rachmaninoff",
+  "Igor Stravinsky"
+ ],
+ "731": [
+  "Ralph Vaughan Williams",
+  "Edward Elgar",
+  "Benjamin Britten"
+ ],
+ "733": [
+  "Mily Balakirev",
+  "César Cui",
+  "Nikolai Rimsky-Korsakov"
+ ],
+ "734": [
+  "Catulli Carmina",
+  "Trionfo di Afrodite",
+  "Alexander Nevsky"
+ ],
+ "735": [
+  "Hubert Parry",
+  "Frederick Delius",
+  "Benjamin Britten"
+ ],
+ "736": [
+  "Aaron Copland",
+  "Charles Ives",
+  "Leonard Bernstein"
+ ],
+ "737": [
+  "Georg Philipp Telemann",
+  "Dieterich Buxtehude",
+  "Tomaso Albinoni"
+ ],
+ "738": [
+  "Giacomo Puccini",
+  "Gioachino Rossini",
+  "Gaetano Donizetti"
+ ],
+ "739": [
+  "Turandot",
+  "Manon Lescaut",
+  "La bohème"
+ ],
+ "740": [
+  "Tosca",
+  "La bohème",
+  "Gianni Schicchi"
+ ],
+ "741": [
+  "The Thieving Magpie",
+  "Semiramide",
+  "The Barber of Seville"
+ ],
+ "742": [
+  "The Italian Girl in Algiers",
+  "The Turk in Italy",
+  "The Marriage of Figaro"
+ ],
+ "743": [
+  "Béla Bartók",
+  "Joseph Joachim",
+  "Johannes Brahms"
+ ],
+ "744": [
+  "Symphony No. 9",
+  "Symphony No. 5",
+  "Symphony No. 4"
+ ],
+ "745": [
+  "A Titan",
+  "A Resurrection",
+  "A Hundred"
+ ],
+ "746": [
+  "Stalingrad",
+  "Sevastopol",
+  "Moscow"
+ ],
+ "747": [
+  "Piano Concerto No. 3",
+  "Piano Concerto No. 1",
+  "Piano Concerto No. 4"
+ ],
+ "748": [
+  "The cello",
+  "The piano",
+  "The double bass"
+ ],
+ "749": [
+  "Rodeo",
+  "Billy the Kid",
+  "Fancy Free"
+ ],
+ "750": [
+  "Z mého života (From My Life)",
+  "Slovanské tance (Slavonic Dances)",
+  "Česká suita (Czech Suite)"
+ ],
+ "751": [
+  "Claude Debussy",
+  "Maurice Ravel",
+  "Francis Poulenc"
+ ],
+ "752": [
+  "1759, the year of Handel's death",
+  "1741, the year of Vivaldi's death",
+  "1770, the year of Beethoven's birth"
+ ],
+ "753": [
+  "The Baroque period",
+  "The Impressionist period",
+  "The Modernist period"
+ ],
+ "754": [
+  "A concerto features a solo singer set against the orchestra",
+  "A concerto sets two separate orchestras playing against each other",
+  "A concerto is largely improvised rather than written out in full"
+ ],
+ "755": [
+  "The intermezzo",
+  "The prologue",
+  "The finale"
+ ],
+ "756": [
+  "The score",
+  "The recitative",
+  "The scenario"
+ ],
+ "757": [
+  "Modest Mussorgsky",
+  "Mily Balakirev",
+  "César Cui"
+ ],
+ "758": [
+  "Egon Schiele",
+  "Koloman Moser",
+  "Oskar Kokoschka"
+ ],
+ "759": [
+  "Constantin Brâncuși",
+  "Camille Claudel",
+  "Aristide Maillol"
+ ],
+ "760": [
+  "Weeping willows",
+  "Poppy fields",
+  "Irises"
+ ],
+ "761": [
+  "Argenteuil",
+  "Vétheuil",
+  "Barbizon"
+ ],
+ "762": [
+  "Chartres Cathedral",
+  "Amiens Cathedral",
+  "Reims Cathedral"
+ ],
+ "763": [
+  "Poplars (riverside trees)",
+  "Woodpiles (log stacks)",
+  "Beehives (straw skeps)"
+ ],
+ "764": [
+  "Filippo Lippi",
+  "Domenico Ghirlandaio",
+  "Piero di Cosimo"
+ ],
+ "765": [
+  "Frans Hals",
+  "Johannes Vermeer",
+  "Bartholomeus van der Helst"
+ ],
+ "766": [
+  "Thomas Hart Benton",
+  "John Steuart Curry",
+  "Norman Rockwell"
+ ],
+ "767": [
+  "Norman Rockwell",
+  "John Sloan",
+  "George Bellows"
+ ],
+ "768": [
+  "Paul Delvaux",
+  "James Ensor",
+  "Marcel Broodthaers"
+ ],
+ "769": [
+  "The Key of Dreams",
+  "The Human Condition",
+  "The Empire of Light"
+ ],
+ "770": [
+  "Francisco de Zurbarán",
+  "Bartolomé Esteban Murillo",
+  "Juan Carreño de Miranda"
+ ],
+ "771": [
+  "Édouard Manet",
+  "Eugène Delacroix",
+  "Francisco Bayeu"
+ ],
+ "772": [
+  "The Disasters of War",
+  "The Caprichos",
+  "The Disparates"
+ ],
+ "773": [
+  "John Singer Sargent",
+  "William Merritt Chase",
+  "Dante Gabriel Rossetti"
+ ],
+ "774": [
+  "Edward Hopper",
+  "Winslow Homer",
+  "Charles Burchfield"
+ ],
+ "775": [
+  "Thomas Gainsborough",
+  "William Turner",
+  "John Crome"
+ ],
+ "776": [
+  "John Constable",
+  "Clarkson Stanfield",
+  "Thomas Girtin"
+ ],
+ "777": [
+  "Philipp Otto Runge",
+  "Carl Gustav Carus",
+  "Ernst Ferdinand Oehme"
+ ],
+ "778": [
+  "Eugène Delacroix",
+  "Antoine-Jean Gros",
+  "Paul Delaroche"
+ ],
+ "779": [
+  "Antoine-Jean Gros",
+  "Jean-Auguste-Dominique Ingres",
+  "François Gérard"
+ ],
+ "780": [
+  "Edgar Degas",
+  "Jean-Frédéric Bazille",
+  "Henri de Toulouse-Lautrec"
+ ],
+ "781": [
+  "Paul Gauguin",
+  "Georges Seurat",
+  "Vincent van Gogh"
+ ],
+ "782": [
+  "Mont Ventoux",
+  "Mont Aurélien",
+  "Mont Faron"
+ ],
+ "783": [
+  "Paul Signac",
+  "Henri-Edmond Cross",
+  "Camille Pissarro"
+ ],
+ "784": [
+  "Émile Bernard",
+  "Paul Sérusier",
+  "Henri Matisse"
+ ],
+ "785": [
+  "Tulips",
+  "Peonies",
+  "Chrysanthemums"
+ ],
+ "786": [
+  "The Night Café",
+  "Starry Night Over the Rhône",
+  "The Yellow House"
+ ],
+ "787": [
+  "The Golden Knight",
+  "The Lady with a Fan",
+  "The Tree of Life"
+ ],
+ "788": [
+  "The African Period",
+  "The Cubist Period",
+  "The Neoclassical Period"
+ ],
+ "789": [
+  "Les Femmes d'Alger",
+  "Les Noces de Pierrette",
+  "Les Saltimbanques"
+ ],
+ "790": [
+  "Yvonne and Magdeleine Torn in Tatters",
+  "The Passage from Virgin to Bride",
+  "Portrait of Chess Players"
+ ],
+ "791": [
+  "Theo van Doesburg",
+  "Bart van der Leck",
+  "Gerrit Rietveld"
+ ],
+ "792": [
+  "Willem de Kooning",
+  "Helen Frankenthaler",
+  "Lee Krasner"
+ ],
+ "793": [
+  "Barnett Newman",
+  "Clyfford Still",
+  "Josef Albers"
+ ],
+ "794": [
+  "Corpus Hypercubus",
+  "The Madonna of Port Lligat",
+  "The Temptation of Saint Anthony"
+ ],
+ "795": [
+  "The Broken Column",
+  "The Wounded Deer",
+  "The Frame"
+ ],
+ "796": [
+  "The Bruges Madonna",
+  "The Moses",
+  "The Risen Christ"
+ ],
+ "797": [
+  "Polykleitos",
+  "Lysippos",
+  "Phidias"
+ ],
+ "798": [
+  "Bellini",
+  "Giorgione",
+  "Tintoretto"
+ ],
+ "799": [
+  "Petrus Christus",
+  "Robert Campin",
+  "Rogier van der Weyden"
+ ],
+ "800": [
+  "Hieronymus Bosch",
+  "Joachim Patinir",
+  "David Teniers the Elder"
+ ],
+ "801": [
+  "The Arnolfini Portrait, by Jan van Eyck",
+  "The Lamentation of Christ, by Andrea Mantegna",
+  "The Penitent Magdalene, by Georges de La Tour"
+ ],
+ "802": [
+  "Claes Oldenburg",
+  "Anish Kapoor",
+  "Damien Hirst"
+ ],
+ "803": [
+  "Invader",
+  "Stik",
+  "Blek le Rat"
+ ],
+ "804": [
+  "Dante Gabriel Rossetti",
+  "William Holman Hunt",
+  "Edward Burne-Jones"
+ ],
+ "805": [
+  "Kitagawa Utamaro",
+  "Tōshūsai Sharaku",
+  "Suzuki Harunobu"
+ ],
+ "806": [
+  "Jean Arp",
+  "Alexander Archipenko",
+  "Dimitrie Paciurea"
+ ],
+ "808": [
+  "Claude Monet",
+  "Edgar Degas",
+  "Henri de Toulouse-Lautrec"
+ ],
+ "809": [
+  "François Boucher",
+  "Jean-Antoine Watteau",
+  "Jean-Baptiste Pater"
+ ],
+ "810": [
+  "Baroque",
+  "Neoclassicism",
+  "Mannerism"
+ ],
+ "811": [
+  "Ghiberti",
+  "Brunelleschi",
+  "Cellini"
+ ],
+ "812": [
+  "Filippo Brunelleschi",
+  "Andrea Pisano",
+  "Jacopo della Quercia"
+ ],
+ "813": [
+  "The Rembrandthuis",
+  "The Stedelijk Museum",
+  "The Van Gogh Museum"
+ ],
+ "814": [
+  "The Accademia Gallery",
+  "The Palatine Gallery",
+  "The Borghese Gallery"
+ ],
+ "815": [
+  "The Museo del Prado",
+  "The Museo Thyssen-Bornemisza",
+  "The Museo Sorolla"
+ ],
+ "816": [
+  "Taurus",
+  "Capricorn",
+  "Leo"
+ ],
+ "817": [
+  "Aries",
+  "Capricorn",
+  "Scorpio"
+ ],
+ "818": [
+  "Pisces",
+  "Virgo",
+  "Aquarius"
+ ],
+ "819": [
+  "Scorpio",
+  "Pisces",
+  "Capricorn"
+ ],
+ "820": [
+  "Aries",
+  "Taurus",
+  "Libra"
+ ],
+ "821": [
+  "Libra",
+  "Gemini",
+  "Aquarius"
+ ],
+ "822": [
+  "Cancer",
+  "Sagittarius",
+  "Capricorn"
+ ],
+ "823": [
+  "Capricorn",
+  "Aquarius",
+  "Scorpio"
+ ],
+ "824": [
+  "Aries",
+  "Pisces",
+  "Taurus"
+ ],
+ "825": [
+  "Pisces",
+  "Cancer",
+  "Virgo"
+ ],
+ "826": [
+  "Aquarius",
+  "Cancer",
+  "Gemini"
+ ],
+ "827": [
+  "Ten",
+  "Eleven",
+  "Thirteen"
+ ],
+ "828": [
+  "Earth",
+  "Air",
+  "Water"
+ ],
+ "829": [
+  "Fire",
+  "Earth",
+  "Air"
+ ],
+ "830": [
+  "Fire",
+  "Air",
+  "Water"
+ ],
+ "831": [
+  "Fire",
+  "Earth",
+  "Water"
+ ],
+ "832": [
+  "The midheaven",
+  "The sun sign",
+  "The moon sign"
+ ],
+ "833": [
+  "Venus",
+  "Mars",
+  "Jupiter"
+ ],
+ "834": [
+  "Precession",
+  "Nutation",
+  "Libration"
+ ],
+ "835": [
+  "A horary chart",
+  "A transit chart",
+  "A solar return chart"
+ ],
+ "836": [
+  "Ten",
+  "Eight",
+  "Thirteen"
+ ],
+ "837": [
+  "The ox",
+  "The dragon",
+  "The tiger"
+ ],
+ "838": [
+  "The dog",
+  "The rabbit",
+  "The rooster"
+ ],
+ "839": [
+  "Four",
+  "Six",
+  "Eight"
+ ],
+ "840": [
+  "Serpens",
+  "Cetus",
+  "Hercules"
+ ],
+ "841": [
+  "Five",
+  "Nine",
+  "Ten"
+ ],
+ "842": [
+  "Envy",
+  "Greed",
+  "Wrath"
+ ],
+ "843": [
+  "Gluttony",
+  "Envy",
+  "Lust"
+ ],
+ "844": [
+  "Three",
+  "Five",
+  "Thirteen"
+ ],
+ "845": [
+  "Triskaidekaphobia",
+  "Hexakosioihexekontahexaphobia",
+  "Tetraphobia"
+ ],
+ "846": [
+  "Twelve",
+  "Eleven",
+  "Fifteen"
+ ],
+ "847": [
+  "Twelve",
+  "Ten",
+  "Sixteen"
+ ],
+ "848": [
+  "Twelve",
+  "Fifteen",
+  "Fifty"
+ ],
+ "849": [
+  "Pepper",
+  "Garlic",
+  "Sugar"
+ ],
+ "850": [
+  "99",
+  "54",
+  "100"
+ ],
+ "851": [
+  "Bolivia",
+  "Ecuador",
+  "Chile"
+ ],
+ "852": [
+  "Lyon",
+  "Marseille",
+  "Brussels"
+ ],
+ "853": [
+  "São Paulo",
+  "Salvador",
+  "Buenos Aires"
+ ],
+ "854": [
+  "Vienna",
+  "Budapest",
+  "Prague"
+ ],
+ "855": [
+  "Saudi Arabia",
+  "Syria",
+  "Lebanon"
+ ],
+ "856": [
+  "Guatemala",
+  "Belize",
+  "Honduras"
+ ],
+ "857": [
+  "Pakistan",
+  "Bangladesh",
+  "Iran"
+ ],
+ "858": [
+  "The Lighthouse of Alexandria",
+  "The Temple of Artemis at Ephesus",
+  "The Mausoleum at Halicarnassus"
+ ],
+ "859": [
+  "Nimrud",
+  "Ur",
+  "Persepolis"
+ ],
+ "860": [
+  "Delos",
+  "Samos",
+  "Kos"
+ ],
+ "861": [
+  "Scotland",
+  "Wales",
+  "Ireland"
+ ],
+ "862": [
+  "Athens",
+  "Naples",
+  "Verona"
+ ],
+ "863": [
+  "Florence",
+  "Siena",
+  "Lucca"
+ ],
+ "864": [
+  "Rome",
+  "Nicosia",
+  "Sofia"
+ ],
+ "865": [
+  "Seville",
+  "Córdoba",
+  "Toledo"
+ ],
+ "866": [
+  "Austria",
+  "Switzerland",
+  "France"
+ ],
+ "867": [
+  "Munich",
+  "Vienna",
+  "Hamburg"
+ ],
+ "868": [
+  "Oslo",
+  "Stockholm",
+  "Helsinki"
+ ],
+ "869": [
+  "Amsterdam",
+  "Luxembourg",
+  "Bern"
+ ],
+ "870": [
+  "Ankara",
+  "Thessaloniki",
+  "Cairo"
+ ],
+ "871": [
+  "Palace Square",
+  "Cathedral Square",
+  "Manezh Square"
+ ],
+ "872": [
+  "Seoul",
+  "Hanoi",
+  "Taipei"
+ ],
+ "873": [
+  "Luoyang",
+  "Nanjing",
+  "Chengdu"
+ ],
+ "874": [
+  "China",
+  "South Korea",
+  "Philippines"
+ ],
+ "875": [
+  "Singapore",
+  "Jakarta",
+  "Bandar Seri Begawan"
+ ],
+ "876": [
+  "Abu Dhabi",
+  "Doha",
+  "Riyadh"
+ ],
+ "877": [
+  "Pitcairn Island",
+  "Christmas Island",
+  "Norfolk Island"
+ ],
+ "878": [
+  "New Zealand",
+  "South Africa",
+  "Namibia"
+ ],
+ "879": [
+  "Botswana",
+  "Mozambique",
+  "Malawi"
+ ],
+ "880": [
+  "Durban",
+  "Port Elizabeth",
+  "Johannesburg"
+ ],
+ "881": [
+  "Wyoming",
+  "Montana",
+  "Nebraska"
+ ],
+ "882": [
+  "Monterey Bay",
+  "San Diego Bay",
+  "Humboldt Bay"
+ ],
+ "883": [
+  "Ellis Island",
+  "Governors Island",
+  "Staten Island"
+ ],
+ "884": [
+  "Paraguay",
+  "Uruguay",
+  "Bolivia"
+ ],
+ "885": [
+  "Chile",
+  "Argentina",
+  "Peru"
+ ],
+ "886": [
+  "Sudan",
+  "Libya",
+  "Morocco"
+ ],
+ "887": [
+  "Florence",
+  "Venice",
+  "Milan"
+ ],
+ "888": [
+  "Preah Vihear",
+  "Ta Prohm",
+  "Banteay Srei"
+ ],
+ "889": [
+  "The Omen",
+  "Rosemary's Baby",
+  "The Amityville Horror"
+ ],
+ "890": [
+  "The Fog",
+  "Black Christmas",
+  "The Thing"
+ ],
+ "891": [
+  "Michael Myers",
+  "Pamela Voorhees",
+  "Freddy Krueger"
+ ],
+ "892": [
+  "Jason Voorhees",
+  "Michael Myers",
+  "Norman Bates"
+ ],
+ "893": [
+  "Paranormal Activity",
+  "The Last Broadcast",
+  "Cannibal Holocaust"
+ ],
+ "894": [
+  "Cujo",
+  "Christine",
+  "The Shining"
+ ],
+ "895": [
+  "Us",
+  "Nope",
+  "Candyman"
+ ],
+ "896": [
+  "Dawn of the Dead",
+  "Day of the Dead",
+  "White Zombie"
+ ],
+ "897": [
+  "Vampyr",
+  "The Golem",
+  "Metropolis"
+ ],
+ "898": [
+  "Mary Shelley",
+  "Sheridan Le Fanu",
+  "Robert Louis Stevenson"
+ ],
+ "899": [
+  "Ju-On",
+  "Kairo",
+  "Chakushin Ari"
+ ],
+ "900": [
+  "Seoul Station",
+  "The Wailing",
+  "Peninsula"
+ ],
+ "901": [
+  "Leatherface",
+  "Jigsaw",
+  "Pinhead"
+ ],
+ "902": [
+  "Firestarter",
+  "Christine",
+  "Cujo"
+ ],
+ "903": [
+  "Midsommar",
+  "Suspiria",
+  "The Witch"
+ ],
+ "904": [
+  "Roger and Carolyn Perron",
+  "George and Kathy Lutz",
+  "Peggy and Janet Hodgson"
+ ],
+ "905": [
+  "A Mr. Spock mask",
+  "A hockey goalie mask",
+  "A Richard Nixon mask"
+ ],
+ "906": [
+  "A wendigo",
+  "A selkie",
+  "A ghoul"
+ ],
+ "907": [
+  "It calls itself Lazarus",
+  "It takes its creator's name",
+  "It is named Prometheus"
+ ],
+ "908": [
+  "The radish",
+  "The parsnip",
+  "The marrow"
+ ],
+ "909": [
+  "30 October",
+  "1 November",
+  "2 November"
+ ],
+ "910": [
+  "Day of the Innocents",
+  "Night of the Radishes",
+  "Day of the Holy Cross"
+ ],
+ "911": [
+  "A banshee",
+  "A wraith",
+  "A dybbuk"
+ ],
+ "912": [
+  "Morag",
+  "Champ",
+  "Ogopogo"
+ ],
+ "913": [
+  "Yeti",
+  "Yowie",
+  "Skunk Ape"
+ ],
+ "914": [
+  "The cadejo",
+  "The nahual",
+  "The wendigo"
+ ],
+ "915": [
+  "Siren Head",
+  "The Rake",
+  "The Hat Man"
+ ],
+ "916": [
+  "The Frankenstein complex",
+  "The Eliza effect",
+  "The Capgras delusion"
+ ],
+ "917": [
+  "The Dragon's Triangle",
+  "The Alaska Triangle",
+  "The Michigan Triangle"
+ ],
+ "918": [
+  "The Changeling",
+  "The Fog",
+  "The Amityville Horror"
+ ],
+ "919": [
+  "The werewolf",
+  "The witch",
+  "The ghoul"
+ ],
+ "920": [
+  "The Loved Ones",
+  "The Nightingale",
+  "The Conjuring 2"
+ ],
+ "921": [
+  "0",
+  "4",
+  "6"
+ ],
+ "922": [
+  "3.15",
+  "3.41",
+  "3.16"
+ ],
+ "923": [
+  "0",
+  "2",
+  "Undefined"
+ ],
+ "924": [
+  "1.414",
+  "1.732",
+  "2.618"
+ ],
+ "925": [
+  "10",
+  "101",
+  "1,000"
+ ],
+ "926": [
+  "4950",
+  "5000",
+  "10100"
+ ],
+ "927": [
+  "A composite number",
+  "A perfect number",
+  "A rational number"
+ ],
+ "928": [
+  "1",
+  "4",
+  "28"
+ ],
+ "929": [
+  "512",
+  "2048",
+  "1000"
+ ],
+ "930": [
+  "D",
+  "C",
+  "X"
+ ],
+ "931": [
+  "V",
+  "C",
+  "D"
+ ],
+ "932": [
+  "100",
+  "120",
+  "1,728"
+ ],
+ "933": [
+  "90",
+  "270",
+  "360"
+ ],
+ "934": [
+  "Four",
+  "Five",
+  "Eighty"
+ ],
+ "935": [
+  "2 and 1",
+  "1 and 3",
+  "0 and 2"
+ ],
+ "936": [
+  "616",
+  "630",
+  "703"
+ ],
+ "937": [
+  "30",
+  "57",
+  "183"
+ ],
+ "938": [
+  "2.69",
+  "2.62",
+  "2.83"
+ ],
+ "939": [
+  "3",
+  "5",
+  "9"
+ ],
+ "940": [
+  "No",
+  "It makes no difference",
+  "It depends on the door"
+ ],
+ "941": [
+  "The dividend",
+  "The remainder",
+  "The product"
+ ],
+ "942": [
+  "A Kaprekar number",
+  "A Harshad number",
+  "An automorphic number"
+ ],
+ "943": [
+  "20",
+  "24",
+  "36"
+ ],
+ "944": [
+  "A prime number",
+  "A composite number",
+  "A recurring decimal"
+ ],
+ "945": [
+  "The joule",
+  "The pascal",
+  "The watt"
+ ],
+ "946": [
+  "The watt",
+  "The newton",
+  "The calorie"
+ ],
+ "947": [
+  "The joule",
+  "The volt",
+  "The horsepower"
+ ],
+ "948": [
+  "The becquerel",
+  "The decibel",
+  "The henry"
+ ],
+ "949": [
+  "The volt",
+  "The ohm",
+  "The coulomb"
+ ],
+ "950": [
+  "The speed of sound",
+  "The charge of an electron",
+  "The constant of gravitation"
+ ],
+ "951": [
+  "-237.15",
+  "-263.15",
+  "-373.15"
+ ],
+ "952": [
+  "The proton",
+  "The electron",
+  "The positron"
+ ],
+ "953": [
+  "Dispersion",
+  "Polarisation",
+  "Total internal reflection"
+ ],
+ "954": [
+  "The first law",
+  "The second law",
+  "The law of gravitation"
+ ],
+ "955": [
+  "Superfluids",
+  "Supercapacitors",
+  "Superinsulators"
+ ],
+ "956": [
+  "243 metres per second",
+  "443 metres per second",
+  "1,480 metres per second"
+ ],
+ "957": [
+  "The weak nuclear force",
+  "The electromagnetic force",
+  "The gravitational force"
+ ],
+ "958": [
+  "Ir",
+  "In",
+  "Fr"
+ ],
+ "959": [
+  "S",
+  "Sn",
+  "K"
+ ],
+ "960": [
+  "Pd",
+  "Li",
+  "Sn"
+ ],
+ "961": [
+  "Co",
+  "Cr",
+  "Ca"
+ ],
+ "962": [
+  "Potassium chloride",
+  "Sodium bicarbonate",
+  "Calcium chloride"
+ ],
+ "963": [
+  "Nitrogen",
+  "Oxygen",
+  "Boron"
+ ],
+ "964": [
+  "A reagent",
+  "An inhibitor",
+  "A solvent"
+ ],
+ "965": [
+  "1",
+  "6",
+  "8"
+ ],
+ "966": [
+  "Oxygen",
+  "Nitrogen",
+  "Bromine"
+ ],
+ "967": [
+  "Argon",
+  "Krypton",
+  "Xenon"
+ ],
+ "968": [
+  "Isomers",
+  "Allotropes",
+  "Isobars"
+ ],
+ "969": [
+  "Carbon dioxide",
+  "Oxygen",
+  "Chlorine"
+ ],
+ "970": [
+  "The atom",
+  "The gene",
+  "The organelle"
+ ],
+ "971": [
+  "Transferrin",
+  "Albumin",
+  "Ferritin"
+ ],
+ "972": [
+  "Bile",
+  "Lymph",
+  "Cytoplasm"
+ ],
+ "973": [
+  "Nucleotides",
+  "Fatty acids",
+  "Simple sugars"
+ ],
+ "974": [
+  "Uracil",
+  "Guanine",
+  "Cytosine"
+ ],
+ "975": [
+  "Amitosis",
+  "Cytokinesis",
+  "Binary fission"
+ ],
+ "976": [
+  "Necrosis",
+  "Senescence",
+  "Autolysis"
+ ],
+ "977": [
+  "The lymph nodes",
+  "The ureters",
+  "The adrenal glands"
+ ],
+ "978": [
+  "The cerebellum",
+  "The brainstem",
+  "The thalamus"
+ ],
+ "979": [
+  "Homo erectus",
+  "Homo habilis",
+  "Homo neanderthalensis"
+ ],
+ "980": [
+  "Etymology",
+  "Arachnology",
+  "Herpetology"
+ ],
+ "981": [
+  "Oology",
+  "Orology",
+  "Ichthyology"
+ ],
+ "982": [
+  "A heterotroph",
+  "A saprophyte",
+  "A detritivore"
+ ],
+ "983": [
+  "Red blood cells",
+  "Platelets",
+  "Blood stem cells"
+ ],
+ "984": [
+  "One",
+  "Five",
+  "Three"
+ ]
+}

@@ -18,7 +18,10 @@
 
 /* Four children on a five-row console template left an empty track — and its
    gap — under the deck. */
-.console--street { grid-template-rows: auto auto 1fr auto; }
+.console--street { grid-template-rows: auto auto minmax(0, 1fr) auto; }
+/* On a short phone eight answer slots do not fit above the input. The board
+   scrolls inside its own well so the input and Bank never leave the screen. */
+.street-board { min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
 
 .street-prompt {
   display: grid;
