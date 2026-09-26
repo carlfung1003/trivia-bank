@@ -37,7 +37,10 @@
   padding-block: var(--sp-2) var(--sp-5);
 }
 
-/* ---- Hero ------------------------------------------------------------------ */
+/* ---- Hero ------------------------------------------------------------------
+   Entrance delays are kept short on purpose: on a real iPhone, a reload
+   landed on a title whose whole hero was still waiting on its delays, and
+   read as a blank page. Everything is on screen inside ~0.6s. */
 
 .hero {
   display: grid;
@@ -59,7 +62,7 @@
   text-transform: uppercase;
   color: var(--brass);
   text-shadow: 0 1px 12px hsl(222 60% 2% / 0.9);
-  animation: fade var(--dur-slow) var(--ease) backwards 120ms;
+  animation: fade var(--dur-slow) var(--ease) backwards;
 }
 .hero__kicker .rule { background: var(--brass); opacity: 0.6; }
 
@@ -82,7 +85,7 @@
   margin-right: 0.22em;
   text-shadow: 0 -1px 0 hsl(40 40% 6% / 0.85), 0 1px 0 hsl(44 70% 92% / 0.2);
   animation: rise var(--dur-scene) var(--ease) backwards;
-  animation-delay: calc(var(--i, 0) * 90ms + 180ms);
+  animation-delay: calc(var(--i, 0) * 70ms + 40ms);
 }
 .wordmark__line--brass {
   display: block;
@@ -110,7 +113,7 @@
   text-shadow: none;
   filter: drop-shadow(0 0 30px hsl(41 90% 58% / 0.35));
   animation:
-    rise var(--dur-scene) var(--ease) backwards calc(2 * 90ms + 180ms),
+    rise var(--dur-scene) var(--ease) backwards calc(2 * 70ms + 40ms),
     glint 7s var(--ease) 1.6s infinite;
   /* The italic k overhangs its advance width; without room the clipped
      gradient cuts its tail off. */
@@ -129,7 +132,7 @@
   font-size: clamp(1rem, 0.94rem + 0.3vw, 1.18rem);
   line-height: 1.45;
   text-shadow: 0 1px 14px hsl(222 60% 2% / 0.95);
-  animation: fade var(--dur-slow) var(--ease) backwards 520ms;
+  animation: fade var(--dur-slow) var(--ease) backwards 220ms;
 }
 
 .hero__cta {
@@ -138,7 +141,7 @@
   gap: var(--sp-4);
   flex-wrap: wrap;
   margin-top: var(--sp-3);
-  animation: rise var(--dur-slow) var(--ease-impact) backwards 640ms;
+  animation: rise var(--dur-slow) var(--ease-impact) backwards 300ms;
 }
 .hero__hint {
   font-family: var(--font-hud);
@@ -173,7 +176,7 @@
   border-radius: var(--radius-pill);
   box-shadow: var(--bevel);
   backdrop-filter: blur(12px) saturate(1.1);
-  animation: fade var(--dur-slow) var(--ease) backwards 700ms;
+  animation: fade var(--dur-slow) var(--ease) backwards 320ms;
 }
 .dossier__badge {
   display: grid;
@@ -311,7 +314,7 @@
     box-shadow var(--dur) var(--ease),
     border-color var(--dur-fast) var(--ease);
   animation: card-in var(--dur-slow) var(--ease) backwards;
-  animation-delay: calc(var(--i, 0) * 70ms + 380ms);
+  animation-delay: calc(var(--i, 0) * 60ms + 260ms);
 }
 @keyframes card-in {
   from { opacity: 0; transform: translateY(26px) scale(0.97); }

@@ -415,7 +415,12 @@ good answers. Fix the player before tuning the balance.
 
 ## Known gaps
 
-- **Never tested on a real phone.** The layout IS verified at 390px and 360px via
+- **iOS, from the first real-iPhone session (Sep 2026):** pull-to-refresh reloaded the
+  page mid-run and double-tap zoomed the console. Both are off in `base.css`
+  (`overscroll-behavior-y: none`, `touch-action: manipulation`); pinch zoom still works.
+  `node` + Playwright's `webkit` (installed under the ai-journey copy) renders the real
+  Safari engine at iPhone size — use it before claiming anything about iOS.
+- **Only lightly tested on a real phone.** The layout IS verified at 390px and 360px via
   `docs/mobile-preview.html`, which renders the game in narrow iframes — media queries
   key off the iframe width, so this exercises the real breakpoints (the Chrome
   automation cannot resize the window below ~1034px). Confirmed: single-column options,

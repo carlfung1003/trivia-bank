@@ -9,6 +9,19 @@
 
 html, body { height: 100%; }
 
+/* A game must not reload itself on a stray downward swipe. iOS Safari (16+)
+   and Chrome both treat an overscroll at the top of the page as pull-to-
+   refresh, which wiped a run mid-heist on a real iPhone. `none` on the root
+   scroller turns off the refresh and the rubber-band bounce with it; the
+   address bar's reload button still works. */
+html, body { overscroll-behavior-y: none; }
+
+/* Double-tap is not a zoom gesture in a game you tap quickly. iOS reads two
+   fast answers or two lifeline presses as double-tap-to-zoom and blows the
+   console up mid-question. `manipulation` removes only that delay-and-zoom:
+   pinch zoom still works, so nobody loses zoom as an accessibility tool. */
+html, body, button, input, a, summary, [role="button"] { touch-action: manipulation; }
+
 /* The UA stylesheet's [hidden] { display: none } is only a normal-weight rule,
    so ANY author `display` declaration silently defeats it — which is how a
    `hidden` pot counter kept rendering "AT RISK 0". Stated once, here, so no
