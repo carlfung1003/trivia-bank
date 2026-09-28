@@ -109,6 +109,8 @@ export const el = {
 
 const TIMER_CIRCUMFERENCE = 2 * Math.PI * 46;   /* dial__fill r=46 */
 const OPTION_KEYS = ["A", "B", "C", "D", "E", "F"];
+/* Past this, an answer is sentence-length and phones set it a size down. */
+const LONG_OPTION_CHARS = 36;
 
 /* ---- Screens -------------------------------------------------------------- */
 
@@ -582,8 +584,80 @@ export function renderQuestion(game) {
     if (window.matchMedia("(min-width: 720px)").matches) el.typedInput.focus();
   }
 
+  fitQuestion();
   announce(`${q.category}, ${DIFFICULTY.label[q.difficulty]}. ${q.question}`);
 }
+
+/* ---- Question fit -------------------------------------------------------------
+   The whole question must be readable, on every screen, in every state. CSS
+   sets the preferred size from the viewport; only this knows how long the text
+   is. When it overflows the glass, the measure widens first (a short glass
+   wants fewer, longer lines), then the size steps down to the largest that
+   fits, so short questions keep their headline size. The glass never grows to
+   meet the text (its row is sized by the console), so fitting cannot feed back
+   into the ResizeObserver that calls it. */
+const QUESTION_MIN_PX = 13;
+
+/** Does any in-flow child of the glass spill past its padding box? Layout
+    offsets, not client rects, so the entrance animation's transform does not
+    read as overflow. Offsets are whole pixels, and when the rows exactly fill
+    the glass their rounding alone read as a 0.7px spill at every trial size,
+    sending a 280px glass down to the floor. The slack sits inside the padding,
+    so it is never visible. */
+const FIT_SLACK_PX = 1.5;
+function glassOverflows(glass) {
+  const cs = getComputedStyle(glass);
+  const top = parseFloat(cs.paddingTop) - FIT_SLACK_PX;
+  const bottom = glass.clientHeight - parseFloat(cs.paddingBottom) + FIT_SLACK_PX;
+  for (const child of glass.children) {
+    if (child.hidden) continue;
+    const pos = getComputedStyle(child).position;
+    if (pos === "absolute" || pos === "fixed") continue;
+    if (child.offsetTop < top || child.offsetTop + child.offsetHeight > bottom) return true;
+  }
+  return false;
+}
+
+export function fitQuestion() {
+  const glass = el.stage;
+  const q = el.question;
+  if (!glass || !q || !glass.clientHeight) return;   /* play screen not shown */
+  /* Measure with transitions off. Reduced motion sets a 1ms duration on every
+     element (fx.css), and the default property is `all`, so each trial size
+     would start a transition and the measurement would read the old one. */
+  q.style.transition = "none";
+  try {
+    q.style.fontSize = "";
+    delete q.dataset.fit;
+    if (!glassOverflows(glass)) return;
+
+    q.dataset.fit = "wide";
+    if (!glassOverflows(glass)) return;
+
+    let fits = QUESTION_MIN_PX;
+    let spills = parseFloat(getComputedStyle(q).fontSize);
+    while (spills - fits > 0.5) {
+      const mid = (fits + spills) / 2;
+      q.style.fontSize = `${mid}px`;
+      if (glassOverflows(glass)) spills = mid;
+      else fits = mid;
+    }
+    /* Past the floor the glass scrolls on its own (game.css), which beats
+       type too small to read. */
+    q.style.fontSize = `${fits}px`;
+  } finally {
+    void q.offsetHeight;          /* commit the final size before transitions return */
+    q.style.transition = "";
+  }
+}
+
+/* Anything that resizes the glass refits it: the viewport, the Bank button
+   docking, a reveal, the play screen being shown at all. Called inside the
+   observer, so the fitted size lands in the same frame, never a clipped one. */
+if (el.stage && "ResizeObserver" in window) {
+  new ResizeObserver(() => fitQuestion()).observe(el.stage);
+}
+document.fonts?.ready.then(() => fitQuestion());
 
 export function renderOptions(game) {
   const s = game.state;
@@ -602,6 +676,10 @@ export function renderOptions(game) {
     `;
     el.options.appendChild(btn);
   });
+  /* A deck of sentence-length answers (the bank runs to 67 characters) wraps
+     to five lines a key on a phone; game.css sets those a size down. Flagged
+     on the deck, not per key, so the four answers stay one size. */
+  el.options.dataset.long = String(s.options.some((t) => String(t).length > LONG_OPTION_CHARS));
 }
 
 /** Paint WIRETAP results onto the option rows. */
@@ -670,6 +748,8 @@ export function renderIntel(game) {
 
   if (hasEtch) el.intelLetter.textContent = s.revealed;
   if (hasTip) el.intelText.textContent = s.intel;
+  /* Bought intel shares the glass with the question. */
+  fitQuestion();
 }
 
 /* Tool icons: one 24px stroke drawing each, so every tool reads by shape
@@ -793,6 +873,7 @@ export function revealAnswer(game, { result, correctIndex, correctAnswer, given,
      two seconds, and this is the one miss the player must not read as fatal. */
   el.verdictLine.textContent = forgiven ? `${line} · Alibi spent` : line;
   el.verdictAnswer.textContent = result === "correct" ? correctAnswer : `Answer: ${correctAnswer}`;
+  el.verdictAnswer.dataset.long = String(String(correctAnswer).length > LONG_OPTION_CHARS);
   el.verdict.hidden = false;
   el.nextBtn.focus();
   strikeStamp(result, { close, forgiven });

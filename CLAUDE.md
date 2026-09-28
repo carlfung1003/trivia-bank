@@ -83,12 +83,38 @@ the machined-brass identity and executed it like a game. The rules that came out
   locally again, suspect the server before the page.
 
 - **Play screens fit one screen** (the "FIT TO SCREEN" block at the end of game.css).
-  The console is capped at `100dvh`; the display is the row that gives, with a 128px
-  floor; short phones (≤700px tall) pay with 2×2 keys and a one-row Type-It form; on
-  phones the verdict takes the kit's slot during a reveal; the Bank button docks under
-  the console; The Street's board scrolls in its own well. Check with the
-  `mobile-web-hardening` skill (`--app` mode) at all four iPhone sizes, in every state,
-  and look at the screenshots: a zero-overflow layout once hid the question entirely.
+  The console is capped at `100dvh`; the display is the row that gives, down to
+  `--glass-floor` **at every width** (150px, 128px on phones, less on short tiers); short
+  phones (≤700px tall) pay with 2×2 keys and a one-row Type-It form; the verdict takes
+  the kit's slot during a reveal **at every width**; the Bank button docks under the
+  console (in landscape it sits at the right end of the kit rail); The Street's board
+  scrolls in its own well.
+- **Short screens are keyed on HEIGHT, not width.** Sep 2026: the floor existed on
+  phones only, so a 1000×581 laptop window with Bank docked squeezed the glass to 32px
+  and cut the question off mid-line — while the previous check reported "0px overflow".
+  Tiers at `max-height: 820 / 660px` (width >720) and `orientation: landscape` +
+  `max-height: 480px` take the room out of the crown, keys and kit, never the question.
+- **`ui.fitQuestion()` is the guarantee.** CSS cannot know a question is 118 characters.
+  On overflow it widens the measure, then binary-searches the size down (floor 13px); a
+  ResizeObserver on the glass refits on any resize (Bank docking, reveals, viewport).
+  It measures with transitions OFF: reduced motion puts a 1ms `all` transition on every
+  element, and the trial sizes read stale. Never give `.display__head` `min-height: 0`:
+  that lets its grid row collapse, the stamps spill above the glass, and the fitter
+  shrinks the question to the floor chasing an overflow it did not cause.
+- **Prove it with `scripts/fit-audit.cjs`**, not by eye and not by page overflow. It pins
+  the longest question (#108) and the longest-options question (#516) onto the glass,
+  in live / reveal / Bank-docked / Type-It+intel, across 14 viewports (laptops with the
+  browser chrome up, landscape phones, the four iPhones) in Chromium and WebKit, and
+  fails on any clipped pixel, a question at the type floor, page overflow, or the Bank
+  button covering a key. Run it both ways; production before this fix failed 85 of 147:
+
+  ```bash
+  PLAYWRIGHT_MODULE=~/ai-journey/node_modules/playwright node scripts/fit-audit.cjs
+  PLAYWRIGHT_MODULE=~/ai-journey/node_modules/playwright node scripts/fit-audit.cjs --motion
+  ```
+
+  Then still look at the screenshots (`--shots <dir>`) with the `mobile-web-hardening`
+  skill's eye: the audit measures fit, not whether it looks right.
 
 Judge changes with the screenshot rig, never from code: desktop 1440×900 and a
 390×844 phone, every screen (title, play, reveal, busted hold, results, board, street).
