@@ -149,8 +149,10 @@ node scripts/playtest.mjs 60                  # engine invariants, all four mode
 ```
 
 `audit-distractors` must report **0 fatal issues**. Fatal means: fewer than 4 options, a
-distractor the typed checker would also accept, a duplicate option, or an option echoed
-from the question text. Shape/length tells should stay at or under ~0.5%.
+distractor the typed checker would also accept, a duplicate option, an option echoed
+from the question text, or a **cue tell** — the right answer is the only option repeating
+a word from the question ("a lion cub named Simba" -> The Lion King, "headed by a shogun"
+-> the shogunate). Shape/length tells should stay at or under ~0.5%.
 
 Then **actually play it in a browser**. A correct render proves nothing about gameplay —
 that rule is in the memory vault as `verify-by-walking-not-rendering` and it applies here.
@@ -175,6 +177,18 @@ for s in alpha beta gamma "$(date +%F)"; do node scripts/audit-distractors.mjs "
 playtest found synthesis offering "343 metres per second" and "White blood cells" for the
 smallest bone, and "b"/"q" for a chemical symbol. Synthesis borrows other answers by
 shape and cannot know meaning, so it is now only the fallback for a swapped-in bank.
+
+**Then every set was read as a player** (Sep 2026, KAN-248): eight independent reviewers,
+113 questions each, looking only for what the audit cannot see — a wrong option that is
+defensibly right (Tintoretto also painted a *Bacchus and Ariadne*; bee larvae do spin
+silk), one that is not the same kind of thing (a katana among fencing weapons, bánh mì
+among noodle soups), and giveaways (three provinces offered against the only country
+starting with Q; the one option that repeats the clue's word). 52 questions changed: 36
+reworded in `amend-questions.mjs`, 18 option sets in the `WRONG` table and one alias list
+tightened, each with its reason; 5 proposals were rejected because the "arguably right" option was the
+best near-miss and the wording already ruled it out (Johann Strauss II, Brâncuși). The
+cue tell went into the audit so the commonest kind cannot come back. When a rewording
+lengthens a question, keep it under ~118 characters — `fit-audit.cjs` probes the longest.
 
 The data pipeline, in this order:
 

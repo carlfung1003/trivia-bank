@@ -28,7 +28,7 @@ const catFilter = (args.find((a) => a.startsWith("--cat")) || "").split("=")[1];
 
 const index = buildIndex(questions);
 
-const problems = { short: [], accepted: [], dupe: [], shapeTell: [], lengthTell: [], echo: [] };
+const problems = { short: [], accepted: [], dupe: [], shapeTell: [], lengthTell: [], echo: [], cue: [] };
 const typeCounts = new Map();
 const samples = [];
 
@@ -42,6 +42,31 @@ function shape(s) {
   if (/^-?\d[\d,]*(\.\d+)?\s*[a-z%°]*\.?$/i.test(t)) return "number" + conj;
   if (/^[a-z]{1,2}$/i.test(t)) return "letter" + conj;
   return "text" + conj;
+}
+
+/* Cue tell: the right answer is the ONLY option that repeats a meaningful
+   word from the question, so it can be picked without knowing anything:
+   "a lion cub named Simba" -> The Lion King, "headed by a shogun" -> The
+   shogunate. The echo tell below only ever looked at the distractors. Words
+   match when equal, or when one extends the other by at most three letters
+   (shogun/shogunate, Ness/Nessie) — not Port/Portugal. */
+const CUE_STOP = new Set((
+  "what which whom whose where when with from into onto over under about after " +
+  "before their there than then them they were have been being does done also " +
+  "only most more many much very such each every other another some this that " +
+  "these those first name named called known term word famous title nickname " +
+  "popularly commonly widely often world largest country city"
+).split(" "));
+function cueWords(s) {
+  return (String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").match(/[a-z]{4,}/g) || [])
+    .filter((w) => !CUE_STOP.has(w));
+}
+function cueMatch(a, b) {
+  const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+  return long.startsWith(short) && long.length - short.length <= 3;
+}
+function cueShared(questionWords, option) {
+  return cueWords(option).filter((w) => questionWords.some((qw) => cueMatch(qw, w)));
 }
 
 /** Word count, used for the "one option is wildly longer" tell. */
@@ -117,6 +142,12 @@ for (const q of questions) {
     }
   });
 
+  const qWords = cueWords(q.question);
+  const cue = cueShared(qWords, options[correctIndex]);
+  if (cue.length && !options.some((o, i) => i !== correctIndex && cueShared(qWords, o).length)) {
+    problems.cue.push({ id: q.id, question: q.question, answer: q.answer, cue: [...new Set(cue)].join(",") });
+  }
+
   if (samples.length < showN) {
     samples.push({ q: q.question, a: q.answer, type, options, correctIndex });
   }
@@ -137,9 +168,10 @@ console.log(`  duplicate options          : ${problems.dupe.length}`);
 console.log(`  shape tell (answer obvious): ${problems.shapeTell.length}  (${((problems.shapeTell.length / total) * 100).toFixed(1)}%)`);
 console.log(`  length tell (odd one out)  : ${problems.lengthTell.length}  (${((problems.lengthTell.length / total) * 100).toFixed(1)}%)`);
 console.log(`  echo tell (option in Q)    : ${problems.echo.length}`);
+console.log(`  cue tell (only answer echoes Q): ${problems.cue.length}`);
 console.log(`\nTyped-only (not viable as multiple choice): ${typedOnly}  (${((typedOnly / total) * 100).toFixed(1)}%)`);
 
-for (const key of ["accepted", "short", "dupe", "echo"]) {
+for (const key of ["accepted", "short", "dupe", "echo", "cue"]) {
   if (!problems[key].length) continue;
   console.log(`\n--- ${key} (first 12) ---`);
   for (const p of problems[key].slice(0, 12)) console.log("  ", JSON.stringify(p));
@@ -163,6 +195,6 @@ if (samples.length) {
   }
 }
 
-const fatal = problems.accepted.length + problems.dupe.length + problems.short.length + problems.echo.length;
+const fatal = problems.accepted.length + problems.dupe.length + problems.short.length + problems.echo.length + problems.cue.length;
 console.log(`\n${fatal === 0 ? "PASS" : "FAIL"} — ${fatal} fatal issue(s)\n`);
 process.exit(fatal === 0 ? 0 : 1);

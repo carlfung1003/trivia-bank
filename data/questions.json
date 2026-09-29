@@ -711,7 +711,7 @@
       "id": 38,
       "category": "Literature",
       "difficulty": "medium",
-      "question": "Which Chinese classic novel follows the monk Xuanzang and the Monkey King on a pilgrimage west?",
+      "question": "Which Chinese classic novel follows the monk Xuanzang and the Monkey King to India to fetch Buddhist scriptures?",
       "answer": "Journey to the West",
       "accept": [
         "journey to the west",
@@ -877,7 +877,7 @@
       "id": 47,
       "category": "Film & TV",
       "difficulty": "medium",
-      "question": "Which Stanley Kubrick film is set aboard the spacecraft Discovery One?",
+      "question": "Which Stanley Kubrick film is largely set aboard the ship Discovery One?",
       "answer": "2001: A Space Odyssey",
       "accept": [
         "2001",
@@ -1847,7 +1847,7 @@
       "id": 100,
       "category": "Language & Words",
       "difficulty": "hard",
-      "question": "What is the linguistic term for a word borrowed directly from another language, like 'kindergarten' or 'ballet'?",
+      "question": "What is the linguistic term for a word taken directly from another language, like 'kindergarten' or 'ballet'?",
       "answer": "A loanword",
       "accept": [
         "loanword",
@@ -2096,7 +2096,7 @@
       "id": 114,
       "category": "Odds & Ends",
       "difficulty": "easy",
-      "question": "What is the currency of Switzerland?",
+      "question": "What is the official currency used in Zurich and Geneva?",
       "answer": "The Swiss franc",
       "accept": [
         "swiss franc",
@@ -2347,7 +2347,7 @@
       "id": 208,
       "category": "Geography",
       "difficulty": "easy",
-      "question": "What is the tallest mountain in the world above sea level?",
+      "question": "What is the highest peak in the world above sea level?",
       "answer": "Mount Everest",
       "accept": [
         "everest",
@@ -3264,7 +3264,7 @@
       "id": 258,
       "category": "Film & TV",
       "difficulty": "easy",
-      "question": "Which animated Disney film features a lion cub named Simba?",
+      "question": "Which animated Disney film features Simba, Mufasa and Scar?",
       "answer": "The Lion King",
       "accept": [
         "the lion king",
@@ -3426,7 +3426,7 @@
       "id": 267,
       "category": "Film & TV",
       "difficulty": "medium",
-      "question": "In The Wizard of Oz, what city is Dorothy trying to reach?",
+      "question": "In The Wizard of Oz, where does the yellow brick road lead Dorothy to meet the Wizard?",
       "answer": "The Emerald City",
       "accept": [
         "emerald city",
@@ -3435,9 +3435,9 @@
       "hint": "Follow the yellow brick road, and it is the colour of the gem.",
       "options": [
         "The Emerald City",
-        "Kansas City",
         "Munchkinland",
-        "The Land of Oz"
+        "The Haunted Forest",
+        "The Wicked Witch's Castle"
       ]
     },
     {
@@ -3726,7 +3726,7 @@
         "Honey",
         "Nectar",
         "Pollen",
-        "Silk"
+        "Honeydew"
       ]
     },
     {
@@ -4228,7 +4228,7 @@
       "id": 311,
       "category": "Language & Words",
       "difficulty": "medium",
-      "question": "What is the Latin phrase, commonly abbreviated 'etc.', meaning 'and so on'?",
+      "question": "Which Latin phrase, literally 'and the other things', is used to mean 'and so on'?",
       "answer": "Et cetera",
       "accept": [
         "et cetera",
@@ -4344,7 +4344,7 @@
       "options": [
         "Steve Wozniak",
         "Paul Allen",
-        "Bill Gates",
+        "Steve Ballmer",
         "Andy Grove"
       ],
       "hint": "He designed the Apple I circuit board single-handedly."
@@ -4790,7 +4790,7 @@
       "id": 342,
       "category": "Odds & Ends",
       "difficulty": "medium",
-      "question": "How many time zones does the world have in standard terms?",
+      "question": "If the world were divided into equal one-hour time zones, how many would there be?",
       "answer": "24",
       "accept": [
         "24",
@@ -5547,8 +5547,8 @@
       "options": [
         "Uranium",
         "Neptunium",
-        "Titanium",
-        "Tellurium"
+        "Plutonium",
+        "Thorium"
       ]
     },
     {
@@ -6228,7 +6228,7 @@
       "options": [
         "An allegory",
         "A parody",
-        "A satire",
+        "A pastiche",
         "A parable"
       ]
     },
@@ -6901,7 +6901,7 @@
       "id": 458,
       "category": "Music",
       "difficulty": "hard",
-      "question": "What is the name of the hollow wooden percussion block struck to keep time in Buddhist temple chanting?",
+      "question": "What is the name of the hollow, slit-carved percussion block struck to keep time in Buddhist temple chanting?",
       "answer": "The wooden fish (muk yu / muyu)",
       "accept": [
         "wooden fish",
@@ -6931,7 +6931,7 @@
       "hint": "The one you get playing only the white keys from its root.",
       "options": [
         "C major",
-        "A minor",
+        "F major",
         "C-sharp major",
         "G-flat major"
       ]
@@ -7029,7 +7029,7 @@
       "id": 465,
       "category": "Food & Drink",
       "difficulty": "hard",
-      "question": "Which Italian biscuit's name literally means 'twice-cooked'?",
+      "question": "Which Italian treat's name literally means 'twice-cooked'?",
       "answer": "Biscotti",
       "accept": [
         "biscotti",
@@ -7155,7 +7155,7 @@
         "Phở",
         "Bún chả",
         "Bún thịt nướng",
-        "Bánh mì"
+        "Bún riêu"
       ]
     },
     {
@@ -7212,14 +7212,14 @@
         "Har gow",
         "Siu mai",
         "Fun guo",
-        "Cheung fun"
+        "Wu gok"
       ]
     },
     {
       "id": 475,
       "category": "Art & Architecture",
       "difficulty": "easy",
-      "question": "Which art movement takes its name from a Monet painting titled 'Impression, Sunrise'?",
+      "question": "Which art movement of Monet, Renoir and Pissarro got its name when a critic mocked the title of a Monet painting?",
       "answer": "Impressionism",
       "accept": [
         "impressionism",
@@ -7254,7 +7254,7 @@
       "id": 477,
       "category": "Art & Architecture",
       "difficulty": "easy",
-      "question": "Which engineer's firm designed and built the Eiffel Tower?",
+      "question": "Which engineer's firm designed and built the wrought-iron tower at the centre of the 1889 Paris World's Fair?",
       "answer": "Gustave Eiffel",
       "accept": [
         "gustave eiffel",
@@ -7657,9 +7657,7 @@
       "answer": "Homonyms",
       "accept": [
         "homonym",
-        "homonyms",
-        "homograph",
-        "homographs"
+        "homonyms"
       ],
       "hint": "'Bank' the riverside and 'bank' the vault are one of these.",
       "options": [
@@ -7926,7 +7924,7 @@
       "id": 514,
       "category": "Technology",
       "difficulty": "medium",
-      "question": "What does the encryption standard 'AES' stand for?",
+      "question": "In computer security, what does 'AES' stand for?",
       "answer": "Advanced Encryption Standard",
       "accept": [
         "advanced encryption standard"
@@ -8421,7 +8419,7 @@
       "id": 541,
       "category": "Odds & Ends",
       "difficulty": "easy",
-      "question": "Which two primary colours are mixed to make green?",
+      "question": "Which two colours of paint are mixed together to make green?",
       "answer": "Blue and yellow",
       "accept": [
         "blue and yellow",
@@ -8618,7 +8616,7 @@
       "id": 552,
       "category": "Geography",
       "difficulty": "hard",
-      "question": "Which is the only country whose English name begins with the letter Q?",
+      "question": "Which Gulf country's only land border is with Saudi Arabia?",
       "answer": "Qatar",
       "accept": [
         "qatar"
@@ -8626,9 +8624,9 @@
       "hint": "A small, very wealthy peninsula on the Persian Gulf.",
       "options": [
         "Qatar",
-        "Quebec",
-        "Queensland",
-        "Qinghai"
+        "Kuwait",
+        "Oman",
+        "United Arab Emirates"
       ]
     },
     {
@@ -9055,7 +9053,7 @@
       "id": 576,
       "category": "History",
       "difficulty": "hard",
-      "question": "What is the term for the military government of Japan headed by a shogun?",
+      "question": "What is the term for the military government that ruled Japan in the emperor's name until the Meiji Restoration?",
       "answer": "The shogunate (bakufu)",
       "accept": [
         "shogunate",
@@ -9334,7 +9332,7 @@
       "id": 591,
       "category": "Literature",
       "difficulty": "hard",
-      "question": "Which Nigerian playwright became the first African to win the Nobel Prize in Literature?",
+      "question": "Which Nigerian playwright became the first Black African to win the Nobel Prize in Literature?",
       "answer": "Wole Soyinka",
       "accept": [
         "wole soyinka",
@@ -9467,9 +9465,9 @@
       "hint": "Directed by Frank Capra; a runaway heiress and a reporter.",
       "options": [
         "It Happened One Night (1934)",
+        "Wings (1927)",
         "One Flew Over the Cuckoo's Nest (1975)",
-        "The Silence of the Lambs (1991)",
-        "Gone with the Wind (1939)"
+        "The Silence of the Lambs (1991)"
       ]
     },
     {
@@ -9776,8 +9774,8 @@
       "options": [
         "A triplet",
         "A duplet",
-        "A quadruplet",
-        "A quintuplet"
+        "A triad",
+        "A trill"
       ]
     },
     {
@@ -9892,7 +9890,7 @@
       "id": 622,
       "category": "Music",
       "difficulty": "hard",
-      "question": "How many notes are in a pentatonic scale?",
+      "question": "How many different notes per octave are in the scale you get by playing only a piano's black keys?",
       "answer": "Five",
       "accept": [
         "five",
@@ -9966,7 +9964,7 @@
       "id": 626,
       "category": "Food & Drink",
       "difficulty": "hard",
-      "question": "What is the Cantonese term for the seared, smoky flavour a hot wok imparts to stir-fried food?",
+      "question": "What is the Cantonese term for the seared, smoky flavour that food picks up when stir-fried over fierce heat?",
       "answer": "Wok hei",
       "accept": [
         "wok hei",
@@ -10125,7 +10123,7 @@
       "id": 635,
       "category": "Art & Architecture",
       "difficulty": "hard",
-      "question": "What is the term for an artwork made of three hinged panels?",
+      "question": "What is the term for an artwork made of a central panel flanked by two hinged side panels?",
       "answer": "A triptych",
       "accept": [
         "triptych",
@@ -10288,7 +10286,7 @@
       "id": 644,
       "category": "Art & Architecture",
       "difficulty": "hard",
-      "question": "What is the Chinese brush-and-ink painting tradition, emphasising tonal washes over colour, called?",
+      "question": "Which largely monochrome Chinese painting tradition relies on graded tones rather than colour?",
       "answer": "Shuimohua — ink wash painting",
       "accept": [
         "shuimohua",
@@ -10320,7 +10318,7 @@
       "options": [
         "Foil, épée, and sabre",
         "Foil, rapier, and sabre",
-        "Épée, katana, and foil",
+        "Épée, smallsword, and foil",
         "Sabre, rapier, and cutlass"
       ],
       "hint": "Three blades: one thrusting weapon scores with the point only, one cuts."
@@ -10685,7 +10683,7 @@
       "id": 665,
       "category": "Language & Words",
       "difficulty": "hard",
-      "question": "What is the term for a name that has become the generic word for a product, like 'thermos'?",
+      "question": "What is the term for a brand name that has become the everyday word for any product of its kind, like 'thermos'?",
       "answer": "A genericised trademark (proprietary eponym)",
       "accept": [
         "genericized trademark",
@@ -11250,7 +11248,7 @@
       "id": 696,
       "category": "Music",
       "difficulty": "medium",
-      "question": "Which Polish-born Romantic composer wrote almost exclusively for solo piano?",
+      "question": "Which Romantic composer wrote almost exclusively for solo piano?",
       "answer": "Frédéric Chopin",
       "accept": [
         "chopin",
@@ -11269,7 +11267,7 @@
       "id": 697,
       "category": "Music",
       "difficulty": "hard",
-      "question": "Chopin's Waltz in D-flat major, Op. 64 No. 1, is popularly known by what nickname?",
+      "question": "Chopin's Op. 64 No. 1 in D-flat major is popularly known by what nickname?",
       "answer": "The Minute Waltz",
       "accept": [
         "minute waltz",
@@ -11431,9 +11429,9 @@
       ],
       "options": [
         "The Moonlight Sonata",
-        "The Pathétique",
-        "The Appassionata",
-        "The Waldstein"
+        "The Pathétique Sonata",
+        "The Appassionata Sonata",
+        "The Waldstein Sonata"
       ],
       "hint": "The nickname came from a critic comparing it to a lake in Lucerne."
     },
@@ -11678,7 +11676,7 @@
       "id": 719,
       "category": "Music",
       "difficulty": "hard",
-      "question": "What is the collective name of Wagner's four-opera cycle?",
+      "question": "What is the collective name for Wagner's four linked music dramas, first staged complete at Bayreuth in 1876?",
       "answer": "Der Ring des Nibelungen (The Ring Cycle)",
       "accept": [
         "the ring cycle",
@@ -12100,7 +12098,7 @@
       "id": 742,
       "category": "Music",
       "difficulty": "medium",
-      "question": "Which Rossini comic opera features the barber Figaro singing 'Largo al factotum'?",
+      "question": "Which Rossini comic opera features Figaro's showpiece aria 'Largo al factotum'?",
       "answer": "The Barber of Seville",
       "accept": [
         "barber of seville",
@@ -13022,7 +13020,7 @@
       "hint": "De Stijl, and the compositions are named after boogie-woogie.",
       "options": [
         "Piet Mondrian",
-        "Theo van Doesburg",
+        "Karel Appel",
         "Bart van der Leck",
         "Gerrit Rietveld"
       ]
@@ -13095,9 +13093,9 @@
       "hint": "One in European dress, one in Tehuana, connected by an artery.",
       "options": [
         "The Two Fridas",
-        "The Broken Column",
-        "The Wounded Deer",
-        "The Frame"
+        "Frida and Diego Rivera",
+        "Two Nudes in a Forest",
+        "The Broken Column"
       ]
     },
     {
@@ -13151,7 +13149,7 @@
         "Titian",
         "Bellini",
         "Giorgione",
-        "Tintoretto"
+        "Carpaccio"
       ]
     },
     {
@@ -13573,7 +13571,7 @@
       "id": 822,
       "category": "Signs & Symbols",
       "difficulty": "easy",
-      "question": "Which zodiac sign is represented by the scorpion?",
+      "question": "Which zodiac sign is represented by an arachnid with a venomous sting?",
       "answer": "Scorpio",
       "accept": [
         "scorpio"
@@ -13934,7 +13932,7 @@
       "options": [
         "Pride",
         "Envy",
-        "Greed",
+        "Lust",
         "Wrath"
       ]
     },
@@ -14640,7 +14638,7 @@
       "id": 883,
       "category": "Landmarks & Wonders",
       "difficulty": "medium",
-      "question": "On which island does the Statue of Liberty stand?",
+      "question": "On which island does the colossal copper statue given to the United States by France stand?",
       "answer": "Liberty Island",
       "accept": [
         "liberty island",
@@ -14939,7 +14937,7 @@
       "id": 900,
       "category": "Horror & Hauntings",
       "difficulty": "medium",
-      "question": "Which 2016 South Korean film traps passengers with zombies on a train?",
+      "question": "Which 2016 South Korean film traps a father and his young daughter with zombies on a high-speed journey?",
       "answer": "Train to Busan",
       "accept": [
         "train to busan",
@@ -14957,7 +14955,7 @@
       "id": 901,
       "category": "Horror & Hauntings",
       "difficulty": "medium",
-      "question": "Which mask is worn by the killer in the Scream franchise?",
+      "question": "What name is given to the masked killer persona in the Scream franchise?",
       "answer": "Ghostface",
       "accept": [
         "ghostface",
@@ -15048,7 +15046,7 @@
       "id": 906,
       "category": "Horror & Hauntings",
       "difficulty": "easy",
-      "question": "What is the term for a person who transforms into a wolf?",
+      "question": "What is the folklore term for a person who turns into a beast at the full moon?",
       "answer": "A werewolf",
       "accept": [
         "werewolf",
@@ -15128,7 +15126,7 @@
       "id": 910,
       "category": "Horror & Hauntings",
       "difficulty": "easy",
-      "question": "Which Mexican holiday honours the dead with marigolds, altars and sugar skulls?",
+      "question": "Which Mexican holiday is celebrated with marigolds, family altars and sugar skulls?",
       "answer": "Day of the Dead",
       "accept": [
         "day of the dead",
@@ -15138,7 +15136,7 @@
       "hint": "Observed on the first two days of November.",
       "options": [
         "Day of the Dead",
-        "Day of the Innocents",
+        "Day of the Kings",
         "Night of the Radishes",
         "Day of the Holy Cross"
       ]
@@ -15165,7 +15163,7 @@
       "id": 912,
       "category": "Horror & Hauntings",
       "difficulty": "easy",
-      "question": "What is the affectionate nickname for the supposed monster of Loch Ness?",
+      "question": "What is the affectionate nickname for Scotland's most famous lake monster?",
       "answer": "Nessie",
       "accept": [
         "nessie"
@@ -15254,7 +15252,7 @@
       "id": 917,
       "category": "Horror & Hauntings",
       "difficulty": "easy",
-      "question": "Which stretch of the western Atlantic is blamed for unexplained disappearances of ships and planes?",
+      "question": "Which region is blamed in legend for the 1945 disappearance of Flight 19, five US Navy torpedo bombers?",
       "answer": "The Bermuda Triangle",
       "accept": [
         "bermuda triangle",
@@ -15954,7 +15952,7 @@
       "id": 955,
       "category": "Science & Nature",
       "difficulty": "hard",
-      "question": "What is the term for materials that conduct electricity with zero resistance?",
+      "question": "What name is given to materials that carry an electric current with zero resistance?",
       "answer": "Superconductors",
       "accept": [
         "superconductor",

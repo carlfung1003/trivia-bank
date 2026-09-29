@@ -69,7 +69,7 @@ const WRONG = {
   541: ["Red and yellow", "Blue and red", "Red and white"],
 
   645: ["Foil, rapier, and sabre",
-        "Épée, katana, and foil",
+        "Épée, smallsword, and foil",             /* a katana was no fencing weapon at all */
         "Sabre, rapier, and cutlass"],
 
   701: ["The waltz and the mazurka",
@@ -77,15 +77,14 @@ const WRONG = {
         "The czardas and the krakowiak"],
 
   /* --- works: distractors are other real works by the same figure --------- */
-  732: ["Of Thee I Sing", "Girl Crazy", "Funny Face"],
   697: ["The Raindrop Prelude", "The Revolutionary Étude", "The Heroic Polonaise"],
-  705: ["The Pathétique", "The Appassionata", "The Waldstein"],
+  705: ["The Pathétique Sonata", "The Appassionata Sonata", "The Waldstein Sonata"],  /* only the answer said "Sonata" */
 
   468: ["Confit", "En papillote", "Bain-marie"],
 
   /* --- people: same field, same era, genuinely tempting ------------------- */
   316: ["Steve Wozniak", "Steve Ballmer", "Gordon Moore"],
-  317: ["Paul Allen", "Bill Gates", "Andy Grove"],
+  317: ["Paul Allen", "Steve Ballmer", "Andy Grove"],   /* only the answer shared "Steve" with Jobs */
 
   /* --- numbers where the culturally meaningful neighbours beat arithmetic - */
   120: ["Six", "Nine", "Four"],
@@ -126,6 +125,27 @@ const WRONG = {
   695: ["A bicentenary (bicentennial)", "A sesquicentenary (sesquicentennial)", "A semicentenary (semicentennial)"],
   389: ["Vitamin D", "Vitamin B1", "Vitamin B12"],
   732: ["Samson and Delilah", "Tristan and Isolde", "Dido and Aeneas"],   /* see amend-questions #732 */
+
+  /* --- Sep 2026 review of every set, read as a player (KAN-248) -----------
+     The structural audit cannot see meaning. Read one question at a time,
+     these sets had a wrong option that was defensibly right, one that was not
+     the same kind of thing as the answer, or a tell that picked the answer
+     without the knowledge. Question rewordings are in amend-questions.mjs. */
+  798: ["Bellini", "Giorgione", "Carpaccio"],                 /* Tintoretto painted a Bacchus and Ariadne too */
+  283: ["Nectar", "Pollen", "Honeydew"],                      /* bee larvae do spin silk */
+  842: ["Envy", "Lust", "Wrath"],                             /* greed has its own 'root of all evil' claim */
+  420: ["A parody", "A pastiche", "A parable"],               /* Animal Farm is routinely called a satire */
+  791: ["Karel Appel", "Bart van der Leck", "Gerrit Rietveld"], /* van Doesburg made black-grid primaries too */
+  910: ["Day of the Kings", "Night of the Radishes", "Day of the Holy Cross"], /* Día de los Inocentes is 1 Nov of the same feast */
+  383: ["Neptunium", "Plutonium", "Thorium"],                 /* Ti/Te were not radioactive: 'nuclear fuel' alone gave it */
+  552: ["Kuwait", "Oman", "United Arab Emirates"],            /* the old three were provinces, not countries */
+  598: ["Wings (1927)", "One Flew Over the Cuckoo's Nest (1975)", "The Silence of the Lambs (1991)"], /* 'first' + the earliest year was the tell */
+  615: ["A duplet", "A triad", "A trill"],                    /* tri- was the only three-prefix left */
+  795: ["Frida and Diego Rivera", "Two Nudes in a Forest", "The Broken Column"], /* only the answer said Two and Frida */
+  459: ["F major", "C-sharp major", "G-flat major"],           /* A minor fell to the word 'major' */
+  471: ["Bún chả", "Bún thịt nướng", "Bún riêu"],             /* bánh mì is a sandwich, not a noodle soup */
+  474: ["Siu mai", "Fun guo", "Wu gok"],                      /* cheung fun is a rice roll, not a dumpling */
+  267: ["Munchkinland", "The Haunted Forest", "The Wicked Witch's Castle"], /* two regions under 'what city'; see amend */
 };
 
 const byId = new Map(bank.questions.map((q) => [q.id, q]));
