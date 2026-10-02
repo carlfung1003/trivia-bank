@@ -319,6 +319,8 @@ function startRun(modeId) {
     answerMode: app.settings.answerMode,
     categories: mode.oneAttemptPerDay ? null : app.settings.categories,
     difficulties: mode.oneAttemptPerDay ? null : app.settings.difficulties,
+    /* Unseen questions first (the engine ignores this for the Daily). */
+    recent: store.data.recent.slice(),
   });
 
   wireGameEvents(app.game);
@@ -769,6 +771,7 @@ function leaveStreet() {
 
 function wireGameEvents(game) {
   game.on("question", () => {
+    store.markSeen(game.state.question?.id);
     /* Cancel any verdict still waiting on its anticipation beat. Without
        this, advancing fast lets a stale reveal paint correct/wrong states
        onto the options of the question that replaced it. */
@@ -926,6 +929,7 @@ function onLifeline(game, id, detail) {
       ui.renderTimer(game);
       break;
     case "bypass":
+      store.markSeen(game.state.question?.id);
       sound.tumbler();
       ui.renderQuestion(game);
       ui.renderTimer(game);

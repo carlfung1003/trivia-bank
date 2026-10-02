@@ -329,6 +329,21 @@ export const RANKS = [
   { name: "Mastermind",  at: 1000000 },
 ];
 
+/* Freshness: a returning player's runs draw questions they have not seen
+   before they draw any repeat. With no memory between runs, a player who
+   cleared Vault Runs met a repeat from the second run and ~4 of every 12 by
+   the thirtieth (scripts/freshness.mjs). The Daily Heist ignores this: it
+   must be the same ten locks for everyone. */
+export const FRESHNESS = {
+  /* Question ids remembered, least recently seen first. The bank is ~900, so
+     this keeps all of them; ids drop off the old end only past the cap. */
+  historyMax: 2000,
+  /* Once every question in a tier has been seen, draw from the oldest share
+     of that tier rather than strictly the oldest one, so the order a player
+     first met the bank does not replay exactly. */
+  staleShare: 0.25,
+};
+
 export const STORE = {
   key: "trivia-bank/v1",
   /* Achievements are pure predicates over a finished run + lifetime stats. */

@@ -11,6 +11,7 @@
    ========================================================================== */
 
 import { buildIndex, isChoiceViable } from "./distractors.js";
+import { FRESHNESS } from "./config.js";
 import {
   normalise, sample, shuffle, levenshtein,
   matchKey, demandsExact, fuzzyWordMatch, answerForms,
@@ -131,11 +132,21 @@ export class Bank {
    * Draw one question, preferring the requested difficulty but degrading
    * gracefully: a filter set with no 'hard' Music questions should still
    * produce a playable run rather than dead-ending mid-heist.
+   *
+   * `recent` (Map id -> rank, lower = seen longer ago) is the player's history.
+   * Within a tier, an unseen question always beats a seen one; once a tier
+   * is all seen, the draw comes from its least recently seen share. Freshness
+   * never overrides the tier, so the difficulty ramp is untouched.
    */
-  draw(rng, { categories, difficulties, difficulty, exclude, choiceOnly = false, typedOnly = false } = {}) {
+  draw(rng, { categories, difficulties, difficulty, exclude, choiceOnly = false, typedOnly = false, recent = null } = {}) {
     const tryDraw = (diffList) => {
       const p = this.pool({ categories, difficulties: diffList, exclude, choiceOnly, typedOnly });
-      return p.length ? sample(rng, p, 1)[0] : null;
+      if (!p.length) return null;
+      if (!recent || !recent.size) return sample(rng, p, 1)[0];
+      const fresh = p.filter((q) => !recent.has(q.id));
+      if (fresh.length) return sample(rng, fresh, 1)[0];
+      const oldest = p.slice().sort((a, b) => recent.get(a.id) - recent.get(b.id));
+      return sample(rng, oldest.slice(0, Math.max(1, Math.ceil(oldest.length * FRESHNESS.staleShare))), 1)[0];
     };
 
     if (difficulty) {
@@ -155,12 +166,12 @@ export class Bank {
    * and identical for every player, and by Vault Run so the difficulty ramp
    * is guaranteed rather than hoped for.
    */
-  drawRun(rng, { length, ramp, categories, difficulties, choiceOnly = false, typedOnly = false } = {}) {
+  drawRun(rng, { length, ramp, categories, difficulties, choiceOnly = false, typedOnly = false, recent = null } = {}) {
     const picked = [];
     const used = new Set();
     for (let i = 0; i < length; i++) {
       const difficulty = ramp ? ramp[Math.min(i, ramp.length - 1)] : null;
-      const q = this.draw(rng, { categories, difficulties, difficulty, exclude: used, choiceOnly, typedOnly });
+      const q = this.draw(rng, { categories, difficulties, difficulty, exclude: used, choiceOnly, typedOnly, recent });
       if (!q) break;
       used.add(q.id);
       picked.push(q);

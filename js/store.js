@@ -9,7 +9,7 @@
    fresh record rather than white-screening the game.
    ========================================================================== */
 
-import { STORE } from "./config.js";
+import { STORE, FRESHNESS } from "./config.js";
 import { localDateKey } from "./util.js";
 
 const BLANK = () => ({
@@ -26,6 +26,7 @@ const BLANK = () => ({
   best: {},              /* mode -> best score                  */
   categories: {},        /* category -> { seen, correct }       */
   achievements: [],      /* ids unlocked                        */
+  recent: [],            /* question ids, least recently seen first */
   daily: {
     lastPlayed: null,    /* YYYY-MM-DD                          */
     streak: 0,
@@ -57,6 +58,7 @@ function read() {
       daily: { ...base.daily, ...(parsed.daily || {}) },
       prefs: { ...base.prefs, ...(parsed.prefs || {}) },
       achievements: Array.isArray(parsed.achievements) ? parsed.achievements : [],
+      recent: Array.isArray(parsed.recent) ? parsed.recent.filter(Number.isFinite) : [],
     };
   } catch (err) {
     console.warn("[store] unreadable record, starting fresh", err);
@@ -83,6 +85,21 @@ export const store = {
     this.data = BLANK();
     this.save();
     return this.data;
+  },
+
+  /* ---- Question history -------------------------------------------------- */
+
+  /** A question reached the glass: move it to the fresh end of the history,
+      so the next run draws everything else first (engine `recent`). Written
+      as it happens, not at run end: a run quit halfway still saw its locks. */
+  markSeen(id) {
+    if (!Number.isFinite(id)) return;
+    const recent = this.data.recent;
+    const at = recent.indexOf(id);
+    if (at >= 0) recent.splice(at, 1);
+    recent.push(id);
+    if (recent.length > FRESHNESS.historyMax) recent.splice(0, recent.length - FRESHNESS.historyMax);
+    this.save();
   },
 
   /* ---- Preferences ------------------------------------------------------- */

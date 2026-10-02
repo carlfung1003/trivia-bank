@@ -135,6 +135,7 @@ function bypass(game) {
     exclude: game.usedIds,
     choiceOnly: game.answerMode === "choice",
     typedOnly: game.answerMode === "typed",
+    recent: game.recent,
   });
 
   /* If the filtered pool is exhausted there is nothing to swap to; refund the

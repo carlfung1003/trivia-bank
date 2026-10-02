@@ -253,6 +253,44 @@ for (const mode of Object.keys(MODES)) {
   }
 }
 
+/* ---- Targeted invariant: freshness ---------------------------------------- */
+/* A returning player's history (engine `recent`) must put unseen questions
+   first, must not bend the difficulty ramp, and must never touch the Daily
+   Heist, which is the same set for everyone. scripts/freshness.mjs measures
+   the effect over many runs; these are the rules it rests on. */
+{
+  const recent = [];
+  const remember = (ids) => ids.forEach((id) => {
+    const at = recent.indexOf(id);
+    if (at >= 0) recent.splice(at, 1);
+    recent.push(id);
+  });
+  const seen = new Set();
+  for (let r = 0; r < 20; r++) {
+    const g = new Game({ bank, mode: "vault", seed: `fresh-${r}`, answerMode: "choice", recent: recent.slice() });
+    g.start();
+    const ids = g.queue.map((q) => q.id);
+    check(ids.every((id) => !seen.has(id)), "vault run repeated a question while unseen ones remained", { run: r });
+    const ramp = MODES.vault.ramp;
+    check(g.queue.every((q, i) => q.difficulty === ramp[Math.min(i, ramp.length - 1)]), "history bent the vault ramp", { run: r });
+    ids.forEach((id) => seen.add(id));
+    remember(ids);
+  }
+
+  const daily = (rec) => {
+    const g = new Game({ bank, mode: "daily", seed: "daily::2026-01-01", answerMode: "choice", recent: rec });
+    g.start();
+    return g.queue.map((q) => q.id).join(",");
+  };
+  check(daily(null) === daily(bank.questions.map((q) => q.id)), "history changed the Daily Heist");
+
+  /* Every question seen: the draw still works, from the oldest share. */
+  const all = bank.questions.map((q) => q.id);
+  const g = new Game({ bank, mode: "survival", seed: "fresh-all", answerMode: "choice", recent: all });
+  g.start();
+  check(g.state.question !== null, "survival could not draw once every question was seen");
+}
+
 /* ---- Report --------------------------------------------------------------- */
 
 console.log(`\nPlaytest — ${RUNS} runs per mode\n`);

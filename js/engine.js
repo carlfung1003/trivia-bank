@@ -57,7 +57,7 @@ export class Game extends Emitter {
    * @param {string[]} opts.categories
    * @param {string[]} opts.difficulties
    */
-  constructor({ bank, mode = "vault", seed = "run", answerMode = "choice", categories = null, difficulties = null }) {
+  constructor({ bank, mode = "vault", seed = "run", answerMode = "choice", categories = null, difficulties = null, recent = null }) {
     super();
     this.bank = bank;
     this.mode = MODES[mode] || MODES.vault;
@@ -66,6 +66,12 @@ export class Game extends Emitter {
     this.categories = categories;
     this.difficulties = difficulties;
     this.rng = makeRng(this.seed);
+    /* The player's question history (ids, least recently seen first), so a
+       run draws what they have not met yet. Ignored by the Daily Heist, whose
+       set is fixed by the date alone and must be the same for everyone. */
+    this.recent = recent && recent.length && !this.mode.oneAttemptPerDay
+      ? new Map(recent.map((id, i) => [id, i]))
+      : null;
 
     this.state = this._blankState();
   }
@@ -131,6 +137,7 @@ export class Game extends Emitter {
         difficulties: this.difficulties,
         choiceOnly: this.answerMode === "choice",
         typedOnly: this.answerMode === "typed",
+        recent: this.recent,
       });
     } else {
       this.queue = null;
@@ -166,6 +173,7 @@ export class Game extends Emitter {
         exclude: this.usedIds,
         choiceOnly: this.answerMode === "choice",
         typedOnly: this.answerMode === "typed",
+        recent: this.recent,
       });
     }
 

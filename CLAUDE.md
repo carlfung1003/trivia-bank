@@ -349,6 +349,30 @@ typeable answers — "Central Processing Unit", "The Silence of the Lambs", "Wol
 Amadeus Mozart" — while keeping the actual offenders. Length was never the problem.
 Typing BLIND was. Do not re-tighten the thresholds; add shape affordances instead.
 
+## Freshness — a returning player sees new questions first
+
+Each run used to forget every run before it. Measured with `scripts/freshness.mjs`
+(30 consecutive runs, 20 simulated players): a player who cleared Vault Runs met a repeat
+from the **second run**, and by the thirtieth ~4 of every 12 locks were ones they had
+seen. Survival and Blitz were worse.
+
+Now `store.js` keeps `recent` — question ids, least recently seen first, written the
+moment a question reaches the glass (`markSeen`, from main.js on `question` and on a
+Bypass swap; a run quit halfway still saw its locks). `main.js` hands it to the engine as
+`recent`, and `bank.draw` prefers an unseen question **within the requested tier**; once
+a tier is all seen it draws from that tier's least recently seen share
+(`FRESHNESS.staleShare`). Result: zero repeats in 30 runs for every profile, and the
+first repeat for a lock-clearing Vault player moves from run 2 to run 64.
+
+Three rules, all asserted by `playtest.mjs` (switching history off fails 16 checks):
+
+- **Freshness never overrides the tier.** The Vault ramp is identical lock for lock.
+- **The Daily Heist ignores history** (`oneAttemptPerDay` in the engine constructor). It
+  is the same ten locks for everyone on a date; a personal history would break that.
+- **A fully seen bank still draws.** Survival with every id in `recent` starts normally.
+
+The Board and The Street are separate engines and do not use this yet.
+
 ## The Board — the second engine
 
 `js/jeopardy.js` is a **separate rules engine** from `engine.js`, running off a **separate
@@ -488,7 +512,10 @@ good answers. Fix the player before tuning the balance.
   (`overscroll-behavior-y: none`, `touch-action: manipulation`); pinch zoom still works.
   `node` + Playwright's `webkit` (installed under the ai-journey copy) renders the real
   Safari engine at iPhone size — use it before claiming anything about iOS.
-- **Only lightly tested on a real phone.** The layout IS verified at 390px and 360px via
+- **Played on a real phone (Oct 2026):** Carl's verdict was "smooth and fun". That is
+  the feel check the automated rigs cannot give; it says nothing specific about audio or
+  which browser, so keep the WebKit checks as the gate for layout changes.
+- **Earlier, only lightly tested on a real phone.** The layout IS verified at 390px and 360px via
   `docs/mobile-preview.html`, which renders the game in narrow iframes — media queries
   key off the iframe width, so this exercises the real breakpoints (the Chrome
   automation cannot resize the window below ~1034px). Confirmed: single-column options,
